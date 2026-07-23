@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { YModule } from './y/y.module';
 import { AbsencesModule } from './absences/absences.module';
 import { UserModule } from './user/user.module';
 import { UniteEnseignementModule } from './unite-enseignement/unite-enseignement.module';
@@ -32,7 +31,6 @@ import { EcoleModule } from './ecole/ecole.module';
 import { DossierScolariteModule } from './dossier-scolarite/dossier-scolarite.module';
 import { DecisionFinAnneeModule } from './decision-fin-annee/decision-fin-annee.module';
 import { ConversationModule } from './conversation/conversation.module';
-import { ConversationModule } from './conversation/conversation.module';
 import { ConfigurationScolariteModule } from './configuration-scolarite/configuration-scolarite.module';
 import { ClasseScolaireModule } from './classe-scolaire/classe-scolaire.module';
 import { ClasseMatirereModule } from './classe-matirere/classe-matirere.module';
@@ -43,12 +41,60 @@ import { ApprenantModule } from './apprenant/apprenant.module';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AnneeScolaireModule } from './annee-scolaire/annee-scolaire.module';
 import { AffectationEnseignantModule } from './affectation-enseignant/affectation-enseignant.module';
-import { AbsencesModule } from './absences/absences.module';
-import { AbsencesModule } from './absences/absences.module';
+import { APP_PIPE } from '@nestjs/core';
+import { ZodValidationPipe } from 'nestjs-zod';
 
 @Module({
-  imports: [YModule, AbsencesModule, AffectationEnseignantModule, AnneeScolaireModule, AnnonceModule, ApprenantModule, ApprenantParentModule, BulletinModule, CibleAnnonceModule, ClasseMatirereModule, ClasseScolaireModule, ConfigurationScolariteModule, ConversationModule, DecisionFinAnneeModule, DossierScolariteModule, EcoleModule, EmploiDuTempsModule, EmployeModule, EmployeDocumentModule, EmployeRoleModule, EvaluationModule, InscriptionModule, LigneBulletinModule, MatiereModule, MatiereUeModule, MessageModule, NiveauScolaireModule, NoteModule, PaiementModule, ParentModule, ParticipantConversationModule, PeriodeScolaireModule, PermissionModule, PolitiqueEvaluationModule, RegleEvaluationModule, RoleModule, RolePermissionModule, TrancheScolariteModule, TypeEvaluationModule, UniteEnseignementModule, UserModule],
+  imports: [
+    AbsencesModule,
+    AffectationEnseignantModule,
+    AnneeScolaireModule,
+    AnnonceModule,
+    ApprenantModule,
+    ApprenantParentModule,
+    BulletinModule,
+    CibleAnnonceModule,
+    ClasseMatirereModule,
+    ClasseScolaireModule,
+    ConfigurationScolariteModule,
+    ConversationModule,
+    DecisionFinAnneeModule,
+    DossierScolariteModule,
+    EcoleModule,
+    EmploiDuTempsModule,
+    EmployeModule,
+    EmployeDocumentModule,
+    EmployeRoleModule,
+    EvaluationModule,
+    InscriptionModule,
+    LigneBulletinModule,
+    MatiereModule,
+    MatiereUeModule,
+    MessageModule,
+    NiveauScolaireModule,
+    NoteModule,
+    PaiementModule,
+    ParentModule,
+    ParticipantConversationModule,
+    PeriodeScolaireModule,
+    PermissionModule,
+    PolitiqueEvaluationModule,
+    RegleEvaluationModule,
+    RoleModule,
+    RolePermissionModule,
+    TrancheScolariteModule,
+    TypeEvaluationModule,
+    UniteEnseignementModule,
+    UserModule,
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+
+    {
+      provide: APP_PIPE,
+      useClass: ZodValidationPipe, // Intercepte et valide automatiquement toutes les requêtes
+    },
+  ],
 })
 export class AppModule {}

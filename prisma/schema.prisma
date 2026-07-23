@@ -135,7 +135,7 @@ model Permission {
     description     String?
 
     rolePermission  RolePermission []
-    @@index([nom])
+    @@index([nom]) 
 
     createdAt                   DateTime                            @default(now())
     updatedAt                   DateTime                            @default(now()) @updatedAt

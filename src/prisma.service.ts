@@ -11,7 +11,6 @@ export class PrismaService extends PrismaClient {
       password: '',
       database: 'v1',
     });
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     super({ adapter });
   }
 }
