@@ -129,16 +129,66 @@ model EmployeRole {
 
 //Permission du système
 model Permission {
-    id              String  @id @default(uuid())
-    code            String  @unique
-    nom             String  
-    description     String?
+    id              String          @id @default(uuid())
+    action          Action           
+    cible           CibleAction
 
     rolePermission  RolePermission []
-    @@index([nom]) 
+    @@unique([action, cible]) 
 
     createdAt                   DateTime                            @default(now())
     updatedAt                   DateTime                            @default(now()) @updatedAt
+}
+
+
+enum Action {
+    READ
+    CREATE 
+    UPDATE
+    DELETE
+    MANAGE
+}
+
+enum CibleAction {
+    absence
+    affectationEnseignant
+    anneeScolaire
+    annonce
+    apprenant
+    apprenantParent
+    bulletin
+    cibleAnnoce
+    classeMatiere
+    classeScolaire
+    configScolarite
+    conversation
+    decisionFinAnnee
+    dossierScolarite
+    ecole
+    emploiDuTemps
+    employe
+    employeDocument
+    employeRole
+    evaluation
+    inscription
+    ligneBulletin
+    matiere
+    matiereUe
+    message
+    niveauScolaire
+    note
+    paiement
+    parent
+    participantConversation
+    periodeScolaire
+    politiqueEvaluation
+    regleEvaluation 
+    role
+    rolePermission
+    trancheScolarite
+    typeEvaluation
+    uniteEnseignement
+    user
 }
 
 
