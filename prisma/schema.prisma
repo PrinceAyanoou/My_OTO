@@ -189,6 +189,7 @@ enum CibleAction {
     typeEvaluation
     uniteEnseignement
     user
+    all
 }
 
 

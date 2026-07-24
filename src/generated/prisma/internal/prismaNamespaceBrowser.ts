@@ -168,9 +168,8 @@ export type EmployeRoleScalarFieldEnum = (typeof EmployeRoleScalarFieldEnum)[key
 
 export const PermissionScalarFieldEnum = {
   id: 'id',
-  code: 'code',
-  nom: 'nom',
-  description: 'description',
+  action: 'action',
+  cible: 'cible',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -708,10 +707,7 @@ export type EmployeRoleOrderByRelevanceFieldEnum = (typeof EmployeRoleOrderByRel
 
 
 export const PermissionOrderByRelevanceFieldEnum = {
-  id: 'id',
-  code: 'code',
-  nom: 'nom',
-  description: 'description'
+  id: 'id'
 } as const
 
 export type PermissionOrderByRelevanceFieldEnum = (typeof PermissionOrderByRelevanceFieldEnum)[keyof typeof PermissionOrderByRelevanceFieldEnum]

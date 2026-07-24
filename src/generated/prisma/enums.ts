@@ -38,6 +38,63 @@ export const EcoleStatut = {
 export type EcoleStatut = (typeof EcoleStatut)[keyof typeof EcoleStatut]
 
 
+export const Action = {
+  READ: 'READ',
+  CREATE: 'CREATE',
+  UPDATE: 'UPDATE',
+  DELETE: 'DELETE',
+  MANAGE: 'MANAGE'
+} as const
+
+export type Action = (typeof Action)[keyof typeof Action]
+
+
+export const CibleAction = {
+  absence: 'absence',
+  affectationEnseignant: 'affectationEnseignant',
+  anneeScolaire: 'anneeScolaire',
+  annonce: 'annonce',
+  apprenant: 'apprenant',
+  apprenantParent: 'apprenantParent',
+  bulletin: 'bulletin',
+  cibleAnnoce: 'cibleAnnoce',
+  classeMatiere: 'classeMatiere',
+  classeScolaire: 'classeScolaire',
+  configScolarite: 'configScolarite',
+  conversation: 'conversation',
+  decisionFinAnnee: 'decisionFinAnnee',
+  dossierScolarite: 'dossierScolarite',
+  ecole: 'ecole',
+  emploiDuTemps: 'emploiDuTemps',
+  employe: 'employe',
+  employeDocument: 'employeDocument',
+  employeRole: 'employeRole',
+  evaluation: 'evaluation',
+  inscription: 'inscription',
+  ligneBulletin: 'ligneBulletin',
+  matiere: 'matiere',
+  matiereUe: 'matiereUe',
+  message: 'message',
+  niveauScolaire: 'niveauScolaire',
+  note: 'note',
+  paiement: 'paiement',
+  parent: 'parent',
+  participantConversation: 'participantConversation',
+  periodeScolaire: 'periodeScolaire',
+  politiqueEvaluation: 'politiqueEvaluation',
+  regleEvaluation: 'regleEvaluation',
+  role: 'role',
+  rolePermission: 'rolePermission',
+  trancheScolarite: 'trancheScolarite',
+  typeEvaluation: 'typeEvaluation',
+  uniteEnseignement: 'uniteEnseignement',
+  user: 'user',
+  all: 'all'
+} as const
+
+export type CibleAction = (typeof CibleAction)[keyof typeof CibleAction]
+
+
 export const DocumentType = {
   DIPLOME: 'DIPLOME',
   CONTRAT: 'CONTRAT',

@@ -174,6 +174,40 @@ export type BoolWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedBoolFilter<$PrismaModel>
 }
 
+export type EnumActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.Action | Prisma.EnumActionFieldRefInput<$PrismaModel>
+  in?: $Enums.Action[]
+  notIn?: $Enums.Action[]
+  not?: Prisma.NestedEnumActionFilter<$PrismaModel> | $Enums.Action
+}
+
+export type EnumCibleActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.CibleAction | Prisma.EnumCibleActionFieldRefInput<$PrismaModel>
+  in?: $Enums.CibleAction[]
+  notIn?: $Enums.CibleAction[]
+  not?: Prisma.NestedEnumCibleActionFilter<$PrismaModel> | $Enums.CibleAction
+}
+
+export type EnumActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Action | Prisma.EnumActionFieldRefInput<$PrismaModel>
+  in?: $Enums.Action[]
+  notIn?: $Enums.Action[]
+  not?: Prisma.NestedEnumActionWithAggregatesFilter<$PrismaModel> | $Enums.Action
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumActionFilter<$PrismaModel>
+}
+
+export type EnumCibleActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.CibleAction | Prisma.EnumCibleActionFieldRefInput<$PrismaModel>
+  in?: $Enums.CibleAction[]
+  notIn?: $Enums.CibleAction[]
+  not?: Prisma.NestedEnumCibleActionWithAggregatesFilter<$PrismaModel> | $Enums.CibleAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumCibleActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumCibleActionFilter<$PrismaModel>
+}
+
 export type EnumDocumentTypeFilter<$PrismaModel = never> = {
   equals?: $Enums.DocumentType | Prisma.EnumDocumentTypeFieldRefInput<$PrismaModel>
   in?: $Enums.DocumentType[]
@@ -710,6 +744,40 @@ export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedBoolFilter<$PrismaModel>
   _max?: Prisma.NestedBoolFilter<$PrismaModel>
+}
+
+export type NestedEnumActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.Action | Prisma.EnumActionFieldRefInput<$PrismaModel>
+  in?: $Enums.Action[]
+  notIn?: $Enums.Action[]
+  not?: Prisma.NestedEnumActionFilter<$PrismaModel> | $Enums.Action
+}
+
+export type NestedEnumCibleActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.CibleAction | Prisma.EnumCibleActionFieldRefInput<$PrismaModel>
+  in?: $Enums.CibleAction[]
+  notIn?: $Enums.CibleAction[]
+  not?: Prisma.NestedEnumCibleActionFilter<$PrismaModel> | $Enums.CibleAction
+}
+
+export type NestedEnumActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Action | Prisma.EnumActionFieldRefInput<$PrismaModel>
+  in?: $Enums.Action[]
+  notIn?: $Enums.Action[]
+  not?: Prisma.NestedEnumActionWithAggregatesFilter<$PrismaModel> | $Enums.Action
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumActionFilter<$PrismaModel>
+}
+
+export type NestedEnumCibleActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.CibleAction | Prisma.EnumCibleActionFieldRefInput<$PrismaModel>
+  in?: $Enums.CibleAction[]
+  notIn?: $Enums.CibleAction[]
+  not?: Prisma.NestedEnumCibleActionWithAggregatesFilter<$PrismaModel> | $Enums.CibleAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumCibleActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumCibleActionFilter<$PrismaModel>
 }
 
 export type NestedEnumDocumentTypeFilter<$PrismaModel = never> = {

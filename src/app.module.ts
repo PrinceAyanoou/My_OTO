@@ -43,7 +43,8 @@ import { AnneeScolaireModule } from './annee-scolaire/annee-scolaire.module';
 import { AffectationEnseignantModule } from './affectation-enseignant/affectation-enseignant.module';
 import { APP_PIPE } from '@nestjs/core';
 import { ZodValidationPipe } from 'nestjs-zod';
-
+import { CaslModule } from './casl/casl.module';
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     AbsencesModule,
@@ -86,6 +87,10 @@ import { ZodValidationPipe } from 'nestjs-zod';
     TypeEvaluationModule,
     UniteEnseignementModule,
     UserModule,
+    CaslModule,
+    ConfigModule.forRoot({
+      isGlobal: true, // Rend les variables disponibles partout dans le projet
+    }),
   ],
   controllers: [AppController],
   providers: [
