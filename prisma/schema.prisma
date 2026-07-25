@@ -71,6 +71,7 @@ model Ecole {
     annonces                    Annonce[]
     conversations               Conversation[]
     configScolarite             ConfigurationScolarite []
+    role                        Role[]
 
     @@index([ville])
 
@@ -101,10 +102,12 @@ model Role {
     nom                     String
     description             String?
     estSystem               Boolean                  @default(false)
+    ecoleId                 String
 
     employeRole             EmployeRole []
     rolePermission          RolePermission []
-    @@unique([nom])
+    ecole                   Ecole                    @relation(fields: [ecoleId], references: [id], onDelete: Cascade)
+    @@unique([nom, ecoleId])
 
     createdAt                   DateTime                            @default(now())
     updatedAt                   DateTime                            @default(now()) @updatedAt

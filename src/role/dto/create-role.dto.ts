@@ -20,6 +20,8 @@ export const CreateRoleSchema = z.object({
       { message: 'La liste des permissions est obligatoire.' },
     )
     .min(1, 'Vous devez attribuer au moins une permission à ce rôle.'),
+
+  ecoleId: z.uuid("l'identifiant fourni n'est pas un uuid ").trim(),
 });
 
 export class CreateRoleDto extends createZodDto(CreateRoleSchema) {}
