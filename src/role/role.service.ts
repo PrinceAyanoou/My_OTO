@@ -91,7 +91,7 @@ export class RolesService {
   //service pour la modification d'un rôle.
   async updateRole(roleId: string, ecoleId: string, dto: UpdateRoleDto) {
     //Vérifier que le rôle existe dans l'école
-    const existingRole = await this.prisma.role.findUnique({
+    const existingRole = await this.prisma.role.findFirst({
       where: {
         id: roleId,
         ecoleId: ecoleId,
@@ -192,7 +192,7 @@ export class RolesService {
       });
     });
 
-    // 5. Réponse
+    // Réponse si tout se passe bien.
     return {
       success: true,
       message: `Le rôle "${updatedRole.nom}" a été mis à jour avec succès.`,
@@ -201,5 +201,52 @@ export class RolesService {
         nom: updatedRole.nom,
       },
     };
+  }
+
+  // service pour la suppression d'un rôle personnalisé
+  async deleteRole(roleId: string, ecoleId: string) {
+    // Vérifier que le rôle existe et dans l'école.
+    const existingRole = await this.prisma.role.findFirst({
+      where: {
+        id: roleId,
+        ecoleId: ecoleId,
+      },
+    });
+
+    if (!existingRole) {
+      throw new NotFoundException(
+        "Ce rôle n'existe pas ou n'appartient pas à votre école.",
+      );
+    }
+
+    // Empêcher la suppression des rôles système
+    if (existingRole.estSystem) {
+      throw new BadRequestException(
+        'Les rôles système ne peuvent pas être supprimés.',
+      );
+    }
+
+    // Exécuter la suppression du rôle.  Les suppressions dans les autres tables sont assurée par ondelete:Cascade
+    await this.prisma.role.delete({
+      where: { id: roleId },
+    });
+    // Réponse en cas de succès.
+    return {
+      success: true,
+      message: `Le rôle "${existingRole.nom}" a été supprimé avec succès.`,
+    };
+  }
+
+  //service pour lire tous les rôles appartenants à une école.
+  //renvoie les rôles et les permissions associées à ce rôle.
+  async readRoleForMySchool(ecoleId: string) {
+    return await this.prisma.role.findMany({
+      where: { ecoleId: ecoleId },
+      include: {
+        rolePermission: {
+          include: { permission: true },
+        },
+      },
+    });
   }
 }

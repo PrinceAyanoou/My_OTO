@@ -1,4 +1,8 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateRoleDto } from './create-role.dto';
+// src/roles/dto/update-role.dto.ts
+import { createZodDto } from 'nestjs-zod';
+import { CreateRoleSchema } from './create-role.dto';
 
-export class UpdateRoleDto extends PartialType(CreateRoleDto) {}
+// Rend tous les champs du CreateRoleSchema optionnels
+export const UpdateRoleSchema = CreateRoleSchema.partial();
+
+export class UpdateRoleDto extends createZodDto(UpdateRoleSchema) {}
