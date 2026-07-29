@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Apprenant` model and its related types.
+ * This file exports the `apprenant` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Apprenant
+ * Model apprenant
  * 
  */
-export type ApprenantModel = runtime.Types.Result.DefaultSelection<Prisma.$ApprenantPayload>
+export type apprenantModel = runtime.Types.Result.DefaultSelection<Prisma.$apprenantPayload>
 
 export type AggregateApprenant = {
   _count: ApprenantCountAggregateOutputType | null
@@ -30,7 +30,7 @@ export type ApprenantMinAggregateOutputType = {
   matricule: string | null
   nom: string | null
   prenoms: string | null
-  Sexe: $Enums.Sexe | null
+  Sexe: $Enums.apprenant_Sexe | null
   dateNaissance: Date | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -42,7 +42,7 @@ export type ApprenantMaxAggregateOutputType = {
   matricule: string | null
   nom: string | null
   prenoms: string | null
-  Sexe: $Enums.Sexe | null
+  Sexe: $Enums.apprenant_Sexe | null
   dateNaissance: Date | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -101,37 +101,37 @@ export type ApprenantCountAggregateInputType = {
 
 export type ApprenantAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Apprenant to aggregate.
+   * Filter which apprenant to aggregate.
    */
-  where?: Prisma.ApprenantWhereInput
+  where?: Prisma.apprenantWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Apprenants to fetch.
+   * Determine the order of apprenants to fetch.
    */
-  orderBy?: Prisma.ApprenantOrderByWithRelationInput | Prisma.ApprenantOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantOrderByWithRelationInput | Prisma.apprenantOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ApprenantWhereUniqueInput
+  cursor?: Prisma.apprenantWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Apprenants from the position of the cursor.
+   * Take `±n` apprenants from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Apprenants.
+   * Skip the first `n` apprenants.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Apprenants
+   * Count returned apprenants
   **/
   _count?: true | ApprenantCountAggregateInputType
   /**
@@ -159,11 +159,11 @@ export type GetApprenantAggregateType<T extends ApprenantAggregateArgs> = {
 
 
 
-export type ApprenantGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ApprenantWhereInput
-  orderBy?: Prisma.ApprenantOrderByWithAggregationInput | Prisma.ApprenantOrderByWithAggregationInput[]
+export type apprenantGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.apprenantWhereInput
+  orderBy?: Prisma.apprenantOrderByWithAggregationInput | Prisma.apprenantOrderByWithAggregationInput[]
   by: Prisma.ApprenantScalarFieldEnum[] | Prisma.ApprenantScalarFieldEnum
-  having?: Prisma.ApprenantScalarWhereWithAggregatesInput
+  having?: Prisma.apprenantScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ApprenantCountAggregateInputType | true
@@ -177,7 +177,7 @@ export type ApprenantGroupByOutputType = {
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date
   createdAt: Date
   updatedAt: Date
@@ -186,7 +186,7 @@ export type ApprenantGroupByOutputType = {
   _max: ApprenantMaxAggregateOutputType | null
 }
 
-export type GetApprenantGroupByPayload<T extends ApprenantGroupByArgs> = Prisma.PrismaPromise<
+export type GetApprenantGroupByPayload<T extends apprenantGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ApprenantGroupByOutputType, T['by']> &
       {
@@ -201,25 +201,25 @@ export type GetApprenantGroupByPayload<T extends ApprenantGroupByArgs> = Prisma.
 
 
 
-export type ApprenantWhereInput = {
-  AND?: Prisma.ApprenantWhereInput | Prisma.ApprenantWhereInput[]
-  OR?: Prisma.ApprenantWhereInput[]
-  NOT?: Prisma.ApprenantWhereInput | Prisma.ApprenantWhereInput[]
-  id?: Prisma.StringFilter<"Apprenant"> | string
-  userId?: Prisma.StringNullableFilter<"Apprenant"> | string | null
-  matricule?: Prisma.StringFilter<"Apprenant"> | string
-  nom?: Prisma.StringFilter<"Apprenant"> | string
-  prenoms?: Prisma.StringFilter<"Apprenant"> | string
-  Sexe?: Prisma.EnumSexeFilter<"Apprenant"> | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeFilter<"Apprenant"> | Date | string
-  createdAt?: Prisma.DateTimeFilter<"Apprenant"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Apprenant"> | Date | string
-  user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  parents?: Prisma.ApprenantParentListRelationFilter
-  inscriptions?: Prisma.InscriptionListRelationFilter
+export type apprenantWhereInput = {
+  AND?: Prisma.apprenantWhereInput | Prisma.apprenantWhereInput[]
+  OR?: Prisma.apprenantWhereInput[]
+  NOT?: Prisma.apprenantWhereInput | Prisma.apprenantWhereInput[]
+  id?: Prisma.StringFilter<"apprenant"> | string
+  userId?: Prisma.StringNullableFilter<"apprenant"> | string | null
+  matricule?: Prisma.StringFilter<"apprenant"> | string
+  nom?: Prisma.StringFilter<"apprenant"> | string
+  prenoms?: Prisma.StringFilter<"apprenant"> | string
+  Sexe?: Prisma.Enumapprenant_SexeFilter<"apprenant"> | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeFilter<"apprenant"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"apprenant"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"apprenant"> | Date | string
+  user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.userWhereInput> | null
+  apprenantparent?: Prisma.ApprenantparentListRelationFilter
+  inscription?: Prisma.InscriptionListRelationFilter
 }
 
-export type ApprenantOrderByWithRelationInput = {
+export type apprenantOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrderInput | Prisma.SortOrder
   matricule?: Prisma.SortOrder
@@ -229,31 +229,31 @@ export type ApprenantOrderByWithRelationInput = {
   dateNaissance?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
-  parents?: Prisma.ApprenantParentOrderByRelationAggregateInput
-  inscriptions?: Prisma.InscriptionOrderByRelationAggregateInput
-  _relevance?: Prisma.ApprenantOrderByRelevanceInput
+  user?: Prisma.userOrderByWithRelationInput
+  apprenantparent?: Prisma.apprenantparentOrderByRelationAggregateInput
+  inscription?: Prisma.inscriptionOrderByRelationAggregateInput
+  _relevance?: Prisma.apprenantOrderByRelevanceInput
 }
 
-export type ApprenantWhereUniqueInput = Prisma.AtLeast<{
+export type apprenantWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   userId?: string
   matricule?: string
-  AND?: Prisma.ApprenantWhereInput | Prisma.ApprenantWhereInput[]
-  OR?: Prisma.ApprenantWhereInput[]
-  NOT?: Prisma.ApprenantWhereInput | Prisma.ApprenantWhereInput[]
-  nom?: Prisma.StringFilter<"Apprenant"> | string
-  prenoms?: Prisma.StringFilter<"Apprenant"> | string
-  Sexe?: Prisma.EnumSexeFilter<"Apprenant"> | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeFilter<"Apprenant"> | Date | string
-  createdAt?: Prisma.DateTimeFilter<"Apprenant"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Apprenant"> | Date | string
-  user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  parents?: Prisma.ApprenantParentListRelationFilter
-  inscriptions?: Prisma.InscriptionListRelationFilter
+  AND?: Prisma.apprenantWhereInput | Prisma.apprenantWhereInput[]
+  OR?: Prisma.apprenantWhereInput[]
+  NOT?: Prisma.apprenantWhereInput | Prisma.apprenantWhereInput[]
+  nom?: Prisma.StringFilter<"apprenant"> | string
+  prenoms?: Prisma.StringFilter<"apprenant"> | string
+  Sexe?: Prisma.Enumapprenant_SexeFilter<"apprenant"> | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeFilter<"apprenant"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"apprenant"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"apprenant"> | Date | string
+  user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.userWhereInput> | null
+  apprenantparent?: Prisma.ApprenantparentListRelationFilter
+  inscription?: Prisma.InscriptionListRelationFilter
 }, "id" | "userId" | "matricule">
 
-export type ApprenantOrderByWithAggregationInput = {
+export type apprenantOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrderInput | Prisma.SortOrder
   matricule?: Prisma.SortOrder
@@ -263,129 +263,124 @@ export type ApprenantOrderByWithAggregationInput = {
   dateNaissance?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.ApprenantCountOrderByAggregateInput
-  _max?: Prisma.ApprenantMaxOrderByAggregateInput
-  _min?: Prisma.ApprenantMinOrderByAggregateInput
+  _count?: Prisma.apprenantCountOrderByAggregateInput
+  _max?: Prisma.apprenantMaxOrderByAggregateInput
+  _min?: Prisma.apprenantMinOrderByAggregateInput
 }
 
-export type ApprenantScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ApprenantScalarWhereWithAggregatesInput | Prisma.ApprenantScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ApprenantScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ApprenantScalarWhereWithAggregatesInput | Prisma.ApprenantScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Apprenant"> | string
-  userId?: Prisma.StringNullableWithAggregatesFilter<"Apprenant"> | string | null
-  matricule?: Prisma.StringWithAggregatesFilter<"Apprenant"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"Apprenant"> | string
-  prenoms?: Prisma.StringWithAggregatesFilter<"Apprenant"> | string
-  Sexe?: Prisma.EnumSexeWithAggregatesFilter<"Apprenant"> | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeWithAggregatesFilter<"Apprenant"> | Date | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Apprenant"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Apprenant"> | Date | string
+export type apprenantScalarWhereWithAggregatesInput = {
+  AND?: Prisma.apprenantScalarWhereWithAggregatesInput | Prisma.apprenantScalarWhereWithAggregatesInput[]
+  OR?: Prisma.apprenantScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.apprenantScalarWhereWithAggregatesInput | Prisma.apprenantScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"apprenant"> | string
+  userId?: Prisma.StringNullableWithAggregatesFilter<"apprenant"> | string | null
+  matricule?: Prisma.StringWithAggregatesFilter<"apprenant"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"apprenant"> | string
+  prenoms?: Prisma.StringWithAggregatesFilter<"apprenant"> | string
+  Sexe?: Prisma.Enumapprenant_SexeWithAggregatesFilter<"apprenant"> | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeWithAggregatesFilter<"apprenant"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"apprenant"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"apprenant"> | Date | string
 }
 
-export type ApprenantCreateInput = {
+export type apprenantCreateInput = {
   id?: string
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  user?: Prisma.UserCreateNestedOneWithoutApprenantInput
-  parents?: Prisma.ApprenantParentCreateNestedManyWithoutApprenantInput
-  inscriptions?: Prisma.InscriptionCreateNestedManyWithoutApprenantInput
+  user?: Prisma.userCreateNestedOneWithoutApprenantInput
+  apprenantparent?: Prisma.apprenantparentCreateNestedManyWithoutApprenantInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutApprenantInput
 }
 
-export type ApprenantUncheckedCreateInput = {
-  id?: string
-  userId?: string | null
-  matricule: string
-  nom: string
-  prenoms: string
-  Sexe: $Enums.Sexe
-  dateNaissance: Date | string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  parents?: Prisma.ApprenantParentUncheckedCreateNestedManyWithoutApprenantInput
-  inscriptions?: Prisma.InscriptionUncheckedCreateNestedManyWithoutApprenantInput
-}
-
-export type ApprenantUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  matricule?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneWithoutApprenantNestedInput
-  parents?: Prisma.ApprenantParentUpdateManyWithoutApprenantNestedInput
-  inscriptions?: Prisma.InscriptionUpdateManyWithoutApprenantNestedInput
-}
-
-export type ApprenantUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  matricule?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  parents?: Prisma.ApprenantParentUncheckedUpdateManyWithoutApprenantNestedInput
-  inscriptions?: Prisma.InscriptionUncheckedUpdateManyWithoutApprenantNestedInput
-}
-
-export type ApprenantCreateManyInput = {
+export type apprenantUncheckedCreateInput = {
   id?: string
   userId?: string | null
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedCreateNestedManyWithoutApprenantInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutApprenantInput
 }
 
-export type ApprenantUpdateManyMutationInput = {
+export type apprenantUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
   dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.userUpdateOneWithoutApprenantNestedInput
+  apprenantparent?: Prisma.apprenantparentUpdateManyWithoutApprenantNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutApprenantNestedInput
 }
 
-export type ApprenantUncheckedUpdateManyInput = {
+export type apprenantUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedUpdateManyWithoutApprenantNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutApprenantNestedInput
+}
+
+export type apprenantCreateManyInput = {
+  id?: string
+  userId?: string | null
+  matricule: string
+  nom: string
+  prenoms: string
+  Sexe: $Enums.apprenant_Sexe
+  dateNaissance: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type apprenantUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
   dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ApprenantNullableScalarRelationFilter = {
-  is?: Prisma.ApprenantWhereInput | null
-  isNot?: Prisma.ApprenantWhereInput | null
+export type apprenantUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ApprenantOrderByRelevanceInput = {
-  fields: Prisma.ApprenantOrderByRelevanceFieldEnum | Prisma.ApprenantOrderByRelevanceFieldEnum[]
+export type apprenantOrderByRelevanceInput = {
+  fields: Prisma.apprenantOrderByRelevanceFieldEnum | Prisma.apprenantOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ApprenantCountOrderByAggregateInput = {
+export type apprenantCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   matricule?: Prisma.SortOrder
@@ -397,7 +392,7 @@ export type ApprenantCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ApprenantMaxOrderByAggregateInput = {
+export type apprenantMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   matricule?: Prisma.SortOrder
@@ -409,7 +404,7 @@ export type ApprenantMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ApprenantMinOrderByAggregateInput = {
+export type apprenantMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   matricule?: Prisma.SortOrder
@@ -422,276 +417,281 @@ export type ApprenantMinOrderByAggregateInput = {
 }
 
 export type ApprenantScalarRelationFilter = {
-  is?: Prisma.ApprenantWhereInput
-  isNot?: Prisma.ApprenantWhereInput
+  is?: Prisma.apprenantWhereInput
+  isNot?: Prisma.apprenantWhereInput
 }
 
-export type ApprenantCreateNestedOneWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutUserInput, Prisma.ApprenantUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutUserInput
-  connect?: Prisma.ApprenantWhereUniqueInput
+export type ApprenantNullableScalarRelationFilter = {
+  is?: Prisma.apprenantWhereInput | null
+  isNot?: Prisma.apprenantWhereInput | null
 }
 
-export type ApprenantUncheckedCreateNestedOneWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutUserInput, Prisma.ApprenantUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutUserInput
-  connect?: Prisma.ApprenantWhereUniqueInput
+export type Enumapprenant_SexeFieldUpdateOperationsInput = {
+  set?: $Enums.apprenant_Sexe
 }
 
-export type ApprenantUpdateOneWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutUserInput, Prisma.ApprenantUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutUserInput
-  upsert?: Prisma.ApprenantUpsertWithoutUserInput
-  disconnect?: Prisma.ApprenantWhereInput | boolean
-  delete?: Prisma.ApprenantWhereInput | boolean
-  connect?: Prisma.ApprenantWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ApprenantUpdateToOneWithWhereWithoutUserInput, Prisma.ApprenantUpdateWithoutUserInput>, Prisma.ApprenantUncheckedUpdateWithoutUserInput>
+export type apprenantCreateNestedOneWithoutApprenantparentInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutApprenantparentInput, Prisma.apprenantUncheckedCreateWithoutApprenantparentInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutApprenantparentInput
+  connect?: Prisma.apprenantWhereUniqueInput
 }
 
-export type ApprenantUncheckedUpdateOneWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutUserInput, Prisma.ApprenantUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutUserInput
-  upsert?: Prisma.ApprenantUpsertWithoutUserInput
-  disconnect?: Prisma.ApprenantWhereInput | boolean
-  delete?: Prisma.ApprenantWhereInput | boolean
-  connect?: Prisma.ApprenantWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ApprenantUpdateToOneWithWhereWithoutUserInput, Prisma.ApprenantUpdateWithoutUserInput>, Prisma.ApprenantUncheckedUpdateWithoutUserInput>
+export type apprenantUpdateOneRequiredWithoutApprenantparentNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutApprenantparentInput, Prisma.apprenantUncheckedCreateWithoutApprenantparentInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutApprenantparentInput
+  upsert?: Prisma.apprenantUpsertWithoutApprenantparentInput
+  connect?: Prisma.apprenantWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.apprenantUpdateToOneWithWhereWithoutApprenantparentInput, Prisma.apprenantUpdateWithoutApprenantparentInput>, Prisma.apprenantUncheckedUpdateWithoutApprenantparentInput>
 }
 
-export type EnumSexeFieldUpdateOperationsInput = {
-  set?: $Enums.Sexe
+export type apprenantCreateNestedOneWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutInscriptionInput, Prisma.apprenantUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutInscriptionInput
+  connect?: Prisma.apprenantWhereUniqueInput
 }
 
-export type ApprenantCreateNestedOneWithoutParentsInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutParentsInput, Prisma.ApprenantUncheckedCreateWithoutParentsInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutParentsInput
-  connect?: Prisma.ApprenantWhereUniqueInput
+export type apprenantUpdateOneRequiredWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutInscriptionInput, Prisma.apprenantUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutInscriptionInput
+  upsert?: Prisma.apprenantUpsertWithoutInscriptionInput
+  connect?: Prisma.apprenantWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.apprenantUpdateToOneWithWhereWithoutInscriptionInput, Prisma.apprenantUpdateWithoutInscriptionInput>, Prisma.apprenantUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type ApprenantUpdateOneRequiredWithoutParentsNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutParentsInput, Prisma.ApprenantUncheckedCreateWithoutParentsInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutParentsInput
-  upsert?: Prisma.ApprenantUpsertWithoutParentsInput
-  connect?: Prisma.ApprenantWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ApprenantUpdateToOneWithWhereWithoutParentsInput, Prisma.ApprenantUpdateWithoutParentsInput>, Prisma.ApprenantUncheckedUpdateWithoutParentsInput>
+export type apprenantCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutUserInput, Prisma.apprenantUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutUserInput
+  connect?: Prisma.apprenantWhereUniqueInput
 }
 
-export type ApprenantCreateNestedOneWithoutInscriptionsInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutInscriptionsInput, Prisma.ApprenantUncheckedCreateWithoutInscriptionsInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutInscriptionsInput
-  connect?: Prisma.ApprenantWhereUniqueInput
+export type apprenantUncheckedCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutUserInput, Prisma.apprenantUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutUserInput
+  connect?: Prisma.apprenantWhereUniqueInput
 }
 
-export type ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantCreateWithoutInscriptionsInput, Prisma.ApprenantUncheckedCreateWithoutInscriptionsInput>
-  connectOrCreate?: Prisma.ApprenantCreateOrConnectWithoutInscriptionsInput
-  upsert?: Prisma.ApprenantUpsertWithoutInscriptionsInput
-  connect?: Prisma.ApprenantWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ApprenantUpdateToOneWithWhereWithoutInscriptionsInput, Prisma.ApprenantUpdateWithoutInscriptionsInput>, Prisma.ApprenantUncheckedUpdateWithoutInscriptionsInput>
+export type apprenantUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutUserInput, Prisma.apprenantUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutUserInput
+  upsert?: Prisma.apprenantUpsertWithoutUserInput
+  disconnect?: Prisma.apprenantWhereInput | boolean
+  delete?: Prisma.apprenantWhereInput | boolean
+  connect?: Prisma.apprenantWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.apprenantUpdateToOneWithWhereWithoutUserInput, Prisma.apprenantUpdateWithoutUserInput>, Prisma.apprenantUncheckedUpdateWithoutUserInput>
 }
 
-export type ApprenantCreateWithoutUserInput = {
+export type apprenantUncheckedUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantCreateWithoutUserInput, Prisma.apprenantUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.apprenantCreateOrConnectWithoutUserInput
+  upsert?: Prisma.apprenantUpsertWithoutUserInput
+  disconnect?: Prisma.apprenantWhereInput | boolean
+  delete?: Prisma.apprenantWhereInput | boolean
+  connect?: Prisma.apprenantWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.apprenantUpdateToOneWithWhereWithoutUserInput, Prisma.apprenantUpdateWithoutUserInput>, Prisma.apprenantUncheckedUpdateWithoutUserInput>
+}
+
+export type apprenantCreateWithoutApprenantparentInput = {
   id?: string
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  parents?: Prisma.ApprenantParentCreateNestedManyWithoutApprenantInput
-  inscriptions?: Prisma.InscriptionCreateNestedManyWithoutApprenantInput
+  user?: Prisma.userCreateNestedOneWithoutApprenantInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutApprenantInput
 }
 
-export type ApprenantUncheckedCreateWithoutUserInput = {
-  id?: string
-  matricule: string
-  nom: string
-  prenoms: string
-  Sexe: $Enums.Sexe
-  dateNaissance: Date | string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  parents?: Prisma.ApprenantParentUncheckedCreateNestedManyWithoutApprenantInput
-  inscriptions?: Prisma.InscriptionUncheckedCreateNestedManyWithoutApprenantInput
-}
-
-export type ApprenantCreateOrConnectWithoutUserInput = {
-  where: Prisma.ApprenantWhereUniqueInput
-  create: Prisma.XOR<Prisma.ApprenantCreateWithoutUserInput, Prisma.ApprenantUncheckedCreateWithoutUserInput>
-}
-
-export type ApprenantUpsertWithoutUserInput = {
-  update: Prisma.XOR<Prisma.ApprenantUpdateWithoutUserInput, Prisma.ApprenantUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.ApprenantCreateWithoutUserInput, Prisma.ApprenantUncheckedCreateWithoutUserInput>
-  where?: Prisma.ApprenantWhereInput
-}
-
-export type ApprenantUpdateToOneWithWhereWithoutUserInput = {
-  where?: Prisma.ApprenantWhereInput
-  data: Prisma.XOR<Prisma.ApprenantUpdateWithoutUserInput, Prisma.ApprenantUncheckedUpdateWithoutUserInput>
-}
-
-export type ApprenantUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  matricule?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  parents?: Prisma.ApprenantParentUpdateManyWithoutApprenantNestedInput
-  inscriptions?: Prisma.InscriptionUpdateManyWithoutApprenantNestedInput
-}
-
-export type ApprenantUncheckedUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  matricule?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
-  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  parents?: Prisma.ApprenantParentUncheckedUpdateManyWithoutApprenantNestedInput
-  inscriptions?: Prisma.InscriptionUncheckedUpdateManyWithoutApprenantNestedInput
-}
-
-export type ApprenantCreateWithoutParentsInput = {
-  id?: string
-  matricule: string
-  nom: string
-  prenoms: string
-  Sexe: $Enums.Sexe
-  dateNaissance: Date | string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  user?: Prisma.UserCreateNestedOneWithoutApprenantInput
-  inscriptions?: Prisma.InscriptionCreateNestedManyWithoutApprenantInput
-}
-
-export type ApprenantUncheckedCreateWithoutParentsInput = {
+export type apprenantUncheckedCreateWithoutApprenantparentInput = {
   id?: string
   userId?: string | null
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscriptions?: Prisma.InscriptionUncheckedCreateNestedManyWithoutApprenantInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutApprenantInput
 }
 
-export type ApprenantCreateOrConnectWithoutParentsInput = {
-  where: Prisma.ApprenantWhereUniqueInput
-  create: Prisma.XOR<Prisma.ApprenantCreateWithoutParentsInput, Prisma.ApprenantUncheckedCreateWithoutParentsInput>
+export type apprenantCreateOrConnectWithoutApprenantparentInput = {
+  where: Prisma.apprenantWhereUniqueInput
+  create: Prisma.XOR<Prisma.apprenantCreateWithoutApprenantparentInput, Prisma.apprenantUncheckedCreateWithoutApprenantparentInput>
 }
 
-export type ApprenantUpsertWithoutParentsInput = {
-  update: Prisma.XOR<Prisma.ApprenantUpdateWithoutParentsInput, Prisma.ApprenantUncheckedUpdateWithoutParentsInput>
-  create: Prisma.XOR<Prisma.ApprenantCreateWithoutParentsInput, Prisma.ApprenantUncheckedCreateWithoutParentsInput>
-  where?: Prisma.ApprenantWhereInput
+export type apprenantUpsertWithoutApprenantparentInput = {
+  update: Prisma.XOR<Prisma.apprenantUpdateWithoutApprenantparentInput, Prisma.apprenantUncheckedUpdateWithoutApprenantparentInput>
+  create: Prisma.XOR<Prisma.apprenantCreateWithoutApprenantparentInput, Prisma.apprenantUncheckedCreateWithoutApprenantparentInput>
+  where?: Prisma.apprenantWhereInput
 }
 
-export type ApprenantUpdateToOneWithWhereWithoutParentsInput = {
-  where?: Prisma.ApprenantWhereInput
-  data: Prisma.XOR<Prisma.ApprenantUpdateWithoutParentsInput, Prisma.ApprenantUncheckedUpdateWithoutParentsInput>
+export type apprenantUpdateToOneWithWhereWithoutApprenantparentInput = {
+  where?: Prisma.apprenantWhereInput
+  data: Prisma.XOR<Prisma.apprenantUpdateWithoutApprenantparentInput, Prisma.apprenantUncheckedUpdateWithoutApprenantparentInput>
 }
 
-export type ApprenantUpdateWithoutParentsInput = {
+export type apprenantUpdateWithoutApprenantparentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
   dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneWithoutApprenantNestedInput
-  inscriptions?: Prisma.InscriptionUpdateManyWithoutApprenantNestedInput
+  user?: Prisma.userUpdateOneWithoutApprenantNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutApprenantNestedInput
 }
 
-export type ApprenantUncheckedUpdateWithoutParentsInput = {
+export type apprenantUncheckedUpdateWithoutApprenantparentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
   dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscriptions?: Prisma.InscriptionUncheckedUpdateManyWithoutApprenantNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutApprenantNestedInput
 }
 
-export type ApprenantCreateWithoutInscriptionsInput = {
+export type apprenantCreateWithoutInscriptionInput = {
   id?: string
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  user?: Prisma.UserCreateNestedOneWithoutApprenantInput
-  parents?: Prisma.ApprenantParentCreateNestedManyWithoutApprenantInput
+  user?: Prisma.userCreateNestedOneWithoutApprenantInput
+  apprenantparent?: Prisma.apprenantparentCreateNestedManyWithoutApprenantInput
 }
 
-export type ApprenantUncheckedCreateWithoutInscriptionsInput = {
+export type apprenantUncheckedCreateWithoutInscriptionInput = {
   id?: string
   userId?: string | null
   matricule: string
   nom: string
   prenoms: string
-  Sexe: $Enums.Sexe
+  Sexe: $Enums.apprenant_Sexe
   dateNaissance: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  parents?: Prisma.ApprenantParentUncheckedCreateNestedManyWithoutApprenantInput
+  apprenantparent?: Prisma.apprenantparentUncheckedCreateNestedManyWithoutApprenantInput
 }
 
-export type ApprenantCreateOrConnectWithoutInscriptionsInput = {
-  where: Prisma.ApprenantWhereUniqueInput
-  create: Prisma.XOR<Prisma.ApprenantCreateWithoutInscriptionsInput, Prisma.ApprenantUncheckedCreateWithoutInscriptionsInput>
+export type apprenantCreateOrConnectWithoutInscriptionInput = {
+  where: Prisma.apprenantWhereUniqueInput
+  create: Prisma.XOR<Prisma.apprenantCreateWithoutInscriptionInput, Prisma.apprenantUncheckedCreateWithoutInscriptionInput>
 }
 
-export type ApprenantUpsertWithoutInscriptionsInput = {
-  update: Prisma.XOR<Prisma.ApprenantUpdateWithoutInscriptionsInput, Prisma.ApprenantUncheckedUpdateWithoutInscriptionsInput>
-  create: Prisma.XOR<Prisma.ApprenantCreateWithoutInscriptionsInput, Prisma.ApprenantUncheckedCreateWithoutInscriptionsInput>
-  where?: Prisma.ApprenantWhereInput
+export type apprenantUpsertWithoutInscriptionInput = {
+  update: Prisma.XOR<Prisma.apprenantUpdateWithoutInscriptionInput, Prisma.apprenantUncheckedUpdateWithoutInscriptionInput>
+  create: Prisma.XOR<Prisma.apprenantCreateWithoutInscriptionInput, Prisma.apprenantUncheckedCreateWithoutInscriptionInput>
+  where?: Prisma.apprenantWhereInput
 }
 
-export type ApprenantUpdateToOneWithWhereWithoutInscriptionsInput = {
-  where?: Prisma.ApprenantWhereInput
-  data: Prisma.XOR<Prisma.ApprenantUpdateWithoutInscriptionsInput, Prisma.ApprenantUncheckedUpdateWithoutInscriptionsInput>
+export type apprenantUpdateToOneWithWhereWithoutInscriptionInput = {
+  where?: Prisma.apprenantWhereInput
+  data: Prisma.XOR<Prisma.apprenantUpdateWithoutInscriptionInput, Prisma.apprenantUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type ApprenantUpdateWithoutInscriptionsInput = {
+export type apprenantUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
   dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneWithoutApprenantNestedInput
-  parents?: Prisma.ApprenantParentUpdateManyWithoutApprenantNestedInput
+  user?: Prisma.userUpdateOneWithoutApprenantNestedInput
+  apprenantparent?: Prisma.apprenantparentUpdateManyWithoutApprenantNestedInput
 }
 
-export type ApprenantUncheckedUpdateWithoutInscriptionsInput = {
+export type apprenantUncheckedUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   prenoms?: Prisma.StringFieldUpdateOperationsInput | string
-  Sexe?: Prisma.EnumSexeFieldUpdateOperationsInput | $Enums.Sexe
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
   dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  parents?: Prisma.ApprenantParentUncheckedUpdateManyWithoutApprenantNestedInput
+  apprenantparent?: Prisma.apprenantparentUncheckedUpdateManyWithoutApprenantNestedInput
+}
+
+export type apprenantCreateWithoutUserInput = {
+  id?: string
+  matricule: string
+  nom: string
+  prenoms: string
+  Sexe: $Enums.apprenant_Sexe
+  dateNaissance: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  apprenantparent?: Prisma.apprenantparentCreateNestedManyWithoutApprenantInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutApprenantInput
+}
+
+export type apprenantUncheckedCreateWithoutUserInput = {
+  id?: string
+  matricule: string
+  nom: string
+  prenoms: string
+  Sexe: $Enums.apprenant_Sexe
+  dateNaissance: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedCreateNestedManyWithoutApprenantInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutApprenantInput
+}
+
+export type apprenantCreateOrConnectWithoutUserInput = {
+  where: Prisma.apprenantWhereUniqueInput
+  create: Prisma.XOR<Prisma.apprenantCreateWithoutUserInput, Prisma.apprenantUncheckedCreateWithoutUserInput>
+}
+
+export type apprenantUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.apprenantUpdateWithoutUserInput, Prisma.apprenantUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.apprenantCreateWithoutUserInput, Prisma.apprenantUncheckedCreateWithoutUserInput>
+  where?: Prisma.apprenantWhereInput
+}
+
+export type apprenantUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.apprenantWhereInput
+  data: Prisma.XOR<Prisma.apprenantUpdateWithoutUserInput, Prisma.apprenantUncheckedUpdateWithoutUserInput>
+}
+
+export type apprenantUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apprenantparent?: Prisma.apprenantparentUpdateManyWithoutApprenantNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutApprenantNestedInput
+}
+
+export type apprenantUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  prenoms?: Prisma.StringFieldUpdateOperationsInput | string
+  Sexe?: Prisma.Enumapprenant_SexeFieldUpdateOperationsInput | $Enums.apprenant_Sexe
+  dateNaissance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedUpdateManyWithoutApprenantNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutApprenantNestedInput
 }
 
 
@@ -700,13 +700,13 @@ export type ApprenantUncheckedUpdateWithoutInscriptionsInput = {
  */
 
 export type ApprenantCountOutputType = {
-  parents: number
-  inscriptions: number
+  apprenantparent: number
+  inscription: number
 }
 
 export type ApprenantCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  parents?: boolean | ApprenantCountOutputTypeCountParentsArgs
-  inscriptions?: boolean | ApprenantCountOutputTypeCountInscriptionsArgs
+  apprenantparent?: boolean | ApprenantCountOutputTypeCountApprenantparentArgs
+  inscription?: boolean | ApprenantCountOutputTypeCountInscriptionArgs
 }
 
 /**
@@ -722,19 +722,19 @@ export type ApprenantCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ex
 /**
  * ApprenantCountOutputType without action
  */
-export type ApprenantCountOutputTypeCountParentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ApprenantParentWhereInput
+export type ApprenantCountOutputTypeCountApprenantparentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.apprenantparentWhereInput
 }
 
 /**
  * ApprenantCountOutputType without action
  */
-export type ApprenantCountOutputTypeCountInscriptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InscriptionWhereInput
+export type ApprenantCountOutputTypeCountInscriptionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.inscriptionWhereInput
 }
 
 
-export type ApprenantSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type apprenantSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
   matricule?: boolean
@@ -744,15 +744,15 @@ export type ApprenantSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   dateNaissance?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.Apprenant$userArgs<ExtArgs>
-  parents?: boolean | Prisma.Apprenant$parentsArgs<ExtArgs>
-  inscriptions?: boolean | Prisma.Apprenant$inscriptionsArgs<ExtArgs>
+  user?: boolean | Prisma.apprenant$userArgs<ExtArgs>
+  apprenantparent?: boolean | Prisma.apprenant$apprenantparentArgs<ExtArgs>
+  inscription?: boolean | Prisma.apprenant$inscriptionArgs<ExtArgs>
   _count?: boolean | Prisma.ApprenantCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["apprenant"]>
 
 
 
-export type ApprenantSelectScalar = {
+export type apprenantSelectScalar = {
   id?: boolean
   userId?: boolean
   matricule?: boolean
@@ -764,20 +764,20 @@ export type ApprenantSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ApprenantOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "matricule" | "nom" | "prenoms" | "Sexe" | "dateNaissance" | "createdAt" | "updatedAt", ExtArgs["result"]["apprenant"]>
-export type ApprenantInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.Apprenant$userArgs<ExtArgs>
-  parents?: boolean | Prisma.Apprenant$parentsArgs<ExtArgs>
-  inscriptions?: boolean | Prisma.Apprenant$inscriptionsArgs<ExtArgs>
+export type apprenantOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "matricule" | "nom" | "prenoms" | "Sexe" | "dateNaissance" | "createdAt" | "updatedAt", ExtArgs["result"]["apprenant"]>
+export type apprenantInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.apprenant$userArgs<ExtArgs>
+  apprenantparent?: boolean | Prisma.apprenant$apprenantparentArgs<ExtArgs>
+  inscription?: boolean | Prisma.apprenant$inscriptionArgs<ExtArgs>
   _count?: boolean | Prisma.ApprenantCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $ApprenantPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Apprenant"
+export type $apprenantPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "apprenant"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs> | null
-    parents: Prisma.$ApprenantParentPayload<ExtArgs>[]
-    inscriptions: Prisma.$InscriptionPayload<ExtArgs>[]
+    user: Prisma.$userPayload<ExtArgs> | null
+    apprenantparent: Prisma.$apprenantparentPayload<ExtArgs>[]
+    inscription: Prisma.$inscriptionPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -785,7 +785,7 @@ export type $ApprenantPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     matricule: string
     nom: string
     prenoms: string
-    Sexe: $Enums.Sexe
+    Sexe: $Enums.apprenant_Sexe
     dateNaissance: Date
     createdAt: Date
     updatedAt: Date
@@ -793,18 +793,18 @@ export type $ApprenantPayload<ExtArgs extends runtime.Types.Extensions.InternalA
   composites: {}
 }
 
-export type ApprenantGetPayload<S extends boolean | null | undefined | ApprenantDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ApprenantPayload, S>
+export type apprenantGetPayload<S extends boolean | null | undefined | apprenantDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$apprenantPayload, S>
 
-export type ApprenantCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ApprenantFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type apprenantCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<apprenantFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ApprenantCountAggregateInputType | true
   }
 
-export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Apprenant'], meta: { name: 'Apprenant' } }
+export interface apprenantDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['apprenant'], meta: { name: 'apprenant' } }
   /**
    * Find zero or one Apprenant that matches the filter.
-   * @param {ApprenantFindUniqueArgs} args - Arguments to find a Apprenant
+   * @param {apprenantFindUniqueArgs} args - Arguments to find a Apprenant
    * @example
    * // Get one Apprenant
    * const apprenant = await prisma.apprenant.findUnique({
@@ -813,12 +813,12 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   }
    * })
    */
-  findUnique<T extends ApprenantFindUniqueArgs>(args: Prisma.SelectSubset<T, ApprenantFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends apprenantFindUniqueArgs>(args: Prisma.SelectSubset<T, apprenantFindUniqueArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Apprenant that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ApprenantFindUniqueOrThrowArgs} args - Arguments to find a Apprenant
+   * @param {apprenantFindUniqueOrThrowArgs} args - Arguments to find a Apprenant
    * @example
    * // Get one Apprenant
    * const apprenant = await prisma.apprenant.findUniqueOrThrow({
@@ -827,13 +827,13 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ApprenantFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ApprenantFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends apprenantFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, apprenantFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Apprenant that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantFindFirstArgs} args - Arguments to find a Apprenant
+   * @param {apprenantFindFirstArgs} args - Arguments to find a Apprenant
    * @example
    * // Get one Apprenant
    * const apprenant = await prisma.apprenant.findFirst({
@@ -842,14 +842,14 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   }
    * })
    */
-  findFirst<T extends ApprenantFindFirstArgs>(args?: Prisma.SelectSubset<T, ApprenantFindFirstArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends apprenantFindFirstArgs>(args?: Prisma.SelectSubset<T, apprenantFindFirstArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Apprenant that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantFindFirstOrThrowArgs} args - Arguments to find a Apprenant
+   * @param {apprenantFindFirstOrThrowArgs} args - Arguments to find a Apprenant
    * @example
    * // Get one Apprenant
    * const apprenant = await prisma.apprenant.findFirstOrThrow({
@@ -858,13 +858,13 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   }
    * })
    */
-  findFirstOrThrow<T extends ApprenantFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ApprenantFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends apprenantFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, apprenantFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Apprenants that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {apprenantFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Apprenants
    * const apprenants = await prisma.apprenant.findMany()
@@ -876,11 +876,11 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * const apprenantWithIdOnly = await prisma.apprenant.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends ApprenantFindManyArgs>(args?: Prisma.SelectSubset<T, ApprenantFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends apprenantFindManyArgs>(args?: Prisma.SelectSubset<T, apprenantFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Apprenant.
-   * @param {ApprenantCreateArgs} args - Arguments to create a Apprenant.
+   * @param {apprenantCreateArgs} args - Arguments to create a Apprenant.
    * @example
    * // Create one Apprenant
    * const Apprenant = await prisma.apprenant.create({
@@ -890,11 +890,11 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  create<T extends ApprenantCreateArgs>(args: Prisma.SelectSubset<T, ApprenantCreateArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends apprenantCreateArgs>(args: Prisma.SelectSubset<T, apprenantCreateArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Apprenants.
-   * @param {ApprenantCreateManyArgs} args - Arguments to create many Apprenants.
+   * @param {apprenantCreateManyArgs} args - Arguments to create many Apprenants.
    * @example
    * // Create many Apprenants
    * const apprenant = await prisma.apprenant.createMany({
@@ -904,11 +904,11 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    *     
    */
-  createMany<T extends ApprenantCreateManyArgs>(args?: Prisma.SelectSubset<T, ApprenantCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends apprenantCreateManyArgs>(args?: Prisma.SelectSubset<T, apprenantCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Apprenant.
-   * @param {ApprenantDeleteArgs} args - Arguments to delete one Apprenant.
+   * @param {apprenantDeleteArgs} args - Arguments to delete one Apprenant.
    * @example
    * // Delete one Apprenant
    * const Apprenant = await prisma.apprenant.delete({
@@ -918,11 +918,11 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  delete<T extends ApprenantDeleteArgs>(args: Prisma.SelectSubset<T, ApprenantDeleteArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends apprenantDeleteArgs>(args: Prisma.SelectSubset<T, apprenantDeleteArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Apprenant.
-   * @param {ApprenantUpdateArgs} args - Arguments to update one Apprenant.
+   * @param {apprenantUpdateArgs} args - Arguments to update one Apprenant.
    * @example
    * // Update one Apprenant
    * const apprenant = await prisma.apprenant.update({
@@ -935,11 +935,11 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  update<T extends ApprenantUpdateArgs>(args: Prisma.SelectSubset<T, ApprenantUpdateArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends apprenantUpdateArgs>(args: Prisma.SelectSubset<T, apprenantUpdateArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Apprenants.
-   * @param {ApprenantDeleteManyArgs} args - Arguments to filter Apprenants to delete.
+   * @param {apprenantDeleteManyArgs} args - Arguments to filter Apprenants to delete.
    * @example
    * // Delete a few Apprenants
    * const { count } = await prisma.apprenant.deleteMany({
@@ -949,13 +949,13 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  deleteMany<T extends ApprenantDeleteManyArgs>(args?: Prisma.SelectSubset<T, ApprenantDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends apprenantDeleteManyArgs>(args?: Prisma.SelectSubset<T, apprenantDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Apprenants.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {apprenantUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Apprenants
    * const apprenant = await prisma.apprenant.updateMany({
@@ -968,11 +968,11 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  updateMany<T extends ApprenantUpdateManyArgs>(args: Prisma.SelectSubset<T, ApprenantUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends apprenantUpdateManyArgs>(args: Prisma.SelectSubset<T, apprenantUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Apprenant.
-   * @param {ApprenantUpsertArgs} args - Arguments to update or create a Apprenant.
+   * @param {apprenantUpsertArgs} args - Arguments to update or create a Apprenant.
    * @example
    * // Update or create a Apprenant
    * const apprenant = await prisma.apprenant.upsert({
@@ -987,14 +987,14 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   }
    * })
    */
-  upsert<T extends ApprenantUpsertArgs>(args: Prisma.SelectSubset<T, ApprenantUpsertArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends apprenantUpsertArgs>(args: Prisma.SelectSubset<T, apprenantUpsertArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Apprenants.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantCountArgs} args - Arguments to filter Apprenants to count.
+   * @param {apprenantCountArgs} args - Arguments to filter Apprenants to count.
    * @example
    * // Count the number of Apprenants
    * const count = await prisma.apprenant.count({
@@ -1003,8 +1003,8 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   }
    * })
   **/
-  count<T extends ApprenantCountArgs>(
-    args?: Prisma.Subset<T, ApprenantCountArgs>,
+  count<T extends apprenantCountArgs>(
+    args?: Prisma.Subset<T, apprenantCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1043,7 +1043,7 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * Group by Apprenant.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantGroupByArgs} args - Group by arguments.
+   * @param {apprenantGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1058,14 +1058,14 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * 
   **/
   groupBy<
-    T extends ApprenantGroupByArgs,
+    T extends apprenantGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ApprenantGroupByArgs['orderBy'] }
-      : { orderBy?: ApprenantGroupByArgs['orderBy'] },
+      ? { orderBy: apprenantGroupByArgs['orderBy'] }
+      : { orderBy?: apprenantGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1114,24 +1114,24 @@ export interface ApprenantDelegate<ExtArgs extends runtime.Types.Extensions.Inte
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ApprenantGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetApprenantGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, apprenantGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetApprenantGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Apprenant model
+ * Fields of the apprenant model
  */
-readonly fields: ApprenantFieldRefs;
+readonly fields: apprenantFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Apprenant.
+ * The delegate class that acts as a "Promise-like" for apprenant.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ApprenantClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__apprenantClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.Apprenant$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Apprenant$userArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  parents<T extends Prisma.Apprenant$parentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Apprenant$parentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  inscriptions<T extends Prisma.Apprenant$inscriptionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Apprenant$inscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  user<T extends Prisma.apprenant$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.apprenant$userArgs<ExtArgs>>): Prisma.Prisma__userClient<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  apprenantparent<T extends Prisma.apprenant$apprenantparentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.apprenant$apprenantparentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  inscription<T extends Prisma.apprenant$inscriptionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.apprenant$inscriptionArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1158,446 +1158,446 @@ export interface Prisma__ApprenantClient<T, Null = never, ExtArgs extends runtim
 
 
 /**
- * Fields of the Apprenant model
+ * Fields of the apprenant model
  */
-export interface ApprenantFieldRefs {
-  readonly id: Prisma.FieldRef<"Apprenant", 'String'>
-  readonly userId: Prisma.FieldRef<"Apprenant", 'String'>
-  readonly matricule: Prisma.FieldRef<"Apprenant", 'String'>
-  readonly nom: Prisma.FieldRef<"Apprenant", 'String'>
-  readonly prenoms: Prisma.FieldRef<"Apprenant", 'String'>
-  readonly Sexe: Prisma.FieldRef<"Apprenant", 'Sexe'>
-  readonly dateNaissance: Prisma.FieldRef<"Apprenant", 'DateTime'>
-  readonly createdAt: Prisma.FieldRef<"Apprenant", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Apprenant", 'DateTime'>
+export interface apprenantFieldRefs {
+  readonly id: Prisma.FieldRef<"apprenant", 'String'>
+  readonly userId: Prisma.FieldRef<"apprenant", 'String'>
+  readonly matricule: Prisma.FieldRef<"apprenant", 'String'>
+  readonly nom: Prisma.FieldRef<"apprenant", 'String'>
+  readonly prenoms: Prisma.FieldRef<"apprenant", 'String'>
+  readonly Sexe: Prisma.FieldRef<"apprenant", 'apprenant_Sexe'>
+  readonly dateNaissance: Prisma.FieldRef<"apprenant", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"apprenant", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"apprenant", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Apprenant findUnique
+ * apprenant findUnique
  */
-export type ApprenantFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * Filter, which Apprenant to fetch.
+   * Filter, which apprenant to fetch.
    */
-  where: Prisma.ApprenantWhereUniqueInput
+  where: Prisma.apprenantWhereUniqueInput
 }
 
 /**
- * Apprenant findUniqueOrThrow
+ * apprenant findUniqueOrThrow
  */
-export type ApprenantFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * Filter, which Apprenant to fetch.
+   * Filter, which apprenant to fetch.
    */
-  where: Prisma.ApprenantWhereUniqueInput
+  where: Prisma.apprenantWhereUniqueInput
 }
 
 /**
- * Apprenant findFirst
+ * apprenant findFirst
  */
-export type ApprenantFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * Filter, which Apprenant to fetch.
+   * Filter, which apprenant to fetch.
    */
-  where?: Prisma.ApprenantWhereInput
+  where?: Prisma.apprenantWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Apprenants to fetch.
+   * Determine the order of apprenants to fetch.
    */
-  orderBy?: Prisma.ApprenantOrderByWithRelationInput | Prisma.ApprenantOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantOrderByWithRelationInput | Prisma.apprenantOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Apprenants.
+   * Sets the position for searching for apprenants.
    */
-  cursor?: Prisma.ApprenantWhereUniqueInput
+  cursor?: Prisma.apprenantWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Apprenants from the position of the cursor.
+   * Take `±n` apprenants from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Apprenants.
+   * Skip the first `n` apprenants.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Apprenants.
+   * Filter by unique combinations of apprenants.
    */
   distinct?: Prisma.ApprenantScalarFieldEnum | Prisma.ApprenantScalarFieldEnum[]
 }
 
 /**
- * Apprenant findFirstOrThrow
+ * apprenant findFirstOrThrow
  */
-export type ApprenantFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * Filter, which Apprenant to fetch.
+   * Filter, which apprenant to fetch.
    */
-  where?: Prisma.ApprenantWhereInput
+  where?: Prisma.apprenantWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Apprenants to fetch.
+   * Determine the order of apprenants to fetch.
    */
-  orderBy?: Prisma.ApprenantOrderByWithRelationInput | Prisma.ApprenantOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantOrderByWithRelationInput | Prisma.apprenantOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Apprenants.
+   * Sets the position for searching for apprenants.
    */
-  cursor?: Prisma.ApprenantWhereUniqueInput
+  cursor?: Prisma.apprenantWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Apprenants from the position of the cursor.
+   * Take `±n` apprenants from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Apprenants.
+   * Skip the first `n` apprenants.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Apprenants.
+   * Filter by unique combinations of apprenants.
    */
   distinct?: Prisma.ApprenantScalarFieldEnum | Prisma.ApprenantScalarFieldEnum[]
 }
 
 /**
- * Apprenant findMany
+ * apprenant findMany
  */
-export type ApprenantFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * Filter, which Apprenants to fetch.
+   * Filter, which apprenants to fetch.
    */
-  where?: Prisma.ApprenantWhereInput
+  where?: Prisma.apprenantWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Apprenants to fetch.
+   * Determine the order of apprenants to fetch.
    */
-  orderBy?: Prisma.ApprenantOrderByWithRelationInput | Prisma.ApprenantOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantOrderByWithRelationInput | Prisma.apprenantOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Apprenants.
+   * Sets the position for listing apprenants.
    */
-  cursor?: Prisma.ApprenantWhereUniqueInput
+  cursor?: Prisma.apprenantWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Apprenants from the position of the cursor.
+   * Take `±n` apprenants from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Apprenants.
+   * Skip the first `n` apprenants.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Apprenants.
+   * Filter by unique combinations of apprenants.
    */
   distinct?: Prisma.ApprenantScalarFieldEnum | Prisma.ApprenantScalarFieldEnum[]
 }
 
 /**
- * Apprenant create
+ * apprenant create
  */
-export type ApprenantCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * The data needed to create a Apprenant.
+   * The data needed to create a apprenant.
    */
-  data: Prisma.XOR<Prisma.ApprenantCreateInput, Prisma.ApprenantUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.apprenantCreateInput, Prisma.apprenantUncheckedCreateInput>
 }
 
 /**
- * Apprenant createMany
+ * apprenant createMany
  */
-export type ApprenantCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Apprenants.
+   * The data used to create many apprenants.
    */
-  data: Prisma.ApprenantCreateManyInput | Prisma.ApprenantCreateManyInput[]
+  data: Prisma.apprenantCreateManyInput | Prisma.apprenantCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Apprenant update
+ * apprenant update
  */
-export type ApprenantUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * The data needed to update a Apprenant.
+   * The data needed to update a apprenant.
    */
-  data: Prisma.XOR<Prisma.ApprenantUpdateInput, Prisma.ApprenantUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.apprenantUpdateInput, Prisma.apprenantUncheckedUpdateInput>
   /**
-   * Choose, which Apprenant to update.
+   * Choose, which apprenant to update.
    */
-  where: Prisma.ApprenantWhereUniqueInput
+  where: Prisma.apprenantWhereUniqueInput
 }
 
 /**
- * Apprenant updateMany
+ * apprenant updateMany
  */
-export type ApprenantUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Apprenants.
+   * The data used to update apprenants.
    */
-  data: Prisma.XOR<Prisma.ApprenantUpdateManyMutationInput, Prisma.ApprenantUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.apprenantUpdateManyMutationInput, Prisma.apprenantUncheckedUpdateManyInput>
   /**
-   * Filter which Apprenants to update
+   * Filter which apprenants to update
    */
-  where?: Prisma.ApprenantWhereInput
+  where?: Prisma.apprenantWhereInput
   /**
-   * Limit how many Apprenants to update.
+   * Limit how many apprenants to update.
    */
   limit?: number
 }
 
 /**
- * Apprenant upsert
+ * apprenant upsert
  */
-export type ApprenantUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * The filter to search for the Apprenant to update in case it exists.
+   * The filter to search for the apprenant to update in case it exists.
    */
-  where: Prisma.ApprenantWhereUniqueInput
+  where: Prisma.apprenantWhereUniqueInput
   /**
-   * In case the Apprenant found by the `where` argument doesn't exist, create a new Apprenant with this data.
+   * In case the apprenant found by the `where` argument doesn't exist, create a new apprenant with this data.
    */
-  create: Prisma.XOR<Prisma.ApprenantCreateInput, Prisma.ApprenantUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.apprenantCreateInput, Prisma.apprenantUncheckedCreateInput>
   /**
-   * In case the Apprenant was found with the provided `where` argument, update it with this data.
+   * In case the apprenant was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ApprenantUpdateInput, Prisma.ApprenantUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.apprenantUpdateInput, Prisma.apprenantUncheckedUpdateInput>
 }
 
 /**
- * Apprenant delete
+ * apprenant delete
  */
-export type ApprenantDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
   /**
-   * Filter which Apprenant to delete.
+   * Filter which apprenant to delete.
    */
-  where: Prisma.ApprenantWhereUniqueInput
+  where: Prisma.apprenantWhereUniqueInput
 }
 
 /**
- * Apprenant deleteMany
+ * apprenant deleteMany
  */
-export type ApprenantDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Apprenants to delete
+   * Filter which apprenants to delete
    */
-  where?: Prisma.ApprenantWhereInput
+  where?: Prisma.apprenantWhereInput
   /**
-   * Limit how many Apprenants to delete.
+   * Limit how many apprenants to delete.
    */
   limit?: number
 }
 
 /**
- * Apprenant.user
+ * apprenant.user
  */
-export type Apprenant$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenant$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the User
+   * Select specific fields to fetch from the user
    */
-  select?: Prisma.UserSelect<ExtArgs> | null
+  select?: Prisma.userSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the User
+   * Omit specific fields from the user
    */
-  omit?: Prisma.UserOmit<ExtArgs> | null
+  omit?: Prisma.userOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
+  include?: Prisma.userInclude<ExtArgs> | null
+  where?: Prisma.userWhereInput
 }
 
 /**
- * Apprenant.parents
+ * apprenant.apprenantparent
  */
-export type Apprenant$parentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenant$apprenantparentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
-  where?: Prisma.ApprenantParentWhereInput
-  orderBy?: Prisma.ApprenantParentOrderByWithRelationInput | Prisma.ApprenantParentOrderByWithRelationInput[]
-  cursor?: Prisma.ApprenantParentWhereUniqueInput
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
+  where?: Prisma.apprenantparentWhereInput
+  orderBy?: Prisma.apprenantparentOrderByWithRelationInput | Prisma.apprenantparentOrderByWithRelationInput[]
+  cursor?: Prisma.apprenantparentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ApprenantParentScalarFieldEnum | Prisma.ApprenantParentScalarFieldEnum[]
+  distinct?: Prisma.ApprenantparentScalarFieldEnum | Prisma.ApprenantparentScalarFieldEnum[]
 }
 
 /**
- * Apprenant.inscriptions
+ * apprenant.inscription
  */
-export type Apprenant$inscriptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenant$inscriptionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
-  where?: Prisma.InscriptionWhereInput
-  orderBy?: Prisma.InscriptionOrderByWithRelationInput | Prisma.InscriptionOrderByWithRelationInput[]
-  cursor?: Prisma.InscriptionWhereUniqueInput
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
+  where?: Prisma.inscriptionWhereInput
+  orderBy?: Prisma.inscriptionOrderByWithRelationInput | Prisma.inscriptionOrderByWithRelationInput[]
+  cursor?: Prisma.inscriptionWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.InscriptionScalarFieldEnum | Prisma.InscriptionScalarFieldEnum[]
 }
 
 /**
- * Apprenant without action
+ * apprenant without action
  */
-export type ApprenantDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Apprenant
+   * Select specific fields to fetch from the apprenant
    */
-  select?: Prisma.ApprenantSelect<ExtArgs> | null
+  select?: Prisma.apprenantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Apprenant
+   * Omit specific fields from the apprenant
    */
-  omit?: Prisma.ApprenantOmit<ExtArgs> | null
+  omit?: Prisma.apprenantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantInclude<ExtArgs> | null
+  include?: Prisma.apprenantInclude<ExtArgs> | null
 }

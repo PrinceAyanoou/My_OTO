@@ -7,7 +7,10 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateRoleDto } from './dto/create-role.dto';
-import { Action, CibleAction } from '../generated/prisma/client';
+import {
+  permission_action,
+  permission_cible,
+} from '../generated/prisma/client';
 import { UpdateRoleDto } from './dto/update-role.dto';
 
 @Injectable()
@@ -34,8 +37,8 @@ export class RolesService {
       const [action, cibleAction] = permKey.split('_');
 
       return {
-        action: action as Action,
-        cible: cibleAction as CibleAction,
+        action: action as permission_action,
+        cible: cibleAction as permission_cible,
       };
     });
 
@@ -66,7 +69,7 @@ export class RolesService {
         description: dto.description,
         estSystem: false,
         ecoleId: ecoleId,
-        rolePermission: {
+        rolepermission: {
           createMany: {
             //au lieu d'utiliser un create qui va générer des requêtes pour chaque élément du tableau,
             //on utilise un createMany pour tout injecter d'un coup et comme le front n'a pas direct besoin de ce qui est inséré, on fera un retour manuel.
@@ -137,8 +140,8 @@ export class RolesService {
       const parsedPermissions = dto.permissions.map((permKey) => {
         const [action, cibleAction] = permKey.split('_');
         return {
-          action: action as Action,
-          cible: cibleAction as CibleAction,
+          action: action as permission_action,
+          cible: cibleAction as permission_cible,
         };
       });
 
@@ -166,13 +169,13 @@ export class RolesService {
       // Mettre à jour les permissions si elles ont été fournies dans le DTO
       if (dto.permissions) {
         // Supprimer toutes les anciennes liaisons de ce rôle
-        await tx.rolePermission.deleteMany({
+        await tx.rolepermission.deleteMany({
           where: { roleId },
         });
 
         // Re-créer les nouvelles liaisons
         if (validPermissionIds.length > 0) {
-          await tx.rolePermission.createMany({
+          await tx.rolepermission.createMany({
             data: validPermissionIds.map((permissionId) => ({
               roleId,
               permissionId,
@@ -243,7 +246,7 @@ export class RolesService {
     return await this.prisma.role.findMany({
       where: { ecoleId: ecoleId },
       include: {
-        rolePermission: {
+        rolepermission: {
           include: { permission: true },
         },
       },

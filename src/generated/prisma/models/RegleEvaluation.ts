@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `RegleEvaluation` model and its related types.
+ * This file exports the `regleevaluation` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,30 +13,30 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model RegleEvaluation
+ * Model regleevaluation
  * 
  */
-export type RegleEvaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$RegleEvaluationPayload>
+export type regleevaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$regleevaluationPayload>
 
-export type AggregateRegleEvaluation = {
-  _count: RegleEvaluationCountAggregateOutputType | null
-  _avg: RegleEvaluationAvgAggregateOutputType | null
-  _sum: RegleEvaluationSumAggregateOutputType | null
-  _min: RegleEvaluationMinAggregateOutputType | null
-  _max: RegleEvaluationMaxAggregateOutputType | null
+export type AggregateRegleevaluation = {
+  _count: RegleevaluationCountAggregateOutputType | null
+  _avg: RegleevaluationAvgAggregateOutputType | null
+  _sum: RegleevaluationSumAggregateOutputType | null
+  _min: RegleevaluationMinAggregateOutputType | null
+  _max: RegleevaluationMaxAggregateOutputType | null
 }
 
-export type RegleEvaluationAvgAggregateOutputType = {
+export type RegleevaluationAvgAggregateOutputType = {
   nombreMin: number | null
   coefficientType: number | null
 }
 
-export type RegleEvaluationSumAggregateOutputType = {
+export type RegleevaluationSumAggregateOutputType = {
   nombreMin: number | null
   coefficientType: number | null
 }
 
-export type RegleEvaluationMinAggregateOutputType = {
+export type RegleevaluationMinAggregateOutputType = {
   id: string | null
   nombreMin: number | null
   coefficientType: number | null
@@ -46,7 +46,7 @@ export type RegleEvaluationMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type RegleEvaluationMaxAggregateOutputType = {
+export type RegleevaluationMaxAggregateOutputType = {
   id: string | null
   nombreMin: number | null
   coefficientType: number | null
@@ -56,7 +56,7 @@ export type RegleEvaluationMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type RegleEvaluationCountAggregateOutputType = {
+export type RegleevaluationCountAggregateOutputType = {
   id: number
   nombreMin: number
   coefficientType: number
@@ -68,17 +68,17 @@ export type RegleEvaluationCountAggregateOutputType = {
 }
 
 
-export type RegleEvaluationAvgAggregateInputType = {
+export type RegleevaluationAvgAggregateInputType = {
   nombreMin?: true
   coefficientType?: true
 }
 
-export type RegleEvaluationSumAggregateInputType = {
+export type RegleevaluationSumAggregateInputType = {
   nombreMin?: true
   coefficientType?: true
 }
 
-export type RegleEvaluationMinAggregateInputType = {
+export type RegleevaluationMinAggregateInputType = {
   id?: true
   nombreMin?: true
   coefficientType?: true
@@ -88,7 +88,7 @@ export type RegleEvaluationMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type RegleEvaluationMaxAggregateInputType = {
+export type RegleevaluationMaxAggregateInputType = {
   id?: true
   nombreMin?: true
   coefficientType?: true
@@ -98,7 +98,7 @@ export type RegleEvaluationMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type RegleEvaluationCountAggregateInputType = {
+export type RegleevaluationCountAggregateInputType = {
   id?: true
   nombreMin?: true
   coefficientType?: true
@@ -109,93 +109,93 @@ export type RegleEvaluationCountAggregateInputType = {
   _all?: true
 }
 
-export type RegleEvaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RegleevaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which RegleEvaluation to aggregate.
+   * Filter which regleevaluation to aggregate.
    */
-  where?: Prisma.RegleEvaluationWhereInput
+  where?: Prisma.regleevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of RegleEvaluations to fetch.
+   * Determine the order of regleevaluations to fetch.
    */
-  orderBy?: Prisma.RegleEvaluationOrderByWithRelationInput | Prisma.RegleEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.regleevaluationOrderByWithRelationInput | Prisma.regleevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.RegleEvaluationWhereUniqueInput
+  cursor?: Prisma.regleevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` RegleEvaluations from the position of the cursor.
+   * Take `±n` regleevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` RegleEvaluations.
+   * Skip the first `n` regleevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned RegleEvaluations
+   * Count returned regleevaluations
   **/
-  _count?: true | RegleEvaluationCountAggregateInputType
+  _count?: true | RegleevaluationCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: RegleEvaluationAvgAggregateInputType
+  _avg?: RegleevaluationAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: RegleEvaluationSumAggregateInputType
+  _sum?: RegleevaluationSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: RegleEvaluationMinAggregateInputType
+  _min?: RegleevaluationMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: RegleEvaluationMaxAggregateInputType
+  _max?: RegleevaluationMaxAggregateInputType
 }
 
-export type GetRegleEvaluationAggregateType<T extends RegleEvaluationAggregateArgs> = {
-      [P in keyof T & keyof AggregateRegleEvaluation]: P extends '_count' | 'count'
+export type GetRegleevaluationAggregateType<T extends RegleevaluationAggregateArgs> = {
+      [P in keyof T & keyof AggregateRegleevaluation]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateRegleEvaluation[P]>
-    : Prisma.GetScalarType<T[P], AggregateRegleEvaluation[P]>
+      : Prisma.GetScalarType<T[P], AggregateRegleevaluation[P]>
+    : Prisma.GetScalarType<T[P], AggregateRegleevaluation[P]>
 }
 
 
 
 
-export type RegleEvaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.RegleEvaluationWhereInput
-  orderBy?: Prisma.RegleEvaluationOrderByWithAggregationInput | Prisma.RegleEvaluationOrderByWithAggregationInput[]
-  by: Prisma.RegleEvaluationScalarFieldEnum[] | Prisma.RegleEvaluationScalarFieldEnum
-  having?: Prisma.RegleEvaluationScalarWhereWithAggregatesInput
+export type regleevaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.regleevaluationWhereInput
+  orderBy?: Prisma.regleevaluationOrderByWithAggregationInput | Prisma.regleevaluationOrderByWithAggregationInput[]
+  by: Prisma.RegleevaluationScalarFieldEnum[] | Prisma.RegleevaluationScalarFieldEnum
+  having?: Prisma.regleevaluationScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: RegleEvaluationCountAggregateInputType | true
-  _avg?: RegleEvaluationAvgAggregateInputType
-  _sum?: RegleEvaluationSumAggregateInputType
-  _min?: RegleEvaluationMinAggregateInputType
-  _max?: RegleEvaluationMaxAggregateInputType
+  _count?: RegleevaluationCountAggregateInputType | true
+  _avg?: RegleevaluationAvgAggregateInputType
+  _sum?: RegleevaluationSumAggregateInputType
+  _min?: RegleevaluationMinAggregateInputType
+  _max?: RegleevaluationMaxAggregateInputType
 }
 
-export type RegleEvaluationGroupByOutputType = {
+export type RegleevaluationGroupByOutputType = {
   id: string
   nombreMin: number
   coefficientType: number
@@ -203,44 +203,44 @@ export type RegleEvaluationGroupByOutputType = {
   typeEvaluationId: string
   createdAt: Date
   updatedAt: Date
-  _count: RegleEvaluationCountAggregateOutputType | null
-  _avg: RegleEvaluationAvgAggregateOutputType | null
-  _sum: RegleEvaluationSumAggregateOutputType | null
-  _min: RegleEvaluationMinAggregateOutputType | null
-  _max: RegleEvaluationMaxAggregateOutputType | null
+  _count: RegleevaluationCountAggregateOutputType | null
+  _avg: RegleevaluationAvgAggregateOutputType | null
+  _sum: RegleevaluationSumAggregateOutputType | null
+  _min: RegleevaluationMinAggregateOutputType | null
+  _max: RegleevaluationMaxAggregateOutputType | null
 }
 
-export type GetRegleEvaluationGroupByPayload<T extends RegleEvaluationGroupByArgs> = Prisma.PrismaPromise<
+export type GetRegleevaluationGroupByPayload<T extends regleevaluationGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<RegleEvaluationGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<RegleevaluationGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof RegleEvaluationGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof RegleevaluationGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], RegleEvaluationGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], RegleEvaluationGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], RegleevaluationGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], RegleevaluationGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type RegleEvaluationWhereInput = {
-  AND?: Prisma.RegleEvaluationWhereInput | Prisma.RegleEvaluationWhereInput[]
-  OR?: Prisma.RegleEvaluationWhereInput[]
-  NOT?: Prisma.RegleEvaluationWhereInput | Prisma.RegleEvaluationWhereInput[]
-  id?: Prisma.StringFilter<"RegleEvaluation"> | string
-  nombreMin?: Prisma.IntFilter<"RegleEvaluation"> | number
-  coefficientType?: Prisma.IntFilter<"RegleEvaluation"> | number
-  politiqueId?: Prisma.StringFilter<"RegleEvaluation"> | string
-  typeEvaluationId?: Prisma.StringFilter<"RegleEvaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"RegleEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"RegleEvaluation"> | Date | string
-  politique?: Prisma.XOR<Prisma.PolitiqueEvaluationScalarRelationFilter, Prisma.PolitiqueEvaluationWhereInput>
-  typeEvaluation?: Prisma.XOR<Prisma.TypeEvaluationScalarRelationFilter, Prisma.TypeEvaluationWhereInput>
+export type regleevaluationWhereInput = {
+  AND?: Prisma.regleevaluationWhereInput | Prisma.regleevaluationWhereInput[]
+  OR?: Prisma.regleevaluationWhereInput[]
+  NOT?: Prisma.regleevaluationWhereInput | Prisma.regleevaluationWhereInput[]
+  id?: Prisma.StringFilter<"regleevaluation"> | string
+  nombreMin?: Prisma.IntFilter<"regleevaluation"> | number
+  coefficientType?: Prisma.IntFilter<"regleevaluation"> | number
+  politiqueId?: Prisma.StringFilter<"regleevaluation"> | string
+  typeEvaluationId?: Prisma.StringFilter<"regleevaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"regleevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"regleevaluation"> | Date | string
+  politiqueevaluation?: Prisma.XOR<Prisma.PolitiqueevaluationScalarRelationFilter, Prisma.politiqueevaluationWhereInput>
+  typeevaluation?: Prisma.XOR<Prisma.TypeevaluationScalarRelationFilter, Prisma.typeevaluationWhereInput>
 }
 
-export type RegleEvaluationOrderByWithRelationInput = {
+export type regleevaluationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
@@ -248,28 +248,28 @@ export type RegleEvaluationOrderByWithRelationInput = {
   typeEvaluationId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  politique?: Prisma.PolitiqueEvaluationOrderByWithRelationInput
-  typeEvaluation?: Prisma.TypeEvaluationOrderByWithRelationInput
-  _relevance?: Prisma.RegleEvaluationOrderByRelevanceInput
+  politiqueevaluation?: Prisma.politiqueevaluationOrderByWithRelationInput
+  typeevaluation?: Prisma.typeevaluationOrderByWithRelationInput
+  _relevance?: Prisma.regleevaluationOrderByRelevanceInput
 }
 
-export type RegleEvaluationWhereUniqueInput = Prisma.AtLeast<{
+export type regleevaluationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  politiqueId_typeEvaluationId?: Prisma.RegleEvaluationPolitiqueIdTypeEvaluationIdCompoundUniqueInput
-  AND?: Prisma.RegleEvaluationWhereInput | Prisma.RegleEvaluationWhereInput[]
-  OR?: Prisma.RegleEvaluationWhereInput[]
-  NOT?: Prisma.RegleEvaluationWhereInput | Prisma.RegleEvaluationWhereInput[]
-  nombreMin?: Prisma.IntFilter<"RegleEvaluation"> | number
-  coefficientType?: Prisma.IntFilter<"RegleEvaluation"> | number
-  politiqueId?: Prisma.StringFilter<"RegleEvaluation"> | string
-  typeEvaluationId?: Prisma.StringFilter<"RegleEvaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"RegleEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"RegleEvaluation"> | Date | string
-  politique?: Prisma.XOR<Prisma.PolitiqueEvaluationScalarRelationFilter, Prisma.PolitiqueEvaluationWhereInput>
-  typeEvaluation?: Prisma.XOR<Prisma.TypeEvaluationScalarRelationFilter, Prisma.TypeEvaluationWhereInput>
+  politiqueId_typeEvaluationId?: Prisma.regleevaluationPolitiqueIdTypeEvaluationIdCompoundUniqueInput
+  AND?: Prisma.regleevaluationWhereInput | Prisma.regleevaluationWhereInput[]
+  OR?: Prisma.regleevaluationWhereInput[]
+  NOT?: Prisma.regleevaluationWhereInput | Prisma.regleevaluationWhereInput[]
+  nombreMin?: Prisma.IntFilter<"regleevaluation"> | number
+  coefficientType?: Prisma.IntFilter<"regleevaluation"> | number
+  politiqueId?: Prisma.StringFilter<"regleevaluation"> | string
+  typeEvaluationId?: Prisma.StringFilter<"regleevaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"regleevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"regleevaluation"> | Date | string
+  politiqueevaluation?: Prisma.XOR<Prisma.PolitiqueevaluationScalarRelationFilter, Prisma.politiqueevaluationWhereInput>
+  typeevaluation?: Prisma.XOR<Prisma.TypeevaluationScalarRelationFilter, Prisma.typeevaluationWhereInput>
 }, "id" | "politiqueId_typeEvaluationId">
 
-export type RegleEvaluationOrderByWithAggregationInput = {
+export type regleevaluationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
@@ -277,67 +277,37 @@ export type RegleEvaluationOrderByWithAggregationInput = {
   typeEvaluationId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.RegleEvaluationCountOrderByAggregateInput
-  _avg?: Prisma.RegleEvaluationAvgOrderByAggregateInput
-  _max?: Prisma.RegleEvaluationMaxOrderByAggregateInput
-  _min?: Prisma.RegleEvaluationMinOrderByAggregateInput
-  _sum?: Prisma.RegleEvaluationSumOrderByAggregateInput
+  _count?: Prisma.regleevaluationCountOrderByAggregateInput
+  _avg?: Prisma.regleevaluationAvgOrderByAggregateInput
+  _max?: Prisma.regleevaluationMaxOrderByAggregateInput
+  _min?: Prisma.regleevaluationMinOrderByAggregateInput
+  _sum?: Prisma.regleevaluationSumOrderByAggregateInput
 }
 
-export type RegleEvaluationScalarWhereWithAggregatesInput = {
-  AND?: Prisma.RegleEvaluationScalarWhereWithAggregatesInput | Prisma.RegleEvaluationScalarWhereWithAggregatesInput[]
-  OR?: Prisma.RegleEvaluationScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.RegleEvaluationScalarWhereWithAggregatesInput | Prisma.RegleEvaluationScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"RegleEvaluation"> | string
-  nombreMin?: Prisma.IntWithAggregatesFilter<"RegleEvaluation"> | number
-  coefficientType?: Prisma.IntWithAggregatesFilter<"RegleEvaluation"> | number
-  politiqueId?: Prisma.StringWithAggregatesFilter<"RegleEvaluation"> | string
-  typeEvaluationId?: Prisma.StringWithAggregatesFilter<"RegleEvaluation"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"RegleEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"RegleEvaluation"> | Date | string
+export type regleevaluationScalarWhereWithAggregatesInput = {
+  AND?: Prisma.regleevaluationScalarWhereWithAggregatesInput | Prisma.regleevaluationScalarWhereWithAggregatesInput[]
+  OR?: Prisma.regleevaluationScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.regleevaluationScalarWhereWithAggregatesInput | Prisma.regleevaluationScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"regleevaluation"> | string
+  nombreMin?: Prisma.IntWithAggregatesFilter<"regleevaluation"> | number
+  coefficientType?: Prisma.IntWithAggregatesFilter<"regleevaluation"> | number
+  politiqueId?: Prisma.StringWithAggregatesFilter<"regleevaluation"> | string
+  typeEvaluationId?: Prisma.StringWithAggregatesFilter<"regleevaluation"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"regleevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"regleevaluation"> | Date | string
 }
 
-export type RegleEvaluationCreateInput = {
+export type regleevaluationCreateInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  politique: Prisma.PolitiqueEvaluationCreateNestedOneWithoutReglesInput
-  typeEvaluation: Prisma.TypeEvaluationCreateNestedOneWithoutRegleEvalInput
+  politiqueevaluation: Prisma.politiqueevaluationCreateNestedOneWithoutRegleevaluationInput
+  typeevaluation: Prisma.typeevaluationCreateNestedOneWithoutRegleevaluationInput
 }
 
-export type RegleEvaluationUncheckedCreateInput = {
-  id?: string
-  nombreMin?: number
-  coefficientType?: number
-  politiqueId: string
-  typeEvaluationId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type RegleEvaluationUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
-  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  politique?: Prisma.PolitiqueEvaluationUpdateOneRequiredWithoutReglesNestedInput
-  typeEvaluation?: Prisma.TypeEvaluationUpdateOneRequiredWithoutRegleEvalNestedInput
-}
-
-export type RegleEvaluationUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
-  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
-  politiqueId?: Prisma.StringFieldUpdateOperationsInput | string
-  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type RegleEvaluationCreateManyInput = {
+export type regleevaluationUncheckedCreateInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
@@ -347,15 +317,17 @@ export type RegleEvaluationCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type RegleEvaluationUpdateManyMutationInput = {
+export type regleevaluationUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
   coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateOneRequiredWithoutRegleevaluationNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateOneRequiredWithoutRegleevaluationNestedInput
 }
 
-export type RegleEvaluationUncheckedUpdateManyInput = {
+export type regleevaluationUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
   coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
@@ -365,28 +337,56 @@ export type RegleEvaluationUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type RegleEvaluationListRelationFilter = {
-  every?: Prisma.RegleEvaluationWhereInput
-  some?: Prisma.RegleEvaluationWhereInput
-  none?: Prisma.RegleEvaluationWhereInput
+export type regleevaluationCreateManyInput = {
+  id?: string
+  nombreMin?: number
+  coefficientType?: number
+  politiqueId: string
+  typeEvaluationId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
-export type RegleEvaluationOrderByRelationAggregateInput = {
+export type regleevaluationUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type regleevaluationUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
+  politiqueId?: Prisma.StringFieldUpdateOperationsInput | string
+  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type RegleevaluationListRelationFilter = {
+  every?: Prisma.regleevaluationWhereInput
+  some?: Prisma.regleevaluationWhereInput
+  none?: Prisma.regleevaluationWhereInput
+}
+
+export type regleevaluationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type RegleEvaluationOrderByRelevanceInput = {
-  fields: Prisma.RegleEvaluationOrderByRelevanceFieldEnum | Prisma.RegleEvaluationOrderByRelevanceFieldEnum[]
+export type regleevaluationOrderByRelevanceInput = {
+  fields: Prisma.regleevaluationOrderByRelevanceFieldEnum | Prisma.regleevaluationOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type RegleEvaluationPolitiqueIdTypeEvaluationIdCompoundUniqueInput = {
+export type regleevaluationPolitiqueIdTypeEvaluationIdCompoundUniqueInput = {
   politiqueId: string
   typeEvaluationId: string
 }
 
-export type RegleEvaluationCountOrderByAggregateInput = {
+export type regleevaluationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
@@ -396,12 +396,12 @@ export type RegleEvaluationCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type RegleEvaluationAvgOrderByAggregateInput = {
+export type regleevaluationAvgOrderByAggregateInput = {
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
 }
 
-export type RegleEvaluationMaxOrderByAggregateInput = {
+export type regleevaluationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
@@ -411,7 +411,7 @@ export type RegleEvaluationMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type RegleEvaluationMinOrderByAggregateInput = {
+export type regleevaluationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
@@ -421,197 +421,162 @@ export type RegleEvaluationMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type RegleEvaluationSumOrderByAggregateInput = {
+export type regleevaluationSumOrderByAggregateInput = {
   nombreMin?: Prisma.SortOrder
   coefficientType?: Prisma.SortOrder
 }
 
-export type RegleEvaluationCreateNestedManyWithoutTypeEvaluationInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyTypeEvaluationInputEnvelope
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
+export type regleevaluationCreateNestedManyWithoutPolitiqueevaluationInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput> | Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyPolitiqueevaluationInputEnvelope
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
 }
 
-export type RegleEvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyTypeEvaluationInputEnvelope
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
+export type regleevaluationUncheckedCreateNestedManyWithoutPolitiqueevaluationInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput> | Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyPolitiqueevaluationInputEnvelope
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
 }
 
-export type RegleEvaluationUpdateManyWithoutTypeEvaluationNestedInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  upsert?: Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput | Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyTypeEvaluationInputEnvelope
-  set?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  delete?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  update?: Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput | Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput[]
-  updateMany?: Prisma.RegleEvaluationUpdateManyWithWhereWithoutTypeEvaluationInput | Prisma.RegleEvaluationUpdateManyWithWhereWithoutTypeEvaluationInput[]
-  deleteMany?: Prisma.RegleEvaluationScalarWhereInput | Prisma.RegleEvaluationScalarWhereInput[]
+export type regleevaluationUpdateManyWithoutPolitiqueevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput> | Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput[]
+  upsert?: Prisma.regleevaluationUpsertWithWhereUniqueWithoutPolitiqueevaluationInput | Prisma.regleevaluationUpsertWithWhereUniqueWithoutPolitiqueevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyPolitiqueevaluationInputEnvelope
+  set?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  disconnect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  delete?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  update?: Prisma.regleevaluationUpdateWithWhereUniqueWithoutPolitiqueevaluationInput | Prisma.regleevaluationUpdateWithWhereUniqueWithoutPolitiqueevaluationInput[]
+  updateMany?: Prisma.regleevaluationUpdateManyWithWhereWithoutPolitiqueevaluationInput | Prisma.regleevaluationUpdateManyWithWhereWithoutPolitiqueevaluationInput[]
+  deleteMany?: Prisma.regleevaluationScalarWhereInput | Prisma.regleevaluationScalarWhereInput[]
 }
 
-export type RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  upsert?: Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput | Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyTypeEvaluationInputEnvelope
-  set?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  delete?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  update?: Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput | Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput[]
-  updateMany?: Prisma.RegleEvaluationUpdateManyWithWhereWithoutTypeEvaluationInput | Prisma.RegleEvaluationUpdateManyWithWhereWithoutTypeEvaluationInput[]
-  deleteMany?: Prisma.RegleEvaluationScalarWhereInput | Prisma.RegleEvaluationScalarWhereInput[]
+export type regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput> | Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput[]
+  upsert?: Prisma.regleevaluationUpsertWithWhereUniqueWithoutPolitiqueevaluationInput | Prisma.regleevaluationUpsertWithWhereUniqueWithoutPolitiqueevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyPolitiqueevaluationInputEnvelope
+  set?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  disconnect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  delete?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  update?: Prisma.regleevaluationUpdateWithWhereUniqueWithoutPolitiqueevaluationInput | Prisma.regleevaluationUpdateWithWhereUniqueWithoutPolitiqueevaluationInput[]
+  updateMany?: Prisma.regleevaluationUpdateManyWithWhereWithoutPolitiqueevaluationInput | Prisma.regleevaluationUpdateManyWithWhereWithoutPolitiqueevaluationInput[]
+  deleteMany?: Prisma.regleevaluationScalarWhereInput | Prisma.regleevaluationScalarWhereInput[]
 }
 
-export type RegleEvaluationCreateNestedManyWithoutPolitiqueInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput> | Prisma.RegleEvaluationCreateWithoutPolitiqueInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput | Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyPolitiqueInputEnvelope
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
+export type regleevaluationCreateNestedManyWithoutTypeevaluationInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.regleevaluationCreateWithoutTypeevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyTypeevaluationInputEnvelope
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
 }
 
-export type RegleEvaluationUncheckedCreateNestedManyWithoutPolitiqueInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput> | Prisma.RegleEvaluationCreateWithoutPolitiqueInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput | Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyPolitiqueInputEnvelope
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
+export type regleevaluationUncheckedCreateNestedManyWithoutTypeevaluationInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.regleevaluationCreateWithoutTypeevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyTypeevaluationInputEnvelope
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
 }
 
-export type RegleEvaluationUpdateManyWithoutPolitiqueNestedInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput> | Prisma.RegleEvaluationCreateWithoutPolitiqueInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput | Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput[]
-  upsert?: Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutPolitiqueInput | Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutPolitiqueInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyPolitiqueInputEnvelope
-  set?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  delete?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  update?: Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutPolitiqueInput | Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutPolitiqueInput[]
-  updateMany?: Prisma.RegleEvaluationUpdateManyWithWhereWithoutPolitiqueInput | Prisma.RegleEvaluationUpdateManyWithWhereWithoutPolitiqueInput[]
-  deleteMany?: Prisma.RegleEvaluationScalarWhereInput | Prisma.RegleEvaluationScalarWhereInput[]
+export type regleevaluationUpdateManyWithoutTypeevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.regleevaluationCreateWithoutTypeevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput[]
+  upsert?: Prisma.regleevaluationUpsertWithWhereUniqueWithoutTypeevaluationInput | Prisma.regleevaluationUpsertWithWhereUniqueWithoutTypeevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyTypeevaluationInputEnvelope
+  set?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  disconnect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  delete?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  update?: Prisma.regleevaluationUpdateWithWhereUniqueWithoutTypeevaluationInput | Prisma.regleevaluationUpdateWithWhereUniqueWithoutTypeevaluationInput[]
+  updateMany?: Prisma.regleevaluationUpdateManyWithWhereWithoutTypeevaluationInput | Prisma.regleevaluationUpdateManyWithWhereWithoutTypeevaluationInput[]
+  deleteMany?: Prisma.regleevaluationScalarWhereInput | Prisma.regleevaluationScalarWhereInput[]
 }
 
-export type RegleEvaluationUncheckedUpdateManyWithoutPolitiqueNestedInput = {
-  create?: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput> | Prisma.RegleEvaluationCreateWithoutPolitiqueInput[] | Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput[]
-  connectOrCreate?: Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput | Prisma.RegleEvaluationCreateOrConnectWithoutPolitiqueInput[]
-  upsert?: Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutPolitiqueInput | Prisma.RegleEvaluationUpsertWithWhereUniqueWithoutPolitiqueInput[]
-  createMany?: Prisma.RegleEvaluationCreateManyPolitiqueInputEnvelope
-  set?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  delete?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  connect?: Prisma.RegleEvaluationWhereUniqueInput | Prisma.RegleEvaluationWhereUniqueInput[]
-  update?: Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutPolitiqueInput | Prisma.RegleEvaluationUpdateWithWhereUniqueWithoutPolitiqueInput[]
-  updateMany?: Prisma.RegleEvaluationUpdateManyWithWhereWithoutPolitiqueInput | Prisma.RegleEvaluationUpdateManyWithWhereWithoutPolitiqueInput[]
-  deleteMany?: Prisma.RegleEvaluationScalarWhereInput | Prisma.RegleEvaluationScalarWhereInput[]
+export type regleevaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.regleevaluationCreateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.regleevaluationCreateWithoutTypeevaluationInput[] | Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.regleevaluationCreateOrConnectWithoutTypeevaluationInput[]
+  upsert?: Prisma.regleevaluationUpsertWithWhereUniqueWithoutTypeevaluationInput | Prisma.regleevaluationUpsertWithWhereUniqueWithoutTypeevaluationInput[]
+  createMany?: Prisma.regleevaluationCreateManyTypeevaluationInputEnvelope
+  set?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  disconnect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  delete?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  connect?: Prisma.regleevaluationWhereUniqueInput | Prisma.regleevaluationWhereUniqueInput[]
+  update?: Prisma.regleevaluationUpdateWithWhereUniqueWithoutTypeevaluationInput | Prisma.regleevaluationUpdateWithWhereUniqueWithoutTypeevaluationInput[]
+  updateMany?: Prisma.regleevaluationUpdateManyWithWhereWithoutTypeevaluationInput | Prisma.regleevaluationUpdateManyWithWhereWithoutTypeevaluationInput[]
+  deleteMany?: Prisma.regleevaluationScalarWhereInput | Prisma.regleevaluationScalarWhereInput[]
 }
 
-export type RegleEvaluationCreateWithoutTypeEvaluationInput = {
+export type regleevaluationCreateWithoutPolitiqueevaluationInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  politique: Prisma.PolitiqueEvaluationCreateNestedOneWithoutReglesInput
+  typeevaluation: Prisma.typeevaluationCreateNestedOneWithoutRegleevaluationInput
 }
 
-export type RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput = {
+export type regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
-  politiqueId: string
+  typeEvaluationId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type RegleEvaluationCreateOrConnectWithoutTypeEvaluationInput = {
-  where: Prisma.RegleEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput>
+export type regleevaluationCreateOrConnectWithoutPolitiqueevaluationInput = {
+  where: Prisma.regleevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput>
 }
 
-export type RegleEvaluationCreateManyTypeEvaluationInputEnvelope = {
-  data: Prisma.RegleEvaluationCreateManyTypeEvaluationInput | Prisma.RegleEvaluationCreateManyTypeEvaluationInput[]
+export type regleevaluationCreateManyPolitiqueevaluationInputEnvelope = {
+  data: Prisma.regleevaluationCreateManyPolitiqueevaluationInput | Prisma.regleevaluationCreateManyPolitiqueevaluationInput[]
   skipDuplicates?: boolean
 }
 
-export type RegleEvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput = {
-  where: Prisma.RegleEvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.RegleEvaluationUpdateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedUpdateWithoutTypeEvaluationInput>
-  create: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedCreateWithoutTypeEvaluationInput>
+export type regleevaluationUpsertWithWhereUniqueWithoutPolitiqueevaluationInput = {
+  where: Prisma.regleevaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.regleevaluationUpdateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedUpdateWithoutPolitiqueevaluationInput>
+  create: Prisma.XOR<Prisma.regleevaluationCreateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutPolitiqueevaluationInput>
 }
 
-export type RegleEvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput = {
-  where: Prisma.RegleEvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.RegleEvaluationUpdateWithoutTypeEvaluationInput, Prisma.RegleEvaluationUncheckedUpdateWithoutTypeEvaluationInput>
+export type regleevaluationUpdateWithWhereUniqueWithoutPolitiqueevaluationInput = {
+  where: Prisma.regleevaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.regleevaluationUpdateWithoutPolitiqueevaluationInput, Prisma.regleevaluationUncheckedUpdateWithoutPolitiqueevaluationInput>
 }
 
-export type RegleEvaluationUpdateManyWithWhereWithoutTypeEvaluationInput = {
-  where: Prisma.RegleEvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.RegleEvaluationUpdateManyMutationInput, Prisma.RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationInput>
+export type regleevaluationUpdateManyWithWhereWithoutPolitiqueevaluationInput = {
+  where: Prisma.regleevaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.regleevaluationUpdateManyMutationInput, Prisma.regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationInput>
 }
 
-export type RegleEvaluationScalarWhereInput = {
-  AND?: Prisma.RegleEvaluationScalarWhereInput | Prisma.RegleEvaluationScalarWhereInput[]
-  OR?: Prisma.RegleEvaluationScalarWhereInput[]
-  NOT?: Prisma.RegleEvaluationScalarWhereInput | Prisma.RegleEvaluationScalarWhereInput[]
-  id?: Prisma.StringFilter<"RegleEvaluation"> | string
-  nombreMin?: Prisma.IntFilter<"RegleEvaluation"> | number
-  coefficientType?: Prisma.IntFilter<"RegleEvaluation"> | number
-  politiqueId?: Prisma.StringFilter<"RegleEvaluation"> | string
-  typeEvaluationId?: Prisma.StringFilter<"RegleEvaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"RegleEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"RegleEvaluation"> | Date | string
+export type regleevaluationScalarWhereInput = {
+  AND?: Prisma.regleevaluationScalarWhereInput | Prisma.regleevaluationScalarWhereInput[]
+  OR?: Prisma.regleevaluationScalarWhereInput[]
+  NOT?: Prisma.regleevaluationScalarWhereInput | Prisma.regleevaluationScalarWhereInput[]
+  id?: Prisma.StringFilter<"regleevaluation"> | string
+  nombreMin?: Prisma.IntFilter<"regleevaluation"> | number
+  coefficientType?: Prisma.IntFilter<"regleevaluation"> | number
+  politiqueId?: Prisma.StringFilter<"regleevaluation"> | string
+  typeEvaluationId?: Prisma.StringFilter<"regleevaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"regleevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"regleevaluation"> | Date | string
 }
 
-export type RegleEvaluationCreateWithoutPolitiqueInput = {
+export type regleevaluationCreateWithoutTypeevaluationInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  typeEvaluation: Prisma.TypeEvaluationCreateNestedOneWithoutRegleEvalInput
+  politiqueevaluation: Prisma.politiqueevaluationCreateNestedOneWithoutRegleevaluationInput
 }
 
-export type RegleEvaluationUncheckedCreateWithoutPolitiqueInput = {
-  id?: string
-  nombreMin?: number
-  coefficientType?: number
-  typeEvaluationId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type RegleEvaluationCreateOrConnectWithoutPolitiqueInput = {
-  where: Prisma.RegleEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput>
-}
-
-export type RegleEvaluationCreateManyPolitiqueInputEnvelope = {
-  data: Prisma.RegleEvaluationCreateManyPolitiqueInput | Prisma.RegleEvaluationCreateManyPolitiqueInput[]
-  skipDuplicates?: boolean
-}
-
-export type RegleEvaluationUpsertWithWhereUniqueWithoutPolitiqueInput = {
-  where: Prisma.RegleEvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.RegleEvaluationUpdateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedUpdateWithoutPolitiqueInput>
-  create: Prisma.XOR<Prisma.RegleEvaluationCreateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedCreateWithoutPolitiqueInput>
-}
-
-export type RegleEvaluationUpdateWithWhereUniqueWithoutPolitiqueInput = {
-  where: Prisma.RegleEvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.RegleEvaluationUpdateWithoutPolitiqueInput, Prisma.RegleEvaluationUncheckedUpdateWithoutPolitiqueInput>
-}
-
-export type RegleEvaluationUpdateManyWithWhereWithoutPolitiqueInput = {
-  where: Prisma.RegleEvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.RegleEvaluationUpdateManyMutationInput, Prisma.RegleEvaluationUncheckedUpdateManyWithoutPolitiqueInput>
-}
-
-export type RegleEvaluationCreateManyTypeEvaluationInput = {
+export type regleevaluationUncheckedCreateWithoutTypeevaluationInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
@@ -620,34 +585,33 @@ export type RegleEvaluationCreateManyTypeEvaluationInput = {
   updatedAt?: Date | string
 }
 
-export type RegleEvaluationUpdateWithoutTypeEvaluationInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
-  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  politique?: Prisma.PolitiqueEvaluationUpdateOneRequiredWithoutReglesNestedInput
+export type regleevaluationCreateOrConnectWithoutTypeevaluationInput = {
+  where: Prisma.regleevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.regleevaluationCreateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput>
 }
 
-export type RegleEvaluationUncheckedUpdateWithoutTypeEvaluationInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
-  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
-  politiqueId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type regleevaluationCreateManyTypeevaluationInputEnvelope = {
+  data: Prisma.regleevaluationCreateManyTypeevaluationInput | Prisma.regleevaluationCreateManyTypeevaluationInput[]
+  skipDuplicates?: boolean
 }
 
-export type RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
-  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
-  politiqueId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type regleevaluationUpsertWithWhereUniqueWithoutTypeevaluationInput = {
+  where: Prisma.regleevaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.regleevaluationUpdateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedUpdateWithoutTypeevaluationInput>
+  create: Prisma.XOR<Prisma.regleevaluationCreateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedCreateWithoutTypeevaluationInput>
 }
 
-export type RegleEvaluationCreateManyPolitiqueInput = {
+export type regleevaluationUpdateWithWhereUniqueWithoutTypeevaluationInput = {
+  where: Prisma.regleevaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.regleevaluationUpdateWithoutTypeevaluationInput, Prisma.regleevaluationUncheckedUpdateWithoutTypeevaluationInput>
+}
+
+export type regleevaluationUpdateManyWithWhereWithoutTypeevaluationInput = {
+  where: Prisma.regleevaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.regleevaluationUpdateManyMutationInput, Prisma.regleevaluationUncheckedUpdateManyWithoutTypeevaluationInput>
+}
+
+export type regleevaluationCreateManyPolitiqueevaluationInput = {
   id?: string
   nombreMin?: number
   coefficientType?: number
@@ -656,16 +620,16 @@ export type RegleEvaluationCreateManyPolitiqueInput = {
   updatedAt?: Date | string
 }
 
-export type RegleEvaluationUpdateWithoutPolitiqueInput = {
+export type regleevaluationUpdateWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
   coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  typeEvaluation?: Prisma.TypeEvaluationUpdateOneRequiredWithoutRegleEvalNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateOneRequiredWithoutRegleevaluationNestedInput
 }
 
-export type RegleEvaluationUncheckedUpdateWithoutPolitiqueInput = {
+export type regleevaluationUncheckedUpdateWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
   coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
@@ -674,7 +638,7 @@ export type RegleEvaluationUncheckedUpdateWithoutPolitiqueInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type RegleEvaluationUncheckedUpdateManyWithoutPolitiqueInput = {
+export type regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
   coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
@@ -683,9 +647,45 @@ export type RegleEvaluationUncheckedUpdateManyWithoutPolitiqueInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type regleevaluationCreateManyTypeevaluationInput = {
+  id?: string
+  nombreMin?: number
+  coefficientType?: number
+  politiqueId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type regleevaluationUpdateWithoutTypeevaluationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateOneRequiredWithoutRegleevaluationNestedInput
+}
+
+export type regleevaluationUncheckedUpdateWithoutTypeevaluationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
+  politiqueId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type regleevaluationUncheckedUpdateManyWithoutTypeevaluationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nombreMin?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficientType?: Prisma.IntFieldUpdateOperationsInput | number
+  politiqueId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
 
 
-export type RegleEvaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+
+export type regleevaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nombreMin?: boolean
   coefficientType?: boolean
@@ -693,13 +693,13 @@ export type RegleEvaluationSelect<ExtArgs extends runtime.Types.Extensions.Inter
   typeEvaluationId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  politique?: boolean | Prisma.PolitiqueEvaluationDefaultArgs<ExtArgs>
-  typeEvaluation?: boolean | Prisma.TypeEvaluationDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["regleEvaluation"]>
+  politiqueevaluation?: boolean | Prisma.politiqueevaluationDefaultArgs<ExtArgs>
+  typeevaluation?: boolean | Prisma.typeevaluationDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["regleevaluation"]>
 
 
 
-export type RegleEvaluationSelectScalar = {
+export type regleevaluationSelectScalar = {
   id?: boolean
   nombreMin?: boolean
   coefficientType?: boolean
@@ -709,17 +709,17 @@ export type RegleEvaluationSelectScalar = {
   updatedAt?: boolean
 }
 
-export type RegleEvaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nombreMin" | "coefficientType" | "politiqueId" | "typeEvaluationId" | "createdAt" | "updatedAt", ExtArgs["result"]["regleEvaluation"]>
-export type RegleEvaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  politique?: boolean | Prisma.PolitiqueEvaluationDefaultArgs<ExtArgs>
-  typeEvaluation?: boolean | Prisma.TypeEvaluationDefaultArgs<ExtArgs>
+export type regleevaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nombreMin" | "coefficientType" | "politiqueId" | "typeEvaluationId" | "createdAt" | "updatedAt", ExtArgs["result"]["regleevaluation"]>
+export type regleevaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  politiqueevaluation?: boolean | Prisma.politiqueevaluationDefaultArgs<ExtArgs>
+  typeevaluation?: boolean | Prisma.typeevaluationDefaultArgs<ExtArgs>
 }
 
-export type $RegleEvaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "RegleEvaluation"
+export type $regleevaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "regleevaluation"
   objects: {
-    politique: Prisma.$PolitiqueEvaluationPayload<ExtArgs>
-    typeEvaluation: Prisma.$TypeEvaluationPayload<ExtArgs>
+    politiqueevaluation: Prisma.$politiqueevaluationPayload<ExtArgs>
+    typeevaluation: Prisma.$typeevaluationPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -729,143 +729,143 @@ export type $RegleEvaluationPayload<ExtArgs extends runtime.Types.Extensions.Int
     typeEvaluationId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["regleEvaluation"]>
+  }, ExtArgs["result"]["regleevaluation"]>
   composites: {}
 }
 
-export type RegleEvaluationGetPayload<S extends boolean | null | undefined | RegleEvaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload, S>
+export type regleevaluationGetPayload<S extends boolean | null | undefined | regleevaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload, S>
 
-export type RegleEvaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<RegleEvaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: RegleEvaluationCountAggregateInputType | true
+export type regleevaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<regleevaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: RegleevaluationCountAggregateInputType | true
   }
 
-export interface RegleEvaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RegleEvaluation'], meta: { name: 'RegleEvaluation' } }
+export interface regleevaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['regleevaluation'], meta: { name: 'regleevaluation' } }
   /**
-   * Find zero or one RegleEvaluation that matches the filter.
-   * @param {RegleEvaluationFindUniqueArgs} args - Arguments to find a RegleEvaluation
+   * Find zero or one Regleevaluation that matches the filter.
+   * @param {regleevaluationFindUniqueArgs} args - Arguments to find a Regleevaluation
    * @example
-   * // Get one RegleEvaluation
-   * const regleEvaluation = await prisma.regleEvaluation.findUnique({
+   * // Get one Regleevaluation
+   * const regleevaluation = await prisma.regleevaluation.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends RegleEvaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, RegleEvaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends regleevaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, regleevaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one RegleEvaluation that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Regleevaluation that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {RegleEvaluationFindUniqueOrThrowArgs} args - Arguments to find a RegleEvaluation
+   * @param {regleevaluationFindUniqueOrThrowArgs} args - Arguments to find a Regleevaluation
    * @example
-   * // Get one RegleEvaluation
-   * const regleEvaluation = await prisma.regleEvaluation.findUniqueOrThrow({
+   * // Get one Regleevaluation
+   * const regleevaluation = await prisma.regleevaluation.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends RegleEvaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, RegleEvaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends regleevaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, regleevaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first RegleEvaluation that matches the filter.
+   * Find the first Regleevaluation that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationFindFirstArgs} args - Arguments to find a RegleEvaluation
+   * @param {regleevaluationFindFirstArgs} args - Arguments to find a Regleevaluation
    * @example
-   * // Get one RegleEvaluation
-   * const regleEvaluation = await prisma.regleEvaluation.findFirst({
+   * // Get one Regleevaluation
+   * const regleevaluation = await prisma.regleevaluation.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends RegleEvaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, RegleEvaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends regleevaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, regleevaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first RegleEvaluation that matches the filter or
+   * Find the first Regleevaluation that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationFindFirstOrThrowArgs} args - Arguments to find a RegleEvaluation
+   * @param {regleevaluationFindFirstOrThrowArgs} args - Arguments to find a Regleevaluation
    * @example
-   * // Get one RegleEvaluation
-   * const regleEvaluation = await prisma.regleEvaluation.findFirstOrThrow({
+   * // Get one Regleevaluation
+   * const regleevaluation = await prisma.regleevaluation.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends RegleEvaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, RegleEvaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends regleevaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, regleevaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more RegleEvaluations that matches the filter.
+   * Find zero or more Regleevaluations that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {regleevaluationFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all RegleEvaluations
-   * const regleEvaluations = await prisma.regleEvaluation.findMany()
+   * // Get all Regleevaluations
+   * const regleevaluations = await prisma.regleevaluation.findMany()
    * 
-   * // Get first 10 RegleEvaluations
-   * const regleEvaluations = await prisma.regleEvaluation.findMany({ take: 10 })
+   * // Get first 10 Regleevaluations
+   * const regleevaluations = await prisma.regleevaluation.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const regleEvaluationWithIdOnly = await prisma.regleEvaluation.findMany({ select: { id: true } })
+   * const regleevaluationWithIdOnly = await prisma.regleevaluation.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends RegleEvaluationFindManyArgs>(args?: Prisma.SelectSubset<T, RegleEvaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends regleevaluationFindManyArgs>(args?: Prisma.SelectSubset<T, regleevaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a RegleEvaluation.
-   * @param {RegleEvaluationCreateArgs} args - Arguments to create a RegleEvaluation.
+   * Create a Regleevaluation.
+   * @param {regleevaluationCreateArgs} args - Arguments to create a Regleevaluation.
    * @example
-   * // Create one RegleEvaluation
-   * const RegleEvaluation = await prisma.regleEvaluation.create({
+   * // Create one Regleevaluation
+   * const Regleevaluation = await prisma.regleevaluation.create({
    *   data: {
-   *     // ... data to create a RegleEvaluation
+   *     // ... data to create a Regleevaluation
    *   }
    * })
    * 
    */
-  create<T extends RegleEvaluationCreateArgs>(args: Prisma.SelectSubset<T, RegleEvaluationCreateArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends regleevaluationCreateArgs>(args: Prisma.SelectSubset<T, regleevaluationCreateArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many RegleEvaluations.
-   * @param {RegleEvaluationCreateManyArgs} args - Arguments to create many RegleEvaluations.
+   * Create many Regleevaluations.
+   * @param {regleevaluationCreateManyArgs} args - Arguments to create many Regleevaluations.
    * @example
-   * // Create many RegleEvaluations
-   * const regleEvaluation = await prisma.regleEvaluation.createMany({
+   * // Create many Regleevaluations
+   * const regleevaluation = await prisma.regleevaluation.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends RegleEvaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, RegleEvaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends regleevaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, regleevaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a RegleEvaluation.
-   * @param {RegleEvaluationDeleteArgs} args - Arguments to delete one RegleEvaluation.
+   * Delete a Regleevaluation.
+   * @param {regleevaluationDeleteArgs} args - Arguments to delete one Regleevaluation.
    * @example
-   * // Delete one RegleEvaluation
-   * const RegleEvaluation = await prisma.regleEvaluation.delete({
+   * // Delete one Regleevaluation
+   * const Regleevaluation = await prisma.regleevaluation.delete({
    *   where: {
-   *     // ... filter to delete one RegleEvaluation
+   *     // ... filter to delete one Regleevaluation
    *   }
    * })
    * 
    */
-  delete<T extends RegleEvaluationDeleteArgs>(args: Prisma.SelectSubset<T, RegleEvaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends regleevaluationDeleteArgs>(args: Prisma.SelectSubset<T, regleevaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one RegleEvaluation.
-   * @param {RegleEvaluationUpdateArgs} args - Arguments to update one RegleEvaluation.
+   * Update one Regleevaluation.
+   * @param {regleevaluationUpdateArgs} args - Arguments to update one Regleevaluation.
    * @example
-   * // Update one RegleEvaluation
-   * const regleEvaluation = await prisma.regleEvaluation.update({
+   * // Update one Regleevaluation
+   * const regleevaluation = await prisma.regleevaluation.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -875,30 +875,30 @@ export interface RegleEvaluationDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  update<T extends RegleEvaluationUpdateArgs>(args: Prisma.SelectSubset<T, RegleEvaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends regleevaluationUpdateArgs>(args: Prisma.SelectSubset<T, regleevaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more RegleEvaluations.
-   * @param {RegleEvaluationDeleteManyArgs} args - Arguments to filter RegleEvaluations to delete.
+   * Delete zero or more Regleevaluations.
+   * @param {regleevaluationDeleteManyArgs} args - Arguments to filter Regleevaluations to delete.
    * @example
-   * // Delete a few RegleEvaluations
-   * const { count } = await prisma.regleEvaluation.deleteMany({
+   * // Delete a few Regleevaluations
+   * const { count } = await prisma.regleevaluation.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends RegleEvaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, RegleEvaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends regleevaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, regleevaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more RegleEvaluations.
+   * Update zero or more Regleevaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {regleevaluationUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many RegleEvaluations
-   * const regleEvaluation = await prisma.regleEvaluation.updateMany({
+   * // Update many Regleevaluations
+   * const regleevaluation = await prisma.regleevaluation.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -908,56 +908,56 @@ export interface RegleEvaluationDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  updateMany<T extends RegleEvaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, RegleEvaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends regleevaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, regleevaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one RegleEvaluation.
-   * @param {RegleEvaluationUpsertArgs} args - Arguments to update or create a RegleEvaluation.
+   * Create or update one Regleevaluation.
+   * @param {regleevaluationUpsertArgs} args - Arguments to update or create a Regleevaluation.
    * @example
-   * // Update or create a RegleEvaluation
-   * const regleEvaluation = await prisma.regleEvaluation.upsert({
+   * // Update or create a Regleevaluation
+   * const regleevaluation = await prisma.regleevaluation.upsert({
    *   create: {
-   *     // ... data to create a RegleEvaluation
+   *     // ... data to create a Regleevaluation
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the RegleEvaluation we want to update
+   *     // ... the filter for the Regleevaluation we want to update
    *   }
    * })
    */
-  upsert<T extends RegleEvaluationUpsertArgs>(args: Prisma.SelectSubset<T, RegleEvaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__RegleEvaluationClient<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends regleevaluationUpsertArgs>(args: Prisma.SelectSubset<T, regleevaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__regleevaluationClient<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of RegleEvaluations.
+   * Count the number of Regleevaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationCountArgs} args - Arguments to filter RegleEvaluations to count.
+   * @param {regleevaluationCountArgs} args - Arguments to filter Regleevaluations to count.
    * @example
-   * // Count the number of RegleEvaluations
-   * const count = await prisma.regleEvaluation.count({
+   * // Count the number of Regleevaluations
+   * const count = await prisma.regleevaluation.count({
    *   where: {
-   *     // ... the filter for the RegleEvaluations we want to count
+   *     // ... the filter for the Regleevaluations we want to count
    *   }
    * })
   **/
-  count<T extends RegleEvaluationCountArgs>(
-    args?: Prisma.Subset<T, RegleEvaluationCountArgs>,
+  count<T extends regleevaluationCountArgs>(
+    args?: Prisma.Subset<T, regleevaluationCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], RegleEvaluationCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], RegleevaluationCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a RegleEvaluation.
+   * Allows you to perform aggregations operations on a Regleevaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {RegleevaluationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -977,13 +977,13 @@ export interface RegleEvaluationDelegate<ExtArgs extends runtime.Types.Extension
    *   take: 10,
    * })
   **/
-  aggregate<T extends RegleEvaluationAggregateArgs>(args: Prisma.Subset<T, RegleEvaluationAggregateArgs>): Prisma.PrismaPromise<GetRegleEvaluationAggregateType<T>>
+  aggregate<T extends RegleevaluationAggregateArgs>(args: Prisma.Subset<T, RegleevaluationAggregateArgs>): Prisma.PrismaPromise<GetRegleevaluationAggregateType<T>>
 
   /**
-   * Group by RegleEvaluation.
+   * Group by Regleevaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {RegleEvaluationGroupByArgs} args - Group by arguments.
+   * @param {regleevaluationGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -998,14 +998,14 @@ export interface RegleEvaluationDelegate<ExtArgs extends runtime.Types.Extension
    * 
   **/
   groupBy<
-    T extends RegleEvaluationGroupByArgs,
+    T extends regleevaluationGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: RegleEvaluationGroupByArgs['orderBy'] }
-      : { orderBy?: RegleEvaluationGroupByArgs['orderBy'] },
+      ? { orderBy: regleevaluationGroupByArgs['orderBy'] }
+      : { orderBy?: regleevaluationGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1054,23 +1054,23 @@ export interface RegleEvaluationDelegate<ExtArgs extends runtime.Types.Extension
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, RegleEvaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRegleEvaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, regleevaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRegleevaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the RegleEvaluation model
+ * Fields of the regleevaluation model
  */
-readonly fields: RegleEvaluationFieldRefs;
+readonly fields: regleevaluationFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for RegleEvaluation.
+ * The delegate class that acts as a "Promise-like" for regleevaluation.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__RegleEvaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__regleevaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  politique<T extends Prisma.PolitiqueEvaluationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PolitiqueEvaluationDefaultArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  typeEvaluation<T extends Prisma.TypeEvaluationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TypeEvaluationDefaultArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  politiqueevaluation<T extends Prisma.politiqueevaluationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.politiqueevaluationDefaultArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  typeevaluation<T extends Prisma.typeevaluationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.typeevaluationDefaultArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1097,377 +1097,377 @@ export interface Prisma__RegleEvaluationClient<T, Null = never, ExtArgs extends 
 
 
 /**
- * Fields of the RegleEvaluation model
+ * Fields of the regleevaluation model
  */
-export interface RegleEvaluationFieldRefs {
-  readonly id: Prisma.FieldRef<"RegleEvaluation", 'String'>
-  readonly nombreMin: Prisma.FieldRef<"RegleEvaluation", 'Int'>
-  readonly coefficientType: Prisma.FieldRef<"RegleEvaluation", 'Int'>
-  readonly politiqueId: Prisma.FieldRef<"RegleEvaluation", 'String'>
-  readonly typeEvaluationId: Prisma.FieldRef<"RegleEvaluation", 'String'>
-  readonly createdAt: Prisma.FieldRef<"RegleEvaluation", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"RegleEvaluation", 'DateTime'>
+export interface regleevaluationFieldRefs {
+  readonly id: Prisma.FieldRef<"regleevaluation", 'String'>
+  readonly nombreMin: Prisma.FieldRef<"regleevaluation", 'Int'>
+  readonly coefficientType: Prisma.FieldRef<"regleevaluation", 'Int'>
+  readonly politiqueId: Prisma.FieldRef<"regleevaluation", 'String'>
+  readonly typeEvaluationId: Prisma.FieldRef<"regleevaluation", 'String'>
+  readonly createdAt: Prisma.FieldRef<"regleevaluation", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"regleevaluation", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * RegleEvaluation findUnique
+ * regleevaluation findUnique
  */
-export type RegleEvaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which RegleEvaluation to fetch.
+   * Filter, which regleevaluation to fetch.
    */
-  where: Prisma.RegleEvaluationWhereUniqueInput
+  where: Prisma.regleevaluationWhereUniqueInput
 }
 
 /**
- * RegleEvaluation findUniqueOrThrow
+ * regleevaluation findUniqueOrThrow
  */
-export type RegleEvaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which RegleEvaluation to fetch.
+   * Filter, which regleevaluation to fetch.
    */
-  where: Prisma.RegleEvaluationWhereUniqueInput
+  where: Prisma.regleevaluationWhereUniqueInput
 }
 
 /**
- * RegleEvaluation findFirst
+ * regleevaluation findFirst
  */
-export type RegleEvaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which RegleEvaluation to fetch.
+   * Filter, which regleevaluation to fetch.
    */
-  where?: Prisma.RegleEvaluationWhereInput
+  where?: Prisma.regleevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of RegleEvaluations to fetch.
+   * Determine the order of regleevaluations to fetch.
    */
-  orderBy?: Prisma.RegleEvaluationOrderByWithRelationInput | Prisma.RegleEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.regleevaluationOrderByWithRelationInput | Prisma.regleevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for RegleEvaluations.
+   * Sets the position for searching for regleevaluations.
    */
-  cursor?: Prisma.RegleEvaluationWhereUniqueInput
+  cursor?: Prisma.regleevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` RegleEvaluations from the position of the cursor.
+   * Take `±n` regleevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` RegleEvaluations.
+   * Skip the first `n` regleevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of RegleEvaluations.
+   * Filter by unique combinations of regleevaluations.
    */
-  distinct?: Prisma.RegleEvaluationScalarFieldEnum | Prisma.RegleEvaluationScalarFieldEnum[]
+  distinct?: Prisma.RegleevaluationScalarFieldEnum | Prisma.RegleevaluationScalarFieldEnum[]
 }
 
 /**
- * RegleEvaluation findFirstOrThrow
+ * regleevaluation findFirstOrThrow
  */
-export type RegleEvaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which RegleEvaluation to fetch.
+   * Filter, which regleevaluation to fetch.
    */
-  where?: Prisma.RegleEvaluationWhereInput
+  where?: Prisma.regleevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of RegleEvaluations to fetch.
+   * Determine the order of regleevaluations to fetch.
    */
-  orderBy?: Prisma.RegleEvaluationOrderByWithRelationInput | Prisma.RegleEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.regleevaluationOrderByWithRelationInput | Prisma.regleevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for RegleEvaluations.
+   * Sets the position for searching for regleevaluations.
    */
-  cursor?: Prisma.RegleEvaluationWhereUniqueInput
+  cursor?: Prisma.regleevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` RegleEvaluations from the position of the cursor.
+   * Take `±n` regleevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` RegleEvaluations.
+   * Skip the first `n` regleevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of RegleEvaluations.
+   * Filter by unique combinations of regleevaluations.
    */
-  distinct?: Prisma.RegleEvaluationScalarFieldEnum | Prisma.RegleEvaluationScalarFieldEnum[]
+  distinct?: Prisma.RegleevaluationScalarFieldEnum | Prisma.RegleevaluationScalarFieldEnum[]
 }
 
 /**
- * RegleEvaluation findMany
+ * regleevaluation findMany
  */
-export type RegleEvaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which RegleEvaluations to fetch.
+   * Filter, which regleevaluations to fetch.
    */
-  where?: Prisma.RegleEvaluationWhereInput
+  where?: Prisma.regleevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of RegleEvaluations to fetch.
+   * Determine the order of regleevaluations to fetch.
    */
-  orderBy?: Prisma.RegleEvaluationOrderByWithRelationInput | Prisma.RegleEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.regleevaluationOrderByWithRelationInput | Prisma.regleevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing RegleEvaluations.
+   * Sets the position for listing regleevaluations.
    */
-  cursor?: Prisma.RegleEvaluationWhereUniqueInput
+  cursor?: Prisma.regleevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` RegleEvaluations from the position of the cursor.
+   * Take `±n` regleevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` RegleEvaluations.
+   * Skip the first `n` regleevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of RegleEvaluations.
+   * Filter by unique combinations of regleevaluations.
    */
-  distinct?: Prisma.RegleEvaluationScalarFieldEnum | Prisma.RegleEvaluationScalarFieldEnum[]
+  distinct?: Prisma.RegleevaluationScalarFieldEnum | Prisma.RegleevaluationScalarFieldEnum[]
 }
 
 /**
- * RegleEvaluation create
+ * regleevaluation create
  */
-export type RegleEvaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * The data needed to create a RegleEvaluation.
+   * The data needed to create a regleevaluation.
    */
-  data: Prisma.XOR<Prisma.RegleEvaluationCreateInput, Prisma.RegleEvaluationUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.regleevaluationCreateInput, Prisma.regleevaluationUncheckedCreateInput>
 }
 
 /**
- * RegleEvaluation createMany
+ * regleevaluation createMany
  */
-export type RegleEvaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many RegleEvaluations.
+   * The data used to create many regleevaluations.
    */
-  data: Prisma.RegleEvaluationCreateManyInput | Prisma.RegleEvaluationCreateManyInput[]
+  data: Prisma.regleevaluationCreateManyInput | Prisma.regleevaluationCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * RegleEvaluation update
+ * regleevaluation update
  */
-export type RegleEvaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * The data needed to update a RegleEvaluation.
+   * The data needed to update a regleevaluation.
    */
-  data: Prisma.XOR<Prisma.RegleEvaluationUpdateInput, Prisma.RegleEvaluationUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.regleevaluationUpdateInput, Prisma.regleevaluationUncheckedUpdateInput>
   /**
-   * Choose, which RegleEvaluation to update.
+   * Choose, which regleevaluation to update.
    */
-  where: Prisma.RegleEvaluationWhereUniqueInput
+  where: Prisma.regleevaluationWhereUniqueInput
 }
 
 /**
- * RegleEvaluation updateMany
+ * regleevaluation updateMany
  */
-export type RegleEvaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update RegleEvaluations.
+   * The data used to update regleevaluations.
    */
-  data: Prisma.XOR<Prisma.RegleEvaluationUpdateManyMutationInput, Prisma.RegleEvaluationUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.regleevaluationUpdateManyMutationInput, Prisma.regleevaluationUncheckedUpdateManyInput>
   /**
-   * Filter which RegleEvaluations to update
+   * Filter which regleevaluations to update
    */
-  where?: Prisma.RegleEvaluationWhereInput
+  where?: Prisma.regleevaluationWhereInput
   /**
-   * Limit how many RegleEvaluations to update.
+   * Limit how many regleevaluations to update.
    */
   limit?: number
 }
 
 /**
- * RegleEvaluation upsert
+ * regleevaluation upsert
  */
-export type RegleEvaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * The filter to search for the RegleEvaluation to update in case it exists.
+   * The filter to search for the regleevaluation to update in case it exists.
    */
-  where: Prisma.RegleEvaluationWhereUniqueInput
+  where: Prisma.regleevaluationWhereUniqueInput
   /**
-   * In case the RegleEvaluation found by the `where` argument doesn't exist, create a new RegleEvaluation with this data.
+   * In case the regleevaluation found by the `where` argument doesn't exist, create a new regleevaluation with this data.
    */
-  create: Prisma.XOR<Prisma.RegleEvaluationCreateInput, Prisma.RegleEvaluationUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.regleevaluationCreateInput, Prisma.regleevaluationUncheckedCreateInput>
   /**
-   * In case the RegleEvaluation was found with the provided `where` argument, update it with this data.
+   * In case the regleevaluation was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.RegleEvaluationUpdateInput, Prisma.RegleEvaluationUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.regleevaluationUpdateInput, Prisma.regleevaluationUncheckedUpdateInput>
 }
 
 /**
- * RegleEvaluation delete
+ * regleevaluation delete
  */
-export type RegleEvaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
   /**
-   * Filter which RegleEvaluation to delete.
+   * Filter which regleevaluation to delete.
    */
-  where: Prisma.RegleEvaluationWhereUniqueInput
+  where: Prisma.regleevaluationWhereUniqueInput
 }
 
 /**
- * RegleEvaluation deleteMany
+ * regleevaluation deleteMany
  */
-export type RegleEvaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which RegleEvaluations to delete
+   * Filter which regleevaluations to delete
    */
-  where?: Prisma.RegleEvaluationWhereInput
+  where?: Prisma.regleevaluationWhereInput
   /**
-   * Limit how many RegleEvaluations to delete.
+   * Limit how many regleevaluations to delete.
    */
   limit?: number
 }
 
 /**
- * RegleEvaluation without action
+ * regleevaluation without action
  */
-export type RegleEvaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type regleevaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
 }

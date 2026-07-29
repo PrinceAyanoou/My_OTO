@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `EmployeRole` model and its related types.
+ * This file exports the `employerole` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,32 +13,32 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model EmployeRole
+ * Model employerole
  * 
  */
-export type EmployeRoleModel = runtime.Types.Result.DefaultSelection<Prisma.$EmployeRolePayload>
+export type employeroleModel = runtime.Types.Result.DefaultSelection<Prisma.$employerolePayload>
 
-export type AggregateEmployeRole = {
-  _count: EmployeRoleCountAggregateOutputType | null
-  _min: EmployeRoleMinAggregateOutputType | null
-  _max: EmployeRoleMaxAggregateOutputType | null
+export type AggregateEmployerole = {
+  _count: EmployeroleCountAggregateOutputType | null
+  _min: EmployeroleMinAggregateOutputType | null
+  _max: EmployeroleMaxAggregateOutputType | null
 }
 
-export type EmployeRoleMinAggregateOutputType = {
+export type EmployeroleMinAggregateOutputType = {
   employeId: string | null
   roleId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type EmployeRoleMaxAggregateOutputType = {
+export type EmployeroleMaxAggregateOutputType = {
   employeId: string | null
   roleId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type EmployeRoleCountAggregateOutputType = {
+export type EmployeroleCountAggregateOutputType = {
   employeId: number
   roleId: number
   createdAt: number
@@ -47,21 +47,21 @@ export type EmployeRoleCountAggregateOutputType = {
 }
 
 
-export type EmployeRoleMinAggregateInputType = {
+export type EmployeroleMinAggregateInputType = {
   employeId?: true
   roleId?: true
   createdAt?: true
   updatedAt?: true
 }
 
-export type EmployeRoleMaxAggregateInputType = {
+export type EmployeroleMaxAggregateInputType = {
   employeId?: true
   roleId?: true
   createdAt?: true
   updatedAt?: true
 }
 
-export type EmployeRoleCountAggregateInputType = {
+export type EmployeroleCountAggregateInputType = {
   employeId?: true
   roleId?: true
   createdAt?: true
@@ -69,639 +69,639 @@ export type EmployeRoleCountAggregateInputType = {
   _all?: true
 }
 
-export type EmployeRoleAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type EmployeroleAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which EmployeRole to aggregate.
+   * Filter which employerole to aggregate.
    */
-  where?: Prisma.EmployeRoleWhereInput
+  where?: Prisma.employeroleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeRoles to fetch.
+   * Determine the order of employeroles to fetch.
    */
-  orderBy?: Prisma.EmployeRoleOrderByWithRelationInput | Prisma.EmployeRoleOrderByWithRelationInput[]
+  orderBy?: Prisma.employeroleOrderByWithRelationInput | Prisma.employeroleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.EmployeRoleWhereUniqueInput
+  cursor?: Prisma.employeroleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeRoles from the position of the cursor.
+   * Take `±n` employeroles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeRoles.
+   * Skip the first `n` employeroles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned EmployeRoles
+   * Count returned employeroles
   **/
-  _count?: true | EmployeRoleCountAggregateInputType
+  _count?: true | EmployeroleCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: EmployeRoleMinAggregateInputType
+  _min?: EmployeroleMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: EmployeRoleMaxAggregateInputType
+  _max?: EmployeroleMaxAggregateInputType
 }
 
-export type GetEmployeRoleAggregateType<T extends EmployeRoleAggregateArgs> = {
-      [P in keyof T & keyof AggregateEmployeRole]: P extends '_count' | 'count'
+export type GetEmployeroleAggregateType<T extends EmployeroleAggregateArgs> = {
+      [P in keyof T & keyof AggregateEmployerole]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateEmployeRole[P]>
-    : Prisma.GetScalarType<T[P], AggregateEmployeRole[P]>
+      : Prisma.GetScalarType<T[P], AggregateEmployerole[P]>
+    : Prisma.GetScalarType<T[P], AggregateEmployerole[P]>
 }
 
 
 
 
-export type EmployeRoleGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EmployeRoleWhereInput
-  orderBy?: Prisma.EmployeRoleOrderByWithAggregationInput | Prisma.EmployeRoleOrderByWithAggregationInput[]
-  by: Prisma.EmployeRoleScalarFieldEnum[] | Prisma.EmployeRoleScalarFieldEnum
-  having?: Prisma.EmployeRoleScalarWhereWithAggregatesInput
+export type employeroleGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.employeroleWhereInput
+  orderBy?: Prisma.employeroleOrderByWithAggregationInput | Prisma.employeroleOrderByWithAggregationInput[]
+  by: Prisma.EmployeroleScalarFieldEnum[] | Prisma.EmployeroleScalarFieldEnum
+  having?: Prisma.employeroleScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: EmployeRoleCountAggregateInputType | true
-  _min?: EmployeRoleMinAggregateInputType
-  _max?: EmployeRoleMaxAggregateInputType
+  _count?: EmployeroleCountAggregateInputType | true
+  _min?: EmployeroleMinAggregateInputType
+  _max?: EmployeroleMaxAggregateInputType
 }
 
-export type EmployeRoleGroupByOutputType = {
+export type EmployeroleGroupByOutputType = {
   employeId: string
   roleId: string
   createdAt: Date
   updatedAt: Date
-  _count: EmployeRoleCountAggregateOutputType | null
-  _min: EmployeRoleMinAggregateOutputType | null
-  _max: EmployeRoleMaxAggregateOutputType | null
+  _count: EmployeroleCountAggregateOutputType | null
+  _min: EmployeroleMinAggregateOutputType | null
+  _max: EmployeroleMaxAggregateOutputType | null
 }
 
-export type GetEmployeRoleGroupByPayload<T extends EmployeRoleGroupByArgs> = Prisma.PrismaPromise<
+export type GetEmployeroleGroupByPayload<T extends employeroleGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<EmployeRoleGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<EmployeroleGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof EmployeRoleGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof EmployeroleGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], EmployeRoleGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], EmployeRoleGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], EmployeroleGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], EmployeroleGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type EmployeRoleWhereInput = {
-  AND?: Prisma.EmployeRoleWhereInput | Prisma.EmployeRoleWhereInput[]
-  OR?: Prisma.EmployeRoleWhereInput[]
-  NOT?: Prisma.EmployeRoleWhereInput | Prisma.EmployeRoleWhereInput[]
-  employeId?: Prisma.StringFilter<"EmployeRole"> | string
-  roleId?: Prisma.StringFilter<"EmployeRole"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmployeRole"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"EmployeRole"> | Date | string
-  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.EmployeWhereInput>
-  role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.RoleWhereInput>
+export type employeroleWhereInput = {
+  AND?: Prisma.employeroleWhereInput | Prisma.employeroleWhereInput[]
+  OR?: Prisma.employeroleWhereInput[]
+  NOT?: Prisma.employeroleWhereInput | Prisma.employeroleWhereInput[]
+  employeId?: Prisma.StringFilter<"employerole"> | string
+  roleId?: Prisma.StringFilter<"employerole"> | string
+  createdAt?: Prisma.DateTimeFilter<"employerole"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"employerole"> | Date | string
+  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.employeWhereInput>
+  role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.roleWhereInput>
 }
 
-export type EmployeRoleOrderByWithRelationInput = {
+export type employeroleOrderByWithRelationInput = {
   employeId?: Prisma.SortOrder
   roleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  employe?: Prisma.EmployeOrderByWithRelationInput
-  role?: Prisma.RoleOrderByWithRelationInput
-  _relevance?: Prisma.EmployeRoleOrderByRelevanceInput
+  employe?: Prisma.employeOrderByWithRelationInput
+  role?: Prisma.roleOrderByWithRelationInput
+  _relevance?: Prisma.employeroleOrderByRelevanceInput
 }
 
-export type EmployeRoleWhereUniqueInput = Prisma.AtLeast<{
-  employeId_roleId?: Prisma.EmployeRoleEmployeIdRoleIdCompoundUniqueInput
-  AND?: Prisma.EmployeRoleWhereInput | Prisma.EmployeRoleWhereInput[]
-  OR?: Prisma.EmployeRoleWhereInput[]
-  NOT?: Prisma.EmployeRoleWhereInput | Prisma.EmployeRoleWhereInput[]
-  employeId?: Prisma.StringFilter<"EmployeRole"> | string
-  roleId?: Prisma.StringFilter<"EmployeRole"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmployeRole"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"EmployeRole"> | Date | string
-  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.EmployeWhereInput>
-  role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.RoleWhereInput>
+export type employeroleWhereUniqueInput = Prisma.AtLeast<{
+  employeId_roleId?: Prisma.employeroleEmployeIdRoleIdCompoundUniqueInput
+  AND?: Prisma.employeroleWhereInput | Prisma.employeroleWhereInput[]
+  OR?: Prisma.employeroleWhereInput[]
+  NOT?: Prisma.employeroleWhereInput | Prisma.employeroleWhereInput[]
+  employeId?: Prisma.StringFilter<"employerole"> | string
+  roleId?: Prisma.StringFilter<"employerole"> | string
+  createdAt?: Prisma.DateTimeFilter<"employerole"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"employerole"> | Date | string
+  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.employeWhereInput>
+  role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.roleWhereInput>
 }, "employeId_roleId">
 
-export type EmployeRoleOrderByWithAggregationInput = {
+export type employeroleOrderByWithAggregationInput = {
   employeId?: Prisma.SortOrder
   roleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.EmployeRoleCountOrderByAggregateInput
-  _max?: Prisma.EmployeRoleMaxOrderByAggregateInput
-  _min?: Prisma.EmployeRoleMinOrderByAggregateInput
+  _count?: Prisma.employeroleCountOrderByAggregateInput
+  _max?: Prisma.employeroleMaxOrderByAggregateInput
+  _min?: Prisma.employeroleMinOrderByAggregateInput
 }
 
-export type EmployeRoleScalarWhereWithAggregatesInput = {
-  AND?: Prisma.EmployeRoleScalarWhereWithAggregatesInput | Prisma.EmployeRoleScalarWhereWithAggregatesInput[]
-  OR?: Prisma.EmployeRoleScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.EmployeRoleScalarWhereWithAggregatesInput | Prisma.EmployeRoleScalarWhereWithAggregatesInput[]
-  employeId?: Prisma.StringWithAggregatesFilter<"EmployeRole"> | string
-  roleId?: Prisma.StringWithAggregatesFilter<"EmployeRole"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"EmployeRole"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"EmployeRole"> | Date | string
+export type employeroleScalarWhereWithAggregatesInput = {
+  AND?: Prisma.employeroleScalarWhereWithAggregatesInput | Prisma.employeroleScalarWhereWithAggregatesInput[]
+  OR?: Prisma.employeroleScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.employeroleScalarWhereWithAggregatesInput | Prisma.employeroleScalarWhereWithAggregatesInput[]
+  employeId?: Prisma.StringWithAggregatesFilter<"employerole"> | string
+  roleId?: Prisma.StringWithAggregatesFilter<"employerole"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"employerole"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"employerole"> | Date | string
 }
 
-export type EmployeRoleCreateInput = {
+export type employeroleCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
-  employe: Prisma.EmployeCreateNestedOneWithoutEmployeRoleInput
-  role: Prisma.RoleCreateNestedOneWithoutEmployeRoleInput
+  employe: Prisma.employeCreateNestedOneWithoutEmployeroleInput
+  role: Prisma.roleCreateNestedOneWithoutEmployeroleInput
 }
 
-export type EmployeRoleUncheckedCreateInput = {
+export type employeroleUncheckedCreateInput = {
   employeId: string
   roleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type EmployeRoleUpdateInput = {
+export type employeroleUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  employe?: Prisma.EmployeUpdateOneRequiredWithoutEmployeRoleNestedInput
-  role?: Prisma.RoleUpdateOneRequiredWithoutEmployeRoleNestedInput
+  employe?: Prisma.employeUpdateOneRequiredWithoutEmployeroleNestedInput
+  role?: Prisma.roleUpdateOneRequiredWithoutEmployeroleNestedInput
 }
 
-export type EmployeRoleUncheckedUpdateInput = {
+export type employeroleUncheckedUpdateInput = {
   employeId?: Prisma.StringFieldUpdateOperationsInput | string
   roleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeRoleCreateManyInput = {
+export type employeroleCreateManyInput = {
   employeId: string
   roleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type EmployeRoleUpdateManyMutationInput = {
+export type employeroleUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeRoleUncheckedUpdateManyInput = {
+export type employeroleUncheckedUpdateManyInput = {
   employeId?: Prisma.StringFieldUpdateOperationsInput | string
   roleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeRoleListRelationFilter = {
-  every?: Prisma.EmployeRoleWhereInput
-  some?: Prisma.EmployeRoleWhereInput
-  none?: Prisma.EmployeRoleWhereInput
+export type EmployeroleListRelationFilter = {
+  every?: Prisma.employeroleWhereInput
+  some?: Prisma.employeroleWhereInput
+  none?: Prisma.employeroleWhereInput
 }
 
-export type EmployeRoleOrderByRelationAggregateInput = {
+export type employeroleOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type EmployeRoleOrderByRelevanceInput = {
-  fields: Prisma.EmployeRoleOrderByRelevanceFieldEnum | Prisma.EmployeRoleOrderByRelevanceFieldEnum[]
+export type employeroleOrderByRelevanceInput = {
+  fields: Prisma.employeroleOrderByRelevanceFieldEnum | Prisma.employeroleOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type EmployeRoleEmployeIdRoleIdCompoundUniqueInput = {
+export type employeroleEmployeIdRoleIdCompoundUniqueInput = {
   employeId: string
   roleId: string
 }
 
-export type EmployeRoleCountOrderByAggregateInput = {
+export type employeroleCountOrderByAggregateInput = {
   employeId?: Prisma.SortOrder
   roleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type EmployeRoleMaxOrderByAggregateInput = {
+export type employeroleMaxOrderByAggregateInput = {
   employeId?: Prisma.SortOrder
   roleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type EmployeRoleMinOrderByAggregateInput = {
+export type employeroleMinOrderByAggregateInput = {
   employeId?: Prisma.SortOrder
   roleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type EmployeRoleCreateNestedManyWithoutRoleInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutRoleInput, Prisma.EmployeRoleUncheckedCreateWithoutRoleInput> | Prisma.EmployeRoleCreateWithoutRoleInput[] | Prisma.EmployeRoleUncheckedCreateWithoutRoleInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutRoleInput | Prisma.EmployeRoleCreateOrConnectWithoutRoleInput[]
-  createMany?: Prisma.EmployeRoleCreateManyRoleInputEnvelope
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
+export type employeroleCreateNestedManyWithoutEmployeInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutEmployeInput, Prisma.employeroleUncheckedCreateWithoutEmployeInput> | Prisma.employeroleCreateWithoutEmployeInput[] | Prisma.employeroleUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutEmployeInput | Prisma.employeroleCreateOrConnectWithoutEmployeInput[]
+  createMany?: Prisma.employeroleCreateManyEmployeInputEnvelope
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
 }
 
-export type EmployeRoleUncheckedCreateNestedManyWithoutRoleInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutRoleInput, Prisma.EmployeRoleUncheckedCreateWithoutRoleInput> | Prisma.EmployeRoleCreateWithoutRoleInput[] | Prisma.EmployeRoleUncheckedCreateWithoutRoleInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutRoleInput | Prisma.EmployeRoleCreateOrConnectWithoutRoleInput[]
-  createMany?: Prisma.EmployeRoleCreateManyRoleInputEnvelope
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
+export type employeroleUncheckedCreateNestedManyWithoutEmployeInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutEmployeInput, Prisma.employeroleUncheckedCreateWithoutEmployeInput> | Prisma.employeroleCreateWithoutEmployeInput[] | Prisma.employeroleUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutEmployeInput | Prisma.employeroleCreateOrConnectWithoutEmployeInput[]
+  createMany?: Prisma.employeroleCreateManyEmployeInputEnvelope
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
 }
 
-export type EmployeRoleUpdateManyWithoutRoleNestedInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutRoleInput, Prisma.EmployeRoleUncheckedCreateWithoutRoleInput> | Prisma.EmployeRoleCreateWithoutRoleInput[] | Prisma.EmployeRoleUncheckedCreateWithoutRoleInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutRoleInput | Prisma.EmployeRoleCreateOrConnectWithoutRoleInput[]
-  upsert?: Prisma.EmployeRoleUpsertWithWhereUniqueWithoutRoleInput | Prisma.EmployeRoleUpsertWithWhereUniqueWithoutRoleInput[]
-  createMany?: Prisma.EmployeRoleCreateManyRoleInputEnvelope
-  set?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  disconnect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  delete?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  update?: Prisma.EmployeRoleUpdateWithWhereUniqueWithoutRoleInput | Prisma.EmployeRoleUpdateWithWhereUniqueWithoutRoleInput[]
-  updateMany?: Prisma.EmployeRoleUpdateManyWithWhereWithoutRoleInput | Prisma.EmployeRoleUpdateManyWithWhereWithoutRoleInput[]
-  deleteMany?: Prisma.EmployeRoleScalarWhereInput | Prisma.EmployeRoleScalarWhereInput[]
+export type employeroleUpdateManyWithoutEmployeNestedInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutEmployeInput, Prisma.employeroleUncheckedCreateWithoutEmployeInput> | Prisma.employeroleCreateWithoutEmployeInput[] | Prisma.employeroleUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutEmployeInput | Prisma.employeroleCreateOrConnectWithoutEmployeInput[]
+  upsert?: Prisma.employeroleUpsertWithWhereUniqueWithoutEmployeInput | Prisma.employeroleUpsertWithWhereUniqueWithoutEmployeInput[]
+  createMany?: Prisma.employeroleCreateManyEmployeInputEnvelope
+  set?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  disconnect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  delete?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  update?: Prisma.employeroleUpdateWithWhereUniqueWithoutEmployeInput | Prisma.employeroleUpdateWithWhereUniqueWithoutEmployeInput[]
+  updateMany?: Prisma.employeroleUpdateManyWithWhereWithoutEmployeInput | Prisma.employeroleUpdateManyWithWhereWithoutEmployeInput[]
+  deleteMany?: Prisma.employeroleScalarWhereInput | Prisma.employeroleScalarWhereInput[]
 }
 
-export type EmployeRoleUncheckedUpdateManyWithoutRoleNestedInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutRoleInput, Prisma.EmployeRoleUncheckedCreateWithoutRoleInput> | Prisma.EmployeRoleCreateWithoutRoleInput[] | Prisma.EmployeRoleUncheckedCreateWithoutRoleInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutRoleInput | Prisma.EmployeRoleCreateOrConnectWithoutRoleInput[]
-  upsert?: Prisma.EmployeRoleUpsertWithWhereUniqueWithoutRoleInput | Prisma.EmployeRoleUpsertWithWhereUniqueWithoutRoleInput[]
-  createMany?: Prisma.EmployeRoleCreateManyRoleInputEnvelope
-  set?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  disconnect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  delete?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  update?: Prisma.EmployeRoleUpdateWithWhereUniqueWithoutRoleInput | Prisma.EmployeRoleUpdateWithWhereUniqueWithoutRoleInput[]
-  updateMany?: Prisma.EmployeRoleUpdateManyWithWhereWithoutRoleInput | Prisma.EmployeRoleUpdateManyWithWhereWithoutRoleInput[]
-  deleteMany?: Prisma.EmployeRoleScalarWhereInput | Prisma.EmployeRoleScalarWhereInput[]
+export type employeroleUncheckedUpdateManyWithoutEmployeNestedInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutEmployeInput, Prisma.employeroleUncheckedCreateWithoutEmployeInput> | Prisma.employeroleCreateWithoutEmployeInput[] | Prisma.employeroleUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutEmployeInput | Prisma.employeroleCreateOrConnectWithoutEmployeInput[]
+  upsert?: Prisma.employeroleUpsertWithWhereUniqueWithoutEmployeInput | Prisma.employeroleUpsertWithWhereUniqueWithoutEmployeInput[]
+  createMany?: Prisma.employeroleCreateManyEmployeInputEnvelope
+  set?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  disconnect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  delete?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  update?: Prisma.employeroleUpdateWithWhereUniqueWithoutEmployeInput | Prisma.employeroleUpdateWithWhereUniqueWithoutEmployeInput[]
+  updateMany?: Prisma.employeroleUpdateManyWithWhereWithoutEmployeInput | Prisma.employeroleUpdateManyWithWhereWithoutEmployeInput[]
+  deleteMany?: Prisma.employeroleScalarWhereInput | Prisma.employeroleScalarWhereInput[]
 }
 
-export type EmployeRoleCreateNestedManyWithoutEmployeInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutEmployeInput, Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput> | Prisma.EmployeRoleCreateWithoutEmployeInput[] | Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput | Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput[]
-  createMany?: Prisma.EmployeRoleCreateManyEmployeInputEnvelope
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
+export type employeroleCreateNestedManyWithoutRoleInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutRoleInput, Prisma.employeroleUncheckedCreateWithoutRoleInput> | Prisma.employeroleCreateWithoutRoleInput[] | Prisma.employeroleUncheckedCreateWithoutRoleInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutRoleInput | Prisma.employeroleCreateOrConnectWithoutRoleInput[]
+  createMany?: Prisma.employeroleCreateManyRoleInputEnvelope
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
 }
 
-export type EmployeRoleUncheckedCreateNestedManyWithoutEmployeInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutEmployeInput, Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput> | Prisma.EmployeRoleCreateWithoutEmployeInput[] | Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput | Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput[]
-  createMany?: Prisma.EmployeRoleCreateManyEmployeInputEnvelope
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
+export type employeroleUncheckedCreateNestedManyWithoutRoleInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutRoleInput, Prisma.employeroleUncheckedCreateWithoutRoleInput> | Prisma.employeroleCreateWithoutRoleInput[] | Prisma.employeroleUncheckedCreateWithoutRoleInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutRoleInput | Prisma.employeroleCreateOrConnectWithoutRoleInput[]
+  createMany?: Prisma.employeroleCreateManyRoleInputEnvelope
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
 }
 
-export type EmployeRoleUpdateManyWithoutEmployeNestedInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutEmployeInput, Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput> | Prisma.EmployeRoleCreateWithoutEmployeInput[] | Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput | Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput[]
-  upsert?: Prisma.EmployeRoleUpsertWithWhereUniqueWithoutEmployeInput | Prisma.EmployeRoleUpsertWithWhereUniqueWithoutEmployeInput[]
-  createMany?: Prisma.EmployeRoleCreateManyEmployeInputEnvelope
-  set?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  disconnect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  delete?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  update?: Prisma.EmployeRoleUpdateWithWhereUniqueWithoutEmployeInput | Prisma.EmployeRoleUpdateWithWhereUniqueWithoutEmployeInput[]
-  updateMany?: Prisma.EmployeRoleUpdateManyWithWhereWithoutEmployeInput | Prisma.EmployeRoleUpdateManyWithWhereWithoutEmployeInput[]
-  deleteMany?: Prisma.EmployeRoleScalarWhereInput | Prisma.EmployeRoleScalarWhereInput[]
+export type employeroleUpdateManyWithoutRoleNestedInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutRoleInput, Prisma.employeroleUncheckedCreateWithoutRoleInput> | Prisma.employeroleCreateWithoutRoleInput[] | Prisma.employeroleUncheckedCreateWithoutRoleInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutRoleInput | Prisma.employeroleCreateOrConnectWithoutRoleInput[]
+  upsert?: Prisma.employeroleUpsertWithWhereUniqueWithoutRoleInput | Prisma.employeroleUpsertWithWhereUniqueWithoutRoleInput[]
+  createMany?: Prisma.employeroleCreateManyRoleInputEnvelope
+  set?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  disconnect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  delete?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  update?: Prisma.employeroleUpdateWithWhereUniqueWithoutRoleInput | Prisma.employeroleUpdateWithWhereUniqueWithoutRoleInput[]
+  updateMany?: Prisma.employeroleUpdateManyWithWhereWithoutRoleInput | Prisma.employeroleUpdateManyWithWhereWithoutRoleInput[]
+  deleteMany?: Prisma.employeroleScalarWhereInput | Prisma.employeroleScalarWhereInput[]
 }
 
-export type EmployeRoleUncheckedUpdateManyWithoutEmployeNestedInput = {
-  create?: Prisma.XOR<Prisma.EmployeRoleCreateWithoutEmployeInput, Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput> | Prisma.EmployeRoleCreateWithoutEmployeInput[] | Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput | Prisma.EmployeRoleCreateOrConnectWithoutEmployeInput[]
-  upsert?: Prisma.EmployeRoleUpsertWithWhereUniqueWithoutEmployeInput | Prisma.EmployeRoleUpsertWithWhereUniqueWithoutEmployeInput[]
-  createMany?: Prisma.EmployeRoleCreateManyEmployeInputEnvelope
-  set?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  disconnect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  delete?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  connect?: Prisma.EmployeRoleWhereUniqueInput | Prisma.EmployeRoleWhereUniqueInput[]
-  update?: Prisma.EmployeRoleUpdateWithWhereUniqueWithoutEmployeInput | Prisma.EmployeRoleUpdateWithWhereUniqueWithoutEmployeInput[]
-  updateMany?: Prisma.EmployeRoleUpdateManyWithWhereWithoutEmployeInput | Prisma.EmployeRoleUpdateManyWithWhereWithoutEmployeInput[]
-  deleteMany?: Prisma.EmployeRoleScalarWhereInput | Prisma.EmployeRoleScalarWhereInput[]
+export type employeroleUncheckedUpdateManyWithoutRoleNestedInput = {
+  create?: Prisma.XOR<Prisma.employeroleCreateWithoutRoleInput, Prisma.employeroleUncheckedCreateWithoutRoleInput> | Prisma.employeroleCreateWithoutRoleInput[] | Prisma.employeroleUncheckedCreateWithoutRoleInput[]
+  connectOrCreate?: Prisma.employeroleCreateOrConnectWithoutRoleInput | Prisma.employeroleCreateOrConnectWithoutRoleInput[]
+  upsert?: Prisma.employeroleUpsertWithWhereUniqueWithoutRoleInput | Prisma.employeroleUpsertWithWhereUniqueWithoutRoleInput[]
+  createMany?: Prisma.employeroleCreateManyRoleInputEnvelope
+  set?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  disconnect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  delete?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  connect?: Prisma.employeroleWhereUniqueInput | Prisma.employeroleWhereUniqueInput[]
+  update?: Prisma.employeroleUpdateWithWhereUniqueWithoutRoleInput | Prisma.employeroleUpdateWithWhereUniqueWithoutRoleInput[]
+  updateMany?: Prisma.employeroleUpdateManyWithWhereWithoutRoleInput | Prisma.employeroleUpdateManyWithWhereWithoutRoleInput[]
+  deleteMany?: Prisma.employeroleScalarWhereInput | Prisma.employeroleScalarWhereInput[]
 }
 
-export type EmployeRoleCreateWithoutRoleInput = {
+export type employeroleCreateWithoutEmployeInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
-  employe: Prisma.EmployeCreateNestedOneWithoutEmployeRoleInput
+  role: Prisma.roleCreateNestedOneWithoutEmployeroleInput
 }
 
-export type EmployeRoleUncheckedCreateWithoutRoleInput = {
-  employeId: string
+export type employeroleUncheckedCreateWithoutEmployeInput = {
+  roleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type EmployeRoleCreateOrConnectWithoutRoleInput = {
-  where: Prisma.EmployeRoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EmployeRoleCreateWithoutRoleInput, Prisma.EmployeRoleUncheckedCreateWithoutRoleInput>
+export type employeroleCreateOrConnectWithoutEmployeInput = {
+  where: Prisma.employeroleWhereUniqueInput
+  create: Prisma.XOR<Prisma.employeroleCreateWithoutEmployeInput, Prisma.employeroleUncheckedCreateWithoutEmployeInput>
 }
 
-export type EmployeRoleCreateManyRoleInputEnvelope = {
-  data: Prisma.EmployeRoleCreateManyRoleInput | Prisma.EmployeRoleCreateManyRoleInput[]
+export type employeroleCreateManyEmployeInputEnvelope = {
+  data: Prisma.employeroleCreateManyEmployeInput | Prisma.employeroleCreateManyEmployeInput[]
   skipDuplicates?: boolean
 }
 
-export type EmployeRoleUpsertWithWhereUniqueWithoutRoleInput = {
-  where: Prisma.EmployeRoleWhereUniqueInput
-  update: Prisma.XOR<Prisma.EmployeRoleUpdateWithoutRoleInput, Prisma.EmployeRoleUncheckedUpdateWithoutRoleInput>
-  create: Prisma.XOR<Prisma.EmployeRoleCreateWithoutRoleInput, Prisma.EmployeRoleUncheckedCreateWithoutRoleInput>
+export type employeroleUpsertWithWhereUniqueWithoutEmployeInput = {
+  where: Prisma.employeroleWhereUniqueInput
+  update: Prisma.XOR<Prisma.employeroleUpdateWithoutEmployeInput, Prisma.employeroleUncheckedUpdateWithoutEmployeInput>
+  create: Prisma.XOR<Prisma.employeroleCreateWithoutEmployeInput, Prisma.employeroleUncheckedCreateWithoutEmployeInput>
 }
 
-export type EmployeRoleUpdateWithWhereUniqueWithoutRoleInput = {
-  where: Prisma.EmployeRoleWhereUniqueInput
-  data: Prisma.XOR<Prisma.EmployeRoleUpdateWithoutRoleInput, Prisma.EmployeRoleUncheckedUpdateWithoutRoleInput>
+export type employeroleUpdateWithWhereUniqueWithoutEmployeInput = {
+  where: Prisma.employeroleWhereUniqueInput
+  data: Prisma.XOR<Prisma.employeroleUpdateWithoutEmployeInput, Prisma.employeroleUncheckedUpdateWithoutEmployeInput>
 }
 
-export type EmployeRoleUpdateManyWithWhereWithoutRoleInput = {
-  where: Prisma.EmployeRoleScalarWhereInput
-  data: Prisma.XOR<Prisma.EmployeRoleUpdateManyMutationInput, Prisma.EmployeRoleUncheckedUpdateManyWithoutRoleInput>
+export type employeroleUpdateManyWithWhereWithoutEmployeInput = {
+  where: Prisma.employeroleScalarWhereInput
+  data: Prisma.XOR<Prisma.employeroleUpdateManyMutationInput, Prisma.employeroleUncheckedUpdateManyWithoutEmployeInput>
 }
 
-export type EmployeRoleScalarWhereInput = {
-  AND?: Prisma.EmployeRoleScalarWhereInput | Prisma.EmployeRoleScalarWhereInput[]
-  OR?: Prisma.EmployeRoleScalarWhereInput[]
-  NOT?: Prisma.EmployeRoleScalarWhereInput | Prisma.EmployeRoleScalarWhereInput[]
-  employeId?: Prisma.StringFilter<"EmployeRole"> | string
-  roleId?: Prisma.StringFilter<"EmployeRole"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmployeRole"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"EmployeRole"> | Date | string
+export type employeroleScalarWhereInput = {
+  AND?: Prisma.employeroleScalarWhereInput | Prisma.employeroleScalarWhereInput[]
+  OR?: Prisma.employeroleScalarWhereInput[]
+  NOT?: Prisma.employeroleScalarWhereInput | Prisma.employeroleScalarWhereInput[]
+  employeId?: Prisma.StringFilter<"employerole"> | string
+  roleId?: Prisma.StringFilter<"employerole"> | string
+  createdAt?: Prisma.DateTimeFilter<"employerole"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"employerole"> | Date | string
 }
 
-export type EmployeRoleCreateWithoutEmployeInput = {
+export type employeroleCreateWithoutRoleInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
-  role: Prisma.RoleCreateNestedOneWithoutEmployeRoleInput
+  employe: Prisma.employeCreateNestedOneWithoutEmployeroleInput
 }
 
-export type EmployeRoleUncheckedCreateWithoutEmployeInput = {
-  roleId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type EmployeRoleCreateOrConnectWithoutEmployeInput = {
-  where: Prisma.EmployeRoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EmployeRoleCreateWithoutEmployeInput, Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput>
-}
-
-export type EmployeRoleCreateManyEmployeInputEnvelope = {
-  data: Prisma.EmployeRoleCreateManyEmployeInput | Prisma.EmployeRoleCreateManyEmployeInput[]
-  skipDuplicates?: boolean
-}
-
-export type EmployeRoleUpsertWithWhereUniqueWithoutEmployeInput = {
-  where: Prisma.EmployeRoleWhereUniqueInput
-  update: Prisma.XOR<Prisma.EmployeRoleUpdateWithoutEmployeInput, Prisma.EmployeRoleUncheckedUpdateWithoutEmployeInput>
-  create: Prisma.XOR<Prisma.EmployeRoleCreateWithoutEmployeInput, Prisma.EmployeRoleUncheckedCreateWithoutEmployeInput>
-}
-
-export type EmployeRoleUpdateWithWhereUniqueWithoutEmployeInput = {
-  where: Prisma.EmployeRoleWhereUniqueInput
-  data: Prisma.XOR<Prisma.EmployeRoleUpdateWithoutEmployeInput, Prisma.EmployeRoleUncheckedUpdateWithoutEmployeInput>
-}
-
-export type EmployeRoleUpdateManyWithWhereWithoutEmployeInput = {
-  where: Prisma.EmployeRoleScalarWhereInput
-  data: Prisma.XOR<Prisma.EmployeRoleUpdateManyMutationInput, Prisma.EmployeRoleUncheckedUpdateManyWithoutEmployeInput>
-}
-
-export type EmployeRoleCreateManyRoleInput = {
+export type employeroleUncheckedCreateWithoutRoleInput = {
   employeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type EmployeRoleUpdateWithoutRoleInput = {
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  employe?: Prisma.EmployeUpdateOneRequiredWithoutEmployeRoleNestedInput
+export type employeroleCreateOrConnectWithoutRoleInput = {
+  where: Prisma.employeroleWhereUniqueInput
+  create: Prisma.XOR<Prisma.employeroleCreateWithoutRoleInput, Prisma.employeroleUncheckedCreateWithoutRoleInput>
 }
 
-export type EmployeRoleUncheckedUpdateWithoutRoleInput = {
-  employeId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type employeroleCreateManyRoleInputEnvelope = {
+  data: Prisma.employeroleCreateManyRoleInput | Prisma.employeroleCreateManyRoleInput[]
+  skipDuplicates?: boolean
 }
 
-export type EmployeRoleUncheckedUpdateManyWithoutRoleInput = {
-  employeId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type employeroleUpsertWithWhereUniqueWithoutRoleInput = {
+  where: Prisma.employeroleWhereUniqueInput
+  update: Prisma.XOR<Prisma.employeroleUpdateWithoutRoleInput, Prisma.employeroleUncheckedUpdateWithoutRoleInput>
+  create: Prisma.XOR<Prisma.employeroleCreateWithoutRoleInput, Prisma.employeroleUncheckedCreateWithoutRoleInput>
 }
 
-export type EmployeRoleCreateManyEmployeInput = {
+export type employeroleUpdateWithWhereUniqueWithoutRoleInput = {
+  where: Prisma.employeroleWhereUniqueInput
+  data: Prisma.XOR<Prisma.employeroleUpdateWithoutRoleInput, Prisma.employeroleUncheckedUpdateWithoutRoleInput>
+}
+
+export type employeroleUpdateManyWithWhereWithoutRoleInput = {
+  where: Prisma.employeroleScalarWhereInput
+  data: Prisma.XOR<Prisma.employeroleUpdateManyMutationInput, Prisma.employeroleUncheckedUpdateManyWithoutRoleInput>
+}
+
+export type employeroleCreateManyEmployeInput = {
   roleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type EmployeRoleUpdateWithoutEmployeInput = {
+export type employeroleUpdateWithoutEmployeInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.RoleUpdateOneRequiredWithoutEmployeRoleNestedInput
+  role?: Prisma.roleUpdateOneRequiredWithoutEmployeroleNestedInput
 }
 
-export type EmployeRoleUncheckedUpdateWithoutEmployeInput = {
+export type employeroleUncheckedUpdateWithoutEmployeInput = {
   roleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeRoleUncheckedUpdateManyWithoutEmployeInput = {
+export type employeroleUncheckedUpdateManyWithoutEmployeInput = {
   roleId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type employeroleCreateManyRoleInput = {
+  employeId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type employeroleUpdateWithoutRoleInput = {
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  employe?: Prisma.employeUpdateOneRequiredWithoutEmployeroleNestedInput
+}
+
+export type employeroleUncheckedUpdateWithoutRoleInput = {
+  employeId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type employeroleUncheckedUpdateManyWithoutRoleInput = {
+  employeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
 
-export type EmployeRoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type employeroleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   employeId?: boolean
   roleId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  employe?: boolean | Prisma.EmployeDefaultArgs<ExtArgs>
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["employeRole"]>
+  employe?: boolean | Prisma.employeDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.roleDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["employerole"]>
 
 
 
-export type EmployeRoleSelectScalar = {
+export type employeroleSelectScalar = {
   employeId?: boolean
   roleId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type EmployeRoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"employeId" | "roleId" | "createdAt" | "updatedAt", ExtArgs["result"]["employeRole"]>
-export type EmployeRoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  employe?: boolean | Prisma.EmployeDefaultArgs<ExtArgs>
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
+export type employeroleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"employeId" | "roleId" | "createdAt" | "updatedAt", ExtArgs["result"]["employerole"]>
+export type employeroleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  employe?: boolean | Prisma.employeDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.roleDefaultArgs<ExtArgs>
 }
 
-export type $EmployeRolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "EmployeRole"
+export type $employerolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "employerole"
   objects: {
-    employe: Prisma.$EmployePayload<ExtArgs>
-    role: Prisma.$RolePayload<ExtArgs>
+    employe: Prisma.$employePayload<ExtArgs>
+    role: Prisma.$rolePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     employeId: string
     roleId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["employeRole"]>
+  }, ExtArgs["result"]["employerole"]>
   composites: {}
 }
 
-export type EmployeRoleGetPayload<S extends boolean | null | undefined | EmployeRoleDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload, S>
+export type employeroleGetPayload<S extends boolean | null | undefined | employeroleDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$employerolePayload, S>
 
-export type EmployeRoleCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<EmployeRoleFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: EmployeRoleCountAggregateInputType | true
+export type employeroleCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<employeroleFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: EmployeroleCountAggregateInputType | true
   }
 
-export interface EmployeRoleDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['EmployeRole'], meta: { name: 'EmployeRole' } }
+export interface employeroleDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['employerole'], meta: { name: 'employerole' } }
   /**
-   * Find zero or one EmployeRole that matches the filter.
-   * @param {EmployeRoleFindUniqueArgs} args - Arguments to find a EmployeRole
+   * Find zero or one Employerole that matches the filter.
+   * @param {employeroleFindUniqueArgs} args - Arguments to find a Employerole
    * @example
-   * // Get one EmployeRole
-   * const employeRole = await prisma.employeRole.findUnique({
+   * // Get one Employerole
+   * const employerole = await prisma.employerole.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends EmployeRoleFindUniqueArgs>(args: Prisma.SelectSubset<T, EmployeRoleFindUniqueArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends employeroleFindUniqueArgs>(args: Prisma.SelectSubset<T, employeroleFindUniqueArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one EmployeRole that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Employerole that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {EmployeRoleFindUniqueOrThrowArgs} args - Arguments to find a EmployeRole
+   * @param {employeroleFindUniqueOrThrowArgs} args - Arguments to find a Employerole
    * @example
-   * // Get one EmployeRole
-   * const employeRole = await prisma.employeRole.findUniqueOrThrow({
+   * // Get one Employerole
+   * const employerole = await prisma.employerole.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends EmployeRoleFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, EmployeRoleFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends employeroleFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, employeroleFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first EmployeRole that matches the filter.
+   * Find the first Employerole that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleFindFirstArgs} args - Arguments to find a EmployeRole
+   * @param {employeroleFindFirstArgs} args - Arguments to find a Employerole
    * @example
-   * // Get one EmployeRole
-   * const employeRole = await prisma.employeRole.findFirst({
+   * // Get one Employerole
+   * const employerole = await prisma.employerole.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends EmployeRoleFindFirstArgs>(args?: Prisma.SelectSubset<T, EmployeRoleFindFirstArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends employeroleFindFirstArgs>(args?: Prisma.SelectSubset<T, employeroleFindFirstArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first EmployeRole that matches the filter or
+   * Find the first Employerole that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleFindFirstOrThrowArgs} args - Arguments to find a EmployeRole
+   * @param {employeroleFindFirstOrThrowArgs} args - Arguments to find a Employerole
    * @example
-   * // Get one EmployeRole
-   * const employeRole = await prisma.employeRole.findFirstOrThrow({
+   * // Get one Employerole
+   * const employerole = await prisma.employerole.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends EmployeRoleFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, EmployeRoleFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends employeroleFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, employeroleFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more EmployeRoles that matches the filter.
+   * Find zero or more Employeroles that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {employeroleFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all EmployeRoles
-   * const employeRoles = await prisma.employeRole.findMany()
+   * // Get all Employeroles
+   * const employeroles = await prisma.employerole.findMany()
    * 
-   * // Get first 10 EmployeRoles
-   * const employeRoles = await prisma.employeRole.findMany({ take: 10 })
+   * // Get first 10 Employeroles
+   * const employeroles = await prisma.employerole.findMany({ take: 10 })
    * 
    * // Only select the `employeId`
-   * const employeRoleWithEmployeIdOnly = await prisma.employeRole.findMany({ select: { employeId: true } })
+   * const employeroleWithEmployeIdOnly = await prisma.employerole.findMany({ select: { employeId: true } })
    * 
    */
-  findMany<T extends EmployeRoleFindManyArgs>(args?: Prisma.SelectSubset<T, EmployeRoleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends employeroleFindManyArgs>(args?: Prisma.SelectSubset<T, employeroleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a EmployeRole.
-   * @param {EmployeRoleCreateArgs} args - Arguments to create a EmployeRole.
+   * Create a Employerole.
+   * @param {employeroleCreateArgs} args - Arguments to create a Employerole.
    * @example
-   * // Create one EmployeRole
-   * const EmployeRole = await prisma.employeRole.create({
+   * // Create one Employerole
+   * const Employerole = await prisma.employerole.create({
    *   data: {
-   *     // ... data to create a EmployeRole
+   *     // ... data to create a Employerole
    *   }
    * })
    * 
    */
-  create<T extends EmployeRoleCreateArgs>(args: Prisma.SelectSubset<T, EmployeRoleCreateArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends employeroleCreateArgs>(args: Prisma.SelectSubset<T, employeroleCreateArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many EmployeRoles.
-   * @param {EmployeRoleCreateManyArgs} args - Arguments to create many EmployeRoles.
+   * Create many Employeroles.
+   * @param {employeroleCreateManyArgs} args - Arguments to create many Employeroles.
    * @example
-   * // Create many EmployeRoles
-   * const employeRole = await prisma.employeRole.createMany({
+   * // Create many Employeroles
+   * const employerole = await prisma.employerole.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends EmployeRoleCreateManyArgs>(args?: Prisma.SelectSubset<T, EmployeRoleCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends employeroleCreateManyArgs>(args?: Prisma.SelectSubset<T, employeroleCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a EmployeRole.
-   * @param {EmployeRoleDeleteArgs} args - Arguments to delete one EmployeRole.
+   * Delete a Employerole.
+   * @param {employeroleDeleteArgs} args - Arguments to delete one Employerole.
    * @example
-   * // Delete one EmployeRole
-   * const EmployeRole = await prisma.employeRole.delete({
+   * // Delete one Employerole
+   * const Employerole = await prisma.employerole.delete({
    *   where: {
-   *     // ... filter to delete one EmployeRole
+   *     // ... filter to delete one Employerole
    *   }
    * })
    * 
    */
-  delete<T extends EmployeRoleDeleteArgs>(args: Prisma.SelectSubset<T, EmployeRoleDeleteArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends employeroleDeleteArgs>(args: Prisma.SelectSubset<T, employeroleDeleteArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one EmployeRole.
-   * @param {EmployeRoleUpdateArgs} args - Arguments to update one EmployeRole.
+   * Update one Employerole.
+   * @param {employeroleUpdateArgs} args - Arguments to update one Employerole.
    * @example
-   * // Update one EmployeRole
-   * const employeRole = await prisma.employeRole.update({
+   * // Update one Employerole
+   * const employerole = await prisma.employerole.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -711,30 +711,30 @@ export interface EmployeRoleDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  update<T extends EmployeRoleUpdateArgs>(args: Prisma.SelectSubset<T, EmployeRoleUpdateArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends employeroleUpdateArgs>(args: Prisma.SelectSubset<T, employeroleUpdateArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more EmployeRoles.
-   * @param {EmployeRoleDeleteManyArgs} args - Arguments to filter EmployeRoles to delete.
+   * Delete zero or more Employeroles.
+   * @param {employeroleDeleteManyArgs} args - Arguments to filter Employeroles to delete.
    * @example
-   * // Delete a few EmployeRoles
-   * const { count } = await prisma.employeRole.deleteMany({
+   * // Delete a few Employeroles
+   * const { count } = await prisma.employerole.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends EmployeRoleDeleteManyArgs>(args?: Prisma.SelectSubset<T, EmployeRoleDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends employeroleDeleteManyArgs>(args?: Prisma.SelectSubset<T, employeroleDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more EmployeRoles.
+   * Update zero or more Employeroles.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {employeroleUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many EmployeRoles
-   * const employeRole = await prisma.employeRole.updateMany({
+   * // Update many Employeroles
+   * const employerole = await prisma.employerole.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -744,56 +744,56 @@ export interface EmployeRoleDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  updateMany<T extends EmployeRoleUpdateManyArgs>(args: Prisma.SelectSubset<T, EmployeRoleUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends employeroleUpdateManyArgs>(args: Prisma.SelectSubset<T, employeroleUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one EmployeRole.
-   * @param {EmployeRoleUpsertArgs} args - Arguments to update or create a EmployeRole.
+   * Create or update one Employerole.
+   * @param {employeroleUpsertArgs} args - Arguments to update or create a Employerole.
    * @example
-   * // Update or create a EmployeRole
-   * const employeRole = await prisma.employeRole.upsert({
+   * // Update or create a Employerole
+   * const employerole = await prisma.employerole.upsert({
    *   create: {
-   *     // ... data to create a EmployeRole
+   *     // ... data to create a Employerole
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the EmployeRole we want to update
+   *     // ... the filter for the Employerole we want to update
    *   }
    * })
    */
-  upsert<T extends EmployeRoleUpsertArgs>(args: Prisma.SelectSubset<T, EmployeRoleUpsertArgs<ExtArgs>>): Prisma.Prisma__EmployeRoleClient<runtime.Types.Result.GetResult<Prisma.$EmployeRolePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends employeroleUpsertArgs>(args: Prisma.SelectSubset<T, employeroleUpsertArgs<ExtArgs>>): Prisma.Prisma__employeroleClient<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of EmployeRoles.
+   * Count the number of Employeroles.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleCountArgs} args - Arguments to filter EmployeRoles to count.
+   * @param {employeroleCountArgs} args - Arguments to filter Employeroles to count.
    * @example
-   * // Count the number of EmployeRoles
-   * const count = await prisma.employeRole.count({
+   * // Count the number of Employeroles
+   * const count = await prisma.employerole.count({
    *   where: {
-   *     // ... the filter for the EmployeRoles we want to count
+   *     // ... the filter for the Employeroles we want to count
    *   }
    * })
   **/
-  count<T extends EmployeRoleCountArgs>(
-    args?: Prisma.Subset<T, EmployeRoleCountArgs>,
+  count<T extends employeroleCountArgs>(
+    args?: Prisma.Subset<T, employeroleCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], EmployeRoleCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], EmployeroleCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a EmployeRole.
+   * Allows you to perform aggregations operations on a Employerole.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {EmployeroleAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -813,13 +813,13 @@ export interface EmployeRoleDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   take: 10,
    * })
   **/
-  aggregate<T extends EmployeRoleAggregateArgs>(args: Prisma.Subset<T, EmployeRoleAggregateArgs>): Prisma.PrismaPromise<GetEmployeRoleAggregateType<T>>
+  aggregate<T extends EmployeroleAggregateArgs>(args: Prisma.Subset<T, EmployeroleAggregateArgs>): Prisma.PrismaPromise<GetEmployeroleAggregateType<T>>
 
   /**
-   * Group by EmployeRole.
+   * Group by Employerole.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeRoleGroupByArgs} args - Group by arguments.
+   * @param {employeroleGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -834,14 +834,14 @@ export interface EmployeRoleDelegate<ExtArgs extends runtime.Types.Extensions.In
    * 
   **/
   groupBy<
-    T extends EmployeRoleGroupByArgs,
+    T extends employeroleGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: EmployeRoleGroupByArgs['orderBy'] }
-      : { orderBy?: EmployeRoleGroupByArgs['orderBy'] },
+      ? { orderBy: employeroleGroupByArgs['orderBy'] }
+      : { orderBy?: employeroleGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -890,23 +890,23 @@ export interface EmployeRoleDelegate<ExtArgs extends runtime.Types.Extensions.In
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, EmployeRoleGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmployeRoleGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, employeroleGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmployeroleGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the EmployeRole model
+ * Fields of the employerole model
  */
-readonly fields: EmployeRoleFieldRefs;
+readonly fields: employeroleFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for EmployeRole.
+ * The delegate class that acts as a "Promise-like" for employerole.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EmployeRoleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__employeroleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  employe<T extends Prisma.EmployeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EmployeDefaultArgs<ExtArgs>>): Prisma.Prisma__EmployeClient<runtime.Types.Result.GetResult<Prisma.$EmployePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  role<T extends Prisma.RoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.RoleDefaultArgs<ExtArgs>>): Prisma.Prisma__RoleClient<runtime.Types.Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  employe<T extends Prisma.employeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.employeDefaultArgs<ExtArgs>>): Prisma.Prisma__employeClient<runtime.Types.Result.GetResult<Prisma.$employePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  role<T extends Prisma.roleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.roleDefaultArgs<ExtArgs>>): Prisma.Prisma__roleClient<runtime.Types.Result.GetResult<Prisma.$rolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -933,374 +933,374 @@ export interface Prisma__EmployeRoleClient<T, Null = never, ExtArgs extends runt
 
 
 /**
- * Fields of the EmployeRole model
+ * Fields of the employerole model
  */
-export interface EmployeRoleFieldRefs {
-  readonly employeId: Prisma.FieldRef<"EmployeRole", 'String'>
-  readonly roleId: Prisma.FieldRef<"EmployeRole", 'String'>
-  readonly createdAt: Prisma.FieldRef<"EmployeRole", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"EmployeRole", 'DateTime'>
+export interface employeroleFieldRefs {
+  readonly employeId: Prisma.FieldRef<"employerole", 'String'>
+  readonly roleId: Prisma.FieldRef<"employerole", 'String'>
+  readonly createdAt: Prisma.FieldRef<"employerole", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"employerole", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * EmployeRole findUnique
+ * employerole findUnique
  */
-export type EmployeRoleFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeRole to fetch.
+   * Filter, which employerole to fetch.
    */
-  where: Prisma.EmployeRoleWhereUniqueInput
+  where: Prisma.employeroleWhereUniqueInput
 }
 
 /**
- * EmployeRole findUniqueOrThrow
+ * employerole findUniqueOrThrow
  */
-export type EmployeRoleFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeRole to fetch.
+   * Filter, which employerole to fetch.
    */
-  where: Prisma.EmployeRoleWhereUniqueInput
+  where: Prisma.employeroleWhereUniqueInput
 }
 
 /**
- * EmployeRole findFirst
+ * employerole findFirst
  */
-export type EmployeRoleFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeRole to fetch.
+   * Filter, which employerole to fetch.
    */
-  where?: Prisma.EmployeRoleWhereInput
+  where?: Prisma.employeroleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeRoles to fetch.
+   * Determine the order of employeroles to fetch.
    */
-  orderBy?: Prisma.EmployeRoleOrderByWithRelationInput | Prisma.EmployeRoleOrderByWithRelationInput[]
+  orderBy?: Prisma.employeroleOrderByWithRelationInput | Prisma.employeroleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for EmployeRoles.
+   * Sets the position for searching for employeroles.
    */
-  cursor?: Prisma.EmployeRoleWhereUniqueInput
+  cursor?: Prisma.employeroleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeRoles from the position of the cursor.
+   * Take `±n` employeroles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeRoles.
+   * Skip the first `n` employeroles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmployeRoles.
+   * Filter by unique combinations of employeroles.
    */
-  distinct?: Prisma.EmployeRoleScalarFieldEnum | Prisma.EmployeRoleScalarFieldEnum[]
+  distinct?: Prisma.EmployeroleScalarFieldEnum | Prisma.EmployeroleScalarFieldEnum[]
 }
 
 /**
- * EmployeRole findFirstOrThrow
+ * employerole findFirstOrThrow
  */
-export type EmployeRoleFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeRole to fetch.
+   * Filter, which employerole to fetch.
    */
-  where?: Prisma.EmployeRoleWhereInput
+  where?: Prisma.employeroleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeRoles to fetch.
+   * Determine the order of employeroles to fetch.
    */
-  orderBy?: Prisma.EmployeRoleOrderByWithRelationInput | Prisma.EmployeRoleOrderByWithRelationInput[]
+  orderBy?: Prisma.employeroleOrderByWithRelationInput | Prisma.employeroleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for EmployeRoles.
+   * Sets the position for searching for employeroles.
    */
-  cursor?: Prisma.EmployeRoleWhereUniqueInput
+  cursor?: Prisma.employeroleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeRoles from the position of the cursor.
+   * Take `±n` employeroles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeRoles.
+   * Skip the first `n` employeroles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmployeRoles.
+   * Filter by unique combinations of employeroles.
    */
-  distinct?: Prisma.EmployeRoleScalarFieldEnum | Prisma.EmployeRoleScalarFieldEnum[]
+  distinct?: Prisma.EmployeroleScalarFieldEnum | Prisma.EmployeroleScalarFieldEnum[]
 }
 
 /**
- * EmployeRole findMany
+ * employerole findMany
  */
-export type EmployeRoleFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeRoles to fetch.
+   * Filter, which employeroles to fetch.
    */
-  where?: Prisma.EmployeRoleWhereInput
+  where?: Prisma.employeroleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeRoles to fetch.
+   * Determine the order of employeroles to fetch.
    */
-  orderBy?: Prisma.EmployeRoleOrderByWithRelationInput | Prisma.EmployeRoleOrderByWithRelationInput[]
+  orderBy?: Prisma.employeroleOrderByWithRelationInput | Prisma.employeroleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing EmployeRoles.
+   * Sets the position for listing employeroles.
    */
-  cursor?: Prisma.EmployeRoleWhereUniqueInput
+  cursor?: Prisma.employeroleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeRoles from the position of the cursor.
+   * Take `±n` employeroles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeRoles.
+   * Skip the first `n` employeroles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmployeRoles.
+   * Filter by unique combinations of employeroles.
    */
-  distinct?: Prisma.EmployeRoleScalarFieldEnum | Prisma.EmployeRoleScalarFieldEnum[]
+  distinct?: Prisma.EmployeroleScalarFieldEnum | Prisma.EmployeroleScalarFieldEnum[]
 }
 
 /**
- * EmployeRole create
+ * employerole create
  */
-export type EmployeRoleCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * The data needed to create a EmployeRole.
+   * The data needed to create a employerole.
    */
-  data: Prisma.XOR<Prisma.EmployeRoleCreateInput, Prisma.EmployeRoleUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.employeroleCreateInput, Prisma.employeroleUncheckedCreateInput>
 }
 
 /**
- * EmployeRole createMany
+ * employerole createMany
  */
-export type EmployeRoleCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many EmployeRoles.
+   * The data used to create many employeroles.
    */
-  data: Prisma.EmployeRoleCreateManyInput | Prisma.EmployeRoleCreateManyInput[]
+  data: Prisma.employeroleCreateManyInput | Prisma.employeroleCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * EmployeRole update
+ * employerole update
  */
-export type EmployeRoleUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * The data needed to update a EmployeRole.
+   * The data needed to update a employerole.
    */
-  data: Prisma.XOR<Prisma.EmployeRoleUpdateInput, Prisma.EmployeRoleUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.employeroleUpdateInput, Prisma.employeroleUncheckedUpdateInput>
   /**
-   * Choose, which EmployeRole to update.
+   * Choose, which employerole to update.
    */
-  where: Prisma.EmployeRoleWhereUniqueInput
+  where: Prisma.employeroleWhereUniqueInput
 }
 
 /**
- * EmployeRole updateMany
+ * employerole updateMany
  */
-export type EmployeRoleUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update EmployeRoles.
+   * The data used to update employeroles.
    */
-  data: Prisma.XOR<Prisma.EmployeRoleUpdateManyMutationInput, Prisma.EmployeRoleUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.employeroleUpdateManyMutationInput, Prisma.employeroleUncheckedUpdateManyInput>
   /**
-   * Filter which EmployeRoles to update
+   * Filter which employeroles to update
    */
-  where?: Prisma.EmployeRoleWhereInput
+  where?: Prisma.employeroleWhereInput
   /**
-   * Limit how many EmployeRoles to update.
+   * Limit how many employeroles to update.
    */
   limit?: number
 }
 
 /**
- * EmployeRole upsert
+ * employerole upsert
  */
-export type EmployeRoleUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * The filter to search for the EmployeRole to update in case it exists.
+   * The filter to search for the employerole to update in case it exists.
    */
-  where: Prisma.EmployeRoleWhereUniqueInput
+  where: Prisma.employeroleWhereUniqueInput
   /**
-   * In case the EmployeRole found by the `where` argument doesn't exist, create a new EmployeRole with this data.
+   * In case the employerole found by the `where` argument doesn't exist, create a new employerole with this data.
    */
-  create: Prisma.XOR<Prisma.EmployeRoleCreateInput, Prisma.EmployeRoleUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.employeroleCreateInput, Prisma.employeroleUncheckedCreateInput>
   /**
-   * In case the EmployeRole was found with the provided `where` argument, update it with this data.
+   * In case the employerole was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.EmployeRoleUpdateInput, Prisma.EmployeRoleUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.employeroleUpdateInput, Prisma.employeroleUncheckedUpdateInput>
 }
 
 /**
- * EmployeRole delete
+ * employerole delete
  */
-export type EmployeRoleDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
   /**
-   * Filter which EmployeRole to delete.
+   * Filter which employerole to delete.
    */
-  where: Prisma.EmployeRoleWhereUniqueInput
+  where: Prisma.employeroleWhereUniqueInput
 }
 
 /**
- * EmployeRole deleteMany
+ * employerole deleteMany
  */
-export type EmployeRoleDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which EmployeRoles to delete
+   * Filter which employeroles to delete
    */
-  where?: Prisma.EmployeRoleWhereInput
+  where?: Prisma.employeroleWhereInput
   /**
-   * Limit how many EmployeRoles to delete.
+   * Limit how many employeroles to delete.
    */
   limit?: number
 }
 
 /**
- * EmployeRole without action
+ * employerole without action
  */
-export type EmployeRoleDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employeroleDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeRole
+   * Select specific fields to fetch from the employerole
    */
-  select?: Prisma.EmployeRoleSelect<ExtArgs> | null
+  select?: Prisma.employeroleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeRole
+   * Omit specific fields from the employerole
    */
-  omit?: Prisma.EmployeRoleOmit<ExtArgs> | null
+  omit?: Prisma.employeroleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeRoleInclude<ExtArgs> | null
+  include?: Prisma.employeroleInclude<ExtArgs> | null
 }

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `TypeEvaluation` model and its related types.
+ * This file exports the `typeevaluation` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,18 +13,18 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model TypeEvaluation
+ * Model typeevaluation
  * 
  */
-export type TypeEvaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$TypeEvaluationPayload>
+export type typeevaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$typeevaluationPayload>
 
-export type AggregateTypeEvaluation = {
-  _count: TypeEvaluationCountAggregateOutputType | null
-  _min: TypeEvaluationMinAggregateOutputType | null
-  _max: TypeEvaluationMaxAggregateOutputType | null
+export type AggregateTypeevaluation = {
+  _count: TypeevaluationCountAggregateOutputType | null
+  _min: TypeevaluationMinAggregateOutputType | null
+  _max: TypeevaluationMaxAggregateOutputType | null
 }
 
-export type TypeEvaluationMinAggregateOutputType = {
+export type TypeevaluationMinAggregateOutputType = {
   id: string | null
   ecoleId: string | null
   nom: string | null
@@ -32,7 +32,7 @@ export type TypeEvaluationMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type TypeEvaluationMaxAggregateOutputType = {
+export type TypeevaluationMaxAggregateOutputType = {
   id: string | null
   ecoleId: string | null
   nom: string | null
@@ -40,7 +40,7 @@ export type TypeEvaluationMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type TypeEvaluationCountAggregateOutputType = {
+export type TypeevaluationCountAggregateOutputType = {
   id: number
   ecoleId: number
   nom: number
@@ -50,7 +50,7 @@ export type TypeEvaluationCountAggregateOutputType = {
 }
 
 
-export type TypeEvaluationMinAggregateInputType = {
+export type TypeevaluationMinAggregateInputType = {
   id?: true
   ecoleId?: true
   nom?: true
@@ -58,7 +58,7 @@ export type TypeEvaluationMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type TypeEvaluationMaxAggregateInputType = {
+export type TypeevaluationMaxAggregateInputType = {
   id?: true
   ecoleId?: true
   nom?: true
@@ -66,7 +66,7 @@ export type TypeEvaluationMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type TypeEvaluationCountAggregateInputType = {
+export type TypeevaluationCountAggregateInputType = {
   id?: true
   ecoleId?: true
   nom?: true
@@ -75,230 +75,230 @@ export type TypeEvaluationCountAggregateInputType = {
   _all?: true
 }
 
-export type TypeEvaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type TypeevaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which TypeEvaluation to aggregate.
+   * Filter which typeevaluation to aggregate.
    */
-  where?: Prisma.TypeEvaluationWhereInput
+  where?: Prisma.typeevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TypeEvaluations to fetch.
+   * Determine the order of typeevaluations to fetch.
    */
-  orderBy?: Prisma.TypeEvaluationOrderByWithRelationInput | Prisma.TypeEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.typeevaluationOrderByWithRelationInput | Prisma.typeevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.TypeEvaluationWhereUniqueInput
+  cursor?: Prisma.typeevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TypeEvaluations from the position of the cursor.
+   * Take `±n` typeevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TypeEvaluations.
+   * Skip the first `n` typeevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned TypeEvaluations
+   * Count returned typeevaluations
   **/
-  _count?: true | TypeEvaluationCountAggregateInputType
+  _count?: true | TypeevaluationCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: TypeEvaluationMinAggregateInputType
+  _min?: TypeevaluationMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: TypeEvaluationMaxAggregateInputType
+  _max?: TypeevaluationMaxAggregateInputType
 }
 
-export type GetTypeEvaluationAggregateType<T extends TypeEvaluationAggregateArgs> = {
-      [P in keyof T & keyof AggregateTypeEvaluation]: P extends '_count' | 'count'
+export type GetTypeevaluationAggregateType<T extends TypeevaluationAggregateArgs> = {
+      [P in keyof T & keyof AggregateTypeevaluation]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateTypeEvaluation[P]>
-    : Prisma.GetScalarType<T[P], AggregateTypeEvaluation[P]>
+      : Prisma.GetScalarType<T[P], AggregateTypeevaluation[P]>
+    : Prisma.GetScalarType<T[P], AggregateTypeevaluation[P]>
 }
 
 
 
 
-export type TypeEvaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TypeEvaluationWhereInput
-  orderBy?: Prisma.TypeEvaluationOrderByWithAggregationInput | Prisma.TypeEvaluationOrderByWithAggregationInput[]
-  by: Prisma.TypeEvaluationScalarFieldEnum[] | Prisma.TypeEvaluationScalarFieldEnum
-  having?: Prisma.TypeEvaluationScalarWhereWithAggregatesInput
+export type typeevaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.typeevaluationWhereInput
+  orderBy?: Prisma.typeevaluationOrderByWithAggregationInput | Prisma.typeevaluationOrderByWithAggregationInput[]
+  by: Prisma.TypeevaluationScalarFieldEnum[] | Prisma.TypeevaluationScalarFieldEnum
+  having?: Prisma.typeevaluationScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: TypeEvaluationCountAggregateInputType | true
-  _min?: TypeEvaluationMinAggregateInputType
-  _max?: TypeEvaluationMaxAggregateInputType
+  _count?: TypeevaluationCountAggregateInputType | true
+  _min?: TypeevaluationMinAggregateInputType
+  _max?: TypeevaluationMaxAggregateInputType
 }
 
-export type TypeEvaluationGroupByOutputType = {
+export type TypeevaluationGroupByOutputType = {
   id: string
   ecoleId: string
   nom: string
   createdAt: Date
   updatedAt: Date
-  _count: TypeEvaluationCountAggregateOutputType | null
-  _min: TypeEvaluationMinAggregateOutputType | null
-  _max: TypeEvaluationMaxAggregateOutputType | null
+  _count: TypeevaluationCountAggregateOutputType | null
+  _min: TypeevaluationMinAggregateOutputType | null
+  _max: TypeevaluationMaxAggregateOutputType | null
 }
 
-export type GetTypeEvaluationGroupByPayload<T extends TypeEvaluationGroupByArgs> = Prisma.PrismaPromise<
+export type GetTypeevaluationGroupByPayload<T extends typeevaluationGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<TypeEvaluationGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<TypeevaluationGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof TypeEvaluationGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof TypeevaluationGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], TypeEvaluationGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], TypeEvaluationGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], TypeevaluationGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], TypeevaluationGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type TypeEvaluationWhereInput = {
-  AND?: Prisma.TypeEvaluationWhereInput | Prisma.TypeEvaluationWhereInput[]
-  OR?: Prisma.TypeEvaluationWhereInput[]
-  NOT?: Prisma.TypeEvaluationWhereInput | Prisma.TypeEvaluationWhereInput[]
-  id?: Prisma.StringFilter<"TypeEvaluation"> | string
-  ecoleId?: Prisma.StringFilter<"TypeEvaluation"> | string
-  nom?: Prisma.StringFilter<"TypeEvaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"TypeEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"TypeEvaluation"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  evaluations?: Prisma.EvaluationListRelationFilter
-  regleEval?: Prisma.RegleEvaluationListRelationFilter
-  notes?: Prisma.NoteListRelationFilter
+export type typeevaluationWhereInput = {
+  AND?: Prisma.typeevaluationWhereInput | Prisma.typeevaluationWhereInput[]
+  OR?: Prisma.typeevaluationWhereInput[]
+  NOT?: Prisma.typeevaluationWhereInput | Prisma.typeevaluationWhereInput[]
+  id?: Prisma.StringFilter<"typeevaluation"> | string
+  ecoleId?: Prisma.StringFilter<"typeevaluation"> | string
+  nom?: Prisma.StringFilter<"typeevaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"typeevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"typeevaluation"> | Date | string
+  evaluation?: Prisma.EvaluationListRelationFilter
+  note?: Prisma.NoteListRelationFilter
+  regleevaluation?: Prisma.RegleevaluationListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
 }
 
-export type TypeEvaluationOrderByWithRelationInput = {
+export type typeevaluationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  ecole?: Prisma.EcoleOrderByWithRelationInput
-  evaluations?: Prisma.EvaluationOrderByRelationAggregateInput
-  regleEval?: Prisma.RegleEvaluationOrderByRelationAggregateInput
-  notes?: Prisma.NoteOrderByRelationAggregateInput
-  _relevance?: Prisma.TypeEvaluationOrderByRelevanceInput
+  evaluation?: Prisma.evaluationOrderByRelationAggregateInput
+  note?: Prisma.noteOrderByRelationAggregateInput
+  regleevaluation?: Prisma.regleevaluationOrderByRelationAggregateInput
+  ecole?: Prisma.ecoleOrderByWithRelationInput
+  _relevance?: Prisma.typeevaluationOrderByRelevanceInput
 }
 
-export type TypeEvaluationWhereUniqueInput = Prisma.AtLeast<{
+export type typeevaluationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  ecoleId_nom?: Prisma.TypeEvaluationEcoleIdNomCompoundUniqueInput
-  AND?: Prisma.TypeEvaluationWhereInput | Prisma.TypeEvaluationWhereInput[]
-  OR?: Prisma.TypeEvaluationWhereInput[]
-  NOT?: Prisma.TypeEvaluationWhereInput | Prisma.TypeEvaluationWhereInput[]
-  ecoleId?: Prisma.StringFilter<"TypeEvaluation"> | string
-  nom?: Prisma.StringFilter<"TypeEvaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"TypeEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"TypeEvaluation"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  evaluations?: Prisma.EvaluationListRelationFilter
-  regleEval?: Prisma.RegleEvaluationListRelationFilter
-  notes?: Prisma.NoteListRelationFilter
+  ecoleId_nom?: Prisma.typeevaluationEcoleIdNomCompoundUniqueInput
+  AND?: Prisma.typeevaluationWhereInput | Prisma.typeevaluationWhereInput[]
+  OR?: Prisma.typeevaluationWhereInput[]
+  NOT?: Prisma.typeevaluationWhereInput | Prisma.typeevaluationWhereInput[]
+  ecoleId?: Prisma.StringFilter<"typeevaluation"> | string
+  nom?: Prisma.StringFilter<"typeevaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"typeevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"typeevaluation"> | Date | string
+  evaluation?: Prisma.EvaluationListRelationFilter
+  note?: Prisma.NoteListRelationFilter
+  regleevaluation?: Prisma.RegleevaluationListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
 }, "id" | "ecoleId_nom">
 
-export type TypeEvaluationOrderByWithAggregationInput = {
+export type typeevaluationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.TypeEvaluationCountOrderByAggregateInput
-  _max?: Prisma.TypeEvaluationMaxOrderByAggregateInput
-  _min?: Prisma.TypeEvaluationMinOrderByAggregateInput
+  _count?: Prisma.typeevaluationCountOrderByAggregateInput
+  _max?: Prisma.typeevaluationMaxOrderByAggregateInput
+  _min?: Prisma.typeevaluationMinOrderByAggregateInput
 }
 
-export type TypeEvaluationScalarWhereWithAggregatesInput = {
-  AND?: Prisma.TypeEvaluationScalarWhereWithAggregatesInput | Prisma.TypeEvaluationScalarWhereWithAggregatesInput[]
-  OR?: Prisma.TypeEvaluationScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.TypeEvaluationScalarWhereWithAggregatesInput | Prisma.TypeEvaluationScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"TypeEvaluation"> | string
-  ecoleId?: Prisma.StringWithAggregatesFilter<"TypeEvaluation"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"TypeEvaluation"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"TypeEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"TypeEvaluation"> | Date | string
+export type typeevaluationScalarWhereWithAggregatesInput = {
+  AND?: Prisma.typeevaluationScalarWhereWithAggregatesInput | Prisma.typeevaluationScalarWhereWithAggregatesInput[]
+  OR?: Prisma.typeevaluationScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.typeevaluationScalarWhereWithAggregatesInput | Prisma.typeevaluationScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"typeevaluation"> | string
+  ecoleId?: Prisma.StringWithAggregatesFilter<"typeevaluation"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"typeevaluation"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"typeevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"typeevaluation"> | Date | string
 }
 
-export type TypeEvaluationCreateInput = {
+export type typeevaluationCreateInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutTypeEvaluationsInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutTypeEvaluationInput
-  regleEval?: Prisma.RegleEvaluationCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteCreateNestedManyWithoutTypeEvaluationInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutTypeevaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutTypeevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationUncheckedCreateInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  regleEval?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutTypeEvaluationInput
-}
-
-export type TypeEvaluationUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutTypeEvaluationsNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  regleEval?: Prisma.RegleEvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutTypeEvaluationNestedInput
-}
-
-export type TypeEvaluationUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  regleEval?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-}
-
-export type TypeEvaluationCreateManyInput = {
+export type typeevaluationUncheckedCreateInput = {
   id?: string
   ecoleId: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationUpdateManyMutationInput = {
+export type typeevaluationUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  evaluation?: Prisma.evaluationUpdateManyWithoutTypeevaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutTypeevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutTypeevaluationNestedInput
+}
+
+export type typeevaluationUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
+}
+
+export type typeevaluationCreateManyInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type typeevaluationUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type TypeEvaluationUncheckedUpdateManyInput = {
+export type typeevaluationUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
@@ -306,28 +306,33 @@ export type TypeEvaluationUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type TypeEvaluationListRelationFilter = {
-  every?: Prisma.TypeEvaluationWhereInput
-  some?: Prisma.TypeEvaluationWhereInput
-  none?: Prisma.TypeEvaluationWhereInput
+export type TypeevaluationListRelationFilter = {
+  every?: Prisma.typeevaluationWhereInput
+  some?: Prisma.typeevaluationWhereInput
+  none?: Prisma.typeevaluationWhereInput
 }
 
-export type TypeEvaluationOrderByRelationAggregateInput = {
+export type typeevaluationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type TypeEvaluationOrderByRelevanceInput = {
-  fields: Prisma.TypeEvaluationOrderByRelevanceFieldEnum | Prisma.TypeEvaluationOrderByRelevanceFieldEnum[]
+export type TypeevaluationScalarRelationFilter = {
+  is?: Prisma.typeevaluationWhereInput
+  isNot?: Prisma.typeevaluationWhereInput
+}
+
+export type typeevaluationOrderByRelevanceInput = {
+  fields: Prisma.typeevaluationOrderByRelevanceFieldEnum | Prisma.typeevaluationOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type TypeEvaluationEcoleIdNomCompoundUniqueInput = {
+export type typeevaluationEcoleIdNomCompoundUniqueInput = {
   ecoleId: string
   nom: string
 }
 
-export type TypeEvaluationCountOrderByAggregateInput = {
+export type typeevaluationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -335,7 +340,7 @@ export type TypeEvaluationCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type TypeEvaluationMaxOrderByAggregateInput = {
+export type typeevaluationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -343,7 +348,7 @@ export type TypeEvaluationMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type TypeEvaluationMinOrderByAggregateInput = {
+export type typeevaluationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -351,348 +356,343 @@ export type TypeEvaluationMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type TypeEvaluationScalarRelationFilter = {
-  is?: Prisma.TypeEvaluationWhereInput
-  isNot?: Prisma.TypeEvaluationWhereInput
+export type typeevaluationCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutEcoleInput, Prisma.typeevaluationUncheckedCreateWithoutEcoleInput> | Prisma.typeevaluationCreateWithoutEcoleInput[] | Prisma.typeevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutEcoleInput | Prisma.typeevaluationCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.typeevaluationCreateManyEcoleInputEnvelope
+  connect?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
 }
 
-export type TypeEvaluationCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.TypeEvaluationCreateWithoutEcoleInput[] | Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput | Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.TypeEvaluationCreateManyEcoleInputEnvelope
-  connect?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
+export type typeevaluationUncheckedCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutEcoleInput, Prisma.typeevaluationUncheckedCreateWithoutEcoleInput> | Prisma.typeevaluationCreateWithoutEcoleInput[] | Prisma.typeevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutEcoleInput | Prisma.typeevaluationCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.typeevaluationCreateManyEcoleInputEnvelope
+  connect?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
 }
 
-export type TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.TypeEvaluationCreateWithoutEcoleInput[] | Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput | Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.TypeEvaluationCreateManyEcoleInputEnvelope
-  connect?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
+export type typeevaluationUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutEcoleInput, Prisma.typeevaluationUncheckedCreateWithoutEcoleInput> | Prisma.typeevaluationCreateWithoutEcoleInput[] | Prisma.typeevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutEcoleInput | Prisma.typeevaluationCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.typeevaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.typeevaluationUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.typeevaluationCreateManyEcoleInputEnvelope
+  set?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  disconnect?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  delete?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  connect?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  update?: Prisma.typeevaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.typeevaluationUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.typeevaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.typeevaluationUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.typeevaluationScalarWhereInput | Prisma.typeevaluationScalarWhereInput[]
 }
 
-export type TypeEvaluationUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.TypeEvaluationCreateWithoutEcoleInput[] | Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput | Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.TypeEvaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.TypeEvaluationUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.TypeEvaluationCreateManyEcoleInputEnvelope
-  set?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  delete?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  connect?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  update?: Prisma.TypeEvaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.TypeEvaluationUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.TypeEvaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.TypeEvaluationUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.TypeEvaluationScalarWhereInput | Prisma.TypeEvaluationScalarWhereInput[]
+export type typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutEcoleInput, Prisma.typeevaluationUncheckedCreateWithoutEcoleInput> | Prisma.typeevaluationCreateWithoutEcoleInput[] | Prisma.typeevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutEcoleInput | Prisma.typeevaluationCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.typeevaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.typeevaluationUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.typeevaluationCreateManyEcoleInputEnvelope
+  set?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  disconnect?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  delete?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  connect?: Prisma.typeevaluationWhereUniqueInput | Prisma.typeevaluationWhereUniqueInput[]
+  update?: Prisma.typeevaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.typeevaluationUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.typeevaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.typeevaluationUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.typeevaluationScalarWhereInput | Prisma.typeevaluationScalarWhereInput[]
 }
 
-export type TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.TypeEvaluationCreateWithoutEcoleInput[] | Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput | Prisma.TypeEvaluationCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.TypeEvaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.TypeEvaluationUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.TypeEvaluationCreateManyEcoleInputEnvelope
-  set?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  delete?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  connect?: Prisma.TypeEvaluationWhereUniqueInput | Prisma.TypeEvaluationWhereUniqueInput[]
-  update?: Prisma.TypeEvaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.TypeEvaluationUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.TypeEvaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.TypeEvaluationUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.TypeEvaluationScalarWhereInput | Prisma.TypeEvaluationScalarWhereInput[]
+export type typeevaluationCreateNestedOneWithoutEvaluationInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutEvaluationInput, Prisma.typeevaluationUncheckedCreateWithoutEvaluationInput>
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutEvaluationInput
+  connect?: Prisma.typeevaluationWhereUniqueInput
 }
 
-export type TypeEvaluationCreateNestedOneWithoutRegleEvalInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutRegleEvalInput, Prisma.TypeEvaluationUncheckedCreateWithoutRegleEvalInput>
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutRegleEvalInput
-  connect?: Prisma.TypeEvaluationWhereUniqueInput
+export type typeevaluationUpdateOneRequiredWithoutEvaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutEvaluationInput, Prisma.typeevaluationUncheckedCreateWithoutEvaluationInput>
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutEvaluationInput
+  upsert?: Prisma.typeevaluationUpsertWithoutEvaluationInput
+  connect?: Prisma.typeevaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.typeevaluationUpdateToOneWithWhereWithoutEvaluationInput, Prisma.typeevaluationUpdateWithoutEvaluationInput>, Prisma.typeevaluationUncheckedUpdateWithoutEvaluationInput>
 }
 
-export type TypeEvaluationUpdateOneRequiredWithoutRegleEvalNestedInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutRegleEvalInput, Prisma.TypeEvaluationUncheckedCreateWithoutRegleEvalInput>
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutRegleEvalInput
-  upsert?: Prisma.TypeEvaluationUpsertWithoutRegleEvalInput
-  connect?: Prisma.TypeEvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.TypeEvaluationUpdateToOneWithWhereWithoutRegleEvalInput, Prisma.TypeEvaluationUpdateWithoutRegleEvalInput>, Prisma.TypeEvaluationUncheckedUpdateWithoutRegleEvalInput>
+export type typeevaluationCreateNestedOneWithoutNoteInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutNoteInput, Prisma.typeevaluationUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutNoteInput
+  connect?: Prisma.typeevaluationWhereUniqueInput
 }
 
-export type TypeEvaluationCreateNestedOneWithoutEvaluationsInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEvaluationsInput, Prisma.TypeEvaluationUncheckedCreateWithoutEvaluationsInput>
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutEvaluationsInput
-  connect?: Prisma.TypeEvaluationWhereUniqueInput
+export type typeevaluationUpdateOneRequiredWithoutNoteNestedInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutNoteInput, Prisma.typeevaluationUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutNoteInput
+  upsert?: Prisma.typeevaluationUpsertWithoutNoteInput
+  connect?: Prisma.typeevaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.typeevaluationUpdateToOneWithWhereWithoutNoteInput, Prisma.typeevaluationUpdateWithoutNoteInput>, Prisma.typeevaluationUncheckedUpdateWithoutNoteInput>
 }
 
-export type TypeEvaluationUpdateOneRequiredWithoutEvaluationsNestedInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEvaluationsInput, Prisma.TypeEvaluationUncheckedCreateWithoutEvaluationsInput>
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutEvaluationsInput
-  upsert?: Prisma.TypeEvaluationUpsertWithoutEvaluationsInput
-  connect?: Prisma.TypeEvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.TypeEvaluationUpdateToOneWithWhereWithoutEvaluationsInput, Prisma.TypeEvaluationUpdateWithoutEvaluationsInput>, Prisma.TypeEvaluationUncheckedUpdateWithoutEvaluationsInput>
+export type typeevaluationCreateNestedOneWithoutRegleevaluationInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutRegleevaluationInput, Prisma.typeevaluationUncheckedCreateWithoutRegleevaluationInput>
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutRegleevaluationInput
+  connect?: Prisma.typeevaluationWhereUniqueInput
 }
 
-export type TypeEvaluationCreateNestedOneWithoutNotesInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutNotesInput, Prisma.TypeEvaluationUncheckedCreateWithoutNotesInput>
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutNotesInput
-  connect?: Prisma.TypeEvaluationWhereUniqueInput
+export type typeevaluationUpdateOneRequiredWithoutRegleevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.typeevaluationCreateWithoutRegleevaluationInput, Prisma.typeevaluationUncheckedCreateWithoutRegleevaluationInput>
+  connectOrCreate?: Prisma.typeevaluationCreateOrConnectWithoutRegleevaluationInput
+  upsert?: Prisma.typeevaluationUpsertWithoutRegleevaluationInput
+  connect?: Prisma.typeevaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.typeevaluationUpdateToOneWithWhereWithoutRegleevaluationInput, Prisma.typeevaluationUpdateWithoutRegleevaluationInput>, Prisma.typeevaluationUncheckedUpdateWithoutRegleevaluationInput>
 }
 
-export type TypeEvaluationUpdateOneRequiredWithoutNotesNestedInput = {
-  create?: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutNotesInput, Prisma.TypeEvaluationUncheckedCreateWithoutNotesInput>
-  connectOrCreate?: Prisma.TypeEvaluationCreateOrConnectWithoutNotesInput
-  upsert?: Prisma.TypeEvaluationUpsertWithoutNotesInput
-  connect?: Prisma.TypeEvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.TypeEvaluationUpdateToOneWithWhereWithoutNotesInput, Prisma.TypeEvaluationUpdateWithoutNotesInput>, Prisma.TypeEvaluationUncheckedUpdateWithoutNotesInput>
-}
-
-export type TypeEvaluationCreateWithoutEcoleInput = {
+export type typeevaluationCreateWithoutEcoleInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutTypeEvaluationInput
-  regleEval?: Prisma.RegleEvaluationCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteCreateNestedManyWithoutTypeEvaluationInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutTypeevaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationUncheckedCreateWithoutEcoleInput = {
+export type typeevaluationUncheckedCreateWithoutEcoleInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  regleEval?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutTypeEvaluationInput
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationCreateOrConnectWithoutEcoleInput = {
-  where: Prisma.TypeEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput>
+export type typeevaluationCreateOrConnectWithoutEcoleInput = {
+  where: Prisma.typeevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutEcoleInput, Prisma.typeevaluationUncheckedCreateWithoutEcoleInput>
 }
 
-export type TypeEvaluationCreateManyEcoleInputEnvelope = {
-  data: Prisma.TypeEvaluationCreateManyEcoleInput | Prisma.TypeEvaluationCreateManyEcoleInput[]
+export type typeevaluationCreateManyEcoleInputEnvelope = {
+  data: Prisma.typeevaluationCreateManyEcoleInput | Prisma.typeevaluationCreateManyEcoleInput[]
   skipDuplicates?: boolean
 }
 
-export type TypeEvaluationUpsertWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.TypeEvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedUpdateWithoutEcoleInput>
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedCreateWithoutEcoleInput>
+export type typeevaluationUpsertWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.typeevaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.typeevaluationUpdateWithoutEcoleInput, Prisma.typeevaluationUncheckedUpdateWithoutEcoleInput>
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutEcoleInput, Prisma.typeevaluationUncheckedCreateWithoutEcoleInput>
 }
 
-export type TypeEvaluationUpdateWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.TypeEvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutEcoleInput, Prisma.TypeEvaluationUncheckedUpdateWithoutEcoleInput>
+export type typeevaluationUpdateWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.typeevaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.typeevaluationUpdateWithoutEcoleInput, Prisma.typeevaluationUncheckedUpdateWithoutEcoleInput>
 }
 
-export type TypeEvaluationUpdateManyWithWhereWithoutEcoleInput = {
-  where: Prisma.TypeEvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateManyMutationInput, Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleInput>
+export type typeevaluationUpdateManyWithWhereWithoutEcoleInput = {
+  where: Prisma.typeevaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.typeevaluationUpdateManyMutationInput, Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleInput>
 }
 
-export type TypeEvaluationScalarWhereInput = {
-  AND?: Prisma.TypeEvaluationScalarWhereInput | Prisma.TypeEvaluationScalarWhereInput[]
-  OR?: Prisma.TypeEvaluationScalarWhereInput[]
-  NOT?: Prisma.TypeEvaluationScalarWhereInput | Prisma.TypeEvaluationScalarWhereInput[]
-  id?: Prisma.StringFilter<"TypeEvaluation"> | string
-  ecoleId?: Prisma.StringFilter<"TypeEvaluation"> | string
-  nom?: Prisma.StringFilter<"TypeEvaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"TypeEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"TypeEvaluation"> | Date | string
+export type typeevaluationScalarWhereInput = {
+  AND?: Prisma.typeevaluationScalarWhereInput | Prisma.typeevaluationScalarWhereInput[]
+  OR?: Prisma.typeevaluationScalarWhereInput[]
+  NOT?: Prisma.typeevaluationScalarWhereInput | Prisma.typeevaluationScalarWhereInput[]
+  id?: Prisma.StringFilter<"typeevaluation"> | string
+  ecoleId?: Prisma.StringFilter<"typeevaluation"> | string
+  nom?: Prisma.StringFilter<"typeevaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"typeevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"typeevaluation"> | Date | string
 }
 
-export type TypeEvaluationCreateWithoutRegleEvalInput = {
+export type typeevaluationCreateWithoutEvaluationInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutTypeEvaluationsInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteCreateNestedManyWithoutTypeEvaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutTypeevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationUncheckedCreateWithoutRegleEvalInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutTypeEvaluationInput
-}
-
-export type TypeEvaluationCreateOrConnectWithoutRegleEvalInput = {
-  where: Prisma.TypeEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutRegleEvalInput, Prisma.TypeEvaluationUncheckedCreateWithoutRegleEvalInput>
-}
-
-export type TypeEvaluationUpsertWithoutRegleEvalInput = {
-  update: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutRegleEvalInput, Prisma.TypeEvaluationUncheckedUpdateWithoutRegleEvalInput>
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutRegleEvalInput, Prisma.TypeEvaluationUncheckedCreateWithoutRegleEvalInput>
-  where?: Prisma.TypeEvaluationWhereInput
-}
-
-export type TypeEvaluationUpdateToOneWithWhereWithoutRegleEvalInput = {
-  where?: Prisma.TypeEvaluationWhereInput
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutRegleEvalInput, Prisma.TypeEvaluationUncheckedUpdateWithoutRegleEvalInput>
-}
-
-export type TypeEvaluationUpdateWithoutRegleEvalInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutTypeEvaluationsNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutTypeEvaluationNestedInput
-}
-
-export type TypeEvaluationUncheckedUpdateWithoutRegleEvalInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-}
-
-export type TypeEvaluationCreateWithoutEvaluationsInput = {
-  id?: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutTypeEvaluationsInput
-  regleEval?: Prisma.RegleEvaluationCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteCreateNestedManyWithoutTypeEvaluationInput
-}
-
-export type TypeEvaluationUncheckedCreateWithoutEvaluationsInput = {
+export type typeevaluationUncheckedCreateWithoutEvaluationInput = {
   id?: string
   ecoleId: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  regleEval?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutTypeEvaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationCreateOrConnectWithoutEvaluationsInput = {
-  where: Prisma.TypeEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEvaluationsInput, Prisma.TypeEvaluationUncheckedCreateWithoutEvaluationsInput>
+export type typeevaluationCreateOrConnectWithoutEvaluationInput = {
+  where: Prisma.typeevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutEvaluationInput, Prisma.typeevaluationUncheckedCreateWithoutEvaluationInput>
 }
 
-export type TypeEvaluationUpsertWithoutEvaluationsInput = {
-  update: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutEvaluationsInput, Prisma.TypeEvaluationUncheckedUpdateWithoutEvaluationsInput>
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutEvaluationsInput, Prisma.TypeEvaluationUncheckedCreateWithoutEvaluationsInput>
-  where?: Prisma.TypeEvaluationWhereInput
+export type typeevaluationUpsertWithoutEvaluationInput = {
+  update: Prisma.XOR<Prisma.typeevaluationUpdateWithoutEvaluationInput, Prisma.typeevaluationUncheckedUpdateWithoutEvaluationInput>
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutEvaluationInput, Prisma.typeevaluationUncheckedCreateWithoutEvaluationInput>
+  where?: Prisma.typeevaluationWhereInput
 }
 
-export type TypeEvaluationUpdateToOneWithWhereWithoutEvaluationsInput = {
-  where?: Prisma.TypeEvaluationWhereInput
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutEvaluationsInput, Prisma.TypeEvaluationUncheckedUpdateWithoutEvaluationsInput>
+export type typeevaluationUpdateToOneWithWhereWithoutEvaluationInput = {
+  where?: Prisma.typeevaluationWhereInput
+  data: Prisma.XOR<Prisma.typeevaluationUpdateWithoutEvaluationInput, Prisma.typeevaluationUncheckedUpdateWithoutEvaluationInput>
 }
 
-export type TypeEvaluationUpdateWithoutEvaluationsInput = {
+export type typeevaluationUpdateWithoutEvaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutTypeEvaluationsNestedInput
-  regleEval?: Prisma.RegleEvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutTypeEvaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutTypeevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutTypeevaluationNestedInput
 }
 
-export type TypeEvaluationUncheckedUpdateWithoutEvaluationsInput = {
+export type typeevaluationUncheckedUpdateWithoutEvaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  regleEval?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutTypeEvaluationNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
 }
 
-export type TypeEvaluationCreateWithoutNotesInput = {
+export type typeevaluationCreateWithoutNoteInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutTypeEvaluationsInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutTypeEvaluationInput
-  regleEval?: Prisma.RegleEvaluationCreateNestedManyWithoutTypeEvaluationInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutTypeevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationUncheckedCreateWithoutNotesInput = {
+export type typeevaluationUncheckedCreateWithoutNoteInput = {
   id?: string
   ecoleId: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
-  regleEval?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
 }
 
-export type TypeEvaluationCreateOrConnectWithoutNotesInput = {
-  where: Prisma.TypeEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutNotesInput, Prisma.TypeEvaluationUncheckedCreateWithoutNotesInput>
+export type typeevaluationCreateOrConnectWithoutNoteInput = {
+  where: Prisma.typeevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutNoteInput, Prisma.typeevaluationUncheckedCreateWithoutNoteInput>
 }
 
-export type TypeEvaluationUpsertWithoutNotesInput = {
-  update: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutNotesInput, Prisma.TypeEvaluationUncheckedUpdateWithoutNotesInput>
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateWithoutNotesInput, Prisma.TypeEvaluationUncheckedCreateWithoutNotesInput>
-  where?: Prisma.TypeEvaluationWhereInput
+export type typeevaluationUpsertWithoutNoteInput = {
+  update: Prisma.XOR<Prisma.typeevaluationUpdateWithoutNoteInput, Prisma.typeevaluationUncheckedUpdateWithoutNoteInput>
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutNoteInput, Prisma.typeevaluationUncheckedCreateWithoutNoteInput>
+  where?: Prisma.typeevaluationWhereInput
 }
 
-export type TypeEvaluationUpdateToOneWithWhereWithoutNotesInput = {
-  where?: Prisma.TypeEvaluationWhereInput
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateWithoutNotesInput, Prisma.TypeEvaluationUncheckedUpdateWithoutNotesInput>
+export type typeevaluationUpdateToOneWithWhereWithoutNoteInput = {
+  where?: Prisma.typeevaluationWhereInput
+  data: Prisma.XOR<Prisma.typeevaluationUpdateWithoutNoteInput, Prisma.typeevaluationUncheckedUpdateWithoutNoteInput>
 }
 
-export type TypeEvaluationUpdateWithoutNotesInput = {
+export type typeevaluationUpdateWithoutNoteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutTypeEvaluationsNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  regleEval?: Prisma.RegleEvaluationUpdateManyWithoutTypeEvaluationNestedInput
+  evaluation?: Prisma.evaluationUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutTypeevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutTypeevaluationNestedInput
 }
 
-export type TypeEvaluationUncheckedUpdateWithoutNotesInput = {
+export type typeevaluationUncheckedUpdateWithoutNoteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  regleEval?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
 }
 
-export type TypeEvaluationCreateManyEcoleInput = {
+export type typeevaluationCreateWithoutRegleevaluationInput = {
+  id?: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutTypeevaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutTypeevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutTypeevaluationInput
+}
+
+export type typeevaluationUncheckedCreateWithoutRegleevaluationInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutTypeevaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutTypeevaluationInput
+}
+
+export type typeevaluationCreateOrConnectWithoutRegleevaluationInput = {
+  where: Prisma.typeevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutRegleevaluationInput, Prisma.typeevaluationUncheckedCreateWithoutRegleevaluationInput>
+}
+
+export type typeevaluationUpsertWithoutRegleevaluationInput = {
+  update: Prisma.XOR<Prisma.typeevaluationUpdateWithoutRegleevaluationInput, Prisma.typeevaluationUncheckedUpdateWithoutRegleevaluationInput>
+  create: Prisma.XOR<Prisma.typeevaluationCreateWithoutRegleevaluationInput, Prisma.typeevaluationUncheckedCreateWithoutRegleevaluationInput>
+  where?: Prisma.typeevaluationWhereInput
+}
+
+export type typeevaluationUpdateToOneWithWhereWithoutRegleevaluationInput = {
+  where?: Prisma.typeevaluationWhereInput
+  data: Prisma.XOR<Prisma.typeevaluationUpdateWithoutRegleevaluationInput, Prisma.typeevaluationUncheckedUpdateWithoutRegleevaluationInput>
+}
+
+export type typeevaluationUpdateWithoutRegleevaluationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  evaluation?: Prisma.evaluationUpdateManyWithoutTypeevaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutTypeevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutTypeevaluationNestedInput
+}
+
+export type typeevaluationUncheckedUpdateWithoutRegleevaluationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutTypeevaluationNestedInput
+}
+
+export type typeevaluationCreateManyEcoleInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type TypeEvaluationUpdateWithoutEcoleInput = {
+export type typeevaluationUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  evaluations?: Prisma.EvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  regleEval?: Prisma.RegleEvaluationUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutTypeEvaluationNestedInput
+  evaluation?: Prisma.evaluationUpdateManyWithoutTypeevaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutTypeevaluationNestedInput
 }
 
-export type TypeEvaluationUncheckedUpdateWithoutEcoleInput = {
+export type typeevaluationUncheckedUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  regleEval?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutTypeEvaluationNestedInput
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutTypeevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput
 }
 
-export type TypeEvaluationUncheckedUpdateManyWithoutEcoleInput = {
+export type typeevaluationUncheckedUpdateManyWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -701,69 +701,69 @@ export type TypeEvaluationUncheckedUpdateManyWithoutEcoleInput = {
 
 
 /**
- * Count Type TypeEvaluationCountOutputType
+ * Count Type TypeevaluationCountOutputType
  */
 
-export type TypeEvaluationCountOutputType = {
-  evaluations: number
-  regleEval: number
-  notes: number
+export type TypeevaluationCountOutputType = {
+  evaluation: number
+  note: number
+  regleevaluation: number
 }
 
-export type TypeEvaluationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  evaluations?: boolean | TypeEvaluationCountOutputTypeCountEvaluationsArgs
-  regleEval?: boolean | TypeEvaluationCountOutputTypeCountRegleEvalArgs
-  notes?: boolean | TypeEvaluationCountOutputTypeCountNotesArgs
+export type TypeevaluationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  evaluation?: boolean | TypeevaluationCountOutputTypeCountEvaluationArgs
+  note?: boolean | TypeevaluationCountOutputTypeCountNoteArgs
+  regleevaluation?: boolean | TypeevaluationCountOutputTypeCountRegleevaluationArgs
 }
 
 /**
- * TypeEvaluationCountOutputType without action
+ * TypeevaluationCountOutputType without action
  */
-export type TypeEvaluationCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type TypeevaluationCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluationCountOutputType
+   * Select specific fields to fetch from the TypeevaluationCountOutputType
    */
-  select?: Prisma.TypeEvaluationCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.TypeevaluationCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * TypeEvaluationCountOutputType without action
+ * TypeevaluationCountOutputType without action
  */
-export type TypeEvaluationCountOutputTypeCountEvaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EvaluationWhereInput
+export type TypeevaluationCountOutputTypeCountEvaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.evaluationWhereInput
 }
 
 /**
- * TypeEvaluationCountOutputType without action
+ * TypeevaluationCountOutputType without action
  */
-export type TypeEvaluationCountOutputTypeCountRegleEvalArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.RegleEvaluationWhereInput
+export type TypeevaluationCountOutputTypeCountNoteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.noteWhereInput
 }
 
 /**
- * TypeEvaluationCountOutputType without action
+ * TypeevaluationCountOutputType without action
  */
-export type TypeEvaluationCountOutputTypeCountNotesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NoteWhereInput
+export type TypeevaluationCountOutputTypeCountRegleevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.regleevaluationWhereInput
 }
 
 
-export type TypeEvaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type typeevaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   ecoleId?: boolean
   nom?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  evaluations?: boolean | Prisma.TypeEvaluation$evaluationsArgs<ExtArgs>
-  regleEval?: boolean | Prisma.TypeEvaluation$regleEvalArgs<ExtArgs>
-  notes?: boolean | Prisma.TypeEvaluation$notesArgs<ExtArgs>
-  _count?: boolean | Prisma.TypeEvaluationCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["typeEvaluation"]>
+  evaluation?: boolean | Prisma.typeevaluation$evaluationArgs<ExtArgs>
+  note?: boolean | Prisma.typeevaluation$noteArgs<ExtArgs>
+  regleevaluation?: boolean | Prisma.typeevaluation$regleevaluationArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  _count?: boolean | Prisma.TypeevaluationCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["typeevaluation"]>
 
 
 
-export type TypeEvaluationSelectScalar = {
+export type typeevaluationSelectScalar = {
   id?: boolean
   ecoleId?: boolean
   nom?: boolean
@@ -771,22 +771,22 @@ export type TypeEvaluationSelectScalar = {
   updatedAt?: boolean
 }
 
-export type TypeEvaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "nom" | "createdAt" | "updatedAt", ExtArgs["result"]["typeEvaluation"]>
-export type TypeEvaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  evaluations?: boolean | Prisma.TypeEvaluation$evaluationsArgs<ExtArgs>
-  regleEval?: boolean | Prisma.TypeEvaluation$regleEvalArgs<ExtArgs>
-  notes?: boolean | Prisma.TypeEvaluation$notesArgs<ExtArgs>
-  _count?: boolean | Prisma.TypeEvaluationCountOutputTypeDefaultArgs<ExtArgs>
+export type typeevaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "nom" | "createdAt" | "updatedAt", ExtArgs["result"]["typeevaluation"]>
+export type typeevaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  evaluation?: boolean | Prisma.typeevaluation$evaluationArgs<ExtArgs>
+  note?: boolean | Prisma.typeevaluation$noteArgs<ExtArgs>
+  regleevaluation?: boolean | Prisma.typeevaluation$regleevaluationArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  _count?: boolean | Prisma.TypeevaluationCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $TypeEvaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "TypeEvaluation"
+export type $typeevaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "typeevaluation"
   objects: {
-    ecole: Prisma.$EcolePayload<ExtArgs>
-    evaluations: Prisma.$EvaluationPayload<ExtArgs>[]
-    regleEval: Prisma.$RegleEvaluationPayload<ExtArgs>[]
-    notes: Prisma.$NotePayload<ExtArgs>[]
+    evaluation: Prisma.$evaluationPayload<ExtArgs>[]
+    note: Prisma.$notePayload<ExtArgs>[]
+    regleevaluation: Prisma.$regleevaluationPayload<ExtArgs>[]
+    ecole: Prisma.$ecolePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -794,143 +794,143 @@ export type $TypeEvaluationPayload<ExtArgs extends runtime.Types.Extensions.Inte
     nom: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["typeEvaluation"]>
+  }, ExtArgs["result"]["typeevaluation"]>
   composites: {}
 }
 
-export type TypeEvaluationGetPayload<S extends boolean | null | undefined | TypeEvaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload, S>
+export type typeevaluationGetPayload<S extends boolean | null | undefined | typeevaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload, S>
 
-export type TypeEvaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<TypeEvaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: TypeEvaluationCountAggregateInputType | true
+export type typeevaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<typeevaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: TypeevaluationCountAggregateInputType | true
   }
 
-export interface TypeEvaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TypeEvaluation'], meta: { name: 'TypeEvaluation' } }
+export interface typeevaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['typeevaluation'], meta: { name: 'typeevaluation' } }
   /**
-   * Find zero or one TypeEvaluation that matches the filter.
-   * @param {TypeEvaluationFindUniqueArgs} args - Arguments to find a TypeEvaluation
+   * Find zero or one Typeevaluation that matches the filter.
+   * @param {typeevaluationFindUniqueArgs} args - Arguments to find a Typeevaluation
    * @example
-   * // Get one TypeEvaluation
-   * const typeEvaluation = await prisma.typeEvaluation.findUnique({
+   * // Get one Typeevaluation
+   * const typeevaluation = await prisma.typeevaluation.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends TypeEvaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, TypeEvaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends typeevaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, typeevaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one TypeEvaluation that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Typeevaluation that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {TypeEvaluationFindUniqueOrThrowArgs} args - Arguments to find a TypeEvaluation
+   * @param {typeevaluationFindUniqueOrThrowArgs} args - Arguments to find a Typeevaluation
    * @example
-   * // Get one TypeEvaluation
-   * const typeEvaluation = await prisma.typeEvaluation.findUniqueOrThrow({
+   * // Get one Typeevaluation
+   * const typeevaluation = await prisma.typeevaluation.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends TypeEvaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, TypeEvaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends typeevaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, typeevaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first TypeEvaluation that matches the filter.
+   * Find the first Typeevaluation that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationFindFirstArgs} args - Arguments to find a TypeEvaluation
+   * @param {typeevaluationFindFirstArgs} args - Arguments to find a Typeevaluation
    * @example
-   * // Get one TypeEvaluation
-   * const typeEvaluation = await prisma.typeEvaluation.findFirst({
+   * // Get one Typeevaluation
+   * const typeevaluation = await prisma.typeevaluation.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends TypeEvaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, TypeEvaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends typeevaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, typeevaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first TypeEvaluation that matches the filter or
+   * Find the first Typeevaluation that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationFindFirstOrThrowArgs} args - Arguments to find a TypeEvaluation
+   * @param {typeevaluationFindFirstOrThrowArgs} args - Arguments to find a Typeevaluation
    * @example
-   * // Get one TypeEvaluation
-   * const typeEvaluation = await prisma.typeEvaluation.findFirstOrThrow({
+   * // Get one Typeevaluation
+   * const typeevaluation = await prisma.typeevaluation.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends TypeEvaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, TypeEvaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends typeevaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, typeevaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more TypeEvaluations that matches the filter.
+   * Find zero or more Typeevaluations that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {typeevaluationFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all TypeEvaluations
-   * const typeEvaluations = await prisma.typeEvaluation.findMany()
+   * // Get all Typeevaluations
+   * const typeevaluations = await prisma.typeevaluation.findMany()
    * 
-   * // Get first 10 TypeEvaluations
-   * const typeEvaluations = await prisma.typeEvaluation.findMany({ take: 10 })
+   * // Get first 10 Typeevaluations
+   * const typeevaluations = await prisma.typeevaluation.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const typeEvaluationWithIdOnly = await prisma.typeEvaluation.findMany({ select: { id: true } })
+   * const typeevaluationWithIdOnly = await prisma.typeevaluation.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends TypeEvaluationFindManyArgs>(args?: Prisma.SelectSubset<T, TypeEvaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends typeevaluationFindManyArgs>(args?: Prisma.SelectSubset<T, typeevaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a TypeEvaluation.
-   * @param {TypeEvaluationCreateArgs} args - Arguments to create a TypeEvaluation.
+   * Create a Typeevaluation.
+   * @param {typeevaluationCreateArgs} args - Arguments to create a Typeevaluation.
    * @example
-   * // Create one TypeEvaluation
-   * const TypeEvaluation = await prisma.typeEvaluation.create({
+   * // Create one Typeevaluation
+   * const Typeevaluation = await prisma.typeevaluation.create({
    *   data: {
-   *     // ... data to create a TypeEvaluation
+   *     // ... data to create a Typeevaluation
    *   }
    * })
    * 
    */
-  create<T extends TypeEvaluationCreateArgs>(args: Prisma.SelectSubset<T, TypeEvaluationCreateArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends typeevaluationCreateArgs>(args: Prisma.SelectSubset<T, typeevaluationCreateArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many TypeEvaluations.
-   * @param {TypeEvaluationCreateManyArgs} args - Arguments to create many TypeEvaluations.
+   * Create many Typeevaluations.
+   * @param {typeevaluationCreateManyArgs} args - Arguments to create many Typeevaluations.
    * @example
-   * // Create many TypeEvaluations
-   * const typeEvaluation = await prisma.typeEvaluation.createMany({
+   * // Create many Typeevaluations
+   * const typeevaluation = await prisma.typeevaluation.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends TypeEvaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, TypeEvaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends typeevaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, typeevaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a TypeEvaluation.
-   * @param {TypeEvaluationDeleteArgs} args - Arguments to delete one TypeEvaluation.
+   * Delete a Typeevaluation.
+   * @param {typeevaluationDeleteArgs} args - Arguments to delete one Typeevaluation.
    * @example
-   * // Delete one TypeEvaluation
-   * const TypeEvaluation = await prisma.typeEvaluation.delete({
+   * // Delete one Typeevaluation
+   * const Typeevaluation = await prisma.typeevaluation.delete({
    *   where: {
-   *     // ... filter to delete one TypeEvaluation
+   *     // ... filter to delete one Typeevaluation
    *   }
    * })
    * 
    */
-  delete<T extends TypeEvaluationDeleteArgs>(args: Prisma.SelectSubset<T, TypeEvaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends typeevaluationDeleteArgs>(args: Prisma.SelectSubset<T, typeevaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one TypeEvaluation.
-   * @param {TypeEvaluationUpdateArgs} args - Arguments to update one TypeEvaluation.
+   * Update one Typeevaluation.
+   * @param {typeevaluationUpdateArgs} args - Arguments to update one Typeevaluation.
    * @example
-   * // Update one TypeEvaluation
-   * const typeEvaluation = await prisma.typeEvaluation.update({
+   * // Update one Typeevaluation
+   * const typeevaluation = await prisma.typeevaluation.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -940,30 +940,30 @@ export interface TypeEvaluationDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  update<T extends TypeEvaluationUpdateArgs>(args: Prisma.SelectSubset<T, TypeEvaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends typeevaluationUpdateArgs>(args: Prisma.SelectSubset<T, typeevaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more TypeEvaluations.
-   * @param {TypeEvaluationDeleteManyArgs} args - Arguments to filter TypeEvaluations to delete.
+   * Delete zero or more Typeevaluations.
+   * @param {typeevaluationDeleteManyArgs} args - Arguments to filter Typeevaluations to delete.
    * @example
-   * // Delete a few TypeEvaluations
-   * const { count } = await prisma.typeEvaluation.deleteMany({
+   * // Delete a few Typeevaluations
+   * const { count } = await prisma.typeevaluation.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends TypeEvaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, TypeEvaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends typeevaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, typeevaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more TypeEvaluations.
+   * Update zero or more Typeevaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {typeevaluationUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many TypeEvaluations
-   * const typeEvaluation = await prisma.typeEvaluation.updateMany({
+   * // Update many Typeevaluations
+   * const typeevaluation = await prisma.typeevaluation.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -973,56 +973,56 @@ export interface TypeEvaluationDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  updateMany<T extends TypeEvaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, TypeEvaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends typeevaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, typeevaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one TypeEvaluation.
-   * @param {TypeEvaluationUpsertArgs} args - Arguments to update or create a TypeEvaluation.
+   * Create or update one Typeevaluation.
+   * @param {typeevaluationUpsertArgs} args - Arguments to update or create a Typeevaluation.
    * @example
-   * // Update or create a TypeEvaluation
-   * const typeEvaluation = await prisma.typeEvaluation.upsert({
+   * // Update or create a Typeevaluation
+   * const typeevaluation = await prisma.typeevaluation.upsert({
    *   create: {
-   *     // ... data to create a TypeEvaluation
+   *     // ... data to create a Typeevaluation
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the TypeEvaluation we want to update
+   *     // ... the filter for the Typeevaluation we want to update
    *   }
    * })
    */
-  upsert<T extends TypeEvaluationUpsertArgs>(args: Prisma.SelectSubset<T, TypeEvaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends typeevaluationUpsertArgs>(args: Prisma.SelectSubset<T, typeevaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of TypeEvaluations.
+   * Count the number of Typeevaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationCountArgs} args - Arguments to filter TypeEvaluations to count.
+   * @param {typeevaluationCountArgs} args - Arguments to filter Typeevaluations to count.
    * @example
-   * // Count the number of TypeEvaluations
-   * const count = await prisma.typeEvaluation.count({
+   * // Count the number of Typeevaluations
+   * const count = await prisma.typeevaluation.count({
    *   where: {
-   *     // ... the filter for the TypeEvaluations we want to count
+   *     // ... the filter for the Typeevaluations we want to count
    *   }
    * })
   **/
-  count<T extends TypeEvaluationCountArgs>(
-    args?: Prisma.Subset<T, TypeEvaluationCountArgs>,
+  count<T extends typeevaluationCountArgs>(
+    args?: Prisma.Subset<T, typeevaluationCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], TypeEvaluationCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], TypeevaluationCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a TypeEvaluation.
+   * Allows you to perform aggregations operations on a Typeevaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {TypeevaluationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1042,13 +1042,13 @@ export interface TypeEvaluationDelegate<ExtArgs extends runtime.Types.Extensions
    *   take: 10,
    * })
   **/
-  aggregate<T extends TypeEvaluationAggregateArgs>(args: Prisma.Subset<T, TypeEvaluationAggregateArgs>): Prisma.PrismaPromise<GetTypeEvaluationAggregateType<T>>
+  aggregate<T extends TypeevaluationAggregateArgs>(args: Prisma.Subset<T, TypeevaluationAggregateArgs>): Prisma.PrismaPromise<GetTypeevaluationAggregateType<T>>
 
   /**
-   * Group by TypeEvaluation.
+   * Group by Typeevaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TypeEvaluationGroupByArgs} args - Group by arguments.
+   * @param {typeevaluationGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1063,14 +1063,14 @@ export interface TypeEvaluationDelegate<ExtArgs extends runtime.Types.Extensions
    * 
   **/
   groupBy<
-    T extends TypeEvaluationGroupByArgs,
+    T extends typeevaluationGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: TypeEvaluationGroupByArgs['orderBy'] }
-      : { orderBy?: TypeEvaluationGroupByArgs['orderBy'] },
+      ? { orderBy: typeevaluationGroupByArgs['orderBy'] }
+      : { orderBy?: typeevaluationGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1119,25 +1119,25 @@ export interface TypeEvaluationDelegate<ExtArgs extends runtime.Types.Extensions
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, TypeEvaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTypeEvaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, typeevaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTypeevaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the TypeEvaluation model
+ * Fields of the typeevaluation model
  */
-readonly fields: TypeEvaluationFieldRefs;
+readonly fields: typeevaluationFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for TypeEvaluation.
+ * The delegate class that acts as a "Promise-like" for typeevaluation.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__TypeEvaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__typeevaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  ecole<T extends Prisma.EcoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EcoleDefaultArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  evaluations<T extends Prisma.TypeEvaluation$evaluationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TypeEvaluation$evaluationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  regleEval<T extends Prisma.TypeEvaluation$regleEvalArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TypeEvaluation$regleEvalArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  notes<T extends Prisma.TypeEvaluation$notesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TypeEvaluation$notesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  evaluation<T extends Prisma.typeevaluation$evaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.typeevaluation$evaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  note<T extends Prisma.typeevaluation$noteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.typeevaluation$noteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$notePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  regleevaluation<T extends Prisma.typeevaluation$regleevaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.typeevaluation$regleevaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ecole<T extends Prisma.ecoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecoleDefaultArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1164,447 +1164,447 @@ export interface Prisma__TypeEvaluationClient<T, Null = never, ExtArgs extends r
 
 
 /**
- * Fields of the TypeEvaluation model
+ * Fields of the typeevaluation model
  */
-export interface TypeEvaluationFieldRefs {
-  readonly id: Prisma.FieldRef<"TypeEvaluation", 'String'>
-  readonly ecoleId: Prisma.FieldRef<"TypeEvaluation", 'String'>
-  readonly nom: Prisma.FieldRef<"TypeEvaluation", 'String'>
-  readonly createdAt: Prisma.FieldRef<"TypeEvaluation", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"TypeEvaluation", 'DateTime'>
+export interface typeevaluationFieldRefs {
+  readonly id: Prisma.FieldRef<"typeevaluation", 'String'>
+  readonly ecoleId: Prisma.FieldRef<"typeevaluation", 'String'>
+  readonly nom: Prisma.FieldRef<"typeevaluation", 'String'>
+  readonly createdAt: Prisma.FieldRef<"typeevaluation", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"typeevaluation", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * TypeEvaluation findUnique
+ * typeevaluation findUnique
  */
-export type TypeEvaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which TypeEvaluation to fetch.
+   * Filter, which typeevaluation to fetch.
    */
-  where: Prisma.TypeEvaluationWhereUniqueInput
+  where: Prisma.typeevaluationWhereUniqueInput
 }
 
 /**
- * TypeEvaluation findUniqueOrThrow
+ * typeevaluation findUniqueOrThrow
  */
-export type TypeEvaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which TypeEvaluation to fetch.
+   * Filter, which typeevaluation to fetch.
    */
-  where: Prisma.TypeEvaluationWhereUniqueInput
+  where: Prisma.typeevaluationWhereUniqueInput
 }
 
 /**
- * TypeEvaluation findFirst
+ * typeevaluation findFirst
  */
-export type TypeEvaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which TypeEvaluation to fetch.
+   * Filter, which typeevaluation to fetch.
    */
-  where?: Prisma.TypeEvaluationWhereInput
+  where?: Prisma.typeevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TypeEvaluations to fetch.
+   * Determine the order of typeevaluations to fetch.
    */
-  orderBy?: Prisma.TypeEvaluationOrderByWithRelationInput | Prisma.TypeEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.typeevaluationOrderByWithRelationInput | Prisma.typeevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for TypeEvaluations.
+   * Sets the position for searching for typeevaluations.
    */
-  cursor?: Prisma.TypeEvaluationWhereUniqueInput
+  cursor?: Prisma.typeevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TypeEvaluations from the position of the cursor.
+   * Take `±n` typeevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TypeEvaluations.
+   * Skip the first `n` typeevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of TypeEvaluations.
+   * Filter by unique combinations of typeevaluations.
    */
-  distinct?: Prisma.TypeEvaluationScalarFieldEnum | Prisma.TypeEvaluationScalarFieldEnum[]
+  distinct?: Prisma.TypeevaluationScalarFieldEnum | Prisma.TypeevaluationScalarFieldEnum[]
 }
 
 /**
- * TypeEvaluation findFirstOrThrow
+ * typeevaluation findFirstOrThrow
  */
-export type TypeEvaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which TypeEvaluation to fetch.
+   * Filter, which typeevaluation to fetch.
    */
-  where?: Prisma.TypeEvaluationWhereInput
+  where?: Prisma.typeevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TypeEvaluations to fetch.
+   * Determine the order of typeevaluations to fetch.
    */
-  orderBy?: Prisma.TypeEvaluationOrderByWithRelationInput | Prisma.TypeEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.typeevaluationOrderByWithRelationInput | Prisma.typeevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for TypeEvaluations.
+   * Sets the position for searching for typeevaluations.
    */
-  cursor?: Prisma.TypeEvaluationWhereUniqueInput
+  cursor?: Prisma.typeevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TypeEvaluations from the position of the cursor.
+   * Take `±n` typeevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TypeEvaluations.
+   * Skip the first `n` typeevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of TypeEvaluations.
+   * Filter by unique combinations of typeevaluations.
    */
-  distinct?: Prisma.TypeEvaluationScalarFieldEnum | Prisma.TypeEvaluationScalarFieldEnum[]
+  distinct?: Prisma.TypeevaluationScalarFieldEnum | Prisma.TypeevaluationScalarFieldEnum[]
 }
 
 /**
- * TypeEvaluation findMany
+ * typeevaluation findMany
  */
-export type TypeEvaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which TypeEvaluations to fetch.
+   * Filter, which typeevaluations to fetch.
    */
-  where?: Prisma.TypeEvaluationWhereInput
+  where?: Prisma.typeevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TypeEvaluations to fetch.
+   * Determine the order of typeevaluations to fetch.
    */
-  orderBy?: Prisma.TypeEvaluationOrderByWithRelationInput | Prisma.TypeEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.typeevaluationOrderByWithRelationInput | Prisma.typeevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing TypeEvaluations.
+   * Sets the position for listing typeevaluations.
    */
-  cursor?: Prisma.TypeEvaluationWhereUniqueInput
+  cursor?: Prisma.typeevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TypeEvaluations from the position of the cursor.
+   * Take `±n` typeevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TypeEvaluations.
+   * Skip the first `n` typeevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of TypeEvaluations.
+   * Filter by unique combinations of typeevaluations.
    */
-  distinct?: Prisma.TypeEvaluationScalarFieldEnum | Prisma.TypeEvaluationScalarFieldEnum[]
+  distinct?: Prisma.TypeevaluationScalarFieldEnum | Prisma.TypeevaluationScalarFieldEnum[]
 }
 
 /**
- * TypeEvaluation create
+ * typeevaluation create
  */
-export type TypeEvaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * The data needed to create a TypeEvaluation.
+   * The data needed to create a typeevaluation.
    */
-  data: Prisma.XOR<Prisma.TypeEvaluationCreateInput, Prisma.TypeEvaluationUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.typeevaluationCreateInput, Prisma.typeevaluationUncheckedCreateInput>
 }
 
 /**
- * TypeEvaluation createMany
+ * typeevaluation createMany
  */
-export type TypeEvaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many TypeEvaluations.
+   * The data used to create many typeevaluations.
    */
-  data: Prisma.TypeEvaluationCreateManyInput | Prisma.TypeEvaluationCreateManyInput[]
+  data: Prisma.typeevaluationCreateManyInput | Prisma.typeevaluationCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * TypeEvaluation update
+ * typeevaluation update
  */
-export type TypeEvaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * The data needed to update a TypeEvaluation.
+   * The data needed to update a typeevaluation.
    */
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateInput, Prisma.TypeEvaluationUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.typeevaluationUpdateInput, Prisma.typeevaluationUncheckedUpdateInput>
   /**
-   * Choose, which TypeEvaluation to update.
+   * Choose, which typeevaluation to update.
    */
-  where: Prisma.TypeEvaluationWhereUniqueInput
+  where: Prisma.typeevaluationWhereUniqueInput
 }
 
 /**
- * TypeEvaluation updateMany
+ * typeevaluation updateMany
  */
-export type TypeEvaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update TypeEvaluations.
+   * The data used to update typeevaluations.
    */
-  data: Prisma.XOR<Prisma.TypeEvaluationUpdateManyMutationInput, Prisma.TypeEvaluationUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.typeevaluationUpdateManyMutationInput, Prisma.typeevaluationUncheckedUpdateManyInput>
   /**
-   * Filter which TypeEvaluations to update
+   * Filter which typeevaluations to update
    */
-  where?: Prisma.TypeEvaluationWhereInput
+  where?: Prisma.typeevaluationWhereInput
   /**
-   * Limit how many TypeEvaluations to update.
+   * Limit how many typeevaluations to update.
    */
   limit?: number
 }
 
 /**
- * TypeEvaluation upsert
+ * typeevaluation upsert
  */
-export type TypeEvaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * The filter to search for the TypeEvaluation to update in case it exists.
+   * The filter to search for the typeevaluation to update in case it exists.
    */
-  where: Prisma.TypeEvaluationWhereUniqueInput
+  where: Prisma.typeevaluationWhereUniqueInput
   /**
-   * In case the TypeEvaluation found by the `where` argument doesn't exist, create a new TypeEvaluation with this data.
+   * In case the typeevaluation found by the `where` argument doesn't exist, create a new typeevaluation with this data.
    */
-  create: Prisma.XOR<Prisma.TypeEvaluationCreateInput, Prisma.TypeEvaluationUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.typeevaluationCreateInput, Prisma.typeevaluationUncheckedCreateInput>
   /**
-   * In case the TypeEvaluation was found with the provided `where` argument, update it with this data.
+   * In case the typeevaluation was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.TypeEvaluationUpdateInput, Prisma.TypeEvaluationUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.typeevaluationUpdateInput, Prisma.typeevaluationUncheckedUpdateInput>
 }
 
 /**
- * TypeEvaluation delete
+ * typeevaluation delete
  */
-export type TypeEvaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the typeevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the typeevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
   /**
-   * Filter which TypeEvaluation to delete.
+   * Filter which typeevaluation to delete.
    */
-  where: Prisma.TypeEvaluationWhereUniqueInput
+  where: Prisma.typeevaluationWhereUniqueInput
 }
 
 /**
- * TypeEvaluation deleteMany
+ * typeevaluation deleteMany
  */
-export type TypeEvaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which TypeEvaluations to delete
+   * Filter which typeevaluations to delete
    */
-  where?: Prisma.TypeEvaluationWhereInput
+  where?: Prisma.typeevaluationWhereInput
   /**
-   * Limit how many TypeEvaluations to delete.
+   * Limit how many typeevaluations to delete.
    */
   limit?: number
 }
 
 /**
- * TypeEvaluation.evaluations
+ * typeevaluation.evaluation
  */
-export type TypeEvaluation$evaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluation$evaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
-  where?: Prisma.EvaluationWhereInput
-  orderBy?: Prisma.EvaluationOrderByWithRelationInput | Prisma.EvaluationOrderByWithRelationInput[]
-  cursor?: Prisma.EvaluationWhereUniqueInput
+  include?: Prisma.evaluationInclude<ExtArgs> | null
+  where?: Prisma.evaluationWhereInput
+  orderBy?: Prisma.evaluationOrderByWithRelationInput | Prisma.evaluationOrderByWithRelationInput[]
+  cursor?: Prisma.evaluationWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.EvaluationScalarFieldEnum | Prisma.EvaluationScalarFieldEnum[]
 }
 
 /**
- * TypeEvaluation.regleEval
+ * typeevaluation.note
  */
-export type TypeEvaluation$regleEvalArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluation$noteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the note
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.noteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the note
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.noteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
-  where?: Prisma.RegleEvaluationWhereInput
-  orderBy?: Prisma.RegleEvaluationOrderByWithRelationInput | Prisma.RegleEvaluationOrderByWithRelationInput[]
-  cursor?: Prisma.RegleEvaluationWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.RegleEvaluationScalarFieldEnum | Prisma.RegleEvaluationScalarFieldEnum[]
-}
-
-/**
- * TypeEvaluation.notes
- */
-export type TypeEvaluation$notesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Note
-   */
-  select?: Prisma.NoteSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Note
-   */
-  omit?: Prisma.NoteOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.NoteInclude<ExtArgs> | null
-  where?: Prisma.NoteWhereInput
-  orderBy?: Prisma.NoteOrderByWithRelationInput | Prisma.NoteOrderByWithRelationInput[]
-  cursor?: Prisma.NoteWhereUniqueInput
+  include?: Prisma.noteInclude<ExtArgs> | null
+  where?: Prisma.noteWhereInput
+  orderBy?: Prisma.noteOrderByWithRelationInput | Prisma.noteOrderByWithRelationInput[]
+  cursor?: Prisma.noteWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.NoteScalarFieldEnum | Prisma.NoteScalarFieldEnum[]
 }
 
 /**
- * TypeEvaluation without action
+ * typeevaluation.regleevaluation
  */
-export type TypeEvaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type typeevaluation$regleevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TypeEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TypeEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
+  where?: Prisma.regleevaluationWhereInput
+  orderBy?: Prisma.regleevaluationOrderByWithRelationInput | Prisma.regleevaluationOrderByWithRelationInput[]
+  cursor?: Prisma.regleevaluationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RegleevaluationScalarFieldEnum | Prisma.RegleevaluationScalarFieldEnum[]
+}
+
+/**
+ * typeevaluation without action
+ */
+export type typeevaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the typeevaluation
+   */
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the typeevaluation
+   */
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
 }

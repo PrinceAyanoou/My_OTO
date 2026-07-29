@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `ApprenantParent` model and its related types.
+ * This file exports the `apprenantparent` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,30 +13,30 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model ApprenantParent
+ * Model apprenantparent
  * 
  */
-export type ApprenantParentModel = runtime.Types.Result.DefaultSelection<Prisma.$ApprenantParentPayload>
+export type apprenantparentModel = runtime.Types.Result.DefaultSelection<Prisma.$apprenantparentPayload>
 
-export type AggregateApprenantParent = {
-  _count: ApprenantParentCountAggregateOutputType | null
-  _min: ApprenantParentMinAggregateOutputType | null
-  _max: ApprenantParentMaxAggregateOutputType | null
+export type AggregateApprenantparent = {
+  _count: ApprenantparentCountAggregateOutputType | null
+  _min: ApprenantparentMinAggregateOutputType | null
+  _max: ApprenantparentMaxAggregateOutputType | null
 }
 
-export type ApprenantParentMinAggregateOutputType = {
+export type ApprenantparentMinAggregateOutputType = {
   apprenantId: string | null
   parentId: string | null
-  lien: $Enums.lienParente | null
+  lien: $Enums.apprenantparent_lien | null
 }
 
-export type ApprenantParentMaxAggregateOutputType = {
+export type ApprenantparentMaxAggregateOutputType = {
   apprenantId: string | null
   parentId: string | null
-  lien: $Enums.lienParente | null
+  lien: $Enums.apprenantparent_lien | null
 }
 
-export type ApprenantParentCountAggregateOutputType = {
+export type ApprenantparentCountAggregateOutputType = {
   apprenantId: number
   parentId: number
   lien: number
@@ -44,630 +44,630 @@ export type ApprenantParentCountAggregateOutputType = {
 }
 
 
-export type ApprenantParentMinAggregateInputType = {
+export type ApprenantparentMinAggregateInputType = {
   apprenantId?: true
   parentId?: true
   lien?: true
 }
 
-export type ApprenantParentMaxAggregateInputType = {
+export type ApprenantparentMaxAggregateInputType = {
   apprenantId?: true
   parentId?: true
   lien?: true
 }
 
-export type ApprenantParentCountAggregateInputType = {
+export type ApprenantparentCountAggregateInputType = {
   apprenantId?: true
   parentId?: true
   lien?: true
   _all?: true
 }
 
-export type ApprenantParentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ApprenantparentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ApprenantParent to aggregate.
+   * Filter which apprenantparent to aggregate.
    */
-  where?: Prisma.ApprenantParentWhereInput
+  where?: Prisma.apprenantparentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ApprenantParents to fetch.
+   * Determine the order of apprenantparents to fetch.
    */
-  orderBy?: Prisma.ApprenantParentOrderByWithRelationInput | Prisma.ApprenantParentOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantparentOrderByWithRelationInput | Prisma.apprenantparentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ApprenantParentWhereUniqueInput
+  cursor?: Prisma.apprenantparentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ApprenantParents from the position of the cursor.
+   * Take `±n` apprenantparents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ApprenantParents.
+   * Skip the first `n` apprenantparents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned ApprenantParents
+   * Count returned apprenantparents
   **/
-  _count?: true | ApprenantParentCountAggregateInputType
+  _count?: true | ApprenantparentCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: ApprenantParentMinAggregateInputType
+  _min?: ApprenantparentMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: ApprenantParentMaxAggregateInputType
+  _max?: ApprenantparentMaxAggregateInputType
 }
 
-export type GetApprenantParentAggregateType<T extends ApprenantParentAggregateArgs> = {
-      [P in keyof T & keyof AggregateApprenantParent]: P extends '_count' | 'count'
+export type GetApprenantparentAggregateType<T extends ApprenantparentAggregateArgs> = {
+      [P in keyof T & keyof AggregateApprenantparent]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateApprenantParent[P]>
-    : Prisma.GetScalarType<T[P], AggregateApprenantParent[P]>
+      : Prisma.GetScalarType<T[P], AggregateApprenantparent[P]>
+    : Prisma.GetScalarType<T[P], AggregateApprenantparent[P]>
 }
 
 
 
 
-export type ApprenantParentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ApprenantParentWhereInput
-  orderBy?: Prisma.ApprenantParentOrderByWithAggregationInput | Prisma.ApprenantParentOrderByWithAggregationInput[]
-  by: Prisma.ApprenantParentScalarFieldEnum[] | Prisma.ApprenantParentScalarFieldEnum
-  having?: Prisma.ApprenantParentScalarWhereWithAggregatesInput
+export type apprenantparentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.apprenantparentWhereInput
+  orderBy?: Prisma.apprenantparentOrderByWithAggregationInput | Prisma.apprenantparentOrderByWithAggregationInput[]
+  by: Prisma.ApprenantparentScalarFieldEnum[] | Prisma.ApprenantparentScalarFieldEnum
+  having?: Prisma.apprenantparentScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: ApprenantParentCountAggregateInputType | true
-  _min?: ApprenantParentMinAggregateInputType
-  _max?: ApprenantParentMaxAggregateInputType
+  _count?: ApprenantparentCountAggregateInputType | true
+  _min?: ApprenantparentMinAggregateInputType
+  _max?: ApprenantparentMaxAggregateInputType
 }
 
-export type ApprenantParentGroupByOutputType = {
+export type ApprenantparentGroupByOutputType = {
   apprenantId: string
   parentId: string
-  lien: $Enums.lienParente
-  _count: ApprenantParentCountAggregateOutputType | null
-  _min: ApprenantParentMinAggregateOutputType | null
-  _max: ApprenantParentMaxAggregateOutputType | null
+  lien: $Enums.apprenantparent_lien
+  _count: ApprenantparentCountAggregateOutputType | null
+  _min: ApprenantparentMinAggregateOutputType | null
+  _max: ApprenantparentMaxAggregateOutputType | null
 }
 
-export type GetApprenantParentGroupByPayload<T extends ApprenantParentGroupByArgs> = Prisma.PrismaPromise<
+export type GetApprenantparentGroupByPayload<T extends apprenantparentGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<ApprenantParentGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<ApprenantparentGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof ApprenantParentGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof ApprenantparentGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], ApprenantParentGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], ApprenantParentGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], ApprenantparentGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], ApprenantparentGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type ApprenantParentWhereInput = {
-  AND?: Prisma.ApprenantParentWhereInput | Prisma.ApprenantParentWhereInput[]
-  OR?: Prisma.ApprenantParentWhereInput[]
-  NOT?: Prisma.ApprenantParentWhereInput | Prisma.ApprenantParentWhereInput[]
-  apprenantId?: Prisma.StringFilter<"ApprenantParent"> | string
-  parentId?: Prisma.StringFilter<"ApprenantParent"> | string
-  lien?: Prisma.EnumlienParenteFilter<"ApprenantParent"> | $Enums.lienParente
-  parent?: Prisma.XOR<Prisma.ParentScalarRelationFilter, Prisma.ParentWhereInput>
-  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.ApprenantWhereInput>
+export type apprenantparentWhereInput = {
+  AND?: Prisma.apprenantparentWhereInput | Prisma.apprenantparentWhereInput[]
+  OR?: Prisma.apprenantparentWhereInput[]
+  NOT?: Prisma.apprenantparentWhereInput | Prisma.apprenantparentWhereInput[]
+  apprenantId?: Prisma.StringFilter<"apprenantparent"> | string
+  parentId?: Prisma.StringFilter<"apprenantparent"> | string
+  lien?: Prisma.Enumapprenantparent_lienFilter<"apprenantparent"> | $Enums.apprenantparent_lien
+  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.apprenantWhereInput>
+  parent?: Prisma.XOR<Prisma.ParentScalarRelationFilter, Prisma.parentWhereInput>
 }
 
-export type ApprenantParentOrderByWithRelationInput = {
+export type apprenantparentOrderByWithRelationInput = {
   apprenantId?: Prisma.SortOrder
   parentId?: Prisma.SortOrder
   lien?: Prisma.SortOrder
-  parent?: Prisma.ParentOrderByWithRelationInput
-  apprenant?: Prisma.ApprenantOrderByWithRelationInput
-  _relevance?: Prisma.ApprenantParentOrderByRelevanceInput
+  apprenant?: Prisma.apprenantOrderByWithRelationInput
+  parent?: Prisma.parentOrderByWithRelationInput
+  _relevance?: Prisma.apprenantparentOrderByRelevanceInput
 }
 
-export type ApprenantParentWhereUniqueInput = Prisma.AtLeast<{
-  apprenantId_parentId?: Prisma.ApprenantParentApprenantIdParentIdCompoundUniqueInput
-  AND?: Prisma.ApprenantParentWhereInput | Prisma.ApprenantParentWhereInput[]
-  OR?: Prisma.ApprenantParentWhereInput[]
-  NOT?: Prisma.ApprenantParentWhereInput | Prisma.ApprenantParentWhereInput[]
-  apprenantId?: Prisma.StringFilter<"ApprenantParent"> | string
-  parentId?: Prisma.StringFilter<"ApprenantParent"> | string
-  lien?: Prisma.EnumlienParenteFilter<"ApprenantParent"> | $Enums.lienParente
-  parent?: Prisma.XOR<Prisma.ParentScalarRelationFilter, Prisma.ParentWhereInput>
-  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.ApprenantWhereInput>
+export type apprenantparentWhereUniqueInput = Prisma.AtLeast<{
+  apprenantId_parentId?: Prisma.apprenantparentApprenantIdParentIdCompoundUniqueInput
+  AND?: Prisma.apprenantparentWhereInput | Prisma.apprenantparentWhereInput[]
+  OR?: Prisma.apprenantparentWhereInput[]
+  NOT?: Prisma.apprenantparentWhereInput | Prisma.apprenantparentWhereInput[]
+  apprenantId?: Prisma.StringFilter<"apprenantparent"> | string
+  parentId?: Prisma.StringFilter<"apprenantparent"> | string
+  lien?: Prisma.Enumapprenantparent_lienFilter<"apprenantparent"> | $Enums.apprenantparent_lien
+  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.apprenantWhereInput>
+  parent?: Prisma.XOR<Prisma.ParentScalarRelationFilter, Prisma.parentWhereInput>
 }, "apprenantId_parentId">
 
-export type ApprenantParentOrderByWithAggregationInput = {
+export type apprenantparentOrderByWithAggregationInput = {
   apprenantId?: Prisma.SortOrder
   parentId?: Prisma.SortOrder
   lien?: Prisma.SortOrder
-  _count?: Prisma.ApprenantParentCountOrderByAggregateInput
-  _max?: Prisma.ApprenantParentMaxOrderByAggregateInput
-  _min?: Prisma.ApprenantParentMinOrderByAggregateInput
+  _count?: Prisma.apprenantparentCountOrderByAggregateInput
+  _max?: Prisma.apprenantparentMaxOrderByAggregateInput
+  _min?: Prisma.apprenantparentMinOrderByAggregateInput
 }
 
-export type ApprenantParentScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ApprenantParentScalarWhereWithAggregatesInput | Prisma.ApprenantParentScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ApprenantParentScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ApprenantParentScalarWhereWithAggregatesInput | Prisma.ApprenantParentScalarWhereWithAggregatesInput[]
-  apprenantId?: Prisma.StringWithAggregatesFilter<"ApprenantParent"> | string
-  parentId?: Prisma.StringWithAggregatesFilter<"ApprenantParent"> | string
-  lien?: Prisma.EnumlienParenteWithAggregatesFilter<"ApprenantParent"> | $Enums.lienParente
+export type apprenantparentScalarWhereWithAggregatesInput = {
+  AND?: Prisma.apprenantparentScalarWhereWithAggregatesInput | Prisma.apprenantparentScalarWhereWithAggregatesInput[]
+  OR?: Prisma.apprenantparentScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.apprenantparentScalarWhereWithAggregatesInput | Prisma.apprenantparentScalarWhereWithAggregatesInput[]
+  apprenantId?: Prisma.StringWithAggregatesFilter<"apprenantparent"> | string
+  parentId?: Prisma.StringWithAggregatesFilter<"apprenantparent"> | string
+  lien?: Prisma.Enumapprenantparent_lienWithAggregatesFilter<"apprenantparent"> | $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentCreateInput = {
-  lien: $Enums.lienParente
-  parent: Prisma.ParentCreateNestedOneWithoutApprenantParentInput
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutParentsInput
+export type apprenantparentCreateInput = {
+  lien: $Enums.apprenantparent_lien
+  apprenant: Prisma.apprenantCreateNestedOneWithoutApprenantparentInput
+  parent: Prisma.parentCreateNestedOneWithoutApprenantparentInput
 }
 
-export type ApprenantParentUncheckedCreateInput = {
+export type apprenantparentUncheckedCreateInput = {
   apprenantId: string
   parentId: string
-  lien: $Enums.lienParente
+  lien: $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentUpdateInput = {
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
-  parent?: Prisma.ParentUpdateOneRequiredWithoutApprenantParentNestedInput
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutParentsNestedInput
+export type apprenantparentUpdateInput = {
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutApprenantparentNestedInput
+  parent?: Prisma.parentUpdateOneRequiredWithoutApprenantparentNestedInput
 }
 
-export type ApprenantParentUncheckedUpdateInput = {
+export type apprenantparentUncheckedUpdateInput = {
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   parentId?: Prisma.StringFieldUpdateOperationsInput | string
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentCreateManyInput = {
+export type apprenantparentCreateManyInput = {
   apprenantId: string
   parentId: string
-  lien: $Enums.lienParente
+  lien: $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentUpdateManyMutationInput = {
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
+export type apprenantparentUpdateManyMutationInput = {
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentUncheckedUpdateManyInput = {
+export type apprenantparentUncheckedUpdateManyInput = {
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   parentId?: Prisma.StringFieldUpdateOperationsInput | string
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentListRelationFilter = {
-  every?: Prisma.ApprenantParentWhereInput
-  some?: Prisma.ApprenantParentWhereInput
-  none?: Prisma.ApprenantParentWhereInput
+export type ApprenantparentListRelationFilter = {
+  every?: Prisma.apprenantparentWhereInput
+  some?: Prisma.apprenantparentWhereInput
+  none?: Prisma.apprenantparentWhereInput
 }
 
-export type ApprenantParentOrderByRelationAggregateInput = {
+export type apprenantparentOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type ApprenantParentOrderByRelevanceInput = {
-  fields: Prisma.ApprenantParentOrderByRelevanceFieldEnum | Prisma.ApprenantParentOrderByRelevanceFieldEnum[]
+export type apprenantparentOrderByRelevanceInput = {
+  fields: Prisma.apprenantparentOrderByRelevanceFieldEnum | Prisma.apprenantparentOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ApprenantParentApprenantIdParentIdCompoundUniqueInput = {
+export type apprenantparentApprenantIdParentIdCompoundUniqueInput = {
   apprenantId: string
   parentId: string
 }
 
-export type ApprenantParentCountOrderByAggregateInput = {
+export type apprenantparentCountOrderByAggregateInput = {
   apprenantId?: Prisma.SortOrder
   parentId?: Prisma.SortOrder
   lien?: Prisma.SortOrder
 }
 
-export type ApprenantParentMaxOrderByAggregateInput = {
+export type apprenantparentMaxOrderByAggregateInput = {
   apprenantId?: Prisma.SortOrder
   parentId?: Prisma.SortOrder
   lien?: Prisma.SortOrder
 }
 
-export type ApprenantParentMinOrderByAggregateInput = {
+export type apprenantparentMinOrderByAggregateInput = {
   apprenantId?: Prisma.SortOrder
   parentId?: Prisma.SortOrder
   lien?: Prisma.SortOrder
 }
 
-export type ApprenantParentCreateNestedManyWithoutParentInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutParentInput, Prisma.ApprenantParentUncheckedCreateWithoutParentInput> | Prisma.ApprenantParentCreateWithoutParentInput[] | Prisma.ApprenantParentUncheckedCreateWithoutParentInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutParentInput | Prisma.ApprenantParentCreateOrConnectWithoutParentInput[]
-  createMany?: Prisma.ApprenantParentCreateManyParentInputEnvelope
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
+export type apprenantparentCreateNestedManyWithoutApprenantInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutApprenantInput, Prisma.apprenantparentUncheckedCreateWithoutApprenantInput> | Prisma.apprenantparentCreateWithoutApprenantInput[] | Prisma.apprenantparentUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutApprenantInput | Prisma.apprenantparentCreateOrConnectWithoutApprenantInput[]
+  createMany?: Prisma.apprenantparentCreateManyApprenantInputEnvelope
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
 }
 
-export type ApprenantParentUncheckedCreateNestedManyWithoutParentInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutParentInput, Prisma.ApprenantParentUncheckedCreateWithoutParentInput> | Prisma.ApprenantParentCreateWithoutParentInput[] | Prisma.ApprenantParentUncheckedCreateWithoutParentInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutParentInput | Prisma.ApprenantParentCreateOrConnectWithoutParentInput[]
-  createMany?: Prisma.ApprenantParentCreateManyParentInputEnvelope
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
+export type apprenantparentUncheckedCreateNestedManyWithoutApprenantInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutApprenantInput, Prisma.apprenantparentUncheckedCreateWithoutApprenantInput> | Prisma.apprenantparentCreateWithoutApprenantInput[] | Prisma.apprenantparentUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutApprenantInput | Prisma.apprenantparentCreateOrConnectWithoutApprenantInput[]
+  createMany?: Prisma.apprenantparentCreateManyApprenantInputEnvelope
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
 }
 
-export type ApprenantParentUpdateManyWithoutParentNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutParentInput, Prisma.ApprenantParentUncheckedCreateWithoutParentInput> | Prisma.ApprenantParentCreateWithoutParentInput[] | Prisma.ApprenantParentUncheckedCreateWithoutParentInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutParentInput | Prisma.ApprenantParentCreateOrConnectWithoutParentInput[]
-  upsert?: Prisma.ApprenantParentUpsertWithWhereUniqueWithoutParentInput | Prisma.ApprenantParentUpsertWithWhereUniqueWithoutParentInput[]
-  createMany?: Prisma.ApprenantParentCreateManyParentInputEnvelope
-  set?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  disconnect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  delete?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  update?: Prisma.ApprenantParentUpdateWithWhereUniqueWithoutParentInput | Prisma.ApprenantParentUpdateWithWhereUniqueWithoutParentInput[]
-  updateMany?: Prisma.ApprenantParentUpdateManyWithWhereWithoutParentInput | Prisma.ApprenantParentUpdateManyWithWhereWithoutParentInput[]
-  deleteMany?: Prisma.ApprenantParentScalarWhereInput | Prisma.ApprenantParentScalarWhereInput[]
+export type apprenantparentUpdateManyWithoutApprenantNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutApprenantInput, Prisma.apprenantparentUncheckedCreateWithoutApprenantInput> | Prisma.apprenantparentCreateWithoutApprenantInput[] | Prisma.apprenantparentUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutApprenantInput | Prisma.apprenantparentCreateOrConnectWithoutApprenantInput[]
+  upsert?: Prisma.apprenantparentUpsertWithWhereUniqueWithoutApprenantInput | Prisma.apprenantparentUpsertWithWhereUniqueWithoutApprenantInput[]
+  createMany?: Prisma.apprenantparentCreateManyApprenantInputEnvelope
+  set?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  disconnect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  delete?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  update?: Prisma.apprenantparentUpdateWithWhereUniqueWithoutApprenantInput | Prisma.apprenantparentUpdateWithWhereUniqueWithoutApprenantInput[]
+  updateMany?: Prisma.apprenantparentUpdateManyWithWhereWithoutApprenantInput | Prisma.apprenantparentUpdateManyWithWhereWithoutApprenantInput[]
+  deleteMany?: Prisma.apprenantparentScalarWhereInput | Prisma.apprenantparentScalarWhereInput[]
 }
 
-export type ApprenantParentUncheckedUpdateManyWithoutParentNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutParentInput, Prisma.ApprenantParentUncheckedCreateWithoutParentInput> | Prisma.ApprenantParentCreateWithoutParentInput[] | Prisma.ApprenantParentUncheckedCreateWithoutParentInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutParentInput | Prisma.ApprenantParentCreateOrConnectWithoutParentInput[]
-  upsert?: Prisma.ApprenantParentUpsertWithWhereUniqueWithoutParentInput | Prisma.ApprenantParentUpsertWithWhereUniqueWithoutParentInput[]
-  createMany?: Prisma.ApprenantParentCreateManyParentInputEnvelope
-  set?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  disconnect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  delete?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  update?: Prisma.ApprenantParentUpdateWithWhereUniqueWithoutParentInput | Prisma.ApprenantParentUpdateWithWhereUniqueWithoutParentInput[]
-  updateMany?: Prisma.ApprenantParentUpdateManyWithWhereWithoutParentInput | Prisma.ApprenantParentUpdateManyWithWhereWithoutParentInput[]
-  deleteMany?: Prisma.ApprenantParentScalarWhereInput | Prisma.ApprenantParentScalarWhereInput[]
+export type apprenantparentUncheckedUpdateManyWithoutApprenantNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutApprenantInput, Prisma.apprenantparentUncheckedCreateWithoutApprenantInput> | Prisma.apprenantparentCreateWithoutApprenantInput[] | Prisma.apprenantparentUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutApprenantInput | Prisma.apprenantparentCreateOrConnectWithoutApprenantInput[]
+  upsert?: Prisma.apprenantparentUpsertWithWhereUniqueWithoutApprenantInput | Prisma.apprenantparentUpsertWithWhereUniqueWithoutApprenantInput[]
+  createMany?: Prisma.apprenantparentCreateManyApprenantInputEnvelope
+  set?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  disconnect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  delete?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  update?: Prisma.apprenantparentUpdateWithWhereUniqueWithoutApprenantInput | Prisma.apprenantparentUpdateWithWhereUniqueWithoutApprenantInput[]
+  updateMany?: Prisma.apprenantparentUpdateManyWithWhereWithoutApprenantInput | Prisma.apprenantparentUpdateManyWithWhereWithoutApprenantInput[]
+  deleteMany?: Prisma.apprenantparentScalarWhereInput | Prisma.apprenantparentScalarWhereInput[]
 }
 
-export type ApprenantParentCreateNestedManyWithoutApprenantInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutApprenantInput, Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput> | Prisma.ApprenantParentCreateWithoutApprenantInput[] | Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput | Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput[]
-  createMany?: Prisma.ApprenantParentCreateManyApprenantInputEnvelope
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
+export type Enumapprenantparent_lienFieldUpdateOperationsInput = {
+  set?: $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentUncheckedCreateNestedManyWithoutApprenantInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutApprenantInput, Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput> | Prisma.ApprenantParentCreateWithoutApprenantInput[] | Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput | Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput[]
-  createMany?: Prisma.ApprenantParentCreateManyApprenantInputEnvelope
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
+export type apprenantparentCreateNestedManyWithoutParentInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutParentInput, Prisma.apprenantparentUncheckedCreateWithoutParentInput> | Prisma.apprenantparentCreateWithoutParentInput[] | Prisma.apprenantparentUncheckedCreateWithoutParentInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutParentInput | Prisma.apprenantparentCreateOrConnectWithoutParentInput[]
+  createMany?: Prisma.apprenantparentCreateManyParentInputEnvelope
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
 }
 
-export type ApprenantParentUpdateManyWithoutApprenantNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutApprenantInput, Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput> | Prisma.ApprenantParentCreateWithoutApprenantInput[] | Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput | Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput[]
-  upsert?: Prisma.ApprenantParentUpsertWithWhereUniqueWithoutApprenantInput | Prisma.ApprenantParentUpsertWithWhereUniqueWithoutApprenantInput[]
-  createMany?: Prisma.ApprenantParentCreateManyApprenantInputEnvelope
-  set?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  disconnect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  delete?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  update?: Prisma.ApprenantParentUpdateWithWhereUniqueWithoutApprenantInput | Prisma.ApprenantParentUpdateWithWhereUniqueWithoutApprenantInput[]
-  updateMany?: Prisma.ApprenantParentUpdateManyWithWhereWithoutApprenantInput | Prisma.ApprenantParentUpdateManyWithWhereWithoutApprenantInput[]
-  deleteMany?: Prisma.ApprenantParentScalarWhereInput | Prisma.ApprenantParentScalarWhereInput[]
+export type apprenantparentUncheckedCreateNestedManyWithoutParentInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutParentInput, Prisma.apprenantparentUncheckedCreateWithoutParentInput> | Prisma.apprenantparentCreateWithoutParentInput[] | Prisma.apprenantparentUncheckedCreateWithoutParentInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutParentInput | Prisma.apprenantparentCreateOrConnectWithoutParentInput[]
+  createMany?: Prisma.apprenantparentCreateManyParentInputEnvelope
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
 }
 
-export type ApprenantParentUncheckedUpdateManyWithoutApprenantNestedInput = {
-  create?: Prisma.XOR<Prisma.ApprenantParentCreateWithoutApprenantInput, Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput> | Prisma.ApprenantParentCreateWithoutApprenantInput[] | Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput | Prisma.ApprenantParentCreateOrConnectWithoutApprenantInput[]
-  upsert?: Prisma.ApprenantParentUpsertWithWhereUniqueWithoutApprenantInput | Prisma.ApprenantParentUpsertWithWhereUniqueWithoutApprenantInput[]
-  createMany?: Prisma.ApprenantParentCreateManyApprenantInputEnvelope
-  set?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  disconnect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  delete?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  connect?: Prisma.ApprenantParentWhereUniqueInput | Prisma.ApprenantParentWhereUniqueInput[]
-  update?: Prisma.ApprenantParentUpdateWithWhereUniqueWithoutApprenantInput | Prisma.ApprenantParentUpdateWithWhereUniqueWithoutApprenantInput[]
-  updateMany?: Prisma.ApprenantParentUpdateManyWithWhereWithoutApprenantInput | Prisma.ApprenantParentUpdateManyWithWhereWithoutApprenantInput[]
-  deleteMany?: Prisma.ApprenantParentScalarWhereInput | Prisma.ApprenantParentScalarWhereInput[]
+export type apprenantparentUpdateManyWithoutParentNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutParentInput, Prisma.apprenantparentUncheckedCreateWithoutParentInput> | Prisma.apprenantparentCreateWithoutParentInput[] | Prisma.apprenantparentUncheckedCreateWithoutParentInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutParentInput | Prisma.apprenantparentCreateOrConnectWithoutParentInput[]
+  upsert?: Prisma.apprenantparentUpsertWithWhereUniqueWithoutParentInput | Prisma.apprenantparentUpsertWithWhereUniqueWithoutParentInput[]
+  createMany?: Prisma.apprenantparentCreateManyParentInputEnvelope
+  set?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  disconnect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  delete?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  update?: Prisma.apprenantparentUpdateWithWhereUniqueWithoutParentInput | Prisma.apprenantparentUpdateWithWhereUniqueWithoutParentInput[]
+  updateMany?: Prisma.apprenantparentUpdateManyWithWhereWithoutParentInput | Prisma.apprenantparentUpdateManyWithWhereWithoutParentInput[]
+  deleteMany?: Prisma.apprenantparentScalarWhereInput | Prisma.apprenantparentScalarWhereInput[]
 }
 
-export type EnumlienParenteFieldUpdateOperationsInput = {
-  set?: $Enums.lienParente
+export type apprenantparentUncheckedUpdateManyWithoutParentNestedInput = {
+  create?: Prisma.XOR<Prisma.apprenantparentCreateWithoutParentInput, Prisma.apprenantparentUncheckedCreateWithoutParentInput> | Prisma.apprenantparentCreateWithoutParentInput[] | Prisma.apprenantparentUncheckedCreateWithoutParentInput[]
+  connectOrCreate?: Prisma.apprenantparentCreateOrConnectWithoutParentInput | Prisma.apprenantparentCreateOrConnectWithoutParentInput[]
+  upsert?: Prisma.apprenantparentUpsertWithWhereUniqueWithoutParentInput | Prisma.apprenantparentUpsertWithWhereUniqueWithoutParentInput[]
+  createMany?: Prisma.apprenantparentCreateManyParentInputEnvelope
+  set?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  disconnect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  delete?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  connect?: Prisma.apprenantparentWhereUniqueInput | Prisma.apprenantparentWhereUniqueInput[]
+  update?: Prisma.apprenantparentUpdateWithWhereUniqueWithoutParentInput | Prisma.apprenantparentUpdateWithWhereUniqueWithoutParentInput[]
+  updateMany?: Prisma.apprenantparentUpdateManyWithWhereWithoutParentInput | Prisma.apprenantparentUpdateManyWithWhereWithoutParentInput[]
+  deleteMany?: Prisma.apprenantparentScalarWhereInput | Prisma.apprenantparentScalarWhereInput[]
 }
 
-export type ApprenantParentCreateWithoutParentInput = {
-  lien: $Enums.lienParente
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutParentsInput
+export type apprenantparentCreateWithoutApprenantInput = {
+  lien: $Enums.apprenantparent_lien
+  parent: Prisma.parentCreateNestedOneWithoutApprenantparentInput
 }
 
-export type ApprenantParentUncheckedCreateWithoutParentInput = {
-  apprenantId: string
-  lien: $Enums.lienParente
+export type apprenantparentUncheckedCreateWithoutApprenantInput = {
+  parentId: string
+  lien: $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentCreateOrConnectWithoutParentInput = {
-  where: Prisma.ApprenantParentWhereUniqueInput
-  create: Prisma.XOR<Prisma.ApprenantParentCreateWithoutParentInput, Prisma.ApprenantParentUncheckedCreateWithoutParentInput>
+export type apprenantparentCreateOrConnectWithoutApprenantInput = {
+  where: Prisma.apprenantparentWhereUniqueInput
+  create: Prisma.XOR<Prisma.apprenantparentCreateWithoutApprenantInput, Prisma.apprenantparentUncheckedCreateWithoutApprenantInput>
 }
 
-export type ApprenantParentCreateManyParentInputEnvelope = {
-  data: Prisma.ApprenantParentCreateManyParentInput | Prisma.ApprenantParentCreateManyParentInput[]
+export type apprenantparentCreateManyApprenantInputEnvelope = {
+  data: Prisma.apprenantparentCreateManyApprenantInput | Prisma.apprenantparentCreateManyApprenantInput[]
   skipDuplicates?: boolean
 }
 
-export type ApprenantParentUpsertWithWhereUniqueWithoutParentInput = {
-  where: Prisma.ApprenantParentWhereUniqueInput
-  update: Prisma.XOR<Prisma.ApprenantParentUpdateWithoutParentInput, Prisma.ApprenantParentUncheckedUpdateWithoutParentInput>
-  create: Prisma.XOR<Prisma.ApprenantParentCreateWithoutParentInput, Prisma.ApprenantParentUncheckedCreateWithoutParentInput>
+export type apprenantparentUpsertWithWhereUniqueWithoutApprenantInput = {
+  where: Prisma.apprenantparentWhereUniqueInput
+  update: Prisma.XOR<Prisma.apprenantparentUpdateWithoutApprenantInput, Prisma.apprenantparentUncheckedUpdateWithoutApprenantInput>
+  create: Prisma.XOR<Prisma.apprenantparentCreateWithoutApprenantInput, Prisma.apprenantparentUncheckedCreateWithoutApprenantInput>
 }
 
-export type ApprenantParentUpdateWithWhereUniqueWithoutParentInput = {
-  where: Prisma.ApprenantParentWhereUniqueInput
-  data: Prisma.XOR<Prisma.ApprenantParentUpdateWithoutParentInput, Prisma.ApprenantParentUncheckedUpdateWithoutParentInput>
+export type apprenantparentUpdateWithWhereUniqueWithoutApprenantInput = {
+  where: Prisma.apprenantparentWhereUniqueInput
+  data: Prisma.XOR<Prisma.apprenantparentUpdateWithoutApprenantInput, Prisma.apprenantparentUncheckedUpdateWithoutApprenantInput>
 }
 
-export type ApprenantParentUpdateManyWithWhereWithoutParentInput = {
-  where: Prisma.ApprenantParentScalarWhereInput
-  data: Prisma.XOR<Prisma.ApprenantParentUpdateManyMutationInput, Prisma.ApprenantParentUncheckedUpdateManyWithoutParentInput>
+export type apprenantparentUpdateManyWithWhereWithoutApprenantInput = {
+  where: Prisma.apprenantparentScalarWhereInput
+  data: Prisma.XOR<Prisma.apprenantparentUpdateManyMutationInput, Prisma.apprenantparentUncheckedUpdateManyWithoutApprenantInput>
 }
 
-export type ApprenantParentScalarWhereInput = {
-  AND?: Prisma.ApprenantParentScalarWhereInput | Prisma.ApprenantParentScalarWhereInput[]
-  OR?: Prisma.ApprenantParentScalarWhereInput[]
-  NOT?: Prisma.ApprenantParentScalarWhereInput | Prisma.ApprenantParentScalarWhereInput[]
-  apprenantId?: Prisma.StringFilter<"ApprenantParent"> | string
-  parentId?: Prisma.StringFilter<"ApprenantParent"> | string
-  lien?: Prisma.EnumlienParenteFilter<"ApprenantParent"> | $Enums.lienParente
+export type apprenantparentScalarWhereInput = {
+  AND?: Prisma.apprenantparentScalarWhereInput | Prisma.apprenantparentScalarWhereInput[]
+  OR?: Prisma.apprenantparentScalarWhereInput[]
+  NOT?: Prisma.apprenantparentScalarWhereInput | Prisma.apprenantparentScalarWhereInput[]
+  apprenantId?: Prisma.StringFilter<"apprenantparent"> | string
+  parentId?: Prisma.StringFilter<"apprenantparent"> | string
+  lien?: Prisma.Enumapprenantparent_lienFilter<"apprenantparent"> | $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentCreateWithoutApprenantInput = {
-  lien: $Enums.lienParente
-  parent: Prisma.ParentCreateNestedOneWithoutApprenantParentInput
+export type apprenantparentCreateWithoutParentInput = {
+  lien: $Enums.apprenantparent_lien
+  apprenant: Prisma.apprenantCreateNestedOneWithoutApprenantparentInput
 }
 
-export type ApprenantParentUncheckedCreateWithoutApprenantInput = {
-  parentId: string
-  lien: $Enums.lienParente
+export type apprenantparentUncheckedCreateWithoutParentInput = {
+  apprenantId: string
+  lien: $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentCreateOrConnectWithoutApprenantInput = {
-  where: Prisma.ApprenantParentWhereUniqueInput
-  create: Prisma.XOR<Prisma.ApprenantParentCreateWithoutApprenantInput, Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput>
+export type apprenantparentCreateOrConnectWithoutParentInput = {
+  where: Prisma.apprenantparentWhereUniqueInput
+  create: Prisma.XOR<Prisma.apprenantparentCreateWithoutParentInput, Prisma.apprenantparentUncheckedCreateWithoutParentInput>
 }
 
-export type ApprenantParentCreateManyApprenantInputEnvelope = {
-  data: Prisma.ApprenantParentCreateManyApprenantInput | Prisma.ApprenantParentCreateManyApprenantInput[]
+export type apprenantparentCreateManyParentInputEnvelope = {
+  data: Prisma.apprenantparentCreateManyParentInput | Prisma.apprenantparentCreateManyParentInput[]
   skipDuplicates?: boolean
 }
 
-export type ApprenantParentUpsertWithWhereUniqueWithoutApprenantInput = {
-  where: Prisma.ApprenantParentWhereUniqueInput
-  update: Prisma.XOR<Prisma.ApprenantParentUpdateWithoutApprenantInput, Prisma.ApprenantParentUncheckedUpdateWithoutApprenantInput>
-  create: Prisma.XOR<Prisma.ApprenantParentCreateWithoutApprenantInput, Prisma.ApprenantParentUncheckedCreateWithoutApprenantInput>
+export type apprenantparentUpsertWithWhereUniqueWithoutParentInput = {
+  where: Prisma.apprenantparentWhereUniqueInput
+  update: Prisma.XOR<Prisma.apprenantparentUpdateWithoutParentInput, Prisma.apprenantparentUncheckedUpdateWithoutParentInput>
+  create: Prisma.XOR<Prisma.apprenantparentCreateWithoutParentInput, Prisma.apprenantparentUncheckedCreateWithoutParentInput>
 }
 
-export type ApprenantParentUpdateWithWhereUniqueWithoutApprenantInput = {
-  where: Prisma.ApprenantParentWhereUniqueInput
-  data: Prisma.XOR<Prisma.ApprenantParentUpdateWithoutApprenantInput, Prisma.ApprenantParentUncheckedUpdateWithoutApprenantInput>
+export type apprenantparentUpdateWithWhereUniqueWithoutParentInput = {
+  where: Prisma.apprenantparentWhereUniqueInput
+  data: Prisma.XOR<Prisma.apprenantparentUpdateWithoutParentInput, Prisma.apprenantparentUncheckedUpdateWithoutParentInput>
 }
 
-export type ApprenantParentUpdateManyWithWhereWithoutApprenantInput = {
-  where: Prisma.ApprenantParentScalarWhereInput
-  data: Prisma.XOR<Prisma.ApprenantParentUpdateManyMutationInput, Prisma.ApprenantParentUncheckedUpdateManyWithoutApprenantInput>
+export type apprenantparentUpdateManyWithWhereWithoutParentInput = {
+  where: Prisma.apprenantparentScalarWhereInput
+  data: Prisma.XOR<Prisma.apprenantparentUpdateManyMutationInput, Prisma.apprenantparentUncheckedUpdateManyWithoutParentInput>
 }
 
-export type ApprenantParentCreateManyParentInput = {
-  apprenantId: string
-  lien: $Enums.lienParente
-}
-
-export type ApprenantParentUpdateWithoutParentInput = {
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutParentsNestedInput
-}
-
-export type ApprenantParentUncheckedUpdateWithoutParentInput = {
-  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
-}
-
-export type ApprenantParentUncheckedUpdateManyWithoutParentInput = {
-  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
-}
-
-export type ApprenantParentCreateManyApprenantInput = {
+export type apprenantparentCreateManyApprenantInput = {
   parentId: string
-  lien: $Enums.lienParente
+  lien: $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentUpdateWithoutApprenantInput = {
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
-  parent?: Prisma.ParentUpdateOneRequiredWithoutApprenantParentNestedInput
+export type apprenantparentUpdateWithoutApprenantInput = {
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
+  parent?: Prisma.parentUpdateOneRequiredWithoutApprenantparentNestedInput
 }
 
-export type ApprenantParentUncheckedUpdateWithoutApprenantInput = {
+export type apprenantparentUncheckedUpdateWithoutApprenantInput = {
   parentId?: Prisma.StringFieldUpdateOperationsInput | string
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
 }
 
-export type ApprenantParentUncheckedUpdateManyWithoutApprenantInput = {
+export type apprenantparentUncheckedUpdateManyWithoutApprenantInput = {
   parentId?: Prisma.StringFieldUpdateOperationsInput | string
-  lien?: Prisma.EnumlienParenteFieldUpdateOperationsInput | $Enums.lienParente
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
+}
+
+export type apprenantparentCreateManyParentInput = {
+  apprenantId: string
+  lien: $Enums.apprenantparent_lien
+}
+
+export type apprenantparentUpdateWithoutParentInput = {
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutApprenantparentNestedInput
+}
+
+export type apprenantparentUncheckedUpdateWithoutParentInput = {
+  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
+}
+
+export type apprenantparentUncheckedUpdateManyWithoutParentInput = {
+  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  lien?: Prisma.Enumapprenantparent_lienFieldUpdateOperationsInput | $Enums.apprenantparent_lien
 }
 
 
 
-export type ApprenantParentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type apprenantparentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   apprenantId?: boolean
   parentId?: boolean
   lien?: boolean
-  parent?: boolean | Prisma.ParentDefaultArgs<ExtArgs>
-  apprenant?: boolean | Prisma.ApprenantDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["apprenantParent"]>
+  apprenant?: boolean | Prisma.apprenantDefaultArgs<ExtArgs>
+  parent?: boolean | Prisma.parentDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["apprenantparent"]>
 
 
 
-export type ApprenantParentSelectScalar = {
+export type apprenantparentSelectScalar = {
   apprenantId?: boolean
   parentId?: boolean
   lien?: boolean
 }
 
-export type ApprenantParentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"apprenantId" | "parentId" | "lien", ExtArgs["result"]["apprenantParent"]>
-export type ApprenantParentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  parent?: boolean | Prisma.ParentDefaultArgs<ExtArgs>
-  apprenant?: boolean | Prisma.ApprenantDefaultArgs<ExtArgs>
+export type apprenantparentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"apprenantId" | "parentId" | "lien", ExtArgs["result"]["apprenantparent"]>
+export type apprenantparentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  apprenant?: boolean | Prisma.apprenantDefaultArgs<ExtArgs>
+  parent?: boolean | Prisma.parentDefaultArgs<ExtArgs>
 }
 
-export type $ApprenantParentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "ApprenantParent"
+export type $apprenantparentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "apprenantparent"
   objects: {
-    parent: Prisma.$ParentPayload<ExtArgs>
-    apprenant: Prisma.$ApprenantPayload<ExtArgs>
+    apprenant: Prisma.$apprenantPayload<ExtArgs>
+    parent: Prisma.$parentPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     apprenantId: string
     parentId: string
-    lien: $Enums.lienParente
-  }, ExtArgs["result"]["apprenantParent"]>
+    lien: $Enums.apprenantparent_lien
+  }, ExtArgs["result"]["apprenantparent"]>
   composites: {}
 }
 
-export type ApprenantParentGetPayload<S extends boolean | null | undefined | ApprenantParentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload, S>
+export type apprenantparentGetPayload<S extends boolean | null | undefined | apprenantparentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload, S>
 
-export type ApprenantParentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ApprenantParentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: ApprenantParentCountAggregateInputType | true
+export type apprenantparentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<apprenantparentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ApprenantparentCountAggregateInputType | true
   }
 
-export interface ApprenantParentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ApprenantParent'], meta: { name: 'ApprenantParent' } }
+export interface apprenantparentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['apprenantparent'], meta: { name: 'apprenantparent' } }
   /**
-   * Find zero or one ApprenantParent that matches the filter.
-   * @param {ApprenantParentFindUniqueArgs} args - Arguments to find a ApprenantParent
+   * Find zero or one Apprenantparent that matches the filter.
+   * @param {apprenantparentFindUniqueArgs} args - Arguments to find a Apprenantparent
    * @example
-   * // Get one ApprenantParent
-   * const apprenantParent = await prisma.apprenantParent.findUnique({
+   * // Get one Apprenantparent
+   * const apprenantparent = await prisma.apprenantparent.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends ApprenantParentFindUniqueArgs>(args: Prisma.SelectSubset<T, ApprenantParentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends apprenantparentFindUniqueArgs>(args: Prisma.SelectSubset<T, apprenantparentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one ApprenantParent that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Apprenantparent that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ApprenantParentFindUniqueOrThrowArgs} args - Arguments to find a ApprenantParent
+   * @param {apprenantparentFindUniqueOrThrowArgs} args - Arguments to find a Apprenantparent
    * @example
-   * // Get one ApprenantParent
-   * const apprenantParent = await prisma.apprenantParent.findUniqueOrThrow({
+   * // Get one Apprenantparent
+   * const apprenantparent = await prisma.apprenantparent.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ApprenantParentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ApprenantParentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends apprenantparentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, apprenantparentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ApprenantParent that matches the filter.
+   * Find the first Apprenantparent that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentFindFirstArgs} args - Arguments to find a ApprenantParent
+   * @param {apprenantparentFindFirstArgs} args - Arguments to find a Apprenantparent
    * @example
-   * // Get one ApprenantParent
-   * const apprenantParent = await prisma.apprenantParent.findFirst({
+   * // Get one Apprenantparent
+   * const apprenantparent = await prisma.apprenantparent.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends ApprenantParentFindFirstArgs>(args?: Prisma.SelectSubset<T, ApprenantParentFindFirstArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends apprenantparentFindFirstArgs>(args?: Prisma.SelectSubset<T, apprenantparentFindFirstArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ApprenantParent that matches the filter or
+   * Find the first Apprenantparent that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentFindFirstOrThrowArgs} args - Arguments to find a ApprenantParent
+   * @param {apprenantparentFindFirstOrThrowArgs} args - Arguments to find a Apprenantparent
    * @example
-   * // Get one ApprenantParent
-   * const apprenantParent = await prisma.apprenantParent.findFirstOrThrow({
+   * // Get one Apprenantparent
+   * const apprenantparent = await prisma.apprenantparent.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends ApprenantParentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ApprenantParentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends apprenantparentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, apprenantparentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more ApprenantParents that matches the filter.
+   * Find zero or more Apprenantparents that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {apprenantparentFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all ApprenantParents
-   * const apprenantParents = await prisma.apprenantParent.findMany()
+   * // Get all Apprenantparents
+   * const apprenantparents = await prisma.apprenantparent.findMany()
    * 
-   * // Get first 10 ApprenantParents
-   * const apprenantParents = await prisma.apprenantParent.findMany({ take: 10 })
+   * // Get first 10 Apprenantparents
+   * const apprenantparents = await prisma.apprenantparent.findMany({ take: 10 })
    * 
    * // Only select the `apprenantId`
-   * const apprenantParentWithApprenantIdOnly = await prisma.apprenantParent.findMany({ select: { apprenantId: true } })
+   * const apprenantparentWithApprenantIdOnly = await prisma.apprenantparent.findMany({ select: { apprenantId: true } })
    * 
    */
-  findMany<T extends ApprenantParentFindManyArgs>(args?: Prisma.SelectSubset<T, ApprenantParentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends apprenantparentFindManyArgs>(args?: Prisma.SelectSubset<T, apprenantparentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a ApprenantParent.
-   * @param {ApprenantParentCreateArgs} args - Arguments to create a ApprenantParent.
+   * Create a Apprenantparent.
+   * @param {apprenantparentCreateArgs} args - Arguments to create a Apprenantparent.
    * @example
-   * // Create one ApprenantParent
-   * const ApprenantParent = await prisma.apprenantParent.create({
+   * // Create one Apprenantparent
+   * const Apprenantparent = await prisma.apprenantparent.create({
    *   data: {
-   *     // ... data to create a ApprenantParent
+   *     // ... data to create a Apprenantparent
    *   }
    * })
    * 
    */
-  create<T extends ApprenantParentCreateArgs>(args: Prisma.SelectSubset<T, ApprenantParentCreateArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends apprenantparentCreateArgs>(args: Prisma.SelectSubset<T, apprenantparentCreateArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many ApprenantParents.
-   * @param {ApprenantParentCreateManyArgs} args - Arguments to create many ApprenantParents.
+   * Create many Apprenantparents.
+   * @param {apprenantparentCreateManyArgs} args - Arguments to create many Apprenantparents.
    * @example
-   * // Create many ApprenantParents
-   * const apprenantParent = await prisma.apprenantParent.createMany({
+   * // Create many Apprenantparents
+   * const apprenantparent = await prisma.apprenantparent.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends ApprenantParentCreateManyArgs>(args?: Prisma.SelectSubset<T, ApprenantParentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends apprenantparentCreateManyArgs>(args?: Prisma.SelectSubset<T, apprenantparentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a ApprenantParent.
-   * @param {ApprenantParentDeleteArgs} args - Arguments to delete one ApprenantParent.
+   * Delete a Apprenantparent.
+   * @param {apprenantparentDeleteArgs} args - Arguments to delete one Apprenantparent.
    * @example
-   * // Delete one ApprenantParent
-   * const ApprenantParent = await prisma.apprenantParent.delete({
+   * // Delete one Apprenantparent
+   * const Apprenantparent = await prisma.apprenantparent.delete({
    *   where: {
-   *     // ... filter to delete one ApprenantParent
+   *     // ... filter to delete one Apprenantparent
    *   }
    * })
    * 
    */
-  delete<T extends ApprenantParentDeleteArgs>(args: Prisma.SelectSubset<T, ApprenantParentDeleteArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends apprenantparentDeleteArgs>(args: Prisma.SelectSubset<T, apprenantparentDeleteArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one ApprenantParent.
-   * @param {ApprenantParentUpdateArgs} args - Arguments to update one ApprenantParent.
+   * Update one Apprenantparent.
+   * @param {apprenantparentUpdateArgs} args - Arguments to update one Apprenantparent.
    * @example
-   * // Update one ApprenantParent
-   * const apprenantParent = await prisma.apprenantParent.update({
+   * // Update one Apprenantparent
+   * const apprenantparent = await prisma.apprenantparent.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -677,30 +677,30 @@ export interface ApprenantParentDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  update<T extends ApprenantParentUpdateArgs>(args: Prisma.SelectSubset<T, ApprenantParentUpdateArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends apprenantparentUpdateArgs>(args: Prisma.SelectSubset<T, apprenantparentUpdateArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more ApprenantParents.
-   * @param {ApprenantParentDeleteManyArgs} args - Arguments to filter ApprenantParents to delete.
+   * Delete zero or more Apprenantparents.
+   * @param {apprenantparentDeleteManyArgs} args - Arguments to filter Apprenantparents to delete.
    * @example
-   * // Delete a few ApprenantParents
-   * const { count } = await prisma.apprenantParent.deleteMany({
+   * // Delete a few Apprenantparents
+   * const { count } = await prisma.apprenantparent.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends ApprenantParentDeleteManyArgs>(args?: Prisma.SelectSubset<T, ApprenantParentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends apprenantparentDeleteManyArgs>(args?: Prisma.SelectSubset<T, apprenantparentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more ApprenantParents.
+   * Update zero or more Apprenantparents.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {apprenantparentUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many ApprenantParents
-   * const apprenantParent = await prisma.apprenantParent.updateMany({
+   * // Update many Apprenantparents
+   * const apprenantparent = await prisma.apprenantparent.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -710,56 +710,56 @@ export interface ApprenantParentDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  updateMany<T extends ApprenantParentUpdateManyArgs>(args: Prisma.SelectSubset<T, ApprenantParentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends apprenantparentUpdateManyArgs>(args: Prisma.SelectSubset<T, apprenantparentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one ApprenantParent.
-   * @param {ApprenantParentUpsertArgs} args - Arguments to update or create a ApprenantParent.
+   * Create or update one Apprenantparent.
+   * @param {apprenantparentUpsertArgs} args - Arguments to update or create a Apprenantparent.
    * @example
-   * // Update or create a ApprenantParent
-   * const apprenantParent = await prisma.apprenantParent.upsert({
+   * // Update or create a Apprenantparent
+   * const apprenantparent = await prisma.apprenantparent.upsert({
    *   create: {
-   *     // ... data to create a ApprenantParent
+   *     // ... data to create a Apprenantparent
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the ApprenantParent we want to update
+   *     // ... the filter for the Apprenantparent we want to update
    *   }
    * })
    */
-  upsert<T extends ApprenantParentUpsertArgs>(args: Prisma.SelectSubset<T, ApprenantParentUpsertArgs<ExtArgs>>): Prisma.Prisma__ApprenantParentClient<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends apprenantparentUpsertArgs>(args: Prisma.SelectSubset<T, apprenantparentUpsertArgs<ExtArgs>>): Prisma.Prisma__apprenantparentClient<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of ApprenantParents.
+   * Count the number of Apprenantparents.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentCountArgs} args - Arguments to filter ApprenantParents to count.
+   * @param {apprenantparentCountArgs} args - Arguments to filter Apprenantparents to count.
    * @example
-   * // Count the number of ApprenantParents
-   * const count = await prisma.apprenantParent.count({
+   * // Count the number of Apprenantparents
+   * const count = await prisma.apprenantparent.count({
    *   where: {
-   *     // ... the filter for the ApprenantParents we want to count
+   *     // ... the filter for the Apprenantparents we want to count
    *   }
    * })
   **/
-  count<T extends ApprenantParentCountArgs>(
-    args?: Prisma.Subset<T, ApprenantParentCountArgs>,
+  count<T extends apprenantparentCountArgs>(
+    args?: Prisma.Subset<T, apprenantparentCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], ApprenantParentCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], ApprenantparentCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a ApprenantParent.
+   * Allows you to perform aggregations operations on a Apprenantparent.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {ApprenantparentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -779,13 +779,13 @@ export interface ApprenantParentDelegate<ExtArgs extends runtime.Types.Extension
    *   take: 10,
    * })
   **/
-  aggregate<T extends ApprenantParentAggregateArgs>(args: Prisma.Subset<T, ApprenantParentAggregateArgs>): Prisma.PrismaPromise<GetApprenantParentAggregateType<T>>
+  aggregate<T extends ApprenantparentAggregateArgs>(args: Prisma.Subset<T, ApprenantparentAggregateArgs>): Prisma.PrismaPromise<GetApprenantparentAggregateType<T>>
 
   /**
-   * Group by ApprenantParent.
+   * Group by Apprenantparent.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ApprenantParentGroupByArgs} args - Group by arguments.
+   * @param {apprenantparentGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -800,14 +800,14 @@ export interface ApprenantParentDelegate<ExtArgs extends runtime.Types.Extension
    * 
   **/
   groupBy<
-    T extends ApprenantParentGroupByArgs,
+    T extends apprenantparentGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ApprenantParentGroupByArgs['orderBy'] }
-      : { orderBy?: ApprenantParentGroupByArgs['orderBy'] },
+      ? { orderBy: apprenantparentGroupByArgs['orderBy'] }
+      : { orderBy?: apprenantparentGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -856,23 +856,23 @@ export interface ApprenantParentDelegate<ExtArgs extends runtime.Types.Extension
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ApprenantParentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetApprenantParentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, apprenantparentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetApprenantparentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the ApprenantParent model
+ * Fields of the apprenantparent model
  */
-readonly fields: ApprenantParentFieldRefs;
+readonly fields: apprenantparentFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for ApprenantParent.
+ * The delegate class that acts as a "Promise-like" for apprenantparent.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ApprenantParentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__apprenantparentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  parent<T extends Prisma.ParentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ParentDefaultArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  apprenant<T extends Prisma.ApprenantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ApprenantDefaultArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  apprenant<T extends Prisma.apprenantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.apprenantDefaultArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  parent<T extends Prisma.parentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.parentDefaultArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -899,373 +899,373 @@ export interface Prisma__ApprenantParentClient<T, Null = never, ExtArgs extends 
 
 
 /**
- * Fields of the ApprenantParent model
+ * Fields of the apprenantparent model
  */
-export interface ApprenantParentFieldRefs {
-  readonly apprenantId: Prisma.FieldRef<"ApprenantParent", 'String'>
-  readonly parentId: Prisma.FieldRef<"ApprenantParent", 'String'>
-  readonly lien: Prisma.FieldRef<"ApprenantParent", 'lienParente'>
+export interface apprenantparentFieldRefs {
+  readonly apprenantId: Prisma.FieldRef<"apprenantparent", 'String'>
+  readonly parentId: Prisma.FieldRef<"apprenantparent", 'String'>
+  readonly lien: Prisma.FieldRef<"apprenantparent", 'apprenantparent_lien'>
 }
     
 
 // Custom InputTypes
 /**
- * ApprenantParent findUnique
+ * apprenantparent findUnique
  */
-export type ApprenantParentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * Filter, which ApprenantParent to fetch.
+   * Filter, which apprenantparent to fetch.
    */
-  where: Prisma.ApprenantParentWhereUniqueInput
+  where: Prisma.apprenantparentWhereUniqueInput
 }
 
 /**
- * ApprenantParent findUniqueOrThrow
+ * apprenantparent findUniqueOrThrow
  */
-export type ApprenantParentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * Filter, which ApprenantParent to fetch.
+   * Filter, which apprenantparent to fetch.
    */
-  where: Prisma.ApprenantParentWhereUniqueInput
+  where: Prisma.apprenantparentWhereUniqueInput
 }
 
 /**
- * ApprenantParent findFirst
+ * apprenantparent findFirst
  */
-export type ApprenantParentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * Filter, which ApprenantParent to fetch.
+   * Filter, which apprenantparent to fetch.
    */
-  where?: Prisma.ApprenantParentWhereInput
+  where?: Prisma.apprenantparentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ApprenantParents to fetch.
+   * Determine the order of apprenantparents to fetch.
    */
-  orderBy?: Prisma.ApprenantParentOrderByWithRelationInput | Prisma.ApprenantParentOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantparentOrderByWithRelationInput | Prisma.apprenantparentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ApprenantParents.
+   * Sets the position for searching for apprenantparents.
    */
-  cursor?: Prisma.ApprenantParentWhereUniqueInput
+  cursor?: Prisma.apprenantparentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ApprenantParents from the position of the cursor.
+   * Take `±n` apprenantparents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ApprenantParents.
+   * Skip the first `n` apprenantparents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ApprenantParents.
+   * Filter by unique combinations of apprenantparents.
    */
-  distinct?: Prisma.ApprenantParentScalarFieldEnum | Prisma.ApprenantParentScalarFieldEnum[]
+  distinct?: Prisma.ApprenantparentScalarFieldEnum | Prisma.ApprenantparentScalarFieldEnum[]
 }
 
 /**
- * ApprenantParent findFirstOrThrow
+ * apprenantparent findFirstOrThrow
  */
-export type ApprenantParentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * Filter, which ApprenantParent to fetch.
+   * Filter, which apprenantparent to fetch.
    */
-  where?: Prisma.ApprenantParentWhereInput
+  where?: Prisma.apprenantparentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ApprenantParents to fetch.
+   * Determine the order of apprenantparents to fetch.
    */
-  orderBy?: Prisma.ApprenantParentOrderByWithRelationInput | Prisma.ApprenantParentOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantparentOrderByWithRelationInput | Prisma.apprenantparentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ApprenantParents.
+   * Sets the position for searching for apprenantparents.
    */
-  cursor?: Prisma.ApprenantParentWhereUniqueInput
+  cursor?: Prisma.apprenantparentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ApprenantParents from the position of the cursor.
+   * Take `±n` apprenantparents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ApprenantParents.
+   * Skip the first `n` apprenantparents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ApprenantParents.
+   * Filter by unique combinations of apprenantparents.
    */
-  distinct?: Prisma.ApprenantParentScalarFieldEnum | Prisma.ApprenantParentScalarFieldEnum[]
+  distinct?: Prisma.ApprenantparentScalarFieldEnum | Prisma.ApprenantparentScalarFieldEnum[]
 }
 
 /**
- * ApprenantParent findMany
+ * apprenantparent findMany
  */
-export type ApprenantParentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * Filter, which ApprenantParents to fetch.
+   * Filter, which apprenantparents to fetch.
    */
-  where?: Prisma.ApprenantParentWhereInput
+  where?: Prisma.apprenantparentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ApprenantParents to fetch.
+   * Determine the order of apprenantparents to fetch.
    */
-  orderBy?: Prisma.ApprenantParentOrderByWithRelationInput | Prisma.ApprenantParentOrderByWithRelationInput[]
+  orderBy?: Prisma.apprenantparentOrderByWithRelationInput | Prisma.apprenantparentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing ApprenantParents.
+   * Sets the position for listing apprenantparents.
    */
-  cursor?: Prisma.ApprenantParentWhereUniqueInput
+  cursor?: Prisma.apprenantparentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ApprenantParents from the position of the cursor.
+   * Take `±n` apprenantparents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ApprenantParents.
+   * Skip the first `n` apprenantparents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ApprenantParents.
+   * Filter by unique combinations of apprenantparents.
    */
-  distinct?: Prisma.ApprenantParentScalarFieldEnum | Prisma.ApprenantParentScalarFieldEnum[]
+  distinct?: Prisma.ApprenantparentScalarFieldEnum | Prisma.ApprenantparentScalarFieldEnum[]
 }
 
 /**
- * ApprenantParent create
+ * apprenantparent create
  */
-export type ApprenantParentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * The data needed to create a ApprenantParent.
+   * The data needed to create a apprenantparent.
    */
-  data: Prisma.XOR<Prisma.ApprenantParentCreateInput, Prisma.ApprenantParentUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.apprenantparentCreateInput, Prisma.apprenantparentUncheckedCreateInput>
 }
 
 /**
- * ApprenantParent createMany
+ * apprenantparent createMany
  */
-export type ApprenantParentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many ApprenantParents.
+   * The data used to create many apprenantparents.
    */
-  data: Prisma.ApprenantParentCreateManyInput | Prisma.ApprenantParentCreateManyInput[]
+  data: Prisma.apprenantparentCreateManyInput | Prisma.apprenantparentCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * ApprenantParent update
+ * apprenantparent update
  */
-export type ApprenantParentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * The data needed to update a ApprenantParent.
+   * The data needed to update a apprenantparent.
    */
-  data: Prisma.XOR<Prisma.ApprenantParentUpdateInput, Prisma.ApprenantParentUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.apprenantparentUpdateInput, Prisma.apprenantparentUncheckedUpdateInput>
   /**
-   * Choose, which ApprenantParent to update.
+   * Choose, which apprenantparent to update.
    */
-  where: Prisma.ApprenantParentWhereUniqueInput
+  where: Prisma.apprenantparentWhereUniqueInput
 }
 
 /**
- * ApprenantParent updateMany
+ * apprenantparent updateMany
  */
-export type ApprenantParentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update ApprenantParents.
+   * The data used to update apprenantparents.
    */
-  data: Prisma.XOR<Prisma.ApprenantParentUpdateManyMutationInput, Prisma.ApprenantParentUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.apprenantparentUpdateManyMutationInput, Prisma.apprenantparentUncheckedUpdateManyInput>
   /**
-   * Filter which ApprenantParents to update
+   * Filter which apprenantparents to update
    */
-  where?: Prisma.ApprenantParentWhereInput
+  where?: Prisma.apprenantparentWhereInput
   /**
-   * Limit how many ApprenantParents to update.
+   * Limit how many apprenantparents to update.
    */
   limit?: number
 }
 
 /**
- * ApprenantParent upsert
+ * apprenantparent upsert
  */
-export type ApprenantParentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * The filter to search for the ApprenantParent to update in case it exists.
+   * The filter to search for the apprenantparent to update in case it exists.
    */
-  where: Prisma.ApprenantParentWhereUniqueInput
+  where: Prisma.apprenantparentWhereUniqueInput
   /**
-   * In case the ApprenantParent found by the `where` argument doesn't exist, create a new ApprenantParent with this data.
+   * In case the apprenantparent found by the `where` argument doesn't exist, create a new apprenantparent with this data.
    */
-  create: Prisma.XOR<Prisma.ApprenantParentCreateInput, Prisma.ApprenantParentUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.apprenantparentCreateInput, Prisma.apprenantparentUncheckedCreateInput>
   /**
-   * In case the ApprenantParent was found with the provided `where` argument, update it with this data.
+   * In case the apprenantparent was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ApprenantParentUpdateInput, Prisma.ApprenantParentUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.apprenantparentUpdateInput, Prisma.apprenantparentUncheckedUpdateInput>
 }
 
 /**
- * ApprenantParent delete
+ * apprenantparent delete
  */
-export type ApprenantParentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
   /**
-   * Filter which ApprenantParent to delete.
+   * Filter which apprenantparent to delete.
    */
-  where: Prisma.ApprenantParentWhereUniqueInput
+  where: Prisma.apprenantparentWhereUniqueInput
 }
 
 /**
- * ApprenantParent deleteMany
+ * apprenantparent deleteMany
  */
-export type ApprenantParentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ApprenantParents to delete
+   * Filter which apprenantparents to delete
    */
-  where?: Prisma.ApprenantParentWhereInput
+  where?: Prisma.apprenantparentWhereInput
   /**
-   * Limit how many ApprenantParents to delete.
+   * Limit how many apprenantparents to delete.
    */
   limit?: number
 }
 
 /**
- * ApprenantParent without action
+ * apprenantparent without action
  */
-export type ApprenantParentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type apprenantparentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
 }

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Inscription` model and its related types.
+ * This file exports the `inscription` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Inscription
+ * Model inscription
  * 
  */
-export type InscriptionModel = runtime.Types.Result.DefaultSelection<Prisma.$InscriptionPayload>
+export type inscriptionModel = runtime.Types.Result.DefaultSelection<Prisma.$inscriptionPayload>
 
 export type AggregateInscription = {
   _count: InscriptionCountAggregateOutputType | null
@@ -27,7 +27,7 @@ export type AggregateInscription = {
 export type InscriptionMinAggregateOutputType = {
   matricule: string | null
   dateInscription: Date | null
-  type: $Enums.InscriptionType | null
+  type: $Enums.inscription_type | null
   apprenantId: string | null
   anneeScolaireId: string | null
   classeScolaireId: string | null
@@ -39,7 +39,7 @@ export type InscriptionMinAggregateOutputType = {
 export type InscriptionMaxAggregateOutputType = {
   matricule: string | null
   dateInscription: Date | null
-  type: $Enums.InscriptionType | null
+  type: $Enums.inscription_type | null
   apprenantId: string | null
   anneeScolaireId: string | null
   classeScolaireId: string | null
@@ -101,37 +101,37 @@ export type InscriptionCountAggregateInputType = {
 
 export type InscriptionAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Inscription to aggregate.
+   * Filter which inscription to aggregate.
    */
-  where?: Prisma.InscriptionWhereInput
+  where?: Prisma.inscriptionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Inscriptions to fetch.
+   * Determine the order of inscriptions to fetch.
    */
-  orderBy?: Prisma.InscriptionOrderByWithRelationInput | Prisma.InscriptionOrderByWithRelationInput[]
+  orderBy?: Prisma.inscriptionOrderByWithRelationInput | Prisma.inscriptionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.InscriptionWhereUniqueInput
+  cursor?: Prisma.inscriptionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Inscriptions from the position of the cursor.
+   * Take `±n` inscriptions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Inscriptions.
+   * Skip the first `n` inscriptions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Inscriptions
+   * Count returned inscriptions
   **/
   _count?: true | InscriptionCountAggregateInputType
   /**
@@ -159,11 +159,11 @@ export type GetInscriptionAggregateType<T extends InscriptionAggregateArgs> = {
 
 
 
-export type InscriptionGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InscriptionWhereInput
-  orderBy?: Prisma.InscriptionOrderByWithAggregationInput | Prisma.InscriptionOrderByWithAggregationInput[]
+export type inscriptionGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.inscriptionWhereInput
+  orderBy?: Prisma.inscriptionOrderByWithAggregationInput | Prisma.inscriptionOrderByWithAggregationInput[]
   by: Prisma.InscriptionScalarFieldEnum[] | Prisma.InscriptionScalarFieldEnum
-  having?: Prisma.InscriptionScalarWhereWithAggregatesInput
+  having?: Prisma.inscriptionScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: InscriptionCountAggregateInputType | true
@@ -174,7 +174,7 @@ export type InscriptionGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 export type InscriptionGroupByOutputType = {
   matricule: string | null
   dateInscription: Date
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
@@ -186,7 +186,7 @@ export type InscriptionGroupByOutputType = {
   _max: InscriptionMaxAggregateOutputType | null
 }
 
-export type GetInscriptionGroupByPayload<T extends InscriptionGroupByArgs> = Prisma.PrismaPromise<
+export type GetInscriptionGroupByPayload<T extends inscriptionGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<InscriptionGroupByOutputType, T['by']> &
       {
@@ -201,31 +201,31 @@ export type GetInscriptionGroupByPayload<T extends InscriptionGroupByArgs> = Pri
 
 
 
-export type InscriptionWhereInput = {
-  AND?: Prisma.InscriptionWhereInput | Prisma.InscriptionWhereInput[]
-  OR?: Prisma.InscriptionWhereInput[]
-  NOT?: Prisma.InscriptionWhereInput | Prisma.InscriptionWhereInput[]
-  matricule?: Prisma.StringNullableFilter<"Inscription"> | string | null
-  dateInscription?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  type?: Prisma.EnumInscriptionTypeFilter<"Inscription"> | $Enums.InscriptionType
-  apprenantId?: Prisma.StringFilter<"Inscription"> | string
-  anneeScolaireId?: Prisma.StringFilter<"Inscription"> | string
-  classeScolaireId?: Prisma.StringFilter<"Inscription"> | string
-  configuartionScolariteId?: Prisma.StringFilter<"Inscription"> | string
-  createdAt?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.ApprenantWhereInput>
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireScalarRelationFilter, Prisma.ClassScolaireWhereInput>
-  configurationScolarite?: Prisma.XOR<Prisma.ConfigurationScolariteScalarRelationFilter, Prisma.ConfigurationScolariteWhereInput>
-  dossierScolarite?: Prisma.XOR<Prisma.DossierScolariteNullableScalarRelationFilter, Prisma.DossierScolariteWhereInput> | null
-  decisionFinale?: Prisma.XOR<Prisma.DecisionFinAnneeNullableScalarRelationFilter, Prisma.DecisionFinAnneeWhereInput> | null
-  bulletins?: Prisma.BulletinListRelationFilter
-  notes?: Prisma.NoteListRelationFilter
-  absences?: Prisma.AbsenceListRelationFilter
+export type inscriptionWhereInput = {
+  AND?: Prisma.inscriptionWhereInput | Prisma.inscriptionWhereInput[]
+  OR?: Prisma.inscriptionWhereInput[]
+  NOT?: Prisma.inscriptionWhereInput | Prisma.inscriptionWhereInput[]
+  matricule?: Prisma.StringNullableFilter<"inscription"> | string | null
+  dateInscription?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  type?: Prisma.Enuminscription_typeFilter<"inscription"> | $Enums.inscription_type
+  apprenantId?: Prisma.StringFilter<"inscription"> | string
+  anneeScolaireId?: Prisma.StringFilter<"inscription"> | string
+  classeScolaireId?: Prisma.StringFilter<"inscription"> | string
+  configuartionScolariteId?: Prisma.StringFilter<"inscription"> | string
+  createdAt?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  absence?: Prisma.AbsenceListRelationFilter
+  bulletin?: Prisma.BulletinListRelationFilter
+  decisionfinannee?: Prisma.XOR<Prisma.DecisionfinanneeNullableScalarRelationFilter, Prisma.decisionfinanneeWhereInput> | null
+  dossierscolarite?: Prisma.XOR<Prisma.DossierscolariteNullableScalarRelationFilter, Prisma.dossierscolariteWhereInput> | null
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
+  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.apprenantWhereInput>
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireScalarRelationFilter, Prisma.classscolaireWhereInput>
+  configurationscolarite?: Prisma.XOR<Prisma.ConfigurationscolariteScalarRelationFilter, Prisma.configurationscolariteWhereInput>
+  note?: Prisma.NoteListRelationFilter
 }
 
-export type InscriptionOrderByWithRelationInput = {
+export type inscriptionOrderByWithRelationInput = {
   matricule?: Prisma.SortOrderInput | Prisma.SortOrder
   dateInscription?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -235,45 +235,45 @@ export type InscriptionOrderByWithRelationInput = {
   configuartionScolariteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  apprenant?: Prisma.ApprenantOrderByWithRelationInput
-  anneeScolaire?: Prisma.AnneeScolaireOrderByWithRelationInput
-  classeScolaire?: Prisma.ClassScolaireOrderByWithRelationInput
-  configurationScolarite?: Prisma.ConfigurationScolariteOrderByWithRelationInput
-  dossierScolarite?: Prisma.DossierScolariteOrderByWithRelationInput
-  decisionFinale?: Prisma.DecisionFinAnneeOrderByWithRelationInput
-  bulletins?: Prisma.BulletinOrderByRelationAggregateInput
-  notes?: Prisma.NoteOrderByRelationAggregateInput
-  absences?: Prisma.AbsenceOrderByRelationAggregateInput
-  _relevance?: Prisma.InscriptionOrderByRelevanceInput
+  absence?: Prisma.absenceOrderByRelationAggregateInput
+  bulletin?: Prisma.bulletinOrderByRelationAggregateInput
+  decisionfinannee?: Prisma.decisionfinanneeOrderByWithRelationInput
+  dossierscolarite?: Prisma.dossierscolariteOrderByWithRelationInput
+  anneescolaire?: Prisma.anneescolaireOrderByWithRelationInput
+  apprenant?: Prisma.apprenantOrderByWithRelationInput
+  classscolaire?: Prisma.classscolaireOrderByWithRelationInput
+  configurationscolarite?: Prisma.configurationscolariteOrderByWithRelationInput
+  note?: Prisma.noteOrderByRelationAggregateInput
+  _relevance?: Prisma.inscriptionOrderByRelevanceInput
 }
 
-export type InscriptionWhereUniqueInput = Prisma.AtLeast<{
+export type inscriptionWhereUniqueInput = Prisma.AtLeast<{
   matricule?: string
-  apprenantId_classeScolaireId?: Prisma.InscriptionApprenantIdClasseScolaireIdCompoundUniqueInput
-  apprenantId_anneeScolaireId?: Prisma.InscriptionApprenantIdAnneeScolaireIdCompoundUniqueInput
-  AND?: Prisma.InscriptionWhereInput | Prisma.InscriptionWhereInput[]
-  OR?: Prisma.InscriptionWhereInput[]
-  NOT?: Prisma.InscriptionWhereInput | Prisma.InscriptionWhereInput[]
-  dateInscription?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  type?: Prisma.EnumInscriptionTypeFilter<"Inscription"> | $Enums.InscriptionType
-  apprenantId?: Prisma.StringFilter<"Inscription"> | string
-  anneeScolaireId?: Prisma.StringFilter<"Inscription"> | string
-  classeScolaireId?: Prisma.StringFilter<"Inscription"> | string
-  configuartionScolariteId?: Prisma.StringFilter<"Inscription"> | string
-  createdAt?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.ApprenantWhereInput>
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireScalarRelationFilter, Prisma.ClassScolaireWhereInput>
-  configurationScolarite?: Prisma.XOR<Prisma.ConfigurationScolariteScalarRelationFilter, Prisma.ConfigurationScolariteWhereInput>
-  dossierScolarite?: Prisma.XOR<Prisma.DossierScolariteNullableScalarRelationFilter, Prisma.DossierScolariteWhereInput> | null
-  decisionFinale?: Prisma.XOR<Prisma.DecisionFinAnneeNullableScalarRelationFilter, Prisma.DecisionFinAnneeWhereInput> | null
-  bulletins?: Prisma.BulletinListRelationFilter
-  notes?: Prisma.NoteListRelationFilter
-  absences?: Prisma.AbsenceListRelationFilter
+  apprenantId_classeScolaireId?: Prisma.inscriptionApprenantIdClasseScolaireIdCompoundUniqueInput
+  apprenantId_anneeScolaireId?: Prisma.inscriptionApprenantIdAnneeScolaireIdCompoundUniqueInput
+  AND?: Prisma.inscriptionWhereInput | Prisma.inscriptionWhereInput[]
+  OR?: Prisma.inscriptionWhereInput[]
+  NOT?: Prisma.inscriptionWhereInput | Prisma.inscriptionWhereInput[]
+  dateInscription?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  type?: Prisma.Enuminscription_typeFilter<"inscription"> | $Enums.inscription_type
+  apprenantId?: Prisma.StringFilter<"inscription"> | string
+  anneeScolaireId?: Prisma.StringFilter<"inscription"> | string
+  classeScolaireId?: Prisma.StringFilter<"inscription"> | string
+  configuartionScolariteId?: Prisma.StringFilter<"inscription"> | string
+  createdAt?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  absence?: Prisma.AbsenceListRelationFilter
+  bulletin?: Prisma.BulletinListRelationFilter
+  decisionfinannee?: Prisma.XOR<Prisma.DecisionfinanneeNullableScalarRelationFilter, Prisma.decisionfinanneeWhereInput> | null
+  dossierscolarite?: Prisma.XOR<Prisma.DossierscolariteNullableScalarRelationFilter, Prisma.dossierscolariteWhereInput> | null
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
+  apprenant?: Prisma.XOR<Prisma.ApprenantScalarRelationFilter, Prisma.apprenantWhereInput>
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireScalarRelationFilter, Prisma.classscolaireWhereInput>
+  configurationscolarite?: Prisma.XOR<Prisma.ConfigurationscolariteScalarRelationFilter, Prisma.configurationscolariteWhereInput>
+  note?: Prisma.NoteListRelationFilter
 }, "apprenantId_anneeScolaireId" | "matricule" | "apprenantId_classeScolaireId">
 
-export type InscriptionOrderByWithAggregationInput = {
+export type inscriptionOrderByWithAggregationInput = {
   matricule?: Prisma.SortOrderInput | Prisma.SortOrder
   dateInscription?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -283,98 +283,98 @@ export type InscriptionOrderByWithAggregationInput = {
   configuartionScolariteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.InscriptionCountOrderByAggregateInput
-  _max?: Prisma.InscriptionMaxOrderByAggregateInput
-  _min?: Prisma.InscriptionMinOrderByAggregateInput
+  _count?: Prisma.inscriptionCountOrderByAggregateInput
+  _max?: Prisma.inscriptionMaxOrderByAggregateInput
+  _min?: Prisma.inscriptionMinOrderByAggregateInput
 }
 
-export type InscriptionScalarWhereWithAggregatesInput = {
-  AND?: Prisma.InscriptionScalarWhereWithAggregatesInput | Prisma.InscriptionScalarWhereWithAggregatesInput[]
-  OR?: Prisma.InscriptionScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.InscriptionScalarWhereWithAggregatesInput | Prisma.InscriptionScalarWhereWithAggregatesInput[]
-  matricule?: Prisma.StringNullableWithAggregatesFilter<"Inscription"> | string | null
-  dateInscription?: Prisma.DateTimeWithAggregatesFilter<"Inscription"> | Date | string
-  type?: Prisma.EnumInscriptionTypeWithAggregatesFilter<"Inscription"> | $Enums.InscriptionType
-  apprenantId?: Prisma.StringWithAggregatesFilter<"Inscription"> | string
-  anneeScolaireId?: Prisma.StringWithAggregatesFilter<"Inscription"> | string
-  classeScolaireId?: Prisma.StringWithAggregatesFilter<"Inscription"> | string
-  configuartionScolariteId?: Prisma.StringWithAggregatesFilter<"Inscription"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Inscription"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Inscription"> | Date | string
+export type inscriptionScalarWhereWithAggregatesInput = {
+  AND?: Prisma.inscriptionScalarWhereWithAggregatesInput | Prisma.inscriptionScalarWhereWithAggregatesInput[]
+  OR?: Prisma.inscriptionScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.inscriptionScalarWhereWithAggregatesInput | Prisma.inscriptionScalarWhereWithAggregatesInput[]
+  matricule?: Prisma.StringNullableWithAggregatesFilter<"inscription"> | string | null
+  dateInscription?: Prisma.DateTimeWithAggregatesFilter<"inscription"> | Date | string
+  type?: Prisma.Enuminscription_typeWithAggregatesFilter<"inscription"> | $Enums.inscription_type
+  apprenantId?: Prisma.StringWithAggregatesFilter<"inscription"> | string
+  anneeScolaireId?: Prisma.StringWithAggregatesFilter<"inscription"> | string
+  classeScolaireId?: Prisma.StringWithAggregatesFilter<"inscription"> | string
+  configuartionScolariteId?: Prisma.StringWithAggregatesFilter<"inscription"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"inscription"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"inscription"> | Date | string
 }
 
-export type InscriptionCreateInput = {
+export type inscriptionCreateInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateInput = {
+export type inscriptionUncheckedCreateInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUpdateInput = {
+export type inscriptionUpdateInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateInput = {
+export type inscriptionUncheckedUpdateInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionCreateManyInput = {
+export type inscriptionCreateManyInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
@@ -383,58 +383,58 @@ export type InscriptionCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type InscriptionUpdateManyMutationInput = {
+export type inscriptionUpdateManyMutationInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type InscriptionUncheckedUpdateManyInput = {
+export type inscriptionUncheckedUpdateManyInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type InscriptionListRelationFilter = {
-  every?: Prisma.InscriptionWhereInput
-  some?: Prisma.InscriptionWhereInput
-  none?: Prisma.InscriptionWhereInput
-}
-
-export type InscriptionOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
 }
 
 export type InscriptionScalarRelationFilter = {
-  is?: Prisma.InscriptionWhereInput
-  isNot?: Prisma.InscriptionWhereInput
+  is?: Prisma.inscriptionWhereInput
+  isNot?: Prisma.inscriptionWhereInput
 }
 
-export type InscriptionOrderByRelevanceInput = {
-  fields: Prisma.InscriptionOrderByRelevanceFieldEnum | Prisma.InscriptionOrderByRelevanceFieldEnum[]
+export type InscriptionListRelationFilter = {
+  every?: Prisma.inscriptionWhereInput
+  some?: Prisma.inscriptionWhereInput
+  none?: Prisma.inscriptionWhereInput
+}
+
+export type inscriptionOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type inscriptionOrderByRelevanceInput = {
+  fields: Prisma.inscriptionOrderByRelevanceFieldEnum | Prisma.inscriptionOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type InscriptionApprenantIdClasseScolaireIdCompoundUniqueInput = {
+export type inscriptionApprenantIdClasseScolaireIdCompoundUniqueInput = {
   apprenantId: string
   classeScolaireId: string
 }
 
-export type InscriptionApprenantIdAnneeScolaireIdCompoundUniqueInput = {
+export type inscriptionApprenantIdAnneeScolaireIdCompoundUniqueInput = {
   apprenantId: string
   anneeScolaireId: string
 }
 
-export type InscriptionCountOrderByAggregateInput = {
+export type inscriptionCountOrderByAggregateInput = {
   matricule?: Prisma.SortOrder
   dateInscription?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -446,7 +446,7 @@ export type InscriptionCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type InscriptionMaxOrderByAggregateInput = {
+export type inscriptionMaxOrderByAggregateInput = {
   matricule?: Prisma.SortOrder
   dateInscription?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -458,7 +458,7 @@ export type InscriptionMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type InscriptionMinOrderByAggregateInput = {
+export type inscriptionMinOrderByAggregateInput = {
   matricule?: Prisma.SortOrder
   dateInscription?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -470,953 +470,899 @@ export type InscriptionMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type InscriptionCreateNestedManyWithoutApprenantInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutApprenantInput, Prisma.InscriptionUncheckedCreateWithoutApprenantInput> | Prisma.InscriptionCreateWithoutApprenantInput[] | Prisma.InscriptionUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutApprenantInput | Prisma.InscriptionCreateOrConnectWithoutApprenantInput[]
-  createMany?: Prisma.InscriptionCreateManyApprenantInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionCreateNestedOneWithoutAbsenceInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutAbsenceInput, Prisma.inscriptionUncheckedCreateWithoutAbsenceInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutAbsenceInput
+  connect?: Prisma.inscriptionWhereUniqueInput
 }
 
-export type InscriptionUncheckedCreateNestedManyWithoutApprenantInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutApprenantInput, Prisma.InscriptionUncheckedCreateWithoutApprenantInput> | Prisma.InscriptionCreateWithoutApprenantInput[] | Prisma.InscriptionUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutApprenantInput | Prisma.InscriptionCreateOrConnectWithoutApprenantInput[]
-  createMany?: Prisma.InscriptionCreateManyApprenantInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionUpdateOneRequiredWithoutAbsenceNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutAbsenceInput, Prisma.inscriptionUncheckedCreateWithoutAbsenceInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutAbsenceInput
+  upsert?: Prisma.inscriptionUpsertWithoutAbsenceInput
+  connect?: Prisma.inscriptionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.inscriptionUpdateToOneWithWhereWithoutAbsenceInput, Prisma.inscriptionUpdateWithoutAbsenceInput>, Prisma.inscriptionUncheckedUpdateWithoutAbsenceInput>
 }
 
-export type InscriptionUpdateManyWithoutApprenantNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutApprenantInput, Prisma.InscriptionUncheckedCreateWithoutApprenantInput> | Prisma.InscriptionCreateWithoutApprenantInput[] | Prisma.InscriptionUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutApprenantInput | Prisma.InscriptionCreateOrConnectWithoutApprenantInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutApprenantInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutApprenantInput[]
-  createMany?: Prisma.InscriptionCreateManyApprenantInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutApprenantInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutApprenantInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutApprenantInput | Prisma.InscriptionUpdateManyWithWhereWithoutApprenantInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput> | Prisma.inscriptionCreateWithoutAnneescolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput | Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionUncheckedUpdateManyWithoutApprenantNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutApprenantInput, Prisma.InscriptionUncheckedCreateWithoutApprenantInput> | Prisma.InscriptionCreateWithoutApprenantInput[] | Prisma.InscriptionUncheckedCreateWithoutApprenantInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutApprenantInput | Prisma.InscriptionCreateOrConnectWithoutApprenantInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutApprenantInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutApprenantInput[]
-  createMany?: Prisma.InscriptionCreateManyApprenantInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutApprenantInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutApprenantInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutApprenantInput | Prisma.InscriptionUpdateManyWithWhereWithoutApprenantInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionUncheckedCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput> | Prisma.inscriptionCreateWithoutAnneescolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput | Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput> | Prisma.InscriptionCreateWithoutAnneeScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput | Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput> | Prisma.inscriptionCreateWithoutAnneescolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput | Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.inscriptionUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionUncheckedCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput> | Prisma.InscriptionCreateWithoutAnneeScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput | Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionUncheckedUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput> | Prisma.inscriptionCreateWithoutAnneescolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput | Prisma.inscriptionCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.inscriptionUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput> | Prisma.InscriptionCreateWithoutAnneeScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput | Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.InscriptionUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionCreateNestedManyWithoutApprenantInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutApprenantInput, Prisma.inscriptionUncheckedCreateWithoutApprenantInput> | Prisma.inscriptionCreateWithoutApprenantInput[] | Prisma.inscriptionUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutApprenantInput | Prisma.inscriptionCreateOrConnectWithoutApprenantInput[]
+  createMany?: Prisma.inscriptionCreateManyApprenantInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionUncheckedUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput> | Prisma.InscriptionCreateWithoutAnneeScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput | Prisma.InscriptionCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.InscriptionUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionUncheckedCreateNestedManyWithoutApprenantInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutApprenantInput, Prisma.inscriptionUncheckedCreateWithoutApprenantInput> | Prisma.inscriptionCreateWithoutApprenantInput[] | Prisma.inscriptionUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutApprenantInput | Prisma.inscriptionCreateOrConnectWithoutApprenantInput[]
+  createMany?: Prisma.inscriptionCreateManyApprenantInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionCreateNestedManyWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput> | Prisma.InscriptionCreateWithoutClasseScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput | Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyClasseScolaireInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionUpdateManyWithoutApprenantNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutApprenantInput, Prisma.inscriptionUncheckedCreateWithoutApprenantInput> | Prisma.inscriptionCreateWithoutApprenantInput[] | Prisma.inscriptionUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutApprenantInput | Prisma.inscriptionCreateOrConnectWithoutApprenantInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutApprenantInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutApprenantInput[]
+  createMany?: Prisma.inscriptionCreateManyApprenantInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutApprenantInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutApprenantInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutApprenantInput | Prisma.inscriptionUpdateManyWithWhereWithoutApprenantInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionUncheckedCreateNestedManyWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput> | Prisma.InscriptionCreateWithoutClasseScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput | Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyClasseScolaireInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionUncheckedUpdateManyWithoutApprenantNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutApprenantInput, Prisma.inscriptionUncheckedCreateWithoutApprenantInput> | Prisma.inscriptionCreateWithoutApprenantInput[] | Prisma.inscriptionUncheckedCreateWithoutApprenantInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutApprenantInput | Prisma.inscriptionCreateOrConnectWithoutApprenantInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutApprenantInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutApprenantInput[]
+  createMany?: Prisma.inscriptionCreateManyApprenantInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutApprenantInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutApprenantInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutApprenantInput | Prisma.inscriptionUpdateManyWithWhereWithoutApprenantInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionUpdateManyWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput> | Prisma.InscriptionCreateWithoutClasseScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput | Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutClasseScolaireInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutClasseScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyClasseScolaireInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutClasseScolaireInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutClasseScolaireInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutClasseScolaireInput | Prisma.InscriptionUpdateManyWithWhereWithoutClasseScolaireInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionCreateNestedOneWithoutBulletinInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutBulletinInput, Prisma.inscriptionUncheckedCreateWithoutBulletinInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutBulletinInput
+  connect?: Prisma.inscriptionWhereUniqueInput
 }
 
-export type InscriptionUncheckedUpdateManyWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput> | Prisma.InscriptionCreateWithoutClasseScolaireInput[] | Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput | Prisma.InscriptionCreateOrConnectWithoutClasseScolaireInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutClasseScolaireInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutClasseScolaireInput[]
-  createMany?: Prisma.InscriptionCreateManyClasseScolaireInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutClasseScolaireInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutClasseScolaireInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutClasseScolaireInput | Prisma.InscriptionUpdateManyWithWhereWithoutClasseScolaireInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionUpdateOneRequiredWithoutBulletinNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutBulletinInput, Prisma.inscriptionUncheckedCreateWithoutBulletinInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutBulletinInput
+  upsert?: Prisma.inscriptionUpsertWithoutBulletinInput
+  connect?: Prisma.inscriptionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.inscriptionUpdateToOneWithWhereWithoutBulletinInput, Prisma.inscriptionUpdateWithoutBulletinInput>, Prisma.inscriptionUncheckedUpdateWithoutBulletinInput>
 }
 
-export type InscriptionCreateNestedOneWithoutNotesInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutNotesInput, Prisma.InscriptionUncheckedCreateWithoutNotesInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutNotesInput
-  connect?: Prisma.InscriptionWhereUniqueInput
+export type inscriptionCreateNestedManyWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutClassscolaireInput, Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput> | Prisma.inscriptionCreateWithoutClassscolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput | Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyClassscolaireInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionUpdateOneRequiredWithoutNotesNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutNotesInput, Prisma.InscriptionUncheckedCreateWithoutNotesInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutNotesInput
-  upsert?: Prisma.InscriptionUpsertWithoutNotesInput
-  connect?: Prisma.InscriptionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.InscriptionUpdateToOneWithWhereWithoutNotesInput, Prisma.InscriptionUpdateWithoutNotesInput>, Prisma.InscriptionUncheckedUpdateWithoutNotesInput>
+export type inscriptionUncheckedCreateNestedManyWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutClassscolaireInput, Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput> | Prisma.inscriptionCreateWithoutClassscolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput | Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyClassscolaireInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type EnumInscriptionTypeFieldUpdateOperationsInput = {
-  set?: $Enums.InscriptionType
+export type inscriptionUpdateManyWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutClassscolaireInput, Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput> | Prisma.inscriptionCreateWithoutClassscolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput | Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutClassscolaireInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutClassscolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyClassscolaireInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutClassscolaireInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutClassscolaireInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutClassscolaireInput | Prisma.inscriptionUpdateManyWithWhereWithoutClassscolaireInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionCreateNestedOneWithoutBulletinsInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutBulletinsInput, Prisma.InscriptionUncheckedCreateWithoutBulletinsInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutBulletinsInput
-  connect?: Prisma.InscriptionWhereUniqueInput
+export type inscriptionUncheckedUpdateManyWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutClassscolaireInput, Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput> | Prisma.inscriptionCreateWithoutClassscolaireInput[] | Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput | Prisma.inscriptionCreateOrConnectWithoutClassscolaireInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutClassscolaireInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutClassscolaireInput[]
+  createMany?: Prisma.inscriptionCreateManyClassscolaireInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutClassscolaireInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutClassscolaireInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutClassscolaireInput | Prisma.inscriptionUpdateManyWithWhereWithoutClassscolaireInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionUpdateOneRequiredWithoutBulletinsNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutBulletinsInput, Prisma.InscriptionUncheckedCreateWithoutBulletinsInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutBulletinsInput
-  upsert?: Prisma.InscriptionUpsertWithoutBulletinsInput
-  connect?: Prisma.InscriptionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.InscriptionUpdateToOneWithWhereWithoutBulletinsInput, Prisma.InscriptionUpdateWithoutBulletinsInput>, Prisma.InscriptionUncheckedUpdateWithoutBulletinsInput>
+export type inscriptionCreateNestedManyWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.inscriptionCreateWithoutConfigurationscolariteInput[] | Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput | Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.inscriptionCreateManyConfigurationscolariteInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionCreateNestedOneWithoutAbsencesInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutAbsencesInput, Prisma.InscriptionUncheckedCreateWithoutAbsencesInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutAbsencesInput
-  connect?: Prisma.InscriptionWhereUniqueInput
+export type inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.inscriptionCreateWithoutConfigurationscolariteInput[] | Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput | Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.inscriptionCreateManyConfigurationscolariteInputEnvelope
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
 }
 
-export type InscriptionUpdateOneRequiredWithoutAbsencesNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutAbsencesInput, Prisma.InscriptionUncheckedCreateWithoutAbsencesInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutAbsencesInput
-  upsert?: Prisma.InscriptionUpsertWithoutAbsencesInput
-  connect?: Prisma.InscriptionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.InscriptionUpdateToOneWithWhereWithoutAbsencesInput, Prisma.InscriptionUpdateWithoutAbsencesInput>, Prisma.InscriptionUncheckedUpdateWithoutAbsencesInput>
+export type inscriptionUpdateManyWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.inscriptionCreateWithoutConfigurationscolariteInput[] | Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput | Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.inscriptionCreateManyConfigurationscolariteInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutConfigurationscolariteInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutConfigurationscolariteInput | Prisma.inscriptionUpdateManyWithWhereWithoutConfigurationscolariteInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionCreateNestedManyWithoutConfigurationScolariteInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.InscriptionCreateWithoutConfigurationScolariteInput[] | Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput | Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.InscriptionCreateManyConfigurationScolariteInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.inscriptionCreateWithoutConfigurationscolariteInput[] | Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput | Prisma.inscriptionCreateOrConnectWithoutConfigurationscolariteInput[]
+  upsert?: Prisma.inscriptionUpsertWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.inscriptionUpsertWithWhereUniqueWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.inscriptionCreateManyConfigurationscolariteInputEnvelope
+  set?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  disconnect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  delete?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  connect?: Prisma.inscriptionWhereUniqueInput | Prisma.inscriptionWhereUniqueInput[]
+  update?: Prisma.inscriptionUpdateWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.inscriptionUpdateWithWhereUniqueWithoutConfigurationscolariteInput[]
+  updateMany?: Prisma.inscriptionUpdateManyWithWhereWithoutConfigurationscolariteInput | Prisma.inscriptionUpdateManyWithWhereWithoutConfigurationscolariteInput[]
+  deleteMany?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
 }
 
-export type InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.InscriptionCreateWithoutConfigurationScolariteInput[] | Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput | Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.InscriptionCreateManyConfigurationScolariteInputEnvelope
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
+export type inscriptionCreateNestedOneWithoutDecisionfinanneeInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutDecisionfinanneeInput, Prisma.inscriptionUncheckedCreateWithoutDecisionfinanneeInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutDecisionfinanneeInput
+  connect?: Prisma.inscriptionWhereUniqueInput
 }
 
-export type InscriptionUpdateManyWithoutConfigurationScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.InscriptionCreateWithoutConfigurationScolariteInput[] | Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput | Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.InscriptionCreateManyConfigurationScolariteInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutConfigurationScolariteInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutConfigurationScolariteInput | Prisma.InscriptionUpdateManyWithWhereWithoutConfigurationScolariteInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionUpdateOneRequiredWithoutDecisionfinanneeNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutDecisionfinanneeInput, Prisma.inscriptionUncheckedCreateWithoutDecisionfinanneeInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutDecisionfinanneeInput
+  upsert?: Prisma.inscriptionUpsertWithoutDecisionfinanneeInput
+  connect?: Prisma.inscriptionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.inscriptionUpdateToOneWithWhereWithoutDecisionfinanneeInput, Prisma.inscriptionUpdateWithoutDecisionfinanneeInput>, Prisma.inscriptionUncheckedUpdateWithoutDecisionfinanneeInput>
 }
 
-export type InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.InscriptionCreateWithoutConfigurationScolariteInput[] | Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput | Prisma.InscriptionCreateOrConnectWithoutConfigurationScolariteInput[]
-  upsert?: Prisma.InscriptionUpsertWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.InscriptionUpsertWithWhereUniqueWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.InscriptionCreateManyConfigurationScolariteInputEnvelope
-  set?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  disconnect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  delete?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  connect?: Prisma.InscriptionWhereUniqueInput | Prisma.InscriptionWhereUniqueInput[]
-  update?: Prisma.InscriptionUpdateWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.InscriptionUpdateWithWhereUniqueWithoutConfigurationScolariteInput[]
-  updateMany?: Prisma.InscriptionUpdateManyWithWhereWithoutConfigurationScolariteInput | Prisma.InscriptionUpdateManyWithWhereWithoutConfigurationScolariteInput[]
-  deleteMany?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
+export type inscriptionCreateNestedOneWithoutDossierscolariteInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutDossierscolariteInput, Prisma.inscriptionUncheckedCreateWithoutDossierscolariteInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutDossierscolariteInput
+  connect?: Prisma.inscriptionWhereUniqueInput
 }
 
-export type InscriptionCreateNestedOneWithoutDossierScolariteInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutDossierScolariteInput, Prisma.InscriptionUncheckedCreateWithoutDossierScolariteInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutDossierScolariteInput
-  connect?: Prisma.InscriptionWhereUniqueInput
+export type inscriptionUpdateOneRequiredWithoutDossierscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutDossierscolariteInput, Prisma.inscriptionUncheckedCreateWithoutDossierscolariteInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutDossierscolariteInput
+  upsert?: Prisma.inscriptionUpsertWithoutDossierscolariteInput
+  connect?: Prisma.inscriptionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.inscriptionUpdateToOneWithWhereWithoutDossierscolariteInput, Prisma.inscriptionUpdateWithoutDossierscolariteInput>, Prisma.inscriptionUncheckedUpdateWithoutDossierscolariteInput>
 }
 
-export type InscriptionUpdateOneRequiredWithoutDossierScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutDossierScolariteInput, Prisma.InscriptionUncheckedCreateWithoutDossierScolariteInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutDossierScolariteInput
-  upsert?: Prisma.InscriptionUpsertWithoutDossierScolariteInput
-  connect?: Prisma.InscriptionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.InscriptionUpdateToOneWithWhereWithoutDossierScolariteInput, Prisma.InscriptionUpdateWithoutDossierScolariteInput>, Prisma.InscriptionUncheckedUpdateWithoutDossierScolariteInput>
+export type Enuminscription_typeFieldUpdateOperationsInput = {
+  set?: $Enums.inscription_type
 }
 
-export type InscriptionCreateNestedOneWithoutDecisionFinaleInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutDecisionFinaleInput, Prisma.InscriptionUncheckedCreateWithoutDecisionFinaleInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutDecisionFinaleInput
-  connect?: Prisma.InscriptionWhereUniqueInput
+export type inscriptionCreateNestedOneWithoutNoteInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutNoteInput, Prisma.inscriptionUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutNoteInput
+  connect?: Prisma.inscriptionWhereUniqueInput
 }
 
-export type InscriptionUpdateOneRequiredWithoutDecisionFinaleNestedInput = {
-  create?: Prisma.XOR<Prisma.InscriptionCreateWithoutDecisionFinaleInput, Prisma.InscriptionUncheckedCreateWithoutDecisionFinaleInput>
-  connectOrCreate?: Prisma.InscriptionCreateOrConnectWithoutDecisionFinaleInput
-  upsert?: Prisma.InscriptionUpsertWithoutDecisionFinaleInput
-  connect?: Prisma.InscriptionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.InscriptionUpdateToOneWithWhereWithoutDecisionFinaleInput, Prisma.InscriptionUpdateWithoutDecisionFinaleInput>, Prisma.InscriptionUncheckedUpdateWithoutDecisionFinaleInput>
+export type inscriptionUpdateOneRequiredWithoutNoteNestedInput = {
+  create?: Prisma.XOR<Prisma.inscriptionCreateWithoutNoteInput, Prisma.inscriptionUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.inscriptionCreateOrConnectWithoutNoteInput
+  upsert?: Prisma.inscriptionUpsertWithoutNoteInput
+  connect?: Prisma.inscriptionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.inscriptionUpdateToOneWithWhereWithoutNoteInput, Prisma.inscriptionUpdateWithoutNoteInput>, Prisma.inscriptionUncheckedUpdateWithoutNoteInput>
 }
 
-export type InscriptionCreateWithoutApprenantInput = {
+export type inscriptionCreateWithoutAbsenceInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateWithoutApprenantInput = {
+export type inscriptionUncheckedCreateWithoutAbsenceInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
+  apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionCreateOrConnectWithoutApprenantInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutApprenantInput, Prisma.InscriptionUncheckedCreateWithoutApprenantInput>
+export type inscriptionCreateOrConnectWithoutAbsenceInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutAbsenceInput, Prisma.inscriptionUncheckedCreateWithoutAbsenceInput>
 }
 
-export type InscriptionCreateManyApprenantInputEnvelope = {
-  data: Prisma.InscriptionCreateManyApprenantInput | Prisma.InscriptionCreateManyApprenantInput[]
+export type inscriptionUpsertWithoutAbsenceInput = {
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutAbsenceInput, Prisma.inscriptionUncheckedUpdateWithoutAbsenceInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutAbsenceInput, Prisma.inscriptionUncheckedCreateWithoutAbsenceInput>
+  where?: Prisma.inscriptionWhereInput
+}
+
+export type inscriptionUpdateToOneWithWhereWithoutAbsenceInput = {
+  where?: Prisma.inscriptionWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutAbsenceInput, Prisma.inscriptionUncheckedUpdateWithoutAbsenceInput>
+}
+
+export type inscriptionUpdateWithoutAbsenceInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
+}
+
+export type inscriptionUncheckedUpdateWithoutAbsenceInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
+}
+
+export type inscriptionCreateWithoutAnneescolaireInput = {
+  matricule?: string | null
+  dateInscription?: Date | string
+  type: $Enums.inscription_type
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
+}
+
+export type inscriptionUncheckedCreateWithoutAnneescolaireInput = {
+  matricule?: string | null
+  dateInscription?: Date | string
+  type: $Enums.inscription_type
+  apprenantId: string
+  classeScolaireId: string
+  configuartionScolariteId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
+}
+
+export type inscriptionCreateOrConnectWithoutAnneescolaireInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput>
+}
+
+export type inscriptionCreateManyAnneescolaireInputEnvelope = {
+  data: Prisma.inscriptionCreateManyAnneescolaireInput | Prisma.inscriptionCreateManyAnneescolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type InscriptionUpsertWithWhereUniqueWithoutApprenantInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutApprenantInput, Prisma.InscriptionUncheckedUpdateWithoutApprenantInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutApprenantInput, Prisma.InscriptionUncheckedCreateWithoutApprenantInput>
+export type inscriptionUpsertWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedUpdateWithoutAnneescolaireInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type InscriptionUpdateWithWhereUniqueWithoutApprenantInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutApprenantInput, Prisma.InscriptionUncheckedUpdateWithoutApprenantInput>
+export type inscriptionUpdateWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutAnneescolaireInput, Prisma.inscriptionUncheckedUpdateWithoutAnneescolaireInput>
 }
 
-export type InscriptionUpdateManyWithWhereWithoutApprenantInput = {
-  where: Prisma.InscriptionScalarWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateManyMutationInput, Prisma.InscriptionUncheckedUpdateManyWithoutApprenantInput>
+export type inscriptionUpdateManyWithWhereWithoutAnneescolaireInput = {
+  where: Prisma.inscriptionScalarWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateManyMutationInput, Prisma.inscriptionUncheckedUpdateManyWithoutAnneescolaireInput>
 }
 
-export type InscriptionScalarWhereInput = {
-  AND?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
-  OR?: Prisma.InscriptionScalarWhereInput[]
-  NOT?: Prisma.InscriptionScalarWhereInput | Prisma.InscriptionScalarWhereInput[]
-  matricule?: Prisma.StringNullableFilter<"Inscription"> | string | null
-  dateInscription?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  type?: Prisma.EnumInscriptionTypeFilter<"Inscription"> | $Enums.InscriptionType
-  apprenantId?: Prisma.StringFilter<"Inscription"> | string
-  anneeScolaireId?: Prisma.StringFilter<"Inscription"> | string
-  classeScolaireId?: Prisma.StringFilter<"Inscription"> | string
-  configuartionScolariteId?: Prisma.StringFilter<"Inscription"> | string
-  createdAt?: Prisma.DateTimeFilter<"Inscription"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Inscription"> | Date | string
+export type inscriptionScalarWhereInput = {
+  AND?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
+  OR?: Prisma.inscriptionScalarWhereInput[]
+  NOT?: Prisma.inscriptionScalarWhereInput | Prisma.inscriptionScalarWhereInput[]
+  matricule?: Prisma.StringNullableFilter<"inscription"> | string | null
+  dateInscription?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  type?: Prisma.Enuminscription_typeFilter<"inscription"> | $Enums.inscription_type
+  apprenantId?: Prisma.StringFilter<"inscription"> | string
+  anneeScolaireId?: Prisma.StringFilter<"inscription"> | string
+  classeScolaireId?: Prisma.StringFilter<"inscription"> | string
+  configuartionScolariteId?: Prisma.StringFilter<"inscription"> | string
+  createdAt?: Prisma.DateTimeFilter<"inscription"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"inscription"> | Date | string
 }
 
-export type InscriptionCreateWithoutAnneeScolaireInput = {
+export type inscriptionCreateWithoutApprenantInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateWithoutAnneeScolaireInput = {
+export type inscriptionUncheckedCreateWithoutApprenantInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  apprenantId: string
+  type: $Enums.inscription_type
+  anneeScolaireId: string
   classeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionCreateOrConnectWithoutAnneeScolaireInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput>
+export type inscriptionCreateOrConnectWithoutApprenantInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutApprenantInput, Prisma.inscriptionUncheckedCreateWithoutApprenantInput>
 }
 
-export type InscriptionCreateManyAnneeScolaireInputEnvelope = {
-  data: Prisma.InscriptionCreateManyAnneeScolaireInput | Prisma.InscriptionCreateManyAnneeScolaireInput[]
+export type inscriptionCreateManyApprenantInputEnvelope = {
+  data: Prisma.inscriptionCreateManyApprenantInput | Prisma.inscriptionCreateManyApprenantInput[]
   skipDuplicates?: boolean
 }
 
-export type InscriptionUpsertWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedUpdateWithoutAnneeScolaireInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedCreateWithoutAnneeScolaireInput>
+export type inscriptionUpsertWithWhereUniqueWithoutApprenantInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutApprenantInput, Prisma.inscriptionUncheckedUpdateWithoutApprenantInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutApprenantInput, Prisma.inscriptionUncheckedCreateWithoutApprenantInput>
 }
 
-export type InscriptionUpdateWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutAnneeScolaireInput, Prisma.InscriptionUncheckedUpdateWithoutAnneeScolaireInput>
+export type inscriptionUpdateWithWhereUniqueWithoutApprenantInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutApprenantInput, Prisma.inscriptionUncheckedUpdateWithoutApprenantInput>
 }
 
-export type InscriptionUpdateManyWithWhereWithoutAnneeScolaireInput = {
-  where: Prisma.InscriptionScalarWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateManyMutationInput, Prisma.InscriptionUncheckedUpdateManyWithoutAnneeScolaireInput>
+export type inscriptionUpdateManyWithWhereWithoutApprenantInput = {
+  where: Prisma.inscriptionScalarWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateManyMutationInput, Prisma.inscriptionUncheckedUpdateManyWithoutApprenantInput>
 }
 
-export type InscriptionCreateWithoutClasseScolaireInput = {
+export type inscriptionCreateWithoutBulletinInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateWithoutClasseScolaireInput = {
+export type inscriptionUncheckedCreateWithoutBulletinInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
+  apprenantId: string
+  anneeScolaireId: string
+  classeScolaireId: string
+  configuartionScolariteId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
+}
+
+export type inscriptionCreateOrConnectWithoutBulletinInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutBulletinInput, Prisma.inscriptionUncheckedCreateWithoutBulletinInput>
+}
+
+export type inscriptionUpsertWithoutBulletinInput = {
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutBulletinInput, Prisma.inscriptionUncheckedUpdateWithoutBulletinInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutBulletinInput, Prisma.inscriptionUncheckedCreateWithoutBulletinInput>
+  where?: Prisma.inscriptionWhereInput
+}
+
+export type inscriptionUpdateToOneWithWhereWithoutBulletinInput = {
+  where?: Prisma.inscriptionWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutBulletinInput, Prisma.inscriptionUncheckedUpdateWithoutBulletinInput>
+}
+
+export type inscriptionUpdateWithoutBulletinInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
+}
+
+export type inscriptionUncheckedUpdateWithoutBulletinInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
+}
+
+export type inscriptionCreateWithoutClassscolaireInput = {
+  matricule?: string | null
+  dateInscription?: Date | string
+  type: $Enums.inscription_type
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
+}
+
+export type inscriptionUncheckedCreateWithoutClassscolaireInput = {
+  matricule?: string | null
+  dateInscription?: Date | string
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionCreateOrConnectWithoutClasseScolaireInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput>
+export type inscriptionCreateOrConnectWithoutClassscolaireInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutClassscolaireInput, Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput>
 }
 
-export type InscriptionCreateManyClasseScolaireInputEnvelope = {
-  data: Prisma.InscriptionCreateManyClasseScolaireInput | Prisma.InscriptionCreateManyClasseScolaireInput[]
+export type inscriptionCreateManyClassscolaireInputEnvelope = {
+  data: Prisma.inscriptionCreateManyClassscolaireInput | Prisma.inscriptionCreateManyClassscolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type InscriptionUpsertWithWhereUniqueWithoutClasseScolaireInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedUpdateWithoutClasseScolaireInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedCreateWithoutClasseScolaireInput>
+export type inscriptionUpsertWithWhereUniqueWithoutClassscolaireInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutClassscolaireInput, Prisma.inscriptionUncheckedUpdateWithoutClassscolaireInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutClassscolaireInput, Prisma.inscriptionUncheckedCreateWithoutClassscolaireInput>
 }
 
-export type InscriptionUpdateWithWhereUniqueWithoutClasseScolaireInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutClasseScolaireInput, Prisma.InscriptionUncheckedUpdateWithoutClasseScolaireInput>
+export type inscriptionUpdateWithWhereUniqueWithoutClassscolaireInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutClassscolaireInput, Prisma.inscriptionUncheckedUpdateWithoutClassscolaireInput>
 }
 
-export type InscriptionUpdateManyWithWhereWithoutClasseScolaireInput = {
-  where: Prisma.InscriptionScalarWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateManyMutationInput, Prisma.InscriptionUncheckedUpdateManyWithoutClasseScolaireInput>
+export type inscriptionUpdateManyWithWhereWithoutClassscolaireInput = {
+  where: Prisma.inscriptionScalarWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateManyMutationInput, Prisma.inscriptionUncheckedUpdateManyWithoutClassscolaireInput>
 }
 
-export type InscriptionCreateWithoutNotesInput = {
+export type inscriptionCreateWithoutConfigurationscolariteInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateWithoutNotesInput = {
+export type inscriptionUncheckedCreateWithoutConfigurationscolariteInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  apprenantId: string
-  anneeScolaireId: string
-  classeScolaireId: string
-  configuartionScolariteId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
-}
-
-export type InscriptionCreateOrConnectWithoutNotesInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutNotesInput, Prisma.InscriptionUncheckedCreateWithoutNotesInput>
-}
-
-export type InscriptionUpsertWithoutNotesInput = {
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutNotesInput, Prisma.InscriptionUncheckedUpdateWithoutNotesInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutNotesInput, Prisma.InscriptionUncheckedCreateWithoutNotesInput>
-  where?: Prisma.InscriptionWhereInput
-}
-
-export type InscriptionUpdateToOneWithWhereWithoutNotesInput = {
-  where?: Prisma.InscriptionWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutNotesInput, Prisma.InscriptionUncheckedUpdateWithoutNotesInput>
-}
-
-export type InscriptionUpdateWithoutNotesInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
-}
-
-export type InscriptionUncheckedUpdateWithoutNotesInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
-}
-
-export type InscriptionCreateWithoutBulletinsInput = {
-  matricule?: string | null
-  dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
-}
-
-export type InscriptionUncheckedCreateWithoutBulletinsInput = {
-  matricule?: string | null
-  dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  apprenantId: string
-  anneeScolaireId: string
-  classeScolaireId: string
-  configuartionScolariteId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
-}
-
-export type InscriptionCreateOrConnectWithoutBulletinsInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutBulletinsInput, Prisma.InscriptionUncheckedCreateWithoutBulletinsInput>
-}
-
-export type InscriptionUpsertWithoutBulletinsInput = {
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutBulletinsInput, Prisma.InscriptionUncheckedUpdateWithoutBulletinsInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutBulletinsInput, Prisma.InscriptionUncheckedCreateWithoutBulletinsInput>
-  where?: Prisma.InscriptionWhereInput
-}
-
-export type InscriptionUpdateToOneWithWhereWithoutBulletinsInput = {
-  where?: Prisma.InscriptionWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutBulletinsInput, Prisma.InscriptionUncheckedUpdateWithoutBulletinsInput>
-}
-
-export type InscriptionUpdateWithoutBulletinsInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
-}
-
-export type InscriptionUncheckedUpdateWithoutBulletinsInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
-}
-
-export type InscriptionCreateWithoutAbsencesInput = {
-  matricule?: string | null
-  dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-}
-
-export type InscriptionUncheckedCreateWithoutAbsencesInput = {
-  matricule?: string | null
-  dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  apprenantId: string
-  anneeScolaireId: string
-  classeScolaireId: string
-  configuartionScolariteId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-}
-
-export type InscriptionCreateOrConnectWithoutAbsencesInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutAbsencesInput, Prisma.InscriptionUncheckedCreateWithoutAbsencesInput>
-}
-
-export type InscriptionUpsertWithoutAbsencesInput = {
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutAbsencesInput, Prisma.InscriptionUncheckedUpdateWithoutAbsencesInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutAbsencesInput, Prisma.InscriptionUncheckedCreateWithoutAbsencesInput>
-  where?: Prisma.InscriptionWhereInput
-}
-
-export type InscriptionUpdateToOneWithWhereWithoutAbsencesInput = {
-  where?: Prisma.InscriptionWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutAbsencesInput, Prisma.InscriptionUncheckedUpdateWithoutAbsencesInput>
-}
-
-export type InscriptionUpdateWithoutAbsencesInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-}
-
-export type InscriptionUncheckedUpdateWithoutAbsencesInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-}
-
-export type InscriptionCreateWithoutConfigurationScolariteInput = {
-  matricule?: string | null
-  dateInscription?: Date | string
-  type: $Enums.InscriptionType
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
-}
-
-export type InscriptionUncheckedCreateWithoutConfigurationScolariteInput = {
-  matricule?: string | null
-  dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionCreateOrConnectWithoutConfigurationScolariteInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput>
+export type inscriptionCreateOrConnectWithoutConfigurationscolariteInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type InscriptionCreateManyConfigurationScolariteInputEnvelope = {
-  data: Prisma.InscriptionCreateManyConfigurationScolariteInput | Prisma.InscriptionCreateManyConfigurationScolariteInput[]
+export type inscriptionCreateManyConfigurationscolariteInputEnvelope = {
+  data: Prisma.inscriptionCreateManyConfigurationscolariteInput | Prisma.inscriptionCreateManyConfigurationscolariteInput[]
   skipDuplicates?: boolean
 }
 
-export type InscriptionUpsertWithWhereUniqueWithoutConfigurationScolariteInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedUpdateWithoutConfigurationScolariteInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedCreateWithoutConfigurationScolariteInput>
+export type inscriptionUpsertWithWhereUniqueWithoutConfigurationscolariteInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedUpdateWithoutConfigurationscolariteInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type InscriptionUpdateWithWhereUniqueWithoutConfigurationScolariteInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutConfigurationScolariteInput, Prisma.InscriptionUncheckedUpdateWithoutConfigurationScolariteInput>
+export type inscriptionUpdateWithWhereUniqueWithoutConfigurationscolariteInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutConfigurationscolariteInput, Prisma.inscriptionUncheckedUpdateWithoutConfigurationscolariteInput>
 }
 
-export type InscriptionUpdateManyWithWhereWithoutConfigurationScolariteInput = {
-  where: Prisma.InscriptionScalarWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateManyMutationInput, Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteInput>
+export type inscriptionUpdateManyWithWhereWithoutConfigurationscolariteInput = {
+  where: Prisma.inscriptionScalarWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateManyMutationInput, Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteInput>
 }
 
-export type InscriptionCreateWithoutDossierScolariteInput = {
+export type inscriptionCreateWithoutDecisionfinanneeInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  decisionFinale?: Prisma.DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateWithoutDossierScolariteInput = {
+export type inscriptionUncheckedCreateWithoutDecisionfinanneeInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionCreateOrConnectWithoutDossierScolariteInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutDossierScolariteInput, Prisma.InscriptionUncheckedCreateWithoutDossierScolariteInput>
+export type inscriptionCreateOrConnectWithoutDecisionfinanneeInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutDecisionfinanneeInput, Prisma.inscriptionUncheckedCreateWithoutDecisionfinanneeInput>
 }
 
-export type InscriptionUpsertWithoutDossierScolariteInput = {
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutDossierScolariteInput, Prisma.InscriptionUncheckedUpdateWithoutDossierScolariteInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutDossierScolariteInput, Prisma.InscriptionUncheckedCreateWithoutDossierScolariteInput>
-  where?: Prisma.InscriptionWhereInput
+export type inscriptionUpsertWithoutDecisionfinanneeInput = {
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutDecisionfinanneeInput, Prisma.inscriptionUncheckedUpdateWithoutDecisionfinanneeInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutDecisionfinanneeInput, Prisma.inscriptionUncheckedCreateWithoutDecisionfinanneeInput>
+  where?: Prisma.inscriptionWhereInput
 }
 
-export type InscriptionUpdateToOneWithWhereWithoutDossierScolariteInput = {
-  where?: Prisma.InscriptionWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutDossierScolariteInput, Prisma.InscriptionUncheckedUpdateWithoutDossierScolariteInput>
+export type inscriptionUpdateToOneWithWhereWithoutDecisionfinanneeInput = {
+  where?: Prisma.inscriptionWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutDecisionfinanneeInput, Prisma.inscriptionUncheckedUpdateWithoutDecisionfinanneeInput>
 }
 
-export type InscriptionUpdateWithoutDossierScolariteInput = {
+export type inscriptionUpdateWithoutDecisionfinanneeInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateWithoutDossierScolariteInput = {
+export type inscriptionUncheckedUpdateWithoutDecisionfinanneeInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionCreateWithoutDecisionFinaleInput = {
+export type inscriptionCreateWithoutDossierscolariteInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   createdAt?: Date | string
   updatedAt?: Date | string
-  apprenant: Prisma.ApprenantCreateNestedOneWithoutInscriptionsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutInscriptionInput
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutInscriptionInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutInscriptionInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedOneWithoutInscriptionInput
-  bulletins?: Prisma.BulletinCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionUncheckedCreateWithoutDecisionFinaleInput = {
+export type inscriptionUncheckedCreateWithoutDossierscolariteInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput
-  bulletins?: Prisma.BulletinUncheckedCreateNestedManyWithoutInscriptionInput
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutInscriptionInput
-  absences?: Prisma.AbsenceUncheckedCreateNestedManyWithoutInscriptionInput
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutInscriptionInput
 }
 
-export type InscriptionCreateOrConnectWithoutDecisionFinaleInput = {
-  where: Prisma.InscriptionWhereUniqueInput
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutDecisionFinaleInput, Prisma.InscriptionUncheckedCreateWithoutDecisionFinaleInput>
+export type inscriptionCreateOrConnectWithoutDossierscolariteInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutDossierscolariteInput, Prisma.inscriptionUncheckedCreateWithoutDossierscolariteInput>
 }
 
-export type InscriptionUpsertWithoutDecisionFinaleInput = {
-  update: Prisma.XOR<Prisma.InscriptionUpdateWithoutDecisionFinaleInput, Prisma.InscriptionUncheckedUpdateWithoutDecisionFinaleInput>
-  create: Prisma.XOR<Prisma.InscriptionCreateWithoutDecisionFinaleInput, Prisma.InscriptionUncheckedCreateWithoutDecisionFinaleInput>
-  where?: Prisma.InscriptionWhereInput
+export type inscriptionUpsertWithoutDossierscolariteInput = {
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutDossierscolariteInput, Prisma.inscriptionUncheckedUpdateWithoutDossierscolariteInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutDossierscolariteInput, Prisma.inscriptionUncheckedCreateWithoutDossierscolariteInput>
+  where?: Prisma.inscriptionWhereInput
 }
 
-export type InscriptionUpdateToOneWithWhereWithoutDecisionFinaleInput = {
-  where?: Prisma.InscriptionWhereInput
-  data: Prisma.XOR<Prisma.InscriptionUpdateWithoutDecisionFinaleInput, Prisma.InscriptionUncheckedUpdateWithoutDecisionFinaleInput>
+export type inscriptionUpdateToOneWithWhereWithoutDossierscolariteInput = {
+  where?: Prisma.inscriptionWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutDossierscolariteInput, Prisma.inscriptionUncheckedUpdateWithoutDossierscolariteInput>
 }
 
-export type InscriptionUpdateWithoutDecisionFinaleInput = {
+export type inscriptionUpdateWithoutDossierscolariteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateWithoutDecisionFinaleInput = {
+export type inscriptionUncheckedUpdateWithoutDossierscolariteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionCreateManyApprenantInput = {
+export type inscriptionCreateWithoutNoteInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  absence?: Prisma.absenceCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedOneWithoutInscriptionInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutInscriptionInput
+  apprenant: Prisma.apprenantCreateNestedOneWithoutInscriptionInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutInscriptionInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutInscriptionInput
+}
+
+export type inscriptionUncheckedCreateWithoutNoteInput = {
+  matricule?: string | null
+  dateInscription?: Date | string
+  type: $Enums.inscription_type
+  apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
   configuartionScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  absence?: Prisma.absenceUncheckedCreateNestedManyWithoutInscriptionInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutInscriptionInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput
 }
 
-export type InscriptionUpdateWithoutApprenantInput = {
+export type inscriptionCreateOrConnectWithoutNoteInput = {
+  where: Prisma.inscriptionWhereUniqueInput
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutNoteInput, Prisma.inscriptionUncheckedCreateWithoutNoteInput>
+}
+
+export type inscriptionUpsertWithoutNoteInput = {
+  update: Prisma.XOR<Prisma.inscriptionUpdateWithoutNoteInput, Prisma.inscriptionUncheckedUpdateWithoutNoteInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateWithoutNoteInput, Prisma.inscriptionUncheckedCreateWithoutNoteInput>
+  where?: Prisma.inscriptionWhereInput
+}
+
+export type inscriptionUpdateToOneWithWhereWithoutNoteInput = {
+  where?: Prisma.inscriptionWhereInput
+  data: Prisma.XOR<Prisma.inscriptionUpdateWithoutNoteInput, Prisma.inscriptionUncheckedUpdateWithoutNoteInput>
+}
+
+export type inscriptionUpdateWithoutNoteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateWithoutApprenantInput = {
+export type inscriptionUncheckedUpdateWithoutNoteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateManyWithoutApprenantInput = {
-  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type InscriptionCreateManyAnneeScolaireInput = {
+export type inscriptionCreateManyAnneescolaireInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   classeScolaireId: string
   configuartionScolariteId: string
@@ -1424,42 +1370,42 @@ export type InscriptionCreateManyAnneeScolaireInput = {
   updatedAt?: Date | string
 }
 
-export type InscriptionUpdateWithoutAnneeScolaireInput = {
+export type inscriptionUpdateWithoutAnneescolaireInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateWithoutAnneeScolaireInput = {
+export type inscriptionUncheckedUpdateWithoutAnneescolaireInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateManyWithoutAnneeScolaireInput = {
+export type inscriptionUncheckedUpdateManyWithoutAnneescolaireInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1467,10 +1413,64 @@ export type InscriptionUncheckedUpdateManyWithoutAnneeScolaireInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type InscriptionCreateManyClasseScolaireInput = {
+export type inscriptionCreateManyApprenantInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
+  anneeScolaireId: string
+  classeScolaireId: string
+  configuartionScolariteId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type inscriptionUpdateWithoutApprenantInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
+}
+
+export type inscriptionUncheckedUpdateWithoutApprenantInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
+}
+
+export type inscriptionUncheckedUpdateManyWithoutApprenantInput = {
+  matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type inscriptionCreateManyClassscolaireInput = {
+  matricule?: string | null
+  dateInscription?: Date | string
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   configuartionScolariteId: string
@@ -1478,42 +1478,42 @@ export type InscriptionCreateManyClasseScolaireInput = {
   updatedAt?: Date | string
 }
 
-export type InscriptionUpdateWithoutClasseScolaireInput = {
+export type inscriptionUpdateWithoutClassscolaireInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateWithoutClasseScolaireInput = {
+export type inscriptionUncheckedUpdateWithoutClassscolaireInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateManyWithoutClasseScolaireInput = {
+export type inscriptionUncheckedUpdateManyWithoutClassscolaireInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   configuartionScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1521,10 +1521,10 @@ export type InscriptionUncheckedUpdateManyWithoutClasseScolaireInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type InscriptionCreateManyConfigurationScolariteInput = {
+export type inscriptionCreateManyConfigurationscolariteInput = {
   matricule?: string | null
   dateInscription?: Date | string
-  type: $Enums.InscriptionType
+  type: $Enums.inscription_type
   apprenantId: string
   anneeScolaireId: string
   classeScolaireId: string
@@ -1532,42 +1532,42 @@ export type InscriptionCreateManyConfigurationScolariteInput = {
   updatedAt?: Date | string
 }
 
-export type InscriptionUpdateWithoutConfigurationScolariteInput = {
+export type inscriptionUpdateWithoutConfigurationscolariteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenant?: Prisma.ApprenantUpdateOneRequiredWithoutInscriptionsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutInscriptionNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateOneWithoutInscriptionNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  apprenant?: Prisma.apprenantUpdateOneRequiredWithoutInscriptionNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutInscriptionNestedInput
+  note?: Prisma.noteUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateWithoutConfigurationScolariteInput = {
+export type inscriptionUncheckedUpdateWithoutConfigurationscolariteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput
-  decisionFinale?: Prisma.DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput
-  bulletins?: Prisma.BulletinUncheckedUpdateManyWithoutInscriptionNestedInput
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutInscriptionNestedInput
-  absences?: Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  absence?: Prisma.absenceUncheckedUpdateManyWithoutInscriptionNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutInscriptionNestedInput
+  decisionfinannee?: Prisma.decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutInscriptionNestedInput
 }
 
-export type InscriptionUncheckedUpdateManyWithoutConfigurationScolariteInput = {
+export type inscriptionUncheckedUpdateManyWithoutConfigurationscolariteInput = {
   matricule?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateInscription?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  type?: Prisma.EnumInscriptionTypeFieldUpdateOperationsInput | $Enums.InscriptionType
+  type?: Prisma.Enuminscription_typeFieldUpdateOperationsInput | $Enums.inscription_type
   apprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1581,15 +1581,15 @@ export type InscriptionUncheckedUpdateManyWithoutConfigurationScolariteInput = {
  */
 
 export type InscriptionCountOutputType = {
-  bulletins: number
-  notes: number
-  absences: number
+  absence: number
+  bulletin: number
+  note: number
 }
 
 export type InscriptionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  bulletins?: boolean | InscriptionCountOutputTypeCountBulletinsArgs
-  notes?: boolean | InscriptionCountOutputTypeCountNotesArgs
-  absences?: boolean | InscriptionCountOutputTypeCountAbsencesArgs
+  absence?: boolean | InscriptionCountOutputTypeCountAbsenceArgs
+  bulletin?: boolean | InscriptionCountOutputTypeCountBulletinArgs
+  note?: boolean | InscriptionCountOutputTypeCountNoteArgs
 }
 
 /**
@@ -1605,26 +1605,26 @@ export type InscriptionCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.
 /**
  * InscriptionCountOutputType without action
  */
-export type InscriptionCountOutputTypeCountBulletinsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.BulletinWhereInput
+export type InscriptionCountOutputTypeCountAbsenceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.absenceWhereInput
 }
 
 /**
  * InscriptionCountOutputType without action
  */
-export type InscriptionCountOutputTypeCountNotesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NoteWhereInput
+export type InscriptionCountOutputTypeCountBulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.bulletinWhereInput
 }
 
 /**
  * InscriptionCountOutputType without action
  */
-export type InscriptionCountOutputTypeCountAbsencesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AbsenceWhereInput
+export type InscriptionCountOutputTypeCountNoteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.noteWhereInput
 }
 
 
-export type InscriptionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type inscriptionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   matricule?: boolean
   dateInscription?: boolean
   type?: boolean
@@ -1634,21 +1634,21 @@ export type InscriptionSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   configuartionScolariteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  apprenant?: boolean | Prisma.ApprenantDefaultArgs<ExtArgs>
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.ClassScolaireDefaultArgs<ExtArgs>
-  configurationScolarite?: boolean | Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>
-  dossierScolarite?: boolean | Prisma.Inscription$dossierScolariteArgs<ExtArgs>
-  decisionFinale?: boolean | Prisma.Inscription$decisionFinaleArgs<ExtArgs>
-  bulletins?: boolean | Prisma.Inscription$bulletinsArgs<ExtArgs>
-  notes?: boolean | Prisma.Inscription$notesArgs<ExtArgs>
-  absences?: boolean | Prisma.Inscription$absencesArgs<ExtArgs>
+  absence?: boolean | Prisma.inscription$absenceArgs<ExtArgs>
+  bulletin?: boolean | Prisma.inscription$bulletinArgs<ExtArgs>
+  decisionfinannee?: boolean | Prisma.inscription$decisionfinanneeArgs<ExtArgs>
+  dossierscolarite?: boolean | Prisma.inscription$dossierscolariteArgs<ExtArgs>
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  apprenant?: boolean | Prisma.apprenantDefaultArgs<ExtArgs>
+  classscolaire?: boolean | Prisma.classscolaireDefaultArgs<ExtArgs>
+  configurationscolarite?: boolean | Prisma.configurationscolariteDefaultArgs<ExtArgs>
+  note?: boolean | Prisma.inscription$noteArgs<ExtArgs>
   _count?: boolean | Prisma.InscriptionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["inscription"]>
 
 
 
-export type InscriptionSelectScalar = {
+export type inscriptionSelectScalar = {
   matricule?: boolean
   dateInscription?: boolean
   type?: boolean
@@ -1660,37 +1660,37 @@ export type InscriptionSelectScalar = {
   updatedAt?: boolean
 }
 
-export type InscriptionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"matricule" | "dateInscription" | "type" | "apprenantId" | "anneeScolaireId" | "classeScolaireId" | "configuartionScolariteId" | "createdAt" | "updatedAt", ExtArgs["result"]["inscription"]>
-export type InscriptionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  apprenant?: boolean | Prisma.ApprenantDefaultArgs<ExtArgs>
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.ClassScolaireDefaultArgs<ExtArgs>
-  configurationScolarite?: boolean | Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>
-  dossierScolarite?: boolean | Prisma.Inscription$dossierScolariteArgs<ExtArgs>
-  decisionFinale?: boolean | Prisma.Inscription$decisionFinaleArgs<ExtArgs>
-  bulletins?: boolean | Prisma.Inscription$bulletinsArgs<ExtArgs>
-  notes?: boolean | Prisma.Inscription$notesArgs<ExtArgs>
-  absences?: boolean | Prisma.Inscription$absencesArgs<ExtArgs>
+export type inscriptionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"matricule" | "dateInscription" | "type" | "apprenantId" | "anneeScolaireId" | "classeScolaireId" | "configuartionScolariteId" | "createdAt" | "updatedAt", ExtArgs["result"]["inscription"]>
+export type inscriptionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  absence?: boolean | Prisma.inscription$absenceArgs<ExtArgs>
+  bulletin?: boolean | Prisma.inscription$bulletinArgs<ExtArgs>
+  decisionfinannee?: boolean | Prisma.inscription$decisionfinanneeArgs<ExtArgs>
+  dossierscolarite?: boolean | Prisma.inscription$dossierscolariteArgs<ExtArgs>
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  apprenant?: boolean | Prisma.apprenantDefaultArgs<ExtArgs>
+  classscolaire?: boolean | Prisma.classscolaireDefaultArgs<ExtArgs>
+  configurationscolarite?: boolean | Prisma.configurationscolariteDefaultArgs<ExtArgs>
+  note?: boolean | Prisma.inscription$noteArgs<ExtArgs>
   _count?: boolean | Prisma.InscriptionCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $InscriptionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Inscription"
+export type $inscriptionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "inscription"
   objects: {
-    apprenant: Prisma.$ApprenantPayload<ExtArgs>
-    anneeScolaire: Prisma.$AnneeScolairePayload<ExtArgs>
-    classeScolaire: Prisma.$ClassScolairePayload<ExtArgs>
-    configurationScolarite: Prisma.$ConfigurationScolaritePayload<ExtArgs>
-    dossierScolarite: Prisma.$DossierScolaritePayload<ExtArgs> | null
-    decisionFinale: Prisma.$DecisionFinAnneePayload<ExtArgs> | null
-    bulletins: Prisma.$BulletinPayload<ExtArgs>[]
-    notes: Prisma.$NotePayload<ExtArgs>[]
-    absences: Prisma.$AbsencePayload<ExtArgs>[]
+    absence: Prisma.$absencePayload<ExtArgs>[]
+    bulletin: Prisma.$bulletinPayload<ExtArgs>[]
+    decisionfinannee: Prisma.$decisionfinanneePayload<ExtArgs> | null
+    dossierscolarite: Prisma.$dossierscolaritePayload<ExtArgs> | null
+    anneescolaire: Prisma.$anneescolairePayload<ExtArgs>
+    apprenant: Prisma.$apprenantPayload<ExtArgs>
+    classscolaire: Prisma.$classscolairePayload<ExtArgs>
+    configurationscolarite: Prisma.$configurationscolaritePayload<ExtArgs>
+    note: Prisma.$notePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     matricule: string | null
     dateInscription: Date
-    type: $Enums.InscriptionType
+    type: $Enums.inscription_type
     apprenantId: string
     anneeScolaireId: string
     classeScolaireId: string
@@ -1701,18 +1701,18 @@ export type $InscriptionPayload<ExtArgs extends runtime.Types.Extensions.Interna
   composites: {}
 }
 
-export type InscriptionGetPayload<S extends boolean | null | undefined | InscriptionDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$InscriptionPayload, S>
+export type inscriptionGetPayload<S extends boolean | null | undefined | inscriptionDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$inscriptionPayload, S>
 
-export type InscriptionCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<InscriptionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type inscriptionCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<inscriptionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: InscriptionCountAggregateInputType | true
   }
 
-export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Inscription'], meta: { name: 'Inscription' } }
+export interface inscriptionDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['inscription'], meta: { name: 'inscription' } }
   /**
    * Find zero or one Inscription that matches the filter.
-   * @param {InscriptionFindUniqueArgs} args - Arguments to find a Inscription
+   * @param {inscriptionFindUniqueArgs} args - Arguments to find a Inscription
    * @example
    * // Get one Inscription
    * const inscription = await prisma.inscription.findUnique({
@@ -1721,12 +1721,12 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   }
    * })
    */
-  findUnique<T extends InscriptionFindUniqueArgs>(args: Prisma.SelectSubset<T, InscriptionFindUniqueArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends inscriptionFindUniqueArgs>(args: Prisma.SelectSubset<T, inscriptionFindUniqueArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Inscription that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {InscriptionFindUniqueOrThrowArgs} args - Arguments to find a Inscription
+   * @param {inscriptionFindUniqueOrThrowArgs} args - Arguments to find a Inscription
    * @example
    * // Get one Inscription
    * const inscription = await prisma.inscription.findUniqueOrThrow({
@@ -1735,13 +1735,13 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   }
    * })
    */
-  findUniqueOrThrow<T extends InscriptionFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, InscriptionFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends inscriptionFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, inscriptionFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Inscription that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {InscriptionFindFirstArgs} args - Arguments to find a Inscription
+   * @param {inscriptionFindFirstArgs} args - Arguments to find a Inscription
    * @example
    * // Get one Inscription
    * const inscription = await prisma.inscription.findFirst({
@@ -1750,14 +1750,14 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   }
    * })
    */
-  findFirst<T extends InscriptionFindFirstArgs>(args?: Prisma.SelectSubset<T, InscriptionFindFirstArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends inscriptionFindFirstArgs>(args?: Prisma.SelectSubset<T, inscriptionFindFirstArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Inscription that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {InscriptionFindFirstOrThrowArgs} args - Arguments to find a Inscription
+   * @param {inscriptionFindFirstOrThrowArgs} args - Arguments to find a Inscription
    * @example
    * // Get one Inscription
    * const inscription = await prisma.inscription.findFirstOrThrow({
@@ -1766,13 +1766,13 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   }
    * })
    */
-  findFirstOrThrow<T extends InscriptionFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, InscriptionFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends inscriptionFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, inscriptionFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Inscriptions that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {InscriptionFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {inscriptionFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Inscriptions
    * const inscriptions = await prisma.inscription.findMany()
@@ -1784,11 +1784,11 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * const inscriptionWithMatriculeOnly = await prisma.inscription.findMany({ select: { matricule: true } })
    * 
    */
-  findMany<T extends InscriptionFindManyArgs>(args?: Prisma.SelectSubset<T, InscriptionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends inscriptionFindManyArgs>(args?: Prisma.SelectSubset<T, inscriptionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Inscription.
-   * @param {InscriptionCreateArgs} args - Arguments to create a Inscription.
+   * @param {inscriptionCreateArgs} args - Arguments to create a Inscription.
    * @example
    * // Create one Inscription
    * const Inscription = await prisma.inscription.create({
@@ -1798,11 +1798,11 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  create<T extends InscriptionCreateArgs>(args: Prisma.SelectSubset<T, InscriptionCreateArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends inscriptionCreateArgs>(args: Prisma.SelectSubset<T, inscriptionCreateArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Inscriptions.
-   * @param {InscriptionCreateManyArgs} args - Arguments to create many Inscriptions.
+   * @param {inscriptionCreateManyArgs} args - Arguments to create many Inscriptions.
    * @example
    * // Create many Inscriptions
    * const inscription = await prisma.inscription.createMany({
@@ -1812,11 +1812,11 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    *     
    */
-  createMany<T extends InscriptionCreateManyArgs>(args?: Prisma.SelectSubset<T, InscriptionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends inscriptionCreateManyArgs>(args?: Prisma.SelectSubset<T, inscriptionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Inscription.
-   * @param {InscriptionDeleteArgs} args - Arguments to delete one Inscription.
+   * @param {inscriptionDeleteArgs} args - Arguments to delete one Inscription.
    * @example
    * // Delete one Inscription
    * const Inscription = await prisma.inscription.delete({
@@ -1826,11 +1826,11 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  delete<T extends InscriptionDeleteArgs>(args: Prisma.SelectSubset<T, InscriptionDeleteArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends inscriptionDeleteArgs>(args: Prisma.SelectSubset<T, inscriptionDeleteArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Inscription.
-   * @param {InscriptionUpdateArgs} args - Arguments to update one Inscription.
+   * @param {inscriptionUpdateArgs} args - Arguments to update one Inscription.
    * @example
    * // Update one Inscription
    * const inscription = await prisma.inscription.update({
@@ -1843,11 +1843,11 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  update<T extends InscriptionUpdateArgs>(args: Prisma.SelectSubset<T, InscriptionUpdateArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends inscriptionUpdateArgs>(args: Prisma.SelectSubset<T, inscriptionUpdateArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Inscriptions.
-   * @param {InscriptionDeleteManyArgs} args - Arguments to filter Inscriptions to delete.
+   * @param {inscriptionDeleteManyArgs} args - Arguments to filter Inscriptions to delete.
    * @example
    * // Delete a few Inscriptions
    * const { count } = await prisma.inscription.deleteMany({
@@ -1857,13 +1857,13 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  deleteMany<T extends InscriptionDeleteManyArgs>(args?: Prisma.SelectSubset<T, InscriptionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends inscriptionDeleteManyArgs>(args?: Prisma.SelectSubset<T, inscriptionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Inscriptions.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {InscriptionUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {inscriptionUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Inscriptions
    * const inscription = await prisma.inscription.updateMany({
@@ -1876,11 +1876,11 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * })
    * 
    */
-  updateMany<T extends InscriptionUpdateManyArgs>(args: Prisma.SelectSubset<T, InscriptionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends inscriptionUpdateManyArgs>(args: Prisma.SelectSubset<T, inscriptionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Inscription.
-   * @param {InscriptionUpsertArgs} args - Arguments to update or create a Inscription.
+   * @param {inscriptionUpsertArgs} args - Arguments to update or create a Inscription.
    * @example
    * // Update or create a Inscription
    * const inscription = await prisma.inscription.upsert({
@@ -1895,14 +1895,14 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   }
    * })
    */
-  upsert<T extends InscriptionUpsertArgs>(args: Prisma.SelectSubset<T, InscriptionUpsertArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends inscriptionUpsertArgs>(args: Prisma.SelectSubset<T, inscriptionUpsertArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Inscriptions.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {InscriptionCountArgs} args - Arguments to filter Inscriptions to count.
+   * @param {inscriptionCountArgs} args - Arguments to filter Inscriptions to count.
    * @example
    * // Count the number of Inscriptions
    * const count = await prisma.inscription.count({
@@ -1911,8 +1911,8 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    *   }
    * })
   **/
-  count<T extends InscriptionCountArgs>(
-    args?: Prisma.Subset<T, InscriptionCountArgs>,
+  count<T extends inscriptionCountArgs>(
+    args?: Prisma.Subset<T, inscriptionCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1951,7 +1951,7 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * Group by Inscription.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {InscriptionGroupByArgs} args - Group by arguments.
+   * @param {inscriptionGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1966,14 +1966,14 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
    * 
   **/
   groupBy<
-    T extends InscriptionGroupByArgs,
+    T extends inscriptionGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: InscriptionGroupByArgs['orderBy'] }
-      : { orderBy?: InscriptionGroupByArgs['orderBy'] },
+      ? { orderBy: inscriptionGroupByArgs['orderBy'] }
+      : { orderBy?: inscriptionGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -2022,30 +2022,30 @@ export interface InscriptionDelegate<ExtArgs extends runtime.Types.Extensions.In
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, InscriptionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInscriptionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, inscriptionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInscriptionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Inscription model
+ * Fields of the inscription model
  */
-readonly fields: InscriptionFieldRefs;
+readonly fields: inscriptionFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Inscription.
+ * The delegate class that acts as a "Promise-like" for inscription.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__InscriptionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__inscriptionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  apprenant<T extends Prisma.ApprenantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ApprenantDefaultArgs<ExtArgs>>): Prisma.Prisma__ApprenantClient<runtime.Types.Result.GetResult<Prisma.$ApprenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  anneeScolaire<T extends Prisma.AnneeScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AnneeScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__AnneeScolaireClient<runtime.Types.Result.GetResult<Prisma.$AnneeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  classeScolaire<T extends Prisma.ClassScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassScolaireClient<runtime.Types.Result.GetResult<Prisma.$ClassScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  configurationScolarite<T extends Prisma.ConfigurationScolariteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  dossierScolarite<T extends Prisma.Inscription$dossierScolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Inscription$dossierScolariteArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  decisionFinale<T extends Prisma.Inscription$decisionFinaleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Inscription$decisionFinaleArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  bulletins<T extends Prisma.Inscription$bulletinsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Inscription$bulletinsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  notes<T extends Prisma.Inscription$notesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Inscription$notesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  absences<T extends Prisma.Inscription$absencesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Inscription$absencesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  absence<T extends Prisma.inscription$absenceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscription$absenceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  bulletin<T extends Prisma.inscription$bulletinArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscription$bulletinArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  decisionfinannee<T extends Prisma.inscription$decisionfinanneeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscription$decisionfinanneeArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  dossierscolarite<T extends Prisma.inscription$dossierscolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscription$dossierscolariteArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  anneescolaire<T extends Prisma.anneescolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.anneescolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__anneescolaireClient<runtime.Types.Result.GetResult<Prisma.$anneescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  apprenant<T extends Prisma.apprenantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.apprenantDefaultArgs<ExtArgs>>): Prisma.Prisma__apprenantClient<runtime.Types.Result.GetResult<Prisma.$apprenantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  classscolaire<T extends Prisma.classscolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.classscolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__classscolaireClient<runtime.Types.Result.GetResult<Prisma.$classscolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  configurationscolarite<T extends Prisma.configurationscolariteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.configurationscolariteDefaultArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  note<T extends Prisma.inscription$noteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscription$noteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$notePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2072,489 +2072,489 @@ export interface Prisma__InscriptionClient<T, Null = never, ExtArgs extends runt
 
 
 /**
- * Fields of the Inscription model
+ * Fields of the inscription model
  */
-export interface InscriptionFieldRefs {
-  readonly matricule: Prisma.FieldRef<"Inscription", 'String'>
-  readonly dateInscription: Prisma.FieldRef<"Inscription", 'DateTime'>
-  readonly type: Prisma.FieldRef<"Inscription", 'InscriptionType'>
-  readonly apprenantId: Prisma.FieldRef<"Inscription", 'String'>
-  readonly anneeScolaireId: Prisma.FieldRef<"Inscription", 'String'>
-  readonly classeScolaireId: Prisma.FieldRef<"Inscription", 'String'>
-  readonly configuartionScolariteId: Prisma.FieldRef<"Inscription", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Inscription", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Inscription", 'DateTime'>
+export interface inscriptionFieldRefs {
+  readonly matricule: Prisma.FieldRef<"inscription", 'String'>
+  readonly dateInscription: Prisma.FieldRef<"inscription", 'DateTime'>
+  readonly type: Prisma.FieldRef<"inscription", 'inscription_type'>
+  readonly apprenantId: Prisma.FieldRef<"inscription", 'String'>
+  readonly anneeScolaireId: Prisma.FieldRef<"inscription", 'String'>
+  readonly classeScolaireId: Prisma.FieldRef<"inscription", 'String'>
+  readonly configuartionScolariteId: Prisma.FieldRef<"inscription", 'String'>
+  readonly createdAt: Prisma.FieldRef<"inscription", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"inscription", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Inscription findUnique
+ * inscription findUnique
  */
-export type InscriptionFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * Filter, which Inscription to fetch.
+   * Filter, which inscription to fetch.
    */
-  where: Prisma.InscriptionWhereUniqueInput
+  where: Prisma.inscriptionWhereUniqueInput
 }
 
 /**
- * Inscription findUniqueOrThrow
+ * inscription findUniqueOrThrow
  */
-export type InscriptionFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * Filter, which Inscription to fetch.
+   * Filter, which inscription to fetch.
    */
-  where: Prisma.InscriptionWhereUniqueInput
+  where: Prisma.inscriptionWhereUniqueInput
 }
 
 /**
- * Inscription findFirst
+ * inscription findFirst
  */
-export type InscriptionFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * Filter, which Inscription to fetch.
+   * Filter, which inscription to fetch.
    */
-  where?: Prisma.InscriptionWhereInput
+  where?: Prisma.inscriptionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Inscriptions to fetch.
+   * Determine the order of inscriptions to fetch.
    */
-  orderBy?: Prisma.InscriptionOrderByWithRelationInput | Prisma.InscriptionOrderByWithRelationInput[]
+  orderBy?: Prisma.inscriptionOrderByWithRelationInput | Prisma.inscriptionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Inscriptions.
+   * Sets the position for searching for inscriptions.
    */
-  cursor?: Prisma.InscriptionWhereUniqueInput
+  cursor?: Prisma.inscriptionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Inscriptions from the position of the cursor.
+   * Take `±n` inscriptions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Inscriptions.
+   * Skip the first `n` inscriptions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Inscriptions.
+   * Filter by unique combinations of inscriptions.
    */
   distinct?: Prisma.InscriptionScalarFieldEnum | Prisma.InscriptionScalarFieldEnum[]
 }
 
 /**
- * Inscription findFirstOrThrow
+ * inscription findFirstOrThrow
  */
-export type InscriptionFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * Filter, which Inscription to fetch.
+   * Filter, which inscription to fetch.
    */
-  where?: Prisma.InscriptionWhereInput
+  where?: Prisma.inscriptionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Inscriptions to fetch.
+   * Determine the order of inscriptions to fetch.
    */
-  orderBy?: Prisma.InscriptionOrderByWithRelationInput | Prisma.InscriptionOrderByWithRelationInput[]
+  orderBy?: Prisma.inscriptionOrderByWithRelationInput | Prisma.inscriptionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Inscriptions.
+   * Sets the position for searching for inscriptions.
    */
-  cursor?: Prisma.InscriptionWhereUniqueInput
+  cursor?: Prisma.inscriptionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Inscriptions from the position of the cursor.
+   * Take `±n` inscriptions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Inscriptions.
+   * Skip the first `n` inscriptions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Inscriptions.
+   * Filter by unique combinations of inscriptions.
    */
   distinct?: Prisma.InscriptionScalarFieldEnum | Prisma.InscriptionScalarFieldEnum[]
 }
 
 /**
- * Inscription findMany
+ * inscription findMany
  */
-export type InscriptionFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * Filter, which Inscriptions to fetch.
+   * Filter, which inscriptions to fetch.
    */
-  where?: Prisma.InscriptionWhereInput
+  where?: Prisma.inscriptionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Inscriptions to fetch.
+   * Determine the order of inscriptions to fetch.
    */
-  orderBy?: Prisma.InscriptionOrderByWithRelationInput | Prisma.InscriptionOrderByWithRelationInput[]
+  orderBy?: Prisma.inscriptionOrderByWithRelationInput | Prisma.inscriptionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Inscriptions.
+   * Sets the position for listing inscriptions.
    */
-  cursor?: Prisma.InscriptionWhereUniqueInput
+  cursor?: Prisma.inscriptionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Inscriptions from the position of the cursor.
+   * Take `±n` inscriptions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Inscriptions.
+   * Skip the first `n` inscriptions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Inscriptions.
+   * Filter by unique combinations of inscriptions.
    */
   distinct?: Prisma.InscriptionScalarFieldEnum | Prisma.InscriptionScalarFieldEnum[]
 }
 
 /**
- * Inscription create
+ * inscription create
  */
-export type InscriptionCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * The data needed to create a Inscription.
+   * The data needed to create a inscription.
    */
-  data: Prisma.XOR<Prisma.InscriptionCreateInput, Prisma.InscriptionUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.inscriptionCreateInput, Prisma.inscriptionUncheckedCreateInput>
 }
 
 /**
- * Inscription createMany
+ * inscription createMany
  */
-export type InscriptionCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Inscriptions.
+   * The data used to create many inscriptions.
    */
-  data: Prisma.InscriptionCreateManyInput | Prisma.InscriptionCreateManyInput[]
+  data: Prisma.inscriptionCreateManyInput | Prisma.inscriptionCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Inscription update
+ * inscription update
  */
-export type InscriptionUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * The data needed to update a Inscription.
+   * The data needed to update a inscription.
    */
-  data: Prisma.XOR<Prisma.InscriptionUpdateInput, Prisma.InscriptionUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.inscriptionUpdateInput, Prisma.inscriptionUncheckedUpdateInput>
   /**
-   * Choose, which Inscription to update.
+   * Choose, which inscription to update.
    */
-  where: Prisma.InscriptionWhereUniqueInput
+  where: Prisma.inscriptionWhereUniqueInput
 }
 
 /**
- * Inscription updateMany
+ * inscription updateMany
  */
-export type InscriptionUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Inscriptions.
+   * The data used to update inscriptions.
    */
-  data: Prisma.XOR<Prisma.InscriptionUpdateManyMutationInput, Prisma.InscriptionUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.inscriptionUpdateManyMutationInput, Prisma.inscriptionUncheckedUpdateManyInput>
   /**
-   * Filter which Inscriptions to update
+   * Filter which inscriptions to update
    */
-  where?: Prisma.InscriptionWhereInput
+  where?: Prisma.inscriptionWhereInput
   /**
-   * Limit how many Inscriptions to update.
+   * Limit how many inscriptions to update.
    */
   limit?: number
 }
 
 /**
- * Inscription upsert
+ * inscription upsert
  */
-export type InscriptionUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * The filter to search for the Inscription to update in case it exists.
+   * The filter to search for the inscription to update in case it exists.
    */
-  where: Prisma.InscriptionWhereUniqueInput
+  where: Prisma.inscriptionWhereUniqueInput
   /**
-   * In case the Inscription found by the `where` argument doesn't exist, create a new Inscription with this data.
+   * In case the inscription found by the `where` argument doesn't exist, create a new inscription with this data.
    */
-  create: Prisma.XOR<Prisma.InscriptionCreateInput, Prisma.InscriptionUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.inscriptionCreateInput, Prisma.inscriptionUncheckedCreateInput>
   /**
-   * In case the Inscription was found with the provided `where` argument, update it with this data.
+   * In case the inscription was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.InscriptionUpdateInput, Prisma.InscriptionUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.inscriptionUpdateInput, Prisma.inscriptionUncheckedUpdateInput>
 }
 
 /**
- * Inscription delete
+ * inscription delete
  */
-export type InscriptionDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the inscription
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the inscription
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
   /**
-   * Filter which Inscription to delete.
+   * Filter which inscription to delete.
    */
-  where: Prisma.InscriptionWhereUniqueInput
+  where: Prisma.inscriptionWhereUniqueInput
 }
 
 /**
- * Inscription deleteMany
+ * inscription deleteMany
  */
-export type InscriptionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscriptionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Inscriptions to delete
+   * Filter which inscriptions to delete
    */
-  where?: Prisma.InscriptionWhereInput
+  where?: Prisma.inscriptionWhereInput
   /**
-   * Limit how many Inscriptions to delete.
+   * Limit how many inscriptions to delete.
    */
   limit?: number
 }
 
 /**
- * Inscription.dossierScolarite
+ * inscription.absence
  */
-export type Inscription$dossierScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscription$absenceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
-  where?: Prisma.DossierScolariteWhereInput
-}
-
-/**
- * Inscription.decisionFinale
- */
-export type Inscription$decisionFinaleArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the DecisionFinAnnee
-   */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the DecisionFinAnnee
-   */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
-  where?: Prisma.DecisionFinAnneeWhereInput
-}
-
-/**
- * Inscription.bulletins
- */
-export type Inscription$bulletinsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Bulletin
-   */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Bulletin
-   */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
-  where?: Prisma.BulletinWhereInput
-  orderBy?: Prisma.BulletinOrderByWithRelationInput | Prisma.BulletinOrderByWithRelationInput[]
-  cursor?: Prisma.BulletinWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.BulletinScalarFieldEnum | Prisma.BulletinScalarFieldEnum[]
-}
-
-/**
- * Inscription.notes
- */
-export type Inscription$notesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Note
-   */
-  select?: Prisma.NoteSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Note
-   */
-  omit?: Prisma.NoteOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.NoteInclude<ExtArgs> | null
-  where?: Prisma.NoteWhereInput
-  orderBy?: Prisma.NoteOrderByWithRelationInput | Prisma.NoteOrderByWithRelationInput[]
-  cursor?: Prisma.NoteWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.NoteScalarFieldEnum | Prisma.NoteScalarFieldEnum[]
-}
-
-/**
- * Inscription.absences
- */
-export type Inscription$absencesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Absence
-   */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Absence
-   */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
-  where?: Prisma.AbsenceWhereInput
-  orderBy?: Prisma.AbsenceOrderByWithRelationInput | Prisma.AbsenceOrderByWithRelationInput[]
-  cursor?: Prisma.AbsenceWhereUniqueInput
+  include?: Prisma.absenceInclude<ExtArgs> | null
+  where?: Prisma.absenceWhereInput
+  orderBy?: Prisma.absenceOrderByWithRelationInput | Prisma.absenceOrderByWithRelationInput[]
+  cursor?: Prisma.absenceWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.AbsenceScalarFieldEnum | Prisma.AbsenceScalarFieldEnum[]
 }
 
 /**
- * Inscription without action
+ * inscription.bulletin
  */
-export type InscriptionDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type inscription$bulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
+  where?: Prisma.bulletinWhereInput
+  orderBy?: Prisma.bulletinOrderByWithRelationInput | Prisma.bulletinOrderByWithRelationInput[]
+  cursor?: Prisma.bulletinWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BulletinScalarFieldEnum | Prisma.BulletinScalarFieldEnum[]
+}
+
+/**
+ * inscription.decisionfinannee
+ */
+export type inscription$decisionfinanneeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the decisionfinannee
+   */
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the decisionfinannee
+   */
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
+  where?: Prisma.decisionfinanneeWhereInput
+}
+
+/**
+ * inscription.dossierscolarite
+ */
+export type inscription$dossierscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the dossierscolarite
+   */
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the dossierscolarite
+   */
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
+  where?: Prisma.dossierscolariteWhereInput
+}
+
+/**
+ * inscription.note
+ */
+export type inscription$noteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the note
+   */
+  select?: Prisma.noteSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the note
+   */
+  omit?: Prisma.noteOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.noteInclude<ExtArgs> | null
+  where?: Prisma.noteWhereInput
+  orderBy?: Prisma.noteOrderByWithRelationInput | Prisma.noteOrderByWithRelationInput[]
+  cursor?: Prisma.noteWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NoteScalarFieldEnum | Prisma.NoteScalarFieldEnum[]
+}
+
+/**
+ * inscription without action
+ */
+export type inscriptionDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the inscription
+   */
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the inscription
+   */
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
 }

@@ -9,36 +9,103 @@
 * 🟢 You can import this file directly.
 */
 
-export const UserStatut = {
-  ACTIF: 'ACTIF',
-  SUSPENDU: 'SUSPENDU',
-  DESACTIVE: 'DESACTIVE',
-  DOIT_MODIFIER_MDP: 'DOIT_MODIFIER_MDP'
+export const cibleannonce_public = {
+  TOUS: 'TOUS',
+  EMPLOYE: 'EMPLOYE',
+  PARENT: 'PARENT',
+  APPRENANT: 'APPRENANT'
 } as const
 
-export type UserStatut = (typeof UserStatut)[keyof typeof UserStatut]
+export type cibleannonce_public = (typeof cibleannonce_public)[keyof typeof cibleannonce_public]
 
 
-export const EcoleType = {
+export const conversation_type = {
+  PRIVEE: 'PRIVEE',
+  GROUPE: 'GROUPE'
+} as const
+
+export type conversation_type = (typeof conversation_type)[keyof typeof conversation_type]
+
+
+export const decisionfinannee_decision = {
+  ADMIS: 'ADMIS',
+  REDOUBLE: 'REDOUBLE',
+  EXCLU: 'EXCLU',
+  TRANSFERE: 'TRANSFERE'
+} as const
+
+export type decisionfinannee_decision = (typeof decisionfinannee_decision)[keyof typeof decisionfinannee_decision]
+
+
+export const apprenantparent_lien = {
+  PERE: 'PERE',
+  MERE: 'MERE',
+  TUTEUR: 'TUTEUR'
+} as const
+
+export type apprenantparent_lien = (typeof apprenantparent_lien)[keyof typeof apprenantparent_lien]
+
+
+export const ecole_type = {
   MATERNELLE_PRIMAIRE: 'MATERNELLE_PRIMAIRE',
   COLLEGE_LYCEE: 'COLLEGE_LYCEE',
   UNIVERSITE: 'UNIVERSITE'
 } as const
 
-export type EcoleType = (typeof EcoleType)[keyof typeof EcoleType]
+export type ecole_type = (typeof ecole_type)[keyof typeof ecole_type]
 
 
-export const EcoleStatut = {
-  EN_ATTENTE: 'EN_ATTENTE',
-  ACTIF: 'ACTIF',
-  SUSPENDU: 'SUSPENDU',
-  DESACTIVE: 'DESACTIVE'
+export const emploidutemps_jourDeLaSemaine = {
+  LUNDI: 'LUNDI',
+  MARDI: 'MARDI',
+  MERCREDI: 'MERCREDI',
+  JEUDI: 'JEUDI',
+  VENDREDI: 'VENDREDI',
+  SAMEDI: 'SAMEDI',
+  DIMANCHE: 'DIMANCHE'
 } as const
 
-export type EcoleStatut = (typeof EcoleStatut)[keyof typeof EcoleStatut]
+export type emploidutemps_jourDeLaSemaine = (typeof emploidutemps_jourDeLaSemaine)[keyof typeof emploidutemps_jourDeLaSemaine]
 
 
-export const Action = {
+export const employedocument_type = {
+  DIPLOME: 'DIPLOME',
+  CONTRAT: 'CONTRAT',
+  PIECE_IDENTITE: 'PIECE_IDENTITE',
+  JUSTIFICATIF: 'JUSTIFICATIF'
+} as const
+
+export type employedocument_type = (typeof employedocument_type)[keyof typeof employedocument_type]
+
+
+export const inscription_type = {
+  INSCRIPTION: 'INSCRIPTION',
+  REINSCRIPTION: 'REINSCRIPTION',
+  TRANSFERT_EN_COURS_D_ANNEE: 'TRANSFERT_EN_COURS_D_ANNEE'
+} as const
+
+export type inscription_type = (typeof inscription_type)[keyof typeof inscription_type]
+
+
+export const dossierscolarite_statut = {
+  A_JOUR: 'A_JOUR',
+  EN_RETARD: 'EN_RETARD',
+  SOLDEE: 'SOLDEE'
+} as const
+
+export type dossierscolarite_statut = (typeof dossierscolarite_statut)[keyof typeof dossierscolarite_statut]
+
+
+export const paiement_moyenPaiement = {
+  BANQUE: 'BANQUE',
+  MOBILE_MONEY: 'MOBILE_MONEY',
+  ESPECES: 'ESPECES'
+} as const
+
+export type paiement_moyenPaiement = (typeof paiement_moyenPaiement)[keyof typeof paiement_moyenPaiement]
+
+
+export const permission_action = {
   READ: 'READ',
   CREATE: 'CREATE',
   UPDATE: 'UPDATE',
@@ -46,10 +113,18 @@ export const Action = {
   MANAGE: 'MANAGE'
 } as const
 
-export type Action = (typeof Action)[keyof typeof Action]
+export type permission_action = (typeof permission_action)[keyof typeof permission_action]
 
 
-export const CibleAction = {
+export const absence_statut = {
+  JUSTIFIEE: 'JUSTIFIEE',
+  NON_JUSTIFIEE: 'NON_JUSTIFIEE'
+} as const
+
+export type absence_statut = (typeof absence_statut)[keyof typeof absence_statut]
+
+
+export const permission_cible = {
   absence: 'absence',
   affectationEnseignant: 'affectationEnseignant',
   anneeScolaire: 'anneeScolaire',
@@ -92,145 +167,137 @@ export const CibleAction = {
   all: 'all'
 } as const
 
-export type CibleAction = (typeof CibleAction)[keyof typeof CibleAction]
+export type permission_cible = (typeof permission_cible)[keyof typeof permission_cible]
 
 
-export const DocumentType = {
-  DIPLOME: 'DIPLOME',
-  CONTRAT: 'CONTRAT',
-  PIECE_IDENTITE: 'PIECE_IDENTITE',
-  JUSTIFICATIF: 'JUSTIFICATIF'
+export const user_authorization_context_action = {
+  READ: 'READ',
+  CREATE: 'CREATE',
+  UPDATE: 'UPDATE',
+  DELETE: 'DELETE',
+  MANAGE: 'MANAGE'
 } as const
 
-export type DocumentType = (typeof DocumentType)[keyof typeof DocumentType]
+export type user_authorization_context_action = (typeof user_authorization_context_action)[keyof typeof user_authorization_context_action]
 
 
-export const Sexe = {
-  MASCULIN: 'MASCULIN',
-  FEMININ: 'FEMININ'
-} as const
-
-export type Sexe = (typeof Sexe)[keyof typeof Sexe]
-
-
-export const lienParente = {
-  PERE: 'PERE',
-  MERE: 'MERE',
-  TUTEUR: 'TUTEUR'
-} as const
-
-export type lienParente = (typeof lienParente)[keyof typeof lienParente]
-
-
-export const AnneeStatut = {
+export const anneescolaire_statut = {
   EN_COURS: 'EN_COURS',
   EN_PREPARATION: 'EN_PREPARATION',
   TERMINEE: 'TERMINEE',
   ARCHIVEE: 'ARCHIVEE'
 } as const
 
-export type AnneeStatut = (typeof AnneeStatut)[keyof typeof AnneeStatut]
+export type anneescolaire_statut = (typeof anneescolaire_statut)[keyof typeof anneescolaire_statut]
 
 
-export const PeriodeStatut = {
-  NON_COMMENCEE: 'NON_COMMENCEE',
-  OUVERTE: 'OUVERTE',
-  CLOTUREE: 'CLOTUREE',
-  ARCHIVEE: 'ARCHIVEE'
+export const apprenant_Sexe = {
+  MASCULIN: 'MASCULIN',
+  FEMININ: 'FEMININ'
 } as const
 
-export type PeriodeStatut = (typeof PeriodeStatut)[keyof typeof PeriodeStatut]
+export type apprenant_Sexe = (typeof apprenant_Sexe)[keyof typeof apprenant_Sexe]
 
 
-export const JourSemaine = {
-  LUNDI: 'LUNDI',
-  MARDI: 'MARDI',
-  MERCREDI: 'MERCREDI',
-  JEUDI: 'JEUDI',
-  VENDREDI: 'VENDREDI',
-  SAMEDI: 'SAMEDI',
-  DIMANCHE: 'DIMANCHE'
-} as const
-
-export type JourSemaine = (typeof JourSemaine)[keyof typeof JourSemaine]
-
-
-export const MethodeCalcul = {
+export const politiqueevaluation_methodeCalcul = {
   MOYENNE_SIMPLE: 'MOYENNE_SIMPLE',
   MOYENNE_PONDEREE: 'MOYENNE_PONDEREE'
 } as const
 
-export type MethodeCalcul = (typeof MethodeCalcul)[keyof typeof MethodeCalcul]
+export type politiqueevaluation_methodeCalcul = (typeof politiqueevaluation_methodeCalcul)[keyof typeof politiqueevaluation_methodeCalcul]
 
 
-export const MethodeArrondi = {
-  AUCUN: 'AUCUN',
-  ENTIER: 'ENTIER',
-  DIXIEME: 'DIXIEME',
-  CENTIEME: 'CENTIEME'
+export const user_authorization_context_cible = {
+  absence: 'absence',
+  affectationEnseignant: 'affectationEnseignant',
+  anneeScolaire: 'anneeScolaire',
+  annonce: 'annonce',
+  apprenant: 'apprenant',
+  apprenantParent: 'apprenantParent',
+  bulletin: 'bulletin',
+  cibleAnnoce: 'cibleAnnoce',
+  classeMatiere: 'classeMatiere',
+  classeScolaire: 'classeScolaire',
+  configScolarite: 'configScolarite',
+  conversation: 'conversation',
+  decisionFinAnnee: 'decisionFinAnnee',
+  dossierScolarite: 'dossierScolarite',
+  ecole: 'ecole',
+  emploiDuTemps: 'emploiDuTemps',
+  employe: 'employe',
+  employeDocument: 'employeDocument',
+  employeRole: 'employeRole',
+  evaluation: 'evaluation',
+  inscription: 'inscription',
+  ligneBulletin: 'ligneBulletin',
+  matiere: 'matiere',
+  matiereUe: 'matiereUe',
+  message: 'message',
+  niveauScolaire: 'niveauScolaire',
+  note: 'note',
+  paiement: 'paiement',
+  parent: 'parent',
+  participantConversation: 'participantConversation',
+  periodeScolaire: 'periodeScolaire',
+  politiqueEvaluation: 'politiqueEvaluation',
+  regleEvaluation: 'regleEvaluation',
+  role: 'role',
+  rolePermission: 'rolePermission',
+  trancheScolarite: 'trancheScolarite',
+  typeEvaluation: 'typeEvaluation',
+  uniteEnseignement: 'uniteEnseignement',
+  user: 'user',
+  all: 'all'
 } as const
 
-export type MethodeArrondi = (typeof MethodeArrondi)[keyof typeof MethodeArrondi]
+export type user_authorization_context_cible = (typeof user_authorization_context_cible)[keyof typeof user_authorization_context_cible]
 
 
-export const InscriptionType = {
-  INSCRIPTION: 'INSCRIPTION',
-  REINSCRIPTION: 'REINSCRIPTION',
-  TRANSFERT_EN_COURS_D_ANNEE: 'TRANSFERT_EN_COURS_D_ANNEE'
-} as const
-
-export type InscriptionType = (typeof InscriptionType)[keyof typeof InscriptionType]
-
-
-export const AbsenceStatut = {
-  JUSTIFIEE: 'JUSTIFIEE',
-  NON_JUSTIFIEE: 'NON_JUSTIFIEE'
-} as const
-
-export type AbsenceStatut = (typeof AbsenceStatut)[keyof typeof AbsenceStatut]
-
-
-export const DossierScolariteStatut = {
-  A_JOUR: 'A_JOUR',
-  EN_RETARD: 'EN_RETARD',
-  SOLDEE: 'SOLDEE'
-} as const
-
-export type DossierScolariteStatut = (typeof DossierScolariteStatut)[keyof typeof DossierScolariteStatut]
-
-
-export const MoyenPaiement = {
-  BANQUE: 'BANQUE',
-  MOBILE_MONEY: 'MOBILE_MONEY',
-  ESPECES: 'ESPECES'
-} as const
-
-export type MoyenPaiement = (typeof MoyenPaiement)[keyof typeof MoyenPaiement]
-
-
-export const PublicAnnonce = {
-  TOUS: 'TOUS',
-  EMPLOYE: 'EMPLOYE',
-  PARENT: 'PARENT',
-  APPRENANT: 'APPRENANT'
-} as const
-
-export type PublicAnnonce = (typeof PublicAnnonce)[keyof typeof PublicAnnonce]
-
-
-export const ConversationType = {
-  PRIVEE: 'PRIVEE',
-  GROUPE: 'GROUPE'
-} as const
-
-export type ConversationType = (typeof ConversationType)[keyof typeof ConversationType]
-
-
-export const DecisionFinAnneeType = {
+export const bulletin_decisionFinAnnee = {
   ADMIS: 'ADMIS',
   REDOUBLE: 'REDOUBLE',
   EXCLU: 'EXCLU',
   TRANSFERE: 'TRANSFERE'
 } as const
 
-export type DecisionFinAnneeType = (typeof DecisionFinAnneeType)[keyof typeof DecisionFinAnneeType]
+export type bulletin_decisionFinAnnee = (typeof bulletin_decisionFinAnnee)[keyof typeof bulletin_decisionFinAnnee]
+
+
+export const periodescolaire_statut = {
+  NON_COMMENCEE: 'NON_COMMENCEE',
+  OUVERTE: 'OUVERTE',
+  CLOTUREE: 'CLOTUREE',
+  ARCHIVEE: 'ARCHIVEE'
+} as const
+
+export type periodescolaire_statut = (typeof periodescolaire_statut)[keyof typeof periodescolaire_statut]
+
+
+export const politiqueevaluation_methodeArrondi = {
+  AUCUN: 'AUCUN',
+  ENTIER: 'ENTIER',
+  DIXIEME: 'DIXIEME',
+  CENTIEME: 'CENTIEME'
+} as const
+
+export type politiqueevaluation_methodeArrondi = (typeof politiqueevaluation_methodeArrondi)[keyof typeof politiqueevaluation_methodeArrondi]
+
+
+export const user_statut = {
+  ACTIF: 'ACTIF',
+  SUSPENDU: 'SUSPENDU',
+  DESACTIVE: 'DESACTIVE',
+  DOIT_MODIFIER_MDP: 'DOIT_MODIFIER_MDP'
+} as const
+
+export type user_statut = (typeof user_statut)[keyof typeof user_statut]
+
+
+export const ecole_statut = {
+  EN_ATTENTE: 'EN_ATTENTE',
+  ACTIF: 'ACTIF',
+  SUSPENDU: 'SUSPENDU',
+  DESACTIVE: 'DESACTIVE'
+} as const
+
+export type ecole_statut = (typeof ecole_statut)[keyof typeof ecole_statut]

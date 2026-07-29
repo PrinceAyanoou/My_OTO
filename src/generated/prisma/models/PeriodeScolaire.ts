@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `PeriodeScolaire` model and its related types.
+ * This file exports the `periodescolaire` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,52 +13,52 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model PeriodeScolaire
+ * Model periodescolaire
  * 
  */
-export type PeriodeScolaireModel = runtime.Types.Result.DefaultSelection<Prisma.$PeriodeScolairePayload>
+export type periodescolaireModel = runtime.Types.Result.DefaultSelection<Prisma.$periodescolairePayload>
 
-export type AggregatePeriodeScolaire = {
-  _count: PeriodeScolaireCountAggregateOutputType | null
-  _avg: PeriodeScolaireAvgAggregateOutputType | null
-  _sum: PeriodeScolaireSumAggregateOutputType | null
-  _min: PeriodeScolaireMinAggregateOutputType | null
-  _max: PeriodeScolaireMaxAggregateOutputType | null
+export type AggregatePeriodescolaire = {
+  _count: PeriodescolaireCountAggregateOutputType | null
+  _avg: PeriodescolaireAvgAggregateOutputType | null
+  _sum: PeriodescolaireSumAggregateOutputType | null
+  _min: PeriodescolaireMinAggregateOutputType | null
+  _max: PeriodescolaireMaxAggregateOutputType | null
 }
 
-export type PeriodeScolaireAvgAggregateOutputType = {
+export type PeriodescolaireAvgAggregateOutputType = {
   ordre: number | null
 }
 
-export type PeriodeScolaireSumAggregateOutputType = {
+export type PeriodescolaireSumAggregateOutputType = {
   ordre: number | null
 }
 
-export type PeriodeScolaireMinAggregateOutputType = {
+export type PeriodescolaireMinAggregateOutputType = {
   id: string | null
   annneScolaireId: string | null
   nom: string | null
   ordre: number | null
   dateDebut: Date | null
   dateFin: Date | null
-  statut: $Enums.PeriodeStatut | null
+  statut: $Enums.periodescolaire_statut | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type PeriodeScolaireMaxAggregateOutputType = {
+export type PeriodescolaireMaxAggregateOutputType = {
   id: string | null
   annneScolaireId: string | null
   nom: string | null
   ordre: number | null
   dateDebut: Date | null
   dateFin: Date | null
-  statut: $Enums.PeriodeStatut | null
+  statut: $Enums.periodescolaire_statut | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type PeriodeScolaireCountAggregateOutputType = {
+export type PeriodescolaireCountAggregateOutputType = {
   id: number
   annneScolaireId: number
   nom: number
@@ -72,15 +72,15 @@ export type PeriodeScolaireCountAggregateOutputType = {
 }
 
 
-export type PeriodeScolaireAvgAggregateInputType = {
+export type PeriodescolaireAvgAggregateInputType = {
   ordre?: true
 }
 
-export type PeriodeScolaireSumAggregateInputType = {
+export type PeriodescolaireSumAggregateInputType = {
   ordre?: true
 }
 
-export type PeriodeScolaireMinAggregateInputType = {
+export type PeriodescolaireMinAggregateInputType = {
   id?: true
   annneScolaireId?: true
   nom?: true
@@ -92,7 +92,7 @@ export type PeriodeScolaireMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type PeriodeScolaireMaxAggregateInputType = {
+export type PeriodescolaireMaxAggregateInputType = {
   id?: true
   annneScolaireId?: true
   nom?: true
@@ -104,7 +104,7 @@ export type PeriodeScolaireMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type PeriodeScolaireCountAggregateInputType = {
+export type PeriodescolaireCountAggregateInputType = {
   id?: true
   annneScolaireId?: true
   nom?: true
@@ -117,144 +117,144 @@ export type PeriodeScolaireCountAggregateInputType = {
   _all?: true
 }
 
-export type PeriodeScolaireAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PeriodescolaireAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PeriodeScolaire to aggregate.
+   * Filter which periodescolaire to aggregate.
    */
-  where?: Prisma.PeriodeScolaireWhereInput
+  where?: Prisma.periodescolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PeriodeScolaires to fetch.
+   * Determine the order of periodescolaires to fetch.
    */
-  orderBy?: Prisma.PeriodeScolaireOrderByWithRelationInput | Prisma.PeriodeScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.periodescolaireOrderByWithRelationInput | Prisma.periodescolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.PeriodeScolaireWhereUniqueInput
+  cursor?: Prisma.periodescolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PeriodeScolaires from the position of the cursor.
+   * Take `±n` periodescolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PeriodeScolaires.
+   * Skip the first `n` periodescolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned PeriodeScolaires
+   * Count returned periodescolaires
   **/
-  _count?: true | PeriodeScolaireCountAggregateInputType
+  _count?: true | PeriodescolaireCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: PeriodeScolaireAvgAggregateInputType
+  _avg?: PeriodescolaireAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: PeriodeScolaireSumAggregateInputType
+  _sum?: PeriodescolaireSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: PeriodeScolaireMinAggregateInputType
+  _min?: PeriodescolaireMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: PeriodeScolaireMaxAggregateInputType
+  _max?: PeriodescolaireMaxAggregateInputType
 }
 
-export type GetPeriodeScolaireAggregateType<T extends PeriodeScolaireAggregateArgs> = {
-      [P in keyof T & keyof AggregatePeriodeScolaire]: P extends '_count' | 'count'
+export type GetPeriodescolaireAggregateType<T extends PeriodescolaireAggregateArgs> = {
+      [P in keyof T & keyof AggregatePeriodescolaire]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregatePeriodeScolaire[P]>
-    : Prisma.GetScalarType<T[P], AggregatePeriodeScolaire[P]>
+      : Prisma.GetScalarType<T[P], AggregatePeriodescolaire[P]>
+    : Prisma.GetScalarType<T[P], AggregatePeriodescolaire[P]>
 }
 
 
 
 
-export type PeriodeScolaireGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PeriodeScolaireWhereInput
-  orderBy?: Prisma.PeriodeScolaireOrderByWithAggregationInput | Prisma.PeriodeScolaireOrderByWithAggregationInput[]
-  by: Prisma.PeriodeScolaireScalarFieldEnum[] | Prisma.PeriodeScolaireScalarFieldEnum
-  having?: Prisma.PeriodeScolaireScalarWhereWithAggregatesInput
+export type periodescolaireGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.periodescolaireWhereInput
+  orderBy?: Prisma.periodescolaireOrderByWithAggregationInput | Prisma.periodescolaireOrderByWithAggregationInput[]
+  by: Prisma.PeriodescolaireScalarFieldEnum[] | Prisma.PeriodescolaireScalarFieldEnum
+  having?: Prisma.periodescolaireScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: PeriodeScolaireCountAggregateInputType | true
-  _avg?: PeriodeScolaireAvgAggregateInputType
-  _sum?: PeriodeScolaireSumAggregateInputType
-  _min?: PeriodeScolaireMinAggregateInputType
-  _max?: PeriodeScolaireMaxAggregateInputType
+  _count?: PeriodescolaireCountAggregateInputType | true
+  _avg?: PeriodescolaireAvgAggregateInputType
+  _sum?: PeriodescolaireSumAggregateInputType
+  _min?: PeriodescolaireMinAggregateInputType
+  _max?: PeriodescolaireMaxAggregateInputType
 }
 
-export type PeriodeScolaireGroupByOutputType = {
+export type PeriodescolaireGroupByOutputType = {
   id: string
   annneScolaireId: string
   nom: string
   ordre: number
   dateDebut: Date
   dateFin: Date
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt: Date
   updatedAt: Date
-  _count: PeriodeScolaireCountAggregateOutputType | null
-  _avg: PeriodeScolaireAvgAggregateOutputType | null
-  _sum: PeriodeScolaireSumAggregateOutputType | null
-  _min: PeriodeScolaireMinAggregateOutputType | null
-  _max: PeriodeScolaireMaxAggregateOutputType | null
+  _count: PeriodescolaireCountAggregateOutputType | null
+  _avg: PeriodescolaireAvgAggregateOutputType | null
+  _sum: PeriodescolaireSumAggregateOutputType | null
+  _min: PeriodescolaireMinAggregateOutputType | null
+  _max: PeriodescolaireMaxAggregateOutputType | null
 }
 
-export type GetPeriodeScolaireGroupByPayload<T extends PeriodeScolaireGroupByArgs> = Prisma.PrismaPromise<
+export type GetPeriodescolaireGroupByPayload<T extends periodescolaireGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<PeriodeScolaireGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<PeriodescolaireGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof PeriodeScolaireGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof PeriodescolaireGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], PeriodeScolaireGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], PeriodeScolaireGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], PeriodescolaireGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], PeriodescolaireGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type PeriodeScolaireWhereInput = {
-  AND?: Prisma.PeriodeScolaireWhereInput | Prisma.PeriodeScolaireWhereInput[]
-  OR?: Prisma.PeriodeScolaireWhereInput[]
-  NOT?: Prisma.PeriodeScolaireWhereInput | Prisma.PeriodeScolaireWhereInput[]
-  id?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  annneScolaireId?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  nom?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  ordre?: Prisma.IntFilter<"PeriodeScolaire"> | number
-  dateDebut?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  dateFin?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  statut?: Prisma.EnumPeriodeStatutFilter<"PeriodeScolaire"> | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
+export type periodescolaireWhereInput = {
+  AND?: Prisma.periodescolaireWhereInput | Prisma.periodescolaireWhereInput[]
+  OR?: Prisma.periodescolaireWhereInput[]
+  NOT?: Prisma.periodescolaireWhereInput | Prisma.periodescolaireWhereInput[]
+  id?: Prisma.StringFilter<"periodescolaire"> | string
+  annneScolaireId?: Prisma.StringFilter<"periodescolaire"> | string
+  nom?: Prisma.StringFilter<"periodescolaire"> | string
+  ordre?: Prisma.IntFilter<"periodescolaire"> | number
+  dateDebut?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  dateFin?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFilter<"periodescolaire"> | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
   bulletin?: Prisma.BulletinListRelationFilter
+  evaluation?: Prisma.EvaluationListRelationFilter
   note?: Prisma.NoteListRelationFilter
-  evaluations?: Prisma.EvaluationListRelationFilter
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
 }
 
-export type PeriodeScolaireOrderByWithRelationInput = {
+export type periodescolaireOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   annneScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -264,33 +264,33 @@ export type PeriodeScolaireOrderByWithRelationInput = {
   statut?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  anneeScolaire?: Prisma.AnneeScolaireOrderByWithRelationInput
-  bulletin?: Prisma.BulletinOrderByRelationAggregateInput
-  note?: Prisma.NoteOrderByRelationAggregateInput
-  evaluations?: Prisma.EvaluationOrderByRelationAggregateInput
-  _relevance?: Prisma.PeriodeScolaireOrderByRelevanceInput
+  bulletin?: Prisma.bulletinOrderByRelationAggregateInput
+  evaluation?: Prisma.evaluationOrderByRelationAggregateInput
+  note?: Prisma.noteOrderByRelationAggregateInput
+  anneescolaire?: Prisma.anneescolaireOrderByWithRelationInput
+  _relevance?: Prisma.periodescolaireOrderByRelevanceInput
 }
 
-export type PeriodeScolaireWhereUniqueInput = Prisma.AtLeast<{
+export type periodescolaireWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.PeriodeScolaireWhereInput | Prisma.PeriodeScolaireWhereInput[]
-  OR?: Prisma.PeriodeScolaireWhereInput[]
-  NOT?: Prisma.PeriodeScolaireWhereInput | Prisma.PeriodeScolaireWhereInput[]
-  annneScolaireId?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  nom?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  ordre?: Prisma.IntFilter<"PeriodeScolaire"> | number
-  dateDebut?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  dateFin?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  statut?: Prisma.EnumPeriodeStatutFilter<"PeriodeScolaire"> | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
+  AND?: Prisma.periodescolaireWhereInput | Prisma.periodescolaireWhereInput[]
+  OR?: Prisma.periodescolaireWhereInput[]
+  NOT?: Prisma.periodescolaireWhereInput | Prisma.periodescolaireWhereInput[]
+  annneScolaireId?: Prisma.StringFilter<"periodescolaire"> | string
+  nom?: Prisma.StringFilter<"periodescolaire"> | string
+  ordre?: Prisma.IntFilter<"periodescolaire"> | number
+  dateDebut?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  dateFin?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFilter<"periodescolaire"> | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
   bulletin?: Prisma.BulletinListRelationFilter
+  evaluation?: Prisma.EvaluationListRelationFilter
   note?: Prisma.NoteListRelationFilter
-  evaluations?: Prisma.EvaluationListRelationFilter
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
 }, "id">
 
-export type PeriodeScolaireOrderByWithAggregationInput = {
+export type periodescolaireOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   annneScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -300,140 +300,145 @@ export type PeriodeScolaireOrderByWithAggregationInput = {
   statut?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.PeriodeScolaireCountOrderByAggregateInput
-  _avg?: Prisma.PeriodeScolaireAvgOrderByAggregateInput
-  _max?: Prisma.PeriodeScolaireMaxOrderByAggregateInput
-  _min?: Prisma.PeriodeScolaireMinOrderByAggregateInput
-  _sum?: Prisma.PeriodeScolaireSumOrderByAggregateInput
+  _count?: Prisma.periodescolaireCountOrderByAggregateInput
+  _avg?: Prisma.periodescolaireAvgOrderByAggregateInput
+  _max?: Prisma.periodescolaireMaxOrderByAggregateInput
+  _min?: Prisma.periodescolaireMinOrderByAggregateInput
+  _sum?: Prisma.periodescolaireSumOrderByAggregateInput
 }
 
-export type PeriodeScolaireScalarWhereWithAggregatesInput = {
-  AND?: Prisma.PeriodeScolaireScalarWhereWithAggregatesInput | Prisma.PeriodeScolaireScalarWhereWithAggregatesInput[]
-  OR?: Prisma.PeriodeScolaireScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.PeriodeScolaireScalarWhereWithAggregatesInput | Prisma.PeriodeScolaireScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"PeriodeScolaire"> | string
-  annneScolaireId?: Prisma.StringWithAggregatesFilter<"PeriodeScolaire"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"PeriodeScolaire"> | string
-  ordre?: Prisma.IntWithAggregatesFilter<"PeriodeScolaire"> | number
-  dateDebut?: Prisma.DateTimeWithAggregatesFilter<"PeriodeScolaire"> | Date | string
-  dateFin?: Prisma.DateTimeWithAggregatesFilter<"PeriodeScolaire"> | Date | string
-  statut?: Prisma.EnumPeriodeStatutWithAggregatesFilter<"PeriodeScolaire"> | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"PeriodeScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"PeriodeScolaire"> | Date | string
+export type periodescolaireScalarWhereWithAggregatesInput = {
+  AND?: Prisma.periodescolaireScalarWhereWithAggregatesInput | Prisma.periodescolaireScalarWhereWithAggregatesInput[]
+  OR?: Prisma.periodescolaireScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.periodescolaireScalarWhereWithAggregatesInput | Prisma.periodescolaireScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"periodescolaire"> | string
+  annneScolaireId?: Prisma.StringWithAggregatesFilter<"periodescolaire"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"periodescolaire"> | string
+  ordre?: Prisma.IntWithAggregatesFilter<"periodescolaire"> | number
+  dateDebut?: Prisma.DateTimeWithAggregatesFilter<"periodescolaire"> | Date | string
+  dateFin?: Prisma.DateTimeWithAggregatesFilter<"periodescolaire"> | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutWithAggregatesFilter<"periodescolaire"> | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"periodescolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"periodescolaire"> | Date | string
 }
 
-export type PeriodeScolaireCreateInput = {
+export type periodescolaireCreateInput = {
   id?: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPeriodeScolaireInput
-  bulletin?: Prisma.BulletinCreateNestedManyWithoutPeriodeScolaireInput
-  note?: Prisma.NoteCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutPeriodeScolaireInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutPeriodescolaireInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteCreateNestedManyWithoutPeriodescolaireInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireUncheckedCreateInput = {
-  id?: string
-  annneScolaireId: string
-  nom: string
-  ordre: number
-  dateDebut: Date | string
-  dateFin: Date | string
-  statut: $Enums.PeriodeStatut
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  bulletin?: Prisma.BulletinUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  note?: Prisma.NoteUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-}
-
-export type PeriodeScolaireUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  ordre?: Prisma.IntFieldUpdateOperationsInput | number
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPeriodeScolaireNestedInput
-  bulletin?: Prisma.BulletinUpdateManyWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutPeriodeScolaireNestedInput
-}
-
-export type PeriodeScolaireUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  ordre?: Prisma.IntFieldUpdateOperationsInput | number
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-}
-
-export type PeriodeScolaireCreateManyInput = {
+export type periodescolaireUncheckedCreateInput = {
   id?: string
   annneScolaireId: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireUpdateManyMutationInput = {
+export type periodescolaireUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUpdateManyWithoutPeriodescolaireNestedInput
+  evaluation?: Prisma.evaluationUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUpdateManyWithoutPeriodescolaireNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireUncheckedUpdateManyInput = {
+export type periodescolaireUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+}
+
+export type periodescolaireCreateManyInput = {
+  id?: string
+  annneScolaireId: string
+  nom: string
+  ordre: number
+  dateDebut: Date | string
+  dateFin: Date | string
+  statut: $Enums.periodescolaire_statut
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type periodescolaireUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  ordre?: Prisma.IntFieldUpdateOperationsInput | number
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PeriodeScolaireListRelationFilter = {
-  every?: Prisma.PeriodeScolaireWhereInput
-  some?: Prisma.PeriodeScolaireWhereInput
-  none?: Prisma.PeriodeScolaireWhereInput
+export type periodescolaireUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  ordre?: Prisma.IntFieldUpdateOperationsInput | number
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PeriodeScolaireOrderByRelationAggregateInput = {
+export type PeriodescolaireListRelationFilter = {
+  every?: Prisma.periodescolaireWhereInput
+  some?: Prisma.periodescolaireWhereInput
+  none?: Prisma.periodescolaireWhereInput
+}
+
+export type periodescolaireOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type PeriodeScolaireOrderByRelevanceInput = {
-  fields: Prisma.PeriodeScolaireOrderByRelevanceFieldEnum | Prisma.PeriodeScolaireOrderByRelevanceFieldEnum[]
+export type PeriodescolaireScalarRelationFilter = {
+  is?: Prisma.periodescolaireWhereInput
+  isNot?: Prisma.periodescolaireWhereInput
+}
+
+export type periodescolaireOrderByRelevanceInput = {
+  fields: Prisma.periodescolaireOrderByRelevanceFieldEnum | Prisma.periodescolaireOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type PeriodeScolaireCountOrderByAggregateInput = {
+export type periodescolaireCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   annneScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -445,11 +450,11 @@ export type PeriodeScolaireCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type PeriodeScolaireAvgOrderByAggregateInput = {
+export type periodescolaireAvgOrderByAggregateInput = {
   ordre?: Prisma.SortOrder
 }
 
-export type PeriodeScolaireMaxOrderByAggregateInput = {
+export type periodescolaireMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   annneScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -461,7 +466,7 @@ export type PeriodeScolaireMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type PeriodeScolaireMinOrderByAggregateInput = {
+export type periodescolaireMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   annneScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -473,496 +478,483 @@ export type PeriodeScolaireMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type PeriodeScolaireSumOrderByAggregateInput = {
+export type periodescolaireSumOrderByAggregateInput = {
   ordre?: Prisma.SortOrder
 }
 
-export type PeriodeScolaireScalarRelationFilter = {
-  is?: Prisma.PeriodeScolaireWhereInput
-  isNot?: Prisma.PeriodeScolaireWhereInput
+export type periodescolaireCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput> | Prisma.periodescolaireCreateWithoutAnneescolaireInput[] | Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput | Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.periodescolaireCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
 }
 
-export type PeriodeScolaireCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput[] | Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput | Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PeriodeScolaireCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
+export type periodescolaireUncheckedCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput> | Prisma.periodescolaireCreateWithoutAnneescolaireInput[] | Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput | Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.periodescolaireCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
 }
 
-export type PeriodeScolaireUncheckedCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput[] | Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput | Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PeriodeScolaireCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
+export type periodescolaireUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput> | Prisma.periodescolaireCreateWithoutAnneescolaireInput[] | Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput | Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.periodescolaireUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.periodescolaireUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.periodescolaireCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  disconnect?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  delete?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  connect?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  update?: Prisma.periodescolaireUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.periodescolaireUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.periodescolaireUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.periodescolaireUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.periodescolaireScalarWhereInput | Prisma.periodescolaireScalarWhereInput[]
 }
 
-export type PeriodeScolaireUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput[] | Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput | Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.PeriodeScolaireUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PeriodeScolaireUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PeriodeScolaireCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  disconnect?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  delete?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  update?: Prisma.PeriodeScolaireUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PeriodeScolaireUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.PeriodeScolaireUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.PeriodeScolaireUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.PeriodeScolaireScalarWhereInput | Prisma.PeriodeScolaireScalarWhereInput[]
+export type periodescolaireUncheckedUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput> | Prisma.periodescolaireCreateWithoutAnneescolaireInput[] | Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput | Prisma.periodescolaireCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.periodescolaireUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.periodescolaireUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.periodescolaireCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  disconnect?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  delete?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  connect?: Prisma.periodescolaireWhereUniqueInput | Prisma.periodescolaireWhereUniqueInput[]
+  update?: Prisma.periodescolaireUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.periodescolaireUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.periodescolaireUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.periodescolaireUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.periodescolaireScalarWhereInput | Prisma.periodescolaireScalarWhereInput[]
 }
 
-export type PeriodeScolaireUncheckedUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput[] | Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput | Prisma.PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.PeriodeScolaireUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PeriodeScolaireUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PeriodeScolaireCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  disconnect?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  delete?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput | Prisma.PeriodeScolaireWhereUniqueInput[]
-  update?: Prisma.PeriodeScolaireUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PeriodeScolaireUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.PeriodeScolaireUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.PeriodeScolaireUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.PeriodeScolaireScalarWhereInput | Prisma.PeriodeScolaireScalarWhereInput[]
+export type periodescolaireCreateNestedOneWithoutBulletinInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutBulletinInput, Prisma.periodescolaireUncheckedCreateWithoutBulletinInput>
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutBulletinInput
+  connect?: Prisma.periodescolaireWhereUniqueInput
 }
 
-export type IntFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
+export type periodescolaireUpdateOneRequiredWithoutBulletinNestedInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutBulletinInput, Prisma.periodescolaireUncheckedCreateWithoutBulletinInput>
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutBulletinInput
+  upsert?: Prisma.periodescolaireUpsertWithoutBulletinInput
+  connect?: Prisma.periodescolaireWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.periodescolaireUpdateToOneWithWhereWithoutBulletinInput, Prisma.periodescolaireUpdateWithoutBulletinInput>, Prisma.periodescolaireUncheckedUpdateWithoutBulletinInput>
 }
 
-export type EnumPeriodeStatutFieldUpdateOperationsInput = {
-  set?: $Enums.PeriodeStatut
+export type periodescolaireCreateNestedOneWithoutEvaluationInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutEvaluationInput, Prisma.periodescolaireUncheckedCreateWithoutEvaluationInput>
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutEvaluationInput
+  connect?: Prisma.periodescolaireWhereUniqueInput
 }
 
-export type PeriodeScolaireCreateNestedOneWithoutEvaluationsInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutEvaluationsInput, Prisma.PeriodeScolaireUncheckedCreateWithoutEvaluationsInput>
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutEvaluationsInput
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput
+export type periodescolaireUpdateOneRequiredWithoutEvaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutEvaluationInput, Prisma.periodescolaireUncheckedCreateWithoutEvaluationInput>
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutEvaluationInput
+  upsert?: Prisma.periodescolaireUpsertWithoutEvaluationInput
+  connect?: Prisma.periodescolaireWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.periodescolaireUpdateToOneWithWhereWithoutEvaluationInput, Prisma.periodescolaireUpdateWithoutEvaluationInput>, Prisma.periodescolaireUncheckedUpdateWithoutEvaluationInput>
 }
 
-export type PeriodeScolaireUpdateOneRequiredWithoutEvaluationsNestedInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutEvaluationsInput, Prisma.PeriodeScolaireUncheckedCreateWithoutEvaluationsInput>
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutEvaluationsInput
-  upsert?: Prisma.PeriodeScolaireUpsertWithoutEvaluationsInput
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PeriodeScolaireUpdateToOneWithWhereWithoutEvaluationsInput, Prisma.PeriodeScolaireUpdateWithoutEvaluationsInput>, Prisma.PeriodeScolaireUncheckedUpdateWithoutEvaluationsInput>
+export type periodescolaireCreateNestedOneWithoutNoteInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutNoteInput, Prisma.periodescolaireUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutNoteInput
+  connect?: Prisma.periodescolaireWhereUniqueInput
 }
 
-export type PeriodeScolaireCreateNestedOneWithoutNoteInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutNoteInput, Prisma.PeriodeScolaireUncheckedCreateWithoutNoteInput>
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutNoteInput
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput
+export type periodescolaireUpdateOneRequiredWithoutNoteNestedInput = {
+  create?: Prisma.XOR<Prisma.periodescolaireCreateWithoutNoteInput, Prisma.periodescolaireUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.periodescolaireCreateOrConnectWithoutNoteInput
+  upsert?: Prisma.periodescolaireUpsertWithoutNoteInput
+  connect?: Prisma.periodescolaireWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.periodescolaireUpdateToOneWithWhereWithoutNoteInput, Prisma.periodescolaireUpdateWithoutNoteInput>, Prisma.periodescolaireUncheckedUpdateWithoutNoteInput>
 }
 
-export type PeriodeScolaireUpdateOneRequiredWithoutNoteNestedInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutNoteInput, Prisma.PeriodeScolaireUncheckedCreateWithoutNoteInput>
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutNoteInput
-  upsert?: Prisma.PeriodeScolaireUpsertWithoutNoteInput
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PeriodeScolaireUpdateToOneWithWhereWithoutNoteInput, Prisma.PeriodeScolaireUpdateWithoutNoteInput>, Prisma.PeriodeScolaireUncheckedUpdateWithoutNoteInput>
+export type Enumperiodescolaire_statutFieldUpdateOperationsInput = {
+  set?: $Enums.periodescolaire_statut
 }
 
-export type PeriodeScolaireCreateNestedOneWithoutBulletinInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutBulletinInput, Prisma.PeriodeScolaireUncheckedCreateWithoutBulletinInput>
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutBulletinInput
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput
-}
-
-export type PeriodeScolaireUpdateOneRequiredWithoutBulletinNestedInput = {
-  create?: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutBulletinInput, Prisma.PeriodeScolaireUncheckedCreateWithoutBulletinInput>
-  connectOrCreate?: Prisma.PeriodeScolaireCreateOrConnectWithoutBulletinInput
-  upsert?: Prisma.PeriodeScolaireUpsertWithoutBulletinInput
-  connect?: Prisma.PeriodeScolaireWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PeriodeScolaireUpdateToOneWithWhereWithoutBulletinInput, Prisma.PeriodeScolaireUpdateWithoutBulletinInput>, Prisma.PeriodeScolaireUncheckedUpdateWithoutBulletinInput>
-}
-
-export type PeriodeScolaireCreateWithoutAnneeScolaireInput = {
+export type periodescolaireCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  bulletin?: Prisma.BulletinCreateNestedManyWithoutPeriodeScolaireInput
-  note?: Prisma.NoteCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutPeriodeScolaireInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutPeriodescolaireInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteCreateNestedManyWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput = {
+export type periodescolaireUncheckedCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  bulletin?: Prisma.BulletinUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  note?: Prisma.NoteUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutPeriodeScolaireInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireCreateOrConnectWithoutAnneeScolaireInput = {
-  where: Prisma.PeriodeScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput>
+export type periodescolaireCreateOrConnectWithoutAnneescolaireInput = {
+  where: Prisma.periodescolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type PeriodeScolaireCreateManyAnneeScolaireInputEnvelope = {
-  data: Prisma.PeriodeScolaireCreateManyAnneeScolaireInput | Prisma.PeriodeScolaireCreateManyAnneeScolaireInput[]
+export type periodescolaireCreateManyAnneescolaireInputEnvelope = {
+  data: Prisma.periodescolaireCreateManyAnneescolaireInput | Prisma.periodescolaireCreateManyAnneescolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type PeriodeScolaireUpsertWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.PeriodeScolaireWhereUniqueInput
-  update: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutAnneeScolaireInput>
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedCreateWithoutAnneeScolaireInput>
+export type periodescolaireUpsertWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.periodescolaireWhereUniqueInput
+  update: Prisma.XOR<Prisma.periodescolaireUpdateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedUpdateWithoutAnneescolaireInput>
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type PeriodeScolaireUpdateWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.PeriodeScolaireWhereUniqueInput
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutAnneeScolaireInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutAnneeScolaireInput>
+export type periodescolaireUpdateWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.periodescolaireWhereUniqueInput
+  data: Prisma.XOR<Prisma.periodescolaireUpdateWithoutAnneescolaireInput, Prisma.periodescolaireUncheckedUpdateWithoutAnneescolaireInput>
 }
 
-export type PeriodeScolaireUpdateManyWithWhereWithoutAnneeScolaireInput = {
-  where: Prisma.PeriodeScolaireScalarWhereInput
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateManyMutationInput, Prisma.PeriodeScolaireUncheckedUpdateManyWithoutAnneeScolaireInput>
+export type periodescolaireUpdateManyWithWhereWithoutAnneescolaireInput = {
+  where: Prisma.periodescolaireScalarWhereInput
+  data: Prisma.XOR<Prisma.periodescolaireUpdateManyMutationInput, Prisma.periodescolaireUncheckedUpdateManyWithoutAnneescolaireInput>
 }
 
-export type PeriodeScolaireScalarWhereInput = {
-  AND?: Prisma.PeriodeScolaireScalarWhereInput | Prisma.PeriodeScolaireScalarWhereInput[]
-  OR?: Prisma.PeriodeScolaireScalarWhereInput[]
-  NOT?: Prisma.PeriodeScolaireScalarWhereInput | Prisma.PeriodeScolaireScalarWhereInput[]
-  id?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  annneScolaireId?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  nom?: Prisma.StringFilter<"PeriodeScolaire"> | string
-  ordre?: Prisma.IntFilter<"PeriodeScolaire"> | number
-  dateDebut?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  dateFin?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  statut?: Prisma.EnumPeriodeStatutFilter<"PeriodeScolaire"> | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"PeriodeScolaire"> | Date | string
+export type periodescolaireScalarWhereInput = {
+  AND?: Prisma.periodescolaireScalarWhereInput | Prisma.periodescolaireScalarWhereInput[]
+  OR?: Prisma.periodescolaireScalarWhereInput[]
+  NOT?: Prisma.periodescolaireScalarWhereInput | Prisma.periodescolaireScalarWhereInput[]
+  id?: Prisma.StringFilter<"periodescolaire"> | string
+  annneScolaireId?: Prisma.StringFilter<"periodescolaire"> | string
+  nom?: Prisma.StringFilter<"periodescolaire"> | string
+  ordre?: Prisma.IntFilter<"periodescolaire"> | number
+  dateDebut?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  dateFin?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFilter<"periodescolaire"> | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"periodescolaire"> | Date | string
 }
 
-export type PeriodeScolaireCreateWithoutEvaluationsInput = {
+export type periodescolaireCreateWithoutBulletinInput = {
   id?: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPeriodeScolaireInput
-  bulletin?: Prisma.BulletinCreateNestedManyWithoutPeriodeScolaireInput
-  note?: Prisma.NoteCreateNestedManyWithoutPeriodeScolaireInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteCreateNestedManyWithoutPeriodescolaireInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireUncheckedCreateWithoutEvaluationsInput = {
-  id?: string
-  annneScolaireId: string
-  nom: string
-  ordre: number
-  dateDebut: Date | string
-  dateFin: Date | string
-  statut: $Enums.PeriodeStatut
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  bulletin?: Prisma.BulletinUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  note?: Prisma.NoteUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-}
-
-export type PeriodeScolaireCreateOrConnectWithoutEvaluationsInput = {
-  where: Prisma.PeriodeScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutEvaluationsInput, Prisma.PeriodeScolaireUncheckedCreateWithoutEvaluationsInput>
-}
-
-export type PeriodeScolaireUpsertWithoutEvaluationsInput = {
-  update: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutEvaluationsInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutEvaluationsInput>
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutEvaluationsInput, Prisma.PeriodeScolaireUncheckedCreateWithoutEvaluationsInput>
-  where?: Prisma.PeriodeScolaireWhereInput
-}
-
-export type PeriodeScolaireUpdateToOneWithWhereWithoutEvaluationsInput = {
-  where?: Prisma.PeriodeScolaireWhereInput
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutEvaluationsInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutEvaluationsInput>
-}
-
-export type PeriodeScolaireUpdateWithoutEvaluationsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  ordre?: Prisma.IntFieldUpdateOperationsInput | number
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPeriodeScolaireNestedInput
-  bulletin?: Prisma.BulletinUpdateManyWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUpdateManyWithoutPeriodeScolaireNestedInput
-}
-
-export type PeriodeScolaireUncheckedUpdateWithoutEvaluationsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  ordre?: Prisma.IntFieldUpdateOperationsInput | number
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-}
-
-export type PeriodeScolaireCreateWithoutNoteInput = {
-  id?: string
-  nom: string
-  ordre: number
-  dateDebut: Date | string
-  dateFin: Date | string
-  statut: $Enums.PeriodeStatut
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPeriodeScolaireInput
-  bulletin?: Prisma.BulletinCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutPeriodeScolaireInput
-}
-
-export type PeriodeScolaireUncheckedCreateWithoutNoteInput = {
+export type periodescolaireUncheckedCreateWithoutBulletinInput = {
   id?: string
   annneScolaireId: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  bulletin?: Prisma.BulletinUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutPeriodeScolaireInput
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireCreateOrConnectWithoutNoteInput = {
-  where: Prisma.PeriodeScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutNoteInput, Prisma.PeriodeScolaireUncheckedCreateWithoutNoteInput>
+export type periodescolaireCreateOrConnectWithoutBulletinInput = {
+  where: Prisma.periodescolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutBulletinInput, Prisma.periodescolaireUncheckedCreateWithoutBulletinInput>
 }
 
-export type PeriodeScolaireUpsertWithoutNoteInput = {
-  update: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutNoteInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutNoteInput>
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutNoteInput, Prisma.PeriodeScolaireUncheckedCreateWithoutNoteInput>
-  where?: Prisma.PeriodeScolaireWhereInput
+export type periodescolaireUpsertWithoutBulletinInput = {
+  update: Prisma.XOR<Prisma.periodescolaireUpdateWithoutBulletinInput, Prisma.periodescolaireUncheckedUpdateWithoutBulletinInput>
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutBulletinInput, Prisma.periodescolaireUncheckedCreateWithoutBulletinInput>
+  where?: Prisma.periodescolaireWhereInput
 }
 
-export type PeriodeScolaireUpdateToOneWithWhereWithoutNoteInput = {
-  where?: Prisma.PeriodeScolaireWhereInput
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutNoteInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutNoteInput>
+export type periodescolaireUpdateToOneWithWhereWithoutBulletinInput = {
+  where?: Prisma.periodescolaireWhereInput
+  data: Prisma.XOR<Prisma.periodescolaireUpdateWithoutBulletinInput, Prisma.periodescolaireUncheckedUpdateWithoutBulletinInput>
 }
 
-export type PeriodeScolaireUpdateWithoutNoteInput = {
+export type periodescolaireUpdateWithoutBulletinInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPeriodeScolaireNestedInput
-  bulletin?: Prisma.BulletinUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutPeriodeScolaireNestedInput
+  evaluation?: Prisma.evaluationUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUpdateManyWithoutPeriodescolaireNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireUncheckedUpdateWithoutNoteInput = {
+export type periodescolaireUncheckedUpdateWithoutBulletinInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireCreateWithoutBulletinInput = {
+export type periodescolaireCreateWithoutEvaluationInput = {
   id?: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPeriodeScolaireInput
-  note?: Prisma.NoteCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationCreateNestedManyWithoutPeriodeScolaireInput
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteCreateNestedManyWithoutPeriodescolaireInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireUncheckedCreateWithoutBulletinInput = {
+export type periodescolaireUncheckedCreateWithoutEvaluationInput = {
   id?: string
   annneScolaireId: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  note?: Prisma.NoteUncheckedCreateNestedManyWithoutPeriodeScolaireInput
-  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutPeriodeScolaireInput
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutPeriodescolaireInput
 }
 
-export type PeriodeScolaireCreateOrConnectWithoutBulletinInput = {
-  where: Prisma.PeriodeScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutBulletinInput, Prisma.PeriodeScolaireUncheckedCreateWithoutBulletinInput>
+export type periodescolaireCreateOrConnectWithoutEvaluationInput = {
+  where: Prisma.periodescolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutEvaluationInput, Prisma.periodescolaireUncheckedCreateWithoutEvaluationInput>
 }
 
-export type PeriodeScolaireUpsertWithoutBulletinInput = {
-  update: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutBulletinInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutBulletinInput>
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateWithoutBulletinInput, Prisma.PeriodeScolaireUncheckedCreateWithoutBulletinInput>
-  where?: Prisma.PeriodeScolaireWhereInput
+export type periodescolaireUpsertWithoutEvaluationInput = {
+  update: Prisma.XOR<Prisma.periodescolaireUpdateWithoutEvaluationInput, Prisma.periodescolaireUncheckedUpdateWithoutEvaluationInput>
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutEvaluationInput, Prisma.periodescolaireUncheckedCreateWithoutEvaluationInput>
+  where?: Prisma.periodescolaireWhereInput
 }
 
-export type PeriodeScolaireUpdateToOneWithWhereWithoutBulletinInput = {
-  where?: Prisma.PeriodeScolaireWhereInput
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateWithoutBulletinInput, Prisma.PeriodeScolaireUncheckedUpdateWithoutBulletinInput>
+export type periodescolaireUpdateToOneWithWhereWithoutEvaluationInput = {
+  where?: Prisma.periodescolaireWhereInput
+  data: Prisma.XOR<Prisma.periodescolaireUpdateWithoutEvaluationInput, Prisma.periodescolaireUncheckedUpdateWithoutEvaluationInput>
 }
 
-export type PeriodeScolaireUpdateWithoutBulletinInput = {
+export type periodescolaireUpdateWithoutEvaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutPeriodeScolaireNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUpdateManyWithoutPeriodescolaireNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireUncheckedUpdateWithoutBulletinInput = {
+export type periodescolaireUncheckedUpdateWithoutEvaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  note?: Prisma.NoteUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireCreateManyAnneeScolaireInput = {
+export type periodescolaireCreateWithoutNoteInput = {
   id?: string
   nom: string
   ordre: number
   dateDebut: Date | string
   dateFin: Date | string
-  statut: $Enums.PeriodeStatut
+  statut: $Enums.periodescolaire_statut
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bulletin?: Prisma.bulletinCreateNestedManyWithoutPeriodescolaireInput
+  evaluation?: Prisma.evaluationCreateNestedManyWithoutPeriodescolaireInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPeriodescolaireInput
+}
+
+export type periodescolaireUncheckedCreateWithoutNoteInput = {
+  id?: string
+  annneScolaireId: string
+  nom: string
+  ordre: number
+  dateDebut: Date | string
+  dateFin: Date | string
+  statut: $Enums.periodescolaire_statut
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bulletin?: Prisma.bulletinUncheckedCreateNestedManyWithoutPeriodescolaireInput
+  evaluation?: Prisma.evaluationUncheckedCreateNestedManyWithoutPeriodescolaireInput
+}
+
+export type periodescolaireCreateOrConnectWithoutNoteInput = {
+  where: Prisma.periodescolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutNoteInput, Prisma.periodescolaireUncheckedCreateWithoutNoteInput>
+}
+
+export type periodescolaireUpsertWithoutNoteInput = {
+  update: Prisma.XOR<Prisma.periodescolaireUpdateWithoutNoteInput, Prisma.periodescolaireUncheckedUpdateWithoutNoteInput>
+  create: Prisma.XOR<Prisma.periodescolaireCreateWithoutNoteInput, Prisma.periodescolaireUncheckedCreateWithoutNoteInput>
+  where?: Prisma.periodescolaireWhereInput
+}
+
+export type periodescolaireUpdateToOneWithWhereWithoutNoteInput = {
+  where?: Prisma.periodescolaireWhereInput
+  data: Prisma.XOR<Prisma.periodescolaireUpdateWithoutNoteInput, Prisma.periodescolaireUncheckedUpdateWithoutNoteInput>
+}
+
+export type periodescolaireUpdateWithoutNoteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  ordre?: Prisma.IntFieldUpdateOperationsInput | number
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUpdateManyWithoutPeriodescolaireNestedInput
+  evaluation?: Prisma.evaluationUpdateManyWithoutPeriodescolaireNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPeriodescolaireNestedInput
+}
+
+export type periodescolaireUncheckedUpdateWithoutNoteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  annneScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  ordre?: Prisma.IntFieldUpdateOperationsInput | number
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+}
+
+export type periodescolaireCreateManyAnneescolaireInput = {
+  id?: string
+  nom: string
+  ordre: number
+  dateDebut: Date | string
+  dateFin: Date | string
+  statut: $Enums.periodescolaire_statut
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type PeriodeScolaireUpdateWithoutAnneeScolaireInput = {
+export type periodescolaireUpdateWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUpdateManyWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUpdateManyWithoutPeriodeScolaireNestedInput
+  bulletin?: Prisma.bulletinUpdateManyWithoutPeriodescolaireNestedInput
+  evaluation?: Prisma.evaluationUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUpdateManyWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireUncheckedUpdateWithoutAnneeScolaireInput = {
+export type periodescolaireUncheckedUpdateWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  note?: Prisma.NoteUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
-  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutPeriodeScolaireNestedInput
+  bulletin?: Prisma.bulletinUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  evaluation?: Prisma.evaluationUncheckedUpdateManyWithoutPeriodescolaireNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutPeriodescolaireNestedInput
 }
 
-export type PeriodeScolaireUncheckedUpdateManyWithoutAnneeScolaireInput = {
+export type periodescolaireUncheckedUpdateManyWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  statut?: Prisma.EnumPeriodeStatutFieldUpdateOperationsInput | $Enums.PeriodeStatut
+  statut?: Prisma.Enumperiodescolaire_statutFieldUpdateOperationsInput | $Enums.periodescolaire_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
 /**
- * Count Type PeriodeScolaireCountOutputType
+ * Count Type PeriodescolaireCountOutputType
  */
 
-export type PeriodeScolaireCountOutputType = {
+export type PeriodescolaireCountOutputType = {
   bulletin: number
+  evaluation: number
   note: number
-  evaluations: number
 }
 
-export type PeriodeScolaireCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  bulletin?: boolean | PeriodeScolaireCountOutputTypeCountBulletinArgs
-  note?: boolean | PeriodeScolaireCountOutputTypeCountNoteArgs
-  evaluations?: boolean | PeriodeScolaireCountOutputTypeCountEvaluationsArgs
+export type PeriodescolaireCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bulletin?: boolean | PeriodescolaireCountOutputTypeCountBulletinArgs
+  evaluation?: boolean | PeriodescolaireCountOutputTypeCountEvaluationArgs
+  note?: boolean | PeriodescolaireCountOutputTypeCountNoteArgs
 }
 
 /**
- * PeriodeScolaireCountOutputType without action
+ * PeriodescolaireCountOutputType without action
  */
-export type PeriodeScolaireCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PeriodescolaireCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaireCountOutputType
+   * Select specific fields to fetch from the PeriodescolaireCountOutputType
    */
-  select?: Prisma.PeriodeScolaireCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.PeriodescolaireCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * PeriodeScolaireCountOutputType without action
+ * PeriodescolaireCountOutputType without action
  */
-export type PeriodeScolaireCountOutputTypeCountBulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.BulletinWhereInput
+export type PeriodescolaireCountOutputTypeCountBulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.bulletinWhereInput
 }
 
 /**
- * PeriodeScolaireCountOutputType without action
+ * PeriodescolaireCountOutputType without action
  */
-export type PeriodeScolaireCountOutputTypeCountNoteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NoteWhereInput
+export type PeriodescolaireCountOutputTypeCountEvaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.evaluationWhereInput
 }
 
 /**
- * PeriodeScolaireCountOutputType without action
+ * PeriodescolaireCountOutputType without action
  */
-export type PeriodeScolaireCountOutputTypeCountEvaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EvaluationWhereInput
+export type PeriodescolaireCountOutputTypeCountNoteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.noteWhereInput
 }
 
 
-export type PeriodeScolaireSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type periodescolaireSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   annneScolaireId?: boolean
   nom?: boolean
@@ -972,16 +964,16 @@ export type PeriodeScolaireSelect<ExtArgs extends runtime.Types.Extensions.Inter
   statut?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  bulletin?: boolean | Prisma.PeriodeScolaire$bulletinArgs<ExtArgs>
-  note?: boolean | Prisma.PeriodeScolaire$noteArgs<ExtArgs>
-  evaluations?: boolean | Prisma.PeriodeScolaire$evaluationsArgs<ExtArgs>
-  _count?: boolean | Prisma.PeriodeScolaireCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["periodeScolaire"]>
+  bulletin?: boolean | Prisma.periodescolaire$bulletinArgs<ExtArgs>
+  evaluation?: boolean | Prisma.periodescolaire$evaluationArgs<ExtArgs>
+  note?: boolean | Prisma.periodescolaire$noteArgs<ExtArgs>
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  _count?: boolean | Prisma.PeriodescolaireCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["periodescolaire"]>
 
 
 
-export type PeriodeScolaireSelectScalar = {
+export type periodescolaireSelectScalar = {
   id?: boolean
   annneScolaireId?: boolean
   nom?: boolean
@@ -993,22 +985,22 @@ export type PeriodeScolaireSelectScalar = {
   updatedAt?: boolean
 }
 
-export type PeriodeScolaireOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "annneScolaireId" | "nom" | "ordre" | "dateDebut" | "dateFin" | "statut" | "createdAt" | "updatedAt", ExtArgs["result"]["periodeScolaire"]>
-export type PeriodeScolaireInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  bulletin?: boolean | Prisma.PeriodeScolaire$bulletinArgs<ExtArgs>
-  note?: boolean | Prisma.PeriodeScolaire$noteArgs<ExtArgs>
-  evaluations?: boolean | Prisma.PeriodeScolaire$evaluationsArgs<ExtArgs>
-  _count?: boolean | Prisma.PeriodeScolaireCountOutputTypeDefaultArgs<ExtArgs>
+export type periodescolaireOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "annneScolaireId" | "nom" | "ordre" | "dateDebut" | "dateFin" | "statut" | "createdAt" | "updatedAt", ExtArgs["result"]["periodescolaire"]>
+export type periodescolaireInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bulletin?: boolean | Prisma.periodescolaire$bulletinArgs<ExtArgs>
+  evaluation?: boolean | Prisma.periodescolaire$evaluationArgs<ExtArgs>
+  note?: boolean | Prisma.periodescolaire$noteArgs<ExtArgs>
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  _count?: boolean | Prisma.PeriodescolaireCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $PeriodeScolairePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "PeriodeScolaire"
+export type $periodescolairePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "periodescolaire"
   objects: {
-    anneeScolaire: Prisma.$AnneeScolairePayload<ExtArgs>
-    bulletin: Prisma.$BulletinPayload<ExtArgs>[]
-    note: Prisma.$NotePayload<ExtArgs>[]
-    evaluations: Prisma.$EvaluationPayload<ExtArgs>[]
+    bulletin: Prisma.$bulletinPayload<ExtArgs>[]
+    evaluation: Prisma.$evaluationPayload<ExtArgs>[]
+    note: Prisma.$notePayload<ExtArgs>[]
+    anneescolaire: Prisma.$anneescolairePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1017,146 +1009,146 @@ export type $PeriodeScolairePayload<ExtArgs extends runtime.Types.Extensions.Int
     ordre: number
     dateDebut: Date
     dateFin: Date
-    statut: $Enums.PeriodeStatut
+    statut: $Enums.periodescolaire_statut
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["periodeScolaire"]>
+  }, ExtArgs["result"]["periodescolaire"]>
   composites: {}
 }
 
-export type PeriodeScolaireGetPayload<S extends boolean | null | undefined | PeriodeScolaireDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload, S>
+export type periodescolaireGetPayload<S extends boolean | null | undefined | periodescolaireDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$periodescolairePayload, S>
 
-export type PeriodeScolaireCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<PeriodeScolaireFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: PeriodeScolaireCountAggregateInputType | true
+export type periodescolaireCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<periodescolaireFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PeriodescolaireCountAggregateInputType | true
   }
 
-export interface PeriodeScolaireDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PeriodeScolaire'], meta: { name: 'PeriodeScolaire' } }
+export interface periodescolaireDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['periodescolaire'], meta: { name: 'periodescolaire' } }
   /**
-   * Find zero or one PeriodeScolaire that matches the filter.
-   * @param {PeriodeScolaireFindUniqueArgs} args - Arguments to find a PeriodeScolaire
+   * Find zero or one Periodescolaire that matches the filter.
+   * @param {periodescolaireFindUniqueArgs} args - Arguments to find a Periodescolaire
    * @example
-   * // Get one PeriodeScolaire
-   * const periodeScolaire = await prisma.periodeScolaire.findUnique({
+   * // Get one Periodescolaire
+   * const periodescolaire = await prisma.periodescolaire.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends PeriodeScolaireFindUniqueArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends periodescolaireFindUniqueArgs>(args: Prisma.SelectSubset<T, periodescolaireFindUniqueArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one PeriodeScolaire that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Periodescolaire that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {PeriodeScolaireFindUniqueOrThrowArgs} args - Arguments to find a PeriodeScolaire
+   * @param {periodescolaireFindUniqueOrThrowArgs} args - Arguments to find a Periodescolaire
    * @example
-   * // Get one PeriodeScolaire
-   * const periodeScolaire = await prisma.periodeScolaire.findUniqueOrThrow({
+   * // Get one Periodescolaire
+   * const periodescolaire = await prisma.periodescolaire.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends PeriodeScolaireFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends periodescolaireFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, periodescolaireFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PeriodeScolaire that matches the filter.
+   * Find the first Periodescolaire that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireFindFirstArgs} args - Arguments to find a PeriodeScolaire
+   * @param {periodescolaireFindFirstArgs} args - Arguments to find a Periodescolaire
    * @example
-   * // Get one PeriodeScolaire
-   * const periodeScolaire = await prisma.periodeScolaire.findFirst({
+   * // Get one Periodescolaire
+   * const periodescolaire = await prisma.periodescolaire.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends PeriodeScolaireFindFirstArgs>(args?: Prisma.SelectSubset<T, PeriodeScolaireFindFirstArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends periodescolaireFindFirstArgs>(args?: Prisma.SelectSubset<T, periodescolaireFindFirstArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PeriodeScolaire that matches the filter or
+   * Find the first Periodescolaire that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireFindFirstOrThrowArgs} args - Arguments to find a PeriodeScolaire
+   * @param {periodescolaireFindFirstOrThrowArgs} args - Arguments to find a Periodescolaire
    * @example
-   * // Get one PeriodeScolaire
-   * const periodeScolaire = await prisma.periodeScolaire.findFirstOrThrow({
+   * // Get one Periodescolaire
+   * const periodescolaire = await prisma.periodescolaire.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends PeriodeScolaireFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PeriodeScolaireFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends periodescolaireFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, periodescolaireFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more PeriodeScolaires that matches the filter.
+   * Find zero or more Periodescolaires that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {periodescolaireFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all PeriodeScolaires
-   * const periodeScolaires = await prisma.periodeScolaire.findMany()
+   * // Get all Periodescolaires
+   * const periodescolaires = await prisma.periodescolaire.findMany()
    * 
-   * // Get first 10 PeriodeScolaires
-   * const periodeScolaires = await prisma.periodeScolaire.findMany({ take: 10 })
+   * // Get first 10 Periodescolaires
+   * const periodescolaires = await prisma.periodescolaire.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const periodeScolaireWithIdOnly = await prisma.periodeScolaire.findMany({ select: { id: true } })
+   * const periodescolaireWithIdOnly = await prisma.periodescolaire.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends PeriodeScolaireFindManyArgs>(args?: Prisma.SelectSubset<T, PeriodeScolaireFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends periodescolaireFindManyArgs>(args?: Prisma.SelectSubset<T, periodescolaireFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a PeriodeScolaire.
-   * @param {PeriodeScolaireCreateArgs} args - Arguments to create a PeriodeScolaire.
+   * Create a Periodescolaire.
+   * @param {periodescolaireCreateArgs} args - Arguments to create a Periodescolaire.
    * @example
-   * // Create one PeriodeScolaire
-   * const PeriodeScolaire = await prisma.periodeScolaire.create({
+   * // Create one Periodescolaire
+   * const Periodescolaire = await prisma.periodescolaire.create({
    *   data: {
-   *     // ... data to create a PeriodeScolaire
+   *     // ... data to create a Periodescolaire
    *   }
    * })
    * 
    */
-  create<T extends PeriodeScolaireCreateArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireCreateArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends periodescolaireCreateArgs>(args: Prisma.SelectSubset<T, periodescolaireCreateArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many PeriodeScolaires.
-   * @param {PeriodeScolaireCreateManyArgs} args - Arguments to create many PeriodeScolaires.
+   * Create many Periodescolaires.
+   * @param {periodescolaireCreateManyArgs} args - Arguments to create many Periodescolaires.
    * @example
-   * // Create many PeriodeScolaires
-   * const periodeScolaire = await prisma.periodeScolaire.createMany({
+   * // Create many Periodescolaires
+   * const periodescolaire = await prisma.periodescolaire.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends PeriodeScolaireCreateManyArgs>(args?: Prisma.SelectSubset<T, PeriodeScolaireCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends periodescolaireCreateManyArgs>(args?: Prisma.SelectSubset<T, periodescolaireCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a PeriodeScolaire.
-   * @param {PeriodeScolaireDeleteArgs} args - Arguments to delete one PeriodeScolaire.
+   * Delete a Periodescolaire.
+   * @param {periodescolaireDeleteArgs} args - Arguments to delete one Periodescolaire.
    * @example
-   * // Delete one PeriodeScolaire
-   * const PeriodeScolaire = await prisma.periodeScolaire.delete({
+   * // Delete one Periodescolaire
+   * const Periodescolaire = await prisma.periodescolaire.delete({
    *   where: {
-   *     // ... filter to delete one PeriodeScolaire
+   *     // ... filter to delete one Periodescolaire
    *   }
    * })
    * 
    */
-  delete<T extends PeriodeScolaireDeleteArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireDeleteArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends periodescolaireDeleteArgs>(args: Prisma.SelectSubset<T, periodescolaireDeleteArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one PeriodeScolaire.
-   * @param {PeriodeScolaireUpdateArgs} args - Arguments to update one PeriodeScolaire.
+   * Update one Periodescolaire.
+   * @param {periodescolaireUpdateArgs} args - Arguments to update one Periodescolaire.
    * @example
-   * // Update one PeriodeScolaire
-   * const periodeScolaire = await prisma.periodeScolaire.update({
+   * // Update one Periodescolaire
+   * const periodescolaire = await prisma.periodescolaire.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1166,30 +1158,30 @@ export interface PeriodeScolaireDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  update<T extends PeriodeScolaireUpdateArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireUpdateArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends periodescolaireUpdateArgs>(args: Prisma.SelectSubset<T, periodescolaireUpdateArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more PeriodeScolaires.
-   * @param {PeriodeScolaireDeleteManyArgs} args - Arguments to filter PeriodeScolaires to delete.
+   * Delete zero or more Periodescolaires.
+   * @param {periodescolaireDeleteManyArgs} args - Arguments to filter Periodescolaires to delete.
    * @example
-   * // Delete a few PeriodeScolaires
-   * const { count } = await prisma.periodeScolaire.deleteMany({
+   * // Delete a few Periodescolaires
+   * const { count } = await prisma.periodescolaire.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends PeriodeScolaireDeleteManyArgs>(args?: Prisma.SelectSubset<T, PeriodeScolaireDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends periodescolaireDeleteManyArgs>(args?: Prisma.SelectSubset<T, periodescolaireDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more PeriodeScolaires.
+   * Update zero or more Periodescolaires.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {periodescolaireUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many PeriodeScolaires
-   * const periodeScolaire = await prisma.periodeScolaire.updateMany({
+   * // Update many Periodescolaires
+   * const periodescolaire = await prisma.periodescolaire.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1199,56 +1191,56 @@ export interface PeriodeScolaireDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  updateMany<T extends PeriodeScolaireUpdateManyArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends periodescolaireUpdateManyArgs>(args: Prisma.SelectSubset<T, periodescolaireUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one PeriodeScolaire.
-   * @param {PeriodeScolaireUpsertArgs} args - Arguments to update or create a PeriodeScolaire.
+   * Create or update one Periodescolaire.
+   * @param {periodescolaireUpsertArgs} args - Arguments to update or create a Periodescolaire.
    * @example
-   * // Update or create a PeriodeScolaire
-   * const periodeScolaire = await prisma.periodeScolaire.upsert({
+   * // Update or create a Periodescolaire
+   * const periodescolaire = await prisma.periodescolaire.upsert({
    *   create: {
-   *     // ... data to create a PeriodeScolaire
+   *     // ... data to create a Periodescolaire
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the PeriodeScolaire we want to update
+   *     // ... the filter for the Periodescolaire we want to update
    *   }
    * })
    */
-  upsert<T extends PeriodeScolaireUpsertArgs>(args: Prisma.SelectSubset<T, PeriodeScolaireUpsertArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends periodescolaireUpsertArgs>(args: Prisma.SelectSubset<T, periodescolaireUpsertArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of PeriodeScolaires.
+   * Count the number of Periodescolaires.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireCountArgs} args - Arguments to filter PeriodeScolaires to count.
+   * @param {periodescolaireCountArgs} args - Arguments to filter Periodescolaires to count.
    * @example
-   * // Count the number of PeriodeScolaires
-   * const count = await prisma.periodeScolaire.count({
+   * // Count the number of Periodescolaires
+   * const count = await prisma.periodescolaire.count({
    *   where: {
-   *     // ... the filter for the PeriodeScolaires we want to count
+   *     // ... the filter for the Periodescolaires we want to count
    *   }
    * })
   **/
-  count<T extends PeriodeScolaireCountArgs>(
-    args?: Prisma.Subset<T, PeriodeScolaireCountArgs>,
+  count<T extends periodescolaireCountArgs>(
+    args?: Prisma.Subset<T, periodescolaireCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], PeriodeScolaireCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], PeriodescolaireCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a PeriodeScolaire.
+   * Allows you to perform aggregations operations on a Periodescolaire.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {PeriodescolaireAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1268,13 +1260,13 @@ export interface PeriodeScolaireDelegate<ExtArgs extends runtime.Types.Extension
    *   take: 10,
    * })
   **/
-  aggregate<T extends PeriodeScolaireAggregateArgs>(args: Prisma.Subset<T, PeriodeScolaireAggregateArgs>): Prisma.PrismaPromise<GetPeriodeScolaireAggregateType<T>>
+  aggregate<T extends PeriodescolaireAggregateArgs>(args: Prisma.Subset<T, PeriodescolaireAggregateArgs>): Prisma.PrismaPromise<GetPeriodescolaireAggregateType<T>>
 
   /**
-   * Group by PeriodeScolaire.
+   * Group by Periodescolaire.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PeriodeScolaireGroupByArgs} args - Group by arguments.
+   * @param {periodescolaireGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1289,14 +1281,14 @@ export interface PeriodeScolaireDelegate<ExtArgs extends runtime.Types.Extension
    * 
   **/
   groupBy<
-    T extends PeriodeScolaireGroupByArgs,
+    T extends periodescolaireGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: PeriodeScolaireGroupByArgs['orderBy'] }
-      : { orderBy?: PeriodeScolaireGroupByArgs['orderBy'] },
+      ? { orderBy: periodescolaireGroupByArgs['orderBy'] }
+      : { orderBy?: periodescolaireGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1345,25 +1337,25 @@ export interface PeriodeScolaireDelegate<ExtArgs extends runtime.Types.Extension
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, PeriodeScolaireGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPeriodeScolaireGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, periodescolaireGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPeriodescolaireGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the PeriodeScolaire model
+ * Fields of the periodescolaire model
  */
-readonly fields: PeriodeScolaireFieldRefs;
+readonly fields: periodescolaireFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for PeriodeScolaire.
+ * The delegate class that acts as a "Promise-like" for periodescolaire.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__PeriodeScolaireClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__periodescolaireClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  anneeScolaire<T extends Prisma.AnneeScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AnneeScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__AnneeScolaireClient<runtime.Types.Result.GetResult<Prisma.$AnneeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  bulletin<T extends Prisma.PeriodeScolaire$bulletinArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PeriodeScolaire$bulletinArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  note<T extends Prisma.PeriodeScolaire$noteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PeriodeScolaire$noteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  evaluations<T extends Prisma.PeriodeScolaire$evaluationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PeriodeScolaire$evaluationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  bulletin<T extends Prisma.periodescolaire$bulletinArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.periodescolaire$bulletinArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  evaluation<T extends Prisma.periodescolaire$evaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.periodescolaire$evaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  note<T extends Prisma.periodescolaire$noteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.periodescolaire$noteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$notePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  anneescolaire<T extends Prisma.anneescolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.anneescolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__anneescolaireClient<runtime.Types.Result.GetResult<Prisma.$anneescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1390,451 +1382,451 @@ export interface Prisma__PeriodeScolaireClient<T, Null = never, ExtArgs extends 
 
 
 /**
- * Fields of the PeriodeScolaire model
+ * Fields of the periodescolaire model
  */
-export interface PeriodeScolaireFieldRefs {
-  readonly id: Prisma.FieldRef<"PeriodeScolaire", 'String'>
-  readonly annneScolaireId: Prisma.FieldRef<"PeriodeScolaire", 'String'>
-  readonly nom: Prisma.FieldRef<"PeriodeScolaire", 'String'>
-  readonly ordre: Prisma.FieldRef<"PeriodeScolaire", 'Int'>
-  readonly dateDebut: Prisma.FieldRef<"PeriodeScolaire", 'DateTime'>
-  readonly dateFin: Prisma.FieldRef<"PeriodeScolaire", 'DateTime'>
-  readonly statut: Prisma.FieldRef<"PeriodeScolaire", 'PeriodeStatut'>
-  readonly createdAt: Prisma.FieldRef<"PeriodeScolaire", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"PeriodeScolaire", 'DateTime'>
+export interface periodescolaireFieldRefs {
+  readonly id: Prisma.FieldRef<"periodescolaire", 'String'>
+  readonly annneScolaireId: Prisma.FieldRef<"periodescolaire", 'String'>
+  readonly nom: Prisma.FieldRef<"periodescolaire", 'String'>
+  readonly ordre: Prisma.FieldRef<"periodescolaire", 'Int'>
+  readonly dateDebut: Prisma.FieldRef<"periodescolaire", 'DateTime'>
+  readonly dateFin: Prisma.FieldRef<"periodescolaire", 'DateTime'>
+  readonly statut: Prisma.FieldRef<"periodescolaire", 'periodescolaire_statut'>
+  readonly createdAt: Prisma.FieldRef<"periodescolaire", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"periodescolaire", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * PeriodeScolaire findUnique
+ * periodescolaire findUnique
  */
-export type PeriodeScolaireFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * Filter, which PeriodeScolaire to fetch.
+   * Filter, which periodescolaire to fetch.
    */
-  where: Prisma.PeriodeScolaireWhereUniqueInput
+  where: Prisma.periodescolaireWhereUniqueInput
 }
 
 /**
- * PeriodeScolaire findUniqueOrThrow
+ * periodescolaire findUniqueOrThrow
  */
-export type PeriodeScolaireFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * Filter, which PeriodeScolaire to fetch.
+   * Filter, which periodescolaire to fetch.
    */
-  where: Prisma.PeriodeScolaireWhereUniqueInput
+  where: Prisma.periodescolaireWhereUniqueInput
 }
 
 /**
- * PeriodeScolaire findFirst
+ * periodescolaire findFirst
  */
-export type PeriodeScolaireFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * Filter, which PeriodeScolaire to fetch.
+   * Filter, which periodescolaire to fetch.
    */
-  where?: Prisma.PeriodeScolaireWhereInput
+  where?: Prisma.periodescolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PeriodeScolaires to fetch.
+   * Determine the order of periodescolaires to fetch.
    */
-  orderBy?: Prisma.PeriodeScolaireOrderByWithRelationInput | Prisma.PeriodeScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.periodescolaireOrderByWithRelationInput | Prisma.periodescolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PeriodeScolaires.
+   * Sets the position for searching for periodescolaires.
    */
-  cursor?: Prisma.PeriodeScolaireWhereUniqueInput
+  cursor?: Prisma.periodescolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PeriodeScolaires from the position of the cursor.
+   * Take `±n` periodescolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PeriodeScolaires.
+   * Skip the first `n` periodescolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PeriodeScolaires.
+   * Filter by unique combinations of periodescolaires.
    */
-  distinct?: Prisma.PeriodeScolaireScalarFieldEnum | Prisma.PeriodeScolaireScalarFieldEnum[]
+  distinct?: Prisma.PeriodescolaireScalarFieldEnum | Prisma.PeriodescolaireScalarFieldEnum[]
 }
 
 /**
- * PeriodeScolaire findFirstOrThrow
+ * periodescolaire findFirstOrThrow
  */
-export type PeriodeScolaireFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * Filter, which PeriodeScolaire to fetch.
+   * Filter, which periodescolaire to fetch.
    */
-  where?: Prisma.PeriodeScolaireWhereInput
+  where?: Prisma.periodescolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PeriodeScolaires to fetch.
+   * Determine the order of periodescolaires to fetch.
    */
-  orderBy?: Prisma.PeriodeScolaireOrderByWithRelationInput | Prisma.PeriodeScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.periodescolaireOrderByWithRelationInput | Prisma.periodescolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PeriodeScolaires.
+   * Sets the position for searching for periodescolaires.
    */
-  cursor?: Prisma.PeriodeScolaireWhereUniqueInput
+  cursor?: Prisma.periodescolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PeriodeScolaires from the position of the cursor.
+   * Take `±n` periodescolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PeriodeScolaires.
+   * Skip the first `n` periodescolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PeriodeScolaires.
+   * Filter by unique combinations of periodescolaires.
    */
-  distinct?: Prisma.PeriodeScolaireScalarFieldEnum | Prisma.PeriodeScolaireScalarFieldEnum[]
+  distinct?: Prisma.PeriodescolaireScalarFieldEnum | Prisma.PeriodescolaireScalarFieldEnum[]
 }
 
 /**
- * PeriodeScolaire findMany
+ * periodescolaire findMany
  */
-export type PeriodeScolaireFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * Filter, which PeriodeScolaires to fetch.
+   * Filter, which periodescolaires to fetch.
    */
-  where?: Prisma.PeriodeScolaireWhereInput
+  where?: Prisma.periodescolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PeriodeScolaires to fetch.
+   * Determine the order of periodescolaires to fetch.
    */
-  orderBy?: Prisma.PeriodeScolaireOrderByWithRelationInput | Prisma.PeriodeScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.periodescolaireOrderByWithRelationInput | Prisma.periodescolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing PeriodeScolaires.
+   * Sets the position for listing periodescolaires.
    */
-  cursor?: Prisma.PeriodeScolaireWhereUniqueInput
+  cursor?: Prisma.periodescolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PeriodeScolaires from the position of the cursor.
+   * Take `±n` periodescolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PeriodeScolaires.
+   * Skip the first `n` periodescolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PeriodeScolaires.
+   * Filter by unique combinations of periodescolaires.
    */
-  distinct?: Prisma.PeriodeScolaireScalarFieldEnum | Prisma.PeriodeScolaireScalarFieldEnum[]
+  distinct?: Prisma.PeriodescolaireScalarFieldEnum | Prisma.PeriodescolaireScalarFieldEnum[]
 }
 
 /**
- * PeriodeScolaire create
+ * periodescolaire create
  */
-export type PeriodeScolaireCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * The data needed to create a PeriodeScolaire.
+   * The data needed to create a periodescolaire.
    */
-  data: Prisma.XOR<Prisma.PeriodeScolaireCreateInput, Prisma.PeriodeScolaireUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.periodescolaireCreateInput, Prisma.periodescolaireUncheckedCreateInput>
 }
 
 /**
- * PeriodeScolaire createMany
+ * periodescolaire createMany
  */
-export type PeriodeScolaireCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many PeriodeScolaires.
+   * The data used to create many periodescolaires.
    */
-  data: Prisma.PeriodeScolaireCreateManyInput | Prisma.PeriodeScolaireCreateManyInput[]
+  data: Prisma.periodescolaireCreateManyInput | Prisma.periodescolaireCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * PeriodeScolaire update
+ * periodescolaire update
  */
-export type PeriodeScolaireUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * The data needed to update a PeriodeScolaire.
+   * The data needed to update a periodescolaire.
    */
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateInput, Prisma.PeriodeScolaireUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.periodescolaireUpdateInput, Prisma.periodescolaireUncheckedUpdateInput>
   /**
-   * Choose, which PeriodeScolaire to update.
+   * Choose, which periodescolaire to update.
    */
-  where: Prisma.PeriodeScolaireWhereUniqueInput
+  where: Prisma.periodescolaireWhereUniqueInput
 }
 
 /**
- * PeriodeScolaire updateMany
+ * periodescolaire updateMany
  */
-export type PeriodeScolaireUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update PeriodeScolaires.
+   * The data used to update periodescolaires.
    */
-  data: Prisma.XOR<Prisma.PeriodeScolaireUpdateManyMutationInput, Prisma.PeriodeScolaireUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.periodescolaireUpdateManyMutationInput, Prisma.periodescolaireUncheckedUpdateManyInput>
   /**
-   * Filter which PeriodeScolaires to update
+   * Filter which periodescolaires to update
    */
-  where?: Prisma.PeriodeScolaireWhereInput
+  where?: Prisma.periodescolaireWhereInput
   /**
-   * Limit how many PeriodeScolaires to update.
+   * Limit how many periodescolaires to update.
    */
   limit?: number
 }
 
 /**
- * PeriodeScolaire upsert
+ * periodescolaire upsert
  */
-export type PeriodeScolaireUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * The filter to search for the PeriodeScolaire to update in case it exists.
+   * The filter to search for the periodescolaire to update in case it exists.
    */
-  where: Prisma.PeriodeScolaireWhereUniqueInput
+  where: Prisma.periodescolaireWhereUniqueInput
   /**
-   * In case the PeriodeScolaire found by the `where` argument doesn't exist, create a new PeriodeScolaire with this data.
+   * In case the periodescolaire found by the `where` argument doesn't exist, create a new periodescolaire with this data.
    */
-  create: Prisma.XOR<Prisma.PeriodeScolaireCreateInput, Prisma.PeriodeScolaireUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.periodescolaireCreateInput, Prisma.periodescolaireUncheckedCreateInput>
   /**
-   * In case the PeriodeScolaire was found with the provided `where` argument, update it with this data.
+   * In case the periodescolaire was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.PeriodeScolaireUpdateInput, Prisma.PeriodeScolaireUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.periodescolaireUpdateInput, Prisma.periodescolaireUncheckedUpdateInput>
 }
 
 /**
- * PeriodeScolaire delete
+ * periodescolaire delete
  */
-export type PeriodeScolaireDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the periodescolaire
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the periodescolaire
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
   /**
-   * Filter which PeriodeScolaire to delete.
+   * Filter which periodescolaire to delete.
    */
-  where: Prisma.PeriodeScolaireWhereUniqueInput
+  where: Prisma.periodescolaireWhereUniqueInput
 }
 
 /**
- * PeriodeScolaire deleteMany
+ * periodescolaire deleteMany
  */
-export type PeriodeScolaireDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaireDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PeriodeScolaires to delete
+   * Filter which periodescolaires to delete
    */
-  where?: Prisma.PeriodeScolaireWhereInput
+  where?: Prisma.periodescolaireWhereInput
   /**
-   * Limit how many PeriodeScolaires to delete.
+   * Limit how many periodescolaires to delete.
    */
   limit?: number
 }
 
 /**
- * PeriodeScolaire.bulletin
+ * periodescolaire.bulletin
  */
-export type PeriodeScolaire$bulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaire$bulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
-  where?: Prisma.BulletinWhereInput
-  orderBy?: Prisma.BulletinOrderByWithRelationInput | Prisma.BulletinOrderByWithRelationInput[]
-  cursor?: Prisma.BulletinWhereUniqueInput
+  include?: Prisma.bulletinInclude<ExtArgs> | null
+  where?: Prisma.bulletinWhereInput
+  orderBy?: Prisma.bulletinOrderByWithRelationInput | Prisma.bulletinOrderByWithRelationInput[]
+  cursor?: Prisma.bulletinWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.BulletinScalarFieldEnum | Prisma.BulletinScalarFieldEnum[]
 }
 
 /**
- * PeriodeScolaire.note
+ * periodescolaire.evaluation
  */
-export type PeriodeScolaire$noteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaire$evaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Note
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.NoteSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Note
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.NoteOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NoteInclude<ExtArgs> | null
-  where?: Prisma.NoteWhereInput
-  orderBy?: Prisma.NoteOrderByWithRelationInput | Prisma.NoteOrderByWithRelationInput[]
-  cursor?: Prisma.NoteWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.NoteScalarFieldEnum | Prisma.NoteScalarFieldEnum[]
-}
-
-/**
- * PeriodeScolaire.evaluations
- */
-export type PeriodeScolaire$evaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Evaluation
-   */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Evaluation
-   */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
-  where?: Prisma.EvaluationWhereInput
-  orderBy?: Prisma.EvaluationOrderByWithRelationInput | Prisma.EvaluationOrderByWithRelationInput[]
-  cursor?: Prisma.EvaluationWhereUniqueInput
+  include?: Prisma.evaluationInclude<ExtArgs> | null
+  where?: Prisma.evaluationWhereInput
+  orderBy?: Prisma.evaluationOrderByWithRelationInput | Prisma.evaluationOrderByWithRelationInput[]
+  cursor?: Prisma.evaluationWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.EvaluationScalarFieldEnum | Prisma.EvaluationScalarFieldEnum[]
 }
 
 /**
- * PeriodeScolaire without action
+ * periodescolaire.note
  */
-export type PeriodeScolaireDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type periodescolaire$noteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PeriodeScolaire
+   * Select specific fields to fetch from the note
    */
-  select?: Prisma.PeriodeScolaireSelect<ExtArgs> | null
+  select?: Prisma.noteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PeriodeScolaire
+   * Omit specific fields from the note
    */
-  omit?: Prisma.PeriodeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.noteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PeriodeScolaireInclude<ExtArgs> | null
+  include?: Prisma.noteInclude<ExtArgs> | null
+  where?: Prisma.noteWhereInput
+  orderBy?: Prisma.noteOrderByWithRelationInput | Prisma.noteOrderByWithRelationInput[]
+  cursor?: Prisma.noteWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NoteScalarFieldEnum | Prisma.NoteScalarFieldEnum[]
+}
+
+/**
+ * periodescolaire without action
+ */
+export type periodescolaireDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the periodescolaire
+   */
+  select?: Prisma.periodescolaireSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the periodescolaire
+   */
+  omit?: Prisma.periodescolaireOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.periodescolaireInclude<ExtArgs> | null
 }

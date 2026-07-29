@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Absence` model and its related types.
+ * This file exports the `absence` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Absence
+ * Model absence
  * 
  */
-export type AbsenceModel = runtime.Types.Result.DefaultSelection<Prisma.$AbsencePayload>
+export type absenceModel = runtime.Types.Result.DefaultSelection<Prisma.$absencePayload>
 
 export type AggregateAbsence = {
   _count: AbsenceCountAggregateOutputType | null
@@ -29,7 +29,7 @@ export type AbsenceMinAggregateOutputType = {
   dateDebut: Date | null
   dateFin: Date | null
   motif: string | null
-  statut: $Enums.AbsenceStatut | null
+  statut: $Enums.absence_statut | null
   commentaire: string | null
   declareParUserId: string | null
   justificatifUrl: string | null
@@ -45,7 +45,7 @@ export type AbsenceMaxAggregateOutputType = {
   dateDebut: Date | null
   dateFin: Date | null
   motif: string | null
-  statut: $Enums.AbsenceStatut | null
+  statut: $Enums.absence_statut | null
   commentaire: string | null
   declareParUserId: string | null
   justificatifUrl: string | null
@@ -125,37 +125,37 @@ export type AbsenceCountAggregateInputType = {
 
 export type AbsenceAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Absence to aggregate.
+   * Filter which absence to aggregate.
    */
-  where?: Prisma.AbsenceWhereInput
+  where?: Prisma.absenceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Absences to fetch.
+   * Determine the order of absences to fetch.
    */
-  orderBy?: Prisma.AbsenceOrderByWithRelationInput | Prisma.AbsenceOrderByWithRelationInput[]
+  orderBy?: Prisma.absenceOrderByWithRelationInput | Prisma.absenceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.AbsenceWhereUniqueInput
+  cursor?: Prisma.absenceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Absences from the position of the cursor.
+   * Take `±n` absences from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Absences.
+   * Skip the first `n` absences.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Absences
+   * Count returned absences
   **/
   _count?: true | AbsenceCountAggregateInputType
   /**
@@ -183,11 +183,11 @@ export type GetAbsenceAggregateType<T extends AbsenceAggregateArgs> = {
 
 
 
-export type AbsenceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AbsenceWhereInput
-  orderBy?: Prisma.AbsenceOrderByWithAggregationInput | Prisma.AbsenceOrderByWithAggregationInput[]
+export type absenceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.absenceWhereInput
+  orderBy?: Prisma.absenceOrderByWithAggregationInput | Prisma.absenceOrderByWithAggregationInput[]
   by: Prisma.AbsenceScalarFieldEnum[] | Prisma.AbsenceScalarFieldEnum
-  having?: Prisma.AbsenceScalarWhereWithAggregatesInput
+  having?: Prisma.absenceScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: AbsenceCountAggregateInputType | true
@@ -200,7 +200,7 @@ export type AbsenceGroupByOutputType = {
   dateDebut: Date
   dateFin: Date
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire: string | null
   declareParUserId: string
   justificatifUrl: string | null
@@ -214,7 +214,7 @@ export type AbsenceGroupByOutputType = {
   _max: AbsenceMaxAggregateOutputType | null
 }
 
-export type GetAbsenceGroupByPayload<T extends AbsenceGroupByArgs> = Prisma.PrismaPromise<
+export type GetAbsenceGroupByPayload<T extends absenceGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<AbsenceGroupByOutputType, T['by']> &
       {
@@ -229,28 +229,28 @@ export type GetAbsenceGroupByPayload<T extends AbsenceGroupByArgs> = Prisma.Pris
 
 
 
-export type AbsenceWhereInput = {
-  AND?: Prisma.AbsenceWhereInput | Prisma.AbsenceWhereInput[]
-  OR?: Prisma.AbsenceWhereInput[]
-  NOT?: Prisma.AbsenceWhereInput | Prisma.AbsenceWhereInput[]
-  id?: Prisma.StringFilter<"Absence"> | string
-  dateDebut?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  dateFin?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  motif?: Prisma.StringFilter<"Absence"> | string
-  statut?: Prisma.EnumAbsenceStatutFilter<"Absence"> | $Enums.AbsenceStatut
-  commentaire?: Prisma.StringNullableFilter<"Absence"> | string | null
-  declareParUserId?: Prisma.StringFilter<"Absence"> | string
-  justificatifUrl?: Prisma.StringNullableFilter<"Absence"> | string | null
-  inscriptionApprenantId?: Prisma.StringFilter<"Absence"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"Absence"> | string
-  affectationEnseignantId?: Prisma.StringNullableFilter<"Absence"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
-  affectationEnseignant?: Prisma.XOR<Prisma.AffectationEnseignantNullableScalarRelationFilter, Prisma.AffectationEnseignantWhereInput> | null
+export type absenceWhereInput = {
+  AND?: Prisma.absenceWhereInput | Prisma.absenceWhereInput[]
+  OR?: Prisma.absenceWhereInput[]
+  NOT?: Prisma.absenceWhereInput | Prisma.absenceWhereInput[]
+  id?: Prisma.StringFilter<"absence"> | string
+  dateDebut?: Prisma.DateTimeFilter<"absence"> | Date | string
+  dateFin?: Prisma.DateTimeFilter<"absence"> | Date | string
+  motif?: Prisma.StringFilter<"absence"> | string
+  statut?: Prisma.Enumabsence_statutFilter<"absence"> | $Enums.absence_statut
+  commentaire?: Prisma.StringNullableFilter<"absence"> | string | null
+  declareParUserId?: Prisma.StringFilter<"absence"> | string
+  justificatifUrl?: Prisma.StringNullableFilter<"absence"> | string | null
+  inscriptionApprenantId?: Prisma.StringFilter<"absence"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"absence"> | string
+  affectationEnseignantId?: Prisma.StringNullableFilter<"absence"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"absence"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"absence"> | Date | string
+  affectationenseignant?: Prisma.XOR<Prisma.AffectationenseignantNullableScalarRelationFilter, Prisma.affectationenseignantWhereInput> | null
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
 }
 
-export type AbsenceOrderByWithRelationInput = {
+export type absenceOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   dateDebut?: Prisma.SortOrder
   dateFin?: Prisma.SortOrder
@@ -264,33 +264,33 @@ export type AbsenceOrderByWithRelationInput = {
   affectationEnseignantId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  inscription?: Prisma.InscriptionOrderByWithRelationInput
-  affectationEnseignant?: Prisma.AffectationEnseignantOrderByWithRelationInput
-  _relevance?: Prisma.AbsenceOrderByRelevanceInput
+  affectationenseignant?: Prisma.affectationenseignantOrderByWithRelationInput
+  inscription?: Prisma.inscriptionOrderByWithRelationInput
+  _relevance?: Prisma.absenceOrderByRelevanceInput
 }
 
-export type AbsenceWhereUniqueInput = Prisma.AtLeast<{
+export type absenceWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.AbsenceWhereInput | Prisma.AbsenceWhereInput[]
-  OR?: Prisma.AbsenceWhereInput[]
-  NOT?: Prisma.AbsenceWhereInput | Prisma.AbsenceWhereInput[]
-  dateDebut?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  dateFin?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  motif?: Prisma.StringFilter<"Absence"> | string
-  statut?: Prisma.EnumAbsenceStatutFilter<"Absence"> | $Enums.AbsenceStatut
-  commentaire?: Prisma.StringNullableFilter<"Absence"> | string | null
-  declareParUserId?: Prisma.StringFilter<"Absence"> | string
-  justificatifUrl?: Prisma.StringNullableFilter<"Absence"> | string | null
-  inscriptionApprenantId?: Prisma.StringFilter<"Absence"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"Absence"> | string
-  affectationEnseignantId?: Prisma.StringNullableFilter<"Absence"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
-  affectationEnseignant?: Prisma.XOR<Prisma.AffectationEnseignantNullableScalarRelationFilter, Prisma.AffectationEnseignantWhereInput> | null
+  AND?: Prisma.absenceWhereInput | Prisma.absenceWhereInput[]
+  OR?: Prisma.absenceWhereInput[]
+  NOT?: Prisma.absenceWhereInput | Prisma.absenceWhereInput[]
+  dateDebut?: Prisma.DateTimeFilter<"absence"> | Date | string
+  dateFin?: Prisma.DateTimeFilter<"absence"> | Date | string
+  motif?: Prisma.StringFilter<"absence"> | string
+  statut?: Prisma.Enumabsence_statutFilter<"absence"> | $Enums.absence_statut
+  commentaire?: Prisma.StringNullableFilter<"absence"> | string | null
+  declareParUserId?: Prisma.StringFilter<"absence"> | string
+  justificatifUrl?: Prisma.StringNullableFilter<"absence"> | string | null
+  inscriptionApprenantId?: Prisma.StringFilter<"absence"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"absence"> | string
+  affectationEnseignantId?: Prisma.StringNullableFilter<"absence"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"absence"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"absence"> | Date | string
+  affectationenseignant?: Prisma.XOR<Prisma.AffectationenseignantNullableScalarRelationFilter, Prisma.affectationenseignantWhereInput> | null
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
 }, "id">
 
-export type AbsenceOrderByWithAggregationInput = {
+export type absenceOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   dateDebut?: Prisma.SortOrder
   dateFin?: Prisma.SortOrder
@@ -304,98 +304,51 @@ export type AbsenceOrderByWithAggregationInput = {
   affectationEnseignantId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.AbsenceCountOrderByAggregateInput
-  _max?: Prisma.AbsenceMaxOrderByAggregateInput
-  _min?: Prisma.AbsenceMinOrderByAggregateInput
+  _count?: Prisma.absenceCountOrderByAggregateInput
+  _max?: Prisma.absenceMaxOrderByAggregateInput
+  _min?: Prisma.absenceMinOrderByAggregateInput
 }
 
-export type AbsenceScalarWhereWithAggregatesInput = {
-  AND?: Prisma.AbsenceScalarWhereWithAggregatesInput | Prisma.AbsenceScalarWhereWithAggregatesInput[]
-  OR?: Prisma.AbsenceScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.AbsenceScalarWhereWithAggregatesInput | Prisma.AbsenceScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Absence"> | string
-  dateDebut?: Prisma.DateTimeWithAggregatesFilter<"Absence"> | Date | string
-  dateFin?: Prisma.DateTimeWithAggregatesFilter<"Absence"> | Date | string
-  motif?: Prisma.StringWithAggregatesFilter<"Absence"> | string
-  statut?: Prisma.EnumAbsenceStatutWithAggregatesFilter<"Absence"> | $Enums.AbsenceStatut
-  commentaire?: Prisma.StringNullableWithAggregatesFilter<"Absence"> | string | null
-  declareParUserId?: Prisma.StringWithAggregatesFilter<"Absence"> | string
-  justificatifUrl?: Prisma.StringNullableWithAggregatesFilter<"Absence"> | string | null
-  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"Absence"> | string
-  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"Absence"> | string
-  affectationEnseignantId?: Prisma.StringNullableWithAggregatesFilter<"Absence"> | string | null
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Absence"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Absence"> | Date | string
+export type absenceScalarWhereWithAggregatesInput = {
+  AND?: Prisma.absenceScalarWhereWithAggregatesInput | Prisma.absenceScalarWhereWithAggregatesInput[]
+  OR?: Prisma.absenceScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.absenceScalarWhereWithAggregatesInput | Prisma.absenceScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"absence"> | string
+  dateDebut?: Prisma.DateTimeWithAggregatesFilter<"absence"> | Date | string
+  dateFin?: Prisma.DateTimeWithAggregatesFilter<"absence"> | Date | string
+  motif?: Prisma.StringWithAggregatesFilter<"absence"> | string
+  statut?: Prisma.Enumabsence_statutWithAggregatesFilter<"absence"> | $Enums.absence_statut
+  commentaire?: Prisma.StringNullableWithAggregatesFilter<"absence"> | string | null
+  declareParUserId?: Prisma.StringWithAggregatesFilter<"absence"> | string
+  justificatifUrl?: Prisma.StringNullableWithAggregatesFilter<"absence"> | string | null
+  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"absence"> | string
+  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"absence"> | string
+  affectationEnseignantId?: Prisma.StringNullableWithAggregatesFilter<"absence"> | string | null
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"absence"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"absence"> | Date | string
 }
 
-export type AbsenceCreateInput = {
+export type absenceCreateInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutAbsencesInput
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedOneWithoutAbsencesInput
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedOneWithoutAbsenceInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutAbsenceInput
 }
 
-export type AbsenceUncheckedCreateInput = {
+export type absenceUncheckedCreateInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
-  commentaire?: string | null
-  declareParUserId: string
-  justificatifUrl?: string | null
-  inscriptionApprenantId: string
-  inscriptionAnneeId: string
-  affectationEnseignantId?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type AbsenceUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
-  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
-  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutAbsencesNestedInput
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateOneWithoutAbsencesNestedInput
-}
-
-export type AbsenceUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
-  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
-  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
-  affectationEnseignantId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type AbsenceCreateManyInput = {
-  id?: string
-  dateDebut: Date | string
-  dateFin: Date | string
-  motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
@@ -406,25 +359,27 @@ export type AbsenceCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type AbsenceUpdateManyMutationInput = {
+export type absenceUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
   commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
   justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneWithoutAbsenceNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutAbsenceNestedInput
 }
 
-export type AbsenceUncheckedUpdateManyInput = {
+export type absenceUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
   commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
   justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -435,23 +390,58 @@ export type AbsenceUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type AbsenceListRelationFilter = {
-  every?: Prisma.AbsenceWhereInput
-  some?: Prisma.AbsenceWhereInput
-  none?: Prisma.AbsenceWhereInput
+export type absenceCreateManyInput = {
+  id?: string
+  dateDebut: Date | string
+  dateFin: Date | string
+  motif: string
+  statut: $Enums.absence_statut
+  commentaire?: string | null
+  declareParUserId: string
+  justificatifUrl?: string | null
+  inscriptionApprenantId: string
+  inscriptionAnneeId: string
+  affectationEnseignantId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
-export type AbsenceOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
+export type absenceUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  motif?: Prisma.StringFieldUpdateOperationsInput | string
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
+  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type AbsenceOrderByRelevanceInput = {
-  fields: Prisma.AbsenceOrderByRelevanceFieldEnum | Prisma.AbsenceOrderByRelevanceFieldEnum[]
+export type absenceUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  motif?: Prisma.StringFieldUpdateOperationsInput | string
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
+  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
+  affectationEnseignantId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type absenceOrderByRelevanceInput = {
+  fields: Prisma.absenceOrderByRelevanceFieldEnum | Prisma.absenceOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type AbsenceCountOrderByAggregateInput = {
+export type absenceCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   dateDebut?: Prisma.SortOrder
   dateFin?: Prisma.SortOrder
@@ -467,7 +457,7 @@ export type AbsenceCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type AbsenceMaxOrderByAggregateInput = {
+export type absenceMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   dateDebut?: Prisma.SortOrder
   dateFin?: Prisma.SortOrder
@@ -483,7 +473,7 @@ export type AbsenceMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type AbsenceMinOrderByAggregateInput = {
+export type absenceMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   dateDebut?: Prisma.SortOrder
   dateFin?: Prisma.SortOrder
@@ -499,114 +489,136 @@ export type AbsenceMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type AbsenceCreateNestedManyWithoutAffectationEnseignantInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.AbsenceCreateWithoutAffectationEnseignantInput[] | Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput | Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.AbsenceCreateManyAffectationEnseignantInputEnvelope
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
+export type AbsenceListRelationFilter = {
+  every?: Prisma.absenceWhereInput
+  some?: Prisma.absenceWhereInput
+  none?: Prisma.absenceWhereInput
 }
 
-export type AbsenceUncheckedCreateNestedManyWithoutAffectationEnseignantInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.AbsenceCreateWithoutAffectationEnseignantInput[] | Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput | Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.AbsenceCreateManyAffectationEnseignantInputEnvelope
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
+export type absenceOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
-export type AbsenceUpdateManyWithoutAffectationEnseignantNestedInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.AbsenceCreateWithoutAffectationEnseignantInput[] | Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput | Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput[]
-  upsert?: Prisma.AbsenceUpsertWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.AbsenceUpsertWithWhereUniqueWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.AbsenceCreateManyAffectationEnseignantInputEnvelope
-  set?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  disconnect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  delete?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  update?: Prisma.AbsenceUpdateWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.AbsenceUpdateWithWhereUniqueWithoutAffectationEnseignantInput[]
-  updateMany?: Prisma.AbsenceUpdateManyWithWhereWithoutAffectationEnseignantInput | Prisma.AbsenceUpdateManyWithWhereWithoutAffectationEnseignantInput[]
-  deleteMany?: Prisma.AbsenceScalarWhereInput | Prisma.AbsenceScalarWhereInput[]
+export type StringFieldUpdateOperationsInput = {
+  set?: string
 }
 
-export type AbsenceUncheckedUpdateManyWithoutAffectationEnseignantNestedInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.AbsenceCreateWithoutAffectationEnseignantInput[] | Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput | Prisma.AbsenceCreateOrConnectWithoutAffectationEnseignantInput[]
-  upsert?: Prisma.AbsenceUpsertWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.AbsenceUpsertWithWhereUniqueWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.AbsenceCreateManyAffectationEnseignantInputEnvelope
-  set?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  disconnect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  delete?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  update?: Prisma.AbsenceUpdateWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.AbsenceUpdateWithWhereUniqueWithoutAffectationEnseignantInput[]
-  updateMany?: Prisma.AbsenceUpdateManyWithWhereWithoutAffectationEnseignantInput | Prisma.AbsenceUpdateManyWithWhereWithoutAffectationEnseignantInput[]
-  deleteMany?: Prisma.AbsenceScalarWhereInput | Prisma.AbsenceScalarWhereInput[]
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
 }
 
-export type AbsenceCreateNestedManyWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutInscriptionInput, Prisma.AbsenceUncheckedCreateWithoutInscriptionInput> | Prisma.AbsenceCreateWithoutInscriptionInput[] | Prisma.AbsenceUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutInscriptionInput | Prisma.AbsenceCreateOrConnectWithoutInscriptionInput[]
-  createMany?: Prisma.AbsenceCreateManyInscriptionInputEnvelope
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
+export type Enumabsence_statutFieldUpdateOperationsInput = {
+  set?: $Enums.absence_statut
 }
 
-export type AbsenceUncheckedCreateNestedManyWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutInscriptionInput, Prisma.AbsenceUncheckedCreateWithoutInscriptionInput> | Prisma.AbsenceCreateWithoutInscriptionInput[] | Prisma.AbsenceUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutInscriptionInput | Prisma.AbsenceCreateOrConnectWithoutInscriptionInput[]
-  createMany?: Prisma.AbsenceCreateManyInscriptionInputEnvelope
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
 }
 
-export type AbsenceUpdateManyWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutInscriptionInput, Prisma.AbsenceUncheckedCreateWithoutInscriptionInput> | Prisma.AbsenceCreateWithoutInscriptionInput[] | Prisma.AbsenceUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutInscriptionInput | Prisma.AbsenceCreateOrConnectWithoutInscriptionInput[]
-  upsert?: Prisma.AbsenceUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.AbsenceUpsertWithWhereUniqueWithoutInscriptionInput[]
-  createMany?: Prisma.AbsenceCreateManyInscriptionInputEnvelope
-  set?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  disconnect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  delete?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  update?: Prisma.AbsenceUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.AbsenceUpdateWithWhereUniqueWithoutInscriptionInput[]
-  updateMany?: Prisma.AbsenceUpdateManyWithWhereWithoutInscriptionInput | Prisma.AbsenceUpdateManyWithWhereWithoutInscriptionInput[]
-  deleteMany?: Prisma.AbsenceScalarWhereInput | Prisma.AbsenceScalarWhereInput[]
+export type absenceCreateNestedManyWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutAffectationenseignantInput, Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput> | Prisma.absenceCreateWithoutAffectationenseignantInput[] | Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput | Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput[]
+  createMany?: Prisma.absenceCreateManyAffectationenseignantInputEnvelope
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
 }
 
-export type AbsenceUncheckedUpdateManyWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.AbsenceCreateWithoutInscriptionInput, Prisma.AbsenceUncheckedCreateWithoutInscriptionInput> | Prisma.AbsenceCreateWithoutInscriptionInput[] | Prisma.AbsenceUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.AbsenceCreateOrConnectWithoutInscriptionInput | Prisma.AbsenceCreateOrConnectWithoutInscriptionInput[]
-  upsert?: Prisma.AbsenceUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.AbsenceUpsertWithWhereUniqueWithoutInscriptionInput[]
-  createMany?: Prisma.AbsenceCreateManyInscriptionInputEnvelope
-  set?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  disconnect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  delete?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  connect?: Prisma.AbsenceWhereUniqueInput | Prisma.AbsenceWhereUniqueInput[]
-  update?: Prisma.AbsenceUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.AbsenceUpdateWithWhereUniqueWithoutInscriptionInput[]
-  updateMany?: Prisma.AbsenceUpdateManyWithWhereWithoutInscriptionInput | Prisma.AbsenceUpdateManyWithWhereWithoutInscriptionInput[]
-  deleteMany?: Prisma.AbsenceScalarWhereInput | Prisma.AbsenceScalarWhereInput[]
+export type absenceUncheckedCreateNestedManyWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutAffectationenseignantInput, Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput> | Prisma.absenceCreateWithoutAffectationenseignantInput[] | Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput | Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput[]
+  createMany?: Prisma.absenceCreateManyAffectationenseignantInputEnvelope
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
 }
 
-export type EnumAbsenceStatutFieldUpdateOperationsInput = {
-  set?: $Enums.AbsenceStatut
+export type absenceUpdateManyWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutAffectationenseignantInput, Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput> | Prisma.absenceCreateWithoutAffectationenseignantInput[] | Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput | Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput[]
+  upsert?: Prisma.absenceUpsertWithWhereUniqueWithoutAffectationenseignantInput | Prisma.absenceUpsertWithWhereUniqueWithoutAffectationenseignantInput[]
+  createMany?: Prisma.absenceCreateManyAffectationenseignantInputEnvelope
+  set?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  disconnect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  delete?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  update?: Prisma.absenceUpdateWithWhereUniqueWithoutAffectationenseignantInput | Prisma.absenceUpdateWithWhereUniqueWithoutAffectationenseignantInput[]
+  updateMany?: Prisma.absenceUpdateManyWithWhereWithoutAffectationenseignantInput | Prisma.absenceUpdateManyWithWhereWithoutAffectationenseignantInput[]
+  deleteMany?: Prisma.absenceScalarWhereInput | Prisma.absenceScalarWhereInput[]
 }
 
-export type AbsenceCreateWithoutAffectationEnseignantInput = {
+export type absenceUncheckedUpdateManyWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutAffectationenseignantInput, Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput> | Prisma.absenceCreateWithoutAffectationenseignantInput[] | Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput | Prisma.absenceCreateOrConnectWithoutAffectationenseignantInput[]
+  upsert?: Prisma.absenceUpsertWithWhereUniqueWithoutAffectationenseignantInput | Prisma.absenceUpsertWithWhereUniqueWithoutAffectationenseignantInput[]
+  createMany?: Prisma.absenceCreateManyAffectationenseignantInputEnvelope
+  set?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  disconnect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  delete?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  update?: Prisma.absenceUpdateWithWhereUniqueWithoutAffectationenseignantInput | Prisma.absenceUpdateWithWhereUniqueWithoutAffectationenseignantInput[]
+  updateMany?: Prisma.absenceUpdateManyWithWhereWithoutAffectationenseignantInput | Prisma.absenceUpdateManyWithWhereWithoutAffectationenseignantInput[]
+  deleteMany?: Prisma.absenceScalarWhereInput | Prisma.absenceScalarWhereInput[]
+}
+
+export type absenceCreateNestedManyWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutInscriptionInput, Prisma.absenceUncheckedCreateWithoutInscriptionInput> | Prisma.absenceCreateWithoutInscriptionInput[] | Prisma.absenceUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutInscriptionInput | Prisma.absenceCreateOrConnectWithoutInscriptionInput[]
+  createMany?: Prisma.absenceCreateManyInscriptionInputEnvelope
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+}
+
+export type absenceUncheckedCreateNestedManyWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutInscriptionInput, Prisma.absenceUncheckedCreateWithoutInscriptionInput> | Prisma.absenceCreateWithoutInscriptionInput[] | Prisma.absenceUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutInscriptionInput | Prisma.absenceCreateOrConnectWithoutInscriptionInput[]
+  createMany?: Prisma.absenceCreateManyInscriptionInputEnvelope
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+}
+
+export type absenceUpdateManyWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutInscriptionInput, Prisma.absenceUncheckedCreateWithoutInscriptionInput> | Prisma.absenceCreateWithoutInscriptionInput[] | Prisma.absenceUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutInscriptionInput | Prisma.absenceCreateOrConnectWithoutInscriptionInput[]
+  upsert?: Prisma.absenceUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.absenceUpsertWithWhereUniqueWithoutInscriptionInput[]
+  createMany?: Prisma.absenceCreateManyInscriptionInputEnvelope
+  set?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  disconnect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  delete?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  update?: Prisma.absenceUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.absenceUpdateWithWhereUniqueWithoutInscriptionInput[]
+  updateMany?: Prisma.absenceUpdateManyWithWhereWithoutInscriptionInput | Prisma.absenceUpdateManyWithWhereWithoutInscriptionInput[]
+  deleteMany?: Prisma.absenceScalarWhereInput | Prisma.absenceScalarWhereInput[]
+}
+
+export type absenceUncheckedUpdateManyWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.absenceCreateWithoutInscriptionInput, Prisma.absenceUncheckedCreateWithoutInscriptionInput> | Prisma.absenceCreateWithoutInscriptionInput[] | Prisma.absenceUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.absenceCreateOrConnectWithoutInscriptionInput | Prisma.absenceCreateOrConnectWithoutInscriptionInput[]
+  upsert?: Prisma.absenceUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.absenceUpsertWithWhereUniqueWithoutInscriptionInput[]
+  createMany?: Prisma.absenceCreateManyInscriptionInputEnvelope
+  set?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  disconnect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  delete?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  connect?: Prisma.absenceWhereUniqueInput | Prisma.absenceWhereUniqueInput[]
+  update?: Prisma.absenceUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.absenceUpdateWithWhereUniqueWithoutInscriptionInput[]
+  updateMany?: Prisma.absenceUpdateManyWithWhereWithoutInscriptionInput | Prisma.absenceUpdateManyWithWhereWithoutInscriptionInput[]
+  deleteMany?: Prisma.absenceScalarWhereInput | Prisma.absenceScalarWhereInput[]
+}
+
+export type absenceCreateWithoutAffectationenseignantInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutAbsencesInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutAbsenceInput
 }
 
-export type AbsenceUncheckedCreateWithoutAffectationEnseignantInput = {
+export type absenceUncheckedCreateWithoutAffectationenseignantInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
@@ -616,71 +628,71 @@ export type AbsenceUncheckedCreateWithoutAffectationEnseignantInput = {
   updatedAt?: Date | string
 }
 
-export type AbsenceCreateOrConnectWithoutAffectationEnseignantInput = {
-  where: Prisma.AbsenceWhereUniqueInput
-  create: Prisma.XOR<Prisma.AbsenceCreateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput>
+export type absenceCreateOrConnectWithoutAffectationenseignantInput = {
+  where: Prisma.absenceWhereUniqueInput
+  create: Prisma.XOR<Prisma.absenceCreateWithoutAffectationenseignantInput, Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput>
 }
 
-export type AbsenceCreateManyAffectationEnseignantInputEnvelope = {
-  data: Prisma.AbsenceCreateManyAffectationEnseignantInput | Prisma.AbsenceCreateManyAffectationEnseignantInput[]
+export type absenceCreateManyAffectationenseignantInputEnvelope = {
+  data: Prisma.absenceCreateManyAffectationenseignantInput | Prisma.absenceCreateManyAffectationenseignantInput[]
   skipDuplicates?: boolean
 }
 
-export type AbsenceUpsertWithWhereUniqueWithoutAffectationEnseignantInput = {
-  where: Prisma.AbsenceWhereUniqueInput
-  update: Prisma.XOR<Prisma.AbsenceUpdateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedUpdateWithoutAffectationEnseignantInput>
-  create: Prisma.XOR<Prisma.AbsenceCreateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedCreateWithoutAffectationEnseignantInput>
+export type absenceUpsertWithWhereUniqueWithoutAffectationenseignantInput = {
+  where: Prisma.absenceWhereUniqueInput
+  update: Prisma.XOR<Prisma.absenceUpdateWithoutAffectationenseignantInput, Prisma.absenceUncheckedUpdateWithoutAffectationenseignantInput>
+  create: Prisma.XOR<Prisma.absenceCreateWithoutAffectationenseignantInput, Prisma.absenceUncheckedCreateWithoutAffectationenseignantInput>
 }
 
-export type AbsenceUpdateWithWhereUniqueWithoutAffectationEnseignantInput = {
-  where: Prisma.AbsenceWhereUniqueInput
-  data: Prisma.XOR<Prisma.AbsenceUpdateWithoutAffectationEnseignantInput, Prisma.AbsenceUncheckedUpdateWithoutAffectationEnseignantInput>
+export type absenceUpdateWithWhereUniqueWithoutAffectationenseignantInput = {
+  where: Prisma.absenceWhereUniqueInput
+  data: Prisma.XOR<Prisma.absenceUpdateWithoutAffectationenseignantInput, Prisma.absenceUncheckedUpdateWithoutAffectationenseignantInput>
 }
 
-export type AbsenceUpdateManyWithWhereWithoutAffectationEnseignantInput = {
-  where: Prisma.AbsenceScalarWhereInput
-  data: Prisma.XOR<Prisma.AbsenceUpdateManyMutationInput, Prisma.AbsenceUncheckedUpdateManyWithoutAffectationEnseignantInput>
+export type absenceUpdateManyWithWhereWithoutAffectationenseignantInput = {
+  where: Prisma.absenceScalarWhereInput
+  data: Prisma.XOR<Prisma.absenceUpdateManyMutationInput, Prisma.absenceUncheckedUpdateManyWithoutAffectationenseignantInput>
 }
 
-export type AbsenceScalarWhereInput = {
-  AND?: Prisma.AbsenceScalarWhereInput | Prisma.AbsenceScalarWhereInput[]
-  OR?: Prisma.AbsenceScalarWhereInput[]
-  NOT?: Prisma.AbsenceScalarWhereInput | Prisma.AbsenceScalarWhereInput[]
-  id?: Prisma.StringFilter<"Absence"> | string
-  dateDebut?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  dateFin?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  motif?: Prisma.StringFilter<"Absence"> | string
-  statut?: Prisma.EnumAbsenceStatutFilter<"Absence"> | $Enums.AbsenceStatut
-  commentaire?: Prisma.StringNullableFilter<"Absence"> | string | null
-  declareParUserId?: Prisma.StringFilter<"Absence"> | string
-  justificatifUrl?: Prisma.StringNullableFilter<"Absence"> | string | null
-  inscriptionApprenantId?: Prisma.StringFilter<"Absence"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"Absence"> | string
-  affectationEnseignantId?: Prisma.StringNullableFilter<"Absence"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"Absence"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Absence"> | Date | string
+export type absenceScalarWhereInput = {
+  AND?: Prisma.absenceScalarWhereInput | Prisma.absenceScalarWhereInput[]
+  OR?: Prisma.absenceScalarWhereInput[]
+  NOT?: Prisma.absenceScalarWhereInput | Prisma.absenceScalarWhereInput[]
+  id?: Prisma.StringFilter<"absence"> | string
+  dateDebut?: Prisma.DateTimeFilter<"absence"> | Date | string
+  dateFin?: Prisma.DateTimeFilter<"absence"> | Date | string
+  motif?: Prisma.StringFilter<"absence"> | string
+  statut?: Prisma.Enumabsence_statutFilter<"absence"> | $Enums.absence_statut
+  commentaire?: Prisma.StringNullableFilter<"absence"> | string | null
+  declareParUserId?: Prisma.StringFilter<"absence"> | string
+  justificatifUrl?: Prisma.StringNullableFilter<"absence"> | string | null
+  inscriptionApprenantId?: Prisma.StringFilter<"absence"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"absence"> | string
+  affectationEnseignantId?: Prisma.StringNullableFilter<"absence"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"absence"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"absence"> | Date | string
 }
 
-export type AbsenceCreateWithoutInscriptionInput = {
+export type absenceCreateWithoutInscriptionInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedOneWithoutAbsencesInput
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedOneWithoutAbsenceInput
 }
 
-export type AbsenceUncheckedCreateWithoutInscriptionInput = {
+export type absenceUncheckedCreateWithoutInscriptionInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
@@ -689,38 +701,38 @@ export type AbsenceUncheckedCreateWithoutInscriptionInput = {
   updatedAt?: Date | string
 }
 
-export type AbsenceCreateOrConnectWithoutInscriptionInput = {
-  where: Prisma.AbsenceWhereUniqueInput
-  create: Prisma.XOR<Prisma.AbsenceCreateWithoutInscriptionInput, Prisma.AbsenceUncheckedCreateWithoutInscriptionInput>
+export type absenceCreateOrConnectWithoutInscriptionInput = {
+  where: Prisma.absenceWhereUniqueInput
+  create: Prisma.XOR<Prisma.absenceCreateWithoutInscriptionInput, Prisma.absenceUncheckedCreateWithoutInscriptionInput>
 }
 
-export type AbsenceCreateManyInscriptionInputEnvelope = {
-  data: Prisma.AbsenceCreateManyInscriptionInput | Prisma.AbsenceCreateManyInscriptionInput[]
+export type absenceCreateManyInscriptionInputEnvelope = {
+  data: Prisma.absenceCreateManyInscriptionInput | Prisma.absenceCreateManyInscriptionInput[]
   skipDuplicates?: boolean
 }
 
-export type AbsenceUpsertWithWhereUniqueWithoutInscriptionInput = {
-  where: Prisma.AbsenceWhereUniqueInput
-  update: Prisma.XOR<Prisma.AbsenceUpdateWithoutInscriptionInput, Prisma.AbsenceUncheckedUpdateWithoutInscriptionInput>
-  create: Prisma.XOR<Prisma.AbsenceCreateWithoutInscriptionInput, Prisma.AbsenceUncheckedCreateWithoutInscriptionInput>
+export type absenceUpsertWithWhereUniqueWithoutInscriptionInput = {
+  where: Prisma.absenceWhereUniqueInput
+  update: Prisma.XOR<Prisma.absenceUpdateWithoutInscriptionInput, Prisma.absenceUncheckedUpdateWithoutInscriptionInput>
+  create: Prisma.XOR<Prisma.absenceCreateWithoutInscriptionInput, Prisma.absenceUncheckedCreateWithoutInscriptionInput>
 }
 
-export type AbsenceUpdateWithWhereUniqueWithoutInscriptionInput = {
-  where: Prisma.AbsenceWhereUniqueInput
-  data: Prisma.XOR<Prisma.AbsenceUpdateWithoutInscriptionInput, Prisma.AbsenceUncheckedUpdateWithoutInscriptionInput>
+export type absenceUpdateWithWhereUniqueWithoutInscriptionInput = {
+  where: Prisma.absenceWhereUniqueInput
+  data: Prisma.XOR<Prisma.absenceUpdateWithoutInscriptionInput, Prisma.absenceUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type AbsenceUpdateManyWithWhereWithoutInscriptionInput = {
-  where: Prisma.AbsenceScalarWhereInput
-  data: Prisma.XOR<Prisma.AbsenceUpdateManyMutationInput, Prisma.AbsenceUncheckedUpdateManyWithoutInscriptionInput>
+export type absenceUpdateManyWithWhereWithoutInscriptionInput = {
+  where: Prisma.absenceScalarWhereInput
+  data: Prisma.XOR<Prisma.absenceUpdateManyMutationInput, Prisma.absenceUncheckedUpdateManyWithoutInscriptionInput>
 }
 
-export type AbsenceCreateManyAffectationEnseignantInput = {
+export type absenceCreateManyAffectationenseignantInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
@@ -730,41 +742,26 @@ export type AbsenceCreateManyAffectationEnseignantInput = {
   updatedAt?: Date | string
 }
 
-export type AbsenceUpdateWithoutAffectationEnseignantInput = {
+export type absenceUpdateWithoutAffectationenseignantInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
   commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
   justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutAbsencesNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutAbsenceNestedInput
 }
 
-export type AbsenceUncheckedUpdateWithoutAffectationEnseignantInput = {
+export type absenceUncheckedUpdateWithoutAffectationenseignantInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
-  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
-  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type AbsenceUncheckedUpdateManyWithoutAffectationEnseignantInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
   commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
   justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -774,12 +771,27 @@ export type AbsenceUncheckedUpdateManyWithoutAffectationEnseignantInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type AbsenceCreateManyInscriptionInput = {
+export type absenceUncheckedUpdateManyWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  motif?: Prisma.StringFieldUpdateOperationsInput | string
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
+  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type absenceCreateManyInscriptionInput = {
   id?: string
   dateDebut: Date | string
   dateFin: Date | string
   motif: string
-  statut: $Enums.AbsenceStatut
+  statut: $Enums.absence_statut
   commentaire?: string | null
   declareParUserId: string
   justificatifUrl?: string | null
@@ -788,40 +800,26 @@ export type AbsenceCreateManyInscriptionInput = {
   updatedAt?: Date | string
 }
 
-export type AbsenceUpdateWithoutInscriptionInput = {
+export type absenceUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
   commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
   justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateOneWithoutAbsencesNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneWithoutAbsenceNestedInput
 }
 
-export type AbsenceUncheckedUpdateWithoutInscriptionInput = {
+export type absenceUncheckedUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
-  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
-  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  affectationEnseignantId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type AbsenceUncheckedUpdateManyWithoutInscriptionInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  motif?: Prisma.StringFieldUpdateOperationsInput | string
-  statut?: Prisma.EnumAbsenceStatutFieldUpdateOperationsInput | $Enums.AbsenceStatut
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
   commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
   justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -830,9 +828,23 @@ export type AbsenceUncheckedUpdateManyWithoutInscriptionInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type absenceUncheckedUpdateManyWithoutInscriptionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  dateDebut?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dateFin?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  motif?: Prisma.StringFieldUpdateOperationsInput | string
+  statut?: Prisma.Enumabsence_statutFieldUpdateOperationsInput | $Enums.absence_statut
+  commentaire?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  declareParUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  justificatifUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affectationEnseignantId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
 
 
-export type AbsenceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+
+export type absenceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   dateDebut?: boolean
   dateFin?: boolean
@@ -846,13 +858,13 @@ export type AbsenceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   affectationEnseignantId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  inscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-  affectationEnseignant?: boolean | Prisma.Absence$affectationEnseignantArgs<ExtArgs>
+  affectationenseignant?: boolean | Prisma.absence$affectationenseignantArgs<ExtArgs>
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["absence"]>
 
 
 
-export type AbsenceSelectScalar = {
+export type absenceSelectScalar = {
   id?: boolean
   dateDebut?: boolean
   dateFin?: boolean
@@ -868,24 +880,24 @@ export type AbsenceSelectScalar = {
   updatedAt?: boolean
 }
 
-export type AbsenceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "dateDebut" | "dateFin" | "motif" | "statut" | "commentaire" | "declareParUserId" | "justificatifUrl" | "inscriptionApprenantId" | "inscriptionAnneeId" | "affectationEnseignantId" | "createdAt" | "updatedAt", ExtArgs["result"]["absence"]>
-export type AbsenceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  inscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-  affectationEnseignant?: boolean | Prisma.Absence$affectationEnseignantArgs<ExtArgs>
+export type absenceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "dateDebut" | "dateFin" | "motif" | "statut" | "commentaire" | "declareParUserId" | "justificatifUrl" | "inscriptionApprenantId" | "inscriptionAnneeId" | "affectationEnseignantId" | "createdAt" | "updatedAt", ExtArgs["result"]["absence"]>
+export type absenceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  affectationenseignant?: boolean | Prisma.absence$affectationenseignantArgs<ExtArgs>
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
 }
 
-export type $AbsencePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Absence"
+export type $absencePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "absence"
   objects: {
-    inscription: Prisma.$InscriptionPayload<ExtArgs>
-    affectationEnseignant: Prisma.$AffectationEnseignantPayload<ExtArgs> | null
+    affectationenseignant: Prisma.$affectationenseignantPayload<ExtArgs> | null
+    inscription: Prisma.$inscriptionPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     dateDebut: Date
     dateFin: Date
     motif: string
-    statut: $Enums.AbsenceStatut
+    statut: $Enums.absence_statut
     commentaire: string | null
     declareParUserId: string
     justificatifUrl: string | null
@@ -898,18 +910,18 @@ export type $AbsencePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   composites: {}
 }
 
-export type AbsenceGetPayload<S extends boolean | null | undefined | AbsenceDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$AbsencePayload, S>
+export type absenceGetPayload<S extends boolean | null | undefined | absenceDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$absencePayload, S>
 
-export type AbsenceCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<AbsenceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type absenceCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<absenceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: AbsenceCountAggregateInputType | true
   }
 
-export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Absence'], meta: { name: 'Absence' } }
+export interface absenceDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['absence'], meta: { name: 'absence' } }
   /**
    * Find zero or one Absence that matches the filter.
-   * @param {AbsenceFindUniqueArgs} args - Arguments to find a Absence
+   * @param {absenceFindUniqueArgs} args - Arguments to find a Absence
    * @example
    * // Get one Absence
    * const absence = await prisma.absence.findUnique({
@@ -918,12 +930,12 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUnique<T extends AbsenceFindUniqueArgs>(args: Prisma.SelectSubset<T, AbsenceFindUniqueArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends absenceFindUniqueArgs>(args: Prisma.SelectSubset<T, absenceFindUniqueArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Absence that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {AbsenceFindUniqueOrThrowArgs} args - Arguments to find a Absence
+   * @param {absenceFindUniqueOrThrowArgs} args - Arguments to find a Absence
    * @example
    * // Get one Absence
    * const absence = await prisma.absence.findUniqueOrThrow({
@@ -932,13 +944,13 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUniqueOrThrow<T extends AbsenceFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, AbsenceFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends absenceFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, absenceFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Absence that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {AbsenceFindFirstArgs} args - Arguments to find a Absence
+   * @param {absenceFindFirstArgs} args - Arguments to find a Absence
    * @example
    * // Get one Absence
    * const absence = await prisma.absence.findFirst({
@@ -947,14 +959,14 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirst<T extends AbsenceFindFirstArgs>(args?: Prisma.SelectSubset<T, AbsenceFindFirstArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends absenceFindFirstArgs>(args?: Prisma.SelectSubset<T, absenceFindFirstArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Absence that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {AbsenceFindFirstOrThrowArgs} args - Arguments to find a Absence
+   * @param {absenceFindFirstOrThrowArgs} args - Arguments to find a Absence
    * @example
    * // Get one Absence
    * const absence = await prisma.absence.findFirstOrThrow({
@@ -963,13 +975,13 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirstOrThrow<T extends AbsenceFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, AbsenceFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends absenceFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, absenceFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Absences that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {AbsenceFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {absenceFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Absences
    * const absences = await prisma.absence.findMany()
@@ -981,11 +993,11 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * const absenceWithIdOnly = await prisma.absence.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends AbsenceFindManyArgs>(args?: Prisma.SelectSubset<T, AbsenceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends absenceFindManyArgs>(args?: Prisma.SelectSubset<T, absenceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Absence.
-   * @param {AbsenceCreateArgs} args - Arguments to create a Absence.
+   * @param {absenceCreateArgs} args - Arguments to create a Absence.
    * @example
    * // Create one Absence
    * const Absence = await prisma.absence.create({
@@ -995,11 +1007,11 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  create<T extends AbsenceCreateArgs>(args: Prisma.SelectSubset<T, AbsenceCreateArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends absenceCreateArgs>(args: Prisma.SelectSubset<T, absenceCreateArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Absences.
-   * @param {AbsenceCreateManyArgs} args - Arguments to create many Absences.
+   * @param {absenceCreateManyArgs} args - Arguments to create many Absences.
    * @example
    * // Create many Absences
    * const absence = await prisma.absence.createMany({
@@ -1009,11 +1021,11 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    *     
    */
-  createMany<T extends AbsenceCreateManyArgs>(args?: Prisma.SelectSubset<T, AbsenceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends absenceCreateManyArgs>(args?: Prisma.SelectSubset<T, absenceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Absence.
-   * @param {AbsenceDeleteArgs} args - Arguments to delete one Absence.
+   * @param {absenceDeleteArgs} args - Arguments to delete one Absence.
    * @example
    * // Delete one Absence
    * const Absence = await prisma.absence.delete({
@@ -1023,11 +1035,11 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  delete<T extends AbsenceDeleteArgs>(args: Prisma.SelectSubset<T, AbsenceDeleteArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends absenceDeleteArgs>(args: Prisma.SelectSubset<T, absenceDeleteArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Absence.
-   * @param {AbsenceUpdateArgs} args - Arguments to update one Absence.
+   * @param {absenceUpdateArgs} args - Arguments to update one Absence.
    * @example
    * // Update one Absence
    * const absence = await prisma.absence.update({
@@ -1040,11 +1052,11 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends AbsenceUpdateArgs>(args: Prisma.SelectSubset<T, AbsenceUpdateArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends absenceUpdateArgs>(args: Prisma.SelectSubset<T, absenceUpdateArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Absences.
-   * @param {AbsenceDeleteManyArgs} args - Arguments to filter Absences to delete.
+   * @param {absenceDeleteManyArgs} args - Arguments to filter Absences to delete.
    * @example
    * // Delete a few Absences
    * const { count } = await prisma.absence.deleteMany({
@@ -1054,13 +1066,13 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  deleteMany<T extends AbsenceDeleteManyArgs>(args?: Prisma.SelectSubset<T, AbsenceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends absenceDeleteManyArgs>(args?: Prisma.SelectSubset<T, absenceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Absences.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {AbsenceUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {absenceUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Absences
    * const absence = await prisma.absence.updateMany({
@@ -1073,11 +1085,11 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends AbsenceUpdateManyArgs>(args: Prisma.SelectSubset<T, AbsenceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends absenceUpdateManyArgs>(args: Prisma.SelectSubset<T, absenceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Absence.
-   * @param {AbsenceUpsertArgs} args - Arguments to update or create a Absence.
+   * @param {absenceUpsertArgs} args - Arguments to update or create a Absence.
    * @example
    * // Update or create a Absence
    * const absence = await prisma.absence.upsert({
@@ -1092,14 +1104,14 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  upsert<T extends AbsenceUpsertArgs>(args: Prisma.SelectSubset<T, AbsenceUpsertArgs<ExtArgs>>): Prisma.Prisma__AbsenceClient<runtime.Types.Result.GetResult<Prisma.$AbsencePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends absenceUpsertArgs>(args: Prisma.SelectSubset<T, absenceUpsertArgs<ExtArgs>>): Prisma.Prisma__absenceClient<runtime.Types.Result.GetResult<Prisma.$absencePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Absences.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {AbsenceCountArgs} args - Arguments to filter Absences to count.
+   * @param {absenceCountArgs} args - Arguments to filter Absences to count.
    * @example
    * // Count the number of Absences
    * const count = await prisma.absence.count({
@@ -1108,8 +1120,8 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
   **/
-  count<T extends AbsenceCountArgs>(
-    args?: Prisma.Subset<T, AbsenceCountArgs>,
+  count<T extends absenceCountArgs>(
+    args?: Prisma.Subset<T, absenceCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1148,7 +1160,7 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Group by Absence.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {AbsenceGroupByArgs} args - Group by arguments.
+   * @param {absenceGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1163,14 +1175,14 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends AbsenceGroupByArgs,
+    T extends absenceGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: AbsenceGroupByArgs['orderBy'] }
-      : { orderBy?: AbsenceGroupByArgs['orderBy'] },
+      ? { orderBy: absenceGroupByArgs['orderBy'] }
+      : { orderBy?: absenceGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1219,23 +1231,23 @@ export interface AbsenceDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, AbsenceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAbsenceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, absenceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAbsenceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Absence model
+ * Fields of the absence model
  */
-readonly fields: AbsenceFieldRefs;
+readonly fields: absenceFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Absence.
+ * The delegate class that acts as a "Promise-like" for absence.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__AbsenceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__absenceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  inscription<T extends Prisma.InscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  affectationEnseignant<T extends Prisma.Absence$affectationEnseignantArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Absence$affectationEnseignantArgs<ExtArgs>>): Prisma.Prisma__AffectationEnseignantClient<runtime.Types.Result.GetResult<Prisma.$AffectationEnseignantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  affectationenseignant<T extends Prisma.absence$affectationenseignantArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.absence$affectationenseignantArgs<ExtArgs>>): Prisma.Prisma__affectationenseignantClient<runtime.Types.Result.GetResult<Prisma.$affectationenseignantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  inscription<T extends Prisma.inscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1262,402 +1274,402 @@ export interface Prisma__AbsenceClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the Absence model
+ * Fields of the absence model
  */
-export interface AbsenceFieldRefs {
-  readonly id: Prisma.FieldRef<"Absence", 'String'>
-  readonly dateDebut: Prisma.FieldRef<"Absence", 'DateTime'>
-  readonly dateFin: Prisma.FieldRef<"Absence", 'DateTime'>
-  readonly motif: Prisma.FieldRef<"Absence", 'String'>
-  readonly statut: Prisma.FieldRef<"Absence", 'AbsenceStatut'>
-  readonly commentaire: Prisma.FieldRef<"Absence", 'String'>
-  readonly declareParUserId: Prisma.FieldRef<"Absence", 'String'>
-  readonly justificatifUrl: Prisma.FieldRef<"Absence", 'String'>
-  readonly inscriptionApprenantId: Prisma.FieldRef<"Absence", 'String'>
-  readonly inscriptionAnneeId: Prisma.FieldRef<"Absence", 'String'>
-  readonly affectationEnseignantId: Prisma.FieldRef<"Absence", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Absence", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Absence", 'DateTime'>
+export interface absenceFieldRefs {
+  readonly id: Prisma.FieldRef<"absence", 'String'>
+  readonly dateDebut: Prisma.FieldRef<"absence", 'DateTime'>
+  readonly dateFin: Prisma.FieldRef<"absence", 'DateTime'>
+  readonly motif: Prisma.FieldRef<"absence", 'String'>
+  readonly statut: Prisma.FieldRef<"absence", 'absence_statut'>
+  readonly commentaire: Prisma.FieldRef<"absence", 'String'>
+  readonly declareParUserId: Prisma.FieldRef<"absence", 'String'>
+  readonly justificatifUrl: Prisma.FieldRef<"absence", 'String'>
+  readonly inscriptionApprenantId: Prisma.FieldRef<"absence", 'String'>
+  readonly inscriptionAnneeId: Prisma.FieldRef<"absence", 'String'>
+  readonly affectationEnseignantId: Prisma.FieldRef<"absence", 'String'>
+  readonly createdAt: Prisma.FieldRef<"absence", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"absence", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Absence findUnique
+ * absence findUnique
  */
-export type AbsenceFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * Filter, which Absence to fetch.
+   * Filter, which absence to fetch.
    */
-  where: Prisma.AbsenceWhereUniqueInput
+  where: Prisma.absenceWhereUniqueInput
 }
 
 /**
- * Absence findUniqueOrThrow
+ * absence findUniqueOrThrow
  */
-export type AbsenceFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * Filter, which Absence to fetch.
+   * Filter, which absence to fetch.
    */
-  where: Prisma.AbsenceWhereUniqueInput
+  where: Prisma.absenceWhereUniqueInput
 }
 
 /**
- * Absence findFirst
+ * absence findFirst
  */
-export type AbsenceFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * Filter, which Absence to fetch.
+   * Filter, which absence to fetch.
    */
-  where?: Prisma.AbsenceWhereInput
+  where?: Prisma.absenceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Absences to fetch.
+   * Determine the order of absences to fetch.
    */
-  orderBy?: Prisma.AbsenceOrderByWithRelationInput | Prisma.AbsenceOrderByWithRelationInput[]
+  orderBy?: Prisma.absenceOrderByWithRelationInput | Prisma.absenceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Absences.
+   * Sets the position for searching for absences.
    */
-  cursor?: Prisma.AbsenceWhereUniqueInput
+  cursor?: Prisma.absenceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Absences from the position of the cursor.
+   * Take `±n` absences from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Absences.
+   * Skip the first `n` absences.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Absences.
+   * Filter by unique combinations of absences.
    */
   distinct?: Prisma.AbsenceScalarFieldEnum | Prisma.AbsenceScalarFieldEnum[]
 }
 
 /**
- * Absence findFirstOrThrow
+ * absence findFirstOrThrow
  */
-export type AbsenceFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * Filter, which Absence to fetch.
+   * Filter, which absence to fetch.
    */
-  where?: Prisma.AbsenceWhereInput
+  where?: Prisma.absenceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Absences to fetch.
+   * Determine the order of absences to fetch.
    */
-  orderBy?: Prisma.AbsenceOrderByWithRelationInput | Prisma.AbsenceOrderByWithRelationInput[]
+  orderBy?: Prisma.absenceOrderByWithRelationInput | Prisma.absenceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Absences.
+   * Sets the position for searching for absences.
    */
-  cursor?: Prisma.AbsenceWhereUniqueInput
+  cursor?: Prisma.absenceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Absences from the position of the cursor.
+   * Take `±n` absences from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Absences.
+   * Skip the first `n` absences.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Absences.
+   * Filter by unique combinations of absences.
    */
   distinct?: Prisma.AbsenceScalarFieldEnum | Prisma.AbsenceScalarFieldEnum[]
 }
 
 /**
- * Absence findMany
+ * absence findMany
  */
-export type AbsenceFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * Filter, which Absences to fetch.
+   * Filter, which absences to fetch.
    */
-  where?: Prisma.AbsenceWhereInput
+  where?: Prisma.absenceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Absences to fetch.
+   * Determine the order of absences to fetch.
    */
-  orderBy?: Prisma.AbsenceOrderByWithRelationInput | Prisma.AbsenceOrderByWithRelationInput[]
+  orderBy?: Prisma.absenceOrderByWithRelationInput | Prisma.absenceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Absences.
+   * Sets the position for listing absences.
    */
-  cursor?: Prisma.AbsenceWhereUniqueInput
+  cursor?: Prisma.absenceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Absences from the position of the cursor.
+   * Take `±n` absences from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Absences.
+   * Skip the first `n` absences.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Absences.
+   * Filter by unique combinations of absences.
    */
   distinct?: Prisma.AbsenceScalarFieldEnum | Prisma.AbsenceScalarFieldEnum[]
 }
 
 /**
- * Absence create
+ * absence create
  */
-export type AbsenceCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * The data needed to create a Absence.
+   * The data needed to create a absence.
    */
-  data: Prisma.XOR<Prisma.AbsenceCreateInput, Prisma.AbsenceUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.absenceCreateInput, Prisma.absenceUncheckedCreateInput>
 }
 
 /**
- * Absence createMany
+ * absence createMany
  */
-export type AbsenceCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Absences.
+   * The data used to create many absences.
    */
-  data: Prisma.AbsenceCreateManyInput | Prisma.AbsenceCreateManyInput[]
+  data: Prisma.absenceCreateManyInput | Prisma.absenceCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Absence update
+ * absence update
  */
-export type AbsenceUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * The data needed to update a Absence.
+   * The data needed to update a absence.
    */
-  data: Prisma.XOR<Prisma.AbsenceUpdateInput, Prisma.AbsenceUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.absenceUpdateInput, Prisma.absenceUncheckedUpdateInput>
   /**
-   * Choose, which Absence to update.
+   * Choose, which absence to update.
    */
-  where: Prisma.AbsenceWhereUniqueInput
+  where: Prisma.absenceWhereUniqueInput
 }
 
 /**
- * Absence updateMany
+ * absence updateMany
  */
-export type AbsenceUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Absences.
+   * The data used to update absences.
    */
-  data: Prisma.XOR<Prisma.AbsenceUpdateManyMutationInput, Prisma.AbsenceUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.absenceUpdateManyMutationInput, Prisma.absenceUncheckedUpdateManyInput>
   /**
-   * Filter which Absences to update
+   * Filter which absences to update
    */
-  where?: Prisma.AbsenceWhereInput
+  where?: Prisma.absenceWhereInput
   /**
-   * Limit how many Absences to update.
+   * Limit how many absences to update.
    */
   limit?: number
 }
 
 /**
- * Absence upsert
+ * absence upsert
  */
-export type AbsenceUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * The filter to search for the Absence to update in case it exists.
+   * The filter to search for the absence to update in case it exists.
    */
-  where: Prisma.AbsenceWhereUniqueInput
+  where: Prisma.absenceWhereUniqueInput
   /**
-   * In case the Absence found by the `where` argument doesn't exist, create a new Absence with this data.
+   * In case the absence found by the `where` argument doesn't exist, create a new absence with this data.
    */
-  create: Prisma.XOR<Prisma.AbsenceCreateInput, Prisma.AbsenceUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.absenceCreateInput, Prisma.absenceUncheckedCreateInput>
   /**
-   * In case the Absence was found with the provided `where` argument, update it with this data.
+   * In case the absence was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.AbsenceUpdateInput, Prisma.AbsenceUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.absenceUpdateInput, Prisma.absenceUncheckedUpdateInput>
 }
 
 /**
- * Absence delete
+ * absence delete
  */
-export type AbsenceDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
   /**
-   * Filter which Absence to delete.
+   * Filter which absence to delete.
    */
-  where: Prisma.AbsenceWhereUniqueInput
+  where: Prisma.absenceWhereUniqueInput
 }
 
 /**
- * Absence deleteMany
+ * absence deleteMany
  */
-export type AbsenceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Absences to delete
+   * Filter which absences to delete
    */
-  where?: Prisma.AbsenceWhereInput
+  where?: Prisma.absenceWhereInput
   /**
-   * Limit how many Absences to delete.
+   * Limit how many absences to delete.
    */
   limit?: number
 }
 
 /**
- * Absence.affectationEnseignant
+ * absence.affectationenseignant
  */
-export type Absence$affectationEnseignantArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absence$affectationenseignantArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AffectationEnseignant
+   * Select specific fields to fetch from the affectationenseignant
    */
-  select?: Prisma.AffectationEnseignantSelect<ExtArgs> | null
+  select?: Prisma.affectationenseignantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AffectationEnseignant
+   * Omit specific fields from the affectationenseignant
    */
-  omit?: Prisma.AffectationEnseignantOmit<ExtArgs> | null
+  omit?: Prisma.affectationenseignantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AffectationEnseignantInclude<ExtArgs> | null
-  where?: Prisma.AffectationEnseignantWhereInput
+  include?: Prisma.affectationenseignantInclude<ExtArgs> | null
+  where?: Prisma.affectationenseignantWhereInput
 }
 
 /**
- * Absence without action
+ * absence without action
  */
-export type AbsenceDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type absenceDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Absence
+   * Select specific fields to fetch from the absence
    */
-  select?: Prisma.AbsenceSelect<ExtArgs> | null
+  select?: Prisma.absenceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Absence
+   * Omit specific fields from the absence
    */
-  omit?: Prisma.AbsenceOmit<ExtArgs> | null
+  omit?: Prisma.absenceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AbsenceInclude<ExtArgs> | null
+  include?: Prisma.absenceInclude<ExtArgs> | null
 }

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `UniteEnseignement` model and its related types.
+ * This file exports the `uniteenseignement` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,28 +13,28 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model UniteEnseignement
+ * Model uniteenseignement
  * 
  */
-export type UniteEnseignementModel = runtime.Types.Result.DefaultSelection<Prisma.$UniteEnseignementPayload>
+export type uniteenseignementModel = runtime.Types.Result.DefaultSelection<Prisma.$uniteenseignementPayload>
 
-export type AggregateUniteEnseignement = {
-  _count: UniteEnseignementCountAggregateOutputType | null
-  _avg: UniteEnseignementAvgAggregateOutputType | null
-  _sum: UniteEnseignementSumAggregateOutputType | null
-  _min: UniteEnseignementMinAggregateOutputType | null
-  _max: UniteEnseignementMaxAggregateOutputType | null
+export type AggregateUniteenseignement = {
+  _count: UniteenseignementCountAggregateOutputType | null
+  _avg: UniteenseignementAvgAggregateOutputType | null
+  _sum: UniteenseignementSumAggregateOutputType | null
+  _min: UniteenseignementMinAggregateOutputType | null
+  _max: UniteenseignementMaxAggregateOutputType | null
 }
 
-export type UniteEnseignementAvgAggregateOutputType = {
+export type UniteenseignementAvgAggregateOutputType = {
   coefficient: number | null
 }
 
-export type UniteEnseignementSumAggregateOutputType = {
+export type UniteenseignementSumAggregateOutputType = {
   coefficient: number | null
 }
 
-export type UniteEnseignementMinAggregateOutputType = {
+export type UniteenseignementMinAggregateOutputType = {
   id: string | null
   nom: string | null
   code: string | null
@@ -43,7 +43,7 @@ export type UniteEnseignementMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type UniteEnseignementMaxAggregateOutputType = {
+export type UniteenseignementMaxAggregateOutputType = {
   id: string | null
   nom: string | null
   code: string | null
@@ -52,7 +52,7 @@ export type UniteEnseignementMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type UniteEnseignementCountAggregateOutputType = {
+export type UniteenseignementCountAggregateOutputType = {
   id: number
   nom: number
   code: number
@@ -63,15 +63,15 @@ export type UniteEnseignementCountAggregateOutputType = {
 }
 
 
-export type UniteEnseignementAvgAggregateInputType = {
+export type UniteenseignementAvgAggregateInputType = {
   coefficient?: true
 }
 
-export type UniteEnseignementSumAggregateInputType = {
+export type UniteenseignementSumAggregateInputType = {
   coefficient?: true
 }
 
-export type UniteEnseignementMinAggregateInputType = {
+export type UniteenseignementMinAggregateInputType = {
   id?: true
   nom?: true
   code?: true
@@ -80,7 +80,7 @@ export type UniteEnseignementMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type UniteEnseignementMaxAggregateInputType = {
+export type UniteenseignementMaxAggregateInputType = {
   id?: true
   nom?: true
   code?: true
@@ -89,7 +89,7 @@ export type UniteEnseignementMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type UniteEnseignementCountAggregateInputType = {
+export type UniteenseignementCountAggregateInputType = {
   id?: true
   nom?: true
   code?: true
@@ -99,233 +99,233 @@ export type UniteEnseignementCountAggregateInputType = {
   _all?: true
 }
 
-export type UniteEnseignementAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UniteenseignementAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which UniteEnseignement to aggregate.
+   * Filter which uniteenseignement to aggregate.
    */
-  where?: Prisma.UniteEnseignementWhereInput
+  where?: Prisma.uniteenseignementWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of UniteEnseignements to fetch.
+   * Determine the order of uniteenseignements to fetch.
    */
-  orderBy?: Prisma.UniteEnseignementOrderByWithRelationInput | Prisma.UniteEnseignementOrderByWithRelationInput[]
+  orderBy?: Prisma.uniteenseignementOrderByWithRelationInput | Prisma.uniteenseignementOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.UniteEnseignementWhereUniqueInput
+  cursor?: Prisma.uniteenseignementWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` UniteEnseignements from the position of the cursor.
+   * Take `±n` uniteenseignements from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` UniteEnseignements.
+   * Skip the first `n` uniteenseignements.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned UniteEnseignements
+   * Count returned uniteenseignements
   **/
-  _count?: true | UniteEnseignementCountAggregateInputType
+  _count?: true | UniteenseignementCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: UniteEnseignementAvgAggregateInputType
+  _avg?: UniteenseignementAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: UniteEnseignementSumAggregateInputType
+  _sum?: UniteenseignementSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: UniteEnseignementMinAggregateInputType
+  _min?: UniteenseignementMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: UniteEnseignementMaxAggregateInputType
+  _max?: UniteenseignementMaxAggregateInputType
 }
 
-export type GetUniteEnseignementAggregateType<T extends UniteEnseignementAggregateArgs> = {
-      [P in keyof T & keyof AggregateUniteEnseignement]: P extends '_count' | 'count'
+export type GetUniteenseignementAggregateType<T extends UniteenseignementAggregateArgs> = {
+      [P in keyof T & keyof AggregateUniteenseignement]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateUniteEnseignement[P]>
-    : Prisma.GetScalarType<T[P], AggregateUniteEnseignement[P]>
+      : Prisma.GetScalarType<T[P], AggregateUniteenseignement[P]>
+    : Prisma.GetScalarType<T[P], AggregateUniteenseignement[P]>
 }
 
 
 
 
-export type UniteEnseignementGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UniteEnseignementWhereInput
-  orderBy?: Prisma.UniteEnseignementOrderByWithAggregationInput | Prisma.UniteEnseignementOrderByWithAggregationInput[]
-  by: Prisma.UniteEnseignementScalarFieldEnum[] | Prisma.UniteEnseignementScalarFieldEnum
-  having?: Prisma.UniteEnseignementScalarWhereWithAggregatesInput
+export type uniteenseignementGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.uniteenseignementWhereInput
+  orderBy?: Prisma.uniteenseignementOrderByWithAggregationInput | Prisma.uniteenseignementOrderByWithAggregationInput[]
+  by: Prisma.UniteenseignementScalarFieldEnum[] | Prisma.UniteenseignementScalarFieldEnum
+  having?: Prisma.uniteenseignementScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: UniteEnseignementCountAggregateInputType | true
-  _avg?: UniteEnseignementAvgAggregateInputType
-  _sum?: UniteEnseignementSumAggregateInputType
-  _min?: UniteEnseignementMinAggregateInputType
-  _max?: UniteEnseignementMaxAggregateInputType
+  _count?: UniteenseignementCountAggregateInputType | true
+  _avg?: UniteenseignementAvgAggregateInputType
+  _sum?: UniteenseignementSumAggregateInputType
+  _min?: UniteenseignementMinAggregateInputType
+  _max?: UniteenseignementMaxAggregateInputType
 }
 
-export type UniteEnseignementGroupByOutputType = {
+export type UniteenseignementGroupByOutputType = {
   id: string
   nom: string
   code: string
   coefficient: number
   createdAt: Date
   updatedAt: Date
-  _count: UniteEnseignementCountAggregateOutputType | null
-  _avg: UniteEnseignementAvgAggregateOutputType | null
-  _sum: UniteEnseignementSumAggregateOutputType | null
-  _min: UniteEnseignementMinAggregateOutputType | null
-  _max: UniteEnseignementMaxAggregateOutputType | null
+  _count: UniteenseignementCountAggregateOutputType | null
+  _avg: UniteenseignementAvgAggregateOutputType | null
+  _sum: UniteenseignementSumAggregateOutputType | null
+  _min: UniteenseignementMinAggregateOutputType | null
+  _max: UniteenseignementMaxAggregateOutputType | null
 }
 
-export type GetUniteEnseignementGroupByPayload<T extends UniteEnseignementGroupByArgs> = Prisma.PrismaPromise<
+export type GetUniteenseignementGroupByPayload<T extends uniteenseignementGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<UniteEnseignementGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<UniteenseignementGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof UniteEnseignementGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof UniteenseignementGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], UniteEnseignementGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], UniteEnseignementGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], UniteenseignementGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], UniteenseignementGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type UniteEnseignementWhereInput = {
-  AND?: Prisma.UniteEnseignementWhereInput | Prisma.UniteEnseignementWhereInput[]
-  OR?: Prisma.UniteEnseignementWhereInput[]
-  NOT?: Prisma.UniteEnseignementWhereInput | Prisma.UniteEnseignementWhereInput[]
-  id?: Prisma.StringFilter<"UniteEnseignement"> | string
-  nom?: Prisma.StringFilter<"UniteEnseignement"> | string
-  code?: Prisma.StringFilter<"UniteEnseignement"> | string
-  coefficient?: Prisma.IntFilter<"UniteEnseignement"> | number
-  createdAt?: Prisma.DateTimeFilter<"UniteEnseignement"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"UniteEnseignement"> | Date | string
-  matiereUe?: Prisma.MatiereUeListRelationFilter
-  claseMatiere?: Prisma.ClasseMatirereListRelationFilter
+export type uniteenseignementWhereInput = {
+  AND?: Prisma.uniteenseignementWhereInput | Prisma.uniteenseignementWhereInput[]
+  OR?: Prisma.uniteenseignementWhereInput[]
+  NOT?: Prisma.uniteenseignementWhereInput | Prisma.uniteenseignementWhereInput[]
+  id?: Prisma.StringFilter<"uniteenseignement"> | string
+  nom?: Prisma.StringFilter<"uniteenseignement"> | string
+  code?: Prisma.StringFilter<"uniteenseignement"> | string
+  coefficient?: Prisma.IntFilter<"uniteenseignement"> | number
+  createdAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
+  classematirere?: Prisma.ClassematirereListRelationFilter
+  matiereue?: Prisma.MatiereueListRelationFilter
 }
 
-export type UniteEnseignementOrderByWithRelationInput = {
+export type uniteenseignementOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
   coefficient?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  matiereUe?: Prisma.MatiereUeOrderByRelationAggregateInput
-  claseMatiere?: Prisma.ClasseMatirereOrderByRelationAggregateInput
-  _relevance?: Prisma.UniteEnseignementOrderByRelevanceInput
+  classematirere?: Prisma.classematirereOrderByRelationAggregateInput
+  matiereue?: Prisma.matiereueOrderByRelationAggregateInput
+  _relevance?: Prisma.uniteenseignementOrderByRelevanceInput
 }
 
-export type UniteEnseignementWhereUniqueInput = Prisma.AtLeast<{
+export type uniteenseignementWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   code?: string
-  AND?: Prisma.UniteEnseignementWhereInput | Prisma.UniteEnseignementWhereInput[]
-  OR?: Prisma.UniteEnseignementWhereInput[]
-  NOT?: Prisma.UniteEnseignementWhereInput | Prisma.UniteEnseignementWhereInput[]
-  nom?: Prisma.StringFilter<"UniteEnseignement"> | string
-  coefficient?: Prisma.IntFilter<"UniteEnseignement"> | number
-  createdAt?: Prisma.DateTimeFilter<"UniteEnseignement"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"UniteEnseignement"> | Date | string
-  matiereUe?: Prisma.MatiereUeListRelationFilter
-  claseMatiere?: Prisma.ClasseMatirereListRelationFilter
+  AND?: Prisma.uniteenseignementWhereInput | Prisma.uniteenseignementWhereInput[]
+  OR?: Prisma.uniteenseignementWhereInput[]
+  NOT?: Prisma.uniteenseignementWhereInput | Prisma.uniteenseignementWhereInput[]
+  nom?: Prisma.StringFilter<"uniteenseignement"> | string
+  coefficient?: Prisma.IntFilter<"uniteenseignement"> | number
+  createdAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
+  classematirere?: Prisma.ClassematirereListRelationFilter
+  matiereue?: Prisma.MatiereueListRelationFilter
 }, "id" | "code">
 
-export type UniteEnseignementOrderByWithAggregationInput = {
+export type uniteenseignementOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
   coefficient?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.UniteEnseignementCountOrderByAggregateInput
-  _avg?: Prisma.UniteEnseignementAvgOrderByAggregateInput
-  _max?: Prisma.UniteEnseignementMaxOrderByAggregateInput
-  _min?: Prisma.UniteEnseignementMinOrderByAggregateInput
-  _sum?: Prisma.UniteEnseignementSumOrderByAggregateInput
+  _count?: Prisma.uniteenseignementCountOrderByAggregateInput
+  _avg?: Prisma.uniteenseignementAvgOrderByAggregateInput
+  _max?: Prisma.uniteenseignementMaxOrderByAggregateInput
+  _min?: Prisma.uniteenseignementMinOrderByAggregateInput
+  _sum?: Prisma.uniteenseignementSumOrderByAggregateInput
 }
 
-export type UniteEnseignementScalarWhereWithAggregatesInput = {
-  AND?: Prisma.UniteEnseignementScalarWhereWithAggregatesInput | Prisma.UniteEnseignementScalarWhereWithAggregatesInput[]
-  OR?: Prisma.UniteEnseignementScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.UniteEnseignementScalarWhereWithAggregatesInput | Prisma.UniteEnseignementScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"UniteEnseignement"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"UniteEnseignement"> | string
-  code?: Prisma.StringWithAggregatesFilter<"UniteEnseignement"> | string
-  coefficient?: Prisma.IntWithAggregatesFilter<"UniteEnseignement"> | number
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"UniteEnseignement"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"UniteEnseignement"> | Date | string
+export type uniteenseignementScalarWhereWithAggregatesInput = {
+  AND?: Prisma.uniteenseignementScalarWhereWithAggregatesInput | Prisma.uniteenseignementScalarWhereWithAggregatesInput[]
+  OR?: Prisma.uniteenseignementScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.uniteenseignementScalarWhereWithAggregatesInput | Prisma.uniteenseignementScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"uniteenseignement"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"uniteenseignement"> | string
+  code?: Prisma.StringWithAggregatesFilter<"uniteenseignement"> | string
+  coefficient?: Prisma.IntWithAggregatesFilter<"uniteenseignement"> | number
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"uniteenseignement"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"uniteenseignement"> | Date | string
 }
 
-export type UniteEnseignementCreateInput = {
-  id?: string
+export type uniteenseignementCreateInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutUeInput
-  claseMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutUniteEnseignementInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutUniteenseignementInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutUniteenseignementInput
 }
 
-export type UniteEnseignementUncheckedCreateInput = {
-  id?: string
+export type uniteenseignementUncheckedCreateInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutUeInput
-  claseMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutUniteEnseignementInput
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutUniteenseignementInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutUniteenseignementInput
 }
 
-export type UniteEnseignementUpdateInput = {
+export type uniteenseignementUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutUeNestedInput
-  claseMatiere?: Prisma.ClasseMatirereUpdateManyWithoutUniteEnseignementNestedInput
+  classematirere?: Prisma.classematirereUpdateManyWithoutUniteenseignementNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutUniteenseignementNestedInput
 }
 
-export type UniteEnseignementUncheckedUpdateInput = {
+export type uniteenseignementUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutUeNestedInput
-  claseMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutUniteEnseignementNestedInput
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutUniteenseignementNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutUniteenseignementNestedInput
 }
 
-export type UniteEnseignementCreateManyInput = {
-  id?: string
+export type uniteenseignementCreateManyInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
@@ -333,7 +333,7 @@ export type UniteEnseignementCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type UniteEnseignementUpdateManyMutationInput = {
+export type uniteenseignementUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
@@ -342,7 +342,7 @@ export type UniteEnseignementUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type UniteEnseignementUncheckedUpdateManyInput = {
+export type uniteenseignementUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
@@ -351,13 +351,23 @@ export type UniteEnseignementUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type UniteEnseignementOrderByRelevanceInput = {
-  fields: Prisma.UniteEnseignementOrderByRelevanceFieldEnum | Prisma.UniteEnseignementOrderByRelevanceFieldEnum[]
+export type UniteenseignementNullableScalarRelationFilter = {
+  is?: Prisma.uniteenseignementWhereInput | null
+  isNot?: Prisma.uniteenseignementWhereInput | null
+}
+
+export type UniteenseignementScalarRelationFilter = {
+  is?: Prisma.uniteenseignementWhereInput
+  isNot?: Prisma.uniteenseignementWhereInput
+}
+
+export type uniteenseignementOrderByRelevanceInput = {
+  fields: Prisma.uniteenseignementOrderByRelevanceFieldEnum | Prisma.uniteenseignementOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type UniteEnseignementCountOrderByAggregateInput = {
+export type uniteenseignementCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
@@ -366,11 +376,11 @@ export type UniteEnseignementCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type UniteEnseignementAvgOrderByAggregateInput = {
+export type uniteenseignementAvgOrderByAggregateInput = {
   coefficient?: Prisma.SortOrder
 }
 
-export type UniteEnseignementMaxOrderByAggregateInput = {
+export type uniteenseignementMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
@@ -379,7 +389,7 @@ export type UniteEnseignementMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type UniteEnseignementMinOrderByAggregateInput = {
+export type uniteenseignementMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
@@ -388,217 +398,207 @@ export type UniteEnseignementMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type UniteEnseignementSumOrderByAggregateInput = {
+export type uniteenseignementSumOrderByAggregateInput = {
   coefficient?: Prisma.SortOrder
 }
 
-export type UniteEnseignementScalarRelationFilter = {
-  is?: Prisma.UniteEnseignementWhereInput
-  isNot?: Prisma.UniteEnseignementWhereInput
+export type uniteenseignementCreateNestedOneWithoutClassematirereInput = {
+  create?: Prisma.XOR<Prisma.uniteenseignementCreateWithoutClassematirereInput, Prisma.uniteenseignementUncheckedCreateWithoutClassematirereInput>
+  connectOrCreate?: Prisma.uniteenseignementCreateOrConnectWithoutClassematirereInput
+  connect?: Prisma.uniteenseignementWhereUniqueInput
 }
 
-export type UniteEnseignementNullableScalarRelationFilter = {
-  is?: Prisma.UniteEnseignementWhereInput | null
-  isNot?: Prisma.UniteEnseignementWhereInput | null
+export type uniteenseignementUpdateOneWithoutClassematirereNestedInput = {
+  create?: Prisma.XOR<Prisma.uniteenseignementCreateWithoutClassematirereInput, Prisma.uniteenseignementUncheckedCreateWithoutClassematirereInput>
+  connectOrCreate?: Prisma.uniteenseignementCreateOrConnectWithoutClassematirereInput
+  upsert?: Prisma.uniteenseignementUpsertWithoutClassematirereInput
+  disconnect?: Prisma.uniteenseignementWhereInput | boolean
+  delete?: Prisma.uniteenseignementWhereInput | boolean
+  connect?: Prisma.uniteenseignementWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.uniteenseignementUpdateToOneWithWhereWithoutClassematirereInput, Prisma.uniteenseignementUpdateWithoutClassematirereInput>, Prisma.uniteenseignementUncheckedUpdateWithoutClassematirereInput>
 }
 
-export type UniteEnseignementCreateNestedOneWithoutMatiereUeInput = {
-  create?: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutMatiereUeInput, Prisma.UniteEnseignementUncheckedCreateWithoutMatiereUeInput>
-  connectOrCreate?: Prisma.UniteEnseignementCreateOrConnectWithoutMatiereUeInput
-  connect?: Prisma.UniteEnseignementWhereUniqueInput
+export type uniteenseignementCreateNestedOneWithoutMatiereueInput = {
+  create?: Prisma.XOR<Prisma.uniteenseignementCreateWithoutMatiereueInput, Prisma.uniteenseignementUncheckedCreateWithoutMatiereueInput>
+  connectOrCreate?: Prisma.uniteenseignementCreateOrConnectWithoutMatiereueInput
+  connect?: Prisma.uniteenseignementWhereUniqueInput
 }
 
-export type UniteEnseignementUpdateOneRequiredWithoutMatiereUeNestedInput = {
-  create?: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutMatiereUeInput, Prisma.UniteEnseignementUncheckedCreateWithoutMatiereUeInput>
-  connectOrCreate?: Prisma.UniteEnseignementCreateOrConnectWithoutMatiereUeInput
-  upsert?: Prisma.UniteEnseignementUpsertWithoutMatiereUeInput
-  connect?: Prisma.UniteEnseignementWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UniteEnseignementUpdateToOneWithWhereWithoutMatiereUeInput, Prisma.UniteEnseignementUpdateWithoutMatiereUeInput>, Prisma.UniteEnseignementUncheckedUpdateWithoutMatiereUeInput>
+export type uniteenseignementUpdateOneRequiredWithoutMatiereueNestedInput = {
+  create?: Prisma.XOR<Prisma.uniteenseignementCreateWithoutMatiereueInput, Prisma.uniteenseignementUncheckedCreateWithoutMatiereueInput>
+  connectOrCreate?: Prisma.uniteenseignementCreateOrConnectWithoutMatiereueInput
+  upsert?: Prisma.uniteenseignementUpsertWithoutMatiereueInput
+  connect?: Prisma.uniteenseignementWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.uniteenseignementUpdateToOneWithWhereWithoutMatiereueInput, Prisma.uniteenseignementUpdateWithoutMatiereueInput>, Prisma.uniteenseignementUncheckedUpdateWithoutMatiereueInput>
 }
 
-export type UniteEnseignementCreateNestedOneWithoutClaseMatiereInput = {
-  create?: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutClaseMatiereInput, Prisma.UniteEnseignementUncheckedCreateWithoutClaseMatiereInput>
-  connectOrCreate?: Prisma.UniteEnseignementCreateOrConnectWithoutClaseMatiereInput
-  connect?: Prisma.UniteEnseignementWhereUniqueInput
-}
-
-export type UniteEnseignementUpdateOneWithoutClaseMatiereNestedInput = {
-  create?: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutClaseMatiereInput, Prisma.UniteEnseignementUncheckedCreateWithoutClaseMatiereInput>
-  connectOrCreate?: Prisma.UniteEnseignementCreateOrConnectWithoutClaseMatiereInput
-  upsert?: Prisma.UniteEnseignementUpsertWithoutClaseMatiereInput
-  disconnect?: Prisma.UniteEnseignementWhereInput | boolean
-  delete?: Prisma.UniteEnseignementWhereInput | boolean
-  connect?: Prisma.UniteEnseignementWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UniteEnseignementUpdateToOneWithWhereWithoutClaseMatiereInput, Prisma.UniteEnseignementUpdateWithoutClaseMatiereInput>, Prisma.UniteEnseignementUncheckedUpdateWithoutClaseMatiereInput>
-}
-
-export type UniteEnseignementCreateWithoutMatiereUeInput = {
-  id?: string
+export type uniteenseignementCreateWithoutClassematirereInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  claseMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutUniteEnseignementInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutUniteenseignementInput
 }
 
-export type UniteEnseignementUncheckedCreateWithoutMatiereUeInput = {
-  id?: string
+export type uniteenseignementUncheckedCreateWithoutClassematirereInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  claseMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutUniteEnseignementInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutUniteenseignementInput
 }
 
-export type UniteEnseignementCreateOrConnectWithoutMatiereUeInput = {
-  where: Prisma.UniteEnseignementWhereUniqueInput
-  create: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutMatiereUeInput, Prisma.UniteEnseignementUncheckedCreateWithoutMatiereUeInput>
+export type uniteenseignementCreateOrConnectWithoutClassematirereInput = {
+  where: Prisma.uniteenseignementWhereUniqueInput
+  create: Prisma.XOR<Prisma.uniteenseignementCreateWithoutClassematirereInput, Prisma.uniteenseignementUncheckedCreateWithoutClassematirereInput>
 }
 
-export type UniteEnseignementUpsertWithoutMatiereUeInput = {
-  update: Prisma.XOR<Prisma.UniteEnseignementUpdateWithoutMatiereUeInput, Prisma.UniteEnseignementUncheckedUpdateWithoutMatiereUeInput>
-  create: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutMatiereUeInput, Prisma.UniteEnseignementUncheckedCreateWithoutMatiereUeInput>
-  where?: Prisma.UniteEnseignementWhereInput
+export type uniteenseignementUpsertWithoutClassematirereInput = {
+  update: Prisma.XOR<Prisma.uniteenseignementUpdateWithoutClassematirereInput, Prisma.uniteenseignementUncheckedUpdateWithoutClassematirereInput>
+  create: Prisma.XOR<Prisma.uniteenseignementCreateWithoutClassematirereInput, Prisma.uniteenseignementUncheckedCreateWithoutClassematirereInput>
+  where?: Prisma.uniteenseignementWhereInput
 }
 
-export type UniteEnseignementUpdateToOneWithWhereWithoutMatiereUeInput = {
-  where?: Prisma.UniteEnseignementWhereInput
-  data: Prisma.XOR<Prisma.UniteEnseignementUpdateWithoutMatiereUeInput, Prisma.UniteEnseignementUncheckedUpdateWithoutMatiereUeInput>
+export type uniteenseignementUpdateToOneWithWhereWithoutClassematirereInput = {
+  where?: Prisma.uniteenseignementWhereInput
+  data: Prisma.XOR<Prisma.uniteenseignementUpdateWithoutClassematirereInput, Prisma.uniteenseignementUncheckedUpdateWithoutClassematirereInput>
 }
 
-export type UniteEnseignementUpdateWithoutMatiereUeInput = {
+export type uniteenseignementUpdateWithoutClassematirereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  claseMatiere?: Prisma.ClasseMatirereUpdateManyWithoutUniteEnseignementNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutUniteenseignementNestedInput
 }
 
-export type UniteEnseignementUncheckedUpdateWithoutMatiereUeInput = {
+export type uniteenseignementUncheckedUpdateWithoutClassematirereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  claseMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutUniteEnseignementNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutUniteenseignementNestedInput
 }
 
-export type UniteEnseignementCreateWithoutClaseMatiereInput = {
-  id?: string
+export type uniteenseignementCreateWithoutMatiereueInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutUeInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutUniteenseignementInput
 }
 
-export type UniteEnseignementUncheckedCreateWithoutClaseMatiereInput = {
-  id?: string
+export type uniteenseignementUncheckedCreateWithoutMatiereueInput = {
+  id: string
   nom: string
   code: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutUeInput
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutUniteenseignementInput
 }
 
-export type UniteEnseignementCreateOrConnectWithoutClaseMatiereInput = {
-  where: Prisma.UniteEnseignementWhereUniqueInput
-  create: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutClaseMatiereInput, Prisma.UniteEnseignementUncheckedCreateWithoutClaseMatiereInput>
+export type uniteenseignementCreateOrConnectWithoutMatiereueInput = {
+  where: Prisma.uniteenseignementWhereUniqueInput
+  create: Prisma.XOR<Prisma.uniteenseignementCreateWithoutMatiereueInput, Prisma.uniteenseignementUncheckedCreateWithoutMatiereueInput>
 }
 
-export type UniteEnseignementUpsertWithoutClaseMatiereInput = {
-  update: Prisma.XOR<Prisma.UniteEnseignementUpdateWithoutClaseMatiereInput, Prisma.UniteEnseignementUncheckedUpdateWithoutClaseMatiereInput>
-  create: Prisma.XOR<Prisma.UniteEnseignementCreateWithoutClaseMatiereInput, Prisma.UniteEnseignementUncheckedCreateWithoutClaseMatiereInput>
-  where?: Prisma.UniteEnseignementWhereInput
+export type uniteenseignementUpsertWithoutMatiereueInput = {
+  update: Prisma.XOR<Prisma.uniteenseignementUpdateWithoutMatiereueInput, Prisma.uniteenseignementUncheckedUpdateWithoutMatiereueInput>
+  create: Prisma.XOR<Prisma.uniteenseignementCreateWithoutMatiereueInput, Prisma.uniteenseignementUncheckedCreateWithoutMatiereueInput>
+  where?: Prisma.uniteenseignementWhereInput
 }
 
-export type UniteEnseignementUpdateToOneWithWhereWithoutClaseMatiereInput = {
-  where?: Prisma.UniteEnseignementWhereInput
-  data: Prisma.XOR<Prisma.UniteEnseignementUpdateWithoutClaseMatiereInput, Prisma.UniteEnseignementUncheckedUpdateWithoutClaseMatiereInput>
+export type uniteenseignementUpdateToOneWithWhereWithoutMatiereueInput = {
+  where?: Prisma.uniteenseignementWhereInput
+  data: Prisma.XOR<Prisma.uniteenseignementUpdateWithoutMatiereueInput, Prisma.uniteenseignementUncheckedUpdateWithoutMatiereueInput>
 }
 
-export type UniteEnseignementUpdateWithoutClaseMatiereInput = {
+export type uniteenseignementUpdateWithoutMatiereueInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutUeNestedInput
+  classematirere?: Prisma.classematirereUpdateManyWithoutUniteenseignementNestedInput
 }
 
-export type UniteEnseignementUncheckedUpdateWithoutClaseMatiereInput = {
+export type uniteenseignementUncheckedUpdateWithoutMatiereueInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutUeNestedInput
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutUniteenseignementNestedInput
 }
 
 
 /**
- * Count Type UniteEnseignementCountOutputType
+ * Count Type UniteenseignementCountOutputType
  */
 
-export type UniteEnseignementCountOutputType = {
-  matiereUe: number
-  claseMatiere: number
+export type UniteenseignementCountOutputType = {
+  classematirere: number
+  matiereue: number
 }
 
-export type UniteEnseignementCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  matiereUe?: boolean | UniteEnseignementCountOutputTypeCountMatiereUeArgs
-  claseMatiere?: boolean | UniteEnseignementCountOutputTypeCountClaseMatiereArgs
+export type UniteenseignementCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classematirere?: boolean | UniteenseignementCountOutputTypeCountClassematirereArgs
+  matiereue?: boolean | UniteenseignementCountOutputTypeCountMatiereueArgs
 }
 
 /**
- * UniteEnseignementCountOutputType without action
+ * UniteenseignementCountOutputType without action
  */
-export type UniteEnseignementCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UniteenseignementCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignementCountOutputType
+   * Select specific fields to fetch from the UniteenseignementCountOutputType
    */
-  select?: Prisma.UniteEnseignementCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.UniteenseignementCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * UniteEnseignementCountOutputType without action
+ * UniteenseignementCountOutputType without action
  */
-export type UniteEnseignementCountOutputTypeCountMatiereUeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MatiereUeWhereInput
+export type UniteenseignementCountOutputTypeCountClassematirereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.classematirereWhereInput
 }
 
 /**
- * UniteEnseignementCountOutputType without action
+ * UniteenseignementCountOutputType without action
  */
-export type UniteEnseignementCountOutputTypeCountClaseMatiereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ClasseMatirereWhereInput
+export type UniteenseignementCountOutputTypeCountMatiereueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.matiereueWhereInput
 }
 
 
-export type UniteEnseignementSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type uniteenseignementSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nom?: boolean
   code?: boolean
   coefficient?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  matiereUe?: boolean | Prisma.UniteEnseignement$matiereUeArgs<ExtArgs>
-  claseMatiere?: boolean | Prisma.UniteEnseignement$claseMatiereArgs<ExtArgs>
-  _count?: boolean | Prisma.UniteEnseignementCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["uniteEnseignement"]>
+  classematirere?: boolean | Prisma.uniteenseignement$classematirereArgs<ExtArgs>
+  matiereue?: boolean | Prisma.uniteenseignement$matiereueArgs<ExtArgs>
+  _count?: boolean | Prisma.UniteenseignementCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["uniteenseignement"]>
 
 
 
-export type UniteEnseignementSelectScalar = {
+export type uniteenseignementSelectScalar = {
   id?: boolean
   nom?: boolean
   code?: boolean
@@ -607,18 +607,18 @@ export type UniteEnseignementSelectScalar = {
   updatedAt?: boolean
 }
 
-export type UniteEnseignementOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "code" | "coefficient" | "createdAt" | "updatedAt", ExtArgs["result"]["uniteEnseignement"]>
-export type UniteEnseignementInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  matiereUe?: boolean | Prisma.UniteEnseignement$matiereUeArgs<ExtArgs>
-  claseMatiere?: boolean | Prisma.UniteEnseignement$claseMatiereArgs<ExtArgs>
-  _count?: boolean | Prisma.UniteEnseignementCountOutputTypeDefaultArgs<ExtArgs>
+export type uniteenseignementOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "code" | "coefficient" | "createdAt" | "updatedAt", ExtArgs["result"]["uniteenseignement"]>
+export type uniteenseignementInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classematirere?: boolean | Prisma.uniteenseignement$classematirereArgs<ExtArgs>
+  matiereue?: boolean | Prisma.uniteenseignement$matiereueArgs<ExtArgs>
+  _count?: boolean | Prisma.UniteenseignementCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $UniteEnseignementPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "UniteEnseignement"
+export type $uniteenseignementPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "uniteenseignement"
   objects: {
-    matiereUe: Prisma.$MatiereUePayload<ExtArgs>[]
-    claseMatiere: Prisma.$ClasseMatirerePayload<ExtArgs>[]
+    classematirere: Prisma.$classematirerePayload<ExtArgs>[]
+    matiereue: Prisma.$matiereuePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -627,143 +627,143 @@ export type $UniteEnseignementPayload<ExtArgs extends runtime.Types.Extensions.I
     coefficient: number
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["uniteEnseignement"]>
+  }, ExtArgs["result"]["uniteenseignement"]>
   composites: {}
 }
 
-export type UniteEnseignementGetPayload<S extends boolean | null | undefined | UniteEnseignementDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload, S>
+export type uniteenseignementGetPayload<S extends boolean | null | undefined | uniteenseignementDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload, S>
 
-export type UniteEnseignementCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<UniteEnseignementFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: UniteEnseignementCountAggregateInputType | true
+export type uniteenseignementCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<uniteenseignementFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: UniteenseignementCountAggregateInputType | true
   }
 
-export interface UniteEnseignementDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UniteEnseignement'], meta: { name: 'UniteEnseignement' } }
+export interface uniteenseignementDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['uniteenseignement'], meta: { name: 'uniteenseignement' } }
   /**
-   * Find zero or one UniteEnseignement that matches the filter.
-   * @param {UniteEnseignementFindUniqueArgs} args - Arguments to find a UniteEnseignement
+   * Find zero or one Uniteenseignement that matches the filter.
+   * @param {uniteenseignementFindUniqueArgs} args - Arguments to find a Uniteenseignement
    * @example
-   * // Get one UniteEnseignement
-   * const uniteEnseignement = await prisma.uniteEnseignement.findUnique({
+   * // Get one Uniteenseignement
+   * const uniteenseignement = await prisma.uniteenseignement.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends UniteEnseignementFindUniqueArgs>(args: Prisma.SelectSubset<T, UniteEnseignementFindUniqueArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends uniteenseignementFindUniqueArgs>(args: Prisma.SelectSubset<T, uniteenseignementFindUniqueArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one UniteEnseignement that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Uniteenseignement that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {UniteEnseignementFindUniqueOrThrowArgs} args - Arguments to find a UniteEnseignement
+   * @param {uniteenseignementFindUniqueOrThrowArgs} args - Arguments to find a Uniteenseignement
    * @example
-   * // Get one UniteEnseignement
-   * const uniteEnseignement = await prisma.uniteEnseignement.findUniqueOrThrow({
+   * // Get one Uniteenseignement
+   * const uniteenseignement = await prisma.uniteenseignement.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends UniteEnseignementFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, UniteEnseignementFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends uniteenseignementFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, uniteenseignementFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first UniteEnseignement that matches the filter.
+   * Find the first Uniteenseignement that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementFindFirstArgs} args - Arguments to find a UniteEnseignement
+   * @param {uniteenseignementFindFirstArgs} args - Arguments to find a Uniteenseignement
    * @example
-   * // Get one UniteEnseignement
-   * const uniteEnseignement = await prisma.uniteEnseignement.findFirst({
+   * // Get one Uniteenseignement
+   * const uniteenseignement = await prisma.uniteenseignement.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends UniteEnseignementFindFirstArgs>(args?: Prisma.SelectSubset<T, UniteEnseignementFindFirstArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends uniteenseignementFindFirstArgs>(args?: Prisma.SelectSubset<T, uniteenseignementFindFirstArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first UniteEnseignement that matches the filter or
+   * Find the first Uniteenseignement that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementFindFirstOrThrowArgs} args - Arguments to find a UniteEnseignement
+   * @param {uniteenseignementFindFirstOrThrowArgs} args - Arguments to find a Uniteenseignement
    * @example
-   * // Get one UniteEnseignement
-   * const uniteEnseignement = await prisma.uniteEnseignement.findFirstOrThrow({
+   * // Get one Uniteenseignement
+   * const uniteenseignement = await prisma.uniteenseignement.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends UniteEnseignementFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, UniteEnseignementFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends uniteenseignementFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, uniteenseignementFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more UniteEnseignements that matches the filter.
+   * Find zero or more Uniteenseignements that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {uniteenseignementFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all UniteEnseignements
-   * const uniteEnseignements = await prisma.uniteEnseignement.findMany()
+   * // Get all Uniteenseignements
+   * const uniteenseignements = await prisma.uniteenseignement.findMany()
    * 
-   * // Get first 10 UniteEnseignements
-   * const uniteEnseignements = await prisma.uniteEnseignement.findMany({ take: 10 })
+   * // Get first 10 Uniteenseignements
+   * const uniteenseignements = await prisma.uniteenseignement.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const uniteEnseignementWithIdOnly = await prisma.uniteEnseignement.findMany({ select: { id: true } })
+   * const uniteenseignementWithIdOnly = await prisma.uniteenseignement.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends UniteEnseignementFindManyArgs>(args?: Prisma.SelectSubset<T, UniteEnseignementFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends uniteenseignementFindManyArgs>(args?: Prisma.SelectSubset<T, uniteenseignementFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a UniteEnseignement.
-   * @param {UniteEnseignementCreateArgs} args - Arguments to create a UniteEnseignement.
+   * Create a Uniteenseignement.
+   * @param {uniteenseignementCreateArgs} args - Arguments to create a Uniteenseignement.
    * @example
-   * // Create one UniteEnseignement
-   * const UniteEnseignement = await prisma.uniteEnseignement.create({
+   * // Create one Uniteenseignement
+   * const Uniteenseignement = await prisma.uniteenseignement.create({
    *   data: {
-   *     // ... data to create a UniteEnseignement
+   *     // ... data to create a Uniteenseignement
    *   }
    * })
    * 
    */
-  create<T extends UniteEnseignementCreateArgs>(args: Prisma.SelectSubset<T, UniteEnseignementCreateArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends uniteenseignementCreateArgs>(args: Prisma.SelectSubset<T, uniteenseignementCreateArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many UniteEnseignements.
-   * @param {UniteEnseignementCreateManyArgs} args - Arguments to create many UniteEnseignements.
+   * Create many Uniteenseignements.
+   * @param {uniteenseignementCreateManyArgs} args - Arguments to create many Uniteenseignements.
    * @example
-   * // Create many UniteEnseignements
-   * const uniteEnseignement = await prisma.uniteEnseignement.createMany({
+   * // Create many Uniteenseignements
+   * const uniteenseignement = await prisma.uniteenseignement.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends UniteEnseignementCreateManyArgs>(args?: Prisma.SelectSubset<T, UniteEnseignementCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends uniteenseignementCreateManyArgs>(args?: Prisma.SelectSubset<T, uniteenseignementCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a UniteEnseignement.
-   * @param {UniteEnseignementDeleteArgs} args - Arguments to delete one UniteEnseignement.
+   * Delete a Uniteenseignement.
+   * @param {uniteenseignementDeleteArgs} args - Arguments to delete one Uniteenseignement.
    * @example
-   * // Delete one UniteEnseignement
-   * const UniteEnseignement = await prisma.uniteEnseignement.delete({
+   * // Delete one Uniteenseignement
+   * const Uniteenseignement = await prisma.uniteenseignement.delete({
    *   where: {
-   *     // ... filter to delete one UniteEnseignement
+   *     // ... filter to delete one Uniteenseignement
    *   }
    * })
    * 
    */
-  delete<T extends UniteEnseignementDeleteArgs>(args: Prisma.SelectSubset<T, UniteEnseignementDeleteArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends uniteenseignementDeleteArgs>(args: Prisma.SelectSubset<T, uniteenseignementDeleteArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one UniteEnseignement.
-   * @param {UniteEnseignementUpdateArgs} args - Arguments to update one UniteEnseignement.
+   * Update one Uniteenseignement.
+   * @param {uniteenseignementUpdateArgs} args - Arguments to update one Uniteenseignement.
    * @example
-   * // Update one UniteEnseignement
-   * const uniteEnseignement = await prisma.uniteEnseignement.update({
+   * // Update one Uniteenseignement
+   * const uniteenseignement = await prisma.uniteenseignement.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -773,30 +773,30 @@ export interface UniteEnseignementDelegate<ExtArgs extends runtime.Types.Extensi
    * })
    * 
    */
-  update<T extends UniteEnseignementUpdateArgs>(args: Prisma.SelectSubset<T, UniteEnseignementUpdateArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends uniteenseignementUpdateArgs>(args: Prisma.SelectSubset<T, uniteenseignementUpdateArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more UniteEnseignements.
-   * @param {UniteEnseignementDeleteManyArgs} args - Arguments to filter UniteEnseignements to delete.
+   * Delete zero or more Uniteenseignements.
+   * @param {uniteenseignementDeleteManyArgs} args - Arguments to filter Uniteenseignements to delete.
    * @example
-   * // Delete a few UniteEnseignements
-   * const { count } = await prisma.uniteEnseignement.deleteMany({
+   * // Delete a few Uniteenseignements
+   * const { count } = await prisma.uniteenseignement.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends UniteEnseignementDeleteManyArgs>(args?: Prisma.SelectSubset<T, UniteEnseignementDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends uniteenseignementDeleteManyArgs>(args?: Prisma.SelectSubset<T, uniteenseignementDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more UniteEnseignements.
+   * Update zero or more Uniteenseignements.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {uniteenseignementUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many UniteEnseignements
-   * const uniteEnseignement = await prisma.uniteEnseignement.updateMany({
+   * // Update many Uniteenseignements
+   * const uniteenseignement = await prisma.uniteenseignement.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -806,56 +806,56 @@ export interface UniteEnseignementDelegate<ExtArgs extends runtime.Types.Extensi
    * })
    * 
    */
-  updateMany<T extends UniteEnseignementUpdateManyArgs>(args: Prisma.SelectSubset<T, UniteEnseignementUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends uniteenseignementUpdateManyArgs>(args: Prisma.SelectSubset<T, uniteenseignementUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one UniteEnseignement.
-   * @param {UniteEnseignementUpsertArgs} args - Arguments to update or create a UniteEnseignement.
+   * Create or update one Uniteenseignement.
+   * @param {uniteenseignementUpsertArgs} args - Arguments to update or create a Uniteenseignement.
    * @example
-   * // Update or create a UniteEnseignement
-   * const uniteEnseignement = await prisma.uniteEnseignement.upsert({
+   * // Update or create a Uniteenseignement
+   * const uniteenseignement = await prisma.uniteenseignement.upsert({
    *   create: {
-   *     // ... data to create a UniteEnseignement
+   *     // ... data to create a Uniteenseignement
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the UniteEnseignement we want to update
+   *     // ... the filter for the Uniteenseignement we want to update
    *   }
    * })
    */
-  upsert<T extends UniteEnseignementUpsertArgs>(args: Prisma.SelectSubset<T, UniteEnseignementUpsertArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends uniteenseignementUpsertArgs>(args: Prisma.SelectSubset<T, uniteenseignementUpsertArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of UniteEnseignements.
+   * Count the number of Uniteenseignements.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementCountArgs} args - Arguments to filter UniteEnseignements to count.
+   * @param {uniteenseignementCountArgs} args - Arguments to filter Uniteenseignements to count.
    * @example
-   * // Count the number of UniteEnseignements
-   * const count = await prisma.uniteEnseignement.count({
+   * // Count the number of Uniteenseignements
+   * const count = await prisma.uniteenseignement.count({
    *   where: {
-   *     // ... the filter for the UniteEnseignements we want to count
+   *     // ... the filter for the Uniteenseignements we want to count
    *   }
    * })
   **/
-  count<T extends UniteEnseignementCountArgs>(
-    args?: Prisma.Subset<T, UniteEnseignementCountArgs>,
+  count<T extends uniteenseignementCountArgs>(
+    args?: Prisma.Subset<T, uniteenseignementCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], UniteEnseignementCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], UniteenseignementCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a UniteEnseignement.
+   * Allows you to perform aggregations operations on a Uniteenseignement.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {UniteenseignementAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -875,13 +875,13 @@ export interface UniteEnseignementDelegate<ExtArgs extends runtime.Types.Extensi
    *   take: 10,
    * })
   **/
-  aggregate<T extends UniteEnseignementAggregateArgs>(args: Prisma.Subset<T, UniteEnseignementAggregateArgs>): Prisma.PrismaPromise<GetUniteEnseignementAggregateType<T>>
+  aggregate<T extends UniteenseignementAggregateArgs>(args: Prisma.Subset<T, UniteenseignementAggregateArgs>): Prisma.PrismaPromise<GetUniteenseignementAggregateType<T>>
 
   /**
-   * Group by UniteEnseignement.
+   * Group by Uniteenseignement.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UniteEnseignementGroupByArgs} args - Group by arguments.
+   * @param {uniteenseignementGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -896,14 +896,14 @@ export interface UniteEnseignementDelegate<ExtArgs extends runtime.Types.Extensi
    * 
   **/
   groupBy<
-    T extends UniteEnseignementGroupByArgs,
+    T extends uniteenseignementGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: UniteEnseignementGroupByArgs['orderBy'] }
-      : { orderBy?: UniteEnseignementGroupByArgs['orderBy'] },
+      ? { orderBy: uniteenseignementGroupByArgs['orderBy'] }
+      : { orderBy?: uniteenseignementGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -952,23 +952,23 @@ export interface UniteEnseignementDelegate<ExtArgs extends runtime.Types.Extensi
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, UniteEnseignementGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUniteEnseignementGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, uniteenseignementGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUniteenseignementGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the UniteEnseignement model
+ * Fields of the uniteenseignement model
  */
-readonly fields: UniteEnseignementFieldRefs;
+readonly fields: uniteenseignementFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for UniteEnseignement.
+ * The delegate class that acts as a "Promise-like" for uniteenseignement.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__UniteEnseignementClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__uniteenseignementClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  matiereUe<T extends Prisma.UniteEnseignement$matiereUeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UniteEnseignement$matiereUeArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MatiereUePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  claseMatiere<T extends Prisma.UniteEnseignement$claseMatiereArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UniteEnseignement$claseMatiereArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  classematirere<T extends Prisma.uniteenseignement$classematirereArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.uniteenseignement$classematirereArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  matiereue<T extends Prisma.uniteenseignement$matiereueArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.uniteenseignement$matiereueArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$matiereuePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -995,424 +995,424 @@ export interface Prisma__UniteEnseignementClient<T, Null = never, ExtArgs extend
 
 
 /**
- * Fields of the UniteEnseignement model
+ * Fields of the uniteenseignement model
  */
-export interface UniteEnseignementFieldRefs {
-  readonly id: Prisma.FieldRef<"UniteEnseignement", 'String'>
-  readonly nom: Prisma.FieldRef<"UniteEnseignement", 'String'>
-  readonly code: Prisma.FieldRef<"UniteEnseignement", 'String'>
-  readonly coefficient: Prisma.FieldRef<"UniteEnseignement", 'Int'>
-  readonly createdAt: Prisma.FieldRef<"UniteEnseignement", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"UniteEnseignement", 'DateTime'>
+export interface uniteenseignementFieldRefs {
+  readonly id: Prisma.FieldRef<"uniteenseignement", 'String'>
+  readonly nom: Prisma.FieldRef<"uniteenseignement", 'String'>
+  readonly code: Prisma.FieldRef<"uniteenseignement", 'String'>
+  readonly coefficient: Prisma.FieldRef<"uniteenseignement", 'Int'>
+  readonly createdAt: Prisma.FieldRef<"uniteenseignement", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"uniteenseignement", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * UniteEnseignement findUnique
+ * uniteenseignement findUnique
  */
-export type UniteEnseignementFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * Filter, which UniteEnseignement to fetch.
+   * Filter, which uniteenseignement to fetch.
    */
-  where: Prisma.UniteEnseignementWhereUniqueInput
+  where: Prisma.uniteenseignementWhereUniqueInput
 }
 
 /**
- * UniteEnseignement findUniqueOrThrow
+ * uniteenseignement findUniqueOrThrow
  */
-export type UniteEnseignementFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * Filter, which UniteEnseignement to fetch.
+   * Filter, which uniteenseignement to fetch.
    */
-  where: Prisma.UniteEnseignementWhereUniqueInput
+  where: Prisma.uniteenseignementWhereUniqueInput
 }
 
 /**
- * UniteEnseignement findFirst
+ * uniteenseignement findFirst
  */
-export type UniteEnseignementFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * Filter, which UniteEnseignement to fetch.
+   * Filter, which uniteenseignement to fetch.
    */
-  where?: Prisma.UniteEnseignementWhereInput
+  where?: Prisma.uniteenseignementWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of UniteEnseignements to fetch.
+   * Determine the order of uniteenseignements to fetch.
    */
-  orderBy?: Prisma.UniteEnseignementOrderByWithRelationInput | Prisma.UniteEnseignementOrderByWithRelationInput[]
+  orderBy?: Prisma.uniteenseignementOrderByWithRelationInput | Prisma.uniteenseignementOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for UniteEnseignements.
+   * Sets the position for searching for uniteenseignements.
    */
-  cursor?: Prisma.UniteEnseignementWhereUniqueInput
+  cursor?: Prisma.uniteenseignementWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` UniteEnseignements from the position of the cursor.
+   * Take `±n` uniteenseignements from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` UniteEnseignements.
+   * Skip the first `n` uniteenseignements.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of UniteEnseignements.
+   * Filter by unique combinations of uniteenseignements.
    */
-  distinct?: Prisma.UniteEnseignementScalarFieldEnum | Prisma.UniteEnseignementScalarFieldEnum[]
+  distinct?: Prisma.UniteenseignementScalarFieldEnum | Prisma.UniteenseignementScalarFieldEnum[]
 }
 
 /**
- * UniteEnseignement findFirstOrThrow
+ * uniteenseignement findFirstOrThrow
  */
-export type UniteEnseignementFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * Filter, which UniteEnseignement to fetch.
+   * Filter, which uniteenseignement to fetch.
    */
-  where?: Prisma.UniteEnseignementWhereInput
+  where?: Prisma.uniteenseignementWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of UniteEnseignements to fetch.
+   * Determine the order of uniteenseignements to fetch.
    */
-  orderBy?: Prisma.UniteEnseignementOrderByWithRelationInput | Prisma.UniteEnseignementOrderByWithRelationInput[]
+  orderBy?: Prisma.uniteenseignementOrderByWithRelationInput | Prisma.uniteenseignementOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for UniteEnseignements.
+   * Sets the position for searching for uniteenseignements.
    */
-  cursor?: Prisma.UniteEnseignementWhereUniqueInput
+  cursor?: Prisma.uniteenseignementWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` UniteEnseignements from the position of the cursor.
+   * Take `±n` uniteenseignements from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` UniteEnseignements.
+   * Skip the first `n` uniteenseignements.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of UniteEnseignements.
+   * Filter by unique combinations of uniteenseignements.
    */
-  distinct?: Prisma.UniteEnseignementScalarFieldEnum | Prisma.UniteEnseignementScalarFieldEnum[]
+  distinct?: Prisma.UniteenseignementScalarFieldEnum | Prisma.UniteenseignementScalarFieldEnum[]
 }
 
 /**
- * UniteEnseignement findMany
+ * uniteenseignement findMany
  */
-export type UniteEnseignementFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * Filter, which UniteEnseignements to fetch.
+   * Filter, which uniteenseignements to fetch.
    */
-  where?: Prisma.UniteEnseignementWhereInput
+  where?: Prisma.uniteenseignementWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of UniteEnseignements to fetch.
+   * Determine the order of uniteenseignements to fetch.
    */
-  orderBy?: Prisma.UniteEnseignementOrderByWithRelationInput | Prisma.UniteEnseignementOrderByWithRelationInput[]
+  orderBy?: Prisma.uniteenseignementOrderByWithRelationInput | Prisma.uniteenseignementOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing UniteEnseignements.
+   * Sets the position for listing uniteenseignements.
    */
-  cursor?: Prisma.UniteEnseignementWhereUniqueInput
+  cursor?: Prisma.uniteenseignementWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` UniteEnseignements from the position of the cursor.
+   * Take `±n` uniteenseignements from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` UniteEnseignements.
+   * Skip the first `n` uniteenseignements.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of UniteEnseignements.
+   * Filter by unique combinations of uniteenseignements.
    */
-  distinct?: Prisma.UniteEnseignementScalarFieldEnum | Prisma.UniteEnseignementScalarFieldEnum[]
+  distinct?: Prisma.UniteenseignementScalarFieldEnum | Prisma.UniteenseignementScalarFieldEnum[]
 }
 
 /**
- * UniteEnseignement create
+ * uniteenseignement create
  */
-export type UniteEnseignementCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * The data needed to create a UniteEnseignement.
+   * The data needed to create a uniteenseignement.
    */
-  data: Prisma.XOR<Prisma.UniteEnseignementCreateInput, Prisma.UniteEnseignementUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.uniteenseignementCreateInput, Prisma.uniteenseignementUncheckedCreateInput>
 }
 
 /**
- * UniteEnseignement createMany
+ * uniteenseignement createMany
  */
-export type UniteEnseignementCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many UniteEnseignements.
+   * The data used to create many uniteenseignements.
    */
-  data: Prisma.UniteEnseignementCreateManyInput | Prisma.UniteEnseignementCreateManyInput[]
+  data: Prisma.uniteenseignementCreateManyInput | Prisma.uniteenseignementCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * UniteEnseignement update
+ * uniteenseignement update
  */
-export type UniteEnseignementUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * The data needed to update a UniteEnseignement.
+   * The data needed to update a uniteenseignement.
    */
-  data: Prisma.XOR<Prisma.UniteEnseignementUpdateInput, Prisma.UniteEnseignementUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.uniteenseignementUpdateInput, Prisma.uniteenseignementUncheckedUpdateInput>
   /**
-   * Choose, which UniteEnseignement to update.
+   * Choose, which uniteenseignement to update.
    */
-  where: Prisma.UniteEnseignementWhereUniqueInput
+  where: Prisma.uniteenseignementWhereUniqueInput
 }
 
 /**
- * UniteEnseignement updateMany
+ * uniteenseignement updateMany
  */
-export type UniteEnseignementUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update UniteEnseignements.
+   * The data used to update uniteenseignements.
    */
-  data: Prisma.XOR<Prisma.UniteEnseignementUpdateManyMutationInput, Prisma.UniteEnseignementUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.uniteenseignementUpdateManyMutationInput, Prisma.uniteenseignementUncheckedUpdateManyInput>
   /**
-   * Filter which UniteEnseignements to update
+   * Filter which uniteenseignements to update
    */
-  where?: Prisma.UniteEnseignementWhereInput
+  where?: Prisma.uniteenseignementWhereInput
   /**
-   * Limit how many UniteEnseignements to update.
+   * Limit how many uniteenseignements to update.
    */
   limit?: number
 }
 
 /**
- * UniteEnseignement upsert
+ * uniteenseignement upsert
  */
-export type UniteEnseignementUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * The filter to search for the UniteEnseignement to update in case it exists.
+   * The filter to search for the uniteenseignement to update in case it exists.
    */
-  where: Prisma.UniteEnseignementWhereUniqueInput
+  where: Prisma.uniteenseignementWhereUniqueInput
   /**
-   * In case the UniteEnseignement found by the `where` argument doesn't exist, create a new UniteEnseignement with this data.
+   * In case the uniteenseignement found by the `where` argument doesn't exist, create a new uniteenseignement with this data.
    */
-  create: Prisma.XOR<Prisma.UniteEnseignementCreateInput, Prisma.UniteEnseignementUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.uniteenseignementCreateInput, Prisma.uniteenseignementUncheckedCreateInput>
   /**
-   * In case the UniteEnseignement was found with the provided `where` argument, update it with this data.
+   * In case the uniteenseignement was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.UniteEnseignementUpdateInput, Prisma.UniteEnseignementUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.uniteenseignementUpdateInput, Prisma.uniteenseignementUncheckedUpdateInput>
 }
 
 /**
- * UniteEnseignement delete
+ * uniteenseignement delete
  */
-export type UniteEnseignementDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
   /**
-   * Filter which UniteEnseignement to delete.
+   * Filter which uniteenseignement to delete.
    */
-  where: Prisma.UniteEnseignementWhereUniqueInput
+  where: Prisma.uniteenseignementWhereUniqueInput
 }
 
 /**
- * UniteEnseignement deleteMany
+ * uniteenseignement deleteMany
  */
-export type UniteEnseignementDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which UniteEnseignements to delete
+   * Filter which uniteenseignements to delete
    */
-  where?: Prisma.UniteEnseignementWhereInput
+  where?: Prisma.uniteenseignementWhereInput
   /**
-   * Limit how many UniteEnseignements to delete.
+   * Limit how many uniteenseignements to delete.
    */
   limit?: number
 }
 
 /**
- * UniteEnseignement.matiereUe
+ * uniteenseignement.classematirere
  */
-export type UniteEnseignement$matiereUeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignement$classematirereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the MatiereUe
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.MatiereUeSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the MatiereUe
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.MatiereUeOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereUeInclude<ExtArgs> | null
-  where?: Prisma.MatiereUeWhereInput
-  orderBy?: Prisma.MatiereUeOrderByWithRelationInput | Prisma.MatiereUeOrderByWithRelationInput[]
-  cursor?: Prisma.MatiereUeWhereUniqueInput
+  include?: Prisma.classematirereInclude<ExtArgs> | null
+  where?: Prisma.classematirereWhereInput
+  orderBy?: Prisma.classematirereOrderByWithRelationInput | Prisma.classematirereOrderByWithRelationInput[]
+  cursor?: Prisma.classematirereWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.MatiereUeScalarFieldEnum | Prisma.MatiereUeScalarFieldEnum[]
+  distinct?: Prisma.ClassematirereScalarFieldEnum | Prisma.ClassematirereScalarFieldEnum[]
 }
 
 /**
- * UniteEnseignement.claseMatiere
+ * uniteenseignement.matiereue
  */
-export type UniteEnseignement$claseMatiereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignement$matiereueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the matiereue
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.matiereueSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the matiereue
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.matiereueOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
-  where?: Prisma.ClasseMatirereWhereInput
-  orderBy?: Prisma.ClasseMatirereOrderByWithRelationInput | Prisma.ClasseMatirereOrderByWithRelationInput[]
-  cursor?: Prisma.ClasseMatirereWhereUniqueInput
+  include?: Prisma.matiereueInclude<ExtArgs> | null
+  where?: Prisma.matiereueWhereInput
+  orderBy?: Prisma.matiereueOrderByWithRelationInput | Prisma.matiereueOrderByWithRelationInput[]
+  cursor?: Prisma.matiereueWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ClasseMatirereScalarFieldEnum | Prisma.ClasseMatirereScalarFieldEnum[]
+  distinct?: Prisma.MatiereueScalarFieldEnum | Prisma.MatiereueScalarFieldEnum[]
 }
 
 /**
- * UniteEnseignement without action
+ * uniteenseignement without action
  */
-export type UniteEnseignementDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type uniteenseignementDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
 }

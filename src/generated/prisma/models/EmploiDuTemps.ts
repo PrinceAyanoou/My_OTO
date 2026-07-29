@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `EmploiDuTemps` model and its related types.
+ * This file exports the `emploidutemps` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,21 +13,21 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model EmploiDuTemps
+ * Model emploidutemps
  * 
  */
-export type EmploiDuTempsModel = runtime.Types.Result.DefaultSelection<Prisma.$EmploiDuTempsPayload>
+export type emploidutempsModel = runtime.Types.Result.DefaultSelection<Prisma.$emploidutempsPayload>
 
-export type AggregateEmploiDuTemps = {
-  _count: EmploiDuTempsCountAggregateOutputType | null
-  _min: EmploiDuTempsMinAggregateOutputType | null
-  _max: EmploiDuTempsMaxAggregateOutputType | null
+export type AggregateEmploidutemps = {
+  _count: EmploidutempsCountAggregateOutputType | null
+  _min: EmploidutempsMinAggregateOutputType | null
+  _max: EmploidutempsMaxAggregateOutputType | null
 }
 
-export type EmploiDuTempsMinAggregateOutputType = {
+export type EmploidutempsMinAggregateOutputType = {
   id: string | null
   affectationEnseignantId: string | null
-  jourDeLaSemaine: $Enums.JourSemaine | null
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine | null
   heureDebut: string | null
   heureFin: string | null
   classeScolaireId: string | null
@@ -35,10 +35,10 @@ export type EmploiDuTempsMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type EmploiDuTempsMaxAggregateOutputType = {
+export type EmploidutempsMaxAggregateOutputType = {
   id: string | null
   affectationEnseignantId: string | null
-  jourDeLaSemaine: $Enums.JourSemaine | null
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine | null
   heureDebut: string | null
   heureFin: string | null
   classeScolaireId: string | null
@@ -46,7 +46,7 @@ export type EmploiDuTempsMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type EmploiDuTempsCountAggregateOutputType = {
+export type EmploidutempsCountAggregateOutputType = {
   id: number
   affectationEnseignantId: number
   jourDeLaSemaine: number
@@ -59,7 +59,7 @@ export type EmploiDuTempsCountAggregateOutputType = {
 }
 
 
-export type EmploiDuTempsMinAggregateInputType = {
+export type EmploidutempsMinAggregateInputType = {
   id?: true
   affectationEnseignantId?: true
   jourDeLaSemaine?: true
@@ -70,7 +70,7 @@ export type EmploiDuTempsMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type EmploiDuTempsMaxAggregateInputType = {
+export type EmploidutempsMaxAggregateInputType = {
   id?: true
   affectationEnseignantId?: true
   jourDeLaSemaine?: true
@@ -81,7 +81,7 @@ export type EmploiDuTempsMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type EmploiDuTempsCountAggregateInputType = {
+export type EmploidutempsCountAggregateInputType = {
   id?: true
   affectationEnseignantId?: true
   jourDeLaSemaine?: true
@@ -93,124 +93,124 @@ export type EmploiDuTempsCountAggregateInputType = {
   _all?: true
 }
 
-export type EmploiDuTempsAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type EmploidutempsAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which EmploiDuTemps to aggregate.
+   * Filter which emploidutemps to aggregate.
    */
-  where?: Prisma.EmploiDuTempsWhereInput
+  where?: Prisma.emploidutempsWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmploiDuTemps to fetch.
+   * Determine the order of emploidutemps to fetch.
    */
-  orderBy?: Prisma.EmploiDuTempsOrderByWithRelationInput | Prisma.EmploiDuTempsOrderByWithRelationInput[]
+  orderBy?: Prisma.emploidutempsOrderByWithRelationInput | Prisma.emploidutempsOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.EmploiDuTempsWhereUniqueInput
+  cursor?: Prisma.emploidutempsWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmploiDuTemps from the position of the cursor.
+   * Take `±n` emploidutemps from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmploiDuTemps.
+   * Skip the first `n` emploidutemps.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned EmploiDuTemps
+   * Count returned emploidutemps
   **/
-  _count?: true | EmploiDuTempsCountAggregateInputType
+  _count?: true | EmploidutempsCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: EmploiDuTempsMinAggregateInputType
+  _min?: EmploidutempsMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: EmploiDuTempsMaxAggregateInputType
+  _max?: EmploidutempsMaxAggregateInputType
 }
 
-export type GetEmploiDuTempsAggregateType<T extends EmploiDuTempsAggregateArgs> = {
-      [P in keyof T & keyof AggregateEmploiDuTemps]: P extends '_count' | 'count'
+export type GetEmploidutempsAggregateType<T extends EmploidutempsAggregateArgs> = {
+      [P in keyof T & keyof AggregateEmploidutemps]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateEmploiDuTemps[P]>
-    : Prisma.GetScalarType<T[P], AggregateEmploiDuTemps[P]>
+      : Prisma.GetScalarType<T[P], AggregateEmploidutemps[P]>
+    : Prisma.GetScalarType<T[P], AggregateEmploidutemps[P]>
 }
 
 
 
 
-export type EmploiDuTempsGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EmploiDuTempsWhereInput
-  orderBy?: Prisma.EmploiDuTempsOrderByWithAggregationInput | Prisma.EmploiDuTempsOrderByWithAggregationInput[]
-  by: Prisma.EmploiDuTempsScalarFieldEnum[] | Prisma.EmploiDuTempsScalarFieldEnum
-  having?: Prisma.EmploiDuTempsScalarWhereWithAggregatesInput
+export type emploidutempsGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.emploidutempsWhereInput
+  orderBy?: Prisma.emploidutempsOrderByWithAggregationInput | Prisma.emploidutempsOrderByWithAggregationInput[]
+  by: Prisma.EmploidutempsScalarFieldEnum[] | Prisma.EmploidutempsScalarFieldEnum
+  having?: Prisma.emploidutempsScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: EmploiDuTempsCountAggregateInputType | true
-  _min?: EmploiDuTempsMinAggregateInputType
-  _max?: EmploiDuTempsMaxAggregateInputType
+  _count?: EmploidutempsCountAggregateInputType | true
+  _min?: EmploidutempsMinAggregateInputType
+  _max?: EmploidutempsMaxAggregateInputType
 }
 
-export type EmploiDuTempsGroupByOutputType = {
+export type EmploidutempsGroupByOutputType = {
   id: string
   affectationEnseignantId: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
   heureFin: string
   classeScolaireId: string
   createdAt: Date
   updatedAt: Date
-  _count: EmploiDuTempsCountAggregateOutputType | null
-  _min: EmploiDuTempsMinAggregateOutputType | null
-  _max: EmploiDuTempsMaxAggregateOutputType | null
+  _count: EmploidutempsCountAggregateOutputType | null
+  _min: EmploidutempsMinAggregateOutputType | null
+  _max: EmploidutempsMaxAggregateOutputType | null
 }
 
-export type GetEmploiDuTempsGroupByPayload<T extends EmploiDuTempsGroupByArgs> = Prisma.PrismaPromise<
+export type GetEmploidutempsGroupByPayload<T extends emploidutempsGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<EmploiDuTempsGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<EmploidutempsGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof EmploiDuTempsGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof EmploidutempsGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], EmploiDuTempsGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], EmploiDuTempsGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], EmploidutempsGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], EmploidutempsGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type EmploiDuTempsWhereInput = {
-  AND?: Prisma.EmploiDuTempsWhereInput | Prisma.EmploiDuTempsWhereInput[]
-  OR?: Prisma.EmploiDuTempsWhereInput[]
-  NOT?: Prisma.EmploiDuTempsWhereInput | Prisma.EmploiDuTempsWhereInput[]
-  id?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  affectationEnseignantId?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFilter<"EmploiDuTemps"> | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  heureFin?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  classeScolaireId?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmploiDuTemps"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"EmploiDuTemps"> | Date | string
-  affectationEnseignant?: Prisma.XOR<Prisma.AffectationEnseignantScalarRelationFilter, Prisma.AffectationEnseignantWhereInput>
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireNullableScalarRelationFilter, Prisma.ClassScolaireWhereInput> | null
+export type emploidutempsWhereInput = {
+  AND?: Prisma.emploidutempsWhereInput | Prisma.emploidutempsWhereInput[]
+  OR?: Prisma.emploidutempsWhereInput[]
+  NOT?: Prisma.emploidutempsWhereInput | Prisma.emploidutempsWhereInput[]
+  id?: Prisma.StringFilter<"emploidutemps"> | string
+  affectationEnseignantId?: Prisma.StringFilter<"emploidutemps"> | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFilter<"emploidutemps"> | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFilter<"emploidutemps"> | string
+  heureFin?: Prisma.StringFilter<"emploidutemps"> | string
+  classeScolaireId?: Prisma.StringFilter<"emploidutemps"> | string
+  createdAt?: Prisma.DateTimeFilter<"emploidutemps"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"emploidutemps"> | Date | string
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireNullableScalarRelationFilter, Prisma.classscolaireWhereInput> | null
+  affectationenseignant?: Prisma.XOR<Prisma.AffectationenseignantScalarRelationFilter, Prisma.affectationenseignantWhereInput>
 }
 
-export type EmploiDuTempsOrderByWithRelationInput = {
+export type emploidutempsOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   affectationEnseignantId?: Prisma.SortOrder
   jourDeLaSemaine?: Prisma.SortOrder
@@ -219,29 +219,29 @@ export type EmploiDuTempsOrderByWithRelationInput = {
   classeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  affectationEnseignant?: Prisma.AffectationEnseignantOrderByWithRelationInput
-  classeScolaire?: Prisma.ClassScolaireOrderByWithRelationInput
-  _relevance?: Prisma.EmploiDuTempsOrderByRelevanceInput
+  classscolaire?: Prisma.classscolaireOrderByWithRelationInput
+  affectationenseignant?: Prisma.affectationenseignantOrderByWithRelationInput
+  _relevance?: Prisma.emploidutempsOrderByRelevanceInput
 }
 
-export type EmploiDuTempsWhereUniqueInput = Prisma.AtLeast<{
+export type emploidutempsWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  affectationEnseignantId_jourDeLaSemaine_heureDebut?: Prisma.EmploiDuTempsAffectationEnseignantIdJourDeLaSemaineHeureDebutCompoundUniqueInput
-  AND?: Prisma.EmploiDuTempsWhereInput | Prisma.EmploiDuTempsWhereInput[]
-  OR?: Prisma.EmploiDuTempsWhereInput[]
-  NOT?: Prisma.EmploiDuTempsWhereInput | Prisma.EmploiDuTempsWhereInput[]
-  affectationEnseignantId?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFilter<"EmploiDuTemps"> | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  heureFin?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  classeScolaireId?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmploiDuTemps"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"EmploiDuTemps"> | Date | string
-  affectationEnseignant?: Prisma.XOR<Prisma.AffectationEnseignantScalarRelationFilter, Prisma.AffectationEnseignantWhereInput>
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireNullableScalarRelationFilter, Prisma.ClassScolaireWhereInput> | null
+  affectationEnseignantId_jourDeLaSemaine_heureDebut?: Prisma.emploidutempsAffectationEnseignantIdJourDeLaSemaineHeureDebutCompoundUniqueInput
+  AND?: Prisma.emploidutempsWhereInput | Prisma.emploidutempsWhereInput[]
+  OR?: Prisma.emploidutempsWhereInput[]
+  NOT?: Prisma.emploidutempsWhereInput | Prisma.emploidutempsWhereInput[]
+  affectationEnseignantId?: Prisma.StringFilter<"emploidutemps"> | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFilter<"emploidutemps"> | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFilter<"emploidutemps"> | string
+  heureFin?: Prisma.StringFilter<"emploidutemps"> | string
+  classeScolaireId?: Prisma.StringFilter<"emploidutemps"> | string
+  createdAt?: Prisma.DateTimeFilter<"emploidutemps"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"emploidutemps"> | Date | string
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireNullableScalarRelationFilter, Prisma.classscolaireWhereInput> | null
+  affectationenseignant?: Prisma.XOR<Prisma.AffectationenseignantScalarRelationFilter, Prisma.affectationenseignantWhereInput>
 }, "id" | "affectationEnseignantId_jourDeLaSemaine_heureDebut">
 
-export type EmploiDuTempsOrderByWithAggregationInput = {
+export type emploidutempsOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   affectationEnseignantId?: Prisma.SortOrder
   jourDeLaSemaine?: Prisma.SortOrder
@@ -250,77 +250,77 @@ export type EmploiDuTempsOrderByWithAggregationInput = {
   classeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.EmploiDuTempsCountOrderByAggregateInput
-  _max?: Prisma.EmploiDuTempsMaxOrderByAggregateInput
-  _min?: Prisma.EmploiDuTempsMinOrderByAggregateInput
+  _count?: Prisma.emploidutempsCountOrderByAggregateInput
+  _max?: Prisma.emploidutempsMaxOrderByAggregateInput
+  _min?: Prisma.emploidutempsMinOrderByAggregateInput
 }
 
-export type EmploiDuTempsScalarWhereWithAggregatesInput = {
-  AND?: Prisma.EmploiDuTempsScalarWhereWithAggregatesInput | Prisma.EmploiDuTempsScalarWhereWithAggregatesInput[]
-  OR?: Prisma.EmploiDuTempsScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.EmploiDuTempsScalarWhereWithAggregatesInput | Prisma.EmploiDuTempsScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"EmploiDuTemps"> | string
-  affectationEnseignantId?: Prisma.StringWithAggregatesFilter<"EmploiDuTemps"> | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineWithAggregatesFilter<"EmploiDuTemps"> | $Enums.JourSemaine
-  heureDebut?: Prisma.StringWithAggregatesFilter<"EmploiDuTemps"> | string
-  heureFin?: Prisma.StringWithAggregatesFilter<"EmploiDuTemps"> | string
-  classeScolaireId?: Prisma.StringWithAggregatesFilter<"EmploiDuTemps"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"EmploiDuTemps"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"EmploiDuTemps"> | Date | string
+export type emploidutempsScalarWhereWithAggregatesInput = {
+  AND?: Prisma.emploidutempsScalarWhereWithAggregatesInput | Prisma.emploidutempsScalarWhereWithAggregatesInput[]
+  OR?: Prisma.emploidutempsScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.emploidutempsScalarWhereWithAggregatesInput | Prisma.emploidutempsScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"emploidutemps"> | string
+  affectationEnseignantId?: Prisma.StringWithAggregatesFilter<"emploidutemps"> | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineWithAggregatesFilter<"emploidutemps"> | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringWithAggregatesFilter<"emploidutemps"> | string
+  heureFin?: Prisma.StringWithAggregatesFilter<"emploidutemps"> | string
+  classeScolaireId?: Prisma.StringWithAggregatesFilter<"emploidutemps"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"emploidutemps"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"emploidutemps"> | Date | string
 }
 
-export type EmploiDuTempsCreateInput = {
+export type emploidutempsCreateInput = {
   id?: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
   heureFin: string
   classeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectationEnseignant: Prisma.AffectationEnseignantCreateNestedOneWithoutCoursInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedOneWithoutEmploiDuTempsInput
+  classscolaire?: Prisma.classscolaireCreateNestedOneWithoutEmploidutempsInput
+  affectationenseignant: Prisma.affectationenseignantCreateNestedOneWithoutEmploidutempsInput
 }
 
-export type EmploiDuTempsUncheckedCreateInput = {
-  id?: string
-  affectationEnseignantId: string
-  jourDeLaSemaine: $Enums.JourSemaine
-  heureDebut: string
-  heureFin: string
-  classeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedCreateNestedOneWithoutEmploiDuTempsInput
-}
-
-export type EmploiDuTempsUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
-  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateOneRequiredWithoutCoursNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneWithoutEmploiDuTempsNestedInput
-}
-
-export type EmploiDuTempsUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  affectationEnseignantId?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
-  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedUpdateOneWithoutEmploiDuTempsNestedInput
-}
-
-export type EmploiDuTempsCreateManyInput = {
+export type emploidutempsUncheckedCreateInput = {
   id?: string
   affectationEnseignantId: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut: string
+  heureFin: string
+  classeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  classscolaire?: Prisma.classscolaireUncheckedCreateNestedOneWithoutEmploidutempsInput
+}
+
+export type emploidutempsUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
+  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUpdateOneWithoutEmploidutempsNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneRequiredWithoutEmploidutempsNestedInput
+}
+
+export type emploidutempsUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  affectationEnseignantId?: Prisma.StringFieldUpdateOperationsInput | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
+  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUncheckedUpdateOneWithoutEmploidutempsNestedInput
+}
+
+export type emploidutempsCreateManyInput = {
+  id?: string
+  affectationEnseignantId: string
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
   heureFin: string
   classeScolaireId: string
@@ -328,9 +328,9 @@ export type EmploiDuTempsCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type EmploiDuTempsUpdateManyMutationInput = {
+export type emploidutempsUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
   heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
   heureFin?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -338,10 +338,10 @@ export type EmploiDuTempsUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmploiDuTempsUncheckedUpdateManyInput = {
+export type emploidutempsUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   affectationEnseignantId?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
   heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
   heureFin?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -349,34 +349,34 @@ export type EmploiDuTempsUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmploiDuTempsScalarRelationFilter = {
-  is?: Prisma.EmploiDuTempsWhereInput
-  isNot?: Prisma.EmploiDuTempsWhereInput
+export type EmploidutempsListRelationFilter = {
+  every?: Prisma.emploidutempsWhereInput
+  some?: Prisma.emploidutempsWhereInput
+  none?: Prisma.emploidutempsWhereInput
 }
 
-export type EmploiDuTempsListRelationFilter = {
-  every?: Prisma.EmploiDuTempsWhereInput
-  some?: Prisma.EmploiDuTempsWhereInput
-  none?: Prisma.EmploiDuTempsWhereInput
-}
-
-export type EmploiDuTempsOrderByRelationAggregateInput = {
+export type emploidutempsOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type EmploiDuTempsOrderByRelevanceInput = {
-  fields: Prisma.EmploiDuTempsOrderByRelevanceFieldEnum | Prisma.EmploiDuTempsOrderByRelevanceFieldEnum[]
+export type EmploidutempsScalarRelationFilter = {
+  is?: Prisma.emploidutempsWhereInput
+  isNot?: Prisma.emploidutempsWhereInput
+}
+
+export type emploidutempsOrderByRelevanceInput = {
+  fields: Prisma.emploidutempsOrderByRelevanceFieldEnum | Prisma.emploidutempsOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type EmploiDuTempsAffectationEnseignantIdJourDeLaSemaineHeureDebutCompoundUniqueInput = {
+export type emploidutempsAffectationEnseignantIdJourDeLaSemaineHeureDebutCompoundUniqueInput = {
   affectationEnseignantId: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
 }
 
-export type EmploiDuTempsCountOrderByAggregateInput = {
+export type emploidutempsCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   affectationEnseignantId?: Prisma.SortOrder
   jourDeLaSemaine?: Prisma.SortOrder
@@ -387,7 +387,7 @@ export type EmploiDuTempsCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EmploiDuTempsMaxOrderByAggregateInput = {
+export type emploidutempsMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   affectationEnseignantId?: Prisma.SortOrder
   jourDeLaSemaine?: Prisma.SortOrder
@@ -398,7 +398,7 @@ export type EmploiDuTempsMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EmploiDuTempsMinOrderByAggregateInput = {
+export type emploidutempsMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   affectationEnseignantId?: Prisma.SortOrder
   jourDeLaSemaine?: Prisma.SortOrder
@@ -409,191 +409,143 @@ export type EmploiDuTempsMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EmploiDuTempsCreateNestedOneWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutClasseScolaireInput, Prisma.EmploiDuTempsUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.EmploiDuTempsCreateOrConnectWithoutClasseScolaireInput
-  connect?: Prisma.EmploiDuTempsWhereUniqueInput
+export type emploidutempsCreateNestedManyWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput> | Prisma.emploidutempsCreateWithoutAffectationenseignantInput[] | Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput | Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput[]
+  createMany?: Prisma.emploidutempsCreateManyAffectationenseignantInputEnvelope
+  connect?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
 }
 
-export type EmploiDuTempsUpdateOneRequiredWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutClasseScolaireInput, Prisma.EmploiDuTempsUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.EmploiDuTempsCreateOrConnectWithoutClasseScolaireInput
-  upsert?: Prisma.EmploiDuTempsUpsertWithoutClasseScolaireInput
-  connect?: Prisma.EmploiDuTempsWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EmploiDuTempsUpdateToOneWithWhereWithoutClasseScolaireInput, Prisma.EmploiDuTempsUpdateWithoutClasseScolaireInput>, Prisma.EmploiDuTempsUncheckedUpdateWithoutClasseScolaireInput>
+export type emploidutempsUncheckedCreateNestedManyWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput> | Prisma.emploidutempsCreateWithoutAffectationenseignantInput[] | Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput | Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput[]
+  createMany?: Prisma.emploidutempsCreateManyAffectationenseignantInputEnvelope
+  connect?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
 }
 
-export type EmploiDuTempsCreateNestedManyWithoutAffectationEnseignantInput = {
-  create?: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput[] | Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.EmploiDuTempsCreateManyAffectationEnseignantInputEnvelope
-  connect?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
+export type emploidutempsUpdateManyWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput> | Prisma.emploidutempsCreateWithoutAffectationenseignantInput[] | Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput | Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput[]
+  upsert?: Prisma.emploidutempsUpsertWithWhereUniqueWithoutAffectationenseignantInput | Prisma.emploidutempsUpsertWithWhereUniqueWithoutAffectationenseignantInput[]
+  createMany?: Prisma.emploidutempsCreateManyAffectationenseignantInputEnvelope
+  set?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  disconnect?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  delete?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  connect?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  update?: Prisma.emploidutempsUpdateWithWhereUniqueWithoutAffectationenseignantInput | Prisma.emploidutempsUpdateWithWhereUniqueWithoutAffectationenseignantInput[]
+  updateMany?: Prisma.emploidutempsUpdateManyWithWhereWithoutAffectationenseignantInput | Prisma.emploidutempsUpdateManyWithWhereWithoutAffectationenseignantInput[]
+  deleteMany?: Prisma.emploidutempsScalarWhereInput | Prisma.emploidutempsScalarWhereInput[]
 }
 
-export type EmploiDuTempsUncheckedCreateNestedManyWithoutAffectationEnseignantInput = {
-  create?: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput[] | Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.EmploiDuTempsCreateManyAffectationEnseignantInputEnvelope
-  connect?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
+export type emploidutempsUncheckedUpdateManyWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput> | Prisma.emploidutempsCreateWithoutAffectationenseignantInput[] | Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput | Prisma.emploidutempsCreateOrConnectWithoutAffectationenseignantInput[]
+  upsert?: Prisma.emploidutempsUpsertWithWhereUniqueWithoutAffectationenseignantInput | Prisma.emploidutempsUpsertWithWhereUniqueWithoutAffectationenseignantInput[]
+  createMany?: Prisma.emploidutempsCreateManyAffectationenseignantInputEnvelope
+  set?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  disconnect?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  delete?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  connect?: Prisma.emploidutempsWhereUniqueInput | Prisma.emploidutempsWhereUniqueInput[]
+  update?: Prisma.emploidutempsUpdateWithWhereUniqueWithoutAffectationenseignantInput | Prisma.emploidutempsUpdateWithWhereUniqueWithoutAffectationenseignantInput[]
+  updateMany?: Prisma.emploidutempsUpdateManyWithWhereWithoutAffectationenseignantInput | Prisma.emploidutempsUpdateManyWithWhereWithoutAffectationenseignantInput[]
+  deleteMany?: Prisma.emploidutempsScalarWhereInput | Prisma.emploidutempsScalarWhereInput[]
 }
 
-export type EmploiDuTempsUpdateManyWithoutAffectationEnseignantNestedInput = {
-  create?: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput[] | Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput[]
-  upsert?: Prisma.EmploiDuTempsUpsertWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsUpsertWithWhereUniqueWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.EmploiDuTempsCreateManyAffectationEnseignantInputEnvelope
-  set?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  disconnect?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  delete?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  connect?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  update?: Prisma.EmploiDuTempsUpdateWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsUpdateWithWhereUniqueWithoutAffectationEnseignantInput[]
-  updateMany?: Prisma.EmploiDuTempsUpdateManyWithWhereWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsUpdateManyWithWhereWithoutAffectationEnseignantInput[]
-  deleteMany?: Prisma.EmploiDuTempsScalarWhereInput | Prisma.EmploiDuTempsScalarWhereInput[]
+export type emploidutempsCreateNestedOneWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutClassscolaireInput
+  connect?: Prisma.emploidutempsWhereUniqueInput
 }
 
-export type EmploiDuTempsUncheckedUpdateManyWithoutAffectationEnseignantNestedInput = {
-  create?: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput> | Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput[] | Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput[]
-  connectOrCreate?: Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput[]
-  upsert?: Prisma.EmploiDuTempsUpsertWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsUpsertWithWhereUniqueWithoutAffectationEnseignantInput[]
-  createMany?: Prisma.EmploiDuTempsCreateManyAffectationEnseignantInputEnvelope
-  set?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  disconnect?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  delete?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  connect?: Prisma.EmploiDuTempsWhereUniqueInput | Prisma.EmploiDuTempsWhereUniqueInput[]
-  update?: Prisma.EmploiDuTempsUpdateWithWhereUniqueWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsUpdateWithWhereUniqueWithoutAffectationEnseignantInput[]
-  updateMany?: Prisma.EmploiDuTempsUpdateManyWithWhereWithoutAffectationEnseignantInput | Prisma.EmploiDuTempsUpdateManyWithWhereWithoutAffectationEnseignantInput[]
-  deleteMany?: Prisma.EmploiDuTempsScalarWhereInput | Prisma.EmploiDuTempsScalarWhereInput[]
+export type emploidutempsUpdateOneRequiredWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutClassscolaireInput
+  upsert?: Prisma.emploidutempsUpsertWithoutClassscolaireInput
+  connect?: Prisma.emploidutempsWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.emploidutempsUpdateToOneWithWhereWithoutClassscolaireInput, Prisma.emploidutempsUpdateWithoutClassscolaireInput>, Prisma.emploidutempsUncheckedUpdateWithoutClassscolaireInput>
 }
 
-export type EnumJourSemaineFieldUpdateOperationsInput = {
-  set?: $Enums.JourSemaine
+export type Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput = {
+  set?: $Enums.emploidutemps_jourDeLaSemaine
 }
 
-export type EmploiDuTempsCreateWithoutClasseScolaireInput = {
+export type emploidutempsCreateWithoutAffectationenseignantInput = {
   id?: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
   heureFin: string
   classeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectationEnseignant: Prisma.AffectationEnseignantCreateNestedOneWithoutCoursInput
+  classscolaire?: Prisma.classscolaireCreateNestedOneWithoutEmploidutempsInput
 }
 
-export type EmploiDuTempsUncheckedCreateWithoutClasseScolaireInput = {
+export type emploidutempsUncheckedCreateWithoutAffectationenseignantInput = {
   id?: string
-  affectationEnseignantId: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
   heureFin: string
   classeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  classscolaire?: Prisma.classscolaireUncheckedCreateNestedOneWithoutEmploidutempsInput
 }
 
-export type EmploiDuTempsCreateOrConnectWithoutClasseScolaireInput = {
-  where: Prisma.EmploiDuTempsWhereUniqueInput
-  create: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutClasseScolaireInput, Prisma.EmploiDuTempsUncheckedCreateWithoutClasseScolaireInput>
+export type emploidutempsCreateOrConnectWithoutAffectationenseignantInput = {
+  where: Prisma.emploidutempsWhereUniqueInput
+  create: Prisma.XOR<Prisma.emploidutempsCreateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput>
 }
 
-export type EmploiDuTempsUpsertWithoutClasseScolaireInput = {
-  update: Prisma.XOR<Prisma.EmploiDuTempsUpdateWithoutClasseScolaireInput, Prisma.EmploiDuTempsUncheckedUpdateWithoutClasseScolaireInput>
-  create: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutClasseScolaireInput, Prisma.EmploiDuTempsUncheckedCreateWithoutClasseScolaireInput>
-  where?: Prisma.EmploiDuTempsWhereInput
-}
-
-export type EmploiDuTempsUpdateToOneWithWhereWithoutClasseScolaireInput = {
-  where?: Prisma.EmploiDuTempsWhereInput
-  data: Prisma.XOR<Prisma.EmploiDuTempsUpdateWithoutClasseScolaireInput, Prisma.EmploiDuTempsUncheckedUpdateWithoutClasseScolaireInput>
-}
-
-export type EmploiDuTempsUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
-  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateOneRequiredWithoutCoursNestedInput
-}
-
-export type EmploiDuTempsUncheckedUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  affectationEnseignantId?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
-  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type EmploiDuTempsCreateWithoutAffectationEnseignantInput = {
-  id?: string
-  jourDeLaSemaine: $Enums.JourSemaine
-  heureDebut: string
-  heureFin: string
-  classeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireCreateNestedOneWithoutEmploiDuTempsInput
-}
-
-export type EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput = {
-  id?: string
-  jourDeLaSemaine: $Enums.JourSemaine
-  heureDebut: string
-  heureFin: string
-  classeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedCreateNestedOneWithoutEmploiDuTempsInput
-}
-
-export type EmploiDuTempsCreateOrConnectWithoutAffectationEnseignantInput = {
-  where: Prisma.EmploiDuTempsWhereUniqueInput
-  create: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput>
-}
-
-export type EmploiDuTempsCreateManyAffectationEnseignantInputEnvelope = {
-  data: Prisma.EmploiDuTempsCreateManyAffectationEnseignantInput | Prisma.EmploiDuTempsCreateManyAffectationEnseignantInput[]
+export type emploidutempsCreateManyAffectationenseignantInputEnvelope = {
+  data: Prisma.emploidutempsCreateManyAffectationenseignantInput | Prisma.emploidutempsCreateManyAffectationenseignantInput[]
   skipDuplicates?: boolean
 }
 
-export type EmploiDuTempsUpsertWithWhereUniqueWithoutAffectationEnseignantInput = {
-  where: Prisma.EmploiDuTempsWhereUniqueInput
-  update: Prisma.XOR<Prisma.EmploiDuTempsUpdateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedUpdateWithoutAffectationEnseignantInput>
-  create: Prisma.XOR<Prisma.EmploiDuTempsCreateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedCreateWithoutAffectationEnseignantInput>
+export type emploidutempsUpsertWithWhereUniqueWithoutAffectationenseignantInput = {
+  where: Prisma.emploidutempsWhereUniqueInput
+  update: Prisma.XOR<Prisma.emploidutempsUpdateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedUpdateWithoutAffectationenseignantInput>
+  create: Prisma.XOR<Prisma.emploidutempsCreateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedCreateWithoutAffectationenseignantInput>
 }
 
-export type EmploiDuTempsUpdateWithWhereUniqueWithoutAffectationEnseignantInput = {
-  where: Prisma.EmploiDuTempsWhereUniqueInput
-  data: Prisma.XOR<Prisma.EmploiDuTempsUpdateWithoutAffectationEnseignantInput, Prisma.EmploiDuTempsUncheckedUpdateWithoutAffectationEnseignantInput>
+export type emploidutempsUpdateWithWhereUniqueWithoutAffectationenseignantInput = {
+  where: Prisma.emploidutempsWhereUniqueInput
+  data: Prisma.XOR<Prisma.emploidutempsUpdateWithoutAffectationenseignantInput, Prisma.emploidutempsUncheckedUpdateWithoutAffectationenseignantInput>
 }
 
-export type EmploiDuTempsUpdateManyWithWhereWithoutAffectationEnseignantInput = {
-  where: Prisma.EmploiDuTempsScalarWhereInput
-  data: Prisma.XOR<Prisma.EmploiDuTempsUpdateManyMutationInput, Prisma.EmploiDuTempsUncheckedUpdateManyWithoutAffectationEnseignantInput>
+export type emploidutempsUpdateManyWithWhereWithoutAffectationenseignantInput = {
+  where: Prisma.emploidutempsScalarWhereInput
+  data: Prisma.XOR<Prisma.emploidutempsUpdateManyMutationInput, Prisma.emploidutempsUncheckedUpdateManyWithoutAffectationenseignantInput>
 }
 
-export type EmploiDuTempsScalarWhereInput = {
-  AND?: Prisma.EmploiDuTempsScalarWhereInput | Prisma.EmploiDuTempsScalarWhereInput[]
-  OR?: Prisma.EmploiDuTempsScalarWhereInput[]
-  NOT?: Prisma.EmploiDuTempsScalarWhereInput | Prisma.EmploiDuTempsScalarWhereInput[]
-  id?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  affectationEnseignantId?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFilter<"EmploiDuTemps"> | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  heureFin?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  classeScolaireId?: Prisma.StringFilter<"EmploiDuTemps"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmploiDuTemps"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"EmploiDuTemps"> | Date | string
+export type emploidutempsScalarWhereInput = {
+  AND?: Prisma.emploidutempsScalarWhereInput | Prisma.emploidutempsScalarWhereInput[]
+  OR?: Prisma.emploidutempsScalarWhereInput[]
+  NOT?: Prisma.emploidutempsScalarWhereInput | Prisma.emploidutempsScalarWhereInput[]
+  id?: Prisma.StringFilter<"emploidutemps"> | string
+  affectationEnseignantId?: Prisma.StringFilter<"emploidutemps"> | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFilter<"emploidutemps"> | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFilter<"emploidutemps"> | string
+  heureFin?: Prisma.StringFilter<"emploidutemps"> | string
+  classeScolaireId?: Prisma.StringFilter<"emploidutemps"> | string
+  createdAt?: Prisma.DateTimeFilter<"emploidutemps"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"emploidutemps"> | Date | string
 }
 
-export type EmploiDuTempsCreateManyAffectationEnseignantInput = {
+export type emploidutempsCreateWithoutClassscolaireInput = {
   id?: string
-  jourDeLaSemaine: $Enums.JourSemaine
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut: string
+  heureFin: string
+  classeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant: Prisma.affectationenseignantCreateNestedOneWithoutEmploidutempsInput
+}
+
+export type emploidutempsUncheckedCreateWithoutClassscolaireInput = {
+  id?: string
+  affectationEnseignantId: string
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
   heureDebut: string
   heureFin: string
   classeScolaireId: string
@@ -601,31 +553,37 @@ export type EmploiDuTempsCreateManyAffectationEnseignantInput = {
   updatedAt?: Date | string
 }
 
-export type EmploiDuTempsUpdateWithoutAffectationEnseignantInput = {
+export type emploidutempsCreateOrConnectWithoutClassscolaireInput = {
+  where: Prisma.emploidutempsWhereUniqueInput
+  create: Prisma.XOR<Prisma.emploidutempsCreateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedCreateWithoutClassscolaireInput>
+}
+
+export type emploidutempsUpsertWithoutClassscolaireInput = {
+  update: Prisma.XOR<Prisma.emploidutempsUpdateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedUpdateWithoutClassscolaireInput>
+  create: Prisma.XOR<Prisma.emploidutempsCreateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedCreateWithoutClassscolaireInput>
+  where?: Prisma.emploidutempsWhereInput
+}
+
+export type emploidutempsUpdateToOneWithWhereWithoutClassscolaireInput = {
+  where?: Prisma.emploidutempsWhereInput
+  data: Prisma.XOR<Prisma.emploidutempsUpdateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedUpdateWithoutClassscolaireInput>
+}
+
+export type emploidutempsUpdateWithoutClassscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
   heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
   heureFin?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUpdateOneWithoutEmploiDuTempsNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneRequiredWithoutEmploidutempsNestedInput
 }
 
-export type EmploiDuTempsUncheckedUpdateWithoutAffectationEnseignantInput = {
+export type emploidutempsUncheckedUpdateWithoutClassscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
-  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
-  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedUpdateOneWithoutEmploiDuTempsNestedInput
-}
-
-export type EmploiDuTempsUncheckedUpdateManyWithoutAffectationEnseignantInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  jourDeLaSemaine?: Prisma.EnumJourSemaineFieldUpdateOperationsInput | $Enums.JourSemaine
+  affectationEnseignantId?: Prisma.StringFieldUpdateOperationsInput | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
   heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
   heureFin?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -633,9 +591,51 @@ export type EmploiDuTempsUncheckedUpdateManyWithoutAffectationEnseignantInput = 
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type emploidutempsCreateManyAffectationenseignantInput = {
+  id?: string
+  jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut: string
+  heureFin: string
+  classeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type emploidutempsUpdateWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
+  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUpdateOneWithoutEmploidutempsNestedInput
+}
+
+export type emploidutempsUncheckedUpdateWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
+  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUncheckedUpdateOneWithoutEmploidutempsNestedInput
+}
+
+export type emploidutempsUncheckedUpdateManyWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  jourDeLaSemaine?: Prisma.Enumemploidutemps_jourDeLaSemaineFieldUpdateOperationsInput | $Enums.emploidutemps_jourDeLaSemaine
+  heureDebut?: Prisma.StringFieldUpdateOperationsInput | string
+  heureFin?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
 
 
-export type EmploiDuTempsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+
+export type emploidutempsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   affectationEnseignantId?: boolean
   jourDeLaSemaine?: boolean
@@ -644,13 +644,13 @@ export type EmploiDuTempsSelect<ExtArgs extends runtime.Types.Extensions.Interna
   classeScolaireId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  affectationEnseignant?: boolean | Prisma.AffectationEnseignantDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.EmploiDuTemps$classeScolaireArgs<ExtArgs>
-}, ExtArgs["result"]["emploiDuTemps"]>
+  classscolaire?: boolean | Prisma.emploidutemps$classscolaireArgs<ExtArgs>
+  affectationenseignant?: boolean | Prisma.affectationenseignantDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["emploidutemps"]>
 
 
 
-export type EmploiDuTempsSelectScalar = {
+export type emploidutempsSelectScalar = {
   id?: boolean
   affectationEnseignantId?: boolean
   jourDeLaSemaine?: boolean
@@ -661,164 +661,164 @@ export type EmploiDuTempsSelectScalar = {
   updatedAt?: boolean
 }
 
-export type EmploiDuTempsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "affectationEnseignantId" | "jourDeLaSemaine" | "heureDebut" | "heureFin" | "classeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["emploiDuTemps"]>
-export type EmploiDuTempsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  affectationEnseignant?: boolean | Prisma.AffectationEnseignantDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.EmploiDuTemps$classeScolaireArgs<ExtArgs>
+export type emploidutempsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "affectationEnseignantId" | "jourDeLaSemaine" | "heureDebut" | "heureFin" | "classeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["emploidutemps"]>
+export type emploidutempsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classscolaire?: boolean | Prisma.emploidutemps$classscolaireArgs<ExtArgs>
+  affectationenseignant?: boolean | Prisma.affectationenseignantDefaultArgs<ExtArgs>
 }
 
-export type $EmploiDuTempsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "EmploiDuTemps"
+export type $emploidutempsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "emploidutemps"
   objects: {
-    affectationEnseignant: Prisma.$AffectationEnseignantPayload<ExtArgs>
-    classeScolaire: Prisma.$ClassScolairePayload<ExtArgs> | null
+    classscolaire: Prisma.$classscolairePayload<ExtArgs> | null
+    affectationenseignant: Prisma.$affectationenseignantPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     affectationEnseignantId: string
-    jourDeLaSemaine: $Enums.JourSemaine
+    jourDeLaSemaine: $Enums.emploidutemps_jourDeLaSemaine
     heureDebut: string
     heureFin: string
     classeScolaireId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["emploiDuTemps"]>
+  }, ExtArgs["result"]["emploidutemps"]>
   composites: {}
 }
 
-export type EmploiDuTempsGetPayload<S extends boolean | null | undefined | EmploiDuTempsDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload, S>
+export type emploidutempsGetPayload<S extends boolean | null | undefined | emploidutempsDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload, S>
 
-export type EmploiDuTempsCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<EmploiDuTempsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: EmploiDuTempsCountAggregateInputType | true
+export type emploidutempsCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<emploidutempsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: EmploidutempsCountAggregateInputType | true
   }
 
-export interface EmploiDuTempsDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['EmploiDuTemps'], meta: { name: 'EmploiDuTemps' } }
+export interface emploidutempsDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['emploidutemps'], meta: { name: 'emploidutemps' } }
   /**
-   * Find zero or one EmploiDuTemps that matches the filter.
-   * @param {EmploiDuTempsFindUniqueArgs} args - Arguments to find a EmploiDuTemps
+   * Find zero or one Emploidutemps that matches the filter.
+   * @param {emploidutempsFindUniqueArgs} args - Arguments to find a Emploidutemps
    * @example
-   * // Get one EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.findUnique({
+   * // Get one Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends EmploiDuTempsFindUniqueArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsFindUniqueArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends emploidutempsFindUniqueArgs>(args: Prisma.SelectSubset<T, emploidutempsFindUniqueArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one EmploiDuTemps that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Emploidutemps that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {EmploiDuTempsFindUniqueOrThrowArgs} args - Arguments to find a EmploiDuTemps
+   * @param {emploidutempsFindUniqueOrThrowArgs} args - Arguments to find a Emploidutemps
    * @example
-   * // Get one EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.findUniqueOrThrow({
+   * // Get one Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends EmploiDuTempsFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends emploidutempsFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, emploidutempsFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first EmploiDuTemps that matches the filter.
+   * Find the first Emploidutemps that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsFindFirstArgs} args - Arguments to find a EmploiDuTemps
+   * @param {emploidutempsFindFirstArgs} args - Arguments to find a Emploidutemps
    * @example
-   * // Get one EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.findFirst({
+   * // Get one Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends EmploiDuTempsFindFirstArgs>(args?: Prisma.SelectSubset<T, EmploiDuTempsFindFirstArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends emploidutempsFindFirstArgs>(args?: Prisma.SelectSubset<T, emploidutempsFindFirstArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first EmploiDuTemps that matches the filter or
+   * Find the first Emploidutemps that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsFindFirstOrThrowArgs} args - Arguments to find a EmploiDuTemps
+   * @param {emploidutempsFindFirstOrThrowArgs} args - Arguments to find a Emploidutemps
    * @example
-   * // Get one EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.findFirstOrThrow({
+   * // Get one Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends EmploiDuTempsFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, EmploiDuTempsFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends emploidutempsFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, emploidutempsFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more EmploiDuTemps that matches the filter.
+   * Find zero or more Emploidutemps that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {emploidutempsFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.findMany()
+   * // Get all Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.findMany()
    * 
-   * // Get first 10 EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.findMany({ take: 10 })
+   * // Get first 10 Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const emploiDuTempsWithIdOnly = await prisma.emploiDuTemps.findMany({ select: { id: true } })
+   * const emploidutempsWithIdOnly = await prisma.emploidutemps.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends EmploiDuTempsFindManyArgs>(args?: Prisma.SelectSubset<T, EmploiDuTempsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends emploidutempsFindManyArgs>(args?: Prisma.SelectSubset<T, emploidutempsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a EmploiDuTemps.
-   * @param {EmploiDuTempsCreateArgs} args - Arguments to create a EmploiDuTemps.
+   * Create a Emploidutemps.
+   * @param {emploidutempsCreateArgs} args - Arguments to create a Emploidutemps.
    * @example
-   * // Create one EmploiDuTemps
-   * const EmploiDuTemps = await prisma.emploiDuTemps.create({
+   * // Create one Emploidutemps
+   * const Emploidutemps = await prisma.emploidutemps.create({
    *   data: {
-   *     // ... data to create a EmploiDuTemps
+   *     // ... data to create a Emploidutemps
    *   }
    * })
    * 
    */
-  create<T extends EmploiDuTempsCreateArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsCreateArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends emploidutempsCreateArgs>(args: Prisma.SelectSubset<T, emploidutempsCreateArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many EmploiDuTemps.
-   * @param {EmploiDuTempsCreateManyArgs} args - Arguments to create many EmploiDuTemps.
+   * Create many Emploidutemps.
+   * @param {emploidutempsCreateManyArgs} args - Arguments to create many Emploidutemps.
    * @example
-   * // Create many EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.createMany({
+   * // Create many Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends EmploiDuTempsCreateManyArgs>(args?: Prisma.SelectSubset<T, EmploiDuTempsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends emploidutempsCreateManyArgs>(args?: Prisma.SelectSubset<T, emploidutempsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a EmploiDuTemps.
-   * @param {EmploiDuTempsDeleteArgs} args - Arguments to delete one EmploiDuTemps.
+   * Delete a Emploidutemps.
+   * @param {emploidutempsDeleteArgs} args - Arguments to delete one Emploidutemps.
    * @example
-   * // Delete one EmploiDuTemps
-   * const EmploiDuTemps = await prisma.emploiDuTemps.delete({
+   * // Delete one Emploidutemps
+   * const Emploidutemps = await prisma.emploidutemps.delete({
    *   where: {
-   *     // ... filter to delete one EmploiDuTemps
+   *     // ... filter to delete one Emploidutemps
    *   }
    * })
    * 
    */
-  delete<T extends EmploiDuTempsDeleteArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsDeleteArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends emploidutempsDeleteArgs>(args: Prisma.SelectSubset<T, emploidutempsDeleteArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one EmploiDuTemps.
-   * @param {EmploiDuTempsUpdateArgs} args - Arguments to update one EmploiDuTemps.
+   * Update one Emploidutemps.
+   * @param {emploidutempsUpdateArgs} args - Arguments to update one Emploidutemps.
    * @example
-   * // Update one EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.update({
+   * // Update one Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -828,30 +828,30 @@ export interface EmploiDuTempsDelegate<ExtArgs extends runtime.Types.Extensions.
    * })
    * 
    */
-  update<T extends EmploiDuTempsUpdateArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsUpdateArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends emploidutempsUpdateArgs>(args: Prisma.SelectSubset<T, emploidutempsUpdateArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more EmploiDuTemps.
-   * @param {EmploiDuTempsDeleteManyArgs} args - Arguments to filter EmploiDuTemps to delete.
+   * Delete zero or more Emploidutemps.
+   * @param {emploidutempsDeleteManyArgs} args - Arguments to filter Emploidutemps to delete.
    * @example
-   * // Delete a few EmploiDuTemps
-   * const { count } = await prisma.emploiDuTemps.deleteMany({
+   * // Delete a few Emploidutemps
+   * const { count } = await prisma.emploidutemps.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends EmploiDuTempsDeleteManyArgs>(args?: Prisma.SelectSubset<T, EmploiDuTempsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends emploidutempsDeleteManyArgs>(args?: Prisma.SelectSubset<T, emploidutempsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more EmploiDuTemps.
+   * Update zero or more Emploidutemps.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {emploidutempsUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.updateMany({
+   * // Update many Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -861,56 +861,56 @@ export interface EmploiDuTempsDelegate<ExtArgs extends runtime.Types.Extensions.
    * })
    * 
    */
-  updateMany<T extends EmploiDuTempsUpdateManyArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends emploidutempsUpdateManyArgs>(args: Prisma.SelectSubset<T, emploidutempsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one EmploiDuTemps.
-   * @param {EmploiDuTempsUpsertArgs} args - Arguments to update or create a EmploiDuTemps.
+   * Create or update one Emploidutemps.
+   * @param {emploidutempsUpsertArgs} args - Arguments to update or create a Emploidutemps.
    * @example
-   * // Update or create a EmploiDuTemps
-   * const emploiDuTemps = await prisma.emploiDuTemps.upsert({
+   * // Update or create a Emploidutemps
+   * const emploidutemps = await prisma.emploidutemps.upsert({
    *   create: {
-   *     // ... data to create a EmploiDuTemps
+   *     // ... data to create a Emploidutemps
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the EmploiDuTemps we want to update
+   *     // ... the filter for the Emploidutemps we want to update
    *   }
    * })
    */
-  upsert<T extends EmploiDuTempsUpsertArgs>(args: Prisma.SelectSubset<T, EmploiDuTempsUpsertArgs<ExtArgs>>): Prisma.Prisma__EmploiDuTempsClient<runtime.Types.Result.GetResult<Prisma.$EmploiDuTempsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends emploidutempsUpsertArgs>(args: Prisma.SelectSubset<T, emploidutempsUpsertArgs<ExtArgs>>): Prisma.Prisma__emploidutempsClient<runtime.Types.Result.GetResult<Prisma.$emploidutempsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of EmploiDuTemps.
+   * Count the number of Emploidutemps.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsCountArgs} args - Arguments to filter EmploiDuTemps to count.
+   * @param {emploidutempsCountArgs} args - Arguments to filter Emploidutemps to count.
    * @example
-   * // Count the number of EmploiDuTemps
-   * const count = await prisma.emploiDuTemps.count({
+   * // Count the number of Emploidutemps
+   * const count = await prisma.emploidutemps.count({
    *   where: {
-   *     // ... the filter for the EmploiDuTemps we want to count
+   *     // ... the filter for the Emploidutemps we want to count
    *   }
    * })
   **/
-  count<T extends EmploiDuTempsCountArgs>(
-    args?: Prisma.Subset<T, EmploiDuTempsCountArgs>,
+  count<T extends emploidutempsCountArgs>(
+    args?: Prisma.Subset<T, emploidutempsCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], EmploiDuTempsCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], EmploidutempsCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a EmploiDuTemps.
+   * Allows you to perform aggregations operations on a Emploidutemps.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {EmploidutempsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -930,13 +930,13 @@ export interface EmploiDuTempsDelegate<ExtArgs extends runtime.Types.Extensions.
    *   take: 10,
    * })
   **/
-  aggregate<T extends EmploiDuTempsAggregateArgs>(args: Prisma.Subset<T, EmploiDuTempsAggregateArgs>): Prisma.PrismaPromise<GetEmploiDuTempsAggregateType<T>>
+  aggregate<T extends EmploidutempsAggregateArgs>(args: Prisma.Subset<T, EmploidutempsAggregateArgs>): Prisma.PrismaPromise<GetEmploidutempsAggregateType<T>>
 
   /**
-   * Group by EmploiDuTemps.
+   * Group by Emploidutemps.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmploiDuTempsGroupByArgs} args - Group by arguments.
+   * @param {emploidutempsGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -951,14 +951,14 @@ export interface EmploiDuTempsDelegate<ExtArgs extends runtime.Types.Extensions.
    * 
   **/
   groupBy<
-    T extends EmploiDuTempsGroupByArgs,
+    T extends emploidutempsGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: EmploiDuTempsGroupByArgs['orderBy'] }
-      : { orderBy?: EmploiDuTempsGroupByArgs['orderBy'] },
+      ? { orderBy: emploidutempsGroupByArgs['orderBy'] }
+      : { orderBy?: emploidutempsGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1007,23 +1007,23 @@ export interface EmploiDuTempsDelegate<ExtArgs extends runtime.Types.Extensions.
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, EmploiDuTempsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmploiDuTempsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, emploidutempsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmploidutempsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the EmploiDuTemps model
+ * Fields of the emploidutemps model
  */
-readonly fields: EmploiDuTempsFieldRefs;
+readonly fields: emploidutempsFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for EmploiDuTemps.
+ * The delegate class that acts as a "Promise-like" for emploidutemps.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EmploiDuTempsClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__emploidutempsClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  affectationEnseignant<T extends Prisma.AffectationEnseignantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AffectationEnseignantDefaultArgs<ExtArgs>>): Prisma.Prisma__AffectationEnseignantClient<runtime.Types.Result.GetResult<Prisma.$AffectationEnseignantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  classeScolaire<T extends Prisma.EmploiDuTemps$classeScolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EmploiDuTemps$classeScolaireArgs<ExtArgs>>): Prisma.Prisma__ClassScolaireClient<runtime.Types.Result.GetResult<Prisma.$ClassScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  classscolaire<T extends Prisma.emploidutemps$classscolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.emploidutemps$classscolaireArgs<ExtArgs>>): Prisma.Prisma__classscolaireClient<runtime.Types.Result.GetResult<Prisma.$classscolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  affectationenseignant<T extends Prisma.affectationenseignantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.affectationenseignantDefaultArgs<ExtArgs>>): Prisma.Prisma__affectationenseignantClient<runtime.Types.Result.GetResult<Prisma.$affectationenseignantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1050,397 +1050,397 @@ export interface Prisma__EmploiDuTempsClient<T, Null = never, ExtArgs extends ru
 
 
 /**
- * Fields of the EmploiDuTemps model
+ * Fields of the emploidutemps model
  */
-export interface EmploiDuTempsFieldRefs {
-  readonly id: Prisma.FieldRef<"EmploiDuTemps", 'String'>
-  readonly affectationEnseignantId: Prisma.FieldRef<"EmploiDuTemps", 'String'>
-  readonly jourDeLaSemaine: Prisma.FieldRef<"EmploiDuTemps", 'JourSemaine'>
-  readonly heureDebut: Prisma.FieldRef<"EmploiDuTemps", 'String'>
-  readonly heureFin: Prisma.FieldRef<"EmploiDuTemps", 'String'>
-  readonly classeScolaireId: Prisma.FieldRef<"EmploiDuTemps", 'String'>
-  readonly createdAt: Prisma.FieldRef<"EmploiDuTemps", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"EmploiDuTemps", 'DateTime'>
+export interface emploidutempsFieldRefs {
+  readonly id: Prisma.FieldRef<"emploidutemps", 'String'>
+  readonly affectationEnseignantId: Prisma.FieldRef<"emploidutemps", 'String'>
+  readonly jourDeLaSemaine: Prisma.FieldRef<"emploidutemps", 'emploidutemps_jourDeLaSemaine'>
+  readonly heureDebut: Prisma.FieldRef<"emploidutemps", 'String'>
+  readonly heureFin: Prisma.FieldRef<"emploidutemps", 'String'>
+  readonly classeScolaireId: Prisma.FieldRef<"emploidutemps", 'String'>
+  readonly createdAt: Prisma.FieldRef<"emploidutemps", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"emploidutemps", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * EmploiDuTemps findUnique
+ * emploidutemps findUnique
  */
-export type EmploiDuTempsFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * Filter, which EmploiDuTemps to fetch.
+   * Filter, which emploidutemps to fetch.
    */
-  where: Prisma.EmploiDuTempsWhereUniqueInput
+  where: Prisma.emploidutempsWhereUniqueInput
 }
 
 /**
- * EmploiDuTemps findUniqueOrThrow
+ * emploidutemps findUniqueOrThrow
  */
-export type EmploiDuTempsFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * Filter, which EmploiDuTemps to fetch.
+   * Filter, which emploidutemps to fetch.
    */
-  where: Prisma.EmploiDuTempsWhereUniqueInput
+  where: Prisma.emploidutempsWhereUniqueInput
 }
 
 /**
- * EmploiDuTemps findFirst
+ * emploidutemps findFirst
  */
-export type EmploiDuTempsFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * Filter, which EmploiDuTemps to fetch.
+   * Filter, which emploidutemps to fetch.
    */
-  where?: Prisma.EmploiDuTempsWhereInput
+  where?: Prisma.emploidutempsWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmploiDuTemps to fetch.
+   * Determine the order of emploidutemps to fetch.
    */
-  orderBy?: Prisma.EmploiDuTempsOrderByWithRelationInput | Prisma.EmploiDuTempsOrderByWithRelationInput[]
+  orderBy?: Prisma.emploidutempsOrderByWithRelationInput | Prisma.emploidutempsOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for EmploiDuTemps.
+   * Sets the position for searching for emploidutemps.
    */
-  cursor?: Prisma.EmploiDuTempsWhereUniqueInput
+  cursor?: Prisma.emploidutempsWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmploiDuTemps from the position of the cursor.
+   * Take `±n` emploidutemps from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmploiDuTemps.
+   * Skip the first `n` emploidutemps.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmploiDuTemps.
+   * Filter by unique combinations of emploidutemps.
    */
-  distinct?: Prisma.EmploiDuTempsScalarFieldEnum | Prisma.EmploiDuTempsScalarFieldEnum[]
+  distinct?: Prisma.EmploidutempsScalarFieldEnum | Prisma.EmploidutempsScalarFieldEnum[]
 }
 
 /**
- * EmploiDuTemps findFirstOrThrow
+ * emploidutemps findFirstOrThrow
  */
-export type EmploiDuTempsFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * Filter, which EmploiDuTemps to fetch.
+   * Filter, which emploidutemps to fetch.
    */
-  where?: Prisma.EmploiDuTempsWhereInput
+  where?: Prisma.emploidutempsWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmploiDuTemps to fetch.
+   * Determine the order of emploidutemps to fetch.
    */
-  orderBy?: Prisma.EmploiDuTempsOrderByWithRelationInput | Prisma.EmploiDuTempsOrderByWithRelationInput[]
+  orderBy?: Prisma.emploidutempsOrderByWithRelationInput | Prisma.emploidutempsOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for EmploiDuTemps.
+   * Sets the position for searching for emploidutemps.
    */
-  cursor?: Prisma.EmploiDuTempsWhereUniqueInput
+  cursor?: Prisma.emploidutempsWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmploiDuTemps from the position of the cursor.
+   * Take `±n` emploidutemps from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmploiDuTemps.
+   * Skip the first `n` emploidutemps.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmploiDuTemps.
+   * Filter by unique combinations of emploidutemps.
    */
-  distinct?: Prisma.EmploiDuTempsScalarFieldEnum | Prisma.EmploiDuTempsScalarFieldEnum[]
+  distinct?: Prisma.EmploidutempsScalarFieldEnum | Prisma.EmploidutempsScalarFieldEnum[]
 }
 
 /**
- * EmploiDuTemps findMany
+ * emploidutemps findMany
  */
-export type EmploiDuTempsFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * Filter, which EmploiDuTemps to fetch.
+   * Filter, which emploidutemps to fetch.
    */
-  where?: Prisma.EmploiDuTempsWhereInput
+  where?: Prisma.emploidutempsWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmploiDuTemps to fetch.
+   * Determine the order of emploidutemps to fetch.
    */
-  orderBy?: Prisma.EmploiDuTempsOrderByWithRelationInput | Prisma.EmploiDuTempsOrderByWithRelationInput[]
+  orderBy?: Prisma.emploidutempsOrderByWithRelationInput | Prisma.emploidutempsOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing EmploiDuTemps.
+   * Sets the position for listing emploidutemps.
    */
-  cursor?: Prisma.EmploiDuTempsWhereUniqueInput
+  cursor?: Prisma.emploidutempsWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmploiDuTemps from the position of the cursor.
+   * Take `±n` emploidutemps from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmploiDuTemps.
+   * Skip the first `n` emploidutemps.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmploiDuTemps.
+   * Filter by unique combinations of emploidutemps.
    */
-  distinct?: Prisma.EmploiDuTempsScalarFieldEnum | Prisma.EmploiDuTempsScalarFieldEnum[]
+  distinct?: Prisma.EmploidutempsScalarFieldEnum | Prisma.EmploidutempsScalarFieldEnum[]
 }
 
 /**
- * EmploiDuTemps create
+ * emploidutemps create
  */
-export type EmploiDuTempsCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * The data needed to create a EmploiDuTemps.
+   * The data needed to create a emploidutemps.
    */
-  data: Prisma.XOR<Prisma.EmploiDuTempsCreateInput, Prisma.EmploiDuTempsUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.emploidutempsCreateInput, Prisma.emploidutempsUncheckedCreateInput>
 }
 
 /**
- * EmploiDuTemps createMany
+ * emploidutemps createMany
  */
-export type EmploiDuTempsCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many EmploiDuTemps.
+   * The data used to create many emploidutemps.
    */
-  data: Prisma.EmploiDuTempsCreateManyInput | Prisma.EmploiDuTempsCreateManyInput[]
+  data: Prisma.emploidutempsCreateManyInput | Prisma.emploidutempsCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * EmploiDuTemps update
+ * emploidutemps update
  */
-export type EmploiDuTempsUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * The data needed to update a EmploiDuTemps.
+   * The data needed to update a emploidutemps.
    */
-  data: Prisma.XOR<Prisma.EmploiDuTempsUpdateInput, Prisma.EmploiDuTempsUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.emploidutempsUpdateInput, Prisma.emploidutempsUncheckedUpdateInput>
   /**
-   * Choose, which EmploiDuTemps to update.
+   * Choose, which emploidutemps to update.
    */
-  where: Prisma.EmploiDuTempsWhereUniqueInput
+  where: Prisma.emploidutempsWhereUniqueInput
 }
 
 /**
- * EmploiDuTemps updateMany
+ * emploidutemps updateMany
  */
-export type EmploiDuTempsUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update EmploiDuTemps.
+   * The data used to update emploidutemps.
    */
-  data: Prisma.XOR<Prisma.EmploiDuTempsUpdateManyMutationInput, Prisma.EmploiDuTempsUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.emploidutempsUpdateManyMutationInput, Prisma.emploidutempsUncheckedUpdateManyInput>
   /**
-   * Filter which EmploiDuTemps to update
+   * Filter which emploidutemps to update
    */
-  where?: Prisma.EmploiDuTempsWhereInput
+  where?: Prisma.emploidutempsWhereInput
   /**
-   * Limit how many EmploiDuTemps to update.
+   * Limit how many emploidutemps to update.
    */
   limit?: number
 }
 
 /**
- * EmploiDuTemps upsert
+ * emploidutemps upsert
  */
-export type EmploiDuTempsUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * The filter to search for the EmploiDuTemps to update in case it exists.
+   * The filter to search for the emploidutemps to update in case it exists.
    */
-  where: Prisma.EmploiDuTempsWhereUniqueInput
+  where: Prisma.emploidutempsWhereUniqueInput
   /**
-   * In case the EmploiDuTemps found by the `where` argument doesn't exist, create a new EmploiDuTemps with this data.
+   * In case the emploidutemps found by the `where` argument doesn't exist, create a new emploidutemps with this data.
    */
-  create: Prisma.XOR<Prisma.EmploiDuTempsCreateInput, Prisma.EmploiDuTempsUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.emploidutempsCreateInput, Prisma.emploidutempsUncheckedCreateInput>
   /**
-   * In case the EmploiDuTemps was found with the provided `where` argument, update it with this data.
+   * In case the emploidutemps was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.EmploiDuTempsUpdateInput, Prisma.EmploiDuTempsUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.emploidutempsUpdateInput, Prisma.emploidutempsUncheckedUpdateInput>
 }
 
 /**
- * EmploiDuTemps delete
+ * emploidutemps delete
  */
-export type EmploiDuTempsDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
   /**
-   * Filter which EmploiDuTemps to delete.
+   * Filter which emploidutemps to delete.
    */
-  where: Prisma.EmploiDuTempsWhereUniqueInput
+  where: Prisma.emploidutempsWhereUniqueInput
 }
 
 /**
- * EmploiDuTemps deleteMany
+ * emploidutemps deleteMany
  */
-export type EmploiDuTempsDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which EmploiDuTemps to delete
+   * Filter which emploidutemps to delete
    */
-  where?: Prisma.EmploiDuTempsWhereInput
+  where?: Prisma.emploidutempsWhereInput
   /**
-   * Limit how many EmploiDuTemps to delete.
+   * Limit how many emploidutemps to delete.
    */
   limit?: number
 }
 
 /**
- * EmploiDuTemps.classeScolaire
+ * emploidutemps.classscolaire
  */
-export type EmploiDuTemps$classeScolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutemps$classscolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClassScolaire
+   * Select specific fields to fetch from the classscolaire
    */
-  select?: Prisma.ClassScolaireSelect<ExtArgs> | null
+  select?: Prisma.classscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClassScolaire
+   * Omit specific fields from the classscolaire
    */
-  omit?: Prisma.ClassScolaireOmit<ExtArgs> | null
+  omit?: Prisma.classscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClassScolaireInclude<ExtArgs> | null
-  where?: Prisma.ClassScolaireWhereInput
+  include?: Prisma.classscolaireInclude<ExtArgs> | null
+  where?: Prisma.classscolaireWhereInput
 }
 
 /**
- * EmploiDuTemps without action
+ * emploidutemps without action
  */
-export type EmploiDuTempsDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type emploidutempsDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmploiDuTemps
+   * Select specific fields to fetch from the emploidutemps
    */
-  select?: Prisma.EmploiDuTempsSelect<ExtArgs> | null
+  select?: Prisma.emploidutempsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmploiDuTemps
+   * Omit specific fields from the emploidutemps
    */
-  omit?: Prisma.EmploiDuTempsOmit<ExtArgs> | null
+  omit?: Prisma.emploidutempsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmploiDuTempsInclude<ExtArgs> | null
+  include?: Prisma.emploidutempsInclude<ExtArgs> | null
 }

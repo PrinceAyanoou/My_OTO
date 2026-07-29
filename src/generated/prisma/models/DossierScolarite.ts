@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `DossierScolarite` model and its related types.
+ * This file exports the `dossierscolarite` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,34 +13,34 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model DossierScolarite
+ * Model dossierscolarite
  * 
  */
-export type DossierScolariteModel = runtime.Types.Result.DefaultSelection<Prisma.$DossierScolaritePayload>
+export type dossierscolariteModel = runtime.Types.Result.DefaultSelection<Prisma.$dossierscolaritePayload>
 
-export type AggregateDossierScolarite = {
-  _count: DossierScolariteCountAggregateOutputType | null
-  _avg: DossierScolariteAvgAggregateOutputType | null
-  _sum: DossierScolariteSumAggregateOutputType | null
-  _min: DossierScolariteMinAggregateOutputType | null
-  _max: DossierScolariteMaxAggregateOutputType | null
+export type AggregateDossierscolarite = {
+  _count: DossierscolariteCountAggregateOutputType | null
+  _avg: DossierscolariteAvgAggregateOutputType | null
+  _sum: DossierscolariteSumAggregateOutputType | null
+  _min: DossierscolariteMinAggregateOutputType | null
+  _max: DossierscolariteMaxAggregateOutputType | null
 }
 
-export type DossierScolariteAvgAggregateOutputType = {
+export type DossierscolariteAvgAggregateOutputType = {
   montant: number | null
   resteAPayer: number | null
 }
 
-export type DossierScolariteSumAggregateOutputType = {
+export type DossierscolariteSumAggregateOutputType = {
   montant: number | null
   resteAPayer: number | null
 }
 
-export type DossierScolariteMinAggregateOutputType = {
+export type DossierscolariteMinAggregateOutputType = {
   id: string | null
   montant: number | null
   resteAPayer: number | null
-  statut: $Enums.DossierScolariteStatut | null
+  statut: $Enums.dossierscolarite_statut | null
   inscriptionApprenantId: string | null
   inscriptionAnneeId: string | null
   configurationScolariteId: string | null
@@ -48,11 +48,11 @@ export type DossierScolariteMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type DossierScolariteMaxAggregateOutputType = {
+export type DossierscolariteMaxAggregateOutputType = {
   id: string | null
   montant: number | null
   resteAPayer: number | null
-  statut: $Enums.DossierScolariteStatut | null
+  statut: $Enums.dossierscolarite_statut | null
   inscriptionApprenantId: string | null
   inscriptionAnneeId: string | null
   configurationScolariteId: string | null
@@ -60,7 +60,7 @@ export type DossierScolariteMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type DossierScolariteCountAggregateOutputType = {
+export type DossierscolariteCountAggregateOutputType = {
   id: number
   montant: number
   resteAPayer: number
@@ -74,17 +74,17 @@ export type DossierScolariteCountAggregateOutputType = {
 }
 
 
-export type DossierScolariteAvgAggregateInputType = {
+export type DossierscolariteAvgAggregateInputType = {
   montant?: true
   resteAPayer?: true
 }
 
-export type DossierScolariteSumAggregateInputType = {
+export type DossierscolariteSumAggregateInputType = {
   montant?: true
   resteAPayer?: true
 }
 
-export type DossierScolariteMinAggregateInputType = {
+export type DossierscolariteMinAggregateInputType = {
   id?: true
   montant?: true
   resteAPayer?: true
@@ -96,7 +96,7 @@ export type DossierScolariteMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type DossierScolariteMaxAggregateInputType = {
+export type DossierscolariteMaxAggregateInputType = {
   id?: true
   montant?: true
   resteAPayer?: true
@@ -108,7 +108,7 @@ export type DossierScolariteMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type DossierScolariteCountAggregateInputType = {
+export type DossierscolariteCountAggregateInputType = {
   id?: true
   montant?: true
   resteAPayer?: true
@@ -121,143 +121,143 @@ export type DossierScolariteCountAggregateInputType = {
   _all?: true
 }
 
-export type DossierScolariteAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DossierscolariteAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which DossierScolarite to aggregate.
+   * Filter which dossierscolarite to aggregate.
    */
-  where?: Prisma.DossierScolariteWhereInput
+  where?: Prisma.dossierscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DossierScolarites to fetch.
+   * Determine the order of dossierscolarites to fetch.
    */
-  orderBy?: Prisma.DossierScolariteOrderByWithRelationInput | Prisma.DossierScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.dossierscolariteOrderByWithRelationInput | Prisma.dossierscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.DossierScolariteWhereUniqueInput
+  cursor?: Prisma.dossierscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DossierScolarites from the position of the cursor.
+   * Take `±n` dossierscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DossierScolarites.
+   * Skip the first `n` dossierscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned DossierScolarites
+   * Count returned dossierscolarites
   **/
-  _count?: true | DossierScolariteCountAggregateInputType
+  _count?: true | DossierscolariteCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: DossierScolariteAvgAggregateInputType
+  _avg?: DossierscolariteAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: DossierScolariteSumAggregateInputType
+  _sum?: DossierscolariteSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: DossierScolariteMinAggregateInputType
+  _min?: DossierscolariteMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: DossierScolariteMaxAggregateInputType
+  _max?: DossierscolariteMaxAggregateInputType
 }
 
-export type GetDossierScolariteAggregateType<T extends DossierScolariteAggregateArgs> = {
-      [P in keyof T & keyof AggregateDossierScolarite]: P extends '_count' | 'count'
+export type GetDossierscolariteAggregateType<T extends DossierscolariteAggregateArgs> = {
+      [P in keyof T & keyof AggregateDossierscolarite]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateDossierScolarite[P]>
-    : Prisma.GetScalarType<T[P], AggregateDossierScolarite[P]>
+      : Prisma.GetScalarType<T[P], AggregateDossierscolarite[P]>
+    : Prisma.GetScalarType<T[P], AggregateDossierscolarite[P]>
 }
 
 
 
 
-export type DossierScolariteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DossierScolariteWhereInput
-  orderBy?: Prisma.DossierScolariteOrderByWithAggregationInput | Prisma.DossierScolariteOrderByWithAggregationInput[]
-  by: Prisma.DossierScolariteScalarFieldEnum[] | Prisma.DossierScolariteScalarFieldEnum
-  having?: Prisma.DossierScolariteScalarWhereWithAggregatesInput
+export type dossierscolariteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.dossierscolariteWhereInput
+  orderBy?: Prisma.dossierscolariteOrderByWithAggregationInput | Prisma.dossierscolariteOrderByWithAggregationInput[]
+  by: Prisma.DossierscolariteScalarFieldEnum[] | Prisma.DossierscolariteScalarFieldEnum
+  having?: Prisma.dossierscolariteScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: DossierScolariteCountAggregateInputType | true
-  _avg?: DossierScolariteAvgAggregateInputType
-  _sum?: DossierScolariteSumAggregateInputType
-  _min?: DossierScolariteMinAggregateInputType
-  _max?: DossierScolariteMaxAggregateInputType
+  _count?: DossierscolariteCountAggregateInputType | true
+  _avg?: DossierscolariteAvgAggregateInputType
+  _sum?: DossierscolariteSumAggregateInputType
+  _min?: DossierscolariteMinAggregateInputType
+  _max?: DossierscolariteMaxAggregateInputType
 }
 
-export type DossierScolariteGroupByOutputType = {
+export type DossierscolariteGroupByOutputType = {
   id: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   configurationScolariteId: string
   createdAt: Date
   updatedAt: Date
-  _count: DossierScolariteCountAggregateOutputType | null
-  _avg: DossierScolariteAvgAggregateOutputType | null
-  _sum: DossierScolariteSumAggregateOutputType | null
-  _min: DossierScolariteMinAggregateOutputType | null
-  _max: DossierScolariteMaxAggregateOutputType | null
+  _count: DossierscolariteCountAggregateOutputType | null
+  _avg: DossierscolariteAvgAggregateOutputType | null
+  _sum: DossierscolariteSumAggregateOutputType | null
+  _min: DossierscolariteMinAggregateOutputType | null
+  _max: DossierscolariteMaxAggregateOutputType | null
 }
 
-export type GetDossierScolariteGroupByPayload<T extends DossierScolariteGroupByArgs> = Prisma.PrismaPromise<
+export type GetDossierscolariteGroupByPayload<T extends dossierscolariteGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<DossierScolariteGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<DossierscolariteGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof DossierScolariteGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof DossierscolariteGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], DossierScolariteGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], DossierScolariteGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], DossierscolariteGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], DossierscolariteGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type DossierScolariteWhereInput = {
-  AND?: Prisma.DossierScolariteWhereInput | Prisma.DossierScolariteWhereInput[]
-  OR?: Prisma.DossierScolariteWhereInput[]
-  NOT?: Prisma.DossierScolariteWhereInput | Prisma.DossierScolariteWhereInput[]
-  id?: Prisma.StringFilter<"DossierScolarite"> | string
-  montant?: Prisma.IntFilter<"DossierScolarite"> | number
-  resteAPayer?: Prisma.IntFilter<"DossierScolarite"> | number
-  statut?: Prisma.EnumDossierScolariteStatutFilter<"DossierScolarite"> | $Enums.DossierScolariteStatut
-  inscriptionApprenantId?: Prisma.StringFilter<"DossierScolarite"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"DossierScolarite"> | string
-  configurationScolariteId?: Prisma.StringFilter<"DossierScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"DossierScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"DossierScolarite"> | Date | string
-  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
-  configurationScolarite?: Prisma.XOR<Prisma.ConfigurationScolariteScalarRelationFilter, Prisma.ConfigurationScolariteWhereInput>
-  paiements?: Prisma.PaiementListRelationFilter
+export type dossierscolariteWhereInput = {
+  AND?: Prisma.dossierscolariteWhereInput | Prisma.dossierscolariteWhereInput[]
+  OR?: Prisma.dossierscolariteWhereInput[]
+  NOT?: Prisma.dossierscolariteWhereInput | Prisma.dossierscolariteWhereInput[]
+  id?: Prisma.StringFilter<"dossierscolarite"> | string
+  montant?: Prisma.IntFilter<"dossierscolarite"> | number
+  resteAPayer?: Prisma.IntFilter<"dossierscolarite"> | number
+  statut?: Prisma.Enumdossierscolarite_statutFilter<"dossierscolarite"> | $Enums.dossierscolarite_statut
+  inscriptionApprenantId?: Prisma.StringFilter<"dossierscolarite"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"dossierscolarite"> | string
+  configurationScolariteId?: Prisma.StringFilter<"dossierscolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"dossierscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"dossierscolarite"> | Date | string
+  configurationscolarite?: Prisma.XOR<Prisma.ConfigurationscolariteScalarRelationFilter, Prisma.configurationscolariteWhereInput>
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
+  paiement?: Prisma.PaiementListRelationFilter
 }
 
-export type DossierScolariteOrderByWithRelationInput = {
+export type dossierscolariteOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
@@ -267,32 +267,32 @@ export type DossierScolariteOrderByWithRelationInput = {
   configurationScolariteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  inscription?: Prisma.InscriptionOrderByWithRelationInput
-  configurationScolarite?: Prisma.ConfigurationScolariteOrderByWithRelationInput
-  paiements?: Prisma.PaiementOrderByRelationAggregateInput
-  _relevance?: Prisma.DossierScolariteOrderByRelevanceInput
+  configurationscolarite?: Prisma.configurationscolariteOrderByWithRelationInput
+  inscription?: Prisma.inscriptionOrderByWithRelationInput
+  paiement?: Prisma.paiementOrderByRelationAggregateInput
+  _relevance?: Prisma.dossierscolariteOrderByRelevanceInput
 }
 
-export type DossierScolariteWhereUniqueInput = Prisma.AtLeast<{
+export type dossierscolariteWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  inscriptionApprenantId_inscriptionAnneeId?: Prisma.DossierScolariteInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput
-  AND?: Prisma.DossierScolariteWhereInput | Prisma.DossierScolariteWhereInput[]
-  OR?: Prisma.DossierScolariteWhereInput[]
-  NOT?: Prisma.DossierScolariteWhereInput | Prisma.DossierScolariteWhereInput[]
-  montant?: Prisma.IntFilter<"DossierScolarite"> | number
-  resteAPayer?: Prisma.IntFilter<"DossierScolarite"> | number
-  statut?: Prisma.EnumDossierScolariteStatutFilter<"DossierScolarite"> | $Enums.DossierScolariteStatut
-  inscriptionApprenantId?: Prisma.StringFilter<"DossierScolarite"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"DossierScolarite"> | string
-  configurationScolariteId?: Prisma.StringFilter<"DossierScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"DossierScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"DossierScolarite"> | Date | string
-  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
-  configurationScolarite?: Prisma.XOR<Prisma.ConfigurationScolariteScalarRelationFilter, Prisma.ConfigurationScolariteWhereInput>
-  paiements?: Prisma.PaiementListRelationFilter
+  inscriptionApprenantId_inscriptionAnneeId?: Prisma.dossierscolariteInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput
+  AND?: Prisma.dossierscolariteWhereInput | Prisma.dossierscolariteWhereInput[]
+  OR?: Prisma.dossierscolariteWhereInput[]
+  NOT?: Prisma.dossierscolariteWhereInput | Prisma.dossierscolariteWhereInput[]
+  montant?: Prisma.IntFilter<"dossierscolarite"> | number
+  resteAPayer?: Prisma.IntFilter<"dossierscolarite"> | number
+  statut?: Prisma.Enumdossierscolarite_statutFilter<"dossierscolarite"> | $Enums.dossierscolarite_statut
+  inscriptionApprenantId?: Prisma.StringFilter<"dossierscolarite"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"dossierscolarite"> | string
+  configurationScolariteId?: Prisma.StringFilter<"dossierscolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"dossierscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"dossierscolarite"> | Date | string
+  configurationscolarite?: Prisma.XOR<Prisma.ConfigurationscolariteScalarRelationFilter, Prisma.configurationscolariteWhereInput>
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
+  paiement?: Prisma.PaiementListRelationFilter
 }, "id" | "inscriptionApprenantId_inscriptionAnneeId">
 
-export type DossierScolariteOrderByWithAggregationInput = {
+export type dossierscolariteOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
@@ -302,83 +302,83 @@ export type DossierScolariteOrderByWithAggregationInput = {
   configurationScolariteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.DossierScolariteCountOrderByAggregateInput
-  _avg?: Prisma.DossierScolariteAvgOrderByAggregateInput
-  _max?: Prisma.DossierScolariteMaxOrderByAggregateInput
-  _min?: Prisma.DossierScolariteMinOrderByAggregateInput
-  _sum?: Prisma.DossierScolariteSumOrderByAggregateInput
+  _count?: Prisma.dossierscolariteCountOrderByAggregateInput
+  _avg?: Prisma.dossierscolariteAvgOrderByAggregateInput
+  _max?: Prisma.dossierscolariteMaxOrderByAggregateInput
+  _min?: Prisma.dossierscolariteMinOrderByAggregateInput
+  _sum?: Prisma.dossierscolariteSumOrderByAggregateInput
 }
 
-export type DossierScolariteScalarWhereWithAggregatesInput = {
-  AND?: Prisma.DossierScolariteScalarWhereWithAggregatesInput | Prisma.DossierScolariteScalarWhereWithAggregatesInput[]
-  OR?: Prisma.DossierScolariteScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.DossierScolariteScalarWhereWithAggregatesInput | Prisma.DossierScolariteScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"DossierScolarite"> | string
-  montant?: Prisma.IntWithAggregatesFilter<"DossierScolarite"> | number
-  resteAPayer?: Prisma.IntWithAggregatesFilter<"DossierScolarite"> | number
-  statut?: Prisma.EnumDossierScolariteStatutWithAggregatesFilter<"DossierScolarite"> | $Enums.DossierScolariteStatut
-  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"DossierScolarite"> | string
-  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"DossierScolarite"> | string
-  configurationScolariteId?: Prisma.StringWithAggregatesFilter<"DossierScolarite"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"DossierScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"DossierScolarite"> | Date | string
+export type dossierscolariteScalarWhereWithAggregatesInput = {
+  AND?: Prisma.dossierscolariteScalarWhereWithAggregatesInput | Prisma.dossierscolariteScalarWhereWithAggregatesInput[]
+  OR?: Prisma.dossierscolariteScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.dossierscolariteScalarWhereWithAggregatesInput | Prisma.dossierscolariteScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"dossierscolarite"> | string
+  montant?: Prisma.IntWithAggregatesFilter<"dossierscolarite"> | number
+  resteAPayer?: Prisma.IntWithAggregatesFilter<"dossierscolarite"> | number
+  statut?: Prisma.Enumdossierscolarite_statutWithAggregatesFilter<"dossierscolarite"> | $Enums.dossierscolarite_statut
+  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"dossierscolarite"> | string
+  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"dossierscolarite"> | string
+  configurationScolariteId?: Prisma.StringWithAggregatesFilter<"dossierscolarite"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"dossierscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"dossierscolarite"> | Date | string
 }
 
-export type DossierScolariteCreateInput = {
+export type dossierscolariteCreateInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutDossierScolariteInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutDossierScolariteInput
-  paiements?: Prisma.PaiementCreateNestedManyWithoutDossierScolariteInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutDossierscolariteInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutDossierscolariteInput
+  paiement?: Prisma.paiementCreateNestedManyWithoutDossierscolariteInput
 }
 
-export type DossierScolariteUncheckedCreateInput = {
+export type dossierscolariteUncheckedCreateInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   configurationScolariteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  paiements?: Prisma.PaiementUncheckedCreateNestedManyWithoutDossierScolariteInput
+  paiement?: Prisma.paiementUncheckedCreateNestedManyWithoutDossierscolariteInput
 }
 
-export type DossierScolariteUpdateInput = {
+export type dossierscolariteUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutDossierScolariteNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutDossierScolariteNestedInput
-  paiements?: Prisma.PaiementUpdateManyWithoutDossierScolariteNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutDossierscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutDossierscolariteNestedInput
+  paiement?: Prisma.paiementUpdateManyWithoutDossierscolariteNestedInput
 }
 
-export type DossierScolariteUncheckedUpdateInput = {
+export type dossierscolariteUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  paiements?: Prisma.PaiementUncheckedUpdateManyWithoutDossierScolariteNestedInput
+  paiement?: Prisma.paiementUncheckedUpdateManyWithoutDossierscolariteNestedInput
 }
 
-export type DossierScolariteCreateManyInput = {
+export type dossierscolariteCreateManyInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   configurationScolariteId: string
@@ -386,20 +386,20 @@ export type DossierScolariteCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type DossierScolariteUpdateManyMutationInput = {
+export type dossierscolariteUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DossierScolariteUncheckedUpdateManyInput = {
+export type dossierscolariteUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -407,33 +407,28 @@ export type DossierScolariteUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DossierScolariteNullableScalarRelationFilter = {
-  is?: Prisma.DossierScolariteWhereInput | null
-  isNot?: Prisma.DossierScolariteWhereInput | null
+export type DossierscolariteListRelationFilter = {
+  every?: Prisma.dossierscolariteWhereInput
+  some?: Prisma.dossierscolariteWhereInput
+  none?: Prisma.dossierscolariteWhereInput
 }
 
-export type DossierScolariteListRelationFilter = {
-  every?: Prisma.DossierScolariteWhereInput
-  some?: Prisma.DossierScolariteWhereInput
-  none?: Prisma.DossierScolariteWhereInput
-}
-
-export type DossierScolariteOrderByRelationAggregateInput = {
+export type dossierscolariteOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type DossierScolariteOrderByRelevanceInput = {
-  fields: Prisma.DossierScolariteOrderByRelevanceFieldEnum | Prisma.DossierScolariteOrderByRelevanceFieldEnum[]
+export type dossierscolariteOrderByRelevanceInput = {
+  fields: Prisma.dossierscolariteOrderByRelevanceFieldEnum | Prisma.dossierscolariteOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type DossierScolariteInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput = {
+export type dossierscolariteInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput = {
   inscriptionApprenantId: string
   inscriptionAnneeId: string
 }
 
-export type DossierScolariteCountOrderByAggregateInput = {
+export type dossierscolariteCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
@@ -445,12 +440,12 @@ export type DossierScolariteCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DossierScolariteAvgOrderByAggregateInput = {
+export type dossierscolariteAvgOrderByAggregateInput = {
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
 }
 
-export type DossierScolariteMaxOrderByAggregateInput = {
+export type dossierscolariteMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
@@ -462,7 +457,7 @@ export type DossierScolariteMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DossierScolariteMinOrderByAggregateInput = {
+export type dossierscolariteMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
@@ -474,248 +469,253 @@ export type DossierScolariteMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DossierScolariteSumOrderByAggregateInput = {
+export type dossierscolariteSumOrderByAggregateInput = {
   montant?: Prisma.SortOrder
   resteAPayer?: Prisma.SortOrder
 }
 
-export type DossierScolariteScalarRelationFilter = {
-  is?: Prisma.DossierScolariteWhereInput
-  isNot?: Prisma.DossierScolariteWhereInput
+export type DossierscolariteNullableScalarRelationFilter = {
+  is?: Prisma.dossierscolariteWhereInput | null
+  isNot?: Prisma.dossierscolariteWhereInput | null
 }
 
-export type DossierScolariteCreateNestedOneWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedCreateWithoutInscriptionInput>
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutInscriptionInput
-  connect?: Prisma.DossierScolariteWhereUniqueInput
+export type DossierscolariteScalarRelationFilter = {
+  is?: Prisma.dossierscolariteWhereInput
+  isNot?: Prisma.dossierscolariteWhereInput
 }
 
-export type DossierScolariteUncheckedCreateNestedOneWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedCreateWithoutInscriptionInput>
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutInscriptionInput
-  connect?: Prisma.DossierScolariteWhereUniqueInput
+export type dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput[] | Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.dossierscolariteCreateManyConfigurationscolariteInputEnvelope
+  connect?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
 }
 
-export type DossierScolariteUpdateOneWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedCreateWithoutInscriptionInput>
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutInscriptionInput
-  upsert?: Prisma.DossierScolariteUpsertWithoutInscriptionInput
-  disconnect?: Prisma.DossierScolariteWhereInput | boolean
-  delete?: Prisma.DossierScolariteWhereInput | boolean
-  connect?: Prisma.DossierScolariteWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.DossierScolariteUpdateToOneWithWhereWithoutInscriptionInput, Prisma.DossierScolariteUpdateWithoutInscriptionInput>, Prisma.DossierScolariteUncheckedUpdateWithoutInscriptionInput>
+export type dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput[] | Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.dossierscolariteCreateManyConfigurationscolariteInputEnvelope
+  connect?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
 }
 
-export type DossierScolariteUncheckedUpdateOneWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedCreateWithoutInscriptionInput>
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutInscriptionInput
-  upsert?: Prisma.DossierScolariteUpsertWithoutInscriptionInput
-  disconnect?: Prisma.DossierScolariteWhereInput | boolean
-  delete?: Prisma.DossierScolariteWhereInput | boolean
-  connect?: Prisma.DossierScolariteWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.DossierScolariteUpdateToOneWithWhereWithoutInscriptionInput, Prisma.DossierScolariteUpdateWithoutInscriptionInput>, Prisma.DossierScolariteUncheckedUpdateWithoutInscriptionInput>
+export type dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput[] | Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  upsert?: Prisma.dossierscolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.dossierscolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.dossierscolariteCreateManyConfigurationscolariteInputEnvelope
+  set?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  disconnect?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  delete?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  connect?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  update?: Prisma.dossierscolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.dossierscolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput[]
+  updateMany?: Prisma.dossierscolariteUpdateManyWithWhereWithoutConfigurationscolariteInput | Prisma.dossierscolariteUpdateManyWithWhereWithoutConfigurationscolariteInput[]
+  deleteMany?: Prisma.dossierscolariteScalarWhereInput | Prisma.dossierscolariteScalarWhereInput[]
 }
 
-export type DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.DossierScolariteCreateManyConfigurationScolariteInputEnvelope
-  connect?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
+export type dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput[] | Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  upsert?: Prisma.dossierscolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.dossierscolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.dossierscolariteCreateManyConfigurationscolariteInputEnvelope
+  set?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  disconnect?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  delete?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  connect?: Prisma.dossierscolariteWhereUniqueInput | Prisma.dossierscolariteWhereUniqueInput[]
+  update?: Prisma.dossierscolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.dossierscolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput[]
+  updateMany?: Prisma.dossierscolariteUpdateManyWithWhereWithoutConfigurationscolariteInput | Prisma.dossierscolariteUpdateManyWithWhereWithoutConfigurationscolariteInput[]
+  deleteMany?: Prisma.dossierscolariteScalarWhereInput | Prisma.dossierscolariteScalarWhereInput[]
 }
 
-export type DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.DossierScolariteCreateManyConfigurationScolariteInputEnvelope
-  connect?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
+export type Enumdossierscolarite_statutFieldUpdateOperationsInput = {
+  set?: $Enums.dossierscolarite_statut
 }
 
-export type DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  upsert?: Prisma.DossierScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.DossierScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.DossierScolariteCreateManyConfigurationScolariteInputEnvelope
-  set?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  disconnect?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  delete?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  connect?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  update?: Prisma.DossierScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.DossierScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput[]
-  updateMany?: Prisma.DossierScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput | Prisma.DossierScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput[]
-  deleteMany?: Prisma.DossierScolariteScalarWhereInput | Prisma.DossierScolariteScalarWhereInput[]
+export type dossierscolariteCreateNestedOneWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutInscriptionInput
+  connect?: Prisma.dossierscolariteWhereUniqueInput
 }
 
-export type DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  upsert?: Prisma.DossierScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.DossierScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.DossierScolariteCreateManyConfigurationScolariteInputEnvelope
-  set?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  disconnect?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  delete?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  connect?: Prisma.DossierScolariteWhereUniqueInput | Prisma.DossierScolariteWhereUniqueInput[]
-  update?: Prisma.DossierScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.DossierScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput[]
-  updateMany?: Prisma.DossierScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput | Prisma.DossierScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput[]
-  deleteMany?: Prisma.DossierScolariteScalarWhereInput | Prisma.DossierScolariteScalarWhereInput[]
+export type dossierscolariteUncheckedCreateNestedOneWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutInscriptionInput
+  connect?: Prisma.dossierscolariteWhereUniqueInput
 }
 
-export type EnumDossierScolariteStatutFieldUpdateOperationsInput = {
-  set?: $Enums.DossierScolariteStatut
+export type dossierscolariteUpdateOneWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutInscriptionInput
+  upsert?: Prisma.dossierscolariteUpsertWithoutInscriptionInput
+  disconnect?: Prisma.dossierscolariteWhereInput | boolean
+  delete?: Prisma.dossierscolariteWhereInput | boolean
+  connect?: Prisma.dossierscolariteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.dossierscolariteUpdateToOneWithWhereWithoutInscriptionInput, Prisma.dossierscolariteUpdateWithoutInscriptionInput>, Prisma.dossierscolariteUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type DossierScolariteCreateNestedOneWithoutPaiementsInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutPaiementsInput, Prisma.DossierScolariteUncheckedCreateWithoutPaiementsInput>
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutPaiementsInput
-  connect?: Prisma.DossierScolariteWhereUniqueInput
+export type dossierscolariteUncheckedUpdateOneWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutInscriptionInput
+  upsert?: Prisma.dossierscolariteUpsertWithoutInscriptionInput
+  disconnect?: Prisma.dossierscolariteWhereInput | boolean
+  delete?: Prisma.dossierscolariteWhereInput | boolean
+  connect?: Prisma.dossierscolariteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.dossierscolariteUpdateToOneWithWhereWithoutInscriptionInput, Prisma.dossierscolariteUpdateWithoutInscriptionInput>, Prisma.dossierscolariteUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type DossierScolariteUpdateOneRequiredWithoutPaiementsNestedInput = {
-  create?: Prisma.XOR<Prisma.DossierScolariteCreateWithoutPaiementsInput, Prisma.DossierScolariteUncheckedCreateWithoutPaiementsInput>
-  connectOrCreate?: Prisma.DossierScolariteCreateOrConnectWithoutPaiementsInput
-  upsert?: Prisma.DossierScolariteUpsertWithoutPaiementsInput
-  connect?: Prisma.DossierScolariteWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.DossierScolariteUpdateToOneWithWhereWithoutPaiementsInput, Prisma.DossierScolariteUpdateWithoutPaiementsInput>, Prisma.DossierScolariteUncheckedUpdateWithoutPaiementsInput>
+export type dossierscolariteCreateNestedOneWithoutPaiementInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutPaiementInput, Prisma.dossierscolariteUncheckedCreateWithoutPaiementInput>
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutPaiementInput
+  connect?: Prisma.dossierscolariteWhereUniqueInput
 }
 
-export type DossierScolariteCreateWithoutInscriptionInput = {
+export type dossierscolariteUpdateOneRequiredWithoutPaiementNestedInput = {
+  create?: Prisma.XOR<Prisma.dossierscolariteCreateWithoutPaiementInput, Prisma.dossierscolariteUncheckedCreateWithoutPaiementInput>
+  connectOrCreate?: Prisma.dossierscolariteCreateOrConnectWithoutPaiementInput
+  upsert?: Prisma.dossierscolariteUpsertWithoutPaiementInput
+  connect?: Prisma.dossierscolariteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.dossierscolariteUpdateToOneWithWhereWithoutPaiementInput, Prisma.dossierscolariteUpdateWithoutPaiementInput>, Prisma.dossierscolariteUncheckedUpdateWithoutPaiementInput>
+}
+
+export type dossierscolariteCreateWithoutConfigurationscolariteInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutDossierScolariteInput
-  paiements?: Prisma.PaiementCreateNestedManyWithoutDossierScolariteInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutDossierscolariteInput
+  paiement?: Prisma.paiementCreateNestedManyWithoutDossierscolariteInput
 }
 
-export type DossierScolariteUncheckedCreateWithoutInscriptionInput = {
+export type dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
-  configurationScolariteId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  paiements?: Prisma.PaiementUncheckedCreateNestedManyWithoutDossierScolariteInput
-}
-
-export type DossierScolariteCreateOrConnectWithoutInscriptionInput = {
-  where: Prisma.DossierScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.DossierScolariteCreateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedCreateWithoutInscriptionInput>
-}
-
-export type DossierScolariteUpsertWithoutInscriptionInput = {
-  update: Prisma.XOR<Prisma.DossierScolariteUpdateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedUpdateWithoutInscriptionInput>
-  create: Prisma.XOR<Prisma.DossierScolariteCreateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedCreateWithoutInscriptionInput>
-  where?: Prisma.DossierScolariteWhereInput
-}
-
-export type DossierScolariteUpdateToOneWithWhereWithoutInscriptionInput = {
-  where?: Prisma.DossierScolariteWhereInput
-  data: Prisma.XOR<Prisma.DossierScolariteUpdateWithoutInscriptionInput, Prisma.DossierScolariteUncheckedUpdateWithoutInscriptionInput>
-}
-
-export type DossierScolariteUpdateWithoutInscriptionInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  montant?: Prisma.IntFieldUpdateOperationsInput | number
-  resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutDossierScolariteNestedInput
-  paiements?: Prisma.PaiementUpdateManyWithoutDossierScolariteNestedInput
-}
-
-export type DossierScolariteUncheckedUpdateWithoutInscriptionInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  montant?: Prisma.IntFieldUpdateOperationsInput | number
-  resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
-  configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  paiements?: Prisma.PaiementUncheckedUpdateManyWithoutDossierScolariteNestedInput
-}
-
-export type DossierScolariteCreateWithoutConfigurationScolariteInput = {
-  id?: string
-  montant: number
-  resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutDossierScolariteInput
-  paiements?: Prisma.PaiementCreateNestedManyWithoutDossierScolariteInput
-}
-
-export type DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput = {
-  id?: string
-  montant: number
-  resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  paiements?: Prisma.PaiementUncheckedCreateNestedManyWithoutDossierScolariteInput
+  paiement?: Prisma.paiementUncheckedCreateNestedManyWithoutDossierscolariteInput
 }
 
-export type DossierScolariteCreateOrConnectWithoutConfigurationScolariteInput = {
-  where: Prisma.DossierScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput>
+export type dossierscolariteCreateOrConnectWithoutConfigurationscolariteInput = {
+  where: Prisma.dossierscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type DossierScolariteCreateManyConfigurationScolariteInputEnvelope = {
-  data: Prisma.DossierScolariteCreateManyConfigurationScolariteInput | Prisma.DossierScolariteCreateManyConfigurationScolariteInput[]
+export type dossierscolariteCreateManyConfigurationscolariteInputEnvelope = {
+  data: Prisma.dossierscolariteCreateManyConfigurationscolariteInput | Prisma.dossierscolariteCreateManyConfigurationscolariteInput[]
   skipDuplicates?: boolean
 }
 
-export type DossierScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput = {
-  where: Prisma.DossierScolariteWhereUniqueInput
-  update: Prisma.XOR<Prisma.DossierScolariteUpdateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedUpdateWithoutConfigurationScolariteInput>
-  create: Prisma.XOR<Prisma.DossierScolariteCreateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedCreateWithoutConfigurationScolariteInput>
+export type dossierscolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput = {
+  where: Prisma.dossierscolariteWhereUniqueInput
+  update: Prisma.XOR<Prisma.dossierscolariteUpdateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedUpdateWithoutConfigurationscolariteInput>
+  create: Prisma.XOR<Prisma.dossierscolariteCreateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type DossierScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput = {
-  where: Prisma.DossierScolariteWhereUniqueInput
-  data: Prisma.XOR<Prisma.DossierScolariteUpdateWithoutConfigurationScolariteInput, Prisma.DossierScolariteUncheckedUpdateWithoutConfigurationScolariteInput>
+export type dossierscolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput = {
+  where: Prisma.dossierscolariteWhereUniqueInput
+  data: Prisma.XOR<Prisma.dossierscolariteUpdateWithoutConfigurationscolariteInput, Prisma.dossierscolariteUncheckedUpdateWithoutConfigurationscolariteInput>
 }
 
-export type DossierScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput = {
-  where: Prisma.DossierScolariteScalarWhereInput
-  data: Prisma.XOR<Prisma.DossierScolariteUpdateManyMutationInput, Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteInput>
+export type dossierscolariteUpdateManyWithWhereWithoutConfigurationscolariteInput = {
+  where: Prisma.dossierscolariteScalarWhereInput
+  data: Prisma.XOR<Prisma.dossierscolariteUpdateManyMutationInput, Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteInput>
 }
 
-export type DossierScolariteScalarWhereInput = {
-  AND?: Prisma.DossierScolariteScalarWhereInput | Prisma.DossierScolariteScalarWhereInput[]
-  OR?: Prisma.DossierScolariteScalarWhereInput[]
-  NOT?: Prisma.DossierScolariteScalarWhereInput | Prisma.DossierScolariteScalarWhereInput[]
-  id?: Prisma.StringFilter<"DossierScolarite"> | string
-  montant?: Prisma.IntFilter<"DossierScolarite"> | number
-  resteAPayer?: Prisma.IntFilter<"DossierScolarite"> | number
-  statut?: Prisma.EnumDossierScolariteStatutFilter<"DossierScolarite"> | $Enums.DossierScolariteStatut
-  inscriptionApprenantId?: Prisma.StringFilter<"DossierScolarite"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"DossierScolarite"> | string
-  configurationScolariteId?: Prisma.StringFilter<"DossierScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"DossierScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"DossierScolarite"> | Date | string
+export type dossierscolariteScalarWhereInput = {
+  AND?: Prisma.dossierscolariteScalarWhereInput | Prisma.dossierscolariteScalarWhereInput[]
+  OR?: Prisma.dossierscolariteScalarWhereInput[]
+  NOT?: Prisma.dossierscolariteScalarWhereInput | Prisma.dossierscolariteScalarWhereInput[]
+  id?: Prisma.StringFilter<"dossierscolarite"> | string
+  montant?: Prisma.IntFilter<"dossierscolarite"> | number
+  resteAPayer?: Prisma.IntFilter<"dossierscolarite"> | number
+  statut?: Prisma.Enumdossierscolarite_statutFilter<"dossierscolarite"> | $Enums.dossierscolarite_statut
+  inscriptionApprenantId?: Prisma.StringFilter<"dossierscolarite"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"dossierscolarite"> | string
+  configurationScolariteId?: Prisma.StringFilter<"dossierscolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"dossierscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"dossierscolarite"> | Date | string
 }
 
-export type DossierScolariteCreateWithoutPaiementsInput = {
+export type dossierscolariteCreateWithoutInscriptionInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutDossierScolariteInput
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutDossierScolariteInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutDossierscolariteInput
+  paiement?: Prisma.paiementCreateNestedManyWithoutDossierscolariteInput
 }
 
-export type DossierScolariteUncheckedCreateWithoutPaiementsInput = {
+export type dossierscolariteUncheckedCreateWithoutInscriptionInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
+  configurationScolariteId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  paiement?: Prisma.paiementUncheckedCreateNestedManyWithoutDossierscolariteInput
+}
+
+export type dossierscolariteCreateOrConnectWithoutInscriptionInput = {
+  where: Prisma.dossierscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.dossierscolariteCreateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedCreateWithoutInscriptionInput>
+}
+
+export type dossierscolariteUpsertWithoutInscriptionInput = {
+  update: Prisma.XOR<Prisma.dossierscolariteUpdateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedUpdateWithoutInscriptionInput>
+  create: Prisma.XOR<Prisma.dossierscolariteCreateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedCreateWithoutInscriptionInput>
+  where?: Prisma.dossierscolariteWhereInput
+}
+
+export type dossierscolariteUpdateToOneWithWhereWithoutInscriptionInput = {
+  where?: Prisma.dossierscolariteWhereInput
+  data: Prisma.XOR<Prisma.dossierscolariteUpdateWithoutInscriptionInput, Prisma.dossierscolariteUncheckedUpdateWithoutInscriptionInput>
+}
+
+export type dossierscolariteUpdateWithoutInscriptionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  montant?: Prisma.IntFieldUpdateOperationsInput | number
+  resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutDossierscolariteNestedInput
+  paiement?: Prisma.paiementUpdateManyWithoutDossierscolariteNestedInput
+}
+
+export type dossierscolariteUncheckedUpdateWithoutInscriptionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  montant?: Prisma.IntFieldUpdateOperationsInput | number
+  resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
+  configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  paiement?: Prisma.paiementUncheckedUpdateManyWithoutDossierscolariteNestedInput
+}
+
+export type dossierscolariteCreateWithoutPaiementInput = {
+  id?: string
+  montant: number
+  resteAPayer: number
+  statut: $Enums.dossierscolarite_statut
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutDossierscolariteInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutDossierscolariteInput
+}
+
+export type dossierscolariteUncheckedCreateWithoutPaiementInput = {
+  id?: string
+  montant: number
+  resteAPayer: number
+  statut: $Enums.dossierscolarite_statut
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   configurationScolariteId: string
@@ -723,38 +723,38 @@ export type DossierScolariteUncheckedCreateWithoutPaiementsInput = {
   updatedAt?: Date | string
 }
 
-export type DossierScolariteCreateOrConnectWithoutPaiementsInput = {
-  where: Prisma.DossierScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.DossierScolariteCreateWithoutPaiementsInput, Prisma.DossierScolariteUncheckedCreateWithoutPaiementsInput>
+export type dossierscolariteCreateOrConnectWithoutPaiementInput = {
+  where: Prisma.dossierscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.dossierscolariteCreateWithoutPaiementInput, Prisma.dossierscolariteUncheckedCreateWithoutPaiementInput>
 }
 
-export type DossierScolariteUpsertWithoutPaiementsInput = {
-  update: Prisma.XOR<Prisma.DossierScolariteUpdateWithoutPaiementsInput, Prisma.DossierScolariteUncheckedUpdateWithoutPaiementsInput>
-  create: Prisma.XOR<Prisma.DossierScolariteCreateWithoutPaiementsInput, Prisma.DossierScolariteUncheckedCreateWithoutPaiementsInput>
-  where?: Prisma.DossierScolariteWhereInput
+export type dossierscolariteUpsertWithoutPaiementInput = {
+  update: Prisma.XOR<Prisma.dossierscolariteUpdateWithoutPaiementInput, Prisma.dossierscolariteUncheckedUpdateWithoutPaiementInput>
+  create: Prisma.XOR<Prisma.dossierscolariteCreateWithoutPaiementInput, Prisma.dossierscolariteUncheckedCreateWithoutPaiementInput>
+  where?: Prisma.dossierscolariteWhereInput
 }
 
-export type DossierScolariteUpdateToOneWithWhereWithoutPaiementsInput = {
-  where?: Prisma.DossierScolariteWhereInput
-  data: Prisma.XOR<Prisma.DossierScolariteUpdateWithoutPaiementsInput, Prisma.DossierScolariteUncheckedUpdateWithoutPaiementsInput>
+export type dossierscolariteUpdateToOneWithWhereWithoutPaiementInput = {
+  where?: Prisma.dossierscolariteWhereInput
+  data: Prisma.XOR<Prisma.dossierscolariteUpdateWithoutPaiementInput, Prisma.dossierscolariteUncheckedUpdateWithoutPaiementInput>
 }
 
-export type DossierScolariteUpdateWithoutPaiementsInput = {
+export type dossierscolariteUpdateWithoutPaiementInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutDossierScolariteNestedInput
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutDossierScolariteNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutDossierscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutDossierscolariteNestedInput
 }
 
-export type DossierScolariteUncheckedUpdateWithoutPaiementsInput = {
+export type dossierscolariteUncheckedUpdateWithoutPaiementInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -762,45 +762,45 @@ export type DossierScolariteUncheckedUpdateWithoutPaiementsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DossierScolariteCreateManyConfigurationScolariteInput = {
+export type dossierscolariteCreateManyConfigurationscolariteInput = {
   id?: string
   montant: number
   resteAPayer: number
-  statut: $Enums.DossierScolariteStatut
+  statut: $Enums.dossierscolarite_statut
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type DossierScolariteUpdateWithoutConfigurationScolariteInput = {
+export type dossierscolariteUpdateWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutDossierScolariteNestedInput
-  paiements?: Prisma.PaiementUpdateManyWithoutDossierScolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutDossierscolariteNestedInput
+  paiement?: Prisma.paiementUpdateManyWithoutDossierscolariteNestedInput
 }
 
-export type DossierScolariteUncheckedUpdateWithoutConfigurationScolariteInput = {
+export type dossierscolariteUncheckedUpdateWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  paiements?: Prisma.PaiementUncheckedUpdateManyWithoutDossierScolariteNestedInput
+  paiement?: Prisma.paiementUncheckedUpdateManyWithoutDossierscolariteNestedInput
 }
 
-export type DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteInput = {
+export type dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
   resteAPayer?: Prisma.IntFieldUpdateOperationsInput | number
-  statut?: Prisma.EnumDossierScolariteStatutFieldUpdateOperationsInput | $Enums.DossierScolariteStatut
+  statut?: Prisma.Enumdossierscolarite_statutFieldUpdateOperationsInput | $Enums.dossierscolarite_statut
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -809,36 +809,36 @@ export type DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteInpu
 
 
 /**
- * Count Type DossierScolariteCountOutputType
+ * Count Type DossierscolariteCountOutputType
  */
 
-export type DossierScolariteCountOutputType = {
-  paiements: number
+export type DossierscolariteCountOutputType = {
+  paiement: number
 }
 
-export type DossierScolariteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paiements?: boolean | DossierScolariteCountOutputTypeCountPaiementsArgs
+export type DossierscolariteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paiement?: boolean | DossierscolariteCountOutputTypeCountPaiementArgs
 }
 
 /**
- * DossierScolariteCountOutputType without action
+ * DossierscolariteCountOutputType without action
  */
-export type DossierScolariteCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DossierscolariteCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolariteCountOutputType
+   * Select specific fields to fetch from the DossierscolariteCountOutputType
    */
-  select?: Prisma.DossierScolariteCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.DossierscolariteCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * DossierScolariteCountOutputType without action
+ * DossierscolariteCountOutputType without action
  */
-export type DossierScolariteCountOutputTypeCountPaiementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PaiementWhereInput
+export type DossierscolariteCountOutputTypeCountPaiementArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.paiementWhereInput
 }
 
 
-export type DossierScolariteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type dossierscolariteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   montant?: boolean
   resteAPayer?: boolean
@@ -848,15 +848,15 @@ export type DossierScolariteSelect<ExtArgs extends runtime.Types.Extensions.Inte
   configurationScolariteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  inscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-  configurationScolarite?: boolean | Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>
-  paiements?: boolean | Prisma.DossierScolarite$paiementsArgs<ExtArgs>
-  _count?: boolean | Prisma.DossierScolariteCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["dossierScolarite"]>
+  configurationscolarite?: boolean | Prisma.configurationscolariteDefaultArgs<ExtArgs>
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
+  paiement?: boolean | Prisma.dossierscolarite$paiementArgs<ExtArgs>
+  _count?: boolean | Prisma.DossierscolariteCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["dossierscolarite"]>
 
 
 
-export type DossierScolariteSelectScalar = {
+export type dossierscolariteSelectScalar = {
   id?: boolean
   montant?: boolean
   resteAPayer?: boolean
@@ -868,168 +868,168 @@ export type DossierScolariteSelectScalar = {
   updatedAt?: boolean
 }
 
-export type DossierScolariteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "montant" | "resteAPayer" | "statut" | "inscriptionApprenantId" | "inscriptionAnneeId" | "configurationScolariteId" | "createdAt" | "updatedAt", ExtArgs["result"]["dossierScolarite"]>
-export type DossierScolariteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  inscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-  configurationScolarite?: boolean | Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>
-  paiements?: boolean | Prisma.DossierScolarite$paiementsArgs<ExtArgs>
-  _count?: boolean | Prisma.DossierScolariteCountOutputTypeDefaultArgs<ExtArgs>
+export type dossierscolariteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "montant" | "resteAPayer" | "statut" | "inscriptionApprenantId" | "inscriptionAnneeId" | "configurationScolariteId" | "createdAt" | "updatedAt", ExtArgs["result"]["dossierscolarite"]>
+export type dossierscolariteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  configurationscolarite?: boolean | Prisma.configurationscolariteDefaultArgs<ExtArgs>
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
+  paiement?: boolean | Prisma.dossierscolarite$paiementArgs<ExtArgs>
+  _count?: boolean | Prisma.DossierscolariteCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $DossierScolaritePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "DossierScolarite"
+export type $dossierscolaritePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "dossierscolarite"
   objects: {
-    inscription: Prisma.$InscriptionPayload<ExtArgs>
-    configurationScolarite: Prisma.$ConfigurationScolaritePayload<ExtArgs>
-    paiements: Prisma.$PaiementPayload<ExtArgs>[]
+    configurationscolarite: Prisma.$configurationscolaritePayload<ExtArgs>
+    inscription: Prisma.$inscriptionPayload<ExtArgs>
+    paiement: Prisma.$paiementPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     montant: number
     resteAPayer: number
-    statut: $Enums.DossierScolariteStatut
+    statut: $Enums.dossierscolarite_statut
     inscriptionApprenantId: string
     inscriptionAnneeId: string
     configurationScolariteId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["dossierScolarite"]>
+  }, ExtArgs["result"]["dossierscolarite"]>
   composites: {}
 }
 
-export type DossierScolariteGetPayload<S extends boolean | null | undefined | DossierScolariteDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload, S>
+export type dossierscolariteGetPayload<S extends boolean | null | undefined | dossierscolariteDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload, S>
 
-export type DossierScolariteCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<DossierScolariteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: DossierScolariteCountAggregateInputType | true
+export type dossierscolariteCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<dossierscolariteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: DossierscolariteCountAggregateInputType | true
   }
 
-export interface DossierScolariteDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['DossierScolarite'], meta: { name: 'DossierScolarite' } }
+export interface dossierscolariteDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['dossierscolarite'], meta: { name: 'dossierscolarite' } }
   /**
-   * Find zero or one DossierScolarite that matches the filter.
-   * @param {DossierScolariteFindUniqueArgs} args - Arguments to find a DossierScolarite
+   * Find zero or one Dossierscolarite that matches the filter.
+   * @param {dossierscolariteFindUniqueArgs} args - Arguments to find a Dossierscolarite
    * @example
-   * // Get one DossierScolarite
-   * const dossierScolarite = await prisma.dossierScolarite.findUnique({
+   * // Get one Dossierscolarite
+   * const dossierscolarite = await prisma.dossierscolarite.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends DossierScolariteFindUniqueArgs>(args: Prisma.SelectSubset<T, DossierScolariteFindUniqueArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends dossierscolariteFindUniqueArgs>(args: Prisma.SelectSubset<T, dossierscolariteFindUniqueArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one DossierScolarite that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Dossierscolarite that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {DossierScolariteFindUniqueOrThrowArgs} args - Arguments to find a DossierScolarite
+   * @param {dossierscolariteFindUniqueOrThrowArgs} args - Arguments to find a Dossierscolarite
    * @example
-   * // Get one DossierScolarite
-   * const dossierScolarite = await prisma.dossierScolarite.findUniqueOrThrow({
+   * // Get one Dossierscolarite
+   * const dossierscolarite = await prisma.dossierscolarite.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends DossierScolariteFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, DossierScolariteFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends dossierscolariteFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, dossierscolariteFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first DossierScolarite that matches the filter.
+   * Find the first Dossierscolarite that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteFindFirstArgs} args - Arguments to find a DossierScolarite
+   * @param {dossierscolariteFindFirstArgs} args - Arguments to find a Dossierscolarite
    * @example
-   * // Get one DossierScolarite
-   * const dossierScolarite = await prisma.dossierScolarite.findFirst({
+   * // Get one Dossierscolarite
+   * const dossierscolarite = await prisma.dossierscolarite.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends DossierScolariteFindFirstArgs>(args?: Prisma.SelectSubset<T, DossierScolariteFindFirstArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends dossierscolariteFindFirstArgs>(args?: Prisma.SelectSubset<T, dossierscolariteFindFirstArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first DossierScolarite that matches the filter or
+   * Find the first Dossierscolarite that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteFindFirstOrThrowArgs} args - Arguments to find a DossierScolarite
+   * @param {dossierscolariteFindFirstOrThrowArgs} args - Arguments to find a Dossierscolarite
    * @example
-   * // Get one DossierScolarite
-   * const dossierScolarite = await prisma.dossierScolarite.findFirstOrThrow({
+   * // Get one Dossierscolarite
+   * const dossierscolarite = await prisma.dossierscolarite.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends DossierScolariteFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, DossierScolariteFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends dossierscolariteFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, dossierscolariteFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more DossierScolarites that matches the filter.
+   * Find zero or more Dossierscolarites that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {dossierscolariteFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all DossierScolarites
-   * const dossierScolarites = await prisma.dossierScolarite.findMany()
+   * // Get all Dossierscolarites
+   * const dossierscolarites = await prisma.dossierscolarite.findMany()
    * 
-   * // Get first 10 DossierScolarites
-   * const dossierScolarites = await prisma.dossierScolarite.findMany({ take: 10 })
+   * // Get first 10 Dossierscolarites
+   * const dossierscolarites = await prisma.dossierscolarite.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const dossierScolariteWithIdOnly = await prisma.dossierScolarite.findMany({ select: { id: true } })
+   * const dossierscolariteWithIdOnly = await prisma.dossierscolarite.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends DossierScolariteFindManyArgs>(args?: Prisma.SelectSubset<T, DossierScolariteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends dossierscolariteFindManyArgs>(args?: Prisma.SelectSubset<T, dossierscolariteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a DossierScolarite.
-   * @param {DossierScolariteCreateArgs} args - Arguments to create a DossierScolarite.
+   * Create a Dossierscolarite.
+   * @param {dossierscolariteCreateArgs} args - Arguments to create a Dossierscolarite.
    * @example
-   * // Create one DossierScolarite
-   * const DossierScolarite = await prisma.dossierScolarite.create({
+   * // Create one Dossierscolarite
+   * const Dossierscolarite = await prisma.dossierscolarite.create({
    *   data: {
-   *     // ... data to create a DossierScolarite
+   *     // ... data to create a Dossierscolarite
    *   }
    * })
    * 
    */
-  create<T extends DossierScolariteCreateArgs>(args: Prisma.SelectSubset<T, DossierScolariteCreateArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends dossierscolariteCreateArgs>(args: Prisma.SelectSubset<T, dossierscolariteCreateArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many DossierScolarites.
-   * @param {DossierScolariteCreateManyArgs} args - Arguments to create many DossierScolarites.
+   * Create many Dossierscolarites.
+   * @param {dossierscolariteCreateManyArgs} args - Arguments to create many Dossierscolarites.
    * @example
-   * // Create many DossierScolarites
-   * const dossierScolarite = await prisma.dossierScolarite.createMany({
+   * // Create many Dossierscolarites
+   * const dossierscolarite = await prisma.dossierscolarite.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends DossierScolariteCreateManyArgs>(args?: Prisma.SelectSubset<T, DossierScolariteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends dossierscolariteCreateManyArgs>(args?: Prisma.SelectSubset<T, dossierscolariteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a DossierScolarite.
-   * @param {DossierScolariteDeleteArgs} args - Arguments to delete one DossierScolarite.
+   * Delete a Dossierscolarite.
+   * @param {dossierscolariteDeleteArgs} args - Arguments to delete one Dossierscolarite.
    * @example
-   * // Delete one DossierScolarite
-   * const DossierScolarite = await prisma.dossierScolarite.delete({
+   * // Delete one Dossierscolarite
+   * const Dossierscolarite = await prisma.dossierscolarite.delete({
    *   where: {
-   *     // ... filter to delete one DossierScolarite
+   *     // ... filter to delete one Dossierscolarite
    *   }
    * })
    * 
    */
-  delete<T extends DossierScolariteDeleteArgs>(args: Prisma.SelectSubset<T, DossierScolariteDeleteArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends dossierscolariteDeleteArgs>(args: Prisma.SelectSubset<T, dossierscolariteDeleteArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one DossierScolarite.
-   * @param {DossierScolariteUpdateArgs} args - Arguments to update one DossierScolarite.
+   * Update one Dossierscolarite.
+   * @param {dossierscolariteUpdateArgs} args - Arguments to update one Dossierscolarite.
    * @example
-   * // Update one DossierScolarite
-   * const dossierScolarite = await prisma.dossierScolarite.update({
+   * // Update one Dossierscolarite
+   * const dossierscolarite = await prisma.dossierscolarite.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1039,30 +1039,30 @@ export interface DossierScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    * })
    * 
    */
-  update<T extends DossierScolariteUpdateArgs>(args: Prisma.SelectSubset<T, DossierScolariteUpdateArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends dossierscolariteUpdateArgs>(args: Prisma.SelectSubset<T, dossierscolariteUpdateArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more DossierScolarites.
-   * @param {DossierScolariteDeleteManyArgs} args - Arguments to filter DossierScolarites to delete.
+   * Delete zero or more Dossierscolarites.
+   * @param {dossierscolariteDeleteManyArgs} args - Arguments to filter Dossierscolarites to delete.
    * @example
-   * // Delete a few DossierScolarites
-   * const { count } = await prisma.dossierScolarite.deleteMany({
+   * // Delete a few Dossierscolarites
+   * const { count } = await prisma.dossierscolarite.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends DossierScolariteDeleteManyArgs>(args?: Prisma.SelectSubset<T, DossierScolariteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends dossierscolariteDeleteManyArgs>(args?: Prisma.SelectSubset<T, dossierscolariteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more DossierScolarites.
+   * Update zero or more Dossierscolarites.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {dossierscolariteUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many DossierScolarites
-   * const dossierScolarite = await prisma.dossierScolarite.updateMany({
+   * // Update many Dossierscolarites
+   * const dossierscolarite = await prisma.dossierscolarite.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1072,56 +1072,56 @@ export interface DossierScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    * })
    * 
    */
-  updateMany<T extends DossierScolariteUpdateManyArgs>(args: Prisma.SelectSubset<T, DossierScolariteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends dossierscolariteUpdateManyArgs>(args: Prisma.SelectSubset<T, dossierscolariteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one DossierScolarite.
-   * @param {DossierScolariteUpsertArgs} args - Arguments to update or create a DossierScolarite.
+   * Create or update one Dossierscolarite.
+   * @param {dossierscolariteUpsertArgs} args - Arguments to update or create a Dossierscolarite.
    * @example
-   * // Update or create a DossierScolarite
-   * const dossierScolarite = await prisma.dossierScolarite.upsert({
+   * // Update or create a Dossierscolarite
+   * const dossierscolarite = await prisma.dossierscolarite.upsert({
    *   create: {
-   *     // ... data to create a DossierScolarite
+   *     // ... data to create a Dossierscolarite
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the DossierScolarite we want to update
+   *     // ... the filter for the Dossierscolarite we want to update
    *   }
    * })
    */
-  upsert<T extends DossierScolariteUpsertArgs>(args: Prisma.SelectSubset<T, DossierScolariteUpsertArgs<ExtArgs>>): Prisma.Prisma__DossierScolariteClient<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends dossierscolariteUpsertArgs>(args: Prisma.SelectSubset<T, dossierscolariteUpsertArgs<ExtArgs>>): Prisma.Prisma__dossierscolariteClient<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of DossierScolarites.
+   * Count the number of Dossierscolarites.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteCountArgs} args - Arguments to filter DossierScolarites to count.
+   * @param {dossierscolariteCountArgs} args - Arguments to filter Dossierscolarites to count.
    * @example
-   * // Count the number of DossierScolarites
-   * const count = await prisma.dossierScolarite.count({
+   * // Count the number of Dossierscolarites
+   * const count = await prisma.dossierscolarite.count({
    *   where: {
-   *     // ... the filter for the DossierScolarites we want to count
+   *     // ... the filter for the Dossierscolarites we want to count
    *   }
    * })
   **/
-  count<T extends DossierScolariteCountArgs>(
-    args?: Prisma.Subset<T, DossierScolariteCountArgs>,
+  count<T extends dossierscolariteCountArgs>(
+    args?: Prisma.Subset<T, dossierscolariteCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], DossierScolariteCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], DossierscolariteCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a DossierScolarite.
+   * Allows you to perform aggregations operations on a Dossierscolarite.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {DossierscolariteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1141,13 +1141,13 @@ export interface DossierScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    *   take: 10,
    * })
   **/
-  aggregate<T extends DossierScolariteAggregateArgs>(args: Prisma.Subset<T, DossierScolariteAggregateArgs>): Prisma.PrismaPromise<GetDossierScolariteAggregateType<T>>
+  aggregate<T extends DossierscolariteAggregateArgs>(args: Prisma.Subset<T, DossierscolariteAggregateArgs>): Prisma.PrismaPromise<GetDossierscolariteAggregateType<T>>
 
   /**
-   * Group by DossierScolarite.
+   * Group by Dossierscolarite.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DossierScolariteGroupByArgs} args - Group by arguments.
+   * @param {dossierscolariteGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1162,14 +1162,14 @@ export interface DossierScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    * 
   **/
   groupBy<
-    T extends DossierScolariteGroupByArgs,
+    T extends dossierscolariteGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: DossierScolariteGroupByArgs['orderBy'] }
-      : { orderBy?: DossierScolariteGroupByArgs['orderBy'] },
+      ? { orderBy: dossierscolariteGroupByArgs['orderBy'] }
+      : { orderBy?: dossierscolariteGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1218,24 +1218,24 @@ export interface DossierScolariteDelegate<ExtArgs extends runtime.Types.Extensio
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, DossierScolariteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDossierScolariteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, dossierscolariteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDossierscolariteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the DossierScolarite model
+ * Fields of the dossierscolarite model
  */
-readonly fields: DossierScolariteFieldRefs;
+readonly fields: dossierscolariteFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for DossierScolarite.
+ * The delegate class that acts as a "Promise-like" for dossierscolarite.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__DossierScolariteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__dossierscolariteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  inscription<T extends Prisma.InscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  configurationScolarite<T extends Prisma.ConfigurationScolariteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  paiements<T extends Prisma.DossierScolarite$paiementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DossierScolarite$paiementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaiementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  configurationscolarite<T extends Prisma.configurationscolariteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.configurationscolariteDefaultArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  inscription<T extends Prisma.inscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  paiement<T extends Prisma.dossierscolarite$paiementArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.dossierscolarite$paiementArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$paiementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1262,403 +1262,403 @@ export interface Prisma__DossierScolariteClient<T, Null = never, ExtArgs extends
 
 
 /**
- * Fields of the DossierScolarite model
+ * Fields of the dossierscolarite model
  */
-export interface DossierScolariteFieldRefs {
-  readonly id: Prisma.FieldRef<"DossierScolarite", 'String'>
-  readonly montant: Prisma.FieldRef<"DossierScolarite", 'Int'>
-  readonly resteAPayer: Prisma.FieldRef<"DossierScolarite", 'Int'>
-  readonly statut: Prisma.FieldRef<"DossierScolarite", 'DossierScolariteStatut'>
-  readonly inscriptionApprenantId: Prisma.FieldRef<"DossierScolarite", 'String'>
-  readonly inscriptionAnneeId: Prisma.FieldRef<"DossierScolarite", 'String'>
-  readonly configurationScolariteId: Prisma.FieldRef<"DossierScolarite", 'String'>
-  readonly createdAt: Prisma.FieldRef<"DossierScolarite", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"DossierScolarite", 'DateTime'>
+export interface dossierscolariteFieldRefs {
+  readonly id: Prisma.FieldRef<"dossierscolarite", 'String'>
+  readonly montant: Prisma.FieldRef<"dossierscolarite", 'Int'>
+  readonly resteAPayer: Prisma.FieldRef<"dossierscolarite", 'Int'>
+  readonly statut: Prisma.FieldRef<"dossierscolarite", 'dossierscolarite_statut'>
+  readonly inscriptionApprenantId: Prisma.FieldRef<"dossierscolarite", 'String'>
+  readonly inscriptionAnneeId: Prisma.FieldRef<"dossierscolarite", 'String'>
+  readonly configurationScolariteId: Prisma.FieldRef<"dossierscolarite", 'String'>
+  readonly createdAt: Prisma.FieldRef<"dossierscolarite", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"dossierscolarite", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * DossierScolarite findUnique
+ * dossierscolarite findUnique
  */
-export type DossierScolariteFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which DossierScolarite to fetch.
+   * Filter, which dossierscolarite to fetch.
    */
-  where: Prisma.DossierScolariteWhereUniqueInput
+  where: Prisma.dossierscolariteWhereUniqueInput
 }
 
 /**
- * DossierScolarite findUniqueOrThrow
+ * dossierscolarite findUniqueOrThrow
  */
-export type DossierScolariteFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which DossierScolarite to fetch.
+   * Filter, which dossierscolarite to fetch.
    */
-  where: Prisma.DossierScolariteWhereUniqueInput
+  where: Prisma.dossierscolariteWhereUniqueInput
 }
 
 /**
- * DossierScolarite findFirst
+ * dossierscolarite findFirst
  */
-export type DossierScolariteFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which DossierScolarite to fetch.
+   * Filter, which dossierscolarite to fetch.
    */
-  where?: Prisma.DossierScolariteWhereInput
+  where?: Prisma.dossierscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DossierScolarites to fetch.
+   * Determine the order of dossierscolarites to fetch.
    */
-  orderBy?: Prisma.DossierScolariteOrderByWithRelationInput | Prisma.DossierScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.dossierscolariteOrderByWithRelationInput | Prisma.dossierscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for DossierScolarites.
+   * Sets the position for searching for dossierscolarites.
    */
-  cursor?: Prisma.DossierScolariteWhereUniqueInput
+  cursor?: Prisma.dossierscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DossierScolarites from the position of the cursor.
+   * Take `±n` dossierscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DossierScolarites.
+   * Skip the first `n` dossierscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of DossierScolarites.
+   * Filter by unique combinations of dossierscolarites.
    */
-  distinct?: Prisma.DossierScolariteScalarFieldEnum | Prisma.DossierScolariteScalarFieldEnum[]
+  distinct?: Prisma.DossierscolariteScalarFieldEnum | Prisma.DossierscolariteScalarFieldEnum[]
 }
 
 /**
- * DossierScolarite findFirstOrThrow
+ * dossierscolarite findFirstOrThrow
  */
-export type DossierScolariteFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which DossierScolarite to fetch.
+   * Filter, which dossierscolarite to fetch.
    */
-  where?: Prisma.DossierScolariteWhereInput
+  where?: Prisma.dossierscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DossierScolarites to fetch.
+   * Determine the order of dossierscolarites to fetch.
    */
-  orderBy?: Prisma.DossierScolariteOrderByWithRelationInput | Prisma.DossierScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.dossierscolariteOrderByWithRelationInput | Prisma.dossierscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for DossierScolarites.
+   * Sets the position for searching for dossierscolarites.
    */
-  cursor?: Prisma.DossierScolariteWhereUniqueInput
+  cursor?: Prisma.dossierscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DossierScolarites from the position of the cursor.
+   * Take `±n` dossierscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DossierScolarites.
+   * Skip the first `n` dossierscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of DossierScolarites.
+   * Filter by unique combinations of dossierscolarites.
    */
-  distinct?: Prisma.DossierScolariteScalarFieldEnum | Prisma.DossierScolariteScalarFieldEnum[]
+  distinct?: Prisma.DossierscolariteScalarFieldEnum | Prisma.DossierscolariteScalarFieldEnum[]
 }
 
 /**
- * DossierScolarite findMany
+ * dossierscolarite findMany
  */
-export type DossierScolariteFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which DossierScolarites to fetch.
+   * Filter, which dossierscolarites to fetch.
    */
-  where?: Prisma.DossierScolariteWhereInput
+  where?: Prisma.dossierscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DossierScolarites to fetch.
+   * Determine the order of dossierscolarites to fetch.
    */
-  orderBy?: Prisma.DossierScolariteOrderByWithRelationInput | Prisma.DossierScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.dossierscolariteOrderByWithRelationInput | Prisma.dossierscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing DossierScolarites.
+   * Sets the position for listing dossierscolarites.
    */
-  cursor?: Prisma.DossierScolariteWhereUniqueInput
+  cursor?: Prisma.dossierscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DossierScolarites from the position of the cursor.
+   * Take `±n` dossierscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DossierScolarites.
+   * Skip the first `n` dossierscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of DossierScolarites.
+   * Filter by unique combinations of dossierscolarites.
    */
-  distinct?: Prisma.DossierScolariteScalarFieldEnum | Prisma.DossierScolariteScalarFieldEnum[]
+  distinct?: Prisma.DossierscolariteScalarFieldEnum | Prisma.DossierscolariteScalarFieldEnum[]
 }
 
 /**
- * DossierScolarite create
+ * dossierscolarite create
  */
-export type DossierScolariteCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * The data needed to create a DossierScolarite.
+   * The data needed to create a dossierscolarite.
    */
-  data: Prisma.XOR<Prisma.DossierScolariteCreateInput, Prisma.DossierScolariteUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.dossierscolariteCreateInput, Prisma.dossierscolariteUncheckedCreateInput>
 }
 
 /**
- * DossierScolarite createMany
+ * dossierscolarite createMany
  */
-export type DossierScolariteCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many DossierScolarites.
+   * The data used to create many dossierscolarites.
    */
-  data: Prisma.DossierScolariteCreateManyInput | Prisma.DossierScolariteCreateManyInput[]
+  data: Prisma.dossierscolariteCreateManyInput | Prisma.dossierscolariteCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * DossierScolarite update
+ * dossierscolarite update
  */
-export type DossierScolariteUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * The data needed to update a DossierScolarite.
+   * The data needed to update a dossierscolarite.
    */
-  data: Prisma.XOR<Prisma.DossierScolariteUpdateInput, Prisma.DossierScolariteUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.dossierscolariteUpdateInput, Prisma.dossierscolariteUncheckedUpdateInput>
   /**
-   * Choose, which DossierScolarite to update.
+   * Choose, which dossierscolarite to update.
    */
-  where: Prisma.DossierScolariteWhereUniqueInput
+  where: Prisma.dossierscolariteWhereUniqueInput
 }
 
 /**
- * DossierScolarite updateMany
+ * dossierscolarite updateMany
  */
-export type DossierScolariteUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update DossierScolarites.
+   * The data used to update dossierscolarites.
    */
-  data: Prisma.XOR<Prisma.DossierScolariteUpdateManyMutationInput, Prisma.DossierScolariteUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.dossierscolariteUpdateManyMutationInput, Prisma.dossierscolariteUncheckedUpdateManyInput>
   /**
-   * Filter which DossierScolarites to update
+   * Filter which dossierscolarites to update
    */
-  where?: Prisma.DossierScolariteWhereInput
+  where?: Prisma.dossierscolariteWhereInput
   /**
-   * Limit how many DossierScolarites to update.
+   * Limit how many dossierscolarites to update.
    */
   limit?: number
 }
 
 /**
- * DossierScolarite upsert
+ * dossierscolarite upsert
  */
-export type DossierScolariteUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * The filter to search for the DossierScolarite to update in case it exists.
+   * The filter to search for the dossierscolarite to update in case it exists.
    */
-  where: Prisma.DossierScolariteWhereUniqueInput
+  where: Prisma.dossierscolariteWhereUniqueInput
   /**
-   * In case the DossierScolarite found by the `where` argument doesn't exist, create a new DossierScolarite with this data.
+   * In case the dossierscolarite found by the `where` argument doesn't exist, create a new dossierscolarite with this data.
    */
-  create: Prisma.XOR<Prisma.DossierScolariteCreateInput, Prisma.DossierScolariteUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.dossierscolariteCreateInput, Prisma.dossierscolariteUncheckedCreateInput>
   /**
-   * In case the DossierScolarite was found with the provided `where` argument, update it with this data.
+   * In case the dossierscolarite was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.DossierScolariteUpdateInput, Prisma.DossierScolariteUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.dossierscolariteUpdateInput, Prisma.dossierscolariteUncheckedUpdateInput>
 }
 
 /**
- * DossierScolarite delete
+ * dossierscolarite delete
  */
-export type DossierScolariteDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
   /**
-   * Filter which DossierScolarite to delete.
+   * Filter which dossierscolarite to delete.
    */
-  where: Prisma.DossierScolariteWhereUniqueInput
+  where: Prisma.dossierscolariteWhereUniqueInput
 }
 
 /**
- * DossierScolarite deleteMany
+ * dossierscolarite deleteMany
  */
-export type DossierScolariteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which DossierScolarites to delete
+   * Filter which dossierscolarites to delete
    */
-  where?: Prisma.DossierScolariteWhereInput
+  where?: Prisma.dossierscolariteWhereInput
   /**
-   * Limit how many DossierScolarites to delete.
+   * Limit how many dossierscolarites to delete.
    */
   limit?: number
 }
 
 /**
- * DossierScolarite.paiements
+ * dossierscolarite.paiement
  */
-export type DossierScolarite$paiementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolarite$paiementArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Paiement
+   * Select specific fields to fetch from the paiement
    */
-  select?: Prisma.PaiementSelect<ExtArgs> | null
+  select?: Prisma.paiementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Paiement
+   * Omit specific fields from the paiement
    */
-  omit?: Prisma.PaiementOmit<ExtArgs> | null
+  omit?: Prisma.paiementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PaiementInclude<ExtArgs> | null
-  where?: Prisma.PaiementWhereInput
-  orderBy?: Prisma.PaiementOrderByWithRelationInput | Prisma.PaiementOrderByWithRelationInput[]
-  cursor?: Prisma.PaiementWhereUniqueInput
+  include?: Prisma.paiementInclude<ExtArgs> | null
+  where?: Prisma.paiementWhereInput
+  orderBy?: Prisma.paiementOrderByWithRelationInput | Prisma.paiementOrderByWithRelationInput[]
+  cursor?: Prisma.paiementWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.PaiementScalarFieldEnum | Prisma.PaiementScalarFieldEnum[]
 }
 
 /**
- * DossierScolarite without action
+ * dossierscolarite without action
  */
-export type DossierScolariteDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dossierscolariteDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
 }

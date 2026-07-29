@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `TrancheScolarite` model and its related types.
+ * This file exports the `tranchescolarite` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,30 +13,30 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model TrancheScolarite
+ * Model tranchescolarite
  * 
  */
-export type TrancheScolariteModel = runtime.Types.Result.DefaultSelection<Prisma.$TrancheScolaritePayload>
+export type tranchescolariteModel = runtime.Types.Result.DefaultSelection<Prisma.$tranchescolaritePayload>
 
-export type AggregateTrancheScolarite = {
-  _count: TrancheScolariteCountAggregateOutputType | null
-  _avg: TrancheScolariteAvgAggregateOutputType | null
-  _sum: TrancheScolariteSumAggregateOutputType | null
-  _min: TrancheScolariteMinAggregateOutputType | null
-  _max: TrancheScolariteMaxAggregateOutputType | null
+export type AggregateTranchescolarite = {
+  _count: TranchescolariteCountAggregateOutputType | null
+  _avg: TranchescolariteAvgAggregateOutputType | null
+  _sum: TranchescolariteSumAggregateOutputType | null
+  _min: TranchescolariteMinAggregateOutputType | null
+  _max: TranchescolariteMaxAggregateOutputType | null
 }
 
-export type TrancheScolariteAvgAggregateOutputType = {
+export type TranchescolariteAvgAggregateOutputType = {
   montant: number | null
   ordre: number | null
 }
 
-export type TrancheScolariteSumAggregateOutputType = {
+export type TranchescolariteSumAggregateOutputType = {
   montant: number | null
   ordre: number | null
 }
 
-export type TrancheScolariteMinAggregateOutputType = {
+export type TranchescolariteMinAggregateOutputType = {
   id: string | null
   nom: string | null
   montant: number | null
@@ -47,7 +47,7 @@ export type TrancheScolariteMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type TrancheScolariteMaxAggregateOutputType = {
+export type TranchescolariteMaxAggregateOutputType = {
   id: string | null
   nom: string | null
   montant: number | null
@@ -58,7 +58,7 @@ export type TrancheScolariteMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type TrancheScolariteCountAggregateOutputType = {
+export type TranchescolariteCountAggregateOutputType = {
   id: number
   nom: number
   montant: number
@@ -71,17 +71,17 @@ export type TrancheScolariteCountAggregateOutputType = {
 }
 
 
-export type TrancheScolariteAvgAggregateInputType = {
+export type TranchescolariteAvgAggregateInputType = {
   montant?: true
   ordre?: true
 }
 
-export type TrancheScolariteSumAggregateInputType = {
+export type TranchescolariteSumAggregateInputType = {
   montant?: true
   ordre?: true
 }
 
-export type TrancheScolariteMinAggregateInputType = {
+export type TranchescolariteMinAggregateInputType = {
   id?: true
   nom?: true
   montant?: true
@@ -92,7 +92,7 @@ export type TrancheScolariteMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type TrancheScolariteMaxAggregateInputType = {
+export type TranchescolariteMaxAggregateInputType = {
   id?: true
   nom?: true
   montant?: true
@@ -103,7 +103,7 @@ export type TrancheScolariteMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type TrancheScolariteCountAggregateInputType = {
+export type TranchescolariteCountAggregateInputType = {
   id?: true
   nom?: true
   montant?: true
@@ -115,93 +115,93 @@ export type TrancheScolariteCountAggregateInputType = {
   _all?: true
 }
 
-export type TrancheScolariteAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type TranchescolariteAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which TrancheScolarite to aggregate.
+   * Filter which tranchescolarite to aggregate.
    */
-  where?: Prisma.TrancheScolariteWhereInput
+  where?: Prisma.tranchescolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TrancheScolarites to fetch.
+   * Determine the order of tranchescolarites to fetch.
    */
-  orderBy?: Prisma.TrancheScolariteOrderByWithRelationInput | Prisma.TrancheScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.tranchescolariteOrderByWithRelationInput | Prisma.tranchescolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.TrancheScolariteWhereUniqueInput
+  cursor?: Prisma.tranchescolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TrancheScolarites from the position of the cursor.
+   * Take `±n` tranchescolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TrancheScolarites.
+   * Skip the first `n` tranchescolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned TrancheScolarites
+   * Count returned tranchescolarites
   **/
-  _count?: true | TrancheScolariteCountAggregateInputType
+  _count?: true | TranchescolariteCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: TrancheScolariteAvgAggregateInputType
+  _avg?: TranchescolariteAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: TrancheScolariteSumAggregateInputType
+  _sum?: TranchescolariteSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: TrancheScolariteMinAggregateInputType
+  _min?: TranchescolariteMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: TrancheScolariteMaxAggregateInputType
+  _max?: TranchescolariteMaxAggregateInputType
 }
 
-export type GetTrancheScolariteAggregateType<T extends TrancheScolariteAggregateArgs> = {
-      [P in keyof T & keyof AggregateTrancheScolarite]: P extends '_count' | 'count'
+export type GetTranchescolariteAggregateType<T extends TranchescolariteAggregateArgs> = {
+      [P in keyof T & keyof AggregateTranchescolarite]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateTrancheScolarite[P]>
-    : Prisma.GetScalarType<T[P], AggregateTrancheScolarite[P]>
+      : Prisma.GetScalarType<T[P], AggregateTranchescolarite[P]>
+    : Prisma.GetScalarType<T[P], AggregateTranchescolarite[P]>
 }
 
 
 
 
-export type TrancheScolariteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TrancheScolariteWhereInput
-  orderBy?: Prisma.TrancheScolariteOrderByWithAggregationInput | Prisma.TrancheScolariteOrderByWithAggregationInput[]
-  by: Prisma.TrancheScolariteScalarFieldEnum[] | Prisma.TrancheScolariteScalarFieldEnum
-  having?: Prisma.TrancheScolariteScalarWhereWithAggregatesInput
+export type tranchescolariteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.tranchescolariteWhereInput
+  orderBy?: Prisma.tranchescolariteOrderByWithAggregationInput | Prisma.tranchescolariteOrderByWithAggregationInput[]
+  by: Prisma.TranchescolariteScalarFieldEnum[] | Prisma.TranchescolariteScalarFieldEnum
+  having?: Prisma.tranchescolariteScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: TrancheScolariteCountAggregateInputType | true
-  _avg?: TrancheScolariteAvgAggregateInputType
-  _sum?: TrancheScolariteSumAggregateInputType
-  _min?: TrancheScolariteMinAggregateInputType
-  _max?: TrancheScolariteMaxAggregateInputType
+  _count?: TranchescolariteCountAggregateInputType | true
+  _avg?: TranchescolariteAvgAggregateInputType
+  _sum?: TranchescolariteSumAggregateInputType
+  _min?: TranchescolariteMinAggregateInputType
+  _max?: TranchescolariteMaxAggregateInputType
 }
 
-export type TrancheScolariteGroupByOutputType = {
+export type TranchescolariteGroupByOutputType = {
   id: string
   nom: string
   montant: number
@@ -210,44 +210,44 @@ export type TrancheScolariteGroupByOutputType = {
   configurationScolariteId: string
   createdAt: Date
   updatedAt: Date
-  _count: TrancheScolariteCountAggregateOutputType | null
-  _avg: TrancheScolariteAvgAggregateOutputType | null
-  _sum: TrancheScolariteSumAggregateOutputType | null
-  _min: TrancheScolariteMinAggregateOutputType | null
-  _max: TrancheScolariteMaxAggregateOutputType | null
+  _count: TranchescolariteCountAggregateOutputType | null
+  _avg: TranchescolariteAvgAggregateOutputType | null
+  _sum: TranchescolariteSumAggregateOutputType | null
+  _min: TranchescolariteMinAggregateOutputType | null
+  _max: TranchescolariteMaxAggregateOutputType | null
 }
 
-export type GetTrancheScolariteGroupByPayload<T extends TrancheScolariteGroupByArgs> = Prisma.PrismaPromise<
+export type GetTranchescolariteGroupByPayload<T extends tranchescolariteGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<TrancheScolariteGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<TranchescolariteGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof TrancheScolariteGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof TranchescolariteGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], TrancheScolariteGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], TrancheScolariteGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], TranchescolariteGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], TranchescolariteGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type TrancheScolariteWhereInput = {
-  AND?: Prisma.TrancheScolariteWhereInput | Prisma.TrancheScolariteWhereInput[]
-  OR?: Prisma.TrancheScolariteWhereInput[]
-  NOT?: Prisma.TrancheScolariteWhereInput | Prisma.TrancheScolariteWhereInput[]
-  id?: Prisma.StringFilter<"TrancheScolarite"> | string
-  nom?: Prisma.StringFilter<"TrancheScolarite"> | string
-  montant?: Prisma.IntFilter<"TrancheScolarite"> | number
-  dateEcheance?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  ordre?: Prisma.IntFilter<"TrancheScolarite"> | number
-  configurationScolariteId?: Prisma.StringFilter<"TrancheScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  configurationScolarite?: Prisma.XOR<Prisma.ConfigurationScolariteScalarRelationFilter, Prisma.ConfigurationScolariteWhereInput>
+export type tranchescolariteWhereInput = {
+  AND?: Prisma.tranchescolariteWhereInput | Prisma.tranchescolariteWhereInput[]
+  OR?: Prisma.tranchescolariteWhereInput[]
+  NOT?: Prisma.tranchescolariteWhereInput | Prisma.tranchescolariteWhereInput[]
+  id?: Prisma.StringFilter<"tranchescolarite"> | string
+  nom?: Prisma.StringFilter<"tranchescolarite"> | string
+  montant?: Prisma.IntFilter<"tranchescolarite"> | number
+  dateEcheance?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  ordre?: Prisma.IntFilter<"tranchescolarite"> | number
+  configurationScolariteId?: Prisma.StringFilter<"tranchescolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  configurationscolarite?: Prisma.XOR<Prisma.ConfigurationscolariteScalarRelationFilter, Prisma.configurationscolariteWhereInput>
 }
 
-export type TrancheScolariteOrderByWithRelationInput = {
+export type tranchescolariteOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   montant?: Prisma.SortOrder
@@ -256,26 +256,26 @@ export type TrancheScolariteOrderByWithRelationInput = {
   configurationScolariteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  configurationScolarite?: Prisma.ConfigurationScolariteOrderByWithRelationInput
-  _relevance?: Prisma.TrancheScolariteOrderByRelevanceInput
+  configurationscolarite?: Prisma.configurationscolariteOrderByWithRelationInput
+  _relevance?: Prisma.tranchescolariteOrderByRelevanceInput
 }
 
-export type TrancheScolariteWhereUniqueInput = Prisma.AtLeast<{
+export type tranchescolariteWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.TrancheScolariteWhereInput | Prisma.TrancheScolariteWhereInput[]
-  OR?: Prisma.TrancheScolariteWhereInput[]
-  NOT?: Prisma.TrancheScolariteWhereInput | Prisma.TrancheScolariteWhereInput[]
-  nom?: Prisma.StringFilter<"TrancheScolarite"> | string
-  montant?: Prisma.IntFilter<"TrancheScolarite"> | number
-  dateEcheance?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  ordre?: Prisma.IntFilter<"TrancheScolarite"> | number
-  configurationScolariteId?: Prisma.StringFilter<"TrancheScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  configurationScolarite?: Prisma.XOR<Prisma.ConfigurationScolariteScalarRelationFilter, Prisma.ConfigurationScolariteWhereInput>
+  AND?: Prisma.tranchescolariteWhereInput | Prisma.tranchescolariteWhereInput[]
+  OR?: Prisma.tranchescolariteWhereInput[]
+  NOT?: Prisma.tranchescolariteWhereInput | Prisma.tranchescolariteWhereInput[]
+  nom?: Prisma.StringFilter<"tranchescolarite"> | string
+  montant?: Prisma.IntFilter<"tranchescolarite"> | number
+  dateEcheance?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  ordre?: Prisma.IntFilter<"tranchescolarite"> | number
+  configurationScolariteId?: Prisma.StringFilter<"tranchescolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  configurationscolarite?: Prisma.XOR<Prisma.ConfigurationscolariteScalarRelationFilter, Prisma.configurationscolariteWhereInput>
 }, "id">
 
-export type TrancheScolariteOrderByWithAggregationInput = {
+export type tranchescolariteOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   montant?: Prisma.SortOrder
@@ -284,28 +284,28 @@ export type TrancheScolariteOrderByWithAggregationInput = {
   configurationScolariteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.TrancheScolariteCountOrderByAggregateInput
-  _avg?: Prisma.TrancheScolariteAvgOrderByAggregateInput
-  _max?: Prisma.TrancheScolariteMaxOrderByAggregateInput
-  _min?: Prisma.TrancheScolariteMinOrderByAggregateInput
-  _sum?: Prisma.TrancheScolariteSumOrderByAggregateInput
+  _count?: Prisma.tranchescolariteCountOrderByAggregateInput
+  _avg?: Prisma.tranchescolariteAvgOrderByAggregateInput
+  _max?: Prisma.tranchescolariteMaxOrderByAggregateInput
+  _min?: Prisma.tranchescolariteMinOrderByAggregateInput
+  _sum?: Prisma.tranchescolariteSumOrderByAggregateInput
 }
 
-export type TrancheScolariteScalarWhereWithAggregatesInput = {
-  AND?: Prisma.TrancheScolariteScalarWhereWithAggregatesInput | Prisma.TrancheScolariteScalarWhereWithAggregatesInput[]
-  OR?: Prisma.TrancheScolariteScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.TrancheScolariteScalarWhereWithAggregatesInput | Prisma.TrancheScolariteScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"TrancheScolarite"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"TrancheScolarite"> | string
-  montant?: Prisma.IntWithAggregatesFilter<"TrancheScolarite"> | number
-  dateEcheance?: Prisma.DateTimeWithAggregatesFilter<"TrancheScolarite"> | Date | string
-  ordre?: Prisma.IntWithAggregatesFilter<"TrancheScolarite"> | number
-  configurationScolariteId?: Prisma.StringWithAggregatesFilter<"TrancheScolarite"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"TrancheScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"TrancheScolarite"> | Date | string
+export type tranchescolariteScalarWhereWithAggregatesInput = {
+  AND?: Prisma.tranchescolariteScalarWhereWithAggregatesInput | Prisma.tranchescolariteScalarWhereWithAggregatesInput[]
+  OR?: Prisma.tranchescolariteScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.tranchescolariteScalarWhereWithAggregatesInput | Prisma.tranchescolariteScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"tranchescolarite"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"tranchescolarite"> | string
+  montant?: Prisma.IntWithAggregatesFilter<"tranchescolarite"> | number
+  dateEcheance?: Prisma.DateTimeWithAggregatesFilter<"tranchescolarite"> | Date | string
+  ordre?: Prisma.IntWithAggregatesFilter<"tranchescolarite"> | number
+  configurationScolariteId?: Prisma.StringWithAggregatesFilter<"tranchescolarite"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"tranchescolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"tranchescolarite"> | Date | string
 }
 
-export type TrancheScolariteCreateInput = {
+export type tranchescolariteCreateInput = {
   id?: string
   nom: string
   montant: number
@@ -313,43 +313,10 @@ export type TrancheScolariteCreateInput = {
   ordre: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  configurationScolarite: Prisma.ConfigurationScolariteCreateNestedOneWithoutTranchesInput
+  configurationscolarite: Prisma.configurationscolariteCreateNestedOneWithoutTranchescolariteInput
 }
 
-export type TrancheScolariteUncheckedCreateInput = {
-  id?: string
-  nom: string
-  montant: number
-  dateEcheance: Date | string
-  ordre: number
-  configurationScolariteId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type TrancheScolariteUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  montant?: Prisma.IntFieldUpdateOperationsInput | number
-  dateEcheance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ordre?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  configurationScolarite?: Prisma.ConfigurationScolariteUpdateOneRequiredWithoutTranchesNestedInput
-}
-
-export type TrancheScolariteUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  montant?: Prisma.IntFieldUpdateOperationsInput | number
-  dateEcheance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ordre?: Prisma.IntFieldUpdateOperationsInput | number
-  configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type TrancheScolariteCreateManyInput = {
+export type tranchescolariteUncheckedCreateInput = {
   id?: string
   nom: string
   montant: number
@@ -360,7 +327,7 @@ export type TrancheScolariteCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type TrancheScolariteUpdateManyMutationInput = {
+export type tranchescolariteUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
@@ -368,9 +335,10 @@ export type TrancheScolariteUpdateManyMutationInput = {
   ordre?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  configurationscolarite?: Prisma.configurationscolariteUpdateOneRequiredWithoutTranchescolariteNestedInput
 }
 
-export type TrancheScolariteUncheckedUpdateManyInput = {
+export type tranchescolariteUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
@@ -381,23 +349,55 @@ export type TrancheScolariteUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type TrancheScolariteListRelationFilter = {
-  every?: Prisma.TrancheScolariteWhereInput
-  some?: Prisma.TrancheScolariteWhereInput
-  none?: Prisma.TrancheScolariteWhereInput
+export type tranchescolariteCreateManyInput = {
+  id?: string
+  nom: string
+  montant: number
+  dateEcheance: Date | string
+  ordre: number
+  configurationScolariteId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
-export type TrancheScolariteOrderByRelationAggregateInput = {
+export type tranchescolariteUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  montant?: Prisma.IntFieldUpdateOperationsInput | number
+  dateEcheance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ordre?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type tranchescolariteUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  montant?: Prisma.IntFieldUpdateOperationsInput | number
+  dateEcheance?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ordre?: Prisma.IntFieldUpdateOperationsInput | number
+  configurationScolariteId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type TranchescolariteListRelationFilter = {
+  every?: Prisma.tranchescolariteWhereInput
+  some?: Prisma.tranchescolariteWhereInput
+  none?: Prisma.tranchescolariteWhereInput
+}
+
+export type tranchescolariteOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type TrancheScolariteOrderByRelevanceInput = {
-  fields: Prisma.TrancheScolariteOrderByRelevanceFieldEnum | Prisma.TrancheScolariteOrderByRelevanceFieldEnum[]
+export type tranchescolariteOrderByRelevanceInput = {
+  fields: Prisma.tranchescolariteOrderByRelevanceFieldEnum | Prisma.tranchescolariteOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type TrancheScolariteCountOrderByAggregateInput = {
+export type tranchescolariteCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   montant?: Prisma.SortOrder
@@ -408,12 +408,12 @@ export type TrancheScolariteCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type TrancheScolariteAvgOrderByAggregateInput = {
+export type tranchescolariteAvgOrderByAggregateInput = {
   montant?: Prisma.SortOrder
   ordre?: Prisma.SortOrder
 }
 
-export type TrancheScolariteMaxOrderByAggregateInput = {
+export type tranchescolariteMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   montant?: Prisma.SortOrder
@@ -424,7 +424,7 @@ export type TrancheScolariteMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type TrancheScolariteMinOrderByAggregateInput = {
+export type tranchescolariteMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   montant?: Prisma.SortOrder
@@ -435,54 +435,54 @@ export type TrancheScolariteMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type TrancheScolariteSumOrderByAggregateInput = {
+export type tranchescolariteSumOrderByAggregateInput = {
   montant?: Prisma.SortOrder
   ordre?: Prisma.SortOrder
 }
 
-export type TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput = {
-  create?: Prisma.XOR<Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.TrancheScolariteCreateManyConfigurationScolariteInputEnvelope
-  connect?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
+export type tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput[] | Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.tranchescolariteCreateManyConfigurationscolariteInputEnvelope
+  connect?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
 }
 
-export type TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput = {
-  create?: Prisma.XOR<Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.TrancheScolariteCreateManyConfigurationScolariteInputEnvelope
-  connect?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
+export type tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput[] | Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.tranchescolariteCreateManyConfigurationscolariteInputEnvelope
+  connect?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
 }
 
-export type TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  upsert?: Prisma.TrancheScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.TrancheScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.TrancheScolariteCreateManyConfigurationScolariteInputEnvelope
-  set?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  disconnect?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  delete?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  connect?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  update?: Prisma.TrancheScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.TrancheScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput[]
-  updateMany?: Prisma.TrancheScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput | Prisma.TrancheScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput[]
-  deleteMany?: Prisma.TrancheScolariteScalarWhereInput | Prisma.TrancheScolariteScalarWhereInput[]
+export type tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput[] | Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  upsert?: Prisma.tranchescolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.tranchescolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.tranchescolariteCreateManyConfigurationscolariteInputEnvelope
+  set?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  disconnect?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  delete?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  connect?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  update?: Prisma.tranchescolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.tranchescolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput[]
+  updateMany?: Prisma.tranchescolariteUpdateManyWithWhereWithoutConfigurationscolariteInput | Prisma.tranchescolariteUpdateManyWithWhereWithoutConfigurationscolariteInput[]
+  deleteMany?: Prisma.tranchescolariteScalarWhereInput | Prisma.tranchescolariteScalarWhereInput[]
 }
 
-export type TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput> | Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput[] | Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput[]
-  connectOrCreate?: Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput | Prisma.TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput[]
-  upsert?: Prisma.TrancheScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.TrancheScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput[]
-  createMany?: Prisma.TrancheScolariteCreateManyConfigurationScolariteInputEnvelope
-  set?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  disconnect?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  delete?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  connect?: Prisma.TrancheScolariteWhereUniqueInput | Prisma.TrancheScolariteWhereUniqueInput[]
-  update?: Prisma.TrancheScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput | Prisma.TrancheScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput[]
-  updateMany?: Prisma.TrancheScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput | Prisma.TrancheScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput[]
-  deleteMany?: Prisma.TrancheScolariteScalarWhereInput | Prisma.TrancheScolariteScalarWhereInput[]
+export type tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput> | Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput[] | Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput[]
+  connectOrCreate?: Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput | Prisma.tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput[]
+  upsert?: Prisma.tranchescolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.tranchescolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput[]
+  createMany?: Prisma.tranchescolariteCreateManyConfigurationscolariteInputEnvelope
+  set?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  disconnect?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  delete?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  connect?: Prisma.tranchescolariteWhereUniqueInput | Prisma.tranchescolariteWhereUniqueInput[]
+  update?: Prisma.tranchescolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput | Prisma.tranchescolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput[]
+  updateMany?: Prisma.tranchescolariteUpdateManyWithWhereWithoutConfigurationscolariteInput | Prisma.tranchescolariteUpdateManyWithWhereWithoutConfigurationscolariteInput[]
+  deleteMany?: Prisma.tranchescolariteScalarWhereInput | Prisma.tranchescolariteScalarWhereInput[]
 }
 
-export type TrancheScolariteCreateWithoutConfigurationScolariteInput = {
+export type tranchescolariteCreateWithoutConfigurationscolariteInput = {
   id?: string
   nom: string
   montant: number
@@ -492,7 +492,7 @@ export type TrancheScolariteCreateWithoutConfigurationScolariteInput = {
   updatedAt?: Date | string
 }
 
-export type TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput = {
+export type tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput = {
   id?: string
   nom: string
   montant: number
@@ -502,47 +502,47 @@ export type TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput = 
   updatedAt?: Date | string
 }
 
-export type TrancheScolariteCreateOrConnectWithoutConfigurationScolariteInput = {
-  where: Prisma.TrancheScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput>
+export type tranchescolariteCreateOrConnectWithoutConfigurationscolariteInput = {
+  where: Prisma.tranchescolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type TrancheScolariteCreateManyConfigurationScolariteInputEnvelope = {
-  data: Prisma.TrancheScolariteCreateManyConfigurationScolariteInput | Prisma.TrancheScolariteCreateManyConfigurationScolariteInput[]
+export type tranchescolariteCreateManyConfigurationscolariteInputEnvelope = {
+  data: Prisma.tranchescolariteCreateManyConfigurationscolariteInput | Prisma.tranchescolariteCreateManyConfigurationscolariteInput[]
   skipDuplicates?: boolean
 }
 
-export type TrancheScolariteUpsertWithWhereUniqueWithoutConfigurationScolariteInput = {
-  where: Prisma.TrancheScolariteWhereUniqueInput
-  update: Prisma.XOR<Prisma.TrancheScolariteUpdateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedUpdateWithoutConfigurationScolariteInput>
-  create: Prisma.XOR<Prisma.TrancheScolariteCreateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedCreateWithoutConfigurationScolariteInput>
+export type tranchescolariteUpsertWithWhereUniqueWithoutConfigurationscolariteInput = {
+  where: Prisma.tranchescolariteWhereUniqueInput
+  update: Prisma.XOR<Prisma.tranchescolariteUpdateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedUpdateWithoutConfigurationscolariteInput>
+  create: Prisma.XOR<Prisma.tranchescolariteCreateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type TrancheScolariteUpdateWithWhereUniqueWithoutConfigurationScolariteInput = {
-  where: Prisma.TrancheScolariteWhereUniqueInput
-  data: Prisma.XOR<Prisma.TrancheScolariteUpdateWithoutConfigurationScolariteInput, Prisma.TrancheScolariteUncheckedUpdateWithoutConfigurationScolariteInput>
+export type tranchescolariteUpdateWithWhereUniqueWithoutConfigurationscolariteInput = {
+  where: Prisma.tranchescolariteWhereUniqueInput
+  data: Prisma.XOR<Prisma.tranchescolariteUpdateWithoutConfigurationscolariteInput, Prisma.tranchescolariteUncheckedUpdateWithoutConfigurationscolariteInput>
 }
 
-export type TrancheScolariteUpdateManyWithWhereWithoutConfigurationScolariteInput = {
-  where: Prisma.TrancheScolariteScalarWhereInput
-  data: Prisma.XOR<Prisma.TrancheScolariteUpdateManyMutationInput, Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteInput>
+export type tranchescolariteUpdateManyWithWhereWithoutConfigurationscolariteInput = {
+  where: Prisma.tranchescolariteScalarWhereInput
+  data: Prisma.XOR<Prisma.tranchescolariteUpdateManyMutationInput, Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteInput>
 }
 
-export type TrancheScolariteScalarWhereInput = {
-  AND?: Prisma.TrancheScolariteScalarWhereInput | Prisma.TrancheScolariteScalarWhereInput[]
-  OR?: Prisma.TrancheScolariteScalarWhereInput[]
-  NOT?: Prisma.TrancheScolariteScalarWhereInput | Prisma.TrancheScolariteScalarWhereInput[]
-  id?: Prisma.StringFilter<"TrancheScolarite"> | string
-  nom?: Prisma.StringFilter<"TrancheScolarite"> | string
-  montant?: Prisma.IntFilter<"TrancheScolarite"> | number
-  dateEcheance?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  ordre?: Prisma.IntFilter<"TrancheScolarite"> | number
-  configurationScolariteId?: Prisma.StringFilter<"TrancheScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"TrancheScolarite"> | Date | string
+export type tranchescolariteScalarWhereInput = {
+  AND?: Prisma.tranchescolariteScalarWhereInput | Prisma.tranchescolariteScalarWhereInput[]
+  OR?: Prisma.tranchescolariteScalarWhereInput[]
+  NOT?: Prisma.tranchescolariteScalarWhereInput | Prisma.tranchescolariteScalarWhereInput[]
+  id?: Prisma.StringFilter<"tranchescolarite"> | string
+  nom?: Prisma.StringFilter<"tranchescolarite"> | string
+  montant?: Prisma.IntFilter<"tranchescolarite"> | number
+  dateEcheance?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  ordre?: Prisma.IntFilter<"tranchescolarite"> | number
+  configurationScolariteId?: Prisma.StringFilter<"tranchescolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"tranchescolarite"> | Date | string
 }
 
-export type TrancheScolariteCreateManyConfigurationScolariteInput = {
+export type tranchescolariteCreateManyConfigurationscolariteInput = {
   id?: string
   nom: string
   montant: number
@@ -552,7 +552,7 @@ export type TrancheScolariteCreateManyConfigurationScolariteInput = {
   updatedAt?: Date | string
 }
 
-export type TrancheScolariteUpdateWithoutConfigurationScolariteInput = {
+export type tranchescolariteUpdateWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
@@ -562,7 +562,7 @@ export type TrancheScolariteUpdateWithoutConfigurationScolariteInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type TrancheScolariteUncheckedUpdateWithoutConfigurationScolariteInput = {
+export type tranchescolariteUncheckedUpdateWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
@@ -572,7 +572,7 @@ export type TrancheScolariteUncheckedUpdateWithoutConfigurationScolariteInput = 
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteInput = {
+export type tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   montant?: Prisma.IntFieldUpdateOperationsInput | number
@@ -584,7 +584,7 @@ export type TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteInpu
 
 
 
-export type TrancheScolariteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type tranchescolariteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nom?: boolean
   montant?: boolean
@@ -593,12 +593,12 @@ export type TrancheScolariteSelect<ExtArgs extends runtime.Types.Extensions.Inte
   configurationScolariteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  configurationScolarite?: boolean | Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["trancheScolarite"]>
+  configurationscolarite?: boolean | Prisma.configurationscolariteDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["tranchescolarite"]>
 
 
 
-export type TrancheScolariteSelectScalar = {
+export type tranchescolariteSelectScalar = {
   id?: boolean
   nom?: boolean
   montant?: boolean
@@ -609,15 +609,15 @@ export type TrancheScolariteSelectScalar = {
   updatedAt?: boolean
 }
 
-export type TrancheScolariteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "montant" | "dateEcheance" | "ordre" | "configurationScolariteId" | "createdAt" | "updatedAt", ExtArgs["result"]["trancheScolarite"]>
-export type TrancheScolariteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  configurationScolarite?: boolean | Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>
+export type tranchescolariteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "montant" | "dateEcheance" | "ordre" | "configurationScolariteId" | "createdAt" | "updatedAt", ExtArgs["result"]["tranchescolarite"]>
+export type tranchescolariteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  configurationscolarite?: boolean | Prisma.configurationscolariteDefaultArgs<ExtArgs>
 }
 
-export type $TrancheScolaritePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "TrancheScolarite"
+export type $tranchescolaritePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "tranchescolarite"
   objects: {
-    configurationScolarite: Prisma.$ConfigurationScolaritePayload<ExtArgs>
+    configurationscolarite: Prisma.$configurationscolaritePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -628,143 +628,143 @@ export type $TrancheScolaritePayload<ExtArgs extends runtime.Types.Extensions.In
     configurationScolariteId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["trancheScolarite"]>
+  }, ExtArgs["result"]["tranchescolarite"]>
   composites: {}
 }
 
-export type TrancheScolariteGetPayload<S extends boolean | null | undefined | TrancheScolariteDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload, S>
+export type tranchescolariteGetPayload<S extends boolean | null | undefined | tranchescolariteDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload, S>
 
-export type TrancheScolariteCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<TrancheScolariteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: TrancheScolariteCountAggregateInputType | true
+export type tranchescolariteCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<tranchescolariteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: TranchescolariteCountAggregateInputType | true
   }
 
-export interface TrancheScolariteDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TrancheScolarite'], meta: { name: 'TrancheScolarite' } }
+export interface tranchescolariteDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tranchescolarite'], meta: { name: 'tranchescolarite' } }
   /**
-   * Find zero or one TrancheScolarite that matches the filter.
-   * @param {TrancheScolariteFindUniqueArgs} args - Arguments to find a TrancheScolarite
+   * Find zero or one Tranchescolarite that matches the filter.
+   * @param {tranchescolariteFindUniqueArgs} args - Arguments to find a Tranchescolarite
    * @example
-   * // Get one TrancheScolarite
-   * const trancheScolarite = await prisma.trancheScolarite.findUnique({
+   * // Get one Tranchescolarite
+   * const tranchescolarite = await prisma.tranchescolarite.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends TrancheScolariteFindUniqueArgs>(args: Prisma.SelectSubset<T, TrancheScolariteFindUniqueArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends tranchescolariteFindUniqueArgs>(args: Prisma.SelectSubset<T, tranchescolariteFindUniqueArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one TrancheScolarite that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Tranchescolarite that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {TrancheScolariteFindUniqueOrThrowArgs} args - Arguments to find a TrancheScolarite
+   * @param {tranchescolariteFindUniqueOrThrowArgs} args - Arguments to find a Tranchescolarite
    * @example
-   * // Get one TrancheScolarite
-   * const trancheScolarite = await prisma.trancheScolarite.findUniqueOrThrow({
+   * // Get one Tranchescolarite
+   * const tranchescolarite = await prisma.tranchescolarite.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends TrancheScolariteFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, TrancheScolariteFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends tranchescolariteFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, tranchescolariteFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first TrancheScolarite that matches the filter.
+   * Find the first Tranchescolarite that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteFindFirstArgs} args - Arguments to find a TrancheScolarite
+   * @param {tranchescolariteFindFirstArgs} args - Arguments to find a Tranchescolarite
    * @example
-   * // Get one TrancheScolarite
-   * const trancheScolarite = await prisma.trancheScolarite.findFirst({
+   * // Get one Tranchescolarite
+   * const tranchescolarite = await prisma.tranchescolarite.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends TrancheScolariteFindFirstArgs>(args?: Prisma.SelectSubset<T, TrancheScolariteFindFirstArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends tranchescolariteFindFirstArgs>(args?: Prisma.SelectSubset<T, tranchescolariteFindFirstArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first TrancheScolarite that matches the filter or
+   * Find the first Tranchescolarite that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteFindFirstOrThrowArgs} args - Arguments to find a TrancheScolarite
+   * @param {tranchescolariteFindFirstOrThrowArgs} args - Arguments to find a Tranchescolarite
    * @example
-   * // Get one TrancheScolarite
-   * const trancheScolarite = await prisma.trancheScolarite.findFirstOrThrow({
+   * // Get one Tranchescolarite
+   * const tranchescolarite = await prisma.tranchescolarite.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends TrancheScolariteFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, TrancheScolariteFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends tranchescolariteFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, tranchescolariteFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more TrancheScolarites that matches the filter.
+   * Find zero or more Tranchescolarites that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {tranchescolariteFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all TrancheScolarites
-   * const trancheScolarites = await prisma.trancheScolarite.findMany()
+   * // Get all Tranchescolarites
+   * const tranchescolarites = await prisma.tranchescolarite.findMany()
    * 
-   * // Get first 10 TrancheScolarites
-   * const trancheScolarites = await prisma.trancheScolarite.findMany({ take: 10 })
+   * // Get first 10 Tranchescolarites
+   * const tranchescolarites = await prisma.tranchescolarite.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const trancheScolariteWithIdOnly = await prisma.trancheScolarite.findMany({ select: { id: true } })
+   * const tranchescolariteWithIdOnly = await prisma.tranchescolarite.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends TrancheScolariteFindManyArgs>(args?: Prisma.SelectSubset<T, TrancheScolariteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends tranchescolariteFindManyArgs>(args?: Prisma.SelectSubset<T, tranchescolariteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a TrancheScolarite.
-   * @param {TrancheScolariteCreateArgs} args - Arguments to create a TrancheScolarite.
+   * Create a Tranchescolarite.
+   * @param {tranchescolariteCreateArgs} args - Arguments to create a Tranchescolarite.
    * @example
-   * // Create one TrancheScolarite
-   * const TrancheScolarite = await prisma.trancheScolarite.create({
+   * // Create one Tranchescolarite
+   * const Tranchescolarite = await prisma.tranchescolarite.create({
    *   data: {
-   *     // ... data to create a TrancheScolarite
+   *     // ... data to create a Tranchescolarite
    *   }
    * })
    * 
    */
-  create<T extends TrancheScolariteCreateArgs>(args: Prisma.SelectSubset<T, TrancheScolariteCreateArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends tranchescolariteCreateArgs>(args: Prisma.SelectSubset<T, tranchescolariteCreateArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many TrancheScolarites.
-   * @param {TrancheScolariteCreateManyArgs} args - Arguments to create many TrancheScolarites.
+   * Create many Tranchescolarites.
+   * @param {tranchescolariteCreateManyArgs} args - Arguments to create many Tranchescolarites.
    * @example
-   * // Create many TrancheScolarites
-   * const trancheScolarite = await prisma.trancheScolarite.createMany({
+   * // Create many Tranchescolarites
+   * const tranchescolarite = await prisma.tranchescolarite.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends TrancheScolariteCreateManyArgs>(args?: Prisma.SelectSubset<T, TrancheScolariteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends tranchescolariteCreateManyArgs>(args?: Prisma.SelectSubset<T, tranchescolariteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a TrancheScolarite.
-   * @param {TrancheScolariteDeleteArgs} args - Arguments to delete one TrancheScolarite.
+   * Delete a Tranchescolarite.
+   * @param {tranchescolariteDeleteArgs} args - Arguments to delete one Tranchescolarite.
    * @example
-   * // Delete one TrancheScolarite
-   * const TrancheScolarite = await prisma.trancheScolarite.delete({
+   * // Delete one Tranchescolarite
+   * const Tranchescolarite = await prisma.tranchescolarite.delete({
    *   where: {
-   *     // ... filter to delete one TrancheScolarite
+   *     // ... filter to delete one Tranchescolarite
    *   }
    * })
    * 
    */
-  delete<T extends TrancheScolariteDeleteArgs>(args: Prisma.SelectSubset<T, TrancheScolariteDeleteArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends tranchescolariteDeleteArgs>(args: Prisma.SelectSubset<T, tranchescolariteDeleteArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one TrancheScolarite.
-   * @param {TrancheScolariteUpdateArgs} args - Arguments to update one TrancheScolarite.
+   * Update one Tranchescolarite.
+   * @param {tranchescolariteUpdateArgs} args - Arguments to update one Tranchescolarite.
    * @example
-   * // Update one TrancheScolarite
-   * const trancheScolarite = await prisma.trancheScolarite.update({
+   * // Update one Tranchescolarite
+   * const tranchescolarite = await prisma.tranchescolarite.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -774,30 +774,30 @@ export interface TrancheScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    * })
    * 
    */
-  update<T extends TrancheScolariteUpdateArgs>(args: Prisma.SelectSubset<T, TrancheScolariteUpdateArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends tranchescolariteUpdateArgs>(args: Prisma.SelectSubset<T, tranchescolariteUpdateArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more TrancheScolarites.
-   * @param {TrancheScolariteDeleteManyArgs} args - Arguments to filter TrancheScolarites to delete.
+   * Delete zero or more Tranchescolarites.
+   * @param {tranchescolariteDeleteManyArgs} args - Arguments to filter Tranchescolarites to delete.
    * @example
-   * // Delete a few TrancheScolarites
-   * const { count } = await prisma.trancheScolarite.deleteMany({
+   * // Delete a few Tranchescolarites
+   * const { count } = await prisma.tranchescolarite.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends TrancheScolariteDeleteManyArgs>(args?: Prisma.SelectSubset<T, TrancheScolariteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends tranchescolariteDeleteManyArgs>(args?: Prisma.SelectSubset<T, tranchescolariteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more TrancheScolarites.
+   * Update zero or more Tranchescolarites.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {tranchescolariteUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many TrancheScolarites
-   * const trancheScolarite = await prisma.trancheScolarite.updateMany({
+   * // Update many Tranchescolarites
+   * const tranchescolarite = await prisma.tranchescolarite.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -807,56 +807,56 @@ export interface TrancheScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    * })
    * 
    */
-  updateMany<T extends TrancheScolariteUpdateManyArgs>(args: Prisma.SelectSubset<T, TrancheScolariteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends tranchescolariteUpdateManyArgs>(args: Prisma.SelectSubset<T, tranchescolariteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one TrancheScolarite.
-   * @param {TrancheScolariteUpsertArgs} args - Arguments to update or create a TrancheScolarite.
+   * Create or update one Tranchescolarite.
+   * @param {tranchescolariteUpsertArgs} args - Arguments to update or create a Tranchescolarite.
    * @example
-   * // Update or create a TrancheScolarite
-   * const trancheScolarite = await prisma.trancheScolarite.upsert({
+   * // Update or create a Tranchescolarite
+   * const tranchescolarite = await prisma.tranchescolarite.upsert({
    *   create: {
-   *     // ... data to create a TrancheScolarite
+   *     // ... data to create a Tranchescolarite
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the TrancheScolarite we want to update
+   *     // ... the filter for the Tranchescolarite we want to update
    *   }
    * })
    */
-  upsert<T extends TrancheScolariteUpsertArgs>(args: Prisma.SelectSubset<T, TrancheScolariteUpsertArgs<ExtArgs>>): Prisma.Prisma__TrancheScolariteClient<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends tranchescolariteUpsertArgs>(args: Prisma.SelectSubset<T, tranchescolariteUpsertArgs<ExtArgs>>): Prisma.Prisma__tranchescolariteClient<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of TrancheScolarites.
+   * Count the number of Tranchescolarites.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteCountArgs} args - Arguments to filter TrancheScolarites to count.
+   * @param {tranchescolariteCountArgs} args - Arguments to filter Tranchescolarites to count.
    * @example
-   * // Count the number of TrancheScolarites
-   * const count = await prisma.trancheScolarite.count({
+   * // Count the number of Tranchescolarites
+   * const count = await prisma.tranchescolarite.count({
    *   where: {
-   *     // ... the filter for the TrancheScolarites we want to count
+   *     // ... the filter for the Tranchescolarites we want to count
    *   }
    * })
   **/
-  count<T extends TrancheScolariteCountArgs>(
-    args?: Prisma.Subset<T, TrancheScolariteCountArgs>,
+  count<T extends tranchescolariteCountArgs>(
+    args?: Prisma.Subset<T, tranchescolariteCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], TrancheScolariteCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], TranchescolariteCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a TrancheScolarite.
+   * Allows you to perform aggregations operations on a Tranchescolarite.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {TranchescolariteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -876,13 +876,13 @@ export interface TrancheScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    *   take: 10,
    * })
   **/
-  aggregate<T extends TrancheScolariteAggregateArgs>(args: Prisma.Subset<T, TrancheScolariteAggregateArgs>): Prisma.PrismaPromise<GetTrancheScolariteAggregateType<T>>
+  aggregate<T extends TranchescolariteAggregateArgs>(args: Prisma.Subset<T, TranchescolariteAggregateArgs>): Prisma.PrismaPromise<GetTranchescolariteAggregateType<T>>
 
   /**
-   * Group by TrancheScolarite.
+   * Group by Tranchescolarite.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {TrancheScolariteGroupByArgs} args - Group by arguments.
+   * @param {tranchescolariteGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -897,14 +897,14 @@ export interface TrancheScolariteDelegate<ExtArgs extends runtime.Types.Extensio
    * 
   **/
   groupBy<
-    T extends TrancheScolariteGroupByArgs,
+    T extends tranchescolariteGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: TrancheScolariteGroupByArgs['orderBy'] }
-      : { orderBy?: TrancheScolariteGroupByArgs['orderBy'] },
+      ? { orderBy: tranchescolariteGroupByArgs['orderBy'] }
+      : { orderBy?: tranchescolariteGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -953,22 +953,22 @@ export interface TrancheScolariteDelegate<ExtArgs extends runtime.Types.Extensio
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, TrancheScolariteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTrancheScolariteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, tranchescolariteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTranchescolariteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the TrancheScolarite model
+ * Fields of the tranchescolarite model
  */
-readonly fields: TrancheScolariteFieldRefs;
+readonly fields: tranchescolariteFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for TrancheScolarite.
+ * The delegate class that acts as a "Promise-like" for tranchescolarite.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__TrancheScolariteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__tranchescolariteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  configurationScolarite<T extends Prisma.ConfigurationScolariteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConfigurationScolariteDefaultArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  configurationscolarite<T extends Prisma.configurationscolariteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.configurationscolariteDefaultArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -995,378 +995,378 @@ export interface Prisma__TrancheScolariteClient<T, Null = never, ExtArgs extends
 
 
 /**
- * Fields of the TrancheScolarite model
+ * Fields of the tranchescolarite model
  */
-export interface TrancheScolariteFieldRefs {
-  readonly id: Prisma.FieldRef<"TrancheScolarite", 'String'>
-  readonly nom: Prisma.FieldRef<"TrancheScolarite", 'String'>
-  readonly montant: Prisma.FieldRef<"TrancheScolarite", 'Int'>
-  readonly dateEcheance: Prisma.FieldRef<"TrancheScolarite", 'DateTime'>
-  readonly ordre: Prisma.FieldRef<"TrancheScolarite", 'Int'>
-  readonly configurationScolariteId: Prisma.FieldRef<"TrancheScolarite", 'String'>
-  readonly createdAt: Prisma.FieldRef<"TrancheScolarite", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"TrancheScolarite", 'DateTime'>
+export interface tranchescolariteFieldRefs {
+  readonly id: Prisma.FieldRef<"tranchescolarite", 'String'>
+  readonly nom: Prisma.FieldRef<"tranchescolarite", 'String'>
+  readonly montant: Prisma.FieldRef<"tranchescolarite", 'Int'>
+  readonly dateEcheance: Prisma.FieldRef<"tranchescolarite", 'DateTime'>
+  readonly ordre: Prisma.FieldRef<"tranchescolarite", 'Int'>
+  readonly configurationScolariteId: Prisma.FieldRef<"tranchescolarite", 'String'>
+  readonly createdAt: Prisma.FieldRef<"tranchescolarite", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"tranchescolarite", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * TrancheScolarite findUnique
+ * tranchescolarite findUnique
  */
-export type TrancheScolariteFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * Filter, which TrancheScolarite to fetch.
+   * Filter, which tranchescolarite to fetch.
    */
-  where: Prisma.TrancheScolariteWhereUniqueInput
+  where: Prisma.tranchescolariteWhereUniqueInput
 }
 
 /**
- * TrancheScolarite findUniqueOrThrow
+ * tranchescolarite findUniqueOrThrow
  */
-export type TrancheScolariteFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * Filter, which TrancheScolarite to fetch.
+   * Filter, which tranchescolarite to fetch.
    */
-  where: Prisma.TrancheScolariteWhereUniqueInput
+  where: Prisma.tranchescolariteWhereUniqueInput
 }
 
 /**
- * TrancheScolarite findFirst
+ * tranchescolarite findFirst
  */
-export type TrancheScolariteFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * Filter, which TrancheScolarite to fetch.
+   * Filter, which tranchescolarite to fetch.
    */
-  where?: Prisma.TrancheScolariteWhereInput
+  where?: Prisma.tranchescolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TrancheScolarites to fetch.
+   * Determine the order of tranchescolarites to fetch.
    */
-  orderBy?: Prisma.TrancheScolariteOrderByWithRelationInput | Prisma.TrancheScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.tranchescolariteOrderByWithRelationInput | Prisma.tranchescolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for TrancheScolarites.
+   * Sets the position for searching for tranchescolarites.
    */
-  cursor?: Prisma.TrancheScolariteWhereUniqueInput
+  cursor?: Prisma.tranchescolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TrancheScolarites from the position of the cursor.
+   * Take `±n` tranchescolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TrancheScolarites.
+   * Skip the first `n` tranchescolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of TrancheScolarites.
+   * Filter by unique combinations of tranchescolarites.
    */
-  distinct?: Prisma.TrancheScolariteScalarFieldEnum | Prisma.TrancheScolariteScalarFieldEnum[]
+  distinct?: Prisma.TranchescolariteScalarFieldEnum | Prisma.TranchescolariteScalarFieldEnum[]
 }
 
 /**
- * TrancheScolarite findFirstOrThrow
+ * tranchescolarite findFirstOrThrow
  */
-export type TrancheScolariteFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * Filter, which TrancheScolarite to fetch.
+   * Filter, which tranchescolarite to fetch.
    */
-  where?: Prisma.TrancheScolariteWhereInput
+  where?: Prisma.tranchescolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TrancheScolarites to fetch.
+   * Determine the order of tranchescolarites to fetch.
    */
-  orderBy?: Prisma.TrancheScolariteOrderByWithRelationInput | Prisma.TrancheScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.tranchescolariteOrderByWithRelationInput | Prisma.tranchescolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for TrancheScolarites.
+   * Sets the position for searching for tranchescolarites.
    */
-  cursor?: Prisma.TrancheScolariteWhereUniqueInput
+  cursor?: Prisma.tranchescolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TrancheScolarites from the position of the cursor.
+   * Take `±n` tranchescolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TrancheScolarites.
+   * Skip the first `n` tranchescolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of TrancheScolarites.
+   * Filter by unique combinations of tranchescolarites.
    */
-  distinct?: Prisma.TrancheScolariteScalarFieldEnum | Prisma.TrancheScolariteScalarFieldEnum[]
+  distinct?: Prisma.TranchescolariteScalarFieldEnum | Prisma.TranchescolariteScalarFieldEnum[]
 }
 
 /**
- * TrancheScolarite findMany
+ * tranchescolarite findMany
  */
-export type TrancheScolariteFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * Filter, which TrancheScolarites to fetch.
+   * Filter, which tranchescolarites to fetch.
    */
-  where?: Prisma.TrancheScolariteWhereInput
+  where?: Prisma.tranchescolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of TrancheScolarites to fetch.
+   * Determine the order of tranchescolarites to fetch.
    */
-  orderBy?: Prisma.TrancheScolariteOrderByWithRelationInput | Prisma.TrancheScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.tranchescolariteOrderByWithRelationInput | Prisma.tranchescolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing TrancheScolarites.
+   * Sets the position for listing tranchescolarites.
    */
-  cursor?: Prisma.TrancheScolariteWhereUniqueInput
+  cursor?: Prisma.tranchescolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` TrancheScolarites from the position of the cursor.
+   * Take `±n` tranchescolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` TrancheScolarites.
+   * Skip the first `n` tranchescolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of TrancheScolarites.
+   * Filter by unique combinations of tranchescolarites.
    */
-  distinct?: Prisma.TrancheScolariteScalarFieldEnum | Prisma.TrancheScolariteScalarFieldEnum[]
+  distinct?: Prisma.TranchescolariteScalarFieldEnum | Prisma.TranchescolariteScalarFieldEnum[]
 }
 
 /**
- * TrancheScolarite create
+ * tranchescolarite create
  */
-export type TrancheScolariteCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * The data needed to create a TrancheScolarite.
+   * The data needed to create a tranchescolarite.
    */
-  data: Prisma.XOR<Prisma.TrancheScolariteCreateInput, Prisma.TrancheScolariteUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.tranchescolariteCreateInput, Prisma.tranchescolariteUncheckedCreateInput>
 }
 
 /**
- * TrancheScolarite createMany
+ * tranchescolarite createMany
  */
-export type TrancheScolariteCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many TrancheScolarites.
+   * The data used to create many tranchescolarites.
    */
-  data: Prisma.TrancheScolariteCreateManyInput | Prisma.TrancheScolariteCreateManyInput[]
+  data: Prisma.tranchescolariteCreateManyInput | Prisma.tranchescolariteCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * TrancheScolarite update
+ * tranchescolarite update
  */
-export type TrancheScolariteUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * The data needed to update a TrancheScolarite.
+   * The data needed to update a tranchescolarite.
    */
-  data: Prisma.XOR<Prisma.TrancheScolariteUpdateInput, Prisma.TrancheScolariteUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.tranchescolariteUpdateInput, Prisma.tranchescolariteUncheckedUpdateInput>
   /**
-   * Choose, which TrancheScolarite to update.
+   * Choose, which tranchescolarite to update.
    */
-  where: Prisma.TrancheScolariteWhereUniqueInput
+  where: Prisma.tranchescolariteWhereUniqueInput
 }
 
 /**
- * TrancheScolarite updateMany
+ * tranchescolarite updateMany
  */
-export type TrancheScolariteUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update TrancheScolarites.
+   * The data used to update tranchescolarites.
    */
-  data: Prisma.XOR<Prisma.TrancheScolariteUpdateManyMutationInput, Prisma.TrancheScolariteUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.tranchescolariteUpdateManyMutationInput, Prisma.tranchescolariteUncheckedUpdateManyInput>
   /**
-   * Filter which TrancheScolarites to update
+   * Filter which tranchescolarites to update
    */
-  where?: Prisma.TrancheScolariteWhereInput
+  where?: Prisma.tranchescolariteWhereInput
   /**
-   * Limit how many TrancheScolarites to update.
+   * Limit how many tranchescolarites to update.
    */
   limit?: number
 }
 
 /**
- * TrancheScolarite upsert
+ * tranchescolarite upsert
  */
-export type TrancheScolariteUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * The filter to search for the TrancheScolarite to update in case it exists.
+   * The filter to search for the tranchescolarite to update in case it exists.
    */
-  where: Prisma.TrancheScolariteWhereUniqueInput
+  where: Prisma.tranchescolariteWhereUniqueInput
   /**
-   * In case the TrancheScolarite found by the `where` argument doesn't exist, create a new TrancheScolarite with this data.
+   * In case the tranchescolarite found by the `where` argument doesn't exist, create a new tranchescolarite with this data.
    */
-  create: Prisma.XOR<Prisma.TrancheScolariteCreateInput, Prisma.TrancheScolariteUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.tranchescolariteCreateInput, Prisma.tranchescolariteUncheckedCreateInput>
   /**
-   * In case the TrancheScolarite was found with the provided `where` argument, update it with this data.
+   * In case the tranchescolarite was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.TrancheScolariteUpdateInput, Prisma.TrancheScolariteUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.tranchescolariteUpdateInput, Prisma.tranchescolariteUncheckedUpdateInput>
 }
 
 /**
- * TrancheScolarite delete
+ * tranchescolarite delete
  */
-export type TrancheScolariteDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
   /**
-   * Filter which TrancheScolarite to delete.
+   * Filter which tranchescolarite to delete.
    */
-  where: Prisma.TrancheScolariteWhereUniqueInput
+  where: Prisma.tranchescolariteWhereUniqueInput
 }
 
 /**
- * TrancheScolarite deleteMany
+ * tranchescolarite deleteMany
  */
-export type TrancheScolariteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which TrancheScolarites to delete
+   * Filter which tranchescolarites to delete
    */
-  where?: Prisma.TrancheScolariteWhereInput
+  where?: Prisma.tranchescolariteWhereInput
   /**
-   * Limit how many TrancheScolarites to delete.
+   * Limit how many tranchescolarites to delete.
    */
   limit?: number
 }
 
 /**
- * TrancheScolarite without action
+ * tranchescolarite without action
  */
-export type TrancheScolariteDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type tranchescolariteDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
 }

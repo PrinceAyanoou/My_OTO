@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `ConfigurationScolarite` model and its related types.
+ * This file exports the `configurationscolarite` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,18 +13,18 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model ConfigurationScolarite
+ * Model configurationscolarite
  * 
  */
-export type ConfigurationScolariteModel = runtime.Types.Result.DefaultSelection<Prisma.$ConfigurationScolaritePayload>
+export type configurationscolariteModel = runtime.Types.Result.DefaultSelection<Prisma.$configurationscolaritePayload>
 
-export type AggregateConfigurationScolarite = {
-  _count: ConfigurationScolariteCountAggregateOutputType | null
-  _min: ConfigurationScolariteMinAggregateOutputType | null
-  _max: ConfigurationScolariteMaxAggregateOutputType | null
+export type AggregateConfigurationscolarite = {
+  _count: ConfigurationscolariteCountAggregateOutputType | null
+  _min: ConfigurationscolariteMinAggregateOutputType | null
+  _max: ConfigurationscolariteMaxAggregateOutputType | null
 }
 
-export type ConfigurationScolariteMinAggregateOutputType = {
+export type ConfigurationscolariteMinAggregateOutputType = {
   id: string | null
   nom: string | null
   estActive: boolean | null
@@ -35,7 +35,7 @@ export type ConfigurationScolariteMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type ConfigurationScolariteMaxAggregateOutputType = {
+export type ConfigurationscolariteMaxAggregateOutputType = {
   id: string | null
   nom: string | null
   estActive: boolean | null
@@ -46,7 +46,7 @@ export type ConfigurationScolariteMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type ConfigurationScolariteCountAggregateOutputType = {
+export type ConfigurationscolariteCountAggregateOutputType = {
   id: number
   nom: number
   estActive: number
@@ -59,7 +59,7 @@ export type ConfigurationScolariteCountAggregateOutputType = {
 }
 
 
-export type ConfigurationScolariteMinAggregateInputType = {
+export type ConfigurationscolariteMinAggregateInputType = {
   id?: true
   nom?: true
   estActive?: true
@@ -70,7 +70,7 @@ export type ConfigurationScolariteMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type ConfigurationScolariteMaxAggregateInputType = {
+export type ConfigurationscolariteMaxAggregateInputType = {
   id?: true
   nom?: true
   estActive?: true
@@ -81,7 +81,7 @@ export type ConfigurationScolariteMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type ConfigurationScolariteCountAggregateInputType = {
+export type ConfigurationscolariteCountAggregateInputType = {
   id?: true
   nom?: true
   estActive?: true
@@ -93,79 +93,79 @@ export type ConfigurationScolariteCountAggregateInputType = {
   _all?: true
 }
 
-export type ConfigurationScolariteAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConfigurationscolariteAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ConfigurationScolarite to aggregate.
+   * Filter which configurationscolarite to aggregate.
    */
-  where?: Prisma.ConfigurationScolariteWhereInput
+  where?: Prisma.configurationscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ConfigurationScolarites to fetch.
+   * Determine the order of configurationscolarites to fetch.
    */
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithRelationInput | Prisma.ConfigurationScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.configurationscolariteOrderByWithRelationInput | Prisma.configurationscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ConfigurationScolariteWhereUniqueInput
+  cursor?: Prisma.configurationscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ConfigurationScolarites from the position of the cursor.
+   * Take `±n` configurationscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ConfigurationScolarites.
+   * Skip the first `n` configurationscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned ConfigurationScolarites
+   * Count returned configurationscolarites
   **/
-  _count?: true | ConfigurationScolariteCountAggregateInputType
+  _count?: true | ConfigurationscolariteCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: ConfigurationScolariteMinAggregateInputType
+  _min?: ConfigurationscolariteMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: ConfigurationScolariteMaxAggregateInputType
+  _max?: ConfigurationscolariteMaxAggregateInputType
 }
 
-export type GetConfigurationScolariteAggregateType<T extends ConfigurationScolariteAggregateArgs> = {
-      [P in keyof T & keyof AggregateConfigurationScolarite]: P extends '_count' | 'count'
+export type GetConfigurationscolariteAggregateType<T extends ConfigurationscolariteAggregateArgs> = {
+      [P in keyof T & keyof AggregateConfigurationscolarite]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateConfigurationScolarite[P]>
-    : Prisma.GetScalarType<T[P], AggregateConfigurationScolarite[P]>
+      : Prisma.GetScalarType<T[P], AggregateConfigurationscolarite[P]>
+    : Prisma.GetScalarType<T[P], AggregateConfigurationscolarite[P]>
 }
 
 
 
 
-export type ConfigurationScolariteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConfigurationScolariteWhereInput
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithAggregationInput | Prisma.ConfigurationScolariteOrderByWithAggregationInput[]
-  by: Prisma.ConfigurationScolariteScalarFieldEnum[] | Prisma.ConfigurationScolariteScalarFieldEnum
-  having?: Prisma.ConfigurationScolariteScalarWhereWithAggregatesInput
+export type configurationscolariteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.configurationscolariteWhereInput
+  orderBy?: Prisma.configurationscolariteOrderByWithAggregationInput | Prisma.configurationscolariteOrderByWithAggregationInput[]
+  by: Prisma.ConfigurationscolariteScalarFieldEnum[] | Prisma.ConfigurationscolariteScalarFieldEnum
+  having?: Prisma.configurationscolariteScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: ConfigurationScolariteCountAggregateInputType | true
-  _min?: ConfigurationScolariteMinAggregateInputType
-  _max?: ConfigurationScolariteMaxAggregateInputType
+  _count?: ConfigurationscolariteCountAggregateInputType | true
+  _min?: ConfigurationscolariteMinAggregateInputType
+  _max?: ConfigurationscolariteMaxAggregateInputType
 }
 
-export type ConfigurationScolariteGroupByOutputType = {
+export type ConfigurationscolariteGroupByOutputType = {
   id: string
   nom: string
   estActive: boolean
@@ -174,47 +174,47 @@ export type ConfigurationScolariteGroupByOutputType = {
   anneeScolaireId: string
   createdAt: Date
   updatedAt: Date
-  _count: ConfigurationScolariteCountAggregateOutputType | null
-  _min: ConfigurationScolariteMinAggregateOutputType | null
-  _max: ConfigurationScolariteMaxAggregateOutputType | null
+  _count: ConfigurationscolariteCountAggregateOutputType | null
+  _min: ConfigurationscolariteMinAggregateOutputType | null
+  _max: ConfigurationscolariteMaxAggregateOutputType | null
 }
 
-export type GetConfigurationScolariteGroupByPayload<T extends ConfigurationScolariteGroupByArgs> = Prisma.PrismaPromise<
+export type GetConfigurationscolariteGroupByPayload<T extends configurationscolariteGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<ConfigurationScolariteGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<ConfigurationscolariteGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof ConfigurationScolariteGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof ConfigurationscolariteGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], ConfigurationScolariteGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], ConfigurationScolariteGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], ConfigurationscolariteGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], ConfigurationscolariteGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type ConfigurationScolariteWhereInput = {
-  AND?: Prisma.ConfigurationScolariteWhereInput | Prisma.ConfigurationScolariteWhereInput[]
-  OR?: Prisma.ConfigurationScolariteWhereInput[]
-  NOT?: Prisma.ConfigurationScolariteWhereInput | Prisma.ConfigurationScolariteWhereInput[]
-  id?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  nom?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  estActive?: Prisma.BoolFilter<"ConfigurationScolarite"> | boolean
-  ecoleId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  niveauScolaireId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  anneeScolaireId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"ConfigurationScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ConfigurationScolarite"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  niveauScolaire?: Prisma.XOR<Prisma.NiveauScolaireScalarRelationFilter, Prisma.NiveauScolaireWhereInput>
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
+export type configurationscolariteWhereInput = {
+  AND?: Prisma.configurationscolariteWhereInput | Prisma.configurationscolariteWhereInput[]
+  OR?: Prisma.configurationscolariteWhereInput[]
+  NOT?: Prisma.configurationscolariteWhereInput | Prisma.configurationscolariteWhereInput[]
+  id?: Prisma.StringFilter<"configurationscolarite"> | string
+  nom?: Prisma.StringFilter<"configurationscolarite"> | string
+  estActive?: Prisma.BoolFilter<"configurationscolarite"> | boolean
+  ecoleId?: Prisma.StringFilter<"configurationscolarite"> | string
+  niveauScolaireId?: Prisma.StringFilter<"configurationscolarite"> | string
+  anneeScolaireId?: Prisma.StringFilter<"configurationscolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"configurationscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"configurationscolarite"> | Date | string
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
+  niveauscolaire?: Prisma.XOR<Prisma.NiveauscolaireScalarRelationFilter, Prisma.niveauscolaireWhereInput>
+  dossierscolarite?: Prisma.DossierscolariteListRelationFilter
   inscription?: Prisma.InscriptionListRelationFilter
-  tranches?: Prisma.TrancheScolariteListRelationFilter
-  dossierScolarite?: Prisma.DossierScolariteListRelationFilter
+  tranchescolarite?: Prisma.TranchescolariteListRelationFilter
 }
 
-export type ConfigurationScolariteOrderByWithRelationInput = {
+export type configurationscolariteOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   estActive?: Prisma.SortOrder
@@ -223,37 +223,37 @@ export type ConfigurationScolariteOrderByWithRelationInput = {
   anneeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  ecole?: Prisma.EcoleOrderByWithRelationInput
-  niveauScolaire?: Prisma.NiveauScolaireOrderByWithRelationInput
-  anneeScolaire?: Prisma.AnneeScolaireOrderByWithRelationInput
-  inscription?: Prisma.InscriptionOrderByRelationAggregateInput
-  tranches?: Prisma.TrancheScolariteOrderByRelationAggregateInput
-  dossierScolarite?: Prisma.DossierScolariteOrderByRelationAggregateInput
-  _relevance?: Prisma.ConfigurationScolariteOrderByRelevanceInput
+  anneescolaire?: Prisma.anneescolaireOrderByWithRelationInput
+  ecole?: Prisma.ecoleOrderByWithRelationInput
+  niveauscolaire?: Prisma.niveauscolaireOrderByWithRelationInput
+  dossierscolarite?: Prisma.dossierscolariteOrderByRelationAggregateInput
+  inscription?: Prisma.inscriptionOrderByRelationAggregateInput
+  tranchescolarite?: Prisma.tranchescolariteOrderByRelationAggregateInput
+  _relevance?: Prisma.configurationscolariteOrderByRelevanceInput
 }
 
-export type ConfigurationScolariteWhereUniqueInput = Prisma.AtLeast<{
+export type configurationscolariteWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  niveauScolaireId_anneeScolaireId?: Prisma.ConfigurationScolariteNiveauScolaireIdAnneeScolaireIdCompoundUniqueInput
-  AND?: Prisma.ConfigurationScolariteWhereInput | Prisma.ConfigurationScolariteWhereInput[]
-  OR?: Prisma.ConfigurationScolariteWhereInput[]
-  NOT?: Prisma.ConfigurationScolariteWhereInput | Prisma.ConfigurationScolariteWhereInput[]
-  nom?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  estActive?: Prisma.BoolFilter<"ConfigurationScolarite"> | boolean
-  ecoleId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  niveauScolaireId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  anneeScolaireId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"ConfigurationScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ConfigurationScolarite"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  niveauScolaire?: Prisma.XOR<Prisma.NiveauScolaireScalarRelationFilter, Prisma.NiveauScolaireWhereInput>
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
+  niveauScolaireId_anneeScolaireId?: Prisma.configurationscolariteNiveauScolaireIdAnneeScolaireIdCompoundUniqueInput
+  AND?: Prisma.configurationscolariteWhereInput | Prisma.configurationscolariteWhereInput[]
+  OR?: Prisma.configurationscolariteWhereInput[]
+  NOT?: Prisma.configurationscolariteWhereInput | Prisma.configurationscolariteWhereInput[]
+  nom?: Prisma.StringFilter<"configurationscolarite"> | string
+  estActive?: Prisma.BoolFilter<"configurationscolarite"> | boolean
+  ecoleId?: Prisma.StringFilter<"configurationscolarite"> | string
+  niveauScolaireId?: Prisma.StringFilter<"configurationscolarite"> | string
+  anneeScolaireId?: Prisma.StringFilter<"configurationscolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"configurationscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"configurationscolarite"> | Date | string
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
+  niveauscolaire?: Prisma.XOR<Prisma.NiveauscolaireScalarRelationFilter, Prisma.niveauscolaireWhereInput>
+  dossierscolarite?: Prisma.DossierscolariteListRelationFilter
   inscription?: Prisma.InscriptionListRelationFilter
-  tranches?: Prisma.TrancheScolariteListRelationFilter
-  dossierScolarite?: Prisma.DossierScolariteListRelationFilter
+  tranchescolarite?: Prisma.TranchescolariteListRelationFilter
 }, "id" | "niveauScolaireId_anneeScolaireId">
 
-export type ConfigurationScolariteOrderByWithAggregationInput = {
+export type configurationscolariteOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   estActive?: Prisma.SortOrder
@@ -262,82 +262,40 @@ export type ConfigurationScolariteOrderByWithAggregationInput = {
   anneeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.ConfigurationScolariteCountOrderByAggregateInput
-  _max?: Prisma.ConfigurationScolariteMaxOrderByAggregateInput
-  _min?: Prisma.ConfigurationScolariteMinOrderByAggregateInput
+  _count?: Prisma.configurationscolariteCountOrderByAggregateInput
+  _max?: Prisma.configurationscolariteMaxOrderByAggregateInput
+  _min?: Prisma.configurationscolariteMinOrderByAggregateInput
 }
 
-export type ConfigurationScolariteScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ConfigurationScolariteScalarWhereWithAggregatesInput | Prisma.ConfigurationScolariteScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ConfigurationScolariteScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ConfigurationScolariteScalarWhereWithAggregatesInput | Prisma.ConfigurationScolariteScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"ConfigurationScolarite"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"ConfigurationScolarite"> | string
-  estActive?: Prisma.BoolWithAggregatesFilter<"ConfigurationScolarite"> | boolean
-  ecoleId?: Prisma.StringWithAggregatesFilter<"ConfigurationScolarite"> | string
-  niveauScolaireId?: Prisma.StringWithAggregatesFilter<"ConfigurationScolarite"> | string
-  anneeScolaireId?: Prisma.StringWithAggregatesFilter<"ConfigurationScolarite"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"ConfigurationScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ConfigurationScolarite"> | Date | string
+export type configurationscolariteScalarWhereWithAggregatesInput = {
+  AND?: Prisma.configurationscolariteScalarWhereWithAggregatesInput | Prisma.configurationscolariteScalarWhereWithAggregatesInput[]
+  OR?: Prisma.configurationscolariteScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.configurationscolariteScalarWhereWithAggregatesInput | Prisma.configurationscolariteScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"configurationscolarite"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"configurationscolarite"> | string
+  estActive?: Prisma.BoolWithAggregatesFilter<"configurationscolarite"> | boolean
+  ecoleId?: Prisma.StringWithAggregatesFilter<"configurationscolarite"> | string
+  niveauScolaireId?: Prisma.StringWithAggregatesFilter<"configurationscolarite"> | string
+  anneeScolaireId?: Prisma.StringWithAggregatesFilter<"configurationscolarite"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"configurationscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"configurationscolarite"> | Date | string
 }
 
-export type ConfigurationScolariteCreateInput = {
+export type configurationscolariteCreateInput = {
   id?: string
   nom: string
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutConfigScolariteInput
-  niveauScolaire: Prisma.NiveauScolaireCreateNestedOneWithoutConfigScolariteInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutConfigScolariteInput
-  inscription?: Prisma.InscriptionCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutConfigurationscolariteInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutConfigurationscolariteInput
+  niveauscolaire: Prisma.niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteUncheckedCreateInput = {
-  id?: string
-  nom: string
-  estActive?: boolean
-  ecoleId: string
-  niveauScolaireId: string
-  anneeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  inscription?: Prisma.InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-}
-
-export type ConfigurationScolariteUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput
-  niveauScolaire?: Prisma.NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  inscription?: Prisma.InscriptionUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteCreateManyInput = {
+export type configurationscolariteUncheckedCreateInput = {
   id?: string
   nom: string
   estActive?: boolean
@@ -346,9 +304,51 @@ export type ConfigurationScolariteCreateManyInput = {
   anneeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteUpdateManyMutationInput = {
+export type configurationscolariteUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteCreateManyInput = {
+  id?: string
+  nom: string
+  estActive?: boolean
+  ecoleId: string
+  niveauScolaireId: string
+  anneeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type configurationscolariteUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -356,7 +356,7 @@ export type ConfigurationScolariteUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ConfigurationScolariteUncheckedUpdateManyInput = {
+export type configurationscolariteUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -367,33 +367,28 @@ export type ConfigurationScolariteUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ConfigurationScolariteListRelationFilter = {
-  every?: Prisma.ConfigurationScolariteWhereInput
-  some?: Prisma.ConfigurationScolariteWhereInput
-  none?: Prisma.ConfigurationScolariteWhereInput
+export type ConfigurationscolariteListRelationFilter = {
+  every?: Prisma.configurationscolariteWhereInput
+  some?: Prisma.configurationscolariteWhereInput
+  none?: Prisma.configurationscolariteWhereInput
 }
 
-export type ConfigurationScolariteOrderByRelationAggregateInput = {
+export type configurationscolariteOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type ConfigurationScolariteScalarRelationFilter = {
-  is?: Prisma.ConfigurationScolariteWhereInput
-  isNot?: Prisma.ConfigurationScolariteWhereInput
-}
-
-export type ConfigurationScolariteOrderByRelevanceInput = {
-  fields: Prisma.ConfigurationScolariteOrderByRelevanceFieldEnum | Prisma.ConfigurationScolariteOrderByRelevanceFieldEnum[]
+export type configurationscolariteOrderByRelevanceInput = {
+  fields: Prisma.configurationscolariteOrderByRelevanceFieldEnum | Prisma.configurationscolariteOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ConfigurationScolariteNiveauScolaireIdAnneeScolaireIdCompoundUniqueInput = {
+export type configurationscolariteNiveauScolaireIdAnneeScolaireIdCompoundUniqueInput = {
   niveauScolaireId: string
   anneeScolaireId: string
 }
 
-export type ConfigurationScolariteCountOrderByAggregateInput = {
+export type configurationscolariteCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   estActive?: Prisma.SortOrder
@@ -404,7 +399,7 @@ export type ConfigurationScolariteCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ConfigurationScolariteMaxOrderByAggregateInput = {
+export type configurationscolariteMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   estActive?: Prisma.SortOrder
@@ -415,7 +410,7 @@ export type ConfigurationScolariteMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ConfigurationScolariteMinOrderByAggregateInput = {
+export type configurationscolariteMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   estActive?: Prisma.SortOrder
@@ -426,306 +421,447 @@ export type ConfigurationScolariteMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ConfigurationScolariteCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput> | Prisma.ConfigurationScolariteCreateWithoutEcoleInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyEcoleInputEnvelope
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
+export type ConfigurationscolariteScalarRelationFilter = {
+  is?: Prisma.configurationscolariteWhereInput
+  isNot?: Prisma.configurationscolariteWhereInput
 }
 
-export type ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput> | Prisma.ConfigurationScolariteCreateWithoutEcoleInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyEcoleInputEnvelope
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
+export type configurationscolariteCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput> | Prisma.configurationscolariteCreateWithoutAnneescolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
 }
 
-export type ConfigurationScolariteUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput> | Prisma.ConfigurationScolariteCreateWithoutEcoleInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutEcoleInput | Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyEcoleInputEnvelope
-  set?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  disconnect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  delete?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  update?: Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutEcoleInput | Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutEcoleInput | Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
+export type configurationscolariteUncheckedCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput> | Prisma.configurationscolariteCreateWithoutAnneescolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
 }
 
-export type ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput> | Prisma.ConfigurationScolariteCreateWithoutEcoleInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutEcoleInput | Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyEcoleInputEnvelope
-  set?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  disconnect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  delete?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  update?: Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutEcoleInput | Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutEcoleInput | Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
+export type configurationscolariteUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput> | Prisma.configurationscolariteCreateWithoutAnneescolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.configurationscolariteUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.configurationscolariteUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  disconnect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  delete?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  update?: Prisma.configurationscolariteUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.configurationscolariteUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.configurationscolariteUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.configurationscolariteUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
 }
 
-export type ConfigurationScolariteCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
+export type configurationscolariteUncheckedUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput> | Prisma.configurationscolariteCreateWithoutAnneescolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.configurationscolariteUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.configurationscolariteUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  disconnect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  delete?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  update?: Prisma.configurationscolariteUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.configurationscolariteUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.configurationscolariteUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.configurationscolariteUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
 }
 
-export type ConfigurationScolariteUncheckedCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
+export type configurationscolariteCreateNestedOneWithoutDossierscolariteInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutDossierscolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutDossierscolariteInput>
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutDossierscolariteInput
+  connect?: Prisma.configurationscolariteWhereUniqueInput
 }
 
-export type ConfigurationScolariteUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  disconnect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  delete?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  update?: Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
+export type configurationscolariteUpdateOneRequiredWithoutDossierscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutDossierscolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutDossierscolariteInput>
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutDossierscolariteInput
+  upsert?: Prisma.configurationscolariteUpsertWithoutDossierscolariteInput
+  connect?: Prisma.configurationscolariteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.configurationscolariteUpdateToOneWithWhereWithoutDossierscolariteInput, Prisma.configurationscolariteUpdateWithoutDossierscolariteInput>, Prisma.configurationscolariteUncheckedUpdateWithoutDossierscolariteInput>
 }
 
-export type ConfigurationScolariteUncheckedUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  disconnect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  delete?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  update?: Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
+export type configurationscolariteCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutEcoleInput, Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput> | Prisma.configurationscolariteCreateWithoutEcoleInput[] | Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput | Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.configurationscolariteCreateManyEcoleInputEnvelope
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
 }
 
-export type ConfigurationScolariteCreateNestedManyWithoutNiveauScolaireInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyNiveauScolaireInputEnvelope
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
+export type configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutEcoleInput, Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput> | Prisma.configurationscolariteCreateWithoutEcoleInput[] | Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput | Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.configurationscolariteCreateManyEcoleInputEnvelope
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
 }
 
-export type ConfigurationScolariteUncheckedCreateNestedManyWithoutNiveauScolaireInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyNiveauScolaireInputEnvelope
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
+export type configurationscolariteUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutEcoleInput, Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput> | Prisma.configurationscolariteCreateWithoutEcoleInput[] | Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput | Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.configurationscolariteUpsertWithWhereUniqueWithoutEcoleInput | Prisma.configurationscolariteUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.configurationscolariteCreateManyEcoleInputEnvelope
+  set?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  disconnect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  delete?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  update?: Prisma.configurationscolariteUpdateWithWhereUniqueWithoutEcoleInput | Prisma.configurationscolariteUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.configurationscolariteUpdateManyWithWhereWithoutEcoleInput | Prisma.configurationscolariteUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
 }
 
-export type ConfigurationScolariteUpdateManyWithoutNiveauScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput[]
-  upsert?: Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutNiveauScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyNiveauScolaireInputEnvelope
-  set?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  disconnect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  delete?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  update?: Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutNiveauScolaireInput[]
-  updateMany?: Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutNiveauScolaireInput[]
-  deleteMany?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
+export type configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutEcoleInput, Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput> | Prisma.configurationscolariteCreateWithoutEcoleInput[] | Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput | Prisma.configurationscolariteCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.configurationscolariteUpsertWithWhereUniqueWithoutEcoleInput | Prisma.configurationscolariteUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.configurationscolariteCreateManyEcoleInputEnvelope
+  set?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  disconnect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  delete?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  update?: Prisma.configurationscolariteUpdateWithWhereUniqueWithoutEcoleInput | Prisma.configurationscolariteUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.configurationscolariteUpdateManyWithWhereWithoutEcoleInput | Prisma.configurationscolariteUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
 }
 
-export type ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput> | Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput[] | Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput[]
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput[]
-  upsert?: Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteUpsertWithWhereUniqueWithoutNiveauScolaireInput[]
-  createMany?: Prisma.ConfigurationScolariteCreateManyNiveauScolaireInputEnvelope
-  set?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  disconnect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  delete?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput | Prisma.ConfigurationScolariteWhereUniqueInput[]
-  update?: Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteUpdateWithWhereUniqueWithoutNiveauScolaireInput[]
-  updateMany?: Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutNiveauScolaireInput | Prisma.ConfigurationScolariteUpdateManyWithWhereWithoutNiveauScolaireInput[]
-  deleteMany?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
+export type configurationscolariteCreateNestedOneWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutInscriptionInput, Prisma.configurationscolariteUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutInscriptionInput
+  connect?: Prisma.configurationscolariteWhereUniqueInput
 }
 
-export type ConfigurationScolariteCreateNestedOneWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutInscriptionInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutInscriptionInput>
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutInscriptionInput
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput
+export type configurationscolariteUpdateOneRequiredWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutInscriptionInput, Prisma.configurationscolariteUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutInscriptionInput
+  upsert?: Prisma.configurationscolariteUpsertWithoutInscriptionInput
+  connect?: Prisma.configurationscolariteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.configurationscolariteUpdateToOneWithWhereWithoutInscriptionInput, Prisma.configurationscolariteUpdateWithoutInscriptionInput>, Prisma.configurationscolariteUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type ConfigurationScolariteUpdateOneRequiredWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutInscriptionInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutInscriptionInput>
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutInscriptionInput
-  upsert?: Prisma.ConfigurationScolariteUpsertWithoutInscriptionInput
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ConfigurationScolariteUpdateToOneWithWhereWithoutInscriptionInput, Prisma.ConfigurationScolariteUpdateWithoutInscriptionInput>, Prisma.ConfigurationScolariteUncheckedUpdateWithoutInscriptionInput>
+export type configurationscolariteCreateNestedManyWithoutNiveauscolaireInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput> | Prisma.configurationscolariteCreateWithoutNiveauscolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyNiveauscolaireInputEnvelope
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
 }
 
-export type ConfigurationScolariteCreateNestedOneWithoutTranchesInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutTranchesInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutTranchesInput>
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutTranchesInput
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput
+export type configurationscolariteUncheckedCreateNestedManyWithoutNiveauscolaireInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput> | Prisma.configurationscolariteCreateWithoutNiveauscolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyNiveauscolaireInputEnvelope
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
 }
 
-export type ConfigurationScolariteUpdateOneRequiredWithoutTranchesNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutTranchesInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutTranchesInput>
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutTranchesInput
-  upsert?: Prisma.ConfigurationScolariteUpsertWithoutTranchesInput
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ConfigurationScolariteUpdateToOneWithWhereWithoutTranchesInput, Prisma.ConfigurationScolariteUpdateWithoutTranchesInput>, Prisma.ConfigurationScolariteUncheckedUpdateWithoutTranchesInput>
+export type configurationscolariteUpdateManyWithoutNiveauscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput> | Prisma.configurationscolariteCreateWithoutNiveauscolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput[]
+  upsert?: Prisma.configurationscolariteUpsertWithWhereUniqueWithoutNiveauscolaireInput | Prisma.configurationscolariteUpsertWithWhereUniqueWithoutNiveauscolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyNiveauscolaireInputEnvelope
+  set?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  disconnect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  delete?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  update?: Prisma.configurationscolariteUpdateWithWhereUniqueWithoutNiveauscolaireInput | Prisma.configurationscolariteUpdateWithWhereUniqueWithoutNiveauscolaireInput[]
+  updateMany?: Prisma.configurationscolariteUpdateManyWithWhereWithoutNiveauscolaireInput | Prisma.configurationscolariteUpdateManyWithWhereWithoutNiveauscolaireInput[]
+  deleteMany?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
 }
 
-export type ConfigurationScolariteCreateNestedOneWithoutDossierScolariteInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutDossierScolariteInput>
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutDossierScolariteInput
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput
+export type configurationscolariteUncheckedUpdateManyWithoutNiveauscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput> | Prisma.configurationscolariteCreateWithoutNiveauscolaireInput[] | Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput[]
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput | Prisma.configurationscolariteCreateOrConnectWithoutNiveauscolaireInput[]
+  upsert?: Prisma.configurationscolariteUpsertWithWhereUniqueWithoutNiveauscolaireInput | Prisma.configurationscolariteUpsertWithWhereUniqueWithoutNiveauscolaireInput[]
+  createMany?: Prisma.configurationscolariteCreateManyNiveauscolaireInputEnvelope
+  set?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  disconnect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  delete?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  connect?: Prisma.configurationscolariteWhereUniqueInput | Prisma.configurationscolariteWhereUniqueInput[]
+  update?: Prisma.configurationscolariteUpdateWithWhereUniqueWithoutNiveauscolaireInput | Prisma.configurationscolariteUpdateWithWhereUniqueWithoutNiveauscolaireInput[]
+  updateMany?: Prisma.configurationscolariteUpdateManyWithWhereWithoutNiveauscolaireInput | Prisma.configurationscolariteUpdateManyWithWhereWithoutNiveauscolaireInput[]
+  deleteMany?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
 }
 
-export type ConfigurationScolariteUpdateOneRequiredWithoutDossierScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutDossierScolariteInput>
-  connectOrCreate?: Prisma.ConfigurationScolariteCreateOrConnectWithoutDossierScolariteInput
-  upsert?: Prisma.ConfigurationScolariteUpsertWithoutDossierScolariteInput
-  connect?: Prisma.ConfigurationScolariteWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ConfigurationScolariteUpdateToOneWithWhereWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUpdateWithoutDossierScolariteInput>, Prisma.ConfigurationScolariteUncheckedUpdateWithoutDossierScolariteInput>
+export type configurationscolariteCreateNestedOneWithoutTranchescolariteInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutTranchescolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutTranchescolariteInput>
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutTranchescolariteInput
+  connect?: Prisma.configurationscolariteWhereUniqueInput
 }
 
-export type ConfigurationScolariteCreateWithoutEcoleInput = {
+export type configurationscolariteUpdateOneRequiredWithoutTranchescolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.configurationscolariteCreateWithoutTranchescolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutTranchescolariteInput>
+  connectOrCreate?: Prisma.configurationscolariteCreateOrConnectWithoutTranchescolariteInput
+  upsert?: Prisma.configurationscolariteUpsertWithoutTranchescolariteInput
+  connect?: Prisma.configurationscolariteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.configurationscolariteUpdateToOneWithWhereWithoutTranchescolariteInput, Prisma.configurationscolariteUpdateWithoutTranchescolariteInput>, Prisma.configurationscolariteUncheckedUpdateWithoutTranchescolariteInput>
+}
+
+export type configurationscolariteCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  niveauScolaire: Prisma.NiveauScolaireCreateNestedOneWithoutConfigScolariteInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutConfigScolariteInput
-  inscription?: Prisma.InscriptionCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutConfigurationscolariteInput
+  niveauscolaire: Prisma.niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteUncheckedCreateWithoutEcoleInput = {
+export type configurationscolariteUncheckedCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
   estActive?: boolean
+  ecoleId: string
   niveauScolaireId: string
-  anneeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription?: Prisma.InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteCreateOrConnectWithoutEcoleInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput>
+export type configurationscolariteCreateOrConnectWithoutAnneescolaireInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type ConfigurationScolariteCreateManyEcoleInputEnvelope = {
-  data: Prisma.ConfigurationScolariteCreateManyEcoleInput | Prisma.ConfigurationScolariteCreateManyEcoleInput[]
+export type configurationscolariteCreateManyAnneescolaireInputEnvelope = {
+  data: Prisma.configurationscolariteCreateManyAnneescolaireInput | Prisma.configurationscolariteCreateManyAnneescolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type ConfigurationScolariteUpsertWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutEcoleInput>
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutEcoleInput>
+export type configurationscolariteUpsertWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedUpdateWithoutAnneescolaireInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type ConfigurationScolariteUpdateWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutEcoleInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutEcoleInput>
+export type configurationscolariteUpdateWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutAnneescolaireInput, Prisma.configurationscolariteUncheckedUpdateWithoutAnneescolaireInput>
 }
 
-export type ConfigurationScolariteUpdateManyWithWhereWithoutEcoleInput = {
-  where: Prisma.ConfigurationScolariteScalarWhereInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateManyMutationInput, Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleInput>
+export type configurationscolariteUpdateManyWithWhereWithoutAnneescolaireInput = {
+  where: Prisma.configurationscolariteScalarWhereInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateManyMutationInput, Prisma.configurationscolariteUncheckedUpdateManyWithoutAnneescolaireInput>
 }
 
-export type ConfigurationScolariteScalarWhereInput = {
-  AND?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
-  OR?: Prisma.ConfigurationScolariteScalarWhereInput[]
-  NOT?: Prisma.ConfigurationScolariteScalarWhereInput | Prisma.ConfigurationScolariteScalarWhereInput[]
-  id?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  nom?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  estActive?: Prisma.BoolFilter<"ConfigurationScolarite"> | boolean
-  ecoleId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  niveauScolaireId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  anneeScolaireId?: Prisma.StringFilter<"ConfigurationScolarite"> | string
-  createdAt?: Prisma.DateTimeFilter<"ConfigurationScolarite"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ConfigurationScolarite"> | Date | string
+export type configurationscolariteScalarWhereInput = {
+  AND?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
+  OR?: Prisma.configurationscolariteScalarWhereInput[]
+  NOT?: Prisma.configurationscolariteScalarWhereInput | Prisma.configurationscolariteScalarWhereInput[]
+  id?: Prisma.StringFilter<"configurationscolarite"> | string
+  nom?: Prisma.StringFilter<"configurationscolarite"> | string
+  estActive?: Prisma.BoolFilter<"configurationscolarite"> | boolean
+  ecoleId?: Prisma.StringFilter<"configurationscolarite"> | string
+  niveauScolaireId?: Prisma.StringFilter<"configurationscolarite"> | string
+  anneeScolaireId?: Prisma.StringFilter<"configurationscolarite"> | string
+  createdAt?: Prisma.DateTimeFilter<"configurationscolarite"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"configurationscolarite"> | Date | string
 }
 
-export type ConfigurationScolariteCreateWithoutAnneeScolaireInput = {
+export type configurationscolariteCreateWithoutDossierscolariteInput = {
   id?: string
   nom: string
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutConfigScolariteInput
-  niveauScolaire: Prisma.NiveauScolaireCreateNestedOneWithoutConfigScolariteInput
-  inscription?: Prisma.InscriptionCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutConfigurationscolariteInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutConfigurationscolariteInput
+  niveauscolaire: Prisma.niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput = {
+export type configurationscolariteUncheckedCreateWithoutDossierscolariteInput = {
   id?: string
   nom: string
   estActive?: boolean
   ecoleId: string
   niveauScolaireId: string
+  anneeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription?: Prisma.InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteCreateOrConnectWithoutAnneeScolaireInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput>
+export type configurationscolariteCreateOrConnectWithoutDossierscolariteInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutDossierscolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutDossierscolariteInput>
 }
 
-export type ConfigurationScolariteCreateManyAnneeScolaireInputEnvelope = {
-  data: Prisma.ConfigurationScolariteCreateManyAnneeScolaireInput | Prisma.ConfigurationScolariteCreateManyAnneeScolaireInput[]
+export type configurationscolariteUpsertWithoutDossierscolariteInput = {
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutDossierscolariteInput, Prisma.configurationscolariteUncheckedUpdateWithoutDossierscolariteInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutDossierscolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutDossierscolariteInput>
+  where?: Prisma.configurationscolariteWhereInput
+}
+
+export type configurationscolariteUpdateToOneWithWhereWithoutDossierscolariteInput = {
+  where?: Prisma.configurationscolariteWhereInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutDossierscolariteInput, Prisma.configurationscolariteUncheckedUpdateWithoutDossierscolariteInput>
+}
+
+export type configurationscolariteUpdateWithoutDossierscolariteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteUncheckedUpdateWithoutDossierscolariteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  estActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutConfigurationscolariteInput
+  niveauscolaire: Prisma.niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput
+}
+
+export type configurationscolariteUncheckedCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  estActive?: boolean
+  niveauScolaireId: string
+  anneeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+}
+
+export type configurationscolariteCreateOrConnectWithoutEcoleInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutEcoleInput, Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput>
+}
+
+export type configurationscolariteCreateManyEcoleInputEnvelope = {
+  data: Prisma.configurationscolariteCreateManyEcoleInput | Prisma.configurationscolariteCreateManyEcoleInput[]
   skipDuplicates?: boolean
 }
 
-export type ConfigurationScolariteUpsertWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutAnneeScolaireInput>
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutAnneeScolaireInput>
+export type configurationscolariteUpsertWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutEcoleInput, Prisma.configurationscolariteUncheckedUpdateWithoutEcoleInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutEcoleInput, Prisma.configurationscolariteUncheckedCreateWithoutEcoleInput>
 }
 
-export type ConfigurationScolariteUpdateWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutAnneeScolaireInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutAnneeScolaireInput>
+export type configurationscolariteUpdateWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutEcoleInput, Prisma.configurationscolariteUncheckedUpdateWithoutEcoleInput>
 }
 
-export type ConfigurationScolariteUpdateManyWithWhereWithoutAnneeScolaireInput = {
-  where: Prisma.ConfigurationScolariteScalarWhereInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateManyMutationInput, Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutAnneeScolaireInput>
+export type configurationscolariteUpdateManyWithWhereWithoutEcoleInput = {
+  where: Prisma.configurationscolariteScalarWhereInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateManyMutationInput, Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleInput>
 }
 
-export type ConfigurationScolariteCreateWithoutNiveauScolaireInput = {
+export type configurationscolariteCreateWithoutInscriptionInput = {
   id?: string
   nom: string
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutConfigScolariteInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutConfigScolariteInput
-  inscription?: Prisma.InscriptionCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutConfigurationscolariteInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutConfigurationscolariteInput
+  niveauscolaire: Prisma.niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput = {
+export type configurationscolariteUncheckedCreateWithoutInscriptionInput = {
+  id?: string
+  nom: string
+  estActive?: boolean
+  ecoleId: string
+  niveauScolaireId: string
+  anneeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+}
+
+export type configurationscolariteCreateOrConnectWithoutInscriptionInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutInscriptionInput, Prisma.configurationscolariteUncheckedCreateWithoutInscriptionInput>
+}
+
+export type configurationscolariteUpsertWithoutInscriptionInput = {
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutInscriptionInput, Prisma.configurationscolariteUncheckedUpdateWithoutInscriptionInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutInscriptionInput, Prisma.configurationscolariteUncheckedCreateWithoutInscriptionInput>
+  where?: Prisma.configurationscolariteWhereInput
+}
+
+export type configurationscolariteUpdateToOneWithWhereWithoutInscriptionInput = {
+  where?: Prisma.configurationscolariteWhereInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutInscriptionInput, Prisma.configurationscolariteUncheckedUpdateWithoutInscriptionInput>
+}
+
+export type configurationscolariteUpdateWithoutInscriptionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteUncheckedUpdateWithoutInscriptionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteCreateWithoutNiveauscolaireInput = {
+  id?: string
+  nom: string
+  estActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutConfigurationscolariteInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutConfigurationscolariteInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteCreateNestedManyWithoutConfigurationscolariteInput
+}
+
+export type configurationscolariteUncheckedCreateWithoutNiveauscolaireInput = {
   id?: string
   nom: string
   estActive?: boolean
@@ -733,119 +869,51 @@ export type ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput = {
   anneeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription?: Prisma.InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteCreateOrConnectWithoutNiveauScolaireInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput>
+export type configurationscolariteCreateOrConnectWithoutNiveauscolaireInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput>
 }
 
-export type ConfigurationScolariteCreateManyNiveauScolaireInputEnvelope = {
-  data: Prisma.ConfigurationScolariteCreateManyNiveauScolaireInput | Prisma.ConfigurationScolariteCreateManyNiveauScolaireInput[]
+export type configurationscolariteCreateManyNiveauscolaireInputEnvelope = {
+  data: Prisma.configurationscolariteCreateManyNiveauscolaireInput | Prisma.configurationscolariteCreateManyNiveauscolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type ConfigurationScolariteUpsertWithWhereUniqueWithoutNiveauScolaireInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutNiveauScolaireInput>
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutNiveauScolaireInput>
+export type configurationscolariteUpsertWithWhereUniqueWithoutNiveauscolaireInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedUpdateWithoutNiveauscolaireInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedCreateWithoutNiveauscolaireInput>
 }
 
-export type ConfigurationScolariteUpdateWithWhereUniqueWithoutNiveauScolaireInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutNiveauScolaireInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutNiveauScolaireInput>
+export type configurationscolariteUpdateWithWhereUniqueWithoutNiveauscolaireInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutNiveauscolaireInput, Prisma.configurationscolariteUncheckedUpdateWithoutNiveauscolaireInput>
 }
 
-export type ConfigurationScolariteUpdateManyWithWhereWithoutNiveauScolaireInput = {
-  where: Prisma.ConfigurationScolariteScalarWhereInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateManyMutationInput, Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireInput>
+export type configurationscolariteUpdateManyWithWhereWithoutNiveauscolaireInput = {
+  where: Prisma.configurationscolariteScalarWhereInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateManyMutationInput, Prisma.configurationscolariteUncheckedUpdateManyWithoutNiveauscolaireInput>
 }
 
-export type ConfigurationScolariteCreateWithoutInscriptionInput = {
+export type configurationscolariteCreateWithoutTranchescolariteInput = {
   id?: string
   nom: string
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutConfigScolariteInput
-  niveauScolaire: Prisma.NiveauScolaireCreateNestedOneWithoutConfigScolariteInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutConfigScolariteInput
-  tranches?: Prisma.TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutConfigurationscolariteInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutConfigurationscolariteInput
+  niveauscolaire: Prisma.niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput
+  dossierscolarite?: Prisma.dossierscolariteCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteUncheckedCreateWithoutInscriptionInput = {
-  id?: string
-  nom: string
-  estActive?: boolean
-  ecoleId: string
-  niveauScolaireId: string
-  anneeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  tranches?: Prisma.TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-}
-
-export type ConfigurationScolariteCreateOrConnectWithoutInscriptionInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutInscriptionInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutInscriptionInput>
-}
-
-export type ConfigurationScolariteUpsertWithoutInscriptionInput = {
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutInscriptionInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutInscriptionInput>
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutInscriptionInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutInscriptionInput>
-  where?: Prisma.ConfigurationScolariteWhereInput
-}
-
-export type ConfigurationScolariteUpdateToOneWithWhereWithoutInscriptionInput = {
-  where?: Prisma.ConfigurationScolariteWhereInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutInscriptionInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutInscriptionInput>
-}
-
-export type ConfigurationScolariteUpdateWithoutInscriptionInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput
-  niveauScolaire?: Prisma.NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteUncheckedUpdateWithoutInscriptionInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  tranches?: Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteCreateWithoutTranchesInput = {
-  id?: string
-  nom: string
-  estActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutConfigScolariteInput
-  niveauScolaire: Prisma.NiveauScolaireCreateNestedOneWithoutConfigScolariteInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutConfigScolariteInput
-  inscription?: Prisma.InscriptionCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteCreateNestedManyWithoutConfigurationScolariteInput
-}
-
-export type ConfigurationScolariteUncheckedCreateWithoutTranchesInput = {
+export type configurationscolariteUncheckedCreateWithoutTranchescolariteInput = {
   id?: string
   nom: string
   estActive?: boolean
@@ -854,108 +922,40 @@ export type ConfigurationScolariteUncheckedCreateWithoutTranchesInput = {
   anneeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription?: Prisma.InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedCreateNestedManyWithoutConfigurationscolariteInput
+  inscription?: Prisma.inscriptionUncheckedCreateNestedManyWithoutConfigurationscolariteInput
 }
 
-export type ConfigurationScolariteCreateOrConnectWithoutTranchesInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutTranchesInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutTranchesInput>
+export type configurationscolariteCreateOrConnectWithoutTranchescolariteInput = {
+  where: Prisma.configurationscolariteWhereUniqueInput
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutTranchescolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutTranchescolariteInput>
 }
 
-export type ConfigurationScolariteUpsertWithoutTranchesInput = {
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutTranchesInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutTranchesInput>
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutTranchesInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutTranchesInput>
-  where?: Prisma.ConfigurationScolariteWhereInput
+export type configurationscolariteUpsertWithoutTranchescolariteInput = {
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutTranchescolariteInput, Prisma.configurationscolariteUncheckedUpdateWithoutTranchescolariteInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateWithoutTranchescolariteInput, Prisma.configurationscolariteUncheckedCreateWithoutTranchescolariteInput>
+  where?: Prisma.configurationscolariteWhereInput
 }
 
-export type ConfigurationScolariteUpdateToOneWithWhereWithoutTranchesInput = {
-  where?: Prisma.ConfigurationScolariteWhereInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutTranchesInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutTranchesInput>
+export type configurationscolariteUpdateToOneWithWhereWithoutTranchescolariteInput = {
+  where?: Prisma.configurationscolariteWhereInput
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateWithoutTranchescolariteInput, Prisma.configurationscolariteUncheckedUpdateWithoutTranchescolariteInput>
 }
 
-export type ConfigurationScolariteUpdateWithoutTranchesInput = {
+export type configurationscolariteUpdateWithoutTranchescolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput
-  niveauScolaire?: Prisma.NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  inscription?: Prisma.InscriptionUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutConfigurationscolariteNestedInput
 }
 
-export type ConfigurationScolariteUncheckedUpdateWithoutTranchesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteCreateWithoutDossierScolariteInput = {
-  id?: string
-  nom: string
-  estActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutConfigScolariteInput
-  niveauScolaire: Prisma.NiveauScolaireCreateNestedOneWithoutConfigScolariteInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutConfigScolariteInput
-  inscription?: Prisma.InscriptionCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteCreateNestedManyWithoutConfigurationScolariteInput
-}
-
-export type ConfigurationScolariteUncheckedCreateWithoutDossierScolariteInput = {
-  id?: string
-  nom: string
-  estActive?: boolean
-  ecoleId: string
-  niveauScolaireId: string
-  anneeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  inscription?: Prisma.InscriptionUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-  tranches?: Prisma.TrancheScolariteUncheckedCreateNestedManyWithoutConfigurationScolariteInput
-}
-
-export type ConfigurationScolariteCreateOrConnectWithoutDossierScolariteInput = {
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutDossierScolariteInput>
-}
-
-export type ConfigurationScolariteUpsertWithoutDossierScolariteInput = {
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutDossierScolariteInput>
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUncheckedCreateWithoutDossierScolariteInput>
-  where?: Prisma.ConfigurationScolariteWhereInput
-}
-
-export type ConfigurationScolariteUpdateToOneWithWhereWithoutDossierScolariteInput = {
-  where?: Prisma.ConfigurationScolariteWhereInput
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateWithoutDossierScolariteInput, Prisma.ConfigurationScolariteUncheckedUpdateWithoutDossierScolariteInput>
-}
-
-export type ConfigurationScolariteUpdateWithoutDossierScolariteInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput
-  niveauScolaire?: Prisma.NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  inscription?: Prisma.InscriptionUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteUncheckedUpdateWithoutDossierScolariteInput = {
+export type configurationscolariteUncheckedUpdateWithoutTranchescolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -964,57 +964,11 @@ export type ConfigurationScolariteUncheckedUpdateWithoutDossierScolariteInput = 
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
 }
 
-export type ConfigurationScolariteCreateManyEcoleInput = {
-  id?: string
-  nom: string
-  estActive?: boolean
-  niveauScolaireId: string
-  anneeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type ConfigurationScolariteUpdateWithoutEcoleInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  niveauScolaire?: Prisma.NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  inscription?: Prisma.InscriptionUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteUncheckedUpdateWithoutEcoleInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteUncheckedUpdateManyWithoutEcoleInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type ConfigurationScolariteCreateManyAnneeScolaireInput = {
+export type configurationscolariteCreateManyAnneescolaireInput = {
   id?: string
   nom: string
   estActive?: boolean
@@ -1024,33 +978,20 @@ export type ConfigurationScolariteCreateManyAnneeScolaireInput = {
   updatedAt?: Date | string
 }
 
-export type ConfigurationScolariteUpdateWithoutAnneeScolaireInput = {
+export type configurationscolariteUpdateWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput
-  niveauScolaire?: Prisma.NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  inscription?: Prisma.InscriptionUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput
 }
 
-export type ConfigurationScolariteUncheckedUpdateWithoutAnneeScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-}
-
-export type ConfigurationScolariteUncheckedUpdateManyWithoutAnneeScolaireInput = {
+export type configurationscolariteUncheckedUpdateWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1058,9 +999,68 @@ export type ConfigurationScolariteUncheckedUpdateManyWithoutAnneeScolaireInput =
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
 }
 
-export type ConfigurationScolariteCreateManyNiveauScolaireInput = {
+export type configurationscolariteUncheckedUpdateManyWithoutAnneescolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type configurationscolariteCreateManyEcoleInput = {
+  id?: string
+  nom: string
+  estActive?: boolean
+  niveauScolaireId: string
+  anneeScolaireId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type configurationscolariteUpdateWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteUncheckedUpdateWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+}
+
+export type configurationscolariteUncheckedUpdateManyWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type configurationscolariteCreateManyNiveauscolaireInput = {
   id?: string
   nom: string
   estActive?: boolean
@@ -1070,20 +1070,20 @@ export type ConfigurationScolariteCreateManyNiveauScolaireInput = {
   updatedAt?: Date | string
 }
 
-export type ConfigurationScolariteUpdateWithoutNiveauScolaireInput = {
+export type configurationscolariteUpdateWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput
-  inscription?: Prisma.InscriptionUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUpdateManyWithoutConfigurationScolariteNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUpdateManyWithoutConfigurationscolariteNestedInput
 }
 
-export type ConfigurationScolariteUncheckedUpdateWithoutNiveauScolaireInput = {
+export type configurationscolariteUncheckedUpdateWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1091,12 +1091,12 @@ export type ConfigurationScolariteUncheckedUpdateWithoutNiveauScolaireInput = {
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  tranches?: Prisma.TrancheScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
-  dossierScolarite?: Prisma.DossierScolariteUncheckedUpdateManyWithoutConfigurationScolariteNestedInput
+  dossierscolarite?: Prisma.dossierscolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  inscription?: Prisma.inscriptionUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
+  tranchescolarite?: Prisma.tranchescolariteUncheckedUpdateManyWithoutConfigurationscolariteNestedInput
 }
 
-export type ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireInput = {
+export type configurationscolariteUncheckedUpdateManyWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1108,54 +1108,54 @@ export type ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireInput 
 
 
 /**
- * Count Type ConfigurationScolariteCountOutputType
+ * Count Type ConfigurationscolariteCountOutputType
  */
 
-export type ConfigurationScolariteCountOutputType = {
+export type ConfigurationscolariteCountOutputType = {
+  dossierscolarite: number
   inscription: number
-  tranches: number
-  dossierScolarite: number
+  tranchescolarite: number
 }
 
-export type ConfigurationScolariteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  inscription?: boolean | ConfigurationScolariteCountOutputTypeCountInscriptionArgs
-  tranches?: boolean | ConfigurationScolariteCountOutputTypeCountTranchesArgs
-  dossierScolarite?: boolean | ConfigurationScolariteCountOutputTypeCountDossierScolariteArgs
+export type ConfigurationscolariteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  dossierscolarite?: boolean | ConfigurationscolariteCountOutputTypeCountDossierscolariteArgs
+  inscription?: boolean | ConfigurationscolariteCountOutputTypeCountInscriptionArgs
+  tranchescolarite?: boolean | ConfigurationscolariteCountOutputTypeCountTranchescolariteArgs
 }
 
 /**
- * ConfigurationScolariteCountOutputType without action
+ * ConfigurationscolariteCountOutputType without action
  */
-export type ConfigurationScolariteCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConfigurationscolariteCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolariteCountOutputType
+   * Select specific fields to fetch from the ConfigurationscolariteCountOutputType
    */
-  select?: Prisma.ConfigurationScolariteCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.ConfigurationscolariteCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * ConfigurationScolariteCountOutputType without action
+ * ConfigurationscolariteCountOutputType without action
  */
-export type ConfigurationScolariteCountOutputTypeCountInscriptionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InscriptionWhereInput
+export type ConfigurationscolariteCountOutputTypeCountDossierscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.dossierscolariteWhereInput
 }
 
 /**
- * ConfigurationScolariteCountOutputType without action
+ * ConfigurationscolariteCountOutputType without action
  */
-export type ConfigurationScolariteCountOutputTypeCountTranchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TrancheScolariteWhereInput
+export type ConfigurationscolariteCountOutputTypeCountInscriptionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.inscriptionWhereInput
 }
 
 /**
- * ConfigurationScolariteCountOutputType without action
+ * ConfigurationscolariteCountOutputType without action
  */
-export type ConfigurationScolariteCountOutputTypeCountDossierScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DossierScolariteWhereInput
+export type ConfigurationscolariteCountOutputTypeCountTranchescolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.tranchescolariteWhereInput
 }
 
 
-export type ConfigurationScolariteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type configurationscolariteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nom?: boolean
   estActive?: boolean
@@ -1164,18 +1164,18 @@ export type ConfigurationScolariteSelect<ExtArgs extends runtime.Types.Extension
   anneeScolaireId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  niveauScolaire?: boolean | Prisma.NiveauScolaireDefaultArgs<ExtArgs>
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  inscription?: boolean | Prisma.ConfigurationScolarite$inscriptionArgs<ExtArgs>
-  tranches?: boolean | Prisma.ConfigurationScolarite$tranchesArgs<ExtArgs>
-  dossierScolarite?: boolean | Prisma.ConfigurationScolarite$dossierScolariteArgs<ExtArgs>
-  _count?: boolean | Prisma.ConfigurationScolariteCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["configurationScolarite"]>
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  niveauscolaire?: boolean | Prisma.niveauscolaireDefaultArgs<ExtArgs>
+  dossierscolarite?: boolean | Prisma.configurationscolarite$dossierscolariteArgs<ExtArgs>
+  inscription?: boolean | Prisma.configurationscolarite$inscriptionArgs<ExtArgs>
+  tranchescolarite?: boolean | Prisma.configurationscolarite$tranchescolariteArgs<ExtArgs>
+  _count?: boolean | Prisma.ConfigurationscolariteCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["configurationscolarite"]>
 
 
 
-export type ConfigurationScolariteSelectScalar = {
+export type configurationscolariteSelectScalar = {
   id?: boolean
   nom?: boolean
   estActive?: boolean
@@ -1186,26 +1186,26 @@ export type ConfigurationScolariteSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ConfigurationScolariteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "estActive" | "ecoleId" | "niveauScolaireId" | "anneeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["configurationScolarite"]>
-export type ConfigurationScolariteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  niveauScolaire?: boolean | Prisma.NiveauScolaireDefaultArgs<ExtArgs>
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  inscription?: boolean | Prisma.ConfigurationScolarite$inscriptionArgs<ExtArgs>
-  tranches?: boolean | Prisma.ConfigurationScolarite$tranchesArgs<ExtArgs>
-  dossierScolarite?: boolean | Prisma.ConfigurationScolarite$dossierScolariteArgs<ExtArgs>
-  _count?: boolean | Prisma.ConfigurationScolariteCountOutputTypeDefaultArgs<ExtArgs>
+export type configurationscolariteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "estActive" | "ecoleId" | "niveauScolaireId" | "anneeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["configurationscolarite"]>
+export type configurationscolariteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  niveauscolaire?: boolean | Prisma.niveauscolaireDefaultArgs<ExtArgs>
+  dossierscolarite?: boolean | Prisma.configurationscolarite$dossierscolariteArgs<ExtArgs>
+  inscription?: boolean | Prisma.configurationscolarite$inscriptionArgs<ExtArgs>
+  tranchescolarite?: boolean | Prisma.configurationscolarite$tranchescolariteArgs<ExtArgs>
+  _count?: boolean | Prisma.ConfigurationscolariteCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $ConfigurationScolaritePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "ConfigurationScolarite"
+export type $configurationscolaritePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "configurationscolarite"
   objects: {
-    ecole: Prisma.$EcolePayload<ExtArgs>
-    niveauScolaire: Prisma.$NiveauScolairePayload<ExtArgs>
-    anneeScolaire: Prisma.$AnneeScolairePayload<ExtArgs>
-    inscription: Prisma.$InscriptionPayload<ExtArgs>[]
-    tranches: Prisma.$TrancheScolaritePayload<ExtArgs>[]
-    dossierScolarite: Prisma.$DossierScolaritePayload<ExtArgs>[]
+    anneescolaire: Prisma.$anneescolairePayload<ExtArgs>
+    ecole: Prisma.$ecolePayload<ExtArgs>
+    niveauscolaire: Prisma.$niveauscolairePayload<ExtArgs>
+    dossierscolarite: Prisma.$dossierscolaritePayload<ExtArgs>[]
+    inscription: Prisma.$inscriptionPayload<ExtArgs>[]
+    tranchescolarite: Prisma.$tranchescolaritePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1216,143 +1216,143 @@ export type $ConfigurationScolaritePayload<ExtArgs extends runtime.Types.Extensi
     anneeScolaireId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["configurationScolarite"]>
+  }, ExtArgs["result"]["configurationscolarite"]>
   composites: {}
 }
 
-export type ConfigurationScolariteGetPayload<S extends boolean | null | undefined | ConfigurationScolariteDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload, S>
+export type configurationscolariteGetPayload<S extends boolean | null | undefined | configurationscolariteDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload, S>
 
-export type ConfigurationScolariteCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ConfigurationScolariteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: ConfigurationScolariteCountAggregateInputType | true
+export type configurationscolariteCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<configurationscolariteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ConfigurationscolariteCountAggregateInputType | true
   }
 
-export interface ConfigurationScolariteDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ConfigurationScolarite'], meta: { name: 'ConfigurationScolarite' } }
+export interface configurationscolariteDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['configurationscolarite'], meta: { name: 'configurationscolarite' } }
   /**
-   * Find zero or one ConfigurationScolarite that matches the filter.
-   * @param {ConfigurationScolariteFindUniqueArgs} args - Arguments to find a ConfigurationScolarite
+   * Find zero or one Configurationscolarite that matches the filter.
+   * @param {configurationscolariteFindUniqueArgs} args - Arguments to find a Configurationscolarite
    * @example
-   * // Get one ConfigurationScolarite
-   * const configurationScolarite = await prisma.configurationScolarite.findUnique({
+   * // Get one Configurationscolarite
+   * const configurationscolarite = await prisma.configurationscolarite.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends ConfigurationScolariteFindUniqueArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends configurationscolariteFindUniqueArgs>(args: Prisma.SelectSubset<T, configurationscolariteFindUniqueArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one ConfigurationScolarite that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Configurationscolarite that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ConfigurationScolariteFindUniqueOrThrowArgs} args - Arguments to find a ConfigurationScolarite
+   * @param {configurationscolariteFindUniqueOrThrowArgs} args - Arguments to find a Configurationscolarite
    * @example
-   * // Get one ConfigurationScolarite
-   * const configurationScolarite = await prisma.configurationScolarite.findUniqueOrThrow({
+   * // Get one Configurationscolarite
+   * const configurationscolarite = await prisma.configurationscolarite.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ConfigurationScolariteFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends configurationscolariteFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, configurationscolariteFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ConfigurationScolarite that matches the filter.
+   * Find the first Configurationscolarite that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteFindFirstArgs} args - Arguments to find a ConfigurationScolarite
+   * @param {configurationscolariteFindFirstArgs} args - Arguments to find a Configurationscolarite
    * @example
-   * // Get one ConfigurationScolarite
-   * const configurationScolarite = await prisma.configurationScolarite.findFirst({
+   * // Get one Configurationscolarite
+   * const configurationscolarite = await prisma.configurationscolarite.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends ConfigurationScolariteFindFirstArgs>(args?: Prisma.SelectSubset<T, ConfigurationScolariteFindFirstArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends configurationscolariteFindFirstArgs>(args?: Prisma.SelectSubset<T, configurationscolariteFindFirstArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ConfigurationScolarite that matches the filter or
+   * Find the first Configurationscolarite that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteFindFirstOrThrowArgs} args - Arguments to find a ConfigurationScolarite
+   * @param {configurationscolariteFindFirstOrThrowArgs} args - Arguments to find a Configurationscolarite
    * @example
-   * // Get one ConfigurationScolarite
-   * const configurationScolarite = await prisma.configurationScolarite.findFirstOrThrow({
+   * // Get one Configurationscolarite
+   * const configurationscolarite = await prisma.configurationscolarite.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends ConfigurationScolariteFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ConfigurationScolariteFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends configurationscolariteFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, configurationscolariteFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more ConfigurationScolarites that matches the filter.
+   * Find zero or more Configurationscolarites that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {configurationscolariteFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all ConfigurationScolarites
-   * const configurationScolarites = await prisma.configurationScolarite.findMany()
+   * // Get all Configurationscolarites
+   * const configurationscolarites = await prisma.configurationscolarite.findMany()
    * 
-   * // Get first 10 ConfigurationScolarites
-   * const configurationScolarites = await prisma.configurationScolarite.findMany({ take: 10 })
+   * // Get first 10 Configurationscolarites
+   * const configurationscolarites = await prisma.configurationscolarite.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const configurationScolariteWithIdOnly = await prisma.configurationScolarite.findMany({ select: { id: true } })
+   * const configurationscolariteWithIdOnly = await prisma.configurationscolarite.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends ConfigurationScolariteFindManyArgs>(args?: Prisma.SelectSubset<T, ConfigurationScolariteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends configurationscolariteFindManyArgs>(args?: Prisma.SelectSubset<T, configurationscolariteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a ConfigurationScolarite.
-   * @param {ConfigurationScolariteCreateArgs} args - Arguments to create a ConfigurationScolarite.
+   * Create a Configurationscolarite.
+   * @param {configurationscolariteCreateArgs} args - Arguments to create a Configurationscolarite.
    * @example
-   * // Create one ConfigurationScolarite
-   * const ConfigurationScolarite = await prisma.configurationScolarite.create({
+   * // Create one Configurationscolarite
+   * const Configurationscolarite = await prisma.configurationscolarite.create({
    *   data: {
-   *     // ... data to create a ConfigurationScolarite
+   *     // ... data to create a Configurationscolarite
    *   }
    * })
    * 
    */
-  create<T extends ConfigurationScolariteCreateArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteCreateArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends configurationscolariteCreateArgs>(args: Prisma.SelectSubset<T, configurationscolariteCreateArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many ConfigurationScolarites.
-   * @param {ConfigurationScolariteCreateManyArgs} args - Arguments to create many ConfigurationScolarites.
+   * Create many Configurationscolarites.
+   * @param {configurationscolariteCreateManyArgs} args - Arguments to create many Configurationscolarites.
    * @example
-   * // Create many ConfigurationScolarites
-   * const configurationScolarite = await prisma.configurationScolarite.createMany({
+   * // Create many Configurationscolarites
+   * const configurationscolarite = await prisma.configurationscolarite.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends ConfigurationScolariteCreateManyArgs>(args?: Prisma.SelectSubset<T, ConfigurationScolariteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends configurationscolariteCreateManyArgs>(args?: Prisma.SelectSubset<T, configurationscolariteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a ConfigurationScolarite.
-   * @param {ConfigurationScolariteDeleteArgs} args - Arguments to delete one ConfigurationScolarite.
+   * Delete a Configurationscolarite.
+   * @param {configurationscolariteDeleteArgs} args - Arguments to delete one Configurationscolarite.
    * @example
-   * // Delete one ConfigurationScolarite
-   * const ConfigurationScolarite = await prisma.configurationScolarite.delete({
+   * // Delete one Configurationscolarite
+   * const Configurationscolarite = await prisma.configurationscolarite.delete({
    *   where: {
-   *     // ... filter to delete one ConfigurationScolarite
+   *     // ... filter to delete one Configurationscolarite
    *   }
    * })
    * 
    */
-  delete<T extends ConfigurationScolariteDeleteArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteDeleteArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends configurationscolariteDeleteArgs>(args: Prisma.SelectSubset<T, configurationscolariteDeleteArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one ConfigurationScolarite.
-   * @param {ConfigurationScolariteUpdateArgs} args - Arguments to update one ConfigurationScolarite.
+   * Update one Configurationscolarite.
+   * @param {configurationscolariteUpdateArgs} args - Arguments to update one Configurationscolarite.
    * @example
-   * // Update one ConfigurationScolarite
-   * const configurationScolarite = await prisma.configurationScolarite.update({
+   * // Update one Configurationscolarite
+   * const configurationscolarite = await prisma.configurationscolarite.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1362,30 +1362,30 @@ export interface ConfigurationScolariteDelegate<ExtArgs extends runtime.Types.Ex
    * })
    * 
    */
-  update<T extends ConfigurationScolariteUpdateArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteUpdateArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends configurationscolariteUpdateArgs>(args: Prisma.SelectSubset<T, configurationscolariteUpdateArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more ConfigurationScolarites.
-   * @param {ConfigurationScolariteDeleteManyArgs} args - Arguments to filter ConfigurationScolarites to delete.
+   * Delete zero or more Configurationscolarites.
+   * @param {configurationscolariteDeleteManyArgs} args - Arguments to filter Configurationscolarites to delete.
    * @example
-   * // Delete a few ConfigurationScolarites
-   * const { count } = await prisma.configurationScolarite.deleteMany({
+   * // Delete a few Configurationscolarites
+   * const { count } = await prisma.configurationscolarite.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends ConfigurationScolariteDeleteManyArgs>(args?: Prisma.SelectSubset<T, ConfigurationScolariteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends configurationscolariteDeleteManyArgs>(args?: Prisma.SelectSubset<T, configurationscolariteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more ConfigurationScolarites.
+   * Update zero or more Configurationscolarites.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {configurationscolariteUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many ConfigurationScolarites
-   * const configurationScolarite = await prisma.configurationScolarite.updateMany({
+   * // Update many Configurationscolarites
+   * const configurationscolarite = await prisma.configurationscolarite.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1395,56 +1395,56 @@ export interface ConfigurationScolariteDelegate<ExtArgs extends runtime.Types.Ex
    * })
    * 
    */
-  updateMany<T extends ConfigurationScolariteUpdateManyArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends configurationscolariteUpdateManyArgs>(args: Prisma.SelectSubset<T, configurationscolariteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one ConfigurationScolarite.
-   * @param {ConfigurationScolariteUpsertArgs} args - Arguments to update or create a ConfigurationScolarite.
+   * Create or update one Configurationscolarite.
+   * @param {configurationscolariteUpsertArgs} args - Arguments to update or create a Configurationscolarite.
    * @example
-   * // Update or create a ConfigurationScolarite
-   * const configurationScolarite = await prisma.configurationScolarite.upsert({
+   * // Update or create a Configurationscolarite
+   * const configurationscolarite = await prisma.configurationscolarite.upsert({
    *   create: {
-   *     // ... data to create a ConfigurationScolarite
+   *     // ... data to create a Configurationscolarite
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the ConfigurationScolarite we want to update
+   *     // ... the filter for the Configurationscolarite we want to update
    *   }
    * })
    */
-  upsert<T extends ConfigurationScolariteUpsertArgs>(args: Prisma.SelectSubset<T, ConfigurationScolariteUpsertArgs<ExtArgs>>): Prisma.Prisma__ConfigurationScolariteClient<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends configurationscolariteUpsertArgs>(args: Prisma.SelectSubset<T, configurationscolariteUpsertArgs<ExtArgs>>): Prisma.Prisma__configurationscolariteClient<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of ConfigurationScolarites.
+   * Count the number of Configurationscolarites.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteCountArgs} args - Arguments to filter ConfigurationScolarites to count.
+   * @param {configurationscolariteCountArgs} args - Arguments to filter Configurationscolarites to count.
    * @example
-   * // Count the number of ConfigurationScolarites
-   * const count = await prisma.configurationScolarite.count({
+   * // Count the number of Configurationscolarites
+   * const count = await prisma.configurationscolarite.count({
    *   where: {
-   *     // ... the filter for the ConfigurationScolarites we want to count
+   *     // ... the filter for the Configurationscolarites we want to count
    *   }
    * })
   **/
-  count<T extends ConfigurationScolariteCountArgs>(
-    args?: Prisma.Subset<T, ConfigurationScolariteCountArgs>,
+  count<T extends configurationscolariteCountArgs>(
+    args?: Prisma.Subset<T, configurationscolariteCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], ConfigurationScolariteCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], ConfigurationscolariteCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a ConfigurationScolarite.
+   * Allows you to perform aggregations operations on a Configurationscolarite.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {ConfigurationscolariteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1464,13 +1464,13 @@ export interface ConfigurationScolariteDelegate<ExtArgs extends runtime.Types.Ex
    *   take: 10,
    * })
   **/
-  aggregate<T extends ConfigurationScolariteAggregateArgs>(args: Prisma.Subset<T, ConfigurationScolariteAggregateArgs>): Prisma.PrismaPromise<GetConfigurationScolariteAggregateType<T>>
+  aggregate<T extends ConfigurationscolariteAggregateArgs>(args: Prisma.Subset<T, ConfigurationscolariteAggregateArgs>): Prisma.PrismaPromise<GetConfigurationscolariteAggregateType<T>>
 
   /**
-   * Group by ConfigurationScolarite.
+   * Group by Configurationscolarite.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ConfigurationScolariteGroupByArgs} args - Group by arguments.
+   * @param {configurationscolariteGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1485,14 +1485,14 @@ export interface ConfigurationScolariteDelegate<ExtArgs extends runtime.Types.Ex
    * 
   **/
   groupBy<
-    T extends ConfigurationScolariteGroupByArgs,
+    T extends configurationscolariteGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ConfigurationScolariteGroupByArgs['orderBy'] }
-      : { orderBy?: ConfigurationScolariteGroupByArgs['orderBy'] },
+      ? { orderBy: configurationscolariteGroupByArgs['orderBy'] }
+      : { orderBy?: configurationscolariteGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1541,27 +1541,27 @@ export interface ConfigurationScolariteDelegate<ExtArgs extends runtime.Types.Ex
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ConfigurationScolariteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConfigurationScolariteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, configurationscolariteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConfigurationscolariteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the ConfigurationScolarite model
+ * Fields of the configurationscolarite model
  */
-readonly fields: ConfigurationScolariteFieldRefs;
+readonly fields: configurationscolariteFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for ConfigurationScolarite.
+ * The delegate class that acts as a "Promise-like" for configurationscolarite.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ConfigurationScolariteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__configurationscolariteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  ecole<T extends Prisma.EcoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EcoleDefaultArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  niveauScolaire<T extends Prisma.NiveauScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.NiveauScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  anneeScolaire<T extends Prisma.AnneeScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AnneeScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__AnneeScolaireClient<runtime.Types.Result.GetResult<Prisma.$AnneeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  inscription<T extends Prisma.ConfigurationScolarite$inscriptionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConfigurationScolarite$inscriptionArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  tranches<T extends Prisma.ConfigurationScolarite$tranchesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConfigurationScolarite$tranchesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TrancheScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  dossierScolarite<T extends Prisma.ConfigurationScolarite$dossierScolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConfigurationScolarite$dossierScolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DossierScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  anneescolaire<T extends Prisma.anneescolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.anneescolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__anneescolaireClient<runtime.Types.Result.GetResult<Prisma.$anneescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  ecole<T extends Prisma.ecoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecoleDefaultArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  niveauscolaire<T extends Prisma.niveauscolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.niveauscolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  dossierscolarite<T extends Prisma.configurationscolarite$dossierscolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.configurationscolarite$dossierscolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dossierscolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  inscription<T extends Prisma.configurationscolarite$inscriptionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.configurationscolarite$inscriptionArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  tranchescolarite<T extends Prisma.configurationscolarite$tranchescolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.configurationscolarite$tranchescolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$tranchescolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1588,450 +1588,450 @@ export interface Prisma__ConfigurationScolariteClient<T, Null = never, ExtArgs e
 
 
 /**
- * Fields of the ConfigurationScolarite model
+ * Fields of the configurationscolarite model
  */
-export interface ConfigurationScolariteFieldRefs {
-  readonly id: Prisma.FieldRef<"ConfigurationScolarite", 'String'>
-  readonly nom: Prisma.FieldRef<"ConfigurationScolarite", 'String'>
-  readonly estActive: Prisma.FieldRef<"ConfigurationScolarite", 'Boolean'>
-  readonly ecoleId: Prisma.FieldRef<"ConfigurationScolarite", 'String'>
-  readonly niveauScolaireId: Prisma.FieldRef<"ConfigurationScolarite", 'String'>
-  readonly anneeScolaireId: Prisma.FieldRef<"ConfigurationScolarite", 'String'>
-  readonly createdAt: Prisma.FieldRef<"ConfigurationScolarite", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"ConfigurationScolarite", 'DateTime'>
+export interface configurationscolariteFieldRefs {
+  readonly id: Prisma.FieldRef<"configurationscolarite", 'String'>
+  readonly nom: Prisma.FieldRef<"configurationscolarite", 'String'>
+  readonly estActive: Prisma.FieldRef<"configurationscolarite", 'Boolean'>
+  readonly ecoleId: Prisma.FieldRef<"configurationscolarite", 'String'>
+  readonly niveauScolaireId: Prisma.FieldRef<"configurationscolarite", 'String'>
+  readonly anneeScolaireId: Prisma.FieldRef<"configurationscolarite", 'String'>
+  readonly createdAt: Prisma.FieldRef<"configurationscolarite", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"configurationscolarite", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * ConfigurationScolarite findUnique
+ * configurationscolarite findUnique
  */
-export type ConfigurationScolariteFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which ConfigurationScolarite to fetch.
+   * Filter, which configurationscolarite to fetch.
    */
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
+  where: Prisma.configurationscolariteWhereUniqueInput
 }
 
 /**
- * ConfigurationScolarite findUniqueOrThrow
+ * configurationscolarite findUniqueOrThrow
  */
-export type ConfigurationScolariteFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which ConfigurationScolarite to fetch.
+   * Filter, which configurationscolarite to fetch.
    */
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
+  where: Prisma.configurationscolariteWhereUniqueInput
 }
 
 /**
- * ConfigurationScolarite findFirst
+ * configurationscolarite findFirst
  */
-export type ConfigurationScolariteFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which ConfigurationScolarite to fetch.
+   * Filter, which configurationscolarite to fetch.
    */
-  where?: Prisma.ConfigurationScolariteWhereInput
+  where?: Prisma.configurationscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ConfigurationScolarites to fetch.
+   * Determine the order of configurationscolarites to fetch.
    */
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithRelationInput | Prisma.ConfigurationScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.configurationscolariteOrderByWithRelationInput | Prisma.configurationscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ConfigurationScolarites.
+   * Sets the position for searching for configurationscolarites.
    */
-  cursor?: Prisma.ConfigurationScolariteWhereUniqueInput
+  cursor?: Prisma.configurationscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ConfigurationScolarites from the position of the cursor.
+   * Take `±n` configurationscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ConfigurationScolarites.
+   * Skip the first `n` configurationscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ConfigurationScolarites.
+   * Filter by unique combinations of configurationscolarites.
    */
-  distinct?: Prisma.ConfigurationScolariteScalarFieldEnum | Prisma.ConfigurationScolariteScalarFieldEnum[]
+  distinct?: Prisma.ConfigurationscolariteScalarFieldEnum | Prisma.ConfigurationscolariteScalarFieldEnum[]
 }
 
 /**
- * ConfigurationScolarite findFirstOrThrow
+ * configurationscolarite findFirstOrThrow
  */
-export type ConfigurationScolariteFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which ConfigurationScolarite to fetch.
+   * Filter, which configurationscolarite to fetch.
    */
-  where?: Prisma.ConfigurationScolariteWhereInput
+  where?: Prisma.configurationscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ConfigurationScolarites to fetch.
+   * Determine the order of configurationscolarites to fetch.
    */
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithRelationInput | Prisma.ConfigurationScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.configurationscolariteOrderByWithRelationInput | Prisma.configurationscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ConfigurationScolarites.
+   * Sets the position for searching for configurationscolarites.
    */
-  cursor?: Prisma.ConfigurationScolariteWhereUniqueInput
+  cursor?: Prisma.configurationscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ConfigurationScolarites from the position of the cursor.
+   * Take `±n` configurationscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ConfigurationScolarites.
+   * Skip the first `n` configurationscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ConfigurationScolarites.
+   * Filter by unique combinations of configurationscolarites.
    */
-  distinct?: Prisma.ConfigurationScolariteScalarFieldEnum | Prisma.ConfigurationScolariteScalarFieldEnum[]
+  distinct?: Prisma.ConfigurationscolariteScalarFieldEnum | Prisma.ConfigurationscolariteScalarFieldEnum[]
 }
 
 /**
- * ConfigurationScolarite findMany
+ * configurationscolarite findMany
  */
-export type ConfigurationScolariteFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * Filter, which ConfigurationScolarites to fetch.
+   * Filter, which configurationscolarites to fetch.
    */
-  where?: Prisma.ConfigurationScolariteWhereInput
+  where?: Prisma.configurationscolariteWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ConfigurationScolarites to fetch.
+   * Determine the order of configurationscolarites to fetch.
    */
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithRelationInput | Prisma.ConfigurationScolariteOrderByWithRelationInput[]
+  orderBy?: Prisma.configurationscolariteOrderByWithRelationInput | Prisma.configurationscolariteOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing ConfigurationScolarites.
+   * Sets the position for listing configurationscolarites.
    */
-  cursor?: Prisma.ConfigurationScolariteWhereUniqueInput
+  cursor?: Prisma.configurationscolariteWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ConfigurationScolarites from the position of the cursor.
+   * Take `±n` configurationscolarites from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ConfigurationScolarites.
+   * Skip the first `n` configurationscolarites.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ConfigurationScolarites.
+   * Filter by unique combinations of configurationscolarites.
    */
-  distinct?: Prisma.ConfigurationScolariteScalarFieldEnum | Prisma.ConfigurationScolariteScalarFieldEnum[]
+  distinct?: Prisma.ConfigurationscolariteScalarFieldEnum | Prisma.ConfigurationscolariteScalarFieldEnum[]
 }
 
 /**
- * ConfigurationScolarite create
+ * configurationscolarite create
  */
-export type ConfigurationScolariteCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * The data needed to create a ConfigurationScolarite.
+   * The data needed to create a configurationscolarite.
    */
-  data: Prisma.XOR<Prisma.ConfigurationScolariteCreateInput, Prisma.ConfigurationScolariteUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.configurationscolariteCreateInput, Prisma.configurationscolariteUncheckedCreateInput>
 }
 
 /**
- * ConfigurationScolarite createMany
+ * configurationscolarite createMany
  */
-export type ConfigurationScolariteCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many ConfigurationScolarites.
+   * The data used to create many configurationscolarites.
    */
-  data: Prisma.ConfigurationScolariteCreateManyInput | Prisma.ConfigurationScolariteCreateManyInput[]
+  data: Prisma.configurationscolariteCreateManyInput | Prisma.configurationscolariteCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * ConfigurationScolarite update
+ * configurationscolarite update
  */
-export type ConfigurationScolariteUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * The data needed to update a ConfigurationScolarite.
+   * The data needed to update a configurationscolarite.
    */
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateInput, Prisma.ConfigurationScolariteUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateInput, Prisma.configurationscolariteUncheckedUpdateInput>
   /**
-   * Choose, which ConfigurationScolarite to update.
+   * Choose, which configurationscolarite to update.
    */
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
+  where: Prisma.configurationscolariteWhereUniqueInput
 }
 
 /**
- * ConfigurationScolarite updateMany
+ * configurationscolarite updateMany
  */
-export type ConfigurationScolariteUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update ConfigurationScolarites.
+   * The data used to update configurationscolarites.
    */
-  data: Prisma.XOR<Prisma.ConfigurationScolariteUpdateManyMutationInput, Prisma.ConfigurationScolariteUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.configurationscolariteUpdateManyMutationInput, Prisma.configurationscolariteUncheckedUpdateManyInput>
   /**
-   * Filter which ConfigurationScolarites to update
+   * Filter which configurationscolarites to update
    */
-  where?: Prisma.ConfigurationScolariteWhereInput
+  where?: Prisma.configurationscolariteWhereInput
   /**
-   * Limit how many ConfigurationScolarites to update.
+   * Limit how many configurationscolarites to update.
    */
   limit?: number
 }
 
 /**
- * ConfigurationScolarite upsert
+ * configurationscolarite upsert
  */
-export type ConfigurationScolariteUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * The filter to search for the ConfigurationScolarite to update in case it exists.
+   * The filter to search for the configurationscolarite to update in case it exists.
    */
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
+  where: Prisma.configurationscolariteWhereUniqueInput
   /**
-   * In case the ConfigurationScolarite found by the `where` argument doesn't exist, create a new ConfigurationScolarite with this data.
+   * In case the configurationscolarite found by the `where` argument doesn't exist, create a new configurationscolarite with this data.
    */
-  create: Prisma.XOR<Prisma.ConfigurationScolariteCreateInput, Prisma.ConfigurationScolariteUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.configurationscolariteCreateInput, Prisma.configurationscolariteUncheckedCreateInput>
   /**
-   * In case the ConfigurationScolarite was found with the provided `where` argument, update it with this data.
+   * In case the configurationscolarite was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ConfigurationScolariteUpdateInput, Prisma.ConfigurationScolariteUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.configurationscolariteUpdateInput, Prisma.configurationscolariteUncheckedUpdateInput>
 }
 
 /**
- * ConfigurationScolarite delete
+ * configurationscolarite delete
  */
-export type ConfigurationScolariteDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
   /**
-   * Filter which ConfigurationScolarite to delete.
+   * Filter which configurationscolarite to delete.
    */
-  where: Prisma.ConfigurationScolariteWhereUniqueInput
+  where: Prisma.configurationscolariteWhereUniqueInput
 }
 
 /**
- * ConfigurationScolarite deleteMany
+ * configurationscolarite deleteMany
  */
-export type ConfigurationScolariteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ConfigurationScolarites to delete
+   * Filter which configurationscolarites to delete
    */
-  where?: Prisma.ConfigurationScolariteWhereInput
+  where?: Prisma.configurationscolariteWhereInput
   /**
-   * Limit how many ConfigurationScolarites to delete.
+   * Limit how many configurationscolarites to delete.
    */
   limit?: number
 }
 
 /**
- * ConfigurationScolarite.inscription
+ * configurationscolarite.dossierscolarite
  */
-export type ConfigurationScolarite$inscriptionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolarite$dossierscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Inscription
+   * Select specific fields to fetch from the dossierscolarite
    */
-  select?: Prisma.InscriptionSelect<ExtArgs> | null
+  select?: Prisma.dossierscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Inscription
+   * Omit specific fields from the dossierscolarite
    */
-  omit?: Prisma.InscriptionOmit<ExtArgs> | null
+  omit?: Prisma.dossierscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InscriptionInclude<ExtArgs> | null
-  where?: Prisma.InscriptionWhereInput
-  orderBy?: Prisma.InscriptionOrderByWithRelationInput | Prisma.InscriptionOrderByWithRelationInput[]
-  cursor?: Prisma.InscriptionWhereUniqueInput
+  include?: Prisma.dossierscolariteInclude<ExtArgs> | null
+  where?: Prisma.dossierscolariteWhereInput
+  orderBy?: Prisma.dossierscolariteOrderByWithRelationInput | Prisma.dossierscolariteOrderByWithRelationInput[]
+  cursor?: Prisma.dossierscolariteWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DossierscolariteScalarFieldEnum | Prisma.DossierscolariteScalarFieldEnum[]
+}
+
+/**
+ * configurationscolarite.inscription
+ */
+export type configurationscolarite$inscriptionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the inscription
+   */
+  select?: Prisma.inscriptionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the inscription
+   */
+  omit?: Prisma.inscriptionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.inscriptionInclude<ExtArgs> | null
+  where?: Prisma.inscriptionWhereInput
+  orderBy?: Prisma.inscriptionOrderByWithRelationInput | Prisma.inscriptionOrderByWithRelationInput[]
+  cursor?: Prisma.inscriptionWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.InscriptionScalarFieldEnum | Prisma.InscriptionScalarFieldEnum[]
 }
 
 /**
- * ConfigurationScolarite.tranches
+ * configurationscolarite.tranchescolarite
  */
-export type ConfigurationScolarite$tranchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolarite$tranchescolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the TrancheScolarite
+   * Select specific fields to fetch from the tranchescolarite
    */
-  select?: Prisma.TrancheScolariteSelect<ExtArgs> | null
+  select?: Prisma.tranchescolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the TrancheScolarite
+   * Omit specific fields from the tranchescolarite
    */
-  omit?: Prisma.TrancheScolariteOmit<ExtArgs> | null
+  omit?: Prisma.tranchescolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TrancheScolariteInclude<ExtArgs> | null
-  where?: Prisma.TrancheScolariteWhereInput
-  orderBy?: Prisma.TrancheScolariteOrderByWithRelationInput | Prisma.TrancheScolariteOrderByWithRelationInput[]
-  cursor?: Prisma.TrancheScolariteWhereUniqueInput
+  include?: Prisma.tranchescolariteInclude<ExtArgs> | null
+  where?: Prisma.tranchescolariteWhereInput
+  orderBy?: Prisma.tranchescolariteOrderByWithRelationInput | Prisma.tranchescolariteOrderByWithRelationInput[]
+  cursor?: Prisma.tranchescolariteWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.TrancheScolariteScalarFieldEnum | Prisma.TrancheScolariteScalarFieldEnum[]
+  distinct?: Prisma.TranchescolariteScalarFieldEnum | Prisma.TranchescolariteScalarFieldEnum[]
 }
 
 /**
- * ConfigurationScolarite.dossierScolarite
+ * configurationscolarite without action
  */
-export type ConfigurationScolarite$dossierScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type configurationscolariteDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DossierScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.DossierScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DossierScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.DossierScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DossierScolariteInclude<ExtArgs> | null
-  where?: Prisma.DossierScolariteWhereInput
-  orderBy?: Prisma.DossierScolariteOrderByWithRelationInput | Prisma.DossierScolariteOrderByWithRelationInput[]
-  cursor?: Prisma.DossierScolariteWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.DossierScolariteScalarFieldEnum | Prisma.DossierScolariteScalarFieldEnum[]
-}
-
-/**
- * ConfigurationScolarite without action
- */
-export type ConfigurationScolariteDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ConfigurationScolarite
-   */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the ConfigurationScolarite
-   */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
 }

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `PolitiqueEvaluation` model and its related types.
+ * This file exports the `politiqueevaluation` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,46 +13,46 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model PolitiqueEvaluation
+ * Model politiqueevaluation
  * 
  */
-export type PolitiqueEvaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$PolitiqueEvaluationPayload>
+export type politiqueevaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$politiqueevaluationPayload>
 
-export type AggregatePolitiqueEvaluation = {
-  _count: PolitiqueEvaluationCountAggregateOutputType | null
-  _min: PolitiqueEvaluationMinAggregateOutputType | null
-  _max: PolitiqueEvaluationMaxAggregateOutputType | null
+export type AggregatePolitiqueevaluation = {
+  _count: PolitiqueevaluationCountAggregateOutputType | null
+  _min: PolitiqueevaluationMinAggregateOutputType | null
+  _max: PolitiqueevaluationMaxAggregateOutputType | null
 }
 
-export type PolitiqueEvaluationMinAggregateOutputType = {
+export type PolitiqueevaluationMinAggregateOutputType = {
   id: string | null
   ecoleId: string | null
   anneeScolaireId: string | null
   classeScolaireId: string | null
   nom: string | null
-  methodeCalcul: $Enums.MethodeCalcul | null
-  methodeArrondi: $Enums.MethodeArrondi | null
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul | null
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi | null
   afficherRang: boolean | null
   estActive: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type PolitiqueEvaluationMaxAggregateOutputType = {
+export type PolitiqueevaluationMaxAggregateOutputType = {
   id: string | null
   ecoleId: string | null
   anneeScolaireId: string | null
   classeScolaireId: string | null
   nom: string | null
-  methodeCalcul: $Enums.MethodeCalcul | null
-  methodeArrondi: $Enums.MethodeArrondi | null
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul | null
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi | null
   afficherRang: boolean | null
   estActive: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type PolitiqueEvaluationCountAggregateOutputType = {
+export type PolitiqueevaluationCountAggregateOutputType = {
   id: number
   ecoleId: number
   anneeScolaireId: number
@@ -68,7 +68,7 @@ export type PolitiqueEvaluationCountAggregateOutputType = {
 }
 
 
-export type PolitiqueEvaluationMinAggregateInputType = {
+export type PolitiqueevaluationMinAggregateInputType = {
   id?: true
   ecoleId?: true
   anneeScolaireId?: true
@@ -82,7 +82,7 @@ export type PolitiqueEvaluationMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type PolitiqueEvaluationMaxAggregateInputType = {
+export type PolitiqueevaluationMaxAggregateInputType = {
   id?: true
   ecoleId?: true
   anneeScolaireId?: true
@@ -96,7 +96,7 @@ export type PolitiqueEvaluationMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type PolitiqueEvaluationCountAggregateInputType = {
+export type PolitiqueevaluationCountAggregateInputType = {
   id?: true
   ecoleId?: true
   anneeScolaireId?: true
@@ -111,132 +111,132 @@ export type PolitiqueEvaluationCountAggregateInputType = {
   _all?: true
 }
 
-export type PolitiqueEvaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PolitiqueevaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PolitiqueEvaluation to aggregate.
+   * Filter which politiqueevaluation to aggregate.
    */
-  where?: Prisma.PolitiqueEvaluationWhereInput
+  where?: Prisma.politiqueevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PolitiqueEvaluations to fetch.
+   * Determine the order of politiqueevaluations to fetch.
    */
-  orderBy?: Prisma.PolitiqueEvaluationOrderByWithRelationInput | Prisma.PolitiqueEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.politiqueevaluationOrderByWithRelationInput | Prisma.politiqueevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.PolitiqueEvaluationWhereUniqueInput
+  cursor?: Prisma.politiqueevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PolitiqueEvaluations from the position of the cursor.
+   * Take `±n` politiqueevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PolitiqueEvaluations.
+   * Skip the first `n` politiqueevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned PolitiqueEvaluations
+   * Count returned politiqueevaluations
   **/
-  _count?: true | PolitiqueEvaluationCountAggregateInputType
+  _count?: true | PolitiqueevaluationCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: PolitiqueEvaluationMinAggregateInputType
+  _min?: PolitiqueevaluationMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: PolitiqueEvaluationMaxAggregateInputType
+  _max?: PolitiqueevaluationMaxAggregateInputType
 }
 
-export type GetPolitiqueEvaluationAggregateType<T extends PolitiqueEvaluationAggregateArgs> = {
-      [P in keyof T & keyof AggregatePolitiqueEvaluation]: P extends '_count' | 'count'
+export type GetPolitiqueevaluationAggregateType<T extends PolitiqueevaluationAggregateArgs> = {
+      [P in keyof T & keyof AggregatePolitiqueevaluation]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregatePolitiqueEvaluation[P]>
-    : Prisma.GetScalarType<T[P], AggregatePolitiqueEvaluation[P]>
+      : Prisma.GetScalarType<T[P], AggregatePolitiqueevaluation[P]>
+    : Prisma.GetScalarType<T[P], AggregatePolitiqueevaluation[P]>
 }
 
 
 
 
-export type PolitiqueEvaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PolitiqueEvaluationWhereInput
-  orderBy?: Prisma.PolitiqueEvaluationOrderByWithAggregationInput | Prisma.PolitiqueEvaluationOrderByWithAggregationInput[]
-  by: Prisma.PolitiqueEvaluationScalarFieldEnum[] | Prisma.PolitiqueEvaluationScalarFieldEnum
-  having?: Prisma.PolitiqueEvaluationScalarWhereWithAggregatesInput
+export type politiqueevaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.politiqueevaluationWhereInput
+  orderBy?: Prisma.politiqueevaluationOrderByWithAggregationInput | Prisma.politiqueevaluationOrderByWithAggregationInput[]
+  by: Prisma.PolitiqueevaluationScalarFieldEnum[] | Prisma.PolitiqueevaluationScalarFieldEnum
+  having?: Prisma.politiqueevaluationScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: PolitiqueEvaluationCountAggregateInputType | true
-  _min?: PolitiqueEvaluationMinAggregateInputType
-  _max?: PolitiqueEvaluationMaxAggregateInputType
+  _count?: PolitiqueevaluationCountAggregateInputType | true
+  _min?: PolitiqueevaluationMinAggregateInputType
+  _max?: PolitiqueevaluationMaxAggregateInputType
 }
 
-export type PolitiqueEvaluationGroupByOutputType = {
+export type PolitiqueevaluationGroupByOutputType = {
   id: string
   ecoleId: string
   anneeScolaireId: string
   classeScolaireId: string | null
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang: boolean
   estActive: boolean
   createdAt: Date
   updatedAt: Date
-  _count: PolitiqueEvaluationCountAggregateOutputType | null
-  _min: PolitiqueEvaluationMinAggregateOutputType | null
-  _max: PolitiqueEvaluationMaxAggregateOutputType | null
+  _count: PolitiqueevaluationCountAggregateOutputType | null
+  _min: PolitiqueevaluationMinAggregateOutputType | null
+  _max: PolitiqueevaluationMaxAggregateOutputType | null
 }
 
-export type GetPolitiqueEvaluationGroupByPayload<T extends PolitiqueEvaluationGroupByArgs> = Prisma.PrismaPromise<
+export type GetPolitiqueevaluationGroupByPayload<T extends politiqueevaluationGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<PolitiqueEvaluationGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<PolitiqueevaluationGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof PolitiqueEvaluationGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof PolitiqueevaluationGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], PolitiqueEvaluationGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], PolitiqueEvaluationGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], PolitiqueevaluationGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], PolitiqueevaluationGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type PolitiqueEvaluationWhereInput = {
-  AND?: Prisma.PolitiqueEvaluationWhereInput | Prisma.PolitiqueEvaluationWhereInput[]
-  OR?: Prisma.PolitiqueEvaluationWhereInput[]
-  NOT?: Prisma.PolitiqueEvaluationWhereInput | Prisma.PolitiqueEvaluationWhereInput[]
-  id?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  ecoleId?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  anneeScolaireId?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  classeScolaireId?: Prisma.StringNullableFilter<"PolitiqueEvaluation"> | string | null
-  nom?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFilter<"PolitiqueEvaluation"> | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFilter<"PolitiqueEvaluation"> | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFilter<"PolitiqueEvaluation"> | boolean
-  estActive?: Prisma.BoolFilter<"PolitiqueEvaluation"> | boolean
-  createdAt?: Prisma.DateTimeFilter<"PolitiqueEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"PolitiqueEvaluation"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireNullableScalarRelationFilter, Prisma.ClassScolaireWhereInput> | null
-  regles?: Prisma.RegleEvaluationListRelationFilter
+export type politiqueevaluationWhereInput = {
+  AND?: Prisma.politiqueevaluationWhereInput | Prisma.politiqueevaluationWhereInput[]
+  OR?: Prisma.politiqueevaluationWhereInput[]
+  NOT?: Prisma.politiqueevaluationWhereInput | Prisma.politiqueevaluationWhereInput[]
+  id?: Prisma.StringFilter<"politiqueevaluation"> | string
+  ecoleId?: Prisma.StringFilter<"politiqueevaluation"> | string
+  anneeScolaireId?: Prisma.StringFilter<"politiqueevaluation"> | string
+  classeScolaireId?: Prisma.StringNullableFilter<"politiqueevaluation"> | string | null
+  nom?: Prisma.StringFilter<"politiqueevaluation"> | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFilter<"politiqueevaluation"> | boolean
+  estActive?: Prisma.BoolFilter<"politiqueevaluation"> | boolean
+  createdAt?: Prisma.DateTimeFilter<"politiqueevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"politiqueevaluation"> | Date | string
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireNullableScalarRelationFilter, Prisma.classscolaireWhereInput> | null
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
+  regleevaluation?: Prisma.RegleevaluationListRelationFilter
 }
 
-export type PolitiqueEvaluationOrderByWithRelationInput = {
+export type politiqueevaluationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   anneeScolaireId?: Prisma.SortOrder
@@ -248,36 +248,36 @@ export type PolitiqueEvaluationOrderByWithRelationInput = {
   estActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  ecole?: Prisma.EcoleOrderByWithRelationInput
-  anneeScolaire?: Prisma.AnneeScolaireOrderByWithRelationInput
-  classeScolaire?: Prisma.ClassScolaireOrderByWithRelationInput
-  regles?: Prisma.RegleEvaluationOrderByRelationAggregateInput
-  _relevance?: Prisma.PolitiqueEvaluationOrderByRelevanceInput
+  anneescolaire?: Prisma.anneescolaireOrderByWithRelationInput
+  classscolaire?: Prisma.classscolaireOrderByWithRelationInput
+  ecole?: Prisma.ecoleOrderByWithRelationInput
+  regleevaluation?: Prisma.regleevaluationOrderByRelationAggregateInput
+  _relevance?: Prisma.politiqueevaluationOrderByRelevanceInput
 }
 
-export type PolitiqueEvaluationWhereUniqueInput = Prisma.AtLeast<{
+export type politiqueevaluationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   classeScolaireId?: string
-  nom_ecoleId?: Prisma.PolitiqueEvaluationNomEcoleIdCompoundUniqueInput
-  AND?: Prisma.PolitiqueEvaluationWhereInput | Prisma.PolitiqueEvaluationWhereInput[]
-  OR?: Prisma.PolitiqueEvaluationWhereInput[]
-  NOT?: Prisma.PolitiqueEvaluationWhereInput | Prisma.PolitiqueEvaluationWhereInput[]
-  ecoleId?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  anneeScolaireId?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  nom?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFilter<"PolitiqueEvaluation"> | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFilter<"PolitiqueEvaluation"> | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFilter<"PolitiqueEvaluation"> | boolean
-  estActive?: Prisma.BoolFilter<"PolitiqueEvaluation"> | boolean
-  createdAt?: Prisma.DateTimeFilter<"PolitiqueEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"PolitiqueEvaluation"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  anneeScolaire?: Prisma.XOR<Prisma.AnneeScolaireScalarRelationFilter, Prisma.AnneeScolaireWhereInput>
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireNullableScalarRelationFilter, Prisma.ClassScolaireWhereInput> | null
-  regles?: Prisma.RegleEvaluationListRelationFilter
+  nom_ecoleId?: Prisma.politiqueevaluationNomEcoleIdCompoundUniqueInput
+  AND?: Prisma.politiqueevaluationWhereInput | Prisma.politiqueevaluationWhereInput[]
+  OR?: Prisma.politiqueevaluationWhereInput[]
+  NOT?: Prisma.politiqueevaluationWhereInput | Prisma.politiqueevaluationWhereInput[]
+  ecoleId?: Prisma.StringFilter<"politiqueevaluation"> | string
+  anneeScolaireId?: Prisma.StringFilter<"politiqueevaluation"> | string
+  nom?: Prisma.StringFilter<"politiqueevaluation"> | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFilter<"politiqueevaluation"> | boolean
+  estActive?: Prisma.BoolFilter<"politiqueevaluation"> | boolean
+  createdAt?: Prisma.DateTimeFilter<"politiqueevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"politiqueevaluation"> | Date | string
+  anneescolaire?: Prisma.XOR<Prisma.AnneescolaireScalarRelationFilter, Prisma.anneescolaireWhereInput>
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireNullableScalarRelationFilter, Prisma.classscolaireWhereInput> | null
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
+  regleevaluation?: Prisma.RegleevaluationListRelationFilter
 }, "id" | "classeScolaireId" | "nom_ecoleId">
 
-export type PolitiqueEvaluationOrderByWithAggregationInput = {
+export type politiqueevaluationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   anneeScolaireId?: Prisma.SortOrder
@@ -289,154 +289,154 @@ export type PolitiqueEvaluationOrderByWithAggregationInput = {
   estActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.PolitiqueEvaluationCountOrderByAggregateInput
-  _max?: Prisma.PolitiqueEvaluationMaxOrderByAggregateInput
-  _min?: Prisma.PolitiqueEvaluationMinOrderByAggregateInput
+  _count?: Prisma.politiqueevaluationCountOrderByAggregateInput
+  _max?: Prisma.politiqueevaluationMaxOrderByAggregateInput
+  _min?: Prisma.politiqueevaluationMinOrderByAggregateInput
 }
 
-export type PolitiqueEvaluationScalarWhereWithAggregatesInput = {
-  AND?: Prisma.PolitiqueEvaluationScalarWhereWithAggregatesInput | Prisma.PolitiqueEvaluationScalarWhereWithAggregatesInput[]
-  OR?: Prisma.PolitiqueEvaluationScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.PolitiqueEvaluationScalarWhereWithAggregatesInput | Prisma.PolitiqueEvaluationScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"PolitiqueEvaluation"> | string
-  ecoleId?: Prisma.StringWithAggregatesFilter<"PolitiqueEvaluation"> | string
-  anneeScolaireId?: Prisma.StringWithAggregatesFilter<"PolitiqueEvaluation"> | string
-  classeScolaireId?: Prisma.StringNullableWithAggregatesFilter<"PolitiqueEvaluation"> | string | null
-  nom?: Prisma.StringWithAggregatesFilter<"PolitiqueEvaluation"> | string
-  methodeCalcul?: Prisma.EnumMethodeCalculWithAggregatesFilter<"PolitiqueEvaluation"> | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiWithAggregatesFilter<"PolitiqueEvaluation"> | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolWithAggregatesFilter<"PolitiqueEvaluation"> | boolean
-  estActive?: Prisma.BoolWithAggregatesFilter<"PolitiqueEvaluation"> | boolean
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"PolitiqueEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"PolitiqueEvaluation"> | Date | string
+export type politiqueevaluationScalarWhereWithAggregatesInput = {
+  AND?: Prisma.politiqueevaluationScalarWhereWithAggregatesInput | Prisma.politiqueevaluationScalarWhereWithAggregatesInput[]
+  OR?: Prisma.politiqueevaluationScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.politiqueevaluationScalarWhereWithAggregatesInput | Prisma.politiqueevaluationScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"politiqueevaluation"> | string
+  ecoleId?: Prisma.StringWithAggregatesFilter<"politiqueevaluation"> | string
+  anneeScolaireId?: Prisma.StringWithAggregatesFilter<"politiqueevaluation"> | string
+  classeScolaireId?: Prisma.StringNullableWithAggregatesFilter<"politiqueevaluation"> | string | null
+  nom?: Prisma.StringWithAggregatesFilter<"politiqueevaluation"> | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculWithAggregatesFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiWithAggregatesFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolWithAggregatesFilter<"politiqueevaluation"> | boolean
+  estActive?: Prisma.BoolWithAggregatesFilter<"politiqueevaluation"> | boolean
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"politiqueevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"politiqueevaluation"> | Date | string
 }
 
-export type PolitiqueEvaluationCreateInput = {
+export type politiqueevaluationCreateInput = {
   id?: string
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutPolitiqueEvaluationsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  regles?: Prisma.RegleEvaluationCreateNestedManyWithoutPolitiqueInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  classscolaire?: Prisma.classscolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutPolitiqueevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutPolitiqueevaluationInput
 }
 
-export type PolitiqueEvaluationUncheckedCreateInput = {
-  id?: string
-  ecoleId: string
-  anneeScolaireId: string
-  classeScolaireId?: string | null
-  nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
-  afficherRang?: boolean
-  estActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  regles?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutPolitiqueInput
-}
-
-export type PolitiqueEvaluationUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutPolitiqueEvaluationsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPolitiqueEvalNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneWithoutPolitiqueEvalNestedInput
-  regles?: Prisma.RegleEvaluationUpdateManyWithoutPolitiqueNestedInput
-}
-
-export type PolitiqueEvaluationUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  regles?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutPolitiqueNestedInput
-}
-
-export type PolitiqueEvaluationCreateManyInput = {
+export type politiqueevaluationUncheckedCreateInput = {
   id?: string
   ecoleId: string
   anneeScolaireId: string
   classeScolaireId?: string | null
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: boolean
+  estActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutPolitiqueevaluationInput
+}
+
+export type politiqueevaluationUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneWithoutPolitiqueevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutPolitiqueevaluationNestedInput
+}
+
+export type politiqueevaluationUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationNestedInput
+}
+
+export type politiqueevaluationCreateManyInput = {
+  id?: string
+  ecoleId: string
+  anneeScolaireId: string
+  classeScolaireId?: string | null
+  nom: string
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type PolitiqueEvaluationUpdateManyMutationInput = {
+export type politiqueevaluationUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PolitiqueEvaluationUncheckedUpdateManyInput = {
+export type politiqueevaluationUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PolitiqueEvaluationListRelationFilter = {
-  every?: Prisma.PolitiqueEvaluationWhereInput
-  some?: Prisma.PolitiqueEvaluationWhereInput
-  none?: Prisma.PolitiqueEvaluationWhereInput
+export type PolitiqueevaluationListRelationFilter = {
+  every?: Prisma.politiqueevaluationWhereInput
+  some?: Prisma.politiqueevaluationWhereInput
+  none?: Prisma.politiqueevaluationWhereInput
 }
 
-export type PolitiqueEvaluationOrderByRelationAggregateInput = {
+export type politiqueevaluationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type PolitiqueEvaluationNullableScalarRelationFilter = {
-  is?: Prisma.PolitiqueEvaluationWhereInput | null
-  isNot?: Prisma.PolitiqueEvaluationWhereInput | null
+export type PolitiqueevaluationNullableScalarRelationFilter = {
+  is?: Prisma.politiqueevaluationWhereInput | null
+  isNot?: Prisma.politiqueevaluationWhereInput | null
 }
 
-export type PolitiqueEvaluationOrderByRelevanceInput = {
-  fields: Prisma.PolitiqueEvaluationOrderByRelevanceFieldEnum | Prisma.PolitiqueEvaluationOrderByRelevanceFieldEnum[]
+export type politiqueevaluationOrderByRelevanceInput = {
+  fields: Prisma.politiqueevaluationOrderByRelevanceFieldEnum | Prisma.politiqueevaluationOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type PolitiqueEvaluationNomEcoleIdCompoundUniqueInput = {
+export type politiqueevaluationNomEcoleIdCompoundUniqueInput = {
   nom: string
   ecoleId: string
 }
 
-export type PolitiqueEvaluationCountOrderByAggregateInput = {
+export type politiqueevaluationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   anneeScolaireId?: Prisma.SortOrder
@@ -450,7 +450,7 @@ export type PolitiqueEvaluationCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type PolitiqueEvaluationMaxOrderByAggregateInput = {
+export type politiqueevaluationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   anneeScolaireId?: Prisma.SortOrder
@@ -464,7 +464,7 @@ export type PolitiqueEvaluationMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type PolitiqueEvaluationMinOrderByAggregateInput = {
+export type politiqueevaluationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   anneeScolaireId?: Prisma.SortOrder
@@ -478,520 +478,520 @@ export type PolitiqueEvaluationMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type PolitiqueEvaluationScalarRelationFilter = {
-  is?: Prisma.PolitiqueEvaluationWhereInput
-  isNot?: Prisma.PolitiqueEvaluationWhereInput
+export type PolitiqueevaluationScalarRelationFilter = {
+  is?: Prisma.politiqueevaluationWhereInput
+  isNot?: Prisma.politiqueevaluationWhereInput
 }
 
-export type PolitiqueEvaluationCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.PolitiqueEvaluationCreateWithoutEcoleInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyEcoleInputEnvelope
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
+export type politiqueevaluationCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput> | Prisma.politiqueevaluationCreateWithoutAnneescolaireInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput | Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
 }
 
-export type PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.PolitiqueEvaluationCreateWithoutEcoleInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyEcoleInputEnvelope
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
+export type politiqueevaluationUncheckedCreateNestedManyWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput> | Prisma.politiqueevaluationCreateWithoutAnneescolaireInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput | Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyAnneescolaireInputEnvelope
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
 }
 
-export type PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.PolitiqueEvaluationCreateWithoutEcoleInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyEcoleInputEnvelope
-  set?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  delete?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  update?: Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.PolitiqueEvaluationScalarWhereInput | Prisma.PolitiqueEvaluationScalarWhereInput[]
+export type politiqueevaluationUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput> | Prisma.politiqueevaluationCreateWithoutAnneescolaireInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput | Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  disconnect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  delete?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  update?: Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.politiqueevaluationUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.politiqueevaluationUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.politiqueevaluationScalarWhereInput | Prisma.politiqueevaluationScalarWhereInput[]
 }
 
-export type PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput> | Prisma.PolitiqueEvaluationCreateWithoutEcoleInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyEcoleInputEnvelope
-  set?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  delete?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  update?: Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.PolitiqueEvaluationScalarWhereInput | Prisma.PolitiqueEvaluationScalarWhereInput[]
+export type politiqueevaluationUncheckedUpdateManyWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput> | Prisma.politiqueevaluationCreateWithoutAnneescolaireInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput | Prisma.politiqueevaluationCreateOrConnectWithoutAnneescolaireInput[]
+  upsert?: Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutAnneescolaireInput | Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutAnneescolaireInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyAnneescolaireInputEnvelope
+  set?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  disconnect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  delete?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  update?: Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutAnneescolaireInput | Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutAnneescolaireInput[]
+  updateMany?: Prisma.politiqueevaluationUpdateManyWithWhereWithoutAnneescolaireInput | Prisma.politiqueevaluationUpdateManyWithWhereWithoutAnneescolaireInput[]
+  deleteMany?: Prisma.politiqueevaluationScalarWhereInput | Prisma.politiqueevaluationScalarWhereInput[]
 }
 
-export type PolitiqueEvaluationCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
+export type politiqueevaluationCreateNestedOneWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutClassscolaireInput
+  connect?: Prisma.politiqueevaluationWhereUniqueInput
 }
 
-export type PolitiqueEvaluationUncheckedCreateNestedManyWithoutAnneeScolaireInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyAnneeScolaireInputEnvelope
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
+export type politiqueevaluationUncheckedCreateNestedOneWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutClassscolaireInput
+  connect?: Prisma.politiqueevaluationWhereUniqueInput
 }
 
-export type PolitiqueEvaluationUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  delete?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  update?: Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.PolitiqueEvaluationScalarWhereInput | Prisma.PolitiqueEvaluationScalarWhereInput[]
+export type politiqueevaluationUpdateOneWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutClassscolaireInput
+  upsert?: Prisma.politiqueevaluationUpsertWithoutClassscolaireInput
+  disconnect?: Prisma.politiqueevaluationWhereInput | boolean
+  delete?: Prisma.politiqueevaluationWhereInput | boolean
+  connect?: Prisma.politiqueevaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.politiqueevaluationUpdateToOneWithWhereWithoutClassscolaireInput, Prisma.politiqueevaluationUpdateWithoutClassscolaireInput>, Prisma.politiqueevaluationUncheckedUpdateWithoutClassscolaireInput>
 }
 
-export type PolitiqueEvaluationUncheckedUpdateManyWithoutAnneeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput> | Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput[] | Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput[]
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput[]
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationUpsertWithWhereUniqueWithoutAnneeScolaireInput[]
-  createMany?: Prisma.PolitiqueEvaluationCreateManyAnneeScolaireInputEnvelope
-  set?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  disconnect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  delete?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput | Prisma.PolitiqueEvaluationWhereUniqueInput[]
-  update?: Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationUpdateWithWhereUniqueWithoutAnneeScolaireInput[]
-  updateMany?: Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutAnneeScolaireInput | Prisma.PolitiqueEvaluationUpdateManyWithWhereWithoutAnneeScolaireInput[]
-  deleteMany?: Prisma.PolitiqueEvaluationScalarWhereInput | Prisma.PolitiqueEvaluationScalarWhereInput[]
+export type politiqueevaluationUncheckedUpdateOneWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutClassscolaireInput
+  upsert?: Prisma.politiqueevaluationUpsertWithoutClassscolaireInput
+  disconnect?: Prisma.politiqueevaluationWhereInput | boolean
+  delete?: Prisma.politiqueevaluationWhereInput | boolean
+  connect?: Prisma.politiqueevaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.politiqueevaluationUpdateToOneWithWhereWithoutClassscolaireInput, Prisma.politiqueevaluationUpdateWithoutClassscolaireInput>, Prisma.politiqueevaluationUncheckedUpdateWithoutClassscolaireInput>
 }
 
-export type PolitiqueEvaluationCreateNestedOneWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutClasseScolaireInput
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput
+export type politiqueevaluationCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput> | Prisma.politiqueevaluationCreateWithoutEcoleInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput | Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyEcoleInputEnvelope
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
 }
 
-export type PolitiqueEvaluationUncheckedCreateNestedOneWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutClasseScolaireInput
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput
+export type politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput> | Prisma.politiqueevaluationCreateWithoutEcoleInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput | Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyEcoleInputEnvelope
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
 }
 
-export type PolitiqueEvaluationUpdateOneWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutClasseScolaireInput
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithoutClasseScolaireInput
-  disconnect?: Prisma.PolitiqueEvaluationWhereInput | boolean
-  delete?: Prisma.PolitiqueEvaluationWhereInput | boolean
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PolitiqueEvaluationUpdateToOneWithWhereWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUpdateWithoutClasseScolaireInput>, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutClasseScolaireInput>
+export type politiqueevaluationUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput> | Prisma.politiqueevaluationCreateWithoutEcoleInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput | Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyEcoleInputEnvelope
+  set?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  disconnect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  delete?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  update?: Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.politiqueevaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.politiqueevaluationUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.politiqueevaluationScalarWhereInput | Prisma.politiqueevaluationScalarWhereInput[]
 }
 
-export type PolitiqueEvaluationUncheckedUpdateOneWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutClasseScolaireInput
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithoutClasseScolaireInput
-  disconnect?: Prisma.PolitiqueEvaluationWhereInput | boolean
-  delete?: Prisma.PolitiqueEvaluationWhereInput | boolean
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PolitiqueEvaluationUpdateToOneWithWhereWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUpdateWithoutClasseScolaireInput>, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutClasseScolaireInput>
+export type politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput> | Prisma.politiqueevaluationCreateWithoutEcoleInput[] | Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput | Prisma.politiqueevaluationCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutEcoleInput | Prisma.politiqueevaluationUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.politiqueevaluationCreateManyEcoleInputEnvelope
+  set?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  disconnect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  delete?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  connect?: Prisma.politiqueevaluationWhereUniqueInput | Prisma.politiqueevaluationWhereUniqueInput[]
+  update?: Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutEcoleInput | Prisma.politiqueevaluationUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.politiqueevaluationUpdateManyWithWhereWithoutEcoleInput | Prisma.politiqueevaluationUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.politiqueevaluationScalarWhereInput | Prisma.politiqueevaluationScalarWhereInput[]
 }
 
-export type EnumMethodeCalculFieldUpdateOperationsInput = {
-  set?: $Enums.MethodeCalcul
+export type Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput = {
+  set?: $Enums.politiqueevaluation_methodeCalcul
 }
 
-export type EnumMethodeArrondiFieldUpdateOperationsInput = {
-  set?: $Enums.MethodeArrondi
+export type Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput = {
+  set?: $Enums.politiqueevaluation_methodeArrondi
 }
 
-export type PolitiqueEvaluationCreateNestedOneWithoutReglesInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutReglesInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutReglesInput>
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutReglesInput
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput
+export type politiqueevaluationCreateNestedOneWithoutRegleevaluationInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutRegleevaluationInput, Prisma.politiqueevaluationUncheckedCreateWithoutRegleevaluationInput>
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutRegleevaluationInput
+  connect?: Prisma.politiqueevaluationWhereUniqueInput
 }
 
-export type PolitiqueEvaluationUpdateOneRequiredWithoutReglesNestedInput = {
-  create?: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutReglesInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutReglesInput>
-  connectOrCreate?: Prisma.PolitiqueEvaluationCreateOrConnectWithoutReglesInput
-  upsert?: Prisma.PolitiqueEvaluationUpsertWithoutReglesInput
-  connect?: Prisma.PolitiqueEvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PolitiqueEvaluationUpdateToOneWithWhereWithoutReglesInput, Prisma.PolitiqueEvaluationUpdateWithoutReglesInput>, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutReglesInput>
+export type politiqueevaluationUpdateOneRequiredWithoutRegleevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutRegleevaluationInput, Prisma.politiqueevaluationUncheckedCreateWithoutRegleevaluationInput>
+  connectOrCreate?: Prisma.politiqueevaluationCreateOrConnectWithoutRegleevaluationInput
+  upsert?: Prisma.politiqueevaluationUpsertWithoutRegleevaluationInput
+  connect?: Prisma.politiqueevaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.politiqueevaluationUpdateToOneWithWhereWithoutRegleevaluationInput, Prisma.politiqueevaluationUpdateWithoutRegleevaluationInput>, Prisma.politiqueevaluationUncheckedUpdateWithoutRegleevaluationInput>
 }
 
-export type PolitiqueEvaluationCreateWithoutEcoleInput = {
+export type politiqueevaluationCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  regles?: Prisma.RegleEvaluationCreateNestedManyWithoutPolitiqueInput
+  classscolaire?: Prisma.classscolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutPolitiqueevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutPolitiqueevaluationInput
 }
 
-export type PolitiqueEvaluationUncheckedCreateWithoutEcoleInput = {
+export type politiqueevaluationUncheckedCreateWithoutAnneescolaireInput = {
   id?: string
-  anneeScolaireId: string
+  ecoleId: string
   classeScolaireId?: string | null
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  regles?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutPolitiqueInput
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutPolitiqueevaluationInput
 }
 
-export type PolitiqueEvaluationCreateOrConnectWithoutEcoleInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput>
+export type politiqueevaluationCreateOrConnectWithoutAnneescolaireInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type PolitiqueEvaluationCreateManyEcoleInputEnvelope = {
-  data: Prisma.PolitiqueEvaluationCreateManyEcoleInput | Prisma.PolitiqueEvaluationCreateManyEcoleInput[]
+export type politiqueevaluationCreateManyAnneescolaireInputEnvelope = {
+  data: Prisma.politiqueevaluationCreateManyAnneescolaireInput | Prisma.politiqueevaluationCreateManyAnneescolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type PolitiqueEvaluationUpsertWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutEcoleInput>
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutEcoleInput>
+export type politiqueevaluationUpsertWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedUpdateWithoutAnneescolaireInput>
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type PolitiqueEvaluationUpdateWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutEcoleInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutEcoleInput>
+export type politiqueevaluationUpdateWithWhereUniqueWithoutAnneescolaireInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutAnneescolaireInput, Prisma.politiqueevaluationUncheckedUpdateWithoutAnneescolaireInput>
 }
 
-export type PolitiqueEvaluationUpdateManyWithWhereWithoutEcoleInput = {
-  where: Prisma.PolitiqueEvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateManyMutationInput, Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleInput>
+export type politiqueevaluationUpdateManyWithWhereWithoutAnneescolaireInput = {
+  where: Prisma.politiqueevaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateManyMutationInput, Prisma.politiqueevaluationUncheckedUpdateManyWithoutAnneescolaireInput>
 }
 
-export type PolitiqueEvaluationScalarWhereInput = {
-  AND?: Prisma.PolitiqueEvaluationScalarWhereInput | Prisma.PolitiqueEvaluationScalarWhereInput[]
-  OR?: Prisma.PolitiqueEvaluationScalarWhereInput[]
-  NOT?: Prisma.PolitiqueEvaluationScalarWhereInput | Prisma.PolitiqueEvaluationScalarWhereInput[]
-  id?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  ecoleId?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  anneeScolaireId?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  classeScolaireId?: Prisma.StringNullableFilter<"PolitiqueEvaluation"> | string | null
-  nom?: Prisma.StringFilter<"PolitiqueEvaluation"> | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFilter<"PolitiqueEvaluation"> | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFilter<"PolitiqueEvaluation"> | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFilter<"PolitiqueEvaluation"> | boolean
-  estActive?: Prisma.BoolFilter<"PolitiqueEvaluation"> | boolean
-  createdAt?: Prisma.DateTimeFilter<"PolitiqueEvaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"PolitiqueEvaluation"> | Date | string
+export type politiqueevaluationScalarWhereInput = {
+  AND?: Prisma.politiqueevaluationScalarWhereInput | Prisma.politiqueevaluationScalarWhereInput[]
+  OR?: Prisma.politiqueevaluationScalarWhereInput[]
+  NOT?: Prisma.politiqueevaluationScalarWhereInput | Prisma.politiqueevaluationScalarWhereInput[]
+  id?: Prisma.StringFilter<"politiqueevaluation"> | string
+  ecoleId?: Prisma.StringFilter<"politiqueevaluation"> | string
+  anneeScolaireId?: Prisma.StringFilter<"politiqueevaluation"> | string
+  classeScolaireId?: Prisma.StringNullableFilter<"politiqueevaluation"> | string | null
+  nom?: Prisma.StringFilter<"politiqueevaluation"> | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFilter<"politiqueevaluation"> | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFilter<"politiqueevaluation"> | boolean
+  estActive?: Prisma.BoolFilter<"politiqueevaluation"> | boolean
+  createdAt?: Prisma.DateTimeFilter<"politiqueevaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"politiqueevaluation"> | Date | string
 }
 
-export type PolitiqueEvaluationCreateWithoutAnneeScolaireInput = {
+export type politiqueevaluationCreateWithoutClassscolaireInput = {
   id?: string
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutPolitiqueEvaluationsInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  regles?: Prisma.RegleEvaluationCreateNestedManyWithoutPolitiqueInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutPolitiqueevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutPolitiqueevaluationInput
 }
 
-export type PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput = {
+export type politiqueevaluationUncheckedCreateWithoutClassscolaireInput = {
   id?: string
   ecoleId: string
-  classeScolaireId?: string | null
+  anneeScolaireId: string
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  regles?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutPolitiqueInput
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutPolitiqueevaluationInput
 }
 
-export type PolitiqueEvaluationCreateOrConnectWithoutAnneeScolaireInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput>
+export type politiqueevaluationCreateOrConnectWithoutClassscolaireInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutClassscolaireInput>
 }
 
-export type PolitiqueEvaluationCreateManyAnneeScolaireInputEnvelope = {
-  data: Prisma.PolitiqueEvaluationCreateManyAnneeScolaireInput | Prisma.PolitiqueEvaluationCreateManyAnneeScolaireInput[]
+export type politiqueevaluationUpsertWithoutClassscolaireInput = {
+  update: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedUpdateWithoutClassscolaireInput>
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedCreateWithoutClassscolaireInput>
+  where?: Prisma.politiqueevaluationWhereInput
+}
+
+export type politiqueevaluationUpdateToOneWithWhereWithoutClassscolaireInput = {
+  where?: Prisma.politiqueevaluationWhereInput
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutClassscolaireInput, Prisma.politiqueevaluationUncheckedUpdateWithoutClassscolaireInput>
+}
+
+export type politiqueevaluationUpdateWithoutClassscolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutPolitiqueevaluationNestedInput
+}
+
+export type politiqueevaluationUncheckedUpdateWithoutClassscolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationNestedInput
+}
+
+export type politiqueevaluationCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: boolean
+  estActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  classscolaire?: Prisma.classscolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  regleevaluation?: Prisma.regleevaluationCreateNestedManyWithoutPolitiqueevaluationInput
+}
+
+export type politiqueevaluationUncheckedCreateWithoutEcoleInput = {
+  id?: string
+  anneeScolaireId: string
+  classeScolaireId?: string | null
+  nom: string
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: boolean
+  estActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  regleevaluation?: Prisma.regleevaluationUncheckedCreateNestedManyWithoutPolitiqueevaluationInput
+}
+
+export type politiqueevaluationCreateOrConnectWithoutEcoleInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput>
+}
+
+export type politiqueevaluationCreateManyEcoleInputEnvelope = {
+  data: Prisma.politiqueevaluationCreateManyEcoleInput | Prisma.politiqueevaluationCreateManyEcoleInput[]
   skipDuplicates?: boolean
 }
 
-export type PolitiqueEvaluationUpsertWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutAnneeScolaireInput>
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutAnneeScolaireInput>
+export type politiqueevaluationUpsertWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedUpdateWithoutEcoleInput>
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedCreateWithoutEcoleInput>
 }
 
-export type PolitiqueEvaluationUpdateWithWhereUniqueWithoutAnneeScolaireInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutAnneeScolaireInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutAnneeScolaireInput>
+export type politiqueevaluationUpdateWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutEcoleInput, Prisma.politiqueevaluationUncheckedUpdateWithoutEcoleInput>
 }
 
-export type PolitiqueEvaluationUpdateManyWithWhereWithoutAnneeScolaireInput = {
-  where: Prisma.PolitiqueEvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateManyMutationInput, Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutAnneeScolaireInput>
+export type politiqueevaluationUpdateManyWithWhereWithoutEcoleInput = {
+  where: Prisma.politiqueevaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateManyMutationInput, Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleInput>
 }
 
-export type PolitiqueEvaluationCreateWithoutClasseScolaireInput = {
+export type politiqueevaluationCreateWithoutRegleevaluationInput = {
   id?: string
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutPolitiqueEvaluationsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  regles?: Prisma.RegleEvaluationCreateNestedManyWithoutPolitiqueInput
+  anneescolaire: Prisma.anneescolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  classscolaire?: Prisma.classscolaireCreateNestedOneWithoutPolitiqueevaluationInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutPolitiqueevaluationInput
 }
 
-export type PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput = {
-  id?: string
-  ecoleId: string
-  anneeScolaireId: string
-  nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
-  afficherRang?: boolean
-  estActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  regles?: Prisma.RegleEvaluationUncheckedCreateNestedManyWithoutPolitiqueInput
-}
-
-export type PolitiqueEvaluationCreateOrConnectWithoutClasseScolaireInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput>
-}
-
-export type PolitiqueEvaluationUpsertWithoutClasseScolaireInput = {
-  update: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutClasseScolaireInput>
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutClasseScolaireInput>
-  where?: Prisma.PolitiqueEvaluationWhereInput
-}
-
-export type PolitiqueEvaluationUpdateToOneWithWhereWithoutClasseScolaireInput = {
-  where?: Prisma.PolitiqueEvaluationWhereInput
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutClasseScolaireInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutClasseScolaireInput>
-}
-
-export type PolitiqueEvaluationUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutPolitiqueEvaluationsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPolitiqueEvalNestedInput
-  regles?: Prisma.RegleEvaluationUpdateManyWithoutPolitiqueNestedInput
-}
-
-export type PolitiqueEvaluationUncheckedUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  regles?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutPolitiqueNestedInput
-}
-
-export type PolitiqueEvaluationCreateWithoutReglesInput = {
-  id?: string
-  nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
-  afficherRang?: boolean
-  estActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutPolitiqueEvaluationsInput
-  anneeScolaire: Prisma.AnneeScolaireCreateNestedOneWithoutPolitiqueEvalInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedOneWithoutPolitiqueEvalInput
-}
-
-export type PolitiqueEvaluationUncheckedCreateWithoutReglesInput = {
+export type politiqueevaluationUncheckedCreateWithoutRegleevaluationInput = {
   id?: string
   ecoleId: string
   anneeScolaireId: string
   classeScolaireId?: string | null
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type PolitiqueEvaluationCreateOrConnectWithoutReglesInput = {
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutReglesInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutReglesInput>
+export type politiqueevaluationCreateOrConnectWithoutRegleevaluationInput = {
+  where: Prisma.politiqueevaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutRegleevaluationInput, Prisma.politiqueevaluationUncheckedCreateWithoutRegleevaluationInput>
 }
 
-export type PolitiqueEvaluationUpsertWithoutReglesInput = {
-  update: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutReglesInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutReglesInput>
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateWithoutReglesInput, Prisma.PolitiqueEvaluationUncheckedCreateWithoutReglesInput>
-  where?: Prisma.PolitiqueEvaluationWhereInput
+export type politiqueevaluationUpsertWithoutRegleevaluationInput = {
+  update: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutRegleevaluationInput, Prisma.politiqueevaluationUncheckedUpdateWithoutRegleevaluationInput>
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateWithoutRegleevaluationInput, Prisma.politiqueevaluationUncheckedCreateWithoutRegleevaluationInput>
+  where?: Prisma.politiqueevaluationWhereInput
 }
 
-export type PolitiqueEvaluationUpdateToOneWithWhereWithoutReglesInput = {
-  where?: Prisma.PolitiqueEvaluationWhereInput
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateWithoutReglesInput, Prisma.PolitiqueEvaluationUncheckedUpdateWithoutReglesInput>
+export type politiqueevaluationUpdateToOneWithWhereWithoutRegleevaluationInput = {
+  where?: Prisma.politiqueevaluationWhereInput
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateWithoutRegleevaluationInput, Prisma.politiqueevaluationUncheckedUpdateWithoutRegleevaluationInput>
 }
 
-export type PolitiqueEvaluationUpdateWithoutReglesInput = {
+export type politiqueevaluationUpdateWithoutRegleevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutPolitiqueEvaluationsNestedInput
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPolitiqueEvalNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneWithoutPolitiqueEvalNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneWithoutPolitiqueevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
 }
 
-export type PolitiqueEvaluationUncheckedUpdateWithoutReglesInput = {
+export type politiqueevaluationUncheckedUpdateWithoutRegleevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PolitiqueEvaluationCreateManyEcoleInput = {
-  id?: string
-  anneeScolaireId: string
-  classeScolaireId?: string | null
-  nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
-  afficherRang?: boolean
-  estActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type PolitiqueEvaluationUpdateWithoutEcoleInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaire?: Prisma.AnneeScolaireUpdateOneRequiredWithoutPolitiqueEvalNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneWithoutPolitiqueEvalNestedInput
-  regles?: Prisma.RegleEvaluationUpdateManyWithoutPolitiqueNestedInput
-}
-
-export type PolitiqueEvaluationUncheckedUpdateWithoutEcoleInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  regles?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutPolitiqueNestedInput
-}
-
-export type PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
-  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type PolitiqueEvaluationCreateManyAnneeScolaireInput = {
+export type politiqueevaluationCreateManyAnneescolaireInput = {
   id?: string
   ecoleId: string
   classeScolaireId?: string | null
   nom: string
-  methodeCalcul: $Enums.MethodeCalcul
-  methodeArrondi: $Enums.MethodeArrondi
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: boolean
   estActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type PolitiqueEvaluationUpdateWithoutAnneeScolaireInput = {
+export type politiqueevaluationUpdateWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutPolitiqueEvaluationsNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateOneWithoutPolitiqueEvalNestedInput
-  regles?: Prisma.RegleEvaluationUpdateManyWithoutPolitiqueNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneWithoutPolitiqueevaluationNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutPolitiqueevaluationNestedInput
 }
 
-export type PolitiqueEvaluationUncheckedUpdateWithoutAnneeScolaireInput = {
+export type politiqueevaluationUncheckedUpdateWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  regles?: Prisma.RegleEvaluationUncheckedUpdateManyWithoutPolitiqueNestedInput
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationNestedInput
 }
 
-export type PolitiqueEvaluationUncheckedUpdateManyWithoutAnneeScolaireInput = {
+export type politiqueevaluationUncheckedUpdateManyWithoutAnneescolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  methodeCalcul?: Prisma.EnumMethodeCalculFieldUpdateOperationsInput | $Enums.MethodeCalcul
-  methodeArrondi?: Prisma.EnumMethodeArrondiFieldUpdateOperationsInput | $Enums.MethodeArrondi
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type politiqueevaluationCreateManyEcoleInput = {
+  id?: string
+  anneeScolaireId: string
+  classeScolaireId?: string | null
+  nom: string
+  methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: boolean
+  estActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type politiqueevaluationUpdateWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateOneRequiredWithoutPolitiqueevaluationNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneWithoutPolitiqueevaluationNestedInput
+  regleevaluation?: Prisma.regleevaluationUpdateManyWithoutPolitiqueevaluationNestedInput
+}
+
+export type politiqueevaluationUncheckedUpdateWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
+  afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  regleevaluation?: Prisma.regleevaluationUncheckedUpdateManyWithoutPolitiqueevaluationNestedInput
+}
+
+export type politiqueevaluationUncheckedUpdateManyWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  anneeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  methodeCalcul?: Prisma.Enumpolitiqueevaluation_methodeCalculFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeCalcul
+  methodeArrondi?: Prisma.Enumpolitiqueevaluation_methodeArrondiFieldUpdateOperationsInput | $Enums.politiqueevaluation_methodeArrondi
   afficherRang?: Prisma.BoolFieldUpdateOperationsInput | boolean
   estActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1000,36 +1000,36 @@ export type PolitiqueEvaluationUncheckedUpdateManyWithoutAnneeScolaireInput = {
 
 
 /**
- * Count Type PolitiqueEvaluationCountOutputType
+ * Count Type PolitiqueevaluationCountOutputType
  */
 
-export type PolitiqueEvaluationCountOutputType = {
-  regles: number
+export type PolitiqueevaluationCountOutputType = {
+  regleevaluation: number
 }
 
-export type PolitiqueEvaluationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  regles?: boolean | PolitiqueEvaluationCountOutputTypeCountReglesArgs
+export type PolitiqueevaluationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  regleevaluation?: boolean | PolitiqueevaluationCountOutputTypeCountRegleevaluationArgs
 }
 
 /**
- * PolitiqueEvaluationCountOutputType without action
+ * PolitiqueevaluationCountOutputType without action
  */
-export type PolitiqueEvaluationCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PolitiqueevaluationCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluationCountOutputType
+   * Select specific fields to fetch from the PolitiqueevaluationCountOutputType
    */
-  select?: Prisma.PolitiqueEvaluationCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.PolitiqueevaluationCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * PolitiqueEvaluationCountOutputType without action
+ * PolitiqueevaluationCountOutputType without action
  */
-export type PolitiqueEvaluationCountOutputTypeCountReglesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.RegleEvaluationWhereInput
+export type PolitiqueevaluationCountOutputTypeCountRegleevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.regleevaluationWhereInput
 }
 
 
-export type PolitiqueEvaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type politiqueevaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   ecoleId?: boolean
   anneeScolaireId?: boolean
@@ -1041,16 +1041,16 @@ export type PolitiqueEvaluationSelect<ExtArgs extends runtime.Types.Extensions.I
   estActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.PolitiqueEvaluation$classeScolaireArgs<ExtArgs>
-  regles?: boolean | Prisma.PolitiqueEvaluation$reglesArgs<ExtArgs>
-  _count?: boolean | Prisma.PolitiqueEvaluationCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["politiqueEvaluation"]>
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  classscolaire?: boolean | Prisma.politiqueevaluation$classscolaireArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  regleevaluation?: boolean | Prisma.politiqueevaluation$regleevaluationArgs<ExtArgs>
+  _count?: boolean | Prisma.PolitiqueevaluationCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["politiqueevaluation"]>
 
 
 
-export type PolitiqueEvaluationSelectScalar = {
+export type politiqueevaluationSelectScalar = {
   id?: boolean
   ecoleId?: boolean
   anneeScolaireId?: boolean
@@ -1064,22 +1064,22 @@ export type PolitiqueEvaluationSelectScalar = {
   updatedAt?: boolean
 }
 
-export type PolitiqueEvaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "anneeScolaireId" | "classeScolaireId" | "nom" | "methodeCalcul" | "methodeArrondi" | "afficherRang" | "estActive" | "createdAt" | "updatedAt", ExtArgs["result"]["politiqueEvaluation"]>
-export type PolitiqueEvaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  anneeScolaire?: boolean | Prisma.AnneeScolaireDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.PolitiqueEvaluation$classeScolaireArgs<ExtArgs>
-  regles?: boolean | Prisma.PolitiqueEvaluation$reglesArgs<ExtArgs>
-  _count?: boolean | Prisma.PolitiqueEvaluationCountOutputTypeDefaultArgs<ExtArgs>
+export type politiqueevaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "anneeScolaireId" | "classeScolaireId" | "nom" | "methodeCalcul" | "methodeArrondi" | "afficherRang" | "estActive" | "createdAt" | "updatedAt", ExtArgs["result"]["politiqueevaluation"]>
+export type politiqueevaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  anneescolaire?: boolean | Prisma.anneescolaireDefaultArgs<ExtArgs>
+  classscolaire?: boolean | Prisma.politiqueevaluation$classscolaireArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  regleevaluation?: boolean | Prisma.politiqueevaluation$regleevaluationArgs<ExtArgs>
+  _count?: boolean | Prisma.PolitiqueevaluationCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $PolitiqueEvaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "PolitiqueEvaluation"
+export type $politiqueevaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "politiqueevaluation"
   objects: {
-    ecole: Prisma.$EcolePayload<ExtArgs>
-    anneeScolaire: Prisma.$AnneeScolairePayload<ExtArgs>
-    classeScolaire: Prisma.$ClassScolairePayload<ExtArgs> | null
-    regles: Prisma.$RegleEvaluationPayload<ExtArgs>[]
+    anneescolaire: Prisma.$anneescolairePayload<ExtArgs>
+    classscolaire: Prisma.$classscolairePayload<ExtArgs> | null
+    ecole: Prisma.$ecolePayload<ExtArgs>
+    regleevaluation: Prisma.$regleevaluationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1087,149 +1087,149 @@ export type $PolitiqueEvaluationPayload<ExtArgs extends runtime.Types.Extensions
     anneeScolaireId: string
     classeScolaireId: string | null
     nom: string
-    methodeCalcul: $Enums.MethodeCalcul
-    methodeArrondi: $Enums.MethodeArrondi
+    methodeCalcul: $Enums.politiqueevaluation_methodeCalcul
+    methodeArrondi: $Enums.politiqueevaluation_methodeArrondi
     afficherRang: boolean
     estActive: boolean
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["politiqueEvaluation"]>
+  }, ExtArgs["result"]["politiqueevaluation"]>
   composites: {}
 }
 
-export type PolitiqueEvaluationGetPayload<S extends boolean | null | undefined | PolitiqueEvaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload, S>
+export type politiqueevaluationGetPayload<S extends boolean | null | undefined | politiqueevaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload, S>
 
-export type PolitiqueEvaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<PolitiqueEvaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: PolitiqueEvaluationCountAggregateInputType | true
+export type politiqueevaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<politiqueevaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PolitiqueevaluationCountAggregateInputType | true
   }
 
-export interface PolitiqueEvaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PolitiqueEvaluation'], meta: { name: 'PolitiqueEvaluation' } }
+export interface politiqueevaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['politiqueevaluation'], meta: { name: 'politiqueevaluation' } }
   /**
-   * Find zero or one PolitiqueEvaluation that matches the filter.
-   * @param {PolitiqueEvaluationFindUniqueArgs} args - Arguments to find a PolitiqueEvaluation
+   * Find zero or one Politiqueevaluation that matches the filter.
+   * @param {politiqueevaluationFindUniqueArgs} args - Arguments to find a Politiqueevaluation
    * @example
-   * // Get one PolitiqueEvaluation
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.findUnique({
+   * // Get one Politiqueevaluation
+   * const politiqueevaluation = await prisma.politiqueevaluation.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends PolitiqueEvaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends politiqueevaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, politiqueevaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one PolitiqueEvaluation that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Politiqueevaluation that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {PolitiqueEvaluationFindUniqueOrThrowArgs} args - Arguments to find a PolitiqueEvaluation
+   * @param {politiqueevaluationFindUniqueOrThrowArgs} args - Arguments to find a Politiqueevaluation
    * @example
-   * // Get one PolitiqueEvaluation
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.findUniqueOrThrow({
+   * // Get one Politiqueevaluation
+   * const politiqueevaluation = await prisma.politiqueevaluation.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends PolitiqueEvaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends politiqueevaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, politiqueevaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PolitiqueEvaluation that matches the filter.
+   * Find the first Politiqueevaluation that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationFindFirstArgs} args - Arguments to find a PolitiqueEvaluation
+   * @param {politiqueevaluationFindFirstArgs} args - Arguments to find a Politiqueevaluation
    * @example
-   * // Get one PolitiqueEvaluation
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.findFirst({
+   * // Get one Politiqueevaluation
+   * const politiqueevaluation = await prisma.politiqueevaluation.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends PolitiqueEvaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, PolitiqueEvaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends politiqueevaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, politiqueevaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PolitiqueEvaluation that matches the filter or
+   * Find the first Politiqueevaluation that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationFindFirstOrThrowArgs} args - Arguments to find a PolitiqueEvaluation
+   * @param {politiqueevaluationFindFirstOrThrowArgs} args - Arguments to find a Politiqueevaluation
    * @example
-   * // Get one PolitiqueEvaluation
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.findFirstOrThrow({
+   * // Get one Politiqueevaluation
+   * const politiqueevaluation = await prisma.politiqueevaluation.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends PolitiqueEvaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PolitiqueEvaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends politiqueevaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, politiqueevaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more PolitiqueEvaluations that matches the filter.
+   * Find zero or more Politiqueevaluations that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {politiqueevaluationFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all PolitiqueEvaluations
-   * const politiqueEvaluations = await prisma.politiqueEvaluation.findMany()
+   * // Get all Politiqueevaluations
+   * const politiqueevaluations = await prisma.politiqueevaluation.findMany()
    * 
-   * // Get first 10 PolitiqueEvaluations
-   * const politiqueEvaluations = await prisma.politiqueEvaluation.findMany({ take: 10 })
+   * // Get first 10 Politiqueevaluations
+   * const politiqueevaluations = await prisma.politiqueevaluation.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const politiqueEvaluationWithIdOnly = await prisma.politiqueEvaluation.findMany({ select: { id: true } })
+   * const politiqueevaluationWithIdOnly = await prisma.politiqueevaluation.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends PolitiqueEvaluationFindManyArgs>(args?: Prisma.SelectSubset<T, PolitiqueEvaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends politiqueevaluationFindManyArgs>(args?: Prisma.SelectSubset<T, politiqueevaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a PolitiqueEvaluation.
-   * @param {PolitiqueEvaluationCreateArgs} args - Arguments to create a PolitiqueEvaluation.
+   * Create a Politiqueevaluation.
+   * @param {politiqueevaluationCreateArgs} args - Arguments to create a Politiqueevaluation.
    * @example
-   * // Create one PolitiqueEvaluation
-   * const PolitiqueEvaluation = await prisma.politiqueEvaluation.create({
+   * // Create one Politiqueevaluation
+   * const Politiqueevaluation = await prisma.politiqueevaluation.create({
    *   data: {
-   *     // ... data to create a PolitiqueEvaluation
+   *     // ... data to create a Politiqueevaluation
    *   }
    * })
    * 
    */
-  create<T extends PolitiqueEvaluationCreateArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationCreateArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends politiqueevaluationCreateArgs>(args: Prisma.SelectSubset<T, politiqueevaluationCreateArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many PolitiqueEvaluations.
-   * @param {PolitiqueEvaluationCreateManyArgs} args - Arguments to create many PolitiqueEvaluations.
+   * Create many Politiqueevaluations.
+   * @param {politiqueevaluationCreateManyArgs} args - Arguments to create many Politiqueevaluations.
    * @example
-   * // Create many PolitiqueEvaluations
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.createMany({
+   * // Create many Politiqueevaluations
+   * const politiqueevaluation = await prisma.politiqueevaluation.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends PolitiqueEvaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, PolitiqueEvaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends politiqueevaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, politiqueevaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a PolitiqueEvaluation.
-   * @param {PolitiqueEvaluationDeleteArgs} args - Arguments to delete one PolitiqueEvaluation.
+   * Delete a Politiqueevaluation.
+   * @param {politiqueevaluationDeleteArgs} args - Arguments to delete one Politiqueevaluation.
    * @example
-   * // Delete one PolitiqueEvaluation
-   * const PolitiqueEvaluation = await prisma.politiqueEvaluation.delete({
+   * // Delete one Politiqueevaluation
+   * const Politiqueevaluation = await prisma.politiqueevaluation.delete({
    *   where: {
-   *     // ... filter to delete one PolitiqueEvaluation
+   *     // ... filter to delete one Politiqueevaluation
    *   }
    * })
    * 
    */
-  delete<T extends PolitiqueEvaluationDeleteArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends politiqueevaluationDeleteArgs>(args: Prisma.SelectSubset<T, politiqueevaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one PolitiqueEvaluation.
-   * @param {PolitiqueEvaluationUpdateArgs} args - Arguments to update one PolitiqueEvaluation.
+   * Update one Politiqueevaluation.
+   * @param {politiqueevaluationUpdateArgs} args - Arguments to update one Politiqueevaluation.
    * @example
-   * // Update one PolitiqueEvaluation
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.update({
+   * // Update one Politiqueevaluation
+   * const politiqueevaluation = await prisma.politiqueevaluation.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1239,30 +1239,30 @@ export interface PolitiqueEvaluationDelegate<ExtArgs extends runtime.Types.Exten
    * })
    * 
    */
-  update<T extends PolitiqueEvaluationUpdateArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends politiqueevaluationUpdateArgs>(args: Prisma.SelectSubset<T, politiqueevaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more PolitiqueEvaluations.
-   * @param {PolitiqueEvaluationDeleteManyArgs} args - Arguments to filter PolitiqueEvaluations to delete.
+   * Delete zero or more Politiqueevaluations.
+   * @param {politiqueevaluationDeleteManyArgs} args - Arguments to filter Politiqueevaluations to delete.
    * @example
-   * // Delete a few PolitiqueEvaluations
-   * const { count } = await prisma.politiqueEvaluation.deleteMany({
+   * // Delete a few Politiqueevaluations
+   * const { count } = await prisma.politiqueevaluation.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends PolitiqueEvaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, PolitiqueEvaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends politiqueevaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, politiqueevaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more PolitiqueEvaluations.
+   * Update zero or more Politiqueevaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {politiqueevaluationUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many PolitiqueEvaluations
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.updateMany({
+   * // Update many Politiqueevaluations
+   * const politiqueevaluation = await prisma.politiqueevaluation.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1272,56 +1272,56 @@ export interface PolitiqueEvaluationDelegate<ExtArgs extends runtime.Types.Exten
    * })
    * 
    */
-  updateMany<T extends PolitiqueEvaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends politiqueevaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, politiqueevaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one PolitiqueEvaluation.
-   * @param {PolitiqueEvaluationUpsertArgs} args - Arguments to update or create a PolitiqueEvaluation.
+   * Create or update one Politiqueevaluation.
+   * @param {politiqueevaluationUpsertArgs} args - Arguments to update or create a Politiqueevaluation.
    * @example
-   * // Update or create a PolitiqueEvaluation
-   * const politiqueEvaluation = await prisma.politiqueEvaluation.upsert({
+   * // Update or create a Politiqueevaluation
+   * const politiqueevaluation = await prisma.politiqueevaluation.upsert({
    *   create: {
-   *     // ... data to create a PolitiqueEvaluation
+   *     // ... data to create a Politiqueevaluation
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the PolitiqueEvaluation we want to update
+   *     // ... the filter for the Politiqueevaluation we want to update
    *   }
    * })
    */
-  upsert<T extends PolitiqueEvaluationUpsertArgs>(args: Prisma.SelectSubset<T, PolitiqueEvaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__PolitiqueEvaluationClient<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends politiqueevaluationUpsertArgs>(args: Prisma.SelectSubset<T, politiqueevaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__politiqueevaluationClient<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of PolitiqueEvaluations.
+   * Count the number of Politiqueevaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationCountArgs} args - Arguments to filter PolitiqueEvaluations to count.
+   * @param {politiqueevaluationCountArgs} args - Arguments to filter Politiqueevaluations to count.
    * @example
-   * // Count the number of PolitiqueEvaluations
-   * const count = await prisma.politiqueEvaluation.count({
+   * // Count the number of Politiqueevaluations
+   * const count = await prisma.politiqueevaluation.count({
    *   where: {
-   *     // ... the filter for the PolitiqueEvaluations we want to count
+   *     // ... the filter for the Politiqueevaluations we want to count
    *   }
    * })
   **/
-  count<T extends PolitiqueEvaluationCountArgs>(
-    args?: Prisma.Subset<T, PolitiqueEvaluationCountArgs>,
+  count<T extends politiqueevaluationCountArgs>(
+    args?: Prisma.Subset<T, politiqueevaluationCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], PolitiqueEvaluationCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], PolitiqueevaluationCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a PolitiqueEvaluation.
+   * Allows you to perform aggregations operations on a Politiqueevaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {PolitiqueevaluationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1341,13 +1341,13 @@ export interface PolitiqueEvaluationDelegate<ExtArgs extends runtime.Types.Exten
    *   take: 10,
    * })
   **/
-  aggregate<T extends PolitiqueEvaluationAggregateArgs>(args: Prisma.Subset<T, PolitiqueEvaluationAggregateArgs>): Prisma.PrismaPromise<GetPolitiqueEvaluationAggregateType<T>>
+  aggregate<T extends PolitiqueevaluationAggregateArgs>(args: Prisma.Subset<T, PolitiqueevaluationAggregateArgs>): Prisma.PrismaPromise<GetPolitiqueevaluationAggregateType<T>>
 
   /**
-   * Group by PolitiqueEvaluation.
+   * Group by Politiqueevaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PolitiqueEvaluationGroupByArgs} args - Group by arguments.
+   * @param {politiqueevaluationGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1362,14 +1362,14 @@ export interface PolitiqueEvaluationDelegate<ExtArgs extends runtime.Types.Exten
    * 
   **/
   groupBy<
-    T extends PolitiqueEvaluationGroupByArgs,
+    T extends politiqueevaluationGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: PolitiqueEvaluationGroupByArgs['orderBy'] }
-      : { orderBy?: PolitiqueEvaluationGroupByArgs['orderBy'] },
+      ? { orderBy: politiqueevaluationGroupByArgs['orderBy'] }
+      : { orderBy?: politiqueevaluationGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1418,25 +1418,25 @@ export interface PolitiqueEvaluationDelegate<ExtArgs extends runtime.Types.Exten
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, PolitiqueEvaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPolitiqueEvaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, politiqueevaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPolitiqueevaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the PolitiqueEvaluation model
+ * Fields of the politiqueevaluation model
  */
-readonly fields: PolitiqueEvaluationFieldRefs;
+readonly fields: politiqueevaluationFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for PolitiqueEvaluation.
+ * The delegate class that acts as a "Promise-like" for politiqueevaluation.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__PolitiqueEvaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__politiqueevaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  ecole<T extends Prisma.EcoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EcoleDefaultArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  anneeScolaire<T extends Prisma.AnneeScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AnneeScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__AnneeScolaireClient<runtime.Types.Result.GetResult<Prisma.$AnneeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  classeScolaire<T extends Prisma.PolitiqueEvaluation$classeScolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PolitiqueEvaluation$classeScolaireArgs<ExtArgs>>): Prisma.Prisma__ClassScolaireClient<runtime.Types.Result.GetResult<Prisma.$ClassScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  regles<T extends Prisma.PolitiqueEvaluation$reglesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PolitiqueEvaluation$reglesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RegleEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  anneescolaire<T extends Prisma.anneescolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.anneescolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__anneescolaireClient<runtime.Types.Result.GetResult<Prisma.$anneescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  classscolaire<T extends Prisma.politiqueevaluation$classscolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.politiqueevaluation$classscolaireArgs<ExtArgs>>): Prisma.Prisma__classscolaireClient<runtime.Types.Result.GetResult<Prisma.$classscolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  ecole<T extends Prisma.ecoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecoleDefaultArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  regleevaluation<T extends Prisma.politiqueevaluation$regleevaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.politiqueevaluation$regleevaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$regleevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1463,424 +1463,424 @@ export interface Prisma__PolitiqueEvaluationClient<T, Null = never, ExtArgs exte
 
 
 /**
- * Fields of the PolitiqueEvaluation model
+ * Fields of the politiqueevaluation model
  */
-export interface PolitiqueEvaluationFieldRefs {
-  readonly id: Prisma.FieldRef<"PolitiqueEvaluation", 'String'>
-  readonly ecoleId: Prisma.FieldRef<"PolitiqueEvaluation", 'String'>
-  readonly anneeScolaireId: Prisma.FieldRef<"PolitiqueEvaluation", 'String'>
-  readonly classeScolaireId: Prisma.FieldRef<"PolitiqueEvaluation", 'String'>
-  readonly nom: Prisma.FieldRef<"PolitiqueEvaluation", 'String'>
-  readonly methodeCalcul: Prisma.FieldRef<"PolitiqueEvaluation", 'MethodeCalcul'>
-  readonly methodeArrondi: Prisma.FieldRef<"PolitiqueEvaluation", 'MethodeArrondi'>
-  readonly afficherRang: Prisma.FieldRef<"PolitiqueEvaluation", 'Boolean'>
-  readonly estActive: Prisma.FieldRef<"PolitiqueEvaluation", 'Boolean'>
-  readonly createdAt: Prisma.FieldRef<"PolitiqueEvaluation", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"PolitiqueEvaluation", 'DateTime'>
+export interface politiqueevaluationFieldRefs {
+  readonly id: Prisma.FieldRef<"politiqueevaluation", 'String'>
+  readonly ecoleId: Prisma.FieldRef<"politiqueevaluation", 'String'>
+  readonly anneeScolaireId: Prisma.FieldRef<"politiqueevaluation", 'String'>
+  readonly classeScolaireId: Prisma.FieldRef<"politiqueevaluation", 'String'>
+  readonly nom: Prisma.FieldRef<"politiqueevaluation", 'String'>
+  readonly methodeCalcul: Prisma.FieldRef<"politiqueevaluation", 'politiqueevaluation_methodeCalcul'>
+  readonly methodeArrondi: Prisma.FieldRef<"politiqueevaluation", 'politiqueevaluation_methodeArrondi'>
+  readonly afficherRang: Prisma.FieldRef<"politiqueevaluation", 'Boolean'>
+  readonly estActive: Prisma.FieldRef<"politiqueevaluation", 'Boolean'>
+  readonly createdAt: Prisma.FieldRef<"politiqueevaluation", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"politiqueevaluation", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * PolitiqueEvaluation findUnique
+ * politiqueevaluation findUnique
  */
-export type PolitiqueEvaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which PolitiqueEvaluation to fetch.
+   * Filter, which politiqueevaluation to fetch.
    */
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
+  where: Prisma.politiqueevaluationWhereUniqueInput
 }
 
 /**
- * PolitiqueEvaluation findUniqueOrThrow
+ * politiqueevaluation findUniqueOrThrow
  */
-export type PolitiqueEvaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which PolitiqueEvaluation to fetch.
+   * Filter, which politiqueevaluation to fetch.
    */
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
+  where: Prisma.politiqueevaluationWhereUniqueInput
 }
 
 /**
- * PolitiqueEvaluation findFirst
+ * politiqueevaluation findFirst
  */
-export type PolitiqueEvaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which PolitiqueEvaluation to fetch.
+   * Filter, which politiqueevaluation to fetch.
    */
-  where?: Prisma.PolitiqueEvaluationWhereInput
+  where?: Prisma.politiqueevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PolitiqueEvaluations to fetch.
+   * Determine the order of politiqueevaluations to fetch.
    */
-  orderBy?: Prisma.PolitiqueEvaluationOrderByWithRelationInput | Prisma.PolitiqueEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.politiqueevaluationOrderByWithRelationInput | Prisma.politiqueevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PolitiqueEvaluations.
+   * Sets the position for searching for politiqueevaluations.
    */
-  cursor?: Prisma.PolitiqueEvaluationWhereUniqueInput
+  cursor?: Prisma.politiqueevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PolitiqueEvaluations from the position of the cursor.
+   * Take `±n` politiqueevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PolitiqueEvaluations.
+   * Skip the first `n` politiqueevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PolitiqueEvaluations.
+   * Filter by unique combinations of politiqueevaluations.
    */
-  distinct?: Prisma.PolitiqueEvaluationScalarFieldEnum | Prisma.PolitiqueEvaluationScalarFieldEnum[]
+  distinct?: Prisma.PolitiqueevaluationScalarFieldEnum | Prisma.PolitiqueevaluationScalarFieldEnum[]
 }
 
 /**
- * PolitiqueEvaluation findFirstOrThrow
+ * politiqueevaluation findFirstOrThrow
  */
-export type PolitiqueEvaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which PolitiqueEvaluation to fetch.
+   * Filter, which politiqueevaluation to fetch.
    */
-  where?: Prisma.PolitiqueEvaluationWhereInput
+  where?: Prisma.politiqueevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PolitiqueEvaluations to fetch.
+   * Determine the order of politiqueevaluations to fetch.
    */
-  orderBy?: Prisma.PolitiqueEvaluationOrderByWithRelationInput | Prisma.PolitiqueEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.politiqueevaluationOrderByWithRelationInput | Prisma.politiqueevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PolitiqueEvaluations.
+   * Sets the position for searching for politiqueevaluations.
    */
-  cursor?: Prisma.PolitiqueEvaluationWhereUniqueInput
+  cursor?: Prisma.politiqueevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PolitiqueEvaluations from the position of the cursor.
+   * Take `±n` politiqueevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PolitiqueEvaluations.
+   * Skip the first `n` politiqueevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PolitiqueEvaluations.
+   * Filter by unique combinations of politiqueevaluations.
    */
-  distinct?: Prisma.PolitiqueEvaluationScalarFieldEnum | Prisma.PolitiqueEvaluationScalarFieldEnum[]
+  distinct?: Prisma.PolitiqueevaluationScalarFieldEnum | Prisma.PolitiqueevaluationScalarFieldEnum[]
 }
 
 /**
- * PolitiqueEvaluation findMany
+ * politiqueevaluation findMany
  */
-export type PolitiqueEvaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * Filter, which PolitiqueEvaluations to fetch.
+   * Filter, which politiqueevaluations to fetch.
    */
-  where?: Prisma.PolitiqueEvaluationWhereInput
+  where?: Prisma.politiqueevaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PolitiqueEvaluations to fetch.
+   * Determine the order of politiqueevaluations to fetch.
    */
-  orderBy?: Prisma.PolitiqueEvaluationOrderByWithRelationInput | Prisma.PolitiqueEvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.politiqueevaluationOrderByWithRelationInput | Prisma.politiqueevaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing PolitiqueEvaluations.
+   * Sets the position for listing politiqueevaluations.
    */
-  cursor?: Prisma.PolitiqueEvaluationWhereUniqueInput
+  cursor?: Prisma.politiqueevaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PolitiqueEvaluations from the position of the cursor.
+   * Take `±n` politiqueevaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PolitiqueEvaluations.
+   * Skip the first `n` politiqueevaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PolitiqueEvaluations.
+   * Filter by unique combinations of politiqueevaluations.
    */
-  distinct?: Prisma.PolitiqueEvaluationScalarFieldEnum | Prisma.PolitiqueEvaluationScalarFieldEnum[]
+  distinct?: Prisma.PolitiqueevaluationScalarFieldEnum | Prisma.PolitiqueevaluationScalarFieldEnum[]
 }
 
 /**
- * PolitiqueEvaluation create
+ * politiqueevaluation create
  */
-export type PolitiqueEvaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * The data needed to create a PolitiqueEvaluation.
+   * The data needed to create a politiqueevaluation.
    */
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationCreateInput, Prisma.PolitiqueEvaluationUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.politiqueevaluationCreateInput, Prisma.politiqueevaluationUncheckedCreateInput>
 }
 
 /**
- * PolitiqueEvaluation createMany
+ * politiqueevaluation createMany
  */
-export type PolitiqueEvaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many PolitiqueEvaluations.
+   * The data used to create many politiqueevaluations.
    */
-  data: Prisma.PolitiqueEvaluationCreateManyInput | Prisma.PolitiqueEvaluationCreateManyInput[]
+  data: Prisma.politiqueevaluationCreateManyInput | Prisma.politiqueevaluationCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * PolitiqueEvaluation update
+ * politiqueevaluation update
  */
-export type PolitiqueEvaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * The data needed to update a PolitiqueEvaluation.
+   * The data needed to update a politiqueevaluation.
    */
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateInput, Prisma.PolitiqueEvaluationUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateInput, Prisma.politiqueevaluationUncheckedUpdateInput>
   /**
-   * Choose, which PolitiqueEvaluation to update.
+   * Choose, which politiqueevaluation to update.
    */
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
+  where: Prisma.politiqueevaluationWhereUniqueInput
 }
 
 /**
- * PolitiqueEvaluation updateMany
+ * politiqueevaluation updateMany
  */
-export type PolitiqueEvaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update PolitiqueEvaluations.
+   * The data used to update politiqueevaluations.
    */
-  data: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateManyMutationInput, Prisma.PolitiqueEvaluationUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.politiqueevaluationUpdateManyMutationInput, Prisma.politiqueevaluationUncheckedUpdateManyInput>
   /**
-   * Filter which PolitiqueEvaluations to update
+   * Filter which politiqueevaluations to update
    */
-  where?: Prisma.PolitiqueEvaluationWhereInput
+  where?: Prisma.politiqueevaluationWhereInput
   /**
-   * Limit how many PolitiqueEvaluations to update.
+   * Limit how many politiqueevaluations to update.
    */
   limit?: number
 }
 
 /**
- * PolitiqueEvaluation upsert
+ * politiqueevaluation upsert
  */
-export type PolitiqueEvaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * The filter to search for the PolitiqueEvaluation to update in case it exists.
+   * The filter to search for the politiqueevaluation to update in case it exists.
    */
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
+  where: Prisma.politiqueevaluationWhereUniqueInput
   /**
-   * In case the PolitiqueEvaluation found by the `where` argument doesn't exist, create a new PolitiqueEvaluation with this data.
+   * In case the politiqueevaluation found by the `where` argument doesn't exist, create a new politiqueevaluation with this data.
    */
-  create: Prisma.XOR<Prisma.PolitiqueEvaluationCreateInput, Prisma.PolitiqueEvaluationUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.politiqueevaluationCreateInput, Prisma.politiqueevaluationUncheckedCreateInput>
   /**
-   * In case the PolitiqueEvaluation was found with the provided `where` argument, update it with this data.
+   * In case the politiqueevaluation was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.PolitiqueEvaluationUpdateInput, Prisma.PolitiqueEvaluationUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.politiqueevaluationUpdateInput, Prisma.politiqueevaluationUncheckedUpdateInput>
 }
 
 /**
- * PolitiqueEvaluation delete
+ * politiqueevaluation delete
  */
-export type PolitiqueEvaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
   /**
-   * Filter which PolitiqueEvaluation to delete.
+   * Filter which politiqueevaluation to delete.
    */
-  where: Prisma.PolitiqueEvaluationWhereUniqueInput
+  where: Prisma.politiqueevaluationWhereUniqueInput
 }
 
 /**
- * PolitiqueEvaluation deleteMany
+ * politiqueevaluation deleteMany
  */
-export type PolitiqueEvaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PolitiqueEvaluations to delete
+   * Filter which politiqueevaluations to delete
    */
-  where?: Prisma.PolitiqueEvaluationWhereInput
+  where?: Prisma.politiqueevaluationWhereInput
   /**
-   * Limit how many PolitiqueEvaluations to delete.
+   * Limit how many politiqueevaluations to delete.
    */
   limit?: number
 }
 
 /**
- * PolitiqueEvaluation.classeScolaire
+ * politiqueevaluation.classscolaire
  */
-export type PolitiqueEvaluation$classeScolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluation$classscolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClassScolaire
+   * Select specific fields to fetch from the classscolaire
    */
-  select?: Prisma.ClassScolaireSelect<ExtArgs> | null
+  select?: Prisma.classscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClassScolaire
+   * Omit specific fields from the classscolaire
    */
-  omit?: Prisma.ClassScolaireOmit<ExtArgs> | null
+  omit?: Prisma.classscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClassScolaireInclude<ExtArgs> | null
-  where?: Prisma.ClassScolaireWhereInput
+  include?: Prisma.classscolaireInclude<ExtArgs> | null
+  where?: Prisma.classscolaireWhereInput
 }
 
 /**
- * PolitiqueEvaluation.regles
+ * politiqueevaluation.regleevaluation
  */
-export type PolitiqueEvaluation$reglesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluation$regleevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the RegleEvaluation
+   * Select specific fields to fetch from the regleevaluation
    */
-  select?: Prisma.RegleEvaluationSelect<ExtArgs> | null
+  select?: Prisma.regleevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the RegleEvaluation
+   * Omit specific fields from the regleevaluation
    */
-  omit?: Prisma.RegleEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.regleevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.RegleEvaluationInclude<ExtArgs> | null
-  where?: Prisma.RegleEvaluationWhereInput
-  orderBy?: Prisma.RegleEvaluationOrderByWithRelationInput | Prisma.RegleEvaluationOrderByWithRelationInput[]
-  cursor?: Prisma.RegleEvaluationWhereUniqueInput
+  include?: Prisma.regleevaluationInclude<ExtArgs> | null
+  where?: Prisma.regleevaluationWhereInput
+  orderBy?: Prisma.regleevaluationOrderByWithRelationInput | Prisma.regleevaluationOrderByWithRelationInput[]
+  cursor?: Prisma.regleevaluationWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.RegleEvaluationScalarFieldEnum | Prisma.RegleEvaluationScalarFieldEnum[]
+  distinct?: Prisma.RegleevaluationScalarFieldEnum | Prisma.RegleevaluationScalarFieldEnum[]
 }
 
 /**
- * PolitiqueEvaluation without action
+ * politiqueevaluation without action
  */
-export type PolitiqueEvaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type politiqueevaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
+   * Select specific fields to fetch from the politiqueevaluation
    */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PolitiqueEvaluation
+   * Omit specific fields from the politiqueevaluation
    */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
 }

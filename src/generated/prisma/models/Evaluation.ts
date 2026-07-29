@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Evaluation` model and its related types.
+ * This file exports the `evaluation` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Evaluation
- * Évaluation (devoir, interro, contrôle), créée par un enseignant pour une classe
+ * Model evaluation
+ * 
  */
-export type EvaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$EvaluationPayload>
+export type evaluationModel = runtime.Types.Result.DefaultSelection<Prisma.$evaluationPayload>
 
 export type AggregateEvaluation = {
   _count: EvaluationCountAggregateOutputType | null
@@ -95,37 +95,37 @@ export type EvaluationCountAggregateInputType = {
 
 export type EvaluationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Evaluation to aggregate.
+   * Filter which evaluation to aggregate.
    */
-  where?: Prisma.EvaluationWhereInput
+  where?: Prisma.evaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Evaluations to fetch.
+   * Determine the order of evaluations to fetch.
    */
-  orderBy?: Prisma.EvaluationOrderByWithRelationInput | Prisma.EvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.evaluationOrderByWithRelationInput | Prisma.evaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.EvaluationWhereUniqueInput
+  cursor?: Prisma.evaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Evaluations from the position of the cursor.
+   * Take `±n` evaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Evaluations.
+   * Skip the first `n` evaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Evaluations
+   * Count returned evaluations
   **/
   _count?: true | EvaluationCountAggregateInputType
   /**
@@ -153,11 +153,11 @@ export type GetEvaluationAggregateType<T extends EvaluationAggregateArgs> = {
 
 
 
-export type EvaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EvaluationWhereInput
-  orderBy?: Prisma.EvaluationOrderByWithAggregationInput | Prisma.EvaluationOrderByWithAggregationInput[]
+export type evaluationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.evaluationWhereInput
+  orderBy?: Prisma.evaluationOrderByWithAggregationInput | Prisma.evaluationOrderByWithAggregationInput[]
   by: Prisma.EvaluationScalarFieldEnum[] | Prisma.EvaluationScalarFieldEnum
-  having?: Prisma.EvaluationScalarWhereWithAggregatesInput
+  having?: Prisma.evaluationScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: EvaluationCountAggregateInputType | true
@@ -179,7 +179,7 @@ export type EvaluationGroupByOutputType = {
   _max: EvaluationMaxAggregateOutputType | null
 }
 
-export type GetEvaluationGroupByPayload<T extends EvaluationGroupByArgs> = Prisma.PrismaPromise<
+export type GetEvaluationGroupByPayload<T extends evaluationGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<EvaluationGroupByOutputType, T['by']> &
       {
@@ -194,25 +194,25 @@ export type GetEvaluationGroupByPayload<T extends EvaluationGroupByArgs> = Prism
 
 
 
-export type EvaluationWhereInput = {
-  AND?: Prisma.EvaluationWhereInput | Prisma.EvaluationWhereInput[]
-  OR?: Prisma.EvaluationWhereInput[]
-  NOT?: Prisma.EvaluationWhereInput | Prisma.EvaluationWhereInput[]
-  id?: Prisma.StringFilter<"Evaluation"> | string
-  titre?: Prisma.StringFilter<"Evaluation"> | string
-  date?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  affectationId?: Prisma.StringFilter<"Evaluation"> | string
-  typeEvaluationId?: Prisma.StringFilter<"Evaluation"> | string
-  periodeScolaireId?: Prisma.StringFilter<"Evaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  affectation?: Prisma.XOR<Prisma.AffectationEnseignantScalarRelationFilter, Prisma.AffectationEnseignantWhereInput>
-  typeEvaluation?: Prisma.XOR<Prisma.TypeEvaluationScalarRelationFilter, Prisma.TypeEvaluationWhereInput>
-  periodeScolaire?: Prisma.XOR<Prisma.PeriodeScolaireScalarRelationFilter, Prisma.PeriodeScolaireWhereInput>
-  notes?: Prisma.NoteListRelationFilter
+export type evaluationWhereInput = {
+  AND?: Prisma.evaluationWhereInput | Prisma.evaluationWhereInput[]
+  OR?: Prisma.evaluationWhereInput[]
+  NOT?: Prisma.evaluationWhereInput | Prisma.evaluationWhereInput[]
+  id?: Prisma.StringFilter<"evaluation"> | string
+  titre?: Prisma.StringFilter<"evaluation"> | string
+  date?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  affectationId?: Prisma.StringFilter<"evaluation"> | string
+  typeEvaluationId?: Prisma.StringFilter<"evaluation"> | string
+  periodeScolaireId?: Prisma.StringFilter<"evaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  affectationenseignant?: Prisma.XOR<Prisma.AffectationenseignantScalarRelationFilter, Prisma.affectationenseignantWhereInput>
+  periodescolaire?: Prisma.XOR<Prisma.PeriodescolaireScalarRelationFilter, Prisma.periodescolaireWhereInput>
+  typeevaluation?: Prisma.XOR<Prisma.TypeevaluationScalarRelationFilter, Prisma.typeevaluationWhereInput>
+  note?: Prisma.NoteListRelationFilter
 }
 
-export type EvaluationOrderByWithRelationInput = {
+export type evaluationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -221,32 +221,32 @@ export type EvaluationOrderByWithRelationInput = {
   periodeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  affectation?: Prisma.AffectationEnseignantOrderByWithRelationInput
-  typeEvaluation?: Prisma.TypeEvaluationOrderByWithRelationInput
-  periodeScolaire?: Prisma.PeriodeScolaireOrderByWithRelationInput
-  notes?: Prisma.NoteOrderByRelationAggregateInput
-  _relevance?: Prisma.EvaluationOrderByRelevanceInput
+  affectationenseignant?: Prisma.affectationenseignantOrderByWithRelationInput
+  periodescolaire?: Prisma.periodescolaireOrderByWithRelationInput
+  typeevaluation?: Prisma.typeevaluationOrderByWithRelationInput
+  note?: Prisma.noteOrderByRelationAggregateInput
+  _relevance?: Prisma.evaluationOrderByRelevanceInput
 }
 
-export type EvaluationWhereUniqueInput = Prisma.AtLeast<{
+export type evaluationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.EvaluationWhereInput | Prisma.EvaluationWhereInput[]
-  OR?: Prisma.EvaluationWhereInput[]
-  NOT?: Prisma.EvaluationWhereInput | Prisma.EvaluationWhereInput[]
-  titre?: Prisma.StringFilter<"Evaluation"> | string
-  date?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  affectationId?: Prisma.StringFilter<"Evaluation"> | string
-  typeEvaluationId?: Prisma.StringFilter<"Evaluation"> | string
-  periodeScolaireId?: Prisma.StringFilter<"Evaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  affectation?: Prisma.XOR<Prisma.AffectationEnseignantScalarRelationFilter, Prisma.AffectationEnseignantWhereInput>
-  typeEvaluation?: Prisma.XOR<Prisma.TypeEvaluationScalarRelationFilter, Prisma.TypeEvaluationWhereInput>
-  periodeScolaire?: Prisma.XOR<Prisma.PeriodeScolaireScalarRelationFilter, Prisma.PeriodeScolaireWhereInput>
-  notes?: Prisma.NoteListRelationFilter
+  AND?: Prisma.evaluationWhereInput | Prisma.evaluationWhereInput[]
+  OR?: Prisma.evaluationWhereInput[]
+  NOT?: Prisma.evaluationWhereInput | Prisma.evaluationWhereInput[]
+  titre?: Prisma.StringFilter<"evaluation"> | string
+  date?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  affectationId?: Prisma.StringFilter<"evaluation"> | string
+  typeEvaluationId?: Prisma.StringFilter<"evaluation"> | string
+  periodeScolaireId?: Prisma.StringFilter<"evaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  affectationenseignant?: Prisma.XOR<Prisma.AffectationenseignantScalarRelationFilter, Prisma.affectationenseignantWhereInput>
+  periodescolaire?: Prisma.XOR<Prisma.PeriodescolaireScalarRelationFilter, Prisma.periodescolaireWhereInput>
+  typeevaluation?: Prisma.XOR<Prisma.TypeevaluationScalarRelationFilter, Prisma.typeevaluationWhereInput>
+  note?: Prisma.NoteListRelationFilter
 }, "id">
 
-export type EvaluationOrderByWithAggregationInput = {
+export type evaluationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -255,38 +255,38 @@ export type EvaluationOrderByWithAggregationInput = {
   periodeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.EvaluationCountOrderByAggregateInput
-  _max?: Prisma.EvaluationMaxOrderByAggregateInput
-  _min?: Prisma.EvaluationMinOrderByAggregateInput
+  _count?: Prisma.evaluationCountOrderByAggregateInput
+  _max?: Prisma.evaluationMaxOrderByAggregateInput
+  _min?: Prisma.evaluationMinOrderByAggregateInput
 }
 
-export type EvaluationScalarWhereWithAggregatesInput = {
-  AND?: Prisma.EvaluationScalarWhereWithAggregatesInput | Prisma.EvaluationScalarWhereWithAggregatesInput[]
-  OR?: Prisma.EvaluationScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.EvaluationScalarWhereWithAggregatesInput | Prisma.EvaluationScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Evaluation"> | string
-  titre?: Prisma.StringWithAggregatesFilter<"Evaluation"> | string
-  date?: Prisma.DateTimeWithAggregatesFilter<"Evaluation"> | Date | string
-  affectationId?: Prisma.StringWithAggregatesFilter<"Evaluation"> | string
-  typeEvaluationId?: Prisma.StringWithAggregatesFilter<"Evaluation"> | string
-  periodeScolaireId?: Prisma.StringWithAggregatesFilter<"Evaluation"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Evaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Evaluation"> | Date | string
+export type evaluationScalarWhereWithAggregatesInput = {
+  AND?: Prisma.evaluationScalarWhereWithAggregatesInput | Prisma.evaluationScalarWhereWithAggregatesInput[]
+  OR?: Prisma.evaluationScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.evaluationScalarWhereWithAggregatesInput | Prisma.evaluationScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"evaluation"> | string
+  titre?: Prisma.StringWithAggregatesFilter<"evaluation"> | string
+  date?: Prisma.DateTimeWithAggregatesFilter<"evaluation"> | Date | string
+  affectationId?: Prisma.StringWithAggregatesFilter<"evaluation"> | string
+  typeEvaluationId?: Prisma.StringWithAggregatesFilter<"evaluation"> | string
+  periodeScolaireId?: Prisma.StringWithAggregatesFilter<"evaluation"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"evaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"evaluation"> | Date | string
 }
 
-export type EvaluationCreateInput = {
+export type evaluationCreateInput = {
   id?: string
   titre: string
   date: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectation: Prisma.AffectationEnseignantCreateNestedOneWithoutEvaluationsInput
-  typeEvaluation: Prisma.TypeEvaluationCreateNestedOneWithoutEvaluationsInput
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutEvaluationsInput
-  notes?: Prisma.NoteCreateNestedManyWithoutEvaluationInput
+  affectationenseignant: Prisma.affectationenseignantCreateNestedOneWithoutEvaluationInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutEvaluationInput
+  typeevaluation: Prisma.typeevaluationCreateNestedOneWithoutEvaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationUncheckedCreateInput = {
+export type evaluationUncheckedCreateInput = {
   id?: string
   titre: string
   date: Date | string
@@ -295,22 +295,22 @@ export type EvaluationUncheckedCreateInput = {
   periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutEvaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationUpdateInput = {
+export type evaluationUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectation?: Prisma.AffectationEnseignantUpdateOneRequiredWithoutEvaluationsNestedInput
-  typeEvaluation?: Prisma.TypeEvaluationUpdateOneRequiredWithoutEvaluationsNestedInput
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutEvaluationsNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutEvaluationNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneRequiredWithoutEvaluationNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutEvaluationNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateOneRequiredWithoutEvaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutEvaluationNestedInput
 }
 
-export type EvaluationUncheckedUpdateInput = {
+export type evaluationUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -319,10 +319,10 @@ export type EvaluationUncheckedUpdateInput = {
   periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutEvaluationNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutEvaluationNestedInput
 }
 
-export type EvaluationCreateManyInput = {
+export type evaluationCreateManyInput = {
   id?: string
   titre: string
   date: Date | string
@@ -333,7 +333,7 @@ export type EvaluationCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type EvaluationUpdateManyMutationInput = {
+export type evaluationUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -341,7 +341,7 @@ export type EvaluationUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EvaluationUncheckedUpdateManyInput = {
+export type evaluationUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -353,22 +353,22 @@ export type EvaluationUncheckedUpdateManyInput = {
 }
 
 export type EvaluationListRelationFilter = {
-  every?: Prisma.EvaluationWhereInput
-  some?: Prisma.EvaluationWhereInput
-  none?: Prisma.EvaluationWhereInput
+  every?: Prisma.evaluationWhereInput
+  some?: Prisma.evaluationWhereInput
+  none?: Prisma.evaluationWhereInput
 }
 
-export type EvaluationOrderByRelationAggregateInput = {
+export type evaluationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type EvaluationOrderByRelevanceInput = {
-  fields: Prisma.EvaluationOrderByRelevanceFieldEnum | Prisma.EvaluationOrderByRelevanceFieldEnum[]
+export type evaluationOrderByRelevanceInput = {
+  fields: Prisma.evaluationOrderByRelevanceFieldEnum | Prisma.evaluationOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type EvaluationCountOrderByAggregateInput = {
+export type evaluationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -379,7 +379,7 @@ export type EvaluationCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EvaluationMaxOrderByAggregateInput = {
+export type evaluationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -390,7 +390,7 @@ export type EvaluationMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EvaluationMinOrderByAggregateInput = {
+export type evaluationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -402,272 +402,332 @@ export type EvaluationMinOrderByAggregateInput = {
 }
 
 export type EvaluationScalarRelationFilter = {
-  is?: Prisma.EvaluationWhereInput
-  isNot?: Prisma.EvaluationWhereInput
+  is?: Prisma.evaluationWhereInput
+  isNot?: Prisma.evaluationWhereInput
 }
 
-export type EvaluationCreateNestedManyWithoutPeriodeScolaireInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.EvaluationCreateWithoutPeriodeScolaireInput[] | Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput | Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.EvaluationCreateManyPeriodeScolaireInputEnvelope
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
+export type evaluationCreateNestedManyWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput> | Prisma.evaluationCreateWithoutAffectationenseignantInput[] | Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput | Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput[]
+  createMany?: Prisma.evaluationCreateManyAffectationenseignantInputEnvelope
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
 }
 
-export type EvaluationUncheckedCreateNestedManyWithoutPeriodeScolaireInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.EvaluationCreateWithoutPeriodeScolaireInput[] | Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput | Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.EvaluationCreateManyPeriodeScolaireInputEnvelope
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
+export type evaluationUncheckedCreateNestedManyWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput> | Prisma.evaluationCreateWithoutAffectationenseignantInput[] | Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput | Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput[]
+  createMany?: Prisma.evaluationCreateManyAffectationenseignantInputEnvelope
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
 }
 
-export type EvaluationUpdateManyWithoutPeriodeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.EvaluationCreateWithoutPeriodeScolaireInput[] | Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput | Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput[]
-  upsert?: Prisma.EvaluationUpsertWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.EvaluationUpsertWithWhereUniqueWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.EvaluationCreateManyPeriodeScolaireInputEnvelope
-  set?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  disconnect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  delete?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  update?: Prisma.EvaluationUpdateWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.EvaluationUpdateWithWhereUniqueWithoutPeriodeScolaireInput[]
-  updateMany?: Prisma.EvaluationUpdateManyWithWhereWithoutPeriodeScolaireInput | Prisma.EvaluationUpdateManyWithWhereWithoutPeriodeScolaireInput[]
-  deleteMany?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
+export type evaluationUpdateManyWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput> | Prisma.evaluationCreateWithoutAffectationenseignantInput[] | Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput | Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput[]
+  upsert?: Prisma.evaluationUpsertWithWhereUniqueWithoutAffectationenseignantInput | Prisma.evaluationUpsertWithWhereUniqueWithoutAffectationenseignantInput[]
+  createMany?: Prisma.evaluationCreateManyAffectationenseignantInputEnvelope
+  set?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  disconnect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  delete?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  update?: Prisma.evaluationUpdateWithWhereUniqueWithoutAffectationenseignantInput | Prisma.evaluationUpdateWithWhereUniqueWithoutAffectationenseignantInput[]
+  updateMany?: Prisma.evaluationUpdateManyWithWhereWithoutAffectationenseignantInput | Prisma.evaluationUpdateManyWithWhereWithoutAffectationenseignantInput[]
+  deleteMany?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
 }
 
-export type EvaluationUncheckedUpdateManyWithoutPeriodeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.EvaluationCreateWithoutPeriodeScolaireInput[] | Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput | Prisma.EvaluationCreateOrConnectWithoutPeriodeScolaireInput[]
-  upsert?: Prisma.EvaluationUpsertWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.EvaluationUpsertWithWhereUniqueWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.EvaluationCreateManyPeriodeScolaireInputEnvelope
-  set?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  disconnect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  delete?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  update?: Prisma.EvaluationUpdateWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.EvaluationUpdateWithWhereUniqueWithoutPeriodeScolaireInput[]
-  updateMany?: Prisma.EvaluationUpdateManyWithWhereWithoutPeriodeScolaireInput | Prisma.EvaluationUpdateManyWithWhereWithoutPeriodeScolaireInput[]
-  deleteMany?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
+export type evaluationUncheckedUpdateManyWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput> | Prisma.evaluationCreateWithoutAffectationenseignantInput[] | Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput | Prisma.evaluationCreateOrConnectWithoutAffectationenseignantInput[]
+  upsert?: Prisma.evaluationUpsertWithWhereUniqueWithoutAffectationenseignantInput | Prisma.evaluationUpsertWithWhereUniqueWithoutAffectationenseignantInput[]
+  createMany?: Prisma.evaluationCreateManyAffectationenseignantInputEnvelope
+  set?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  disconnect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  delete?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  update?: Prisma.evaluationUpdateWithWhereUniqueWithoutAffectationenseignantInput | Prisma.evaluationUpdateWithWhereUniqueWithoutAffectationenseignantInput[]
+  updateMany?: Prisma.evaluationUpdateManyWithWhereWithoutAffectationenseignantInput | Prisma.evaluationUpdateManyWithWhereWithoutAffectationenseignantInput[]
+  deleteMany?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
 }
 
-export type EvaluationCreateNestedManyWithoutAffectationInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutAffectationInput, Prisma.EvaluationUncheckedCreateWithoutAffectationInput> | Prisma.EvaluationCreateWithoutAffectationInput[] | Prisma.EvaluationUncheckedCreateWithoutAffectationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutAffectationInput | Prisma.EvaluationCreateOrConnectWithoutAffectationInput[]
-  createMany?: Prisma.EvaluationCreateManyAffectationInputEnvelope
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
+export type evaluationCreateNestedOneWithoutNoteInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutNoteInput, Prisma.evaluationUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutNoteInput
+  connect?: Prisma.evaluationWhereUniqueInput
 }
 
-export type EvaluationUncheckedCreateNestedManyWithoutAffectationInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutAffectationInput, Prisma.EvaluationUncheckedCreateWithoutAffectationInput> | Prisma.EvaluationCreateWithoutAffectationInput[] | Prisma.EvaluationUncheckedCreateWithoutAffectationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutAffectationInput | Prisma.EvaluationCreateOrConnectWithoutAffectationInput[]
-  createMany?: Prisma.EvaluationCreateManyAffectationInputEnvelope
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
+export type evaluationUpdateOneRequiredWithoutNoteNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutNoteInput, Prisma.evaluationUncheckedCreateWithoutNoteInput>
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutNoteInput
+  upsert?: Prisma.evaluationUpsertWithoutNoteInput
+  connect?: Prisma.evaluationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.evaluationUpdateToOneWithWhereWithoutNoteInput, Prisma.evaluationUpdateWithoutNoteInput>, Prisma.evaluationUncheckedUpdateWithoutNoteInput>
 }
 
-export type EvaluationUpdateManyWithoutAffectationNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutAffectationInput, Prisma.EvaluationUncheckedCreateWithoutAffectationInput> | Prisma.EvaluationCreateWithoutAffectationInput[] | Prisma.EvaluationUncheckedCreateWithoutAffectationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutAffectationInput | Prisma.EvaluationCreateOrConnectWithoutAffectationInput[]
-  upsert?: Prisma.EvaluationUpsertWithWhereUniqueWithoutAffectationInput | Prisma.EvaluationUpsertWithWhereUniqueWithoutAffectationInput[]
-  createMany?: Prisma.EvaluationCreateManyAffectationInputEnvelope
-  set?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  disconnect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  delete?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  update?: Prisma.EvaluationUpdateWithWhereUniqueWithoutAffectationInput | Prisma.EvaluationUpdateWithWhereUniqueWithoutAffectationInput[]
-  updateMany?: Prisma.EvaluationUpdateManyWithWhereWithoutAffectationInput | Prisma.EvaluationUpdateManyWithWhereWithoutAffectationInput[]
-  deleteMany?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
+export type evaluationCreateNestedManyWithoutPeriodescolaireInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput> | Prisma.evaluationCreateWithoutPeriodescolaireInput[] | Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput | Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput[]
+  createMany?: Prisma.evaluationCreateManyPeriodescolaireInputEnvelope
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
 }
 
-export type EvaluationUncheckedUpdateManyWithoutAffectationNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutAffectationInput, Prisma.EvaluationUncheckedCreateWithoutAffectationInput> | Prisma.EvaluationCreateWithoutAffectationInput[] | Prisma.EvaluationUncheckedCreateWithoutAffectationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutAffectationInput | Prisma.EvaluationCreateOrConnectWithoutAffectationInput[]
-  upsert?: Prisma.EvaluationUpsertWithWhereUniqueWithoutAffectationInput | Prisma.EvaluationUpsertWithWhereUniqueWithoutAffectationInput[]
-  createMany?: Prisma.EvaluationCreateManyAffectationInputEnvelope
-  set?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  disconnect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  delete?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  update?: Prisma.EvaluationUpdateWithWhereUniqueWithoutAffectationInput | Prisma.EvaluationUpdateWithWhereUniqueWithoutAffectationInput[]
-  updateMany?: Prisma.EvaluationUpdateManyWithWhereWithoutAffectationInput | Prisma.EvaluationUpdateManyWithWhereWithoutAffectationInput[]
-  deleteMany?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
+export type evaluationUncheckedCreateNestedManyWithoutPeriodescolaireInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput> | Prisma.evaluationCreateWithoutPeriodescolaireInput[] | Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput | Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput[]
+  createMany?: Prisma.evaluationCreateManyPeriodescolaireInputEnvelope
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
 }
 
-export type EvaluationCreateNestedManyWithoutTypeEvaluationInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.EvaluationCreateWithoutTypeEvaluationInput[] | Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  createMany?: Prisma.EvaluationCreateManyTypeEvaluationInputEnvelope
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
+export type evaluationUpdateManyWithoutPeriodescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput> | Prisma.evaluationCreateWithoutPeriodescolaireInput[] | Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput | Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput[]
+  upsert?: Prisma.evaluationUpsertWithWhereUniqueWithoutPeriodescolaireInput | Prisma.evaluationUpsertWithWhereUniqueWithoutPeriodescolaireInput[]
+  createMany?: Prisma.evaluationCreateManyPeriodescolaireInputEnvelope
+  set?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  disconnect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  delete?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  update?: Prisma.evaluationUpdateWithWhereUniqueWithoutPeriodescolaireInput | Prisma.evaluationUpdateWithWhereUniqueWithoutPeriodescolaireInput[]
+  updateMany?: Prisma.evaluationUpdateManyWithWhereWithoutPeriodescolaireInput | Prisma.evaluationUpdateManyWithWhereWithoutPeriodescolaireInput[]
+  deleteMany?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
 }
 
-export type EvaluationUncheckedCreateNestedManyWithoutTypeEvaluationInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.EvaluationCreateWithoutTypeEvaluationInput[] | Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  createMany?: Prisma.EvaluationCreateManyTypeEvaluationInputEnvelope
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
+export type evaluationUncheckedUpdateManyWithoutPeriodescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput> | Prisma.evaluationCreateWithoutPeriodescolaireInput[] | Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput | Prisma.evaluationCreateOrConnectWithoutPeriodescolaireInput[]
+  upsert?: Prisma.evaluationUpsertWithWhereUniqueWithoutPeriodescolaireInput | Prisma.evaluationUpsertWithWhereUniqueWithoutPeriodescolaireInput[]
+  createMany?: Prisma.evaluationCreateManyPeriodescolaireInputEnvelope
+  set?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  disconnect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  delete?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  update?: Prisma.evaluationUpdateWithWhereUniqueWithoutPeriodescolaireInput | Prisma.evaluationUpdateWithWhereUniqueWithoutPeriodescolaireInput[]
+  updateMany?: Prisma.evaluationUpdateManyWithWhereWithoutPeriodescolaireInput | Prisma.evaluationUpdateManyWithWhereWithoutPeriodescolaireInput[]
+  deleteMany?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
 }
 
-export type EvaluationUpdateManyWithoutTypeEvaluationNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.EvaluationCreateWithoutTypeEvaluationInput[] | Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  upsert?: Prisma.EvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput | Prisma.EvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput[]
-  createMany?: Prisma.EvaluationCreateManyTypeEvaluationInputEnvelope
-  set?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  disconnect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  delete?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  update?: Prisma.EvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput | Prisma.EvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput[]
-  updateMany?: Prisma.EvaluationUpdateManyWithWhereWithoutTypeEvaluationInput | Prisma.EvaluationUpdateManyWithWhereWithoutTypeEvaluationInput[]
-  deleteMany?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
+export type evaluationCreateNestedManyWithoutTypeevaluationInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutTypeevaluationInput, Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.evaluationCreateWithoutTypeevaluationInput[] | Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput[]
+  createMany?: Prisma.evaluationCreateManyTypeevaluationInputEnvelope
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
 }
 
-export type EvaluationUncheckedUpdateManyWithoutTypeEvaluationNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput> | Prisma.EvaluationCreateWithoutTypeEvaluationInput[] | Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput[]
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput | Prisma.EvaluationCreateOrConnectWithoutTypeEvaluationInput[]
-  upsert?: Prisma.EvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput | Prisma.EvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput[]
-  createMany?: Prisma.EvaluationCreateManyTypeEvaluationInputEnvelope
-  set?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  disconnect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  delete?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  connect?: Prisma.EvaluationWhereUniqueInput | Prisma.EvaluationWhereUniqueInput[]
-  update?: Prisma.EvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput | Prisma.EvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput[]
-  updateMany?: Prisma.EvaluationUpdateManyWithWhereWithoutTypeEvaluationInput | Prisma.EvaluationUpdateManyWithWhereWithoutTypeEvaluationInput[]
-  deleteMany?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
+export type evaluationUncheckedCreateNestedManyWithoutTypeevaluationInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutTypeevaluationInput, Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.evaluationCreateWithoutTypeevaluationInput[] | Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput[]
+  createMany?: Prisma.evaluationCreateManyTypeevaluationInputEnvelope
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
 }
 
-export type EvaluationCreateNestedOneWithoutNotesInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutNotesInput, Prisma.EvaluationUncheckedCreateWithoutNotesInput>
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutNotesInput
-  connect?: Prisma.EvaluationWhereUniqueInput
+export type evaluationUpdateManyWithoutTypeevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutTypeevaluationInput, Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.evaluationCreateWithoutTypeevaluationInput[] | Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput[]
+  upsert?: Prisma.evaluationUpsertWithWhereUniqueWithoutTypeevaluationInput | Prisma.evaluationUpsertWithWhereUniqueWithoutTypeevaluationInput[]
+  createMany?: Prisma.evaluationCreateManyTypeevaluationInputEnvelope
+  set?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  disconnect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  delete?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  update?: Prisma.evaluationUpdateWithWhereUniqueWithoutTypeevaluationInput | Prisma.evaluationUpdateWithWhereUniqueWithoutTypeevaluationInput[]
+  updateMany?: Prisma.evaluationUpdateManyWithWhereWithoutTypeevaluationInput | Prisma.evaluationUpdateManyWithWhereWithoutTypeevaluationInput[]
+  deleteMany?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
 }
 
-export type EvaluationUpdateOneRequiredWithoutNotesNestedInput = {
-  create?: Prisma.XOR<Prisma.EvaluationCreateWithoutNotesInput, Prisma.EvaluationUncheckedCreateWithoutNotesInput>
-  connectOrCreate?: Prisma.EvaluationCreateOrConnectWithoutNotesInput
-  upsert?: Prisma.EvaluationUpsertWithoutNotesInput
-  connect?: Prisma.EvaluationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EvaluationUpdateToOneWithWhereWithoutNotesInput, Prisma.EvaluationUpdateWithoutNotesInput>, Prisma.EvaluationUncheckedUpdateWithoutNotesInput>
+export type evaluationUncheckedUpdateManyWithoutTypeevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.evaluationCreateWithoutTypeevaluationInput, Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput> | Prisma.evaluationCreateWithoutTypeevaluationInput[] | Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput[]
+  connectOrCreate?: Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput | Prisma.evaluationCreateOrConnectWithoutTypeevaluationInput[]
+  upsert?: Prisma.evaluationUpsertWithWhereUniqueWithoutTypeevaluationInput | Prisma.evaluationUpsertWithWhereUniqueWithoutTypeevaluationInput[]
+  createMany?: Prisma.evaluationCreateManyTypeevaluationInputEnvelope
+  set?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  disconnect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  delete?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  connect?: Prisma.evaluationWhereUniqueInput | Prisma.evaluationWhereUniqueInput[]
+  update?: Prisma.evaluationUpdateWithWhereUniqueWithoutTypeevaluationInput | Prisma.evaluationUpdateWithWhereUniqueWithoutTypeevaluationInput[]
+  updateMany?: Prisma.evaluationUpdateManyWithWhereWithoutTypeevaluationInput | Prisma.evaluationUpdateManyWithWhereWithoutTypeevaluationInput[]
+  deleteMany?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
 }
 
-export type EvaluationCreateWithoutPeriodeScolaireInput = {
+export type evaluationCreateWithoutAffectationenseignantInput = {
   id?: string
   titre: string
   date: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectation: Prisma.AffectationEnseignantCreateNestedOneWithoutEvaluationsInput
-  typeEvaluation: Prisma.TypeEvaluationCreateNestedOneWithoutEvaluationsInput
-  notes?: Prisma.NoteCreateNestedManyWithoutEvaluationInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutEvaluationInput
+  typeevaluation: Prisma.typeevaluationCreateNestedOneWithoutEvaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationUncheckedCreateWithoutPeriodeScolaireInput = {
+export type evaluationUncheckedCreateWithoutAffectationenseignantInput = {
   id?: string
   titre: string
   date: Date | string
-  affectationId: string
   typeEvaluationId: string
+  periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutEvaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationCreateOrConnectWithoutPeriodeScolaireInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput>
+export type evaluationCreateOrConnectWithoutAffectationenseignantInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput>
 }
 
-export type EvaluationCreateManyPeriodeScolaireInputEnvelope = {
-  data: Prisma.EvaluationCreateManyPeriodeScolaireInput | Prisma.EvaluationCreateManyPeriodeScolaireInput[]
+export type evaluationCreateManyAffectationenseignantInputEnvelope = {
+  data: Prisma.evaluationCreateManyAffectationenseignantInput | Prisma.evaluationCreateManyAffectationenseignantInput[]
   skipDuplicates?: boolean
 }
 
-export type EvaluationUpsertWithWhereUniqueWithoutPeriodeScolaireInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.EvaluationUpdateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedUpdateWithoutPeriodeScolaireInput>
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedCreateWithoutPeriodeScolaireInput>
+export type evaluationUpsertWithWhereUniqueWithoutAffectationenseignantInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.evaluationUpdateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedUpdateWithoutAffectationenseignantInput>
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedCreateWithoutAffectationenseignantInput>
 }
 
-export type EvaluationUpdateWithWhereUniqueWithoutPeriodeScolaireInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateWithoutPeriodeScolaireInput, Prisma.EvaluationUncheckedUpdateWithoutPeriodeScolaireInput>
+export type evaluationUpdateWithWhereUniqueWithoutAffectationenseignantInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.evaluationUpdateWithoutAffectationenseignantInput, Prisma.evaluationUncheckedUpdateWithoutAffectationenseignantInput>
 }
 
-export type EvaluationUpdateManyWithWhereWithoutPeriodeScolaireInput = {
-  where: Prisma.EvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateManyMutationInput, Prisma.EvaluationUncheckedUpdateManyWithoutPeriodeScolaireInput>
+export type evaluationUpdateManyWithWhereWithoutAffectationenseignantInput = {
+  where: Prisma.evaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.evaluationUpdateManyMutationInput, Prisma.evaluationUncheckedUpdateManyWithoutAffectationenseignantInput>
 }
 
-export type EvaluationScalarWhereInput = {
-  AND?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
-  OR?: Prisma.EvaluationScalarWhereInput[]
-  NOT?: Prisma.EvaluationScalarWhereInput | Prisma.EvaluationScalarWhereInput[]
-  id?: Prisma.StringFilter<"Evaluation"> | string
-  titre?: Prisma.StringFilter<"Evaluation"> | string
-  date?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  affectationId?: Prisma.StringFilter<"Evaluation"> | string
-  typeEvaluationId?: Prisma.StringFilter<"Evaluation"> | string
-  periodeScolaireId?: Prisma.StringFilter<"Evaluation"> | string
-  createdAt?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Evaluation"> | Date | string
+export type evaluationScalarWhereInput = {
+  AND?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
+  OR?: Prisma.evaluationScalarWhereInput[]
+  NOT?: Prisma.evaluationScalarWhereInput | Prisma.evaluationScalarWhereInput[]
+  id?: Prisma.StringFilter<"evaluation"> | string
+  titre?: Prisma.StringFilter<"evaluation"> | string
+  date?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  affectationId?: Prisma.StringFilter<"evaluation"> | string
+  typeEvaluationId?: Prisma.StringFilter<"evaluation"> | string
+  periodeScolaireId?: Prisma.StringFilter<"evaluation"> | string
+  createdAt?: Prisma.DateTimeFilter<"evaluation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"evaluation"> | Date | string
 }
 
-export type EvaluationCreateWithoutAffectationInput = {
+export type evaluationCreateWithoutNoteInput = {
   id?: string
   titre: string
   date: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  typeEvaluation: Prisma.TypeEvaluationCreateNestedOneWithoutEvaluationsInput
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutEvaluationsInput
-  notes?: Prisma.NoteCreateNestedManyWithoutEvaluationInput
+  affectationenseignant: Prisma.affectationenseignantCreateNestedOneWithoutEvaluationInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutEvaluationInput
+  typeevaluation: Prisma.typeevaluationCreateNestedOneWithoutEvaluationInput
 }
 
-export type EvaluationUncheckedCreateWithoutAffectationInput = {
+export type evaluationUncheckedCreateWithoutNoteInput = {
   id?: string
   titre: string
   date: Date | string
+  affectationId: string
   typeEvaluationId: string
   periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationCreateOrConnectWithoutAffectationInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutAffectationInput, Prisma.EvaluationUncheckedCreateWithoutAffectationInput>
+export type evaluationCreateOrConnectWithoutNoteInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutNoteInput, Prisma.evaluationUncheckedCreateWithoutNoteInput>
 }
 
-export type EvaluationCreateManyAffectationInputEnvelope = {
-  data: Prisma.EvaluationCreateManyAffectationInput | Prisma.EvaluationCreateManyAffectationInput[]
+export type evaluationUpsertWithoutNoteInput = {
+  update: Prisma.XOR<Prisma.evaluationUpdateWithoutNoteInput, Prisma.evaluationUncheckedUpdateWithoutNoteInput>
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutNoteInput, Prisma.evaluationUncheckedCreateWithoutNoteInput>
+  where?: Prisma.evaluationWhereInput
+}
+
+export type evaluationUpdateToOneWithWhereWithoutNoteInput = {
+  where?: Prisma.evaluationWhereInput
+  data: Prisma.XOR<Prisma.evaluationUpdateWithoutNoteInput, Prisma.evaluationUncheckedUpdateWithoutNoteInput>
+}
+
+export type evaluationUpdateWithoutNoteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneRequiredWithoutEvaluationNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutEvaluationNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateOneRequiredWithoutEvaluationNestedInput
+}
+
+export type evaluationUncheckedUpdateWithoutNoteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationId?: Prisma.StringFieldUpdateOperationsInput | string
+  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
+  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type evaluationCreateWithoutPeriodescolaireInput = {
+  id?: string
+  titre: string
+  date: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant: Prisma.affectationenseignantCreateNestedOneWithoutEvaluationInput
+  typeevaluation: Prisma.typeevaluationCreateNestedOneWithoutEvaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutEvaluationInput
+}
+
+export type evaluationUncheckedCreateWithoutPeriodescolaireInput = {
+  id?: string
+  titre: string
+  date: Date | string
+  affectationId: string
+  typeEvaluationId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutEvaluationInput
+}
+
+export type evaluationCreateOrConnectWithoutPeriodescolaireInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput>
+}
+
+export type evaluationCreateManyPeriodescolaireInputEnvelope = {
+  data: Prisma.evaluationCreateManyPeriodescolaireInput | Prisma.evaluationCreateManyPeriodescolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type EvaluationUpsertWithWhereUniqueWithoutAffectationInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.EvaluationUpdateWithoutAffectationInput, Prisma.EvaluationUncheckedUpdateWithoutAffectationInput>
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutAffectationInput, Prisma.EvaluationUncheckedCreateWithoutAffectationInput>
+export type evaluationUpsertWithWhereUniqueWithoutPeriodescolaireInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.evaluationUpdateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedUpdateWithoutPeriodescolaireInput>
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedCreateWithoutPeriodescolaireInput>
 }
 
-export type EvaluationUpdateWithWhereUniqueWithoutAffectationInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateWithoutAffectationInput, Prisma.EvaluationUncheckedUpdateWithoutAffectationInput>
+export type evaluationUpdateWithWhereUniqueWithoutPeriodescolaireInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.evaluationUpdateWithoutPeriodescolaireInput, Prisma.evaluationUncheckedUpdateWithoutPeriodescolaireInput>
 }
 
-export type EvaluationUpdateManyWithWhereWithoutAffectationInput = {
-  where: Prisma.EvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateManyMutationInput, Prisma.EvaluationUncheckedUpdateManyWithoutAffectationInput>
+export type evaluationUpdateManyWithWhereWithoutPeriodescolaireInput = {
+  where: Prisma.evaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.evaluationUpdateManyMutationInput, Prisma.evaluationUncheckedUpdateManyWithoutPeriodescolaireInput>
 }
 
-export type EvaluationCreateWithoutTypeEvaluationInput = {
+export type evaluationCreateWithoutTypeevaluationInput = {
   id?: string
   titre: string
   date: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectation: Prisma.AffectationEnseignantCreateNestedOneWithoutEvaluationsInput
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutEvaluationsInput
-  notes?: Prisma.NoteCreateNestedManyWithoutEvaluationInput
+  affectationenseignant: Prisma.affectationenseignantCreateNestedOneWithoutEvaluationInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutEvaluationInput
+  note?: Prisma.noteCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationUncheckedCreateWithoutTypeEvaluationInput = {
+export type evaluationUncheckedCreateWithoutTypeevaluationInput = {
   id?: string
   titre: string
   date: Date | string
@@ -675,138 +735,36 @@ export type EvaluationUncheckedCreateWithoutTypeEvaluationInput = {
   periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  notes?: Prisma.NoteUncheckedCreateNestedManyWithoutEvaluationInput
+  note?: Prisma.noteUncheckedCreateNestedManyWithoutEvaluationInput
 }
 
-export type EvaluationCreateOrConnectWithoutTypeEvaluationInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput>
+export type evaluationCreateOrConnectWithoutTypeevaluationInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutTypeevaluationInput, Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput>
 }
 
-export type EvaluationCreateManyTypeEvaluationInputEnvelope = {
-  data: Prisma.EvaluationCreateManyTypeEvaluationInput | Prisma.EvaluationCreateManyTypeEvaluationInput[]
+export type evaluationCreateManyTypeevaluationInputEnvelope = {
+  data: Prisma.evaluationCreateManyTypeevaluationInput | Prisma.evaluationCreateManyTypeevaluationInput[]
   skipDuplicates?: boolean
 }
 
-export type EvaluationUpsertWithWhereUniqueWithoutTypeEvaluationInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  update: Prisma.XOR<Prisma.EvaluationUpdateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedUpdateWithoutTypeEvaluationInput>
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedCreateWithoutTypeEvaluationInput>
+export type evaluationUpsertWithWhereUniqueWithoutTypeevaluationInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  update: Prisma.XOR<Prisma.evaluationUpdateWithoutTypeevaluationInput, Prisma.evaluationUncheckedUpdateWithoutTypeevaluationInput>
+  create: Prisma.XOR<Prisma.evaluationCreateWithoutTypeevaluationInput, Prisma.evaluationUncheckedCreateWithoutTypeevaluationInput>
 }
 
-export type EvaluationUpdateWithWhereUniqueWithoutTypeEvaluationInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateWithoutTypeEvaluationInput, Prisma.EvaluationUncheckedUpdateWithoutTypeEvaluationInput>
+export type evaluationUpdateWithWhereUniqueWithoutTypeevaluationInput = {
+  where: Prisma.evaluationWhereUniqueInput
+  data: Prisma.XOR<Prisma.evaluationUpdateWithoutTypeevaluationInput, Prisma.evaluationUncheckedUpdateWithoutTypeevaluationInput>
 }
 
-export type EvaluationUpdateManyWithWhereWithoutTypeEvaluationInput = {
-  where: Prisma.EvaluationScalarWhereInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateManyMutationInput, Prisma.EvaluationUncheckedUpdateManyWithoutTypeEvaluationInput>
+export type evaluationUpdateManyWithWhereWithoutTypeevaluationInput = {
+  where: Prisma.evaluationScalarWhereInput
+  data: Prisma.XOR<Prisma.evaluationUpdateManyMutationInput, Prisma.evaluationUncheckedUpdateManyWithoutTypeevaluationInput>
 }
 
-export type EvaluationCreateWithoutNotesInput = {
-  id?: string
-  titre: string
-  date: Date | string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  affectation: Prisma.AffectationEnseignantCreateNestedOneWithoutEvaluationsInput
-  typeEvaluation: Prisma.TypeEvaluationCreateNestedOneWithoutEvaluationsInput
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutEvaluationsInput
-}
-
-export type EvaluationUncheckedCreateWithoutNotesInput = {
-  id?: string
-  titre: string
-  date: Date | string
-  affectationId: string
-  typeEvaluationId: string
-  periodeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type EvaluationCreateOrConnectWithoutNotesInput = {
-  where: Prisma.EvaluationWhereUniqueInput
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutNotesInput, Prisma.EvaluationUncheckedCreateWithoutNotesInput>
-}
-
-export type EvaluationUpsertWithoutNotesInput = {
-  update: Prisma.XOR<Prisma.EvaluationUpdateWithoutNotesInput, Prisma.EvaluationUncheckedUpdateWithoutNotesInput>
-  create: Prisma.XOR<Prisma.EvaluationCreateWithoutNotesInput, Prisma.EvaluationUncheckedCreateWithoutNotesInput>
-  where?: Prisma.EvaluationWhereInput
-}
-
-export type EvaluationUpdateToOneWithWhereWithoutNotesInput = {
-  where?: Prisma.EvaluationWhereInput
-  data: Prisma.XOR<Prisma.EvaluationUpdateWithoutNotesInput, Prisma.EvaluationUncheckedUpdateWithoutNotesInput>
-}
-
-export type EvaluationUpdateWithoutNotesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectation?: Prisma.AffectationEnseignantUpdateOneRequiredWithoutEvaluationsNestedInput
-  typeEvaluation?: Prisma.TypeEvaluationUpdateOneRequiredWithoutEvaluationsNestedInput
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutEvaluationsNestedInput
-}
-
-export type EvaluationUncheckedUpdateWithoutNotesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationId?: Prisma.StringFieldUpdateOperationsInput | string
-  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
-  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type EvaluationCreateManyPeriodeScolaireInput = {
-  id?: string
-  titre: string
-  date: Date | string
-  affectationId: string
-  typeEvaluationId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type EvaluationUpdateWithoutPeriodeScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectation?: Prisma.AffectationEnseignantUpdateOneRequiredWithoutEvaluationsNestedInput
-  typeEvaluation?: Prisma.TypeEvaluationUpdateOneRequiredWithoutEvaluationsNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutEvaluationNestedInput
-}
-
-export type EvaluationUncheckedUpdateWithoutPeriodeScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationId?: Prisma.StringFieldUpdateOperationsInput | string
-  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutEvaluationNestedInput
-}
-
-export type EvaluationUncheckedUpdateManyWithoutPeriodeScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationId?: Prisma.StringFieldUpdateOperationsInput | string
-  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type EvaluationCreateManyAffectationInput = {
+export type evaluationCreateManyAffectationenseignantInput = {
   id?: string
   titre: string
   date: Date | string
@@ -816,29 +774,18 @@ export type EvaluationCreateManyAffectationInput = {
   updatedAt?: Date | string
 }
 
-export type EvaluationUpdateWithoutAffectationInput = {
+export type evaluationUpdateWithoutAffectationenseignantInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  typeEvaluation?: Prisma.TypeEvaluationUpdateOneRequiredWithoutEvaluationsNestedInput
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutEvaluationsNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutEvaluationNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutEvaluationNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateOneRequiredWithoutEvaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutEvaluationNestedInput
 }
 
-export type EvaluationUncheckedUpdateWithoutAffectationInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
-  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutEvaluationNestedInput
-}
-
-export type EvaluationUncheckedUpdateManyWithoutAffectationInput = {
+export type evaluationUncheckedUpdateWithoutAffectationenseignantInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -846,9 +793,62 @@ export type EvaluationUncheckedUpdateManyWithoutAffectationInput = {
   periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  note?: Prisma.noteUncheckedUpdateManyWithoutEvaluationNestedInput
 }
 
-export type EvaluationCreateManyTypeEvaluationInput = {
+export type evaluationUncheckedUpdateManyWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
+  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type evaluationCreateManyPeriodescolaireInput = {
+  id?: string
+  titre: string
+  date: Date | string
+  affectationId: string
+  typeEvaluationId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type evaluationUpdateWithoutPeriodescolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneRequiredWithoutEvaluationNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateOneRequiredWithoutEvaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutEvaluationNestedInput
+}
+
+export type evaluationUncheckedUpdateWithoutPeriodescolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationId?: Prisma.StringFieldUpdateOperationsInput | string
+  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  note?: Prisma.noteUncheckedUpdateManyWithoutEvaluationNestedInput
+}
+
+export type evaluationUncheckedUpdateManyWithoutPeriodescolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationId?: Prisma.StringFieldUpdateOperationsInput | string
+  typeEvaluationId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type evaluationCreateManyTypeevaluationInput = {
   id?: string
   titre: string
   date: Date | string
@@ -858,18 +858,18 @@ export type EvaluationCreateManyTypeEvaluationInput = {
   updatedAt?: Date | string
 }
 
-export type EvaluationUpdateWithoutTypeEvaluationInput = {
+export type evaluationUpdateWithoutTypeevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectation?: Prisma.AffectationEnseignantUpdateOneRequiredWithoutEvaluationsNestedInput
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutEvaluationsNestedInput
-  notes?: Prisma.NoteUpdateManyWithoutEvaluationNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateOneRequiredWithoutEvaluationNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutEvaluationNestedInput
+  note?: Prisma.noteUpdateManyWithoutEvaluationNestedInput
 }
 
-export type EvaluationUncheckedUpdateWithoutTypeEvaluationInput = {
+export type evaluationUncheckedUpdateWithoutTypeevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -877,10 +877,10 @@ export type EvaluationUncheckedUpdateWithoutTypeEvaluationInput = {
   periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  notes?: Prisma.NoteUncheckedUpdateManyWithoutEvaluationNestedInput
+  note?: Prisma.noteUncheckedUpdateManyWithoutEvaluationNestedInput
 }
 
-export type EvaluationUncheckedUpdateManyWithoutTypeEvaluationInput = {
+export type evaluationUncheckedUpdateManyWithoutTypeevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -896,11 +896,11 @@ export type EvaluationUncheckedUpdateManyWithoutTypeEvaluationInput = {
  */
 
 export type EvaluationCountOutputType = {
-  notes: number
+  note: number
 }
 
 export type EvaluationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  notes?: boolean | EvaluationCountOutputTypeCountNotesArgs
+  note?: boolean | EvaluationCountOutputTypeCountNoteArgs
 }
 
 /**
@@ -916,12 +916,12 @@ export type EvaluationCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.E
 /**
  * EvaluationCountOutputType without action
  */
-export type EvaluationCountOutputTypeCountNotesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NoteWhereInput
+export type EvaluationCountOutputTypeCountNoteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.noteWhereInput
 }
 
 
-export type EvaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type evaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   titre?: boolean
   date?: boolean
@@ -930,16 +930,16 @@ export type EvaluationSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   periodeScolaireId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  affectation?: boolean | Prisma.AffectationEnseignantDefaultArgs<ExtArgs>
-  typeEvaluation?: boolean | Prisma.TypeEvaluationDefaultArgs<ExtArgs>
-  periodeScolaire?: boolean | Prisma.PeriodeScolaireDefaultArgs<ExtArgs>
-  notes?: boolean | Prisma.Evaluation$notesArgs<ExtArgs>
+  affectationenseignant?: boolean | Prisma.affectationenseignantDefaultArgs<ExtArgs>
+  periodescolaire?: boolean | Prisma.periodescolaireDefaultArgs<ExtArgs>
+  typeevaluation?: boolean | Prisma.typeevaluationDefaultArgs<ExtArgs>
+  note?: boolean | Prisma.evaluation$noteArgs<ExtArgs>
   _count?: boolean | Prisma.EvaluationCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["evaluation"]>
 
 
 
-export type EvaluationSelectScalar = {
+export type evaluationSelectScalar = {
   id?: boolean
   titre?: boolean
   date?: boolean
@@ -950,22 +950,22 @@ export type EvaluationSelectScalar = {
   updatedAt?: boolean
 }
 
-export type EvaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titre" | "date" | "affectationId" | "typeEvaluationId" | "periodeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["evaluation"]>
-export type EvaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  affectation?: boolean | Prisma.AffectationEnseignantDefaultArgs<ExtArgs>
-  typeEvaluation?: boolean | Prisma.TypeEvaluationDefaultArgs<ExtArgs>
-  periodeScolaire?: boolean | Prisma.PeriodeScolaireDefaultArgs<ExtArgs>
-  notes?: boolean | Prisma.Evaluation$notesArgs<ExtArgs>
+export type evaluationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titre" | "date" | "affectationId" | "typeEvaluationId" | "periodeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["evaluation"]>
+export type evaluationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  affectationenseignant?: boolean | Prisma.affectationenseignantDefaultArgs<ExtArgs>
+  periodescolaire?: boolean | Prisma.periodescolaireDefaultArgs<ExtArgs>
+  typeevaluation?: boolean | Prisma.typeevaluationDefaultArgs<ExtArgs>
+  note?: boolean | Prisma.evaluation$noteArgs<ExtArgs>
   _count?: boolean | Prisma.EvaluationCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $EvaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Evaluation"
+export type $evaluationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "evaluation"
   objects: {
-    affectation: Prisma.$AffectationEnseignantPayload<ExtArgs>
-    typeEvaluation: Prisma.$TypeEvaluationPayload<ExtArgs>
-    periodeScolaire: Prisma.$PeriodeScolairePayload<ExtArgs>
-    notes: Prisma.$NotePayload<ExtArgs>[]
+    affectationenseignant: Prisma.$affectationenseignantPayload<ExtArgs>
+    periodescolaire: Prisma.$periodescolairePayload<ExtArgs>
+    typeevaluation: Prisma.$typeevaluationPayload<ExtArgs>
+    note: Prisma.$notePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -980,18 +980,18 @@ export type $EvaluationPayload<ExtArgs extends runtime.Types.Extensions.Internal
   composites: {}
 }
 
-export type EvaluationGetPayload<S extends boolean | null | undefined | EvaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EvaluationPayload, S>
+export type evaluationGetPayload<S extends boolean | null | undefined | evaluationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$evaluationPayload, S>
 
-export type EvaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<EvaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type evaluationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<evaluationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: EvaluationCountAggregateInputType | true
   }
 
-export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Evaluation'], meta: { name: 'Evaluation' } }
+export interface evaluationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['evaluation'], meta: { name: 'evaluation' } }
   /**
    * Find zero or one Evaluation that matches the filter.
-   * @param {EvaluationFindUniqueArgs} args - Arguments to find a Evaluation
+   * @param {evaluationFindUniqueArgs} args - Arguments to find a Evaluation
    * @example
    * // Get one Evaluation
    * const evaluation = await prisma.evaluation.findUnique({
@@ -1000,12 +1000,12 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    *   }
    * })
    */
-  findUnique<T extends EvaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, EvaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends evaluationFindUniqueArgs>(args: Prisma.SelectSubset<T, evaluationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Evaluation that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {EvaluationFindUniqueOrThrowArgs} args - Arguments to find a Evaluation
+   * @param {evaluationFindUniqueOrThrowArgs} args - Arguments to find a Evaluation
    * @example
    * // Get one Evaluation
    * const evaluation = await prisma.evaluation.findUniqueOrThrow({
@@ -1014,13 +1014,13 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    *   }
    * })
    */
-  findUniqueOrThrow<T extends EvaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, EvaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends evaluationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, evaluationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Evaluation that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EvaluationFindFirstArgs} args - Arguments to find a Evaluation
+   * @param {evaluationFindFirstArgs} args - Arguments to find a Evaluation
    * @example
    * // Get one Evaluation
    * const evaluation = await prisma.evaluation.findFirst({
@@ -1029,14 +1029,14 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    *   }
    * })
    */
-  findFirst<T extends EvaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, EvaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends evaluationFindFirstArgs>(args?: Prisma.SelectSubset<T, evaluationFindFirstArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Evaluation that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EvaluationFindFirstOrThrowArgs} args - Arguments to find a Evaluation
+   * @param {evaluationFindFirstOrThrowArgs} args - Arguments to find a Evaluation
    * @example
    * // Get one Evaluation
    * const evaluation = await prisma.evaluation.findFirstOrThrow({
@@ -1045,13 +1045,13 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    *   }
    * })
    */
-  findFirstOrThrow<T extends EvaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, EvaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends evaluationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, evaluationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Evaluations that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EvaluationFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {evaluationFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Evaluations
    * const evaluations = await prisma.evaluation.findMany()
@@ -1063,11 +1063,11 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * const evaluationWithIdOnly = await prisma.evaluation.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends EvaluationFindManyArgs>(args?: Prisma.SelectSubset<T, EvaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends evaluationFindManyArgs>(args?: Prisma.SelectSubset<T, evaluationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Evaluation.
-   * @param {EvaluationCreateArgs} args - Arguments to create a Evaluation.
+   * @param {evaluationCreateArgs} args - Arguments to create a Evaluation.
    * @example
    * // Create one Evaluation
    * const Evaluation = await prisma.evaluation.create({
@@ -1077,11 +1077,11 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * })
    * 
    */
-  create<T extends EvaluationCreateArgs>(args: Prisma.SelectSubset<T, EvaluationCreateArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends evaluationCreateArgs>(args: Prisma.SelectSubset<T, evaluationCreateArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Evaluations.
-   * @param {EvaluationCreateManyArgs} args - Arguments to create many Evaluations.
+   * @param {evaluationCreateManyArgs} args - Arguments to create many Evaluations.
    * @example
    * // Create many Evaluations
    * const evaluation = await prisma.evaluation.createMany({
@@ -1091,11 +1091,11 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * })
    *     
    */
-  createMany<T extends EvaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, EvaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends evaluationCreateManyArgs>(args?: Prisma.SelectSubset<T, evaluationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Evaluation.
-   * @param {EvaluationDeleteArgs} args - Arguments to delete one Evaluation.
+   * @param {evaluationDeleteArgs} args - Arguments to delete one Evaluation.
    * @example
    * // Delete one Evaluation
    * const Evaluation = await prisma.evaluation.delete({
@@ -1105,11 +1105,11 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * })
    * 
    */
-  delete<T extends EvaluationDeleteArgs>(args: Prisma.SelectSubset<T, EvaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends evaluationDeleteArgs>(args: Prisma.SelectSubset<T, evaluationDeleteArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Evaluation.
-   * @param {EvaluationUpdateArgs} args - Arguments to update one Evaluation.
+   * @param {evaluationUpdateArgs} args - Arguments to update one Evaluation.
    * @example
    * // Update one Evaluation
    * const evaluation = await prisma.evaluation.update({
@@ -1122,11 +1122,11 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * })
    * 
    */
-  update<T extends EvaluationUpdateArgs>(args: Prisma.SelectSubset<T, EvaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends evaluationUpdateArgs>(args: Prisma.SelectSubset<T, evaluationUpdateArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Evaluations.
-   * @param {EvaluationDeleteManyArgs} args - Arguments to filter Evaluations to delete.
+   * @param {evaluationDeleteManyArgs} args - Arguments to filter Evaluations to delete.
    * @example
    * // Delete a few Evaluations
    * const { count } = await prisma.evaluation.deleteMany({
@@ -1136,13 +1136,13 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * })
    * 
    */
-  deleteMany<T extends EvaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, EvaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends evaluationDeleteManyArgs>(args?: Prisma.SelectSubset<T, evaluationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Evaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EvaluationUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {evaluationUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Evaluations
    * const evaluation = await prisma.evaluation.updateMany({
@@ -1155,11 +1155,11 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * })
    * 
    */
-  updateMany<T extends EvaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, EvaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends evaluationUpdateManyArgs>(args: Prisma.SelectSubset<T, evaluationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Evaluation.
-   * @param {EvaluationUpsertArgs} args - Arguments to update or create a Evaluation.
+   * @param {evaluationUpsertArgs} args - Arguments to update or create a Evaluation.
    * @example
    * // Update or create a Evaluation
    * const evaluation = await prisma.evaluation.upsert({
@@ -1174,14 +1174,14 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    *   }
    * })
    */
-  upsert<T extends EvaluationUpsertArgs>(args: Prisma.SelectSubset<T, EvaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__EvaluationClient<runtime.Types.Result.GetResult<Prisma.$EvaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends evaluationUpsertArgs>(args: Prisma.SelectSubset<T, evaluationUpsertArgs<ExtArgs>>): Prisma.Prisma__evaluationClient<runtime.Types.Result.GetResult<Prisma.$evaluationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Evaluations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EvaluationCountArgs} args - Arguments to filter Evaluations to count.
+   * @param {evaluationCountArgs} args - Arguments to filter Evaluations to count.
    * @example
    * // Count the number of Evaluations
    * const count = await prisma.evaluation.count({
@@ -1190,8 +1190,8 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    *   }
    * })
   **/
-  count<T extends EvaluationCountArgs>(
-    args?: Prisma.Subset<T, EvaluationCountArgs>,
+  count<T extends evaluationCountArgs>(
+    args?: Prisma.Subset<T, evaluationCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1230,7 +1230,7 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * Group by Evaluation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EvaluationGroupByArgs} args - Group by arguments.
+   * @param {evaluationGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1245,14 +1245,14 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
    * 
   **/
   groupBy<
-    T extends EvaluationGroupByArgs,
+    T extends evaluationGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: EvaluationGroupByArgs['orderBy'] }
-      : { orderBy?: EvaluationGroupByArgs['orderBy'] },
+      ? { orderBy: evaluationGroupByArgs['orderBy'] }
+      : { orderBy?: evaluationGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1301,25 +1301,25 @@ export interface EvaluationDelegate<ExtArgs extends runtime.Types.Extensions.Int
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, EvaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEvaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, evaluationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEvaluationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Evaluation model
+ * Fields of the evaluation model
  */
-readonly fields: EvaluationFieldRefs;
+readonly fields: evaluationFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Evaluation.
+ * The delegate class that acts as a "Promise-like" for evaluation.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EvaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__evaluationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  affectation<T extends Prisma.AffectationEnseignantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AffectationEnseignantDefaultArgs<ExtArgs>>): Prisma.Prisma__AffectationEnseignantClient<runtime.Types.Result.GetResult<Prisma.$AffectationEnseignantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  typeEvaluation<T extends Prisma.TypeEvaluationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.TypeEvaluationDefaultArgs<ExtArgs>>): Prisma.Prisma__TypeEvaluationClient<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  periodeScolaire<T extends Prisma.PeriodeScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PeriodeScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  notes<T extends Prisma.Evaluation$notesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Evaluation$notesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  affectationenseignant<T extends Prisma.affectationenseignantDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.affectationenseignantDefaultArgs<ExtArgs>>): Prisma.Prisma__affectationenseignantClient<runtime.Types.Result.GetResult<Prisma.$affectationenseignantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  periodescolaire<T extends Prisma.periodescolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.periodescolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  typeevaluation<T extends Prisma.typeevaluationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.typeevaluationDefaultArgs<ExtArgs>>): Prisma.Prisma__typeevaluationClient<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  note<T extends Prisma.evaluation$noteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.evaluation$noteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$notePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1346,402 +1346,402 @@ export interface Prisma__EvaluationClient<T, Null = never, ExtArgs extends runti
 
 
 /**
- * Fields of the Evaluation model
+ * Fields of the evaluation model
  */
-export interface EvaluationFieldRefs {
-  readonly id: Prisma.FieldRef<"Evaluation", 'String'>
-  readonly titre: Prisma.FieldRef<"Evaluation", 'String'>
-  readonly date: Prisma.FieldRef<"Evaluation", 'DateTime'>
-  readonly affectationId: Prisma.FieldRef<"Evaluation", 'String'>
-  readonly typeEvaluationId: Prisma.FieldRef<"Evaluation", 'String'>
-  readonly periodeScolaireId: Prisma.FieldRef<"Evaluation", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Evaluation", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Evaluation", 'DateTime'>
+export interface evaluationFieldRefs {
+  readonly id: Prisma.FieldRef<"evaluation", 'String'>
+  readonly titre: Prisma.FieldRef<"evaluation", 'String'>
+  readonly date: Prisma.FieldRef<"evaluation", 'DateTime'>
+  readonly affectationId: Prisma.FieldRef<"evaluation", 'String'>
+  readonly typeEvaluationId: Prisma.FieldRef<"evaluation", 'String'>
+  readonly periodeScolaireId: Prisma.FieldRef<"evaluation", 'String'>
+  readonly createdAt: Prisma.FieldRef<"evaluation", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"evaluation", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Evaluation findUnique
+ * evaluation findUnique
  */
-export type EvaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * Filter, which Evaluation to fetch.
+   * Filter, which evaluation to fetch.
    */
-  where: Prisma.EvaluationWhereUniqueInput
+  where: Prisma.evaluationWhereUniqueInput
 }
 
 /**
- * Evaluation findUniqueOrThrow
+ * evaluation findUniqueOrThrow
  */
-export type EvaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * Filter, which Evaluation to fetch.
+   * Filter, which evaluation to fetch.
    */
-  where: Prisma.EvaluationWhereUniqueInput
+  where: Prisma.evaluationWhereUniqueInput
 }
 
 /**
- * Evaluation findFirst
+ * evaluation findFirst
  */
-export type EvaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * Filter, which Evaluation to fetch.
+   * Filter, which evaluation to fetch.
    */
-  where?: Prisma.EvaluationWhereInput
+  where?: Prisma.evaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Evaluations to fetch.
+   * Determine the order of evaluations to fetch.
    */
-  orderBy?: Prisma.EvaluationOrderByWithRelationInput | Prisma.EvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.evaluationOrderByWithRelationInput | Prisma.evaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Evaluations.
+   * Sets the position for searching for evaluations.
    */
-  cursor?: Prisma.EvaluationWhereUniqueInput
+  cursor?: Prisma.evaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Evaluations from the position of the cursor.
+   * Take `±n` evaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Evaluations.
+   * Skip the first `n` evaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Evaluations.
+   * Filter by unique combinations of evaluations.
    */
   distinct?: Prisma.EvaluationScalarFieldEnum | Prisma.EvaluationScalarFieldEnum[]
 }
 
 /**
- * Evaluation findFirstOrThrow
+ * evaluation findFirstOrThrow
  */
-export type EvaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * Filter, which Evaluation to fetch.
+   * Filter, which evaluation to fetch.
    */
-  where?: Prisma.EvaluationWhereInput
+  where?: Prisma.evaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Evaluations to fetch.
+   * Determine the order of evaluations to fetch.
    */
-  orderBy?: Prisma.EvaluationOrderByWithRelationInput | Prisma.EvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.evaluationOrderByWithRelationInput | Prisma.evaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Evaluations.
+   * Sets the position for searching for evaluations.
    */
-  cursor?: Prisma.EvaluationWhereUniqueInput
+  cursor?: Prisma.evaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Evaluations from the position of the cursor.
+   * Take `±n` evaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Evaluations.
+   * Skip the first `n` evaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Evaluations.
+   * Filter by unique combinations of evaluations.
    */
   distinct?: Prisma.EvaluationScalarFieldEnum | Prisma.EvaluationScalarFieldEnum[]
 }
 
 /**
- * Evaluation findMany
+ * evaluation findMany
  */
-export type EvaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * Filter, which Evaluations to fetch.
+   * Filter, which evaluations to fetch.
    */
-  where?: Prisma.EvaluationWhereInput
+  where?: Prisma.evaluationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Evaluations to fetch.
+   * Determine the order of evaluations to fetch.
    */
-  orderBy?: Prisma.EvaluationOrderByWithRelationInput | Prisma.EvaluationOrderByWithRelationInput[]
+  orderBy?: Prisma.evaluationOrderByWithRelationInput | Prisma.evaluationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Evaluations.
+   * Sets the position for listing evaluations.
    */
-  cursor?: Prisma.EvaluationWhereUniqueInput
+  cursor?: Prisma.evaluationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Evaluations from the position of the cursor.
+   * Take `±n` evaluations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Evaluations.
+   * Skip the first `n` evaluations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Evaluations.
+   * Filter by unique combinations of evaluations.
    */
   distinct?: Prisma.EvaluationScalarFieldEnum | Prisma.EvaluationScalarFieldEnum[]
 }
 
 /**
- * Evaluation create
+ * evaluation create
  */
-export type EvaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * The data needed to create a Evaluation.
+   * The data needed to create a evaluation.
    */
-  data: Prisma.XOR<Prisma.EvaluationCreateInput, Prisma.EvaluationUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.evaluationCreateInput, Prisma.evaluationUncheckedCreateInput>
 }
 
 /**
- * Evaluation createMany
+ * evaluation createMany
  */
-export type EvaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Evaluations.
+   * The data used to create many evaluations.
    */
-  data: Prisma.EvaluationCreateManyInput | Prisma.EvaluationCreateManyInput[]
+  data: Prisma.evaluationCreateManyInput | Prisma.evaluationCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Evaluation update
+ * evaluation update
  */
-export type EvaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * The data needed to update a Evaluation.
+   * The data needed to update a evaluation.
    */
-  data: Prisma.XOR<Prisma.EvaluationUpdateInput, Prisma.EvaluationUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.evaluationUpdateInput, Prisma.evaluationUncheckedUpdateInput>
   /**
-   * Choose, which Evaluation to update.
+   * Choose, which evaluation to update.
    */
-  where: Prisma.EvaluationWhereUniqueInput
+  where: Prisma.evaluationWhereUniqueInput
 }
 
 /**
- * Evaluation updateMany
+ * evaluation updateMany
  */
-export type EvaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Evaluations.
+   * The data used to update evaluations.
    */
-  data: Prisma.XOR<Prisma.EvaluationUpdateManyMutationInput, Prisma.EvaluationUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.evaluationUpdateManyMutationInput, Prisma.evaluationUncheckedUpdateManyInput>
   /**
-   * Filter which Evaluations to update
+   * Filter which evaluations to update
    */
-  where?: Prisma.EvaluationWhereInput
+  where?: Prisma.evaluationWhereInput
   /**
-   * Limit how many Evaluations to update.
+   * Limit how many evaluations to update.
    */
   limit?: number
 }
 
 /**
- * Evaluation upsert
+ * evaluation upsert
  */
-export type EvaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * The filter to search for the Evaluation to update in case it exists.
+   * The filter to search for the evaluation to update in case it exists.
    */
-  where: Prisma.EvaluationWhereUniqueInput
+  where: Prisma.evaluationWhereUniqueInput
   /**
-   * In case the Evaluation found by the `where` argument doesn't exist, create a new Evaluation with this data.
+   * In case the evaluation found by the `where` argument doesn't exist, create a new evaluation with this data.
    */
-  create: Prisma.XOR<Prisma.EvaluationCreateInput, Prisma.EvaluationUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.evaluationCreateInput, Prisma.evaluationUncheckedCreateInput>
   /**
-   * In case the Evaluation was found with the provided `where` argument, update it with this data.
+   * In case the evaluation was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.EvaluationUpdateInput, Prisma.EvaluationUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.evaluationUpdateInput, Prisma.evaluationUncheckedUpdateInput>
 }
 
 /**
- * Evaluation delete
+ * evaluation delete
  */
-export type EvaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
   /**
-   * Filter which Evaluation to delete.
+   * Filter which evaluation to delete.
    */
-  where: Prisma.EvaluationWhereUniqueInput
+  where: Prisma.evaluationWhereUniqueInput
 }
 
 /**
- * Evaluation deleteMany
+ * evaluation deleteMany
  */
-export type EvaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Evaluations to delete
+   * Filter which evaluations to delete
    */
-  where?: Prisma.EvaluationWhereInput
+  where?: Prisma.evaluationWhereInput
   /**
-   * Limit how many Evaluations to delete.
+   * Limit how many evaluations to delete.
    */
   limit?: number
 }
 
 /**
- * Evaluation.notes
+ * evaluation.note
  */
-export type Evaluation$notesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluation$noteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Note
+   * Select specific fields to fetch from the note
    */
-  select?: Prisma.NoteSelect<ExtArgs> | null
+  select?: Prisma.noteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Note
+   * Omit specific fields from the note
    */
-  omit?: Prisma.NoteOmit<ExtArgs> | null
+  omit?: Prisma.noteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NoteInclude<ExtArgs> | null
-  where?: Prisma.NoteWhereInput
-  orderBy?: Prisma.NoteOrderByWithRelationInput | Prisma.NoteOrderByWithRelationInput[]
-  cursor?: Prisma.NoteWhereUniqueInput
+  include?: Prisma.noteInclude<ExtArgs> | null
+  where?: Prisma.noteWhereInput
+  orderBy?: Prisma.noteOrderByWithRelationInput | Prisma.noteOrderByWithRelationInput[]
+  cursor?: Prisma.noteWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.NoteScalarFieldEnum | Prisma.NoteScalarFieldEnum[]
 }
 
 /**
- * Evaluation without action
+ * evaluation without action
  */
-export type EvaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type evaluationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Evaluation
+   * Select specific fields to fetch from the evaluation
    */
-  select?: Prisma.EvaluationSelect<ExtArgs> | null
+  select?: Prisma.evaluationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Evaluation
+   * Omit specific fields from the evaluation
    */
-  omit?: Prisma.EvaluationOmit<ExtArgs> | null
+  omit?: Prisma.evaluationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EvaluationInclude<ExtArgs> | null
+  include?: Prisma.evaluationInclude<ExtArgs> | null
 }

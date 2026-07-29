@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `ParticipantConversation` model and its related types.
+ * This file exports the `participantconversation` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,32 +13,32 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model ParticipantConversation
+ * Model participantconversation
  * 
  */
-export type ParticipantConversationModel = runtime.Types.Result.DefaultSelection<Prisma.$ParticipantConversationPayload>
+export type participantconversationModel = runtime.Types.Result.DefaultSelection<Prisma.$participantconversationPayload>
 
-export type AggregateParticipantConversation = {
-  _count: ParticipantConversationCountAggregateOutputType | null
-  _min: ParticipantConversationMinAggregateOutputType | null
-  _max: ParticipantConversationMaxAggregateOutputType | null
+export type AggregateParticipantconversation = {
+  _count: ParticipantconversationCountAggregateOutputType | null
+  _min: ParticipantconversationMinAggregateOutputType | null
+  _max: ParticipantconversationMaxAggregateOutputType | null
 }
 
-export type ParticipantConversationMinAggregateOutputType = {
+export type ParticipantconversationMinAggregateOutputType = {
   conversationId: string | null
   userId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type ParticipantConversationMaxAggregateOutputType = {
+export type ParticipantconversationMaxAggregateOutputType = {
   conversationId: string | null
   userId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type ParticipantConversationCountAggregateOutputType = {
+export type ParticipantconversationCountAggregateOutputType = {
   conversationId: number
   userId: number
   createdAt: number
@@ -47,21 +47,21 @@ export type ParticipantConversationCountAggregateOutputType = {
 }
 
 
-export type ParticipantConversationMinAggregateInputType = {
+export type ParticipantconversationMinAggregateInputType = {
   conversationId?: true
   userId?: true
   createdAt?: true
   updatedAt?: true
 }
 
-export type ParticipantConversationMaxAggregateInputType = {
+export type ParticipantconversationMaxAggregateInputType = {
   conversationId?: true
   userId?: true
   createdAt?: true
   updatedAt?: true
 }
 
-export type ParticipantConversationCountAggregateInputType = {
+export type ParticipantconversationCountAggregateInputType = {
   conversationId?: true
   userId?: true
   createdAt?: true
@@ -69,639 +69,639 @@ export type ParticipantConversationCountAggregateInputType = {
   _all?: true
 }
 
-export type ParticipantConversationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ParticipantconversationAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ParticipantConversation to aggregate.
+   * Filter which participantconversation to aggregate.
    */
-  where?: Prisma.ParticipantConversationWhereInput
+  where?: Prisma.participantconversationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ParticipantConversations to fetch.
+   * Determine the order of participantconversations to fetch.
    */
-  orderBy?: Prisma.ParticipantConversationOrderByWithRelationInput | Prisma.ParticipantConversationOrderByWithRelationInput[]
+  orderBy?: Prisma.participantconversationOrderByWithRelationInput | Prisma.participantconversationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ParticipantConversationWhereUniqueInput
+  cursor?: Prisma.participantconversationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ParticipantConversations from the position of the cursor.
+   * Take `±n` participantconversations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ParticipantConversations.
+   * Skip the first `n` participantconversations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned ParticipantConversations
+   * Count returned participantconversations
   **/
-  _count?: true | ParticipantConversationCountAggregateInputType
+  _count?: true | ParticipantconversationCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: ParticipantConversationMinAggregateInputType
+  _min?: ParticipantconversationMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: ParticipantConversationMaxAggregateInputType
+  _max?: ParticipantconversationMaxAggregateInputType
 }
 
-export type GetParticipantConversationAggregateType<T extends ParticipantConversationAggregateArgs> = {
-      [P in keyof T & keyof AggregateParticipantConversation]: P extends '_count' | 'count'
+export type GetParticipantconversationAggregateType<T extends ParticipantconversationAggregateArgs> = {
+      [P in keyof T & keyof AggregateParticipantconversation]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateParticipantConversation[P]>
-    : Prisma.GetScalarType<T[P], AggregateParticipantConversation[P]>
+      : Prisma.GetScalarType<T[P], AggregateParticipantconversation[P]>
+    : Prisma.GetScalarType<T[P], AggregateParticipantconversation[P]>
 }
 
 
 
 
-export type ParticipantConversationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ParticipantConversationWhereInput
-  orderBy?: Prisma.ParticipantConversationOrderByWithAggregationInput | Prisma.ParticipantConversationOrderByWithAggregationInput[]
-  by: Prisma.ParticipantConversationScalarFieldEnum[] | Prisma.ParticipantConversationScalarFieldEnum
-  having?: Prisma.ParticipantConversationScalarWhereWithAggregatesInput
+export type participantconversationGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.participantconversationWhereInput
+  orderBy?: Prisma.participantconversationOrderByWithAggregationInput | Prisma.participantconversationOrderByWithAggregationInput[]
+  by: Prisma.ParticipantconversationScalarFieldEnum[] | Prisma.ParticipantconversationScalarFieldEnum
+  having?: Prisma.participantconversationScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: ParticipantConversationCountAggregateInputType | true
-  _min?: ParticipantConversationMinAggregateInputType
-  _max?: ParticipantConversationMaxAggregateInputType
+  _count?: ParticipantconversationCountAggregateInputType | true
+  _min?: ParticipantconversationMinAggregateInputType
+  _max?: ParticipantconversationMaxAggregateInputType
 }
 
-export type ParticipantConversationGroupByOutputType = {
+export type ParticipantconversationGroupByOutputType = {
   conversationId: string
   userId: string
   createdAt: Date
   updatedAt: Date
-  _count: ParticipantConversationCountAggregateOutputType | null
-  _min: ParticipantConversationMinAggregateOutputType | null
-  _max: ParticipantConversationMaxAggregateOutputType | null
+  _count: ParticipantconversationCountAggregateOutputType | null
+  _min: ParticipantconversationMinAggregateOutputType | null
+  _max: ParticipantconversationMaxAggregateOutputType | null
 }
 
-export type GetParticipantConversationGroupByPayload<T extends ParticipantConversationGroupByArgs> = Prisma.PrismaPromise<
+export type GetParticipantconversationGroupByPayload<T extends participantconversationGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<ParticipantConversationGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<ParticipantconversationGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof ParticipantConversationGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof ParticipantconversationGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], ParticipantConversationGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], ParticipantConversationGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], ParticipantconversationGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], ParticipantconversationGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type ParticipantConversationWhereInput = {
-  AND?: Prisma.ParticipantConversationWhereInput | Prisma.ParticipantConversationWhereInput[]
-  OR?: Prisma.ParticipantConversationWhereInput[]
-  NOT?: Prisma.ParticipantConversationWhereInput | Prisma.ParticipantConversationWhereInput[]
-  conversationId?: Prisma.StringFilter<"ParticipantConversation"> | string
-  userId?: Prisma.StringFilter<"ParticipantConversation"> | string
-  createdAt?: Prisma.DateTimeFilter<"ParticipantConversation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ParticipantConversation"> | Date | string
-  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.ConversationWhereInput>
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+export type participantconversationWhereInput = {
+  AND?: Prisma.participantconversationWhereInput | Prisma.participantconversationWhereInput[]
+  OR?: Prisma.participantconversationWhereInput[]
+  NOT?: Prisma.participantconversationWhereInput | Prisma.participantconversationWhereInput[]
+  conversationId?: Prisma.StringFilter<"participantconversation"> | string
+  userId?: Prisma.StringFilter<"participantconversation"> | string
+  createdAt?: Prisma.DateTimeFilter<"participantconversation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"participantconversation"> | Date | string
+  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.conversationWhereInput>
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
 }
 
-export type ParticipantConversationOrderByWithRelationInput = {
+export type participantconversationOrderByWithRelationInput = {
   conversationId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  conversation?: Prisma.ConversationOrderByWithRelationInput
-  user?: Prisma.UserOrderByWithRelationInput
-  _relevance?: Prisma.ParticipantConversationOrderByRelevanceInput
+  conversation?: Prisma.conversationOrderByWithRelationInput
+  user?: Prisma.userOrderByWithRelationInput
+  _relevance?: Prisma.participantconversationOrderByRelevanceInput
 }
 
-export type ParticipantConversationWhereUniqueInput = Prisma.AtLeast<{
-  conversationId_userId?: Prisma.ParticipantConversationConversationIdUserIdCompoundUniqueInput
-  AND?: Prisma.ParticipantConversationWhereInput | Prisma.ParticipantConversationWhereInput[]
-  OR?: Prisma.ParticipantConversationWhereInput[]
-  NOT?: Prisma.ParticipantConversationWhereInput | Prisma.ParticipantConversationWhereInput[]
-  conversationId?: Prisma.StringFilter<"ParticipantConversation"> | string
-  userId?: Prisma.StringFilter<"ParticipantConversation"> | string
-  createdAt?: Prisma.DateTimeFilter<"ParticipantConversation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ParticipantConversation"> | Date | string
-  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.ConversationWhereInput>
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+export type participantconversationWhereUniqueInput = Prisma.AtLeast<{
+  conversationId_userId?: Prisma.participantconversationConversationIdUserIdCompoundUniqueInput
+  AND?: Prisma.participantconversationWhereInput | Prisma.participantconversationWhereInput[]
+  OR?: Prisma.participantconversationWhereInput[]
+  NOT?: Prisma.participantconversationWhereInput | Prisma.participantconversationWhereInput[]
+  conversationId?: Prisma.StringFilter<"participantconversation"> | string
+  userId?: Prisma.StringFilter<"participantconversation"> | string
+  createdAt?: Prisma.DateTimeFilter<"participantconversation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"participantconversation"> | Date | string
+  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.conversationWhereInput>
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
 }, "conversationId_userId">
 
-export type ParticipantConversationOrderByWithAggregationInput = {
+export type participantconversationOrderByWithAggregationInput = {
   conversationId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.ParticipantConversationCountOrderByAggregateInput
-  _max?: Prisma.ParticipantConversationMaxOrderByAggregateInput
-  _min?: Prisma.ParticipantConversationMinOrderByAggregateInput
+  _count?: Prisma.participantconversationCountOrderByAggregateInput
+  _max?: Prisma.participantconversationMaxOrderByAggregateInput
+  _min?: Prisma.participantconversationMinOrderByAggregateInput
 }
 
-export type ParticipantConversationScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ParticipantConversationScalarWhereWithAggregatesInput | Prisma.ParticipantConversationScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ParticipantConversationScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ParticipantConversationScalarWhereWithAggregatesInput | Prisma.ParticipantConversationScalarWhereWithAggregatesInput[]
-  conversationId?: Prisma.StringWithAggregatesFilter<"ParticipantConversation"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"ParticipantConversation"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"ParticipantConversation"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ParticipantConversation"> | Date | string
+export type participantconversationScalarWhereWithAggregatesInput = {
+  AND?: Prisma.participantconversationScalarWhereWithAggregatesInput | Prisma.participantconversationScalarWhereWithAggregatesInput[]
+  OR?: Prisma.participantconversationScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.participantconversationScalarWhereWithAggregatesInput | Prisma.participantconversationScalarWhereWithAggregatesInput[]
+  conversationId?: Prisma.StringWithAggregatesFilter<"participantconversation"> | string
+  userId?: Prisma.StringWithAggregatesFilter<"participantconversation"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"participantconversation"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"participantconversation"> | Date | string
 }
 
-export type ParticipantConversationCreateInput = {
+export type participantconversationCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
-  conversation: Prisma.ConversationCreateNestedOneWithoutParticpantsInput
-  user: Prisma.UserCreateNestedOneWithoutParticpantsInput
+  conversation: Prisma.conversationCreateNestedOneWithoutParticipantconversationInput
+  user: Prisma.userCreateNestedOneWithoutParticipantconversationInput
 }
 
-export type ParticipantConversationUncheckedCreateInput = {
+export type participantconversationUncheckedCreateInput = {
   conversationId: string
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type ParticipantConversationUpdateInput = {
+export type participantconversationUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  conversation?: Prisma.ConversationUpdateOneRequiredWithoutParticpantsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutParticpantsNestedInput
+  conversation?: Prisma.conversationUpdateOneRequiredWithoutParticipantconversationNestedInput
+  user?: Prisma.userUpdateOneRequiredWithoutParticipantconversationNestedInput
 }
 
-export type ParticipantConversationUncheckedUpdateInput = {
+export type participantconversationUncheckedUpdateInput = {
   conversationId?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParticipantConversationCreateManyInput = {
+export type participantconversationCreateManyInput = {
   conversationId: string
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type ParticipantConversationUpdateManyMutationInput = {
+export type participantconversationUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParticipantConversationUncheckedUpdateManyInput = {
+export type participantconversationUncheckedUpdateManyInput = {
   conversationId?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParticipantConversationListRelationFilter = {
-  every?: Prisma.ParticipantConversationWhereInput
-  some?: Prisma.ParticipantConversationWhereInput
-  none?: Prisma.ParticipantConversationWhereInput
+export type ParticipantconversationListRelationFilter = {
+  every?: Prisma.participantconversationWhereInput
+  some?: Prisma.participantconversationWhereInput
+  none?: Prisma.participantconversationWhereInput
 }
 
-export type ParticipantConversationOrderByRelationAggregateInput = {
+export type participantconversationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type ParticipantConversationOrderByRelevanceInput = {
-  fields: Prisma.ParticipantConversationOrderByRelevanceFieldEnum | Prisma.ParticipantConversationOrderByRelevanceFieldEnum[]
+export type participantconversationOrderByRelevanceInput = {
+  fields: Prisma.participantconversationOrderByRelevanceFieldEnum | Prisma.participantconversationOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ParticipantConversationConversationIdUserIdCompoundUniqueInput = {
+export type participantconversationConversationIdUserIdCompoundUniqueInput = {
   conversationId: string
   userId: string
 }
 
-export type ParticipantConversationCountOrderByAggregateInput = {
+export type participantconversationCountOrderByAggregateInput = {
   conversationId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type ParticipantConversationMaxOrderByAggregateInput = {
+export type participantconversationMaxOrderByAggregateInput = {
   conversationId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type ParticipantConversationMinOrderByAggregateInput = {
+export type participantconversationMinOrderByAggregateInput = {
   conversationId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type ParticipantConversationCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutUserInput, Prisma.ParticipantConversationUncheckedCreateWithoutUserInput> | Prisma.ParticipantConversationCreateWithoutUserInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutUserInput | Prisma.ParticipantConversationCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyUserInputEnvelope
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
+export type participantconversationCreateNestedManyWithoutConversationInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutConversationInput, Prisma.participantconversationUncheckedCreateWithoutConversationInput> | Prisma.participantconversationCreateWithoutConversationInput[] | Prisma.participantconversationUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutConversationInput | Prisma.participantconversationCreateOrConnectWithoutConversationInput[]
+  createMany?: Prisma.participantconversationCreateManyConversationInputEnvelope
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
 }
 
-export type ParticipantConversationUncheckedCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutUserInput, Prisma.ParticipantConversationUncheckedCreateWithoutUserInput> | Prisma.ParticipantConversationCreateWithoutUserInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutUserInput | Prisma.ParticipantConversationCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyUserInputEnvelope
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
+export type participantconversationUncheckedCreateNestedManyWithoutConversationInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutConversationInput, Prisma.participantconversationUncheckedCreateWithoutConversationInput> | Prisma.participantconversationCreateWithoutConversationInput[] | Prisma.participantconversationUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutConversationInput | Prisma.participantconversationCreateOrConnectWithoutConversationInput[]
+  createMany?: Prisma.participantconversationCreateManyConversationInputEnvelope
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
 }
 
-export type ParticipantConversationUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutUserInput, Prisma.ParticipantConversationUncheckedCreateWithoutUserInput> | Prisma.ParticipantConversationCreateWithoutUserInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutUserInput | Prisma.ParticipantConversationCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutUserInput | Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyUserInputEnvelope
-  set?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  disconnect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  delete?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  update?: Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutUserInput | Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.ParticipantConversationUpdateManyWithWhereWithoutUserInput | Prisma.ParticipantConversationUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.ParticipantConversationScalarWhereInput | Prisma.ParticipantConversationScalarWhereInput[]
+export type participantconversationUpdateManyWithoutConversationNestedInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutConversationInput, Prisma.participantconversationUncheckedCreateWithoutConversationInput> | Prisma.participantconversationCreateWithoutConversationInput[] | Prisma.participantconversationUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutConversationInput | Prisma.participantconversationCreateOrConnectWithoutConversationInput[]
+  upsert?: Prisma.participantconversationUpsertWithWhereUniqueWithoutConversationInput | Prisma.participantconversationUpsertWithWhereUniqueWithoutConversationInput[]
+  createMany?: Prisma.participantconversationCreateManyConversationInputEnvelope
+  set?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  disconnect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  delete?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  update?: Prisma.participantconversationUpdateWithWhereUniqueWithoutConversationInput | Prisma.participantconversationUpdateWithWhereUniqueWithoutConversationInput[]
+  updateMany?: Prisma.participantconversationUpdateManyWithWhereWithoutConversationInput | Prisma.participantconversationUpdateManyWithWhereWithoutConversationInput[]
+  deleteMany?: Prisma.participantconversationScalarWhereInput | Prisma.participantconversationScalarWhereInput[]
 }
 
-export type ParticipantConversationUncheckedUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutUserInput, Prisma.ParticipantConversationUncheckedCreateWithoutUserInput> | Prisma.ParticipantConversationCreateWithoutUserInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutUserInput | Prisma.ParticipantConversationCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutUserInput | Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyUserInputEnvelope
-  set?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  disconnect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  delete?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  update?: Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutUserInput | Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.ParticipantConversationUpdateManyWithWhereWithoutUserInput | Prisma.ParticipantConversationUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.ParticipantConversationScalarWhereInput | Prisma.ParticipantConversationScalarWhereInput[]
+export type participantconversationUncheckedUpdateManyWithoutConversationNestedInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutConversationInput, Prisma.participantconversationUncheckedCreateWithoutConversationInput> | Prisma.participantconversationCreateWithoutConversationInput[] | Prisma.participantconversationUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutConversationInput | Prisma.participantconversationCreateOrConnectWithoutConversationInput[]
+  upsert?: Prisma.participantconversationUpsertWithWhereUniqueWithoutConversationInput | Prisma.participantconversationUpsertWithWhereUniqueWithoutConversationInput[]
+  createMany?: Prisma.participantconversationCreateManyConversationInputEnvelope
+  set?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  disconnect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  delete?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  update?: Prisma.participantconversationUpdateWithWhereUniqueWithoutConversationInput | Prisma.participantconversationUpdateWithWhereUniqueWithoutConversationInput[]
+  updateMany?: Prisma.participantconversationUpdateManyWithWhereWithoutConversationInput | Prisma.participantconversationUpdateManyWithWhereWithoutConversationInput[]
+  deleteMany?: Prisma.participantconversationScalarWhereInput | Prisma.participantconversationScalarWhereInput[]
 }
 
-export type ParticipantConversationCreateNestedManyWithoutConversationInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutConversationInput, Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput> | Prisma.ParticipantConversationCreateWithoutConversationInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput | Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyConversationInputEnvelope
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
+export type participantconversationCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutUserInput, Prisma.participantconversationUncheckedCreateWithoutUserInput> | Prisma.participantconversationCreateWithoutUserInput[] | Prisma.participantconversationUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutUserInput | Prisma.participantconversationCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.participantconversationCreateManyUserInputEnvelope
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
 }
 
-export type ParticipantConversationUncheckedCreateNestedManyWithoutConversationInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutConversationInput, Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput> | Prisma.ParticipantConversationCreateWithoutConversationInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput | Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyConversationInputEnvelope
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
+export type participantconversationUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutUserInput, Prisma.participantconversationUncheckedCreateWithoutUserInput> | Prisma.participantconversationCreateWithoutUserInput[] | Prisma.participantconversationUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutUserInput | Prisma.participantconversationCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.participantconversationCreateManyUserInputEnvelope
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
 }
 
-export type ParticipantConversationUpdateManyWithoutConversationNestedInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutConversationInput, Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput> | Prisma.ParticipantConversationCreateWithoutConversationInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput | Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput[]
-  upsert?: Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutConversationInput | Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutConversationInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyConversationInputEnvelope
-  set?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  disconnect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  delete?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  update?: Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutConversationInput | Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutConversationInput[]
-  updateMany?: Prisma.ParticipantConversationUpdateManyWithWhereWithoutConversationInput | Prisma.ParticipantConversationUpdateManyWithWhereWithoutConversationInput[]
-  deleteMany?: Prisma.ParticipantConversationScalarWhereInput | Prisma.ParticipantConversationScalarWhereInput[]
+export type participantconversationUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutUserInput, Prisma.participantconversationUncheckedCreateWithoutUserInput> | Prisma.participantconversationCreateWithoutUserInput[] | Prisma.participantconversationUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutUserInput | Prisma.participantconversationCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.participantconversationUpsertWithWhereUniqueWithoutUserInput | Prisma.participantconversationUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.participantconversationCreateManyUserInputEnvelope
+  set?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  disconnect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  delete?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  update?: Prisma.participantconversationUpdateWithWhereUniqueWithoutUserInput | Prisma.participantconversationUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.participantconversationUpdateManyWithWhereWithoutUserInput | Prisma.participantconversationUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.participantconversationScalarWhereInput | Prisma.participantconversationScalarWhereInput[]
 }
 
-export type ParticipantConversationUncheckedUpdateManyWithoutConversationNestedInput = {
-  create?: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutConversationInput, Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput> | Prisma.ParticipantConversationCreateWithoutConversationInput[] | Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput | Prisma.ParticipantConversationCreateOrConnectWithoutConversationInput[]
-  upsert?: Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutConversationInput | Prisma.ParticipantConversationUpsertWithWhereUniqueWithoutConversationInput[]
-  createMany?: Prisma.ParticipantConversationCreateManyConversationInputEnvelope
-  set?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  disconnect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  delete?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  connect?: Prisma.ParticipantConversationWhereUniqueInput | Prisma.ParticipantConversationWhereUniqueInput[]
-  update?: Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutConversationInput | Prisma.ParticipantConversationUpdateWithWhereUniqueWithoutConversationInput[]
-  updateMany?: Prisma.ParticipantConversationUpdateManyWithWhereWithoutConversationInput | Prisma.ParticipantConversationUpdateManyWithWhereWithoutConversationInput[]
-  deleteMany?: Prisma.ParticipantConversationScalarWhereInput | Prisma.ParticipantConversationScalarWhereInput[]
+export type participantconversationUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.participantconversationCreateWithoutUserInput, Prisma.participantconversationUncheckedCreateWithoutUserInput> | Prisma.participantconversationCreateWithoutUserInput[] | Prisma.participantconversationUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.participantconversationCreateOrConnectWithoutUserInput | Prisma.participantconversationCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.participantconversationUpsertWithWhereUniqueWithoutUserInput | Prisma.participantconversationUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.participantconversationCreateManyUserInputEnvelope
+  set?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  disconnect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  delete?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  connect?: Prisma.participantconversationWhereUniqueInput | Prisma.participantconversationWhereUniqueInput[]
+  update?: Prisma.participantconversationUpdateWithWhereUniqueWithoutUserInput | Prisma.participantconversationUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.participantconversationUpdateManyWithWhereWithoutUserInput | Prisma.participantconversationUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.participantconversationScalarWhereInput | Prisma.participantconversationScalarWhereInput[]
 }
 
-export type ParticipantConversationCreateWithoutUserInput = {
+export type participantconversationCreateWithoutConversationInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
-  conversation: Prisma.ConversationCreateNestedOneWithoutParticpantsInput
+  user: Prisma.userCreateNestedOneWithoutParticipantconversationInput
 }
 
-export type ParticipantConversationUncheckedCreateWithoutUserInput = {
-  conversationId: string
+export type participantconversationUncheckedCreateWithoutConversationInput = {
+  userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type ParticipantConversationCreateOrConnectWithoutUserInput = {
-  where: Prisma.ParticipantConversationWhereUniqueInput
-  create: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutUserInput, Prisma.ParticipantConversationUncheckedCreateWithoutUserInput>
+export type participantconversationCreateOrConnectWithoutConversationInput = {
+  where: Prisma.participantconversationWhereUniqueInput
+  create: Prisma.XOR<Prisma.participantconversationCreateWithoutConversationInput, Prisma.participantconversationUncheckedCreateWithoutConversationInput>
 }
 
-export type ParticipantConversationCreateManyUserInputEnvelope = {
-  data: Prisma.ParticipantConversationCreateManyUserInput | Prisma.ParticipantConversationCreateManyUserInput[]
+export type participantconversationCreateManyConversationInputEnvelope = {
+  data: Prisma.participantconversationCreateManyConversationInput | Prisma.participantconversationCreateManyConversationInput[]
   skipDuplicates?: boolean
 }
 
-export type ParticipantConversationUpsertWithWhereUniqueWithoutUserInput = {
-  where: Prisma.ParticipantConversationWhereUniqueInput
-  update: Prisma.XOR<Prisma.ParticipantConversationUpdateWithoutUserInput, Prisma.ParticipantConversationUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutUserInput, Prisma.ParticipantConversationUncheckedCreateWithoutUserInput>
+export type participantconversationUpsertWithWhereUniqueWithoutConversationInput = {
+  where: Prisma.participantconversationWhereUniqueInput
+  update: Prisma.XOR<Prisma.participantconversationUpdateWithoutConversationInput, Prisma.participantconversationUncheckedUpdateWithoutConversationInput>
+  create: Prisma.XOR<Prisma.participantconversationCreateWithoutConversationInput, Prisma.participantconversationUncheckedCreateWithoutConversationInput>
 }
 
-export type ParticipantConversationUpdateWithWhereUniqueWithoutUserInput = {
-  where: Prisma.ParticipantConversationWhereUniqueInput
-  data: Prisma.XOR<Prisma.ParticipantConversationUpdateWithoutUserInput, Prisma.ParticipantConversationUncheckedUpdateWithoutUserInput>
+export type participantconversationUpdateWithWhereUniqueWithoutConversationInput = {
+  where: Prisma.participantconversationWhereUniqueInput
+  data: Prisma.XOR<Prisma.participantconversationUpdateWithoutConversationInput, Prisma.participantconversationUncheckedUpdateWithoutConversationInput>
 }
 
-export type ParticipantConversationUpdateManyWithWhereWithoutUserInput = {
-  where: Prisma.ParticipantConversationScalarWhereInput
-  data: Prisma.XOR<Prisma.ParticipantConversationUpdateManyMutationInput, Prisma.ParticipantConversationUncheckedUpdateManyWithoutUserInput>
+export type participantconversationUpdateManyWithWhereWithoutConversationInput = {
+  where: Prisma.participantconversationScalarWhereInput
+  data: Prisma.XOR<Prisma.participantconversationUpdateManyMutationInput, Prisma.participantconversationUncheckedUpdateManyWithoutConversationInput>
 }
 
-export type ParticipantConversationScalarWhereInput = {
-  AND?: Prisma.ParticipantConversationScalarWhereInput | Prisma.ParticipantConversationScalarWhereInput[]
-  OR?: Prisma.ParticipantConversationScalarWhereInput[]
-  NOT?: Prisma.ParticipantConversationScalarWhereInput | Prisma.ParticipantConversationScalarWhereInput[]
-  conversationId?: Prisma.StringFilter<"ParticipantConversation"> | string
-  userId?: Prisma.StringFilter<"ParticipantConversation"> | string
-  createdAt?: Prisma.DateTimeFilter<"ParticipantConversation"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ParticipantConversation"> | Date | string
+export type participantconversationScalarWhereInput = {
+  AND?: Prisma.participantconversationScalarWhereInput | Prisma.participantconversationScalarWhereInput[]
+  OR?: Prisma.participantconversationScalarWhereInput[]
+  NOT?: Prisma.participantconversationScalarWhereInput | Prisma.participantconversationScalarWhereInput[]
+  conversationId?: Prisma.StringFilter<"participantconversation"> | string
+  userId?: Prisma.StringFilter<"participantconversation"> | string
+  createdAt?: Prisma.DateTimeFilter<"participantconversation"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"participantconversation"> | Date | string
 }
 
-export type ParticipantConversationCreateWithoutConversationInput = {
+export type participantconversationCreateWithoutUserInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutParticpantsInput
+  conversation: Prisma.conversationCreateNestedOneWithoutParticipantconversationInput
 }
 
-export type ParticipantConversationUncheckedCreateWithoutConversationInput = {
-  userId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type ParticipantConversationCreateOrConnectWithoutConversationInput = {
-  where: Prisma.ParticipantConversationWhereUniqueInput
-  create: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutConversationInput, Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput>
-}
-
-export type ParticipantConversationCreateManyConversationInputEnvelope = {
-  data: Prisma.ParticipantConversationCreateManyConversationInput | Prisma.ParticipantConversationCreateManyConversationInput[]
-  skipDuplicates?: boolean
-}
-
-export type ParticipantConversationUpsertWithWhereUniqueWithoutConversationInput = {
-  where: Prisma.ParticipantConversationWhereUniqueInput
-  update: Prisma.XOR<Prisma.ParticipantConversationUpdateWithoutConversationInput, Prisma.ParticipantConversationUncheckedUpdateWithoutConversationInput>
-  create: Prisma.XOR<Prisma.ParticipantConversationCreateWithoutConversationInput, Prisma.ParticipantConversationUncheckedCreateWithoutConversationInput>
-}
-
-export type ParticipantConversationUpdateWithWhereUniqueWithoutConversationInput = {
-  where: Prisma.ParticipantConversationWhereUniqueInput
-  data: Prisma.XOR<Prisma.ParticipantConversationUpdateWithoutConversationInput, Prisma.ParticipantConversationUncheckedUpdateWithoutConversationInput>
-}
-
-export type ParticipantConversationUpdateManyWithWhereWithoutConversationInput = {
-  where: Prisma.ParticipantConversationScalarWhereInput
-  data: Prisma.XOR<Prisma.ParticipantConversationUpdateManyMutationInput, Prisma.ParticipantConversationUncheckedUpdateManyWithoutConversationInput>
-}
-
-export type ParticipantConversationCreateManyUserInput = {
+export type participantconversationUncheckedCreateWithoutUserInput = {
   conversationId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type ParticipantConversationUpdateWithoutUserInput = {
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  conversation?: Prisma.ConversationUpdateOneRequiredWithoutParticpantsNestedInput
+export type participantconversationCreateOrConnectWithoutUserInput = {
+  where: Prisma.participantconversationWhereUniqueInput
+  create: Prisma.XOR<Prisma.participantconversationCreateWithoutUserInput, Prisma.participantconversationUncheckedCreateWithoutUserInput>
 }
 
-export type ParticipantConversationUncheckedUpdateWithoutUserInput = {
-  conversationId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type participantconversationCreateManyUserInputEnvelope = {
+  data: Prisma.participantconversationCreateManyUserInput | Prisma.participantconversationCreateManyUserInput[]
+  skipDuplicates?: boolean
 }
 
-export type ParticipantConversationUncheckedUpdateManyWithoutUserInput = {
-  conversationId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type participantconversationUpsertWithWhereUniqueWithoutUserInput = {
+  where: Prisma.participantconversationWhereUniqueInput
+  update: Prisma.XOR<Prisma.participantconversationUpdateWithoutUserInput, Prisma.participantconversationUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.participantconversationCreateWithoutUserInput, Prisma.participantconversationUncheckedCreateWithoutUserInput>
 }
 
-export type ParticipantConversationCreateManyConversationInput = {
+export type participantconversationUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.participantconversationWhereUniqueInput
+  data: Prisma.XOR<Prisma.participantconversationUpdateWithoutUserInput, Prisma.participantconversationUncheckedUpdateWithoutUserInput>
+}
+
+export type participantconversationUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.participantconversationScalarWhereInput
+  data: Prisma.XOR<Prisma.participantconversationUpdateManyMutationInput, Prisma.participantconversationUncheckedUpdateManyWithoutUserInput>
+}
+
+export type participantconversationCreateManyConversationInput = {
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type ParticipantConversationUpdateWithoutConversationInput = {
+export type participantconversationUpdateWithoutConversationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutParticpantsNestedInput
+  user?: Prisma.userUpdateOneRequiredWithoutParticipantconversationNestedInput
 }
 
-export type ParticipantConversationUncheckedUpdateWithoutConversationInput = {
+export type participantconversationUncheckedUpdateWithoutConversationInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParticipantConversationUncheckedUpdateManyWithoutConversationInput = {
+export type participantconversationUncheckedUpdateManyWithoutConversationInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type participantconversationCreateManyUserInput = {
+  conversationId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type participantconversationUpdateWithoutUserInput = {
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  conversation?: Prisma.conversationUpdateOneRequiredWithoutParticipantconversationNestedInput
+}
+
+export type participantconversationUncheckedUpdateWithoutUserInput = {
+  conversationId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type participantconversationUncheckedUpdateManyWithoutUserInput = {
+  conversationId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
 
-export type ParticipantConversationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type participantconversationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   conversationId?: boolean
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  conversation?: boolean | Prisma.ConversationDefaultArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["participantConversation"]>
+  conversation?: boolean | Prisma.conversationDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.userDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["participantconversation"]>
 
 
 
-export type ParticipantConversationSelectScalar = {
+export type participantconversationSelectScalar = {
   conversationId?: boolean
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ParticipantConversationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"conversationId" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["participantConversation"]>
-export type ParticipantConversationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  conversation?: boolean | Prisma.ConversationDefaultArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+export type participantconversationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"conversationId" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["participantconversation"]>
+export type participantconversationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  conversation?: boolean | Prisma.conversationDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.userDefaultArgs<ExtArgs>
 }
 
-export type $ParticipantConversationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "ParticipantConversation"
+export type $participantconversationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "participantconversation"
   objects: {
-    conversation: Prisma.$ConversationPayload<ExtArgs>
-    user: Prisma.$UserPayload<ExtArgs>
+    conversation: Prisma.$conversationPayload<ExtArgs>
+    user: Prisma.$userPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     conversationId: string
     userId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["participantConversation"]>
+  }, ExtArgs["result"]["participantconversation"]>
   composites: {}
 }
 
-export type ParticipantConversationGetPayload<S extends boolean | null | undefined | ParticipantConversationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload, S>
+export type participantconversationGetPayload<S extends boolean | null | undefined | participantconversationDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$participantconversationPayload, S>
 
-export type ParticipantConversationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ParticipantConversationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: ParticipantConversationCountAggregateInputType | true
+export type participantconversationCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<participantconversationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ParticipantconversationCountAggregateInputType | true
   }
 
-export interface ParticipantConversationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ParticipantConversation'], meta: { name: 'ParticipantConversation' } }
+export interface participantconversationDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['participantconversation'], meta: { name: 'participantconversation' } }
   /**
-   * Find zero or one ParticipantConversation that matches the filter.
-   * @param {ParticipantConversationFindUniqueArgs} args - Arguments to find a ParticipantConversation
+   * Find zero or one Participantconversation that matches the filter.
+   * @param {participantconversationFindUniqueArgs} args - Arguments to find a Participantconversation
    * @example
-   * // Get one ParticipantConversation
-   * const participantConversation = await prisma.participantConversation.findUnique({
+   * // Get one Participantconversation
+   * const participantconversation = await prisma.participantconversation.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends ParticipantConversationFindUniqueArgs>(args: Prisma.SelectSubset<T, ParticipantConversationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends participantconversationFindUniqueArgs>(args: Prisma.SelectSubset<T, participantconversationFindUniqueArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one ParticipantConversation that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Participantconversation that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ParticipantConversationFindUniqueOrThrowArgs} args - Arguments to find a ParticipantConversation
+   * @param {participantconversationFindUniqueOrThrowArgs} args - Arguments to find a Participantconversation
    * @example
-   * // Get one ParticipantConversation
-   * const participantConversation = await prisma.participantConversation.findUniqueOrThrow({
+   * // Get one Participantconversation
+   * const participantconversation = await prisma.participantconversation.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ParticipantConversationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ParticipantConversationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends participantconversationFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, participantconversationFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ParticipantConversation that matches the filter.
+   * Find the first Participantconversation that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationFindFirstArgs} args - Arguments to find a ParticipantConversation
+   * @param {participantconversationFindFirstArgs} args - Arguments to find a Participantconversation
    * @example
-   * // Get one ParticipantConversation
-   * const participantConversation = await prisma.participantConversation.findFirst({
+   * // Get one Participantconversation
+   * const participantconversation = await prisma.participantconversation.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends ParticipantConversationFindFirstArgs>(args?: Prisma.SelectSubset<T, ParticipantConversationFindFirstArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends participantconversationFindFirstArgs>(args?: Prisma.SelectSubset<T, participantconversationFindFirstArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ParticipantConversation that matches the filter or
+   * Find the first Participantconversation that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationFindFirstOrThrowArgs} args - Arguments to find a ParticipantConversation
+   * @param {participantconversationFindFirstOrThrowArgs} args - Arguments to find a Participantconversation
    * @example
-   * // Get one ParticipantConversation
-   * const participantConversation = await prisma.participantConversation.findFirstOrThrow({
+   * // Get one Participantconversation
+   * const participantconversation = await prisma.participantconversation.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends ParticipantConversationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ParticipantConversationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends participantconversationFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, participantconversationFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more ParticipantConversations that matches the filter.
+   * Find zero or more Participantconversations that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {participantconversationFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all ParticipantConversations
-   * const participantConversations = await prisma.participantConversation.findMany()
+   * // Get all Participantconversations
+   * const participantconversations = await prisma.participantconversation.findMany()
    * 
-   * // Get first 10 ParticipantConversations
-   * const participantConversations = await prisma.participantConversation.findMany({ take: 10 })
+   * // Get first 10 Participantconversations
+   * const participantconversations = await prisma.participantconversation.findMany({ take: 10 })
    * 
    * // Only select the `conversationId`
-   * const participantConversationWithConversationIdOnly = await prisma.participantConversation.findMany({ select: { conversationId: true } })
+   * const participantconversationWithConversationIdOnly = await prisma.participantconversation.findMany({ select: { conversationId: true } })
    * 
    */
-  findMany<T extends ParticipantConversationFindManyArgs>(args?: Prisma.SelectSubset<T, ParticipantConversationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends participantconversationFindManyArgs>(args?: Prisma.SelectSubset<T, participantconversationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a ParticipantConversation.
-   * @param {ParticipantConversationCreateArgs} args - Arguments to create a ParticipantConversation.
+   * Create a Participantconversation.
+   * @param {participantconversationCreateArgs} args - Arguments to create a Participantconversation.
    * @example
-   * // Create one ParticipantConversation
-   * const ParticipantConversation = await prisma.participantConversation.create({
+   * // Create one Participantconversation
+   * const Participantconversation = await prisma.participantconversation.create({
    *   data: {
-   *     // ... data to create a ParticipantConversation
+   *     // ... data to create a Participantconversation
    *   }
    * })
    * 
    */
-  create<T extends ParticipantConversationCreateArgs>(args: Prisma.SelectSubset<T, ParticipantConversationCreateArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends participantconversationCreateArgs>(args: Prisma.SelectSubset<T, participantconversationCreateArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many ParticipantConversations.
-   * @param {ParticipantConversationCreateManyArgs} args - Arguments to create many ParticipantConversations.
+   * Create many Participantconversations.
+   * @param {participantconversationCreateManyArgs} args - Arguments to create many Participantconversations.
    * @example
-   * // Create many ParticipantConversations
-   * const participantConversation = await prisma.participantConversation.createMany({
+   * // Create many Participantconversations
+   * const participantconversation = await prisma.participantconversation.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends ParticipantConversationCreateManyArgs>(args?: Prisma.SelectSubset<T, ParticipantConversationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends participantconversationCreateManyArgs>(args?: Prisma.SelectSubset<T, participantconversationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a ParticipantConversation.
-   * @param {ParticipantConversationDeleteArgs} args - Arguments to delete one ParticipantConversation.
+   * Delete a Participantconversation.
+   * @param {participantconversationDeleteArgs} args - Arguments to delete one Participantconversation.
    * @example
-   * // Delete one ParticipantConversation
-   * const ParticipantConversation = await prisma.participantConversation.delete({
+   * // Delete one Participantconversation
+   * const Participantconversation = await prisma.participantconversation.delete({
    *   where: {
-   *     // ... filter to delete one ParticipantConversation
+   *     // ... filter to delete one Participantconversation
    *   }
    * })
    * 
    */
-  delete<T extends ParticipantConversationDeleteArgs>(args: Prisma.SelectSubset<T, ParticipantConversationDeleteArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends participantconversationDeleteArgs>(args: Prisma.SelectSubset<T, participantconversationDeleteArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one ParticipantConversation.
-   * @param {ParticipantConversationUpdateArgs} args - Arguments to update one ParticipantConversation.
+   * Update one Participantconversation.
+   * @param {participantconversationUpdateArgs} args - Arguments to update one Participantconversation.
    * @example
-   * // Update one ParticipantConversation
-   * const participantConversation = await prisma.participantConversation.update({
+   * // Update one Participantconversation
+   * const participantconversation = await prisma.participantconversation.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -711,30 +711,30 @@ export interface ParticipantConversationDelegate<ExtArgs extends runtime.Types.E
    * })
    * 
    */
-  update<T extends ParticipantConversationUpdateArgs>(args: Prisma.SelectSubset<T, ParticipantConversationUpdateArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends participantconversationUpdateArgs>(args: Prisma.SelectSubset<T, participantconversationUpdateArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more ParticipantConversations.
-   * @param {ParticipantConversationDeleteManyArgs} args - Arguments to filter ParticipantConversations to delete.
+   * Delete zero or more Participantconversations.
+   * @param {participantconversationDeleteManyArgs} args - Arguments to filter Participantconversations to delete.
    * @example
-   * // Delete a few ParticipantConversations
-   * const { count } = await prisma.participantConversation.deleteMany({
+   * // Delete a few Participantconversations
+   * const { count } = await prisma.participantconversation.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends ParticipantConversationDeleteManyArgs>(args?: Prisma.SelectSubset<T, ParticipantConversationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends participantconversationDeleteManyArgs>(args?: Prisma.SelectSubset<T, participantconversationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more ParticipantConversations.
+   * Update zero or more Participantconversations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {participantconversationUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many ParticipantConversations
-   * const participantConversation = await prisma.participantConversation.updateMany({
+   * // Update many Participantconversations
+   * const participantconversation = await prisma.participantconversation.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -744,56 +744,56 @@ export interface ParticipantConversationDelegate<ExtArgs extends runtime.Types.E
    * })
    * 
    */
-  updateMany<T extends ParticipantConversationUpdateManyArgs>(args: Prisma.SelectSubset<T, ParticipantConversationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends participantconversationUpdateManyArgs>(args: Prisma.SelectSubset<T, participantconversationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one ParticipantConversation.
-   * @param {ParticipantConversationUpsertArgs} args - Arguments to update or create a ParticipantConversation.
+   * Create or update one Participantconversation.
+   * @param {participantconversationUpsertArgs} args - Arguments to update or create a Participantconversation.
    * @example
-   * // Update or create a ParticipantConversation
-   * const participantConversation = await prisma.participantConversation.upsert({
+   * // Update or create a Participantconversation
+   * const participantconversation = await prisma.participantconversation.upsert({
    *   create: {
-   *     // ... data to create a ParticipantConversation
+   *     // ... data to create a Participantconversation
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the ParticipantConversation we want to update
+   *     // ... the filter for the Participantconversation we want to update
    *   }
    * })
    */
-  upsert<T extends ParticipantConversationUpsertArgs>(args: Prisma.SelectSubset<T, ParticipantConversationUpsertArgs<ExtArgs>>): Prisma.Prisma__ParticipantConversationClient<runtime.Types.Result.GetResult<Prisma.$ParticipantConversationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends participantconversationUpsertArgs>(args: Prisma.SelectSubset<T, participantconversationUpsertArgs<ExtArgs>>): Prisma.Prisma__participantconversationClient<runtime.Types.Result.GetResult<Prisma.$participantconversationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of ParticipantConversations.
+   * Count the number of Participantconversations.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationCountArgs} args - Arguments to filter ParticipantConversations to count.
+   * @param {participantconversationCountArgs} args - Arguments to filter Participantconversations to count.
    * @example
-   * // Count the number of ParticipantConversations
-   * const count = await prisma.participantConversation.count({
+   * // Count the number of Participantconversations
+   * const count = await prisma.participantconversation.count({
    *   where: {
-   *     // ... the filter for the ParticipantConversations we want to count
+   *     // ... the filter for the Participantconversations we want to count
    *   }
    * })
   **/
-  count<T extends ParticipantConversationCountArgs>(
-    args?: Prisma.Subset<T, ParticipantConversationCountArgs>,
+  count<T extends participantconversationCountArgs>(
+    args?: Prisma.Subset<T, participantconversationCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], ParticipantConversationCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], ParticipantconversationCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a ParticipantConversation.
+   * Allows you to perform aggregations operations on a Participantconversation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {ParticipantconversationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -813,13 +813,13 @@ export interface ParticipantConversationDelegate<ExtArgs extends runtime.Types.E
    *   take: 10,
    * })
   **/
-  aggregate<T extends ParticipantConversationAggregateArgs>(args: Prisma.Subset<T, ParticipantConversationAggregateArgs>): Prisma.PrismaPromise<GetParticipantConversationAggregateType<T>>
+  aggregate<T extends ParticipantconversationAggregateArgs>(args: Prisma.Subset<T, ParticipantconversationAggregateArgs>): Prisma.PrismaPromise<GetParticipantconversationAggregateType<T>>
 
   /**
-   * Group by ParticipantConversation.
+   * Group by Participantconversation.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParticipantConversationGroupByArgs} args - Group by arguments.
+   * @param {participantconversationGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -834,14 +834,14 @@ export interface ParticipantConversationDelegate<ExtArgs extends runtime.Types.E
    * 
   **/
   groupBy<
-    T extends ParticipantConversationGroupByArgs,
+    T extends participantconversationGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ParticipantConversationGroupByArgs['orderBy'] }
-      : { orderBy?: ParticipantConversationGroupByArgs['orderBy'] },
+      ? { orderBy: participantconversationGroupByArgs['orderBy'] }
+      : { orderBy?: participantconversationGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -890,23 +890,23 @@ export interface ParticipantConversationDelegate<ExtArgs extends runtime.Types.E
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ParticipantConversationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetParticipantConversationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, participantconversationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetParticipantconversationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the ParticipantConversation model
+ * Fields of the participantconversation model
  */
-readonly fields: ParticipantConversationFieldRefs;
+readonly fields: participantconversationFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for ParticipantConversation.
+ * The delegate class that acts as a "Promise-like" for participantconversation.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ParticipantConversationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__participantconversationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  conversation<T extends Prisma.ConversationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConversationDefaultArgs<ExtArgs>>): Prisma.Prisma__ConversationClient<runtime.Types.Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  conversation<T extends Prisma.conversationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.conversationDefaultArgs<ExtArgs>>): Prisma.Prisma__conversationClient<runtime.Types.Result.GetResult<Prisma.$conversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.userDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.userDefaultArgs<ExtArgs>>): Prisma.Prisma__userClient<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -933,374 +933,374 @@ export interface Prisma__ParticipantConversationClient<T, Null = never, ExtArgs 
 
 
 /**
- * Fields of the ParticipantConversation model
+ * Fields of the participantconversation model
  */
-export interface ParticipantConversationFieldRefs {
-  readonly conversationId: Prisma.FieldRef<"ParticipantConversation", 'String'>
-  readonly userId: Prisma.FieldRef<"ParticipantConversation", 'String'>
-  readonly createdAt: Prisma.FieldRef<"ParticipantConversation", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"ParticipantConversation", 'DateTime'>
+export interface participantconversationFieldRefs {
+  readonly conversationId: Prisma.FieldRef<"participantconversation", 'String'>
+  readonly userId: Prisma.FieldRef<"participantconversation", 'String'>
+  readonly createdAt: Prisma.FieldRef<"participantconversation", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"participantconversation", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * ParticipantConversation findUnique
+ * participantconversation findUnique
  */
-export type ParticipantConversationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * Filter, which ParticipantConversation to fetch.
+   * Filter, which participantconversation to fetch.
    */
-  where: Prisma.ParticipantConversationWhereUniqueInput
+  where: Prisma.participantconversationWhereUniqueInput
 }
 
 /**
- * ParticipantConversation findUniqueOrThrow
+ * participantconversation findUniqueOrThrow
  */
-export type ParticipantConversationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * Filter, which ParticipantConversation to fetch.
+   * Filter, which participantconversation to fetch.
    */
-  where: Prisma.ParticipantConversationWhereUniqueInput
+  where: Prisma.participantconversationWhereUniqueInput
 }
 
 /**
- * ParticipantConversation findFirst
+ * participantconversation findFirst
  */
-export type ParticipantConversationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * Filter, which ParticipantConversation to fetch.
+   * Filter, which participantconversation to fetch.
    */
-  where?: Prisma.ParticipantConversationWhereInput
+  where?: Prisma.participantconversationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ParticipantConversations to fetch.
+   * Determine the order of participantconversations to fetch.
    */
-  orderBy?: Prisma.ParticipantConversationOrderByWithRelationInput | Prisma.ParticipantConversationOrderByWithRelationInput[]
+  orderBy?: Prisma.participantconversationOrderByWithRelationInput | Prisma.participantconversationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ParticipantConversations.
+   * Sets the position for searching for participantconversations.
    */
-  cursor?: Prisma.ParticipantConversationWhereUniqueInput
+  cursor?: Prisma.participantconversationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ParticipantConversations from the position of the cursor.
+   * Take `±n` participantconversations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ParticipantConversations.
+   * Skip the first `n` participantconversations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ParticipantConversations.
+   * Filter by unique combinations of participantconversations.
    */
-  distinct?: Prisma.ParticipantConversationScalarFieldEnum | Prisma.ParticipantConversationScalarFieldEnum[]
+  distinct?: Prisma.ParticipantconversationScalarFieldEnum | Prisma.ParticipantconversationScalarFieldEnum[]
 }
 
 /**
- * ParticipantConversation findFirstOrThrow
+ * participantconversation findFirstOrThrow
  */
-export type ParticipantConversationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * Filter, which ParticipantConversation to fetch.
+   * Filter, which participantconversation to fetch.
    */
-  where?: Prisma.ParticipantConversationWhereInput
+  where?: Prisma.participantconversationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ParticipantConversations to fetch.
+   * Determine the order of participantconversations to fetch.
    */
-  orderBy?: Prisma.ParticipantConversationOrderByWithRelationInput | Prisma.ParticipantConversationOrderByWithRelationInput[]
+  orderBy?: Prisma.participantconversationOrderByWithRelationInput | Prisma.participantconversationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ParticipantConversations.
+   * Sets the position for searching for participantconversations.
    */
-  cursor?: Prisma.ParticipantConversationWhereUniqueInput
+  cursor?: Prisma.participantconversationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ParticipantConversations from the position of the cursor.
+   * Take `±n` participantconversations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ParticipantConversations.
+   * Skip the first `n` participantconversations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ParticipantConversations.
+   * Filter by unique combinations of participantconversations.
    */
-  distinct?: Prisma.ParticipantConversationScalarFieldEnum | Prisma.ParticipantConversationScalarFieldEnum[]
+  distinct?: Prisma.ParticipantconversationScalarFieldEnum | Prisma.ParticipantconversationScalarFieldEnum[]
 }
 
 /**
- * ParticipantConversation findMany
+ * participantconversation findMany
  */
-export type ParticipantConversationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * Filter, which ParticipantConversations to fetch.
+   * Filter, which participantconversations to fetch.
    */
-  where?: Prisma.ParticipantConversationWhereInput
+  where?: Prisma.participantconversationWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ParticipantConversations to fetch.
+   * Determine the order of participantconversations to fetch.
    */
-  orderBy?: Prisma.ParticipantConversationOrderByWithRelationInput | Prisma.ParticipantConversationOrderByWithRelationInput[]
+  orderBy?: Prisma.participantconversationOrderByWithRelationInput | Prisma.participantconversationOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing ParticipantConversations.
+   * Sets the position for listing participantconversations.
    */
-  cursor?: Prisma.ParticipantConversationWhereUniqueInput
+  cursor?: Prisma.participantconversationWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ParticipantConversations from the position of the cursor.
+   * Take `±n` participantconversations from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ParticipantConversations.
+   * Skip the first `n` participantconversations.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ParticipantConversations.
+   * Filter by unique combinations of participantconversations.
    */
-  distinct?: Prisma.ParticipantConversationScalarFieldEnum | Prisma.ParticipantConversationScalarFieldEnum[]
+  distinct?: Prisma.ParticipantconversationScalarFieldEnum | Prisma.ParticipantconversationScalarFieldEnum[]
 }
 
 /**
- * ParticipantConversation create
+ * participantconversation create
  */
-export type ParticipantConversationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * The data needed to create a ParticipantConversation.
+   * The data needed to create a participantconversation.
    */
-  data: Prisma.XOR<Prisma.ParticipantConversationCreateInput, Prisma.ParticipantConversationUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.participantconversationCreateInput, Prisma.participantconversationUncheckedCreateInput>
 }
 
 /**
- * ParticipantConversation createMany
+ * participantconversation createMany
  */
-export type ParticipantConversationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many ParticipantConversations.
+   * The data used to create many participantconversations.
    */
-  data: Prisma.ParticipantConversationCreateManyInput | Prisma.ParticipantConversationCreateManyInput[]
+  data: Prisma.participantconversationCreateManyInput | Prisma.participantconversationCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * ParticipantConversation update
+ * participantconversation update
  */
-export type ParticipantConversationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * The data needed to update a ParticipantConversation.
+   * The data needed to update a participantconversation.
    */
-  data: Prisma.XOR<Prisma.ParticipantConversationUpdateInput, Prisma.ParticipantConversationUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.participantconversationUpdateInput, Prisma.participantconversationUncheckedUpdateInput>
   /**
-   * Choose, which ParticipantConversation to update.
+   * Choose, which participantconversation to update.
    */
-  where: Prisma.ParticipantConversationWhereUniqueInput
+  where: Prisma.participantconversationWhereUniqueInput
 }
 
 /**
- * ParticipantConversation updateMany
+ * participantconversation updateMany
  */
-export type ParticipantConversationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update ParticipantConversations.
+   * The data used to update participantconversations.
    */
-  data: Prisma.XOR<Prisma.ParticipantConversationUpdateManyMutationInput, Prisma.ParticipantConversationUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.participantconversationUpdateManyMutationInput, Prisma.participantconversationUncheckedUpdateManyInput>
   /**
-   * Filter which ParticipantConversations to update
+   * Filter which participantconversations to update
    */
-  where?: Prisma.ParticipantConversationWhereInput
+  where?: Prisma.participantconversationWhereInput
   /**
-   * Limit how many ParticipantConversations to update.
+   * Limit how many participantconversations to update.
    */
   limit?: number
 }
 
 /**
- * ParticipantConversation upsert
+ * participantconversation upsert
  */
-export type ParticipantConversationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * The filter to search for the ParticipantConversation to update in case it exists.
+   * The filter to search for the participantconversation to update in case it exists.
    */
-  where: Prisma.ParticipantConversationWhereUniqueInput
+  where: Prisma.participantconversationWhereUniqueInput
   /**
-   * In case the ParticipantConversation found by the `where` argument doesn't exist, create a new ParticipantConversation with this data.
+   * In case the participantconversation found by the `where` argument doesn't exist, create a new participantconversation with this data.
    */
-  create: Prisma.XOR<Prisma.ParticipantConversationCreateInput, Prisma.ParticipantConversationUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.participantconversationCreateInput, Prisma.participantconversationUncheckedCreateInput>
   /**
-   * In case the ParticipantConversation was found with the provided `where` argument, update it with this data.
+   * In case the participantconversation was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ParticipantConversationUpdateInput, Prisma.ParticipantConversationUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.participantconversationUpdateInput, Prisma.participantconversationUncheckedUpdateInput>
 }
 
 /**
- * ParticipantConversation delete
+ * participantconversation delete
  */
-export type ParticipantConversationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
   /**
-   * Filter which ParticipantConversation to delete.
+   * Filter which participantconversation to delete.
    */
-  where: Prisma.ParticipantConversationWhereUniqueInput
+  where: Prisma.participantconversationWhereUniqueInput
 }
 
 /**
- * ParticipantConversation deleteMany
+ * participantconversation deleteMany
  */
-export type ParticipantConversationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ParticipantConversations to delete
+   * Filter which participantconversations to delete
    */
-  where?: Prisma.ParticipantConversationWhereInput
+  where?: Prisma.participantconversationWhereInput
   /**
-   * Limit how many ParticipantConversations to delete.
+   * Limit how many participantconversations to delete.
    */
   limit?: number
 }
 
 /**
- * ParticipantConversation without action
+ * participantconversation without action
  */
-export type ParticipantConversationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type participantconversationDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ParticipantConversation
+   * Select specific fields to fetch from the participantconversation
    */
-  select?: Prisma.ParticipantConversationSelect<ExtArgs> | null
+  select?: Prisma.participantconversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ParticipantConversation
+   * Omit specific fields from the participantconversation
    */
-  omit?: Prisma.ParticipantConversationOmit<ExtArgs> | null
+  omit?: Prisma.participantconversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParticipantConversationInclude<ExtArgs> | null
+  include?: Prisma.participantconversationInclude<ExtArgs> | null
 }

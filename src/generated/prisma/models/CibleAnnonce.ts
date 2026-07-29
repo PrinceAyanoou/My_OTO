@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `CibleAnnonce` model and its related types.
+ * This file exports the `cibleannonce` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,36 +13,36 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model CibleAnnonce
+ * Model cibleannonce
  * 
  */
-export type CibleAnnonceModel = runtime.Types.Result.DefaultSelection<Prisma.$CibleAnnoncePayload>
+export type cibleannonceModel = runtime.Types.Result.DefaultSelection<Prisma.$cibleannoncePayload>
 
-export type AggregateCibleAnnonce = {
-  _count: CibleAnnonceCountAggregateOutputType | null
-  _min: CibleAnnonceMinAggregateOutputType | null
-  _max: CibleAnnonceMaxAggregateOutputType | null
+export type AggregateCibleannonce = {
+  _count: CibleannonceCountAggregateOutputType | null
+  _min: CibleannonceMinAggregateOutputType | null
+  _max: CibleannonceMaxAggregateOutputType | null
 }
 
-export type CibleAnnonceMinAggregateOutputType = {
+export type CibleannonceMinAggregateOutputType = {
   id: string | null
-  public: $Enums.PublicAnnonce | null
+  public: $Enums.cibleannonce_public | null
   annonceId: string | null
   classeScolaireId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type CibleAnnonceMaxAggregateOutputType = {
+export type CibleannonceMaxAggregateOutputType = {
   id: string | null
-  public: $Enums.PublicAnnonce | null
+  public: $Enums.cibleannonce_public | null
   annonceId: string | null
   classeScolaireId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type CibleAnnonceCountAggregateOutputType = {
+export type CibleannonceCountAggregateOutputType = {
   id: number
   public: number
   annonceId: number
@@ -53,7 +53,7 @@ export type CibleAnnonceCountAggregateOutputType = {
 }
 
 
-export type CibleAnnonceMinAggregateInputType = {
+export type CibleannonceMinAggregateInputType = {
   id?: true
   public?: true
   annonceId?: true
@@ -62,7 +62,7 @@ export type CibleAnnonceMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type CibleAnnonceMaxAggregateInputType = {
+export type CibleannonceMaxAggregateInputType = {
   id?: true
   public?: true
   annonceId?: true
@@ -71,7 +71,7 @@ export type CibleAnnonceMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type CibleAnnonceCountAggregateInputType = {
+export type CibleannonceCountAggregateInputType = {
   id?: true
   public?: true
   annonceId?: true
@@ -81,245 +81,245 @@ export type CibleAnnonceCountAggregateInputType = {
   _all?: true
 }
 
-export type CibleAnnonceAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type CibleannonceAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which CibleAnnonce to aggregate.
+   * Filter which cibleannonce to aggregate.
    */
-  where?: Prisma.CibleAnnonceWhereInput
+  where?: Prisma.cibleannonceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of CibleAnnonces to fetch.
+   * Determine the order of cibleannonces to fetch.
    */
-  orderBy?: Prisma.CibleAnnonceOrderByWithRelationInput | Prisma.CibleAnnonceOrderByWithRelationInput[]
+  orderBy?: Prisma.cibleannonceOrderByWithRelationInput | Prisma.cibleannonceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.CibleAnnonceWhereUniqueInput
+  cursor?: Prisma.cibleannonceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` CibleAnnonces from the position of the cursor.
+   * Take `±n` cibleannonces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` CibleAnnonces.
+   * Skip the first `n` cibleannonces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned CibleAnnonces
+   * Count returned cibleannonces
   **/
-  _count?: true | CibleAnnonceCountAggregateInputType
+  _count?: true | CibleannonceCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: CibleAnnonceMinAggregateInputType
+  _min?: CibleannonceMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: CibleAnnonceMaxAggregateInputType
+  _max?: CibleannonceMaxAggregateInputType
 }
 
-export type GetCibleAnnonceAggregateType<T extends CibleAnnonceAggregateArgs> = {
-      [P in keyof T & keyof AggregateCibleAnnonce]: P extends '_count' | 'count'
+export type GetCibleannonceAggregateType<T extends CibleannonceAggregateArgs> = {
+      [P in keyof T & keyof AggregateCibleannonce]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateCibleAnnonce[P]>
-    : Prisma.GetScalarType<T[P], AggregateCibleAnnonce[P]>
+      : Prisma.GetScalarType<T[P], AggregateCibleannonce[P]>
+    : Prisma.GetScalarType<T[P], AggregateCibleannonce[P]>
 }
 
 
 
 
-export type CibleAnnonceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CibleAnnonceWhereInput
-  orderBy?: Prisma.CibleAnnonceOrderByWithAggregationInput | Prisma.CibleAnnonceOrderByWithAggregationInput[]
-  by: Prisma.CibleAnnonceScalarFieldEnum[] | Prisma.CibleAnnonceScalarFieldEnum
-  having?: Prisma.CibleAnnonceScalarWhereWithAggregatesInput
+export type cibleannonceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.cibleannonceWhereInput
+  orderBy?: Prisma.cibleannonceOrderByWithAggregationInput | Prisma.cibleannonceOrderByWithAggregationInput[]
+  by: Prisma.CibleannonceScalarFieldEnum[] | Prisma.CibleannonceScalarFieldEnum
+  having?: Prisma.cibleannonceScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: CibleAnnonceCountAggregateInputType | true
-  _min?: CibleAnnonceMinAggregateInputType
-  _max?: CibleAnnonceMaxAggregateInputType
+  _count?: CibleannonceCountAggregateInputType | true
+  _min?: CibleannonceMinAggregateInputType
+  _max?: CibleannonceMaxAggregateInputType
 }
 
-export type CibleAnnonceGroupByOutputType = {
+export type CibleannonceGroupByOutputType = {
   id: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   annonceId: string
   classeScolaireId: string | null
   createdAt: Date
   updatedAt: Date
-  _count: CibleAnnonceCountAggregateOutputType | null
-  _min: CibleAnnonceMinAggregateOutputType | null
-  _max: CibleAnnonceMaxAggregateOutputType | null
+  _count: CibleannonceCountAggregateOutputType | null
+  _min: CibleannonceMinAggregateOutputType | null
+  _max: CibleannonceMaxAggregateOutputType | null
 }
 
-export type GetCibleAnnonceGroupByPayload<T extends CibleAnnonceGroupByArgs> = Prisma.PrismaPromise<
+export type GetCibleannonceGroupByPayload<T extends cibleannonceGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<CibleAnnonceGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<CibleannonceGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof CibleAnnonceGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof CibleannonceGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], CibleAnnonceGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], CibleAnnonceGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], CibleannonceGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], CibleannonceGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type CibleAnnonceWhereInput = {
-  AND?: Prisma.CibleAnnonceWhereInput | Prisma.CibleAnnonceWhereInput[]
-  OR?: Prisma.CibleAnnonceWhereInput[]
-  NOT?: Prisma.CibleAnnonceWhereInput | Prisma.CibleAnnonceWhereInput[]
-  id?: Prisma.StringFilter<"CibleAnnonce"> | string
-  public?: Prisma.EnumPublicAnnonceFilter<"CibleAnnonce"> | $Enums.PublicAnnonce
-  annonceId?: Prisma.StringFilter<"CibleAnnonce"> | string
-  classeScolaireId?: Prisma.StringNullableFilter<"CibleAnnonce"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"CibleAnnonce"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"CibleAnnonce"> | Date | string
-  annonce?: Prisma.XOR<Prisma.AnnonceScalarRelationFilter, Prisma.AnnonceWhereInput>
+export type cibleannonceWhereInput = {
+  AND?: Prisma.cibleannonceWhereInput | Prisma.cibleannonceWhereInput[]
+  OR?: Prisma.cibleannonceWhereInput[]
+  NOT?: Prisma.cibleannonceWhereInput | Prisma.cibleannonceWhereInput[]
+  id?: Prisma.StringFilter<"cibleannonce"> | string
+  public?: Prisma.Enumcibleannonce_publicFilter<"cibleannonce"> | $Enums.cibleannonce_public
+  annonceId?: Prisma.StringFilter<"cibleannonce"> | string
+  classeScolaireId?: Prisma.StringNullableFilter<"cibleannonce"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"cibleannonce"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"cibleannonce"> | Date | string
+  annonce?: Prisma.XOR<Prisma.AnnonceScalarRelationFilter, Prisma.annonceWhereInput>
 }
 
-export type CibleAnnonceOrderByWithRelationInput = {
+export type cibleannonceOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   public?: Prisma.SortOrder
   annonceId?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  annonce?: Prisma.AnnonceOrderByWithRelationInput
-  _relevance?: Prisma.CibleAnnonceOrderByRelevanceInput
+  annonce?: Prisma.annonceOrderByWithRelationInput
+  _relevance?: Prisma.cibleannonceOrderByRelevanceInput
 }
 
-export type CibleAnnonceWhereUniqueInput = Prisma.AtLeast<{
+export type cibleannonceWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.CibleAnnonceWhereInput | Prisma.CibleAnnonceWhereInput[]
-  OR?: Prisma.CibleAnnonceWhereInput[]
-  NOT?: Prisma.CibleAnnonceWhereInput | Prisma.CibleAnnonceWhereInput[]
-  public?: Prisma.EnumPublicAnnonceFilter<"CibleAnnonce"> | $Enums.PublicAnnonce
-  annonceId?: Prisma.StringFilter<"CibleAnnonce"> | string
-  classeScolaireId?: Prisma.StringNullableFilter<"CibleAnnonce"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"CibleAnnonce"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"CibleAnnonce"> | Date | string
-  annonce?: Prisma.XOR<Prisma.AnnonceScalarRelationFilter, Prisma.AnnonceWhereInput>
+  AND?: Prisma.cibleannonceWhereInput | Prisma.cibleannonceWhereInput[]
+  OR?: Prisma.cibleannonceWhereInput[]
+  NOT?: Prisma.cibleannonceWhereInput | Prisma.cibleannonceWhereInput[]
+  public?: Prisma.Enumcibleannonce_publicFilter<"cibleannonce"> | $Enums.cibleannonce_public
+  annonceId?: Prisma.StringFilter<"cibleannonce"> | string
+  classeScolaireId?: Prisma.StringNullableFilter<"cibleannonce"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"cibleannonce"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"cibleannonce"> | Date | string
+  annonce?: Prisma.XOR<Prisma.AnnonceScalarRelationFilter, Prisma.annonceWhereInput>
 }, "id">
 
-export type CibleAnnonceOrderByWithAggregationInput = {
+export type cibleannonceOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   public?: Prisma.SortOrder
   annonceId?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.CibleAnnonceCountOrderByAggregateInput
-  _max?: Prisma.CibleAnnonceMaxOrderByAggregateInput
-  _min?: Prisma.CibleAnnonceMinOrderByAggregateInput
+  _count?: Prisma.cibleannonceCountOrderByAggregateInput
+  _max?: Prisma.cibleannonceMaxOrderByAggregateInput
+  _min?: Prisma.cibleannonceMinOrderByAggregateInput
 }
 
-export type CibleAnnonceScalarWhereWithAggregatesInput = {
-  AND?: Prisma.CibleAnnonceScalarWhereWithAggregatesInput | Prisma.CibleAnnonceScalarWhereWithAggregatesInput[]
-  OR?: Prisma.CibleAnnonceScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.CibleAnnonceScalarWhereWithAggregatesInput | Prisma.CibleAnnonceScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"CibleAnnonce"> | string
-  public?: Prisma.EnumPublicAnnonceWithAggregatesFilter<"CibleAnnonce"> | $Enums.PublicAnnonce
-  annonceId?: Prisma.StringWithAggregatesFilter<"CibleAnnonce"> | string
-  classeScolaireId?: Prisma.StringNullableWithAggregatesFilter<"CibleAnnonce"> | string | null
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"CibleAnnonce"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"CibleAnnonce"> | Date | string
+export type cibleannonceScalarWhereWithAggregatesInput = {
+  AND?: Prisma.cibleannonceScalarWhereWithAggregatesInput | Prisma.cibleannonceScalarWhereWithAggregatesInput[]
+  OR?: Prisma.cibleannonceScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.cibleannonceScalarWhereWithAggregatesInput | Prisma.cibleannonceScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"cibleannonce"> | string
+  public?: Prisma.Enumcibleannonce_publicWithAggregatesFilter<"cibleannonce"> | $Enums.cibleannonce_public
+  annonceId?: Prisma.StringWithAggregatesFilter<"cibleannonce"> | string
+  classeScolaireId?: Prisma.StringNullableWithAggregatesFilter<"cibleannonce"> | string | null
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"cibleannonce"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"cibleannonce"> | Date | string
 }
 
-export type CibleAnnonceCreateInput = {
+export type cibleannonceCreateInput = {
   id?: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   classeScolaireId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  annonce: Prisma.AnnonceCreateNestedOneWithoutCibleAnnoceInput
+  annonce: Prisma.annonceCreateNestedOneWithoutCibleannonceInput
 }
 
-export type CibleAnnonceUncheckedCreateInput = {
+export type cibleannonceUncheckedCreateInput = {
   id?: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   annonceId: string
   classeScolaireId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type CibleAnnonceUpdateInput = {
+export type cibleannonceUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  annonce?: Prisma.AnnonceUpdateOneRequiredWithoutCibleAnnoceNestedInput
+  annonce?: Prisma.annonceUpdateOneRequiredWithoutCibleannonceNestedInput
 }
 
-export type CibleAnnonceUncheckedUpdateInput = {
+export type cibleannonceUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   annonceId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type CibleAnnonceCreateManyInput = {
+export type cibleannonceCreateManyInput = {
   id?: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   annonceId: string
   classeScolaireId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type CibleAnnonceUpdateManyMutationInput = {
+export type cibleannonceUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type CibleAnnonceUncheckedUpdateManyInput = {
+export type cibleannonceUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   annonceId?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type CibleAnnonceListRelationFilter = {
-  every?: Prisma.CibleAnnonceWhereInput
-  some?: Prisma.CibleAnnonceWhereInput
-  none?: Prisma.CibleAnnonceWhereInput
+export type CibleannonceListRelationFilter = {
+  every?: Prisma.cibleannonceWhereInput
+  some?: Prisma.cibleannonceWhereInput
+  none?: Prisma.cibleannonceWhereInput
 }
 
-export type CibleAnnonceOrderByRelationAggregateInput = {
+export type cibleannonceOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type CibleAnnonceOrderByRelevanceInput = {
-  fields: Prisma.CibleAnnonceOrderByRelevanceFieldEnum | Prisma.CibleAnnonceOrderByRelevanceFieldEnum[]
+export type cibleannonceOrderByRelevanceInput = {
+  fields: Prisma.cibleannonceOrderByRelevanceFieldEnum | Prisma.cibleannonceOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type CibleAnnonceCountOrderByAggregateInput = {
+export type cibleannonceCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   public?: Prisma.SortOrder
   annonceId?: Prisma.SortOrder
@@ -328,7 +328,7 @@ export type CibleAnnonceCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type CibleAnnonceMaxOrderByAggregateInput = {
+export type cibleannonceMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   public?: Prisma.SortOrder
   annonceId?: Prisma.SortOrder
@@ -337,7 +337,7 @@ export type CibleAnnonceMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type CibleAnnonceMinOrderByAggregateInput = {
+export type cibleannonceMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   public?: Prisma.SortOrder
   annonceId?: Prisma.SortOrder
@@ -346,133 +346,133 @@ export type CibleAnnonceMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type CibleAnnonceCreateNestedManyWithoutAnnonceInput = {
-  create?: Prisma.XOR<Prisma.CibleAnnonceCreateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput> | Prisma.CibleAnnonceCreateWithoutAnnonceInput[] | Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput[]
-  connectOrCreate?: Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput | Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput[]
-  createMany?: Prisma.CibleAnnonceCreateManyAnnonceInputEnvelope
-  connect?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
+export type cibleannonceCreateNestedManyWithoutAnnonceInput = {
+  create?: Prisma.XOR<Prisma.cibleannonceCreateWithoutAnnonceInput, Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput> | Prisma.cibleannonceCreateWithoutAnnonceInput[] | Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput[]
+  connectOrCreate?: Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput | Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput[]
+  createMany?: Prisma.cibleannonceCreateManyAnnonceInputEnvelope
+  connect?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
 }
 
-export type CibleAnnonceUncheckedCreateNestedManyWithoutAnnonceInput = {
-  create?: Prisma.XOR<Prisma.CibleAnnonceCreateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput> | Prisma.CibleAnnonceCreateWithoutAnnonceInput[] | Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput[]
-  connectOrCreate?: Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput | Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput[]
-  createMany?: Prisma.CibleAnnonceCreateManyAnnonceInputEnvelope
-  connect?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
+export type cibleannonceUncheckedCreateNestedManyWithoutAnnonceInput = {
+  create?: Prisma.XOR<Prisma.cibleannonceCreateWithoutAnnonceInput, Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput> | Prisma.cibleannonceCreateWithoutAnnonceInput[] | Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput[]
+  connectOrCreate?: Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput | Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput[]
+  createMany?: Prisma.cibleannonceCreateManyAnnonceInputEnvelope
+  connect?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
 }
 
-export type CibleAnnonceUpdateManyWithoutAnnonceNestedInput = {
-  create?: Prisma.XOR<Prisma.CibleAnnonceCreateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput> | Prisma.CibleAnnonceCreateWithoutAnnonceInput[] | Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput[]
-  connectOrCreate?: Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput | Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput[]
-  upsert?: Prisma.CibleAnnonceUpsertWithWhereUniqueWithoutAnnonceInput | Prisma.CibleAnnonceUpsertWithWhereUniqueWithoutAnnonceInput[]
-  createMany?: Prisma.CibleAnnonceCreateManyAnnonceInputEnvelope
-  set?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  disconnect?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  delete?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  connect?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  update?: Prisma.CibleAnnonceUpdateWithWhereUniqueWithoutAnnonceInput | Prisma.CibleAnnonceUpdateWithWhereUniqueWithoutAnnonceInput[]
-  updateMany?: Prisma.CibleAnnonceUpdateManyWithWhereWithoutAnnonceInput | Prisma.CibleAnnonceUpdateManyWithWhereWithoutAnnonceInput[]
-  deleteMany?: Prisma.CibleAnnonceScalarWhereInput | Prisma.CibleAnnonceScalarWhereInput[]
+export type cibleannonceUpdateManyWithoutAnnonceNestedInput = {
+  create?: Prisma.XOR<Prisma.cibleannonceCreateWithoutAnnonceInput, Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput> | Prisma.cibleannonceCreateWithoutAnnonceInput[] | Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput[]
+  connectOrCreate?: Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput | Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput[]
+  upsert?: Prisma.cibleannonceUpsertWithWhereUniqueWithoutAnnonceInput | Prisma.cibleannonceUpsertWithWhereUniqueWithoutAnnonceInput[]
+  createMany?: Prisma.cibleannonceCreateManyAnnonceInputEnvelope
+  set?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  disconnect?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  delete?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  connect?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  update?: Prisma.cibleannonceUpdateWithWhereUniqueWithoutAnnonceInput | Prisma.cibleannonceUpdateWithWhereUniqueWithoutAnnonceInput[]
+  updateMany?: Prisma.cibleannonceUpdateManyWithWhereWithoutAnnonceInput | Prisma.cibleannonceUpdateManyWithWhereWithoutAnnonceInput[]
+  deleteMany?: Prisma.cibleannonceScalarWhereInput | Prisma.cibleannonceScalarWhereInput[]
 }
 
-export type CibleAnnonceUncheckedUpdateManyWithoutAnnonceNestedInput = {
-  create?: Prisma.XOR<Prisma.CibleAnnonceCreateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput> | Prisma.CibleAnnonceCreateWithoutAnnonceInput[] | Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput[]
-  connectOrCreate?: Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput | Prisma.CibleAnnonceCreateOrConnectWithoutAnnonceInput[]
-  upsert?: Prisma.CibleAnnonceUpsertWithWhereUniqueWithoutAnnonceInput | Prisma.CibleAnnonceUpsertWithWhereUniqueWithoutAnnonceInput[]
-  createMany?: Prisma.CibleAnnonceCreateManyAnnonceInputEnvelope
-  set?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  disconnect?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  delete?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  connect?: Prisma.CibleAnnonceWhereUniqueInput | Prisma.CibleAnnonceWhereUniqueInput[]
-  update?: Prisma.CibleAnnonceUpdateWithWhereUniqueWithoutAnnonceInput | Prisma.CibleAnnonceUpdateWithWhereUniqueWithoutAnnonceInput[]
-  updateMany?: Prisma.CibleAnnonceUpdateManyWithWhereWithoutAnnonceInput | Prisma.CibleAnnonceUpdateManyWithWhereWithoutAnnonceInput[]
-  deleteMany?: Prisma.CibleAnnonceScalarWhereInput | Prisma.CibleAnnonceScalarWhereInput[]
+export type cibleannonceUncheckedUpdateManyWithoutAnnonceNestedInput = {
+  create?: Prisma.XOR<Prisma.cibleannonceCreateWithoutAnnonceInput, Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput> | Prisma.cibleannonceCreateWithoutAnnonceInput[] | Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput[]
+  connectOrCreate?: Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput | Prisma.cibleannonceCreateOrConnectWithoutAnnonceInput[]
+  upsert?: Prisma.cibleannonceUpsertWithWhereUniqueWithoutAnnonceInput | Prisma.cibleannonceUpsertWithWhereUniqueWithoutAnnonceInput[]
+  createMany?: Prisma.cibleannonceCreateManyAnnonceInputEnvelope
+  set?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  disconnect?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  delete?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  connect?: Prisma.cibleannonceWhereUniqueInput | Prisma.cibleannonceWhereUniqueInput[]
+  update?: Prisma.cibleannonceUpdateWithWhereUniqueWithoutAnnonceInput | Prisma.cibleannonceUpdateWithWhereUniqueWithoutAnnonceInput[]
+  updateMany?: Prisma.cibleannonceUpdateManyWithWhereWithoutAnnonceInput | Prisma.cibleannonceUpdateManyWithWhereWithoutAnnonceInput[]
+  deleteMany?: Prisma.cibleannonceScalarWhereInput | Prisma.cibleannonceScalarWhereInput[]
 }
 
-export type EnumPublicAnnonceFieldUpdateOperationsInput = {
-  set?: $Enums.PublicAnnonce
+export type Enumcibleannonce_publicFieldUpdateOperationsInput = {
+  set?: $Enums.cibleannonce_public
 }
 
-export type CibleAnnonceCreateWithoutAnnonceInput = {
+export type cibleannonceCreateWithoutAnnonceInput = {
   id?: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   classeScolaireId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type CibleAnnonceUncheckedCreateWithoutAnnonceInput = {
+export type cibleannonceUncheckedCreateWithoutAnnonceInput = {
   id?: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   classeScolaireId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type CibleAnnonceCreateOrConnectWithoutAnnonceInput = {
-  where: Prisma.CibleAnnonceWhereUniqueInput
-  create: Prisma.XOR<Prisma.CibleAnnonceCreateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput>
+export type cibleannonceCreateOrConnectWithoutAnnonceInput = {
+  where: Prisma.cibleannonceWhereUniqueInput
+  create: Prisma.XOR<Prisma.cibleannonceCreateWithoutAnnonceInput, Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput>
 }
 
-export type CibleAnnonceCreateManyAnnonceInputEnvelope = {
-  data: Prisma.CibleAnnonceCreateManyAnnonceInput | Prisma.CibleAnnonceCreateManyAnnonceInput[]
+export type cibleannonceCreateManyAnnonceInputEnvelope = {
+  data: Prisma.cibleannonceCreateManyAnnonceInput | Prisma.cibleannonceCreateManyAnnonceInput[]
   skipDuplicates?: boolean
 }
 
-export type CibleAnnonceUpsertWithWhereUniqueWithoutAnnonceInput = {
-  where: Prisma.CibleAnnonceWhereUniqueInput
-  update: Prisma.XOR<Prisma.CibleAnnonceUpdateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedUpdateWithoutAnnonceInput>
-  create: Prisma.XOR<Prisma.CibleAnnonceCreateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedCreateWithoutAnnonceInput>
+export type cibleannonceUpsertWithWhereUniqueWithoutAnnonceInput = {
+  where: Prisma.cibleannonceWhereUniqueInput
+  update: Prisma.XOR<Prisma.cibleannonceUpdateWithoutAnnonceInput, Prisma.cibleannonceUncheckedUpdateWithoutAnnonceInput>
+  create: Prisma.XOR<Prisma.cibleannonceCreateWithoutAnnonceInput, Prisma.cibleannonceUncheckedCreateWithoutAnnonceInput>
 }
 
-export type CibleAnnonceUpdateWithWhereUniqueWithoutAnnonceInput = {
-  where: Prisma.CibleAnnonceWhereUniqueInput
-  data: Prisma.XOR<Prisma.CibleAnnonceUpdateWithoutAnnonceInput, Prisma.CibleAnnonceUncheckedUpdateWithoutAnnonceInput>
+export type cibleannonceUpdateWithWhereUniqueWithoutAnnonceInput = {
+  where: Prisma.cibleannonceWhereUniqueInput
+  data: Prisma.XOR<Prisma.cibleannonceUpdateWithoutAnnonceInput, Prisma.cibleannonceUncheckedUpdateWithoutAnnonceInput>
 }
 
-export type CibleAnnonceUpdateManyWithWhereWithoutAnnonceInput = {
-  where: Prisma.CibleAnnonceScalarWhereInput
-  data: Prisma.XOR<Prisma.CibleAnnonceUpdateManyMutationInput, Prisma.CibleAnnonceUncheckedUpdateManyWithoutAnnonceInput>
+export type cibleannonceUpdateManyWithWhereWithoutAnnonceInput = {
+  where: Prisma.cibleannonceScalarWhereInput
+  data: Prisma.XOR<Prisma.cibleannonceUpdateManyMutationInput, Prisma.cibleannonceUncheckedUpdateManyWithoutAnnonceInput>
 }
 
-export type CibleAnnonceScalarWhereInput = {
-  AND?: Prisma.CibleAnnonceScalarWhereInput | Prisma.CibleAnnonceScalarWhereInput[]
-  OR?: Prisma.CibleAnnonceScalarWhereInput[]
-  NOT?: Prisma.CibleAnnonceScalarWhereInput | Prisma.CibleAnnonceScalarWhereInput[]
-  id?: Prisma.StringFilter<"CibleAnnonce"> | string
-  public?: Prisma.EnumPublicAnnonceFilter<"CibleAnnonce"> | $Enums.PublicAnnonce
-  annonceId?: Prisma.StringFilter<"CibleAnnonce"> | string
-  classeScolaireId?: Prisma.StringNullableFilter<"CibleAnnonce"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"CibleAnnonce"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"CibleAnnonce"> | Date | string
+export type cibleannonceScalarWhereInput = {
+  AND?: Prisma.cibleannonceScalarWhereInput | Prisma.cibleannonceScalarWhereInput[]
+  OR?: Prisma.cibleannonceScalarWhereInput[]
+  NOT?: Prisma.cibleannonceScalarWhereInput | Prisma.cibleannonceScalarWhereInput[]
+  id?: Prisma.StringFilter<"cibleannonce"> | string
+  public?: Prisma.Enumcibleannonce_publicFilter<"cibleannonce"> | $Enums.cibleannonce_public
+  annonceId?: Prisma.StringFilter<"cibleannonce"> | string
+  classeScolaireId?: Prisma.StringNullableFilter<"cibleannonce"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"cibleannonce"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"cibleannonce"> | Date | string
 }
 
-export type CibleAnnonceCreateManyAnnonceInput = {
+export type cibleannonceCreateManyAnnonceInput = {
   id?: string
-  public: $Enums.PublicAnnonce
+  public: $Enums.cibleannonce_public
   classeScolaireId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type CibleAnnonceUpdateWithoutAnnonceInput = {
+export type cibleannonceUpdateWithoutAnnonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type CibleAnnonceUncheckedUpdateWithoutAnnonceInput = {
+export type cibleannonceUncheckedUpdateWithoutAnnonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type CibleAnnonceUncheckedUpdateManyWithoutAnnonceInput = {
+export type cibleannonceUncheckedUpdateManyWithoutAnnonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  public?: Prisma.EnumPublicAnnonceFieldUpdateOperationsInput | $Enums.PublicAnnonce
+  public?: Prisma.Enumcibleannonce_publicFieldUpdateOperationsInput | $Enums.cibleannonce_public
   classeScolaireId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -480,19 +480,19 @@ export type CibleAnnonceUncheckedUpdateManyWithoutAnnonceInput = {
 
 
 
-export type CibleAnnonceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type cibleannonceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   public?: boolean
   annonceId?: boolean
   classeScolaireId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  annonce?: boolean | Prisma.AnnonceDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["cibleAnnonce"]>
+  annonce?: boolean | Prisma.annonceDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["cibleannonce"]>
 
 
 
-export type CibleAnnonceSelectScalar = {
+export type cibleannonceSelectScalar = {
   id?: boolean
   public?: boolean
   annonceId?: boolean
@@ -501,160 +501,160 @@ export type CibleAnnonceSelectScalar = {
   updatedAt?: boolean
 }
 
-export type CibleAnnonceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "public" | "annonceId" | "classeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["cibleAnnonce"]>
-export type CibleAnnonceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  annonce?: boolean | Prisma.AnnonceDefaultArgs<ExtArgs>
+export type cibleannonceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "public" | "annonceId" | "classeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["cibleannonce"]>
+export type cibleannonceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  annonce?: boolean | Prisma.annonceDefaultArgs<ExtArgs>
 }
 
-export type $CibleAnnoncePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "CibleAnnonce"
+export type $cibleannoncePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "cibleannonce"
   objects: {
-    annonce: Prisma.$AnnoncePayload<ExtArgs>
+    annonce: Prisma.$annoncePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    public: $Enums.PublicAnnonce
+    public: $Enums.cibleannonce_public
     annonceId: string
     classeScolaireId: string | null
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["cibleAnnonce"]>
+  }, ExtArgs["result"]["cibleannonce"]>
   composites: {}
 }
 
-export type CibleAnnonceGetPayload<S extends boolean | null | undefined | CibleAnnonceDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload, S>
+export type cibleannonceGetPayload<S extends boolean | null | undefined | cibleannonceDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload, S>
 
-export type CibleAnnonceCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<CibleAnnonceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: CibleAnnonceCountAggregateInputType | true
+export type cibleannonceCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<cibleannonceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: CibleannonceCountAggregateInputType | true
   }
 
-export interface CibleAnnonceDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CibleAnnonce'], meta: { name: 'CibleAnnonce' } }
+export interface cibleannonceDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['cibleannonce'], meta: { name: 'cibleannonce' } }
   /**
-   * Find zero or one CibleAnnonce that matches the filter.
-   * @param {CibleAnnonceFindUniqueArgs} args - Arguments to find a CibleAnnonce
+   * Find zero or one Cibleannonce that matches the filter.
+   * @param {cibleannonceFindUniqueArgs} args - Arguments to find a Cibleannonce
    * @example
-   * // Get one CibleAnnonce
-   * const cibleAnnonce = await prisma.cibleAnnonce.findUnique({
+   * // Get one Cibleannonce
+   * const cibleannonce = await prisma.cibleannonce.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends CibleAnnonceFindUniqueArgs>(args: Prisma.SelectSubset<T, CibleAnnonceFindUniqueArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends cibleannonceFindUniqueArgs>(args: Prisma.SelectSubset<T, cibleannonceFindUniqueArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one CibleAnnonce that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Cibleannonce that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {CibleAnnonceFindUniqueOrThrowArgs} args - Arguments to find a CibleAnnonce
+   * @param {cibleannonceFindUniqueOrThrowArgs} args - Arguments to find a Cibleannonce
    * @example
-   * // Get one CibleAnnonce
-   * const cibleAnnonce = await prisma.cibleAnnonce.findUniqueOrThrow({
+   * // Get one Cibleannonce
+   * const cibleannonce = await prisma.cibleannonce.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends CibleAnnonceFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, CibleAnnonceFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends cibleannonceFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, cibleannonceFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first CibleAnnonce that matches the filter.
+   * Find the first Cibleannonce that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceFindFirstArgs} args - Arguments to find a CibleAnnonce
+   * @param {cibleannonceFindFirstArgs} args - Arguments to find a Cibleannonce
    * @example
-   * // Get one CibleAnnonce
-   * const cibleAnnonce = await prisma.cibleAnnonce.findFirst({
+   * // Get one Cibleannonce
+   * const cibleannonce = await prisma.cibleannonce.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends CibleAnnonceFindFirstArgs>(args?: Prisma.SelectSubset<T, CibleAnnonceFindFirstArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends cibleannonceFindFirstArgs>(args?: Prisma.SelectSubset<T, cibleannonceFindFirstArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first CibleAnnonce that matches the filter or
+   * Find the first Cibleannonce that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceFindFirstOrThrowArgs} args - Arguments to find a CibleAnnonce
+   * @param {cibleannonceFindFirstOrThrowArgs} args - Arguments to find a Cibleannonce
    * @example
-   * // Get one CibleAnnonce
-   * const cibleAnnonce = await prisma.cibleAnnonce.findFirstOrThrow({
+   * // Get one Cibleannonce
+   * const cibleannonce = await prisma.cibleannonce.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends CibleAnnonceFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, CibleAnnonceFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends cibleannonceFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, cibleannonceFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more CibleAnnonces that matches the filter.
+   * Find zero or more Cibleannonces that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {cibleannonceFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all CibleAnnonces
-   * const cibleAnnonces = await prisma.cibleAnnonce.findMany()
+   * // Get all Cibleannonces
+   * const cibleannonces = await prisma.cibleannonce.findMany()
    * 
-   * // Get first 10 CibleAnnonces
-   * const cibleAnnonces = await prisma.cibleAnnonce.findMany({ take: 10 })
+   * // Get first 10 Cibleannonces
+   * const cibleannonces = await prisma.cibleannonce.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const cibleAnnonceWithIdOnly = await prisma.cibleAnnonce.findMany({ select: { id: true } })
+   * const cibleannonceWithIdOnly = await prisma.cibleannonce.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends CibleAnnonceFindManyArgs>(args?: Prisma.SelectSubset<T, CibleAnnonceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends cibleannonceFindManyArgs>(args?: Prisma.SelectSubset<T, cibleannonceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a CibleAnnonce.
-   * @param {CibleAnnonceCreateArgs} args - Arguments to create a CibleAnnonce.
+   * Create a Cibleannonce.
+   * @param {cibleannonceCreateArgs} args - Arguments to create a Cibleannonce.
    * @example
-   * // Create one CibleAnnonce
-   * const CibleAnnonce = await prisma.cibleAnnonce.create({
+   * // Create one Cibleannonce
+   * const Cibleannonce = await prisma.cibleannonce.create({
    *   data: {
-   *     // ... data to create a CibleAnnonce
+   *     // ... data to create a Cibleannonce
    *   }
    * })
    * 
    */
-  create<T extends CibleAnnonceCreateArgs>(args: Prisma.SelectSubset<T, CibleAnnonceCreateArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends cibleannonceCreateArgs>(args: Prisma.SelectSubset<T, cibleannonceCreateArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many CibleAnnonces.
-   * @param {CibleAnnonceCreateManyArgs} args - Arguments to create many CibleAnnonces.
+   * Create many Cibleannonces.
+   * @param {cibleannonceCreateManyArgs} args - Arguments to create many Cibleannonces.
    * @example
-   * // Create many CibleAnnonces
-   * const cibleAnnonce = await prisma.cibleAnnonce.createMany({
+   * // Create many Cibleannonces
+   * const cibleannonce = await prisma.cibleannonce.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends CibleAnnonceCreateManyArgs>(args?: Prisma.SelectSubset<T, CibleAnnonceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends cibleannonceCreateManyArgs>(args?: Prisma.SelectSubset<T, cibleannonceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a CibleAnnonce.
-   * @param {CibleAnnonceDeleteArgs} args - Arguments to delete one CibleAnnonce.
+   * Delete a Cibleannonce.
+   * @param {cibleannonceDeleteArgs} args - Arguments to delete one Cibleannonce.
    * @example
-   * // Delete one CibleAnnonce
-   * const CibleAnnonce = await prisma.cibleAnnonce.delete({
+   * // Delete one Cibleannonce
+   * const Cibleannonce = await prisma.cibleannonce.delete({
    *   where: {
-   *     // ... filter to delete one CibleAnnonce
+   *     // ... filter to delete one Cibleannonce
    *   }
    * })
    * 
    */
-  delete<T extends CibleAnnonceDeleteArgs>(args: Prisma.SelectSubset<T, CibleAnnonceDeleteArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends cibleannonceDeleteArgs>(args: Prisma.SelectSubset<T, cibleannonceDeleteArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one CibleAnnonce.
-   * @param {CibleAnnonceUpdateArgs} args - Arguments to update one CibleAnnonce.
+   * Update one Cibleannonce.
+   * @param {cibleannonceUpdateArgs} args - Arguments to update one Cibleannonce.
    * @example
-   * // Update one CibleAnnonce
-   * const cibleAnnonce = await prisma.cibleAnnonce.update({
+   * // Update one Cibleannonce
+   * const cibleannonce = await prisma.cibleannonce.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -664,30 +664,30 @@ export interface CibleAnnonceDelegate<ExtArgs extends runtime.Types.Extensions.I
    * })
    * 
    */
-  update<T extends CibleAnnonceUpdateArgs>(args: Prisma.SelectSubset<T, CibleAnnonceUpdateArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends cibleannonceUpdateArgs>(args: Prisma.SelectSubset<T, cibleannonceUpdateArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more CibleAnnonces.
-   * @param {CibleAnnonceDeleteManyArgs} args - Arguments to filter CibleAnnonces to delete.
+   * Delete zero or more Cibleannonces.
+   * @param {cibleannonceDeleteManyArgs} args - Arguments to filter Cibleannonces to delete.
    * @example
-   * // Delete a few CibleAnnonces
-   * const { count } = await prisma.cibleAnnonce.deleteMany({
+   * // Delete a few Cibleannonces
+   * const { count } = await prisma.cibleannonce.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends CibleAnnonceDeleteManyArgs>(args?: Prisma.SelectSubset<T, CibleAnnonceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends cibleannonceDeleteManyArgs>(args?: Prisma.SelectSubset<T, cibleannonceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more CibleAnnonces.
+   * Update zero or more Cibleannonces.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {cibleannonceUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many CibleAnnonces
-   * const cibleAnnonce = await prisma.cibleAnnonce.updateMany({
+   * // Update many Cibleannonces
+   * const cibleannonce = await prisma.cibleannonce.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -697,56 +697,56 @@ export interface CibleAnnonceDelegate<ExtArgs extends runtime.Types.Extensions.I
    * })
    * 
    */
-  updateMany<T extends CibleAnnonceUpdateManyArgs>(args: Prisma.SelectSubset<T, CibleAnnonceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends cibleannonceUpdateManyArgs>(args: Prisma.SelectSubset<T, cibleannonceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one CibleAnnonce.
-   * @param {CibleAnnonceUpsertArgs} args - Arguments to update or create a CibleAnnonce.
+   * Create or update one Cibleannonce.
+   * @param {cibleannonceUpsertArgs} args - Arguments to update or create a Cibleannonce.
    * @example
-   * // Update or create a CibleAnnonce
-   * const cibleAnnonce = await prisma.cibleAnnonce.upsert({
+   * // Update or create a Cibleannonce
+   * const cibleannonce = await prisma.cibleannonce.upsert({
    *   create: {
-   *     // ... data to create a CibleAnnonce
+   *     // ... data to create a Cibleannonce
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the CibleAnnonce we want to update
+   *     // ... the filter for the Cibleannonce we want to update
    *   }
    * })
    */
-  upsert<T extends CibleAnnonceUpsertArgs>(args: Prisma.SelectSubset<T, CibleAnnonceUpsertArgs<ExtArgs>>): Prisma.Prisma__CibleAnnonceClient<runtime.Types.Result.GetResult<Prisma.$CibleAnnoncePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends cibleannonceUpsertArgs>(args: Prisma.SelectSubset<T, cibleannonceUpsertArgs<ExtArgs>>): Prisma.Prisma__cibleannonceClient<runtime.Types.Result.GetResult<Prisma.$cibleannoncePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of CibleAnnonces.
+   * Count the number of Cibleannonces.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceCountArgs} args - Arguments to filter CibleAnnonces to count.
+   * @param {cibleannonceCountArgs} args - Arguments to filter Cibleannonces to count.
    * @example
-   * // Count the number of CibleAnnonces
-   * const count = await prisma.cibleAnnonce.count({
+   * // Count the number of Cibleannonces
+   * const count = await prisma.cibleannonce.count({
    *   where: {
-   *     // ... the filter for the CibleAnnonces we want to count
+   *     // ... the filter for the Cibleannonces we want to count
    *   }
    * })
   **/
-  count<T extends CibleAnnonceCountArgs>(
-    args?: Prisma.Subset<T, CibleAnnonceCountArgs>,
+  count<T extends cibleannonceCountArgs>(
+    args?: Prisma.Subset<T, cibleannonceCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], CibleAnnonceCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], CibleannonceCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a CibleAnnonce.
+   * Allows you to perform aggregations operations on a Cibleannonce.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {CibleannonceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -766,13 +766,13 @@ export interface CibleAnnonceDelegate<ExtArgs extends runtime.Types.Extensions.I
    *   take: 10,
    * })
   **/
-  aggregate<T extends CibleAnnonceAggregateArgs>(args: Prisma.Subset<T, CibleAnnonceAggregateArgs>): Prisma.PrismaPromise<GetCibleAnnonceAggregateType<T>>
+  aggregate<T extends CibleannonceAggregateArgs>(args: Prisma.Subset<T, CibleannonceAggregateArgs>): Prisma.PrismaPromise<GetCibleannonceAggregateType<T>>
 
   /**
-   * Group by CibleAnnonce.
+   * Group by Cibleannonce.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {CibleAnnonceGroupByArgs} args - Group by arguments.
+   * @param {cibleannonceGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -787,14 +787,14 @@ export interface CibleAnnonceDelegate<ExtArgs extends runtime.Types.Extensions.I
    * 
   **/
   groupBy<
-    T extends CibleAnnonceGroupByArgs,
+    T extends cibleannonceGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: CibleAnnonceGroupByArgs['orderBy'] }
-      : { orderBy?: CibleAnnonceGroupByArgs['orderBy'] },
+      ? { orderBy: cibleannonceGroupByArgs['orderBy'] }
+      : { orderBy?: cibleannonceGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -843,22 +843,22 @@ export interface CibleAnnonceDelegate<ExtArgs extends runtime.Types.Extensions.I
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, CibleAnnonceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCibleAnnonceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, cibleannonceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCibleannonceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the CibleAnnonce model
+ * Fields of the cibleannonce model
  */
-readonly fields: CibleAnnonceFieldRefs;
+readonly fields: cibleannonceFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for CibleAnnonce.
+ * The delegate class that acts as a "Promise-like" for cibleannonce.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__CibleAnnonceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__cibleannonceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  annonce<T extends Prisma.AnnonceDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AnnonceDefaultArgs<ExtArgs>>): Prisma.Prisma__AnnonceClient<runtime.Types.Result.GetResult<Prisma.$AnnoncePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  annonce<T extends Prisma.annonceDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.annonceDefaultArgs<ExtArgs>>): Prisma.Prisma__annonceClient<runtime.Types.Result.GetResult<Prisma.$annoncePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -885,376 +885,376 @@ export interface Prisma__CibleAnnonceClient<T, Null = never, ExtArgs extends run
 
 
 /**
- * Fields of the CibleAnnonce model
+ * Fields of the cibleannonce model
  */
-export interface CibleAnnonceFieldRefs {
-  readonly id: Prisma.FieldRef<"CibleAnnonce", 'String'>
-  readonly public: Prisma.FieldRef<"CibleAnnonce", 'PublicAnnonce'>
-  readonly annonceId: Prisma.FieldRef<"CibleAnnonce", 'String'>
-  readonly classeScolaireId: Prisma.FieldRef<"CibleAnnonce", 'String'>
-  readonly createdAt: Prisma.FieldRef<"CibleAnnonce", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"CibleAnnonce", 'DateTime'>
+export interface cibleannonceFieldRefs {
+  readonly id: Prisma.FieldRef<"cibleannonce", 'String'>
+  readonly public: Prisma.FieldRef<"cibleannonce", 'cibleannonce_public'>
+  readonly annonceId: Prisma.FieldRef<"cibleannonce", 'String'>
+  readonly classeScolaireId: Prisma.FieldRef<"cibleannonce", 'String'>
+  readonly createdAt: Prisma.FieldRef<"cibleannonce", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"cibleannonce", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * CibleAnnonce findUnique
+ * cibleannonce findUnique
  */
-export type CibleAnnonceFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * Filter, which CibleAnnonce to fetch.
+   * Filter, which cibleannonce to fetch.
    */
-  where: Prisma.CibleAnnonceWhereUniqueInput
+  where: Prisma.cibleannonceWhereUniqueInput
 }
 
 /**
- * CibleAnnonce findUniqueOrThrow
+ * cibleannonce findUniqueOrThrow
  */
-export type CibleAnnonceFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * Filter, which CibleAnnonce to fetch.
+   * Filter, which cibleannonce to fetch.
    */
-  where: Prisma.CibleAnnonceWhereUniqueInput
+  where: Prisma.cibleannonceWhereUniqueInput
 }
 
 /**
- * CibleAnnonce findFirst
+ * cibleannonce findFirst
  */
-export type CibleAnnonceFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * Filter, which CibleAnnonce to fetch.
+   * Filter, which cibleannonce to fetch.
    */
-  where?: Prisma.CibleAnnonceWhereInput
+  where?: Prisma.cibleannonceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of CibleAnnonces to fetch.
+   * Determine the order of cibleannonces to fetch.
    */
-  orderBy?: Prisma.CibleAnnonceOrderByWithRelationInput | Prisma.CibleAnnonceOrderByWithRelationInput[]
+  orderBy?: Prisma.cibleannonceOrderByWithRelationInput | Prisma.cibleannonceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for CibleAnnonces.
+   * Sets the position for searching for cibleannonces.
    */
-  cursor?: Prisma.CibleAnnonceWhereUniqueInput
+  cursor?: Prisma.cibleannonceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` CibleAnnonces from the position of the cursor.
+   * Take `±n` cibleannonces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` CibleAnnonces.
+   * Skip the first `n` cibleannonces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of CibleAnnonces.
+   * Filter by unique combinations of cibleannonces.
    */
-  distinct?: Prisma.CibleAnnonceScalarFieldEnum | Prisma.CibleAnnonceScalarFieldEnum[]
+  distinct?: Prisma.CibleannonceScalarFieldEnum | Prisma.CibleannonceScalarFieldEnum[]
 }
 
 /**
- * CibleAnnonce findFirstOrThrow
+ * cibleannonce findFirstOrThrow
  */
-export type CibleAnnonceFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * Filter, which CibleAnnonce to fetch.
+   * Filter, which cibleannonce to fetch.
    */
-  where?: Prisma.CibleAnnonceWhereInput
+  where?: Prisma.cibleannonceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of CibleAnnonces to fetch.
+   * Determine the order of cibleannonces to fetch.
    */
-  orderBy?: Prisma.CibleAnnonceOrderByWithRelationInput | Prisma.CibleAnnonceOrderByWithRelationInput[]
+  orderBy?: Prisma.cibleannonceOrderByWithRelationInput | Prisma.cibleannonceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for CibleAnnonces.
+   * Sets the position for searching for cibleannonces.
    */
-  cursor?: Prisma.CibleAnnonceWhereUniqueInput
+  cursor?: Prisma.cibleannonceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` CibleAnnonces from the position of the cursor.
+   * Take `±n` cibleannonces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` CibleAnnonces.
+   * Skip the first `n` cibleannonces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of CibleAnnonces.
+   * Filter by unique combinations of cibleannonces.
    */
-  distinct?: Prisma.CibleAnnonceScalarFieldEnum | Prisma.CibleAnnonceScalarFieldEnum[]
+  distinct?: Prisma.CibleannonceScalarFieldEnum | Prisma.CibleannonceScalarFieldEnum[]
 }
 
 /**
- * CibleAnnonce findMany
+ * cibleannonce findMany
  */
-export type CibleAnnonceFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * Filter, which CibleAnnonces to fetch.
+   * Filter, which cibleannonces to fetch.
    */
-  where?: Prisma.CibleAnnonceWhereInput
+  where?: Prisma.cibleannonceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of CibleAnnonces to fetch.
+   * Determine the order of cibleannonces to fetch.
    */
-  orderBy?: Prisma.CibleAnnonceOrderByWithRelationInput | Prisma.CibleAnnonceOrderByWithRelationInput[]
+  orderBy?: Prisma.cibleannonceOrderByWithRelationInput | Prisma.cibleannonceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing CibleAnnonces.
+   * Sets the position for listing cibleannonces.
    */
-  cursor?: Prisma.CibleAnnonceWhereUniqueInput
+  cursor?: Prisma.cibleannonceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` CibleAnnonces from the position of the cursor.
+   * Take `±n` cibleannonces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` CibleAnnonces.
+   * Skip the first `n` cibleannonces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of CibleAnnonces.
+   * Filter by unique combinations of cibleannonces.
    */
-  distinct?: Prisma.CibleAnnonceScalarFieldEnum | Prisma.CibleAnnonceScalarFieldEnum[]
+  distinct?: Prisma.CibleannonceScalarFieldEnum | Prisma.CibleannonceScalarFieldEnum[]
 }
 
 /**
- * CibleAnnonce create
+ * cibleannonce create
  */
-export type CibleAnnonceCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * The data needed to create a CibleAnnonce.
+   * The data needed to create a cibleannonce.
    */
-  data: Prisma.XOR<Prisma.CibleAnnonceCreateInput, Prisma.CibleAnnonceUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.cibleannonceCreateInput, Prisma.cibleannonceUncheckedCreateInput>
 }
 
 /**
- * CibleAnnonce createMany
+ * cibleannonce createMany
  */
-export type CibleAnnonceCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many CibleAnnonces.
+   * The data used to create many cibleannonces.
    */
-  data: Prisma.CibleAnnonceCreateManyInput | Prisma.CibleAnnonceCreateManyInput[]
+  data: Prisma.cibleannonceCreateManyInput | Prisma.cibleannonceCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * CibleAnnonce update
+ * cibleannonce update
  */
-export type CibleAnnonceUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * The data needed to update a CibleAnnonce.
+   * The data needed to update a cibleannonce.
    */
-  data: Prisma.XOR<Prisma.CibleAnnonceUpdateInput, Prisma.CibleAnnonceUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.cibleannonceUpdateInput, Prisma.cibleannonceUncheckedUpdateInput>
   /**
-   * Choose, which CibleAnnonce to update.
+   * Choose, which cibleannonce to update.
    */
-  where: Prisma.CibleAnnonceWhereUniqueInput
+  where: Prisma.cibleannonceWhereUniqueInput
 }
 
 /**
- * CibleAnnonce updateMany
+ * cibleannonce updateMany
  */
-export type CibleAnnonceUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update CibleAnnonces.
+   * The data used to update cibleannonces.
    */
-  data: Prisma.XOR<Prisma.CibleAnnonceUpdateManyMutationInput, Prisma.CibleAnnonceUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.cibleannonceUpdateManyMutationInput, Prisma.cibleannonceUncheckedUpdateManyInput>
   /**
-   * Filter which CibleAnnonces to update
+   * Filter which cibleannonces to update
    */
-  where?: Prisma.CibleAnnonceWhereInput
+  where?: Prisma.cibleannonceWhereInput
   /**
-   * Limit how many CibleAnnonces to update.
+   * Limit how many cibleannonces to update.
    */
   limit?: number
 }
 
 /**
- * CibleAnnonce upsert
+ * cibleannonce upsert
  */
-export type CibleAnnonceUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * The filter to search for the CibleAnnonce to update in case it exists.
+   * The filter to search for the cibleannonce to update in case it exists.
    */
-  where: Prisma.CibleAnnonceWhereUniqueInput
+  where: Prisma.cibleannonceWhereUniqueInput
   /**
-   * In case the CibleAnnonce found by the `where` argument doesn't exist, create a new CibleAnnonce with this data.
+   * In case the cibleannonce found by the `where` argument doesn't exist, create a new cibleannonce with this data.
    */
-  create: Prisma.XOR<Prisma.CibleAnnonceCreateInput, Prisma.CibleAnnonceUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.cibleannonceCreateInput, Prisma.cibleannonceUncheckedCreateInput>
   /**
-   * In case the CibleAnnonce was found with the provided `where` argument, update it with this data.
+   * In case the cibleannonce was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.CibleAnnonceUpdateInput, Prisma.CibleAnnonceUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.cibleannonceUpdateInput, Prisma.cibleannonceUncheckedUpdateInput>
 }
 
 /**
- * CibleAnnonce delete
+ * cibleannonce delete
  */
-export type CibleAnnonceDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
   /**
-   * Filter which CibleAnnonce to delete.
+   * Filter which cibleannonce to delete.
    */
-  where: Prisma.CibleAnnonceWhereUniqueInput
+  where: Prisma.cibleannonceWhereUniqueInput
 }
 
 /**
- * CibleAnnonce deleteMany
+ * cibleannonce deleteMany
  */
-export type CibleAnnonceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which CibleAnnonces to delete
+   * Filter which cibleannonces to delete
    */
-  where?: Prisma.CibleAnnonceWhereInput
+  where?: Prisma.cibleannonceWhereInput
   /**
-   * Limit how many CibleAnnonces to delete.
+   * Limit how many cibleannonces to delete.
    */
   limit?: number
 }
 
 /**
- * CibleAnnonce without action
+ * cibleannonce without action
  */
-export type CibleAnnonceDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type cibleannonceDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CibleAnnonce
+   * Select specific fields to fetch from the cibleannonce
    */
-  select?: Prisma.CibleAnnonceSelect<ExtArgs> | null
+  select?: Prisma.cibleannonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CibleAnnonce
+   * Omit specific fields from the cibleannonce
    */
-  omit?: Prisma.CibleAnnonceOmit<ExtArgs> | null
+  omit?: Prisma.cibleannonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CibleAnnonceInclude<ExtArgs> | null
+  include?: Prisma.cibleannonceInclude<ExtArgs> | null
 }

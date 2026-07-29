@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `NiveauScolaire` model and its related types.
+ * This file exports the `niveauscolaire` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,18 +13,18 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model NiveauScolaire
+ * Model niveauscolaire
  * 
  */
-export type NiveauScolaireModel = runtime.Types.Result.DefaultSelection<Prisma.$NiveauScolairePayload>
+export type niveauscolaireModel = runtime.Types.Result.DefaultSelection<Prisma.$niveauscolairePayload>
 
-export type AggregateNiveauScolaire = {
-  _count: NiveauScolaireCountAggregateOutputType | null
-  _min: NiveauScolaireMinAggregateOutputType | null
-  _max: NiveauScolaireMaxAggregateOutputType | null
+export type AggregateNiveauscolaire = {
+  _count: NiveauscolaireCountAggregateOutputType | null
+  _min: NiveauscolaireMinAggregateOutputType | null
+  _max: NiveauscolaireMaxAggregateOutputType | null
 }
 
-export type NiveauScolaireMinAggregateOutputType = {
+export type NiveauscolaireMinAggregateOutputType = {
   id: string | null
   ecoleId: string | null
   nom: string | null
@@ -32,7 +32,7 @@ export type NiveauScolaireMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type NiveauScolaireMaxAggregateOutputType = {
+export type NiveauscolaireMaxAggregateOutputType = {
   id: string | null
   ecoleId: string | null
   nom: string | null
@@ -40,7 +40,7 @@ export type NiveauScolaireMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type NiveauScolaireCountAggregateOutputType = {
+export type NiveauscolaireCountAggregateOutputType = {
   id: number
   ecoleId: number
   nom: number
@@ -50,7 +50,7 @@ export type NiveauScolaireCountAggregateOutputType = {
 }
 
 
-export type NiveauScolaireMinAggregateInputType = {
+export type NiveauscolaireMinAggregateInputType = {
   id?: true
   ecoleId?: true
   nom?: true
@@ -58,7 +58,7 @@ export type NiveauScolaireMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type NiveauScolaireMaxAggregateInputType = {
+export type NiveauscolaireMaxAggregateInputType = {
   id?: true
   ecoleId?: true
   nom?: true
@@ -66,7 +66,7 @@ export type NiveauScolaireMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type NiveauScolaireCountAggregateInputType = {
+export type NiveauscolaireCountAggregateInputType = {
   id?: true
   ecoleId?: true
   nom?: true
@@ -75,223 +75,223 @@ export type NiveauScolaireCountAggregateInputType = {
   _all?: true
 }
 
-export type NiveauScolaireAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type NiveauscolaireAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which NiveauScolaire to aggregate.
+   * Filter which niveauscolaire to aggregate.
    */
-  where?: Prisma.NiveauScolaireWhereInput
+  where?: Prisma.niveauscolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of NiveauScolaires to fetch.
+   * Determine the order of niveauscolaires to fetch.
    */
-  orderBy?: Prisma.NiveauScolaireOrderByWithRelationInput | Prisma.NiveauScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.niveauscolaireOrderByWithRelationInput | Prisma.niveauscolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.NiveauScolaireWhereUniqueInput
+  cursor?: Prisma.niveauscolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` NiveauScolaires from the position of the cursor.
+   * Take `±n` niveauscolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` NiveauScolaires.
+   * Skip the first `n` niveauscolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned NiveauScolaires
+   * Count returned niveauscolaires
   **/
-  _count?: true | NiveauScolaireCountAggregateInputType
+  _count?: true | NiveauscolaireCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: NiveauScolaireMinAggregateInputType
+  _min?: NiveauscolaireMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: NiveauScolaireMaxAggregateInputType
+  _max?: NiveauscolaireMaxAggregateInputType
 }
 
-export type GetNiveauScolaireAggregateType<T extends NiveauScolaireAggregateArgs> = {
-      [P in keyof T & keyof AggregateNiveauScolaire]: P extends '_count' | 'count'
+export type GetNiveauscolaireAggregateType<T extends NiveauscolaireAggregateArgs> = {
+      [P in keyof T & keyof AggregateNiveauscolaire]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateNiveauScolaire[P]>
-    : Prisma.GetScalarType<T[P], AggregateNiveauScolaire[P]>
+      : Prisma.GetScalarType<T[P], AggregateNiveauscolaire[P]>
+    : Prisma.GetScalarType<T[P], AggregateNiveauscolaire[P]>
 }
 
 
 
 
-export type NiveauScolaireGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NiveauScolaireWhereInput
-  orderBy?: Prisma.NiveauScolaireOrderByWithAggregationInput | Prisma.NiveauScolaireOrderByWithAggregationInput[]
-  by: Prisma.NiveauScolaireScalarFieldEnum[] | Prisma.NiveauScolaireScalarFieldEnum
-  having?: Prisma.NiveauScolaireScalarWhereWithAggregatesInput
+export type niveauscolaireGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.niveauscolaireWhereInput
+  orderBy?: Prisma.niveauscolaireOrderByWithAggregationInput | Prisma.niveauscolaireOrderByWithAggregationInput[]
+  by: Prisma.NiveauscolaireScalarFieldEnum[] | Prisma.NiveauscolaireScalarFieldEnum
+  having?: Prisma.niveauscolaireScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: NiveauScolaireCountAggregateInputType | true
-  _min?: NiveauScolaireMinAggregateInputType
-  _max?: NiveauScolaireMaxAggregateInputType
+  _count?: NiveauscolaireCountAggregateInputType | true
+  _min?: NiveauscolaireMinAggregateInputType
+  _max?: NiveauscolaireMaxAggregateInputType
 }
 
-export type NiveauScolaireGroupByOutputType = {
+export type NiveauscolaireGroupByOutputType = {
   id: string
   ecoleId: string
   nom: string
   createdAt: Date
   updatedAt: Date
-  _count: NiveauScolaireCountAggregateOutputType | null
-  _min: NiveauScolaireMinAggregateOutputType | null
-  _max: NiveauScolaireMaxAggregateOutputType | null
+  _count: NiveauscolaireCountAggregateOutputType | null
+  _min: NiveauscolaireMinAggregateOutputType | null
+  _max: NiveauscolaireMaxAggregateOutputType | null
 }
 
-export type GetNiveauScolaireGroupByPayload<T extends NiveauScolaireGroupByArgs> = Prisma.PrismaPromise<
+export type GetNiveauscolaireGroupByPayload<T extends niveauscolaireGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<NiveauScolaireGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<NiveauscolaireGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof NiveauScolaireGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof NiveauscolaireGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], NiveauScolaireGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], NiveauScolaireGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], NiveauscolaireGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], NiveauscolaireGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type NiveauScolaireWhereInput = {
-  AND?: Prisma.NiveauScolaireWhereInput | Prisma.NiveauScolaireWhereInput[]
-  OR?: Prisma.NiveauScolaireWhereInput[]
-  NOT?: Prisma.NiveauScolaireWhereInput | Prisma.NiveauScolaireWhereInput[]
-  id?: Prisma.StringFilter<"NiveauScolaire"> | string
-  ecoleId?: Prisma.StringFilter<"NiveauScolaire"> | string
-  nom?: Prisma.StringFilter<"NiveauScolaire"> | string
-  createdAt?: Prisma.DateTimeFilter<"NiveauScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"NiveauScolaire"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  classeScolaire?: Prisma.ClassScolaireListRelationFilter
-  configScolarite?: Prisma.ConfigurationScolariteListRelationFilter
+export type niveauscolaireWhereInput = {
+  AND?: Prisma.niveauscolaireWhereInput | Prisma.niveauscolaireWhereInput[]
+  OR?: Prisma.niveauscolaireWhereInput[]
+  NOT?: Prisma.niveauscolaireWhereInput | Prisma.niveauscolaireWhereInput[]
+  id?: Prisma.StringFilter<"niveauscolaire"> | string
+  ecoleId?: Prisma.StringFilter<"niveauscolaire"> | string
+  nom?: Prisma.StringFilter<"niveauscolaire"> | string
+  createdAt?: Prisma.DateTimeFilter<"niveauscolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"niveauscolaire"> | Date | string
+  classscolaire?: Prisma.ClassscolaireListRelationFilter
+  configurationscolarite?: Prisma.ConfigurationscolariteListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
 }
 
-export type NiveauScolaireOrderByWithRelationInput = {
+export type niveauscolaireOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  ecole?: Prisma.EcoleOrderByWithRelationInput
-  classeScolaire?: Prisma.ClassScolaireOrderByRelationAggregateInput
-  configScolarite?: Prisma.ConfigurationScolariteOrderByRelationAggregateInput
-  _relevance?: Prisma.NiveauScolaireOrderByRelevanceInput
+  classscolaire?: Prisma.classscolaireOrderByRelationAggregateInput
+  configurationscolarite?: Prisma.configurationscolariteOrderByRelationAggregateInput
+  ecole?: Prisma.ecoleOrderByWithRelationInput
+  _relevance?: Prisma.niveauscolaireOrderByRelevanceInput
 }
 
-export type NiveauScolaireWhereUniqueInput = Prisma.AtLeast<{
+export type niveauscolaireWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  nom_ecoleId?: Prisma.NiveauScolaireNomEcoleIdCompoundUniqueInput
-  AND?: Prisma.NiveauScolaireWhereInput | Prisma.NiveauScolaireWhereInput[]
-  OR?: Prisma.NiveauScolaireWhereInput[]
-  NOT?: Prisma.NiveauScolaireWhereInput | Prisma.NiveauScolaireWhereInput[]
-  ecoleId?: Prisma.StringFilter<"NiveauScolaire"> | string
-  nom?: Prisma.StringFilter<"NiveauScolaire"> | string
-  createdAt?: Prisma.DateTimeFilter<"NiveauScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"NiveauScolaire"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  classeScolaire?: Prisma.ClassScolaireListRelationFilter
-  configScolarite?: Prisma.ConfigurationScolariteListRelationFilter
+  nom_ecoleId?: Prisma.niveauscolaireNomEcoleIdCompoundUniqueInput
+  AND?: Prisma.niveauscolaireWhereInput | Prisma.niveauscolaireWhereInput[]
+  OR?: Prisma.niveauscolaireWhereInput[]
+  NOT?: Prisma.niveauscolaireWhereInput | Prisma.niveauscolaireWhereInput[]
+  ecoleId?: Prisma.StringFilter<"niveauscolaire"> | string
+  nom?: Prisma.StringFilter<"niveauscolaire"> | string
+  createdAt?: Prisma.DateTimeFilter<"niveauscolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"niveauscolaire"> | Date | string
+  classscolaire?: Prisma.ClassscolaireListRelationFilter
+  configurationscolarite?: Prisma.ConfigurationscolariteListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
 }, "id" | "nom_ecoleId">
 
-export type NiveauScolaireOrderByWithAggregationInput = {
+export type niveauscolaireOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.NiveauScolaireCountOrderByAggregateInput
-  _max?: Prisma.NiveauScolaireMaxOrderByAggregateInput
-  _min?: Prisma.NiveauScolaireMinOrderByAggregateInput
+  _count?: Prisma.niveauscolaireCountOrderByAggregateInput
+  _max?: Prisma.niveauscolaireMaxOrderByAggregateInput
+  _min?: Prisma.niveauscolaireMinOrderByAggregateInput
 }
 
-export type NiveauScolaireScalarWhereWithAggregatesInput = {
-  AND?: Prisma.NiveauScolaireScalarWhereWithAggregatesInput | Prisma.NiveauScolaireScalarWhereWithAggregatesInput[]
-  OR?: Prisma.NiveauScolaireScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.NiveauScolaireScalarWhereWithAggregatesInput | Prisma.NiveauScolaireScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"NiveauScolaire"> | string
-  ecoleId?: Prisma.StringWithAggregatesFilter<"NiveauScolaire"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"NiveauScolaire"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"NiveauScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"NiveauScolaire"> | Date | string
+export type niveauscolaireScalarWhereWithAggregatesInput = {
+  AND?: Prisma.niveauscolaireScalarWhereWithAggregatesInput | Prisma.niveauscolaireScalarWhereWithAggregatesInput[]
+  OR?: Prisma.niveauscolaireScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.niveauscolaireScalarWhereWithAggregatesInput | Prisma.niveauscolaireScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"niveauscolaire"> | string
+  ecoleId?: Prisma.StringWithAggregatesFilter<"niveauscolaire"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"niveauscolaire"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"niveauscolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"niveauscolaire"> | Date | string
 }
 
-export type NiveauScolaireCreateInput = {
+export type niveauscolaireCreateInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutNiveauxScolairesInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedManyWithoutNiveauScolaireInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutNiveauScolaireInput
+  classscolaire?: Prisma.classscolaireCreateNestedManyWithoutNiveauscolaireInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutNiveauscolaireInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutNiveauscolaireInput
 }
 
-export type NiveauScolaireUncheckedCreateInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedCreateNestedManyWithoutNiveauScolaireInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutNiveauScolaireInput
-}
-
-export type NiveauScolaireUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutNiveauxScolairesNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateManyWithoutNiveauScolaireNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutNiveauScolaireNestedInput
-}
-
-export type NiveauScolaireUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedUpdateManyWithoutNiveauScolaireNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireNestedInput
-}
-
-export type NiveauScolaireCreateManyInput = {
+export type niveauscolaireUncheckedCreateInput = {
   id?: string
   ecoleId: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  classscolaire?: Prisma.classscolaireUncheckedCreateNestedManyWithoutNiveauscolaireInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutNiveauscolaireInput
 }
 
-export type NiveauScolaireUpdateManyMutationInput = {
+export type niveauscolaireUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUpdateManyWithoutNiveauscolaireNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutNiveauscolaireNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutNiveauscolaireNestedInput
+}
+
+export type niveauscolaireUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUncheckedUpdateManyWithoutNiveauscolaireNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutNiveauscolaireNestedInput
+}
+
+export type niveauscolaireCreateManyInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type niveauscolaireUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type NiveauScolaireUncheckedUpdateManyInput = {
+export type niveauscolaireUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
@@ -299,28 +299,33 @@ export type NiveauScolaireUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type NiveauScolaireListRelationFilter = {
-  every?: Prisma.NiveauScolaireWhereInput
-  some?: Prisma.NiveauScolaireWhereInput
-  none?: Prisma.NiveauScolaireWhereInput
+export type NiveauscolaireScalarRelationFilter = {
+  is?: Prisma.niveauscolaireWhereInput
+  isNot?: Prisma.niveauscolaireWhereInput
 }
 
-export type NiveauScolaireOrderByRelationAggregateInput = {
+export type NiveauscolaireListRelationFilter = {
+  every?: Prisma.niveauscolaireWhereInput
+  some?: Prisma.niveauscolaireWhereInput
+  none?: Prisma.niveauscolaireWhereInput
+}
+
+export type niveauscolaireOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type NiveauScolaireOrderByRelevanceInput = {
-  fields: Prisma.NiveauScolaireOrderByRelevanceFieldEnum | Prisma.NiveauScolaireOrderByRelevanceFieldEnum[]
+export type niveauscolaireOrderByRelevanceInput = {
+  fields: Prisma.niveauscolaireOrderByRelevanceFieldEnum | Prisma.niveauscolaireOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type NiveauScolaireNomEcoleIdCompoundUniqueInput = {
+export type niveauscolaireNomEcoleIdCompoundUniqueInput = {
   nom: string
   ecoleId: string
 }
 
-export type NiveauScolaireCountOrderByAggregateInput = {
+export type niveauscolaireCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -328,7 +333,7 @@ export type NiveauScolaireCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type NiveauScolaireMaxOrderByAggregateInput = {
+export type niveauscolaireMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -336,7 +341,7 @@ export type NiveauScolaireMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type NiveauScolaireMinOrderByAggregateInput = {
+export type niveauscolaireMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -344,266 +349,261 @@ export type NiveauScolaireMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type NiveauScolaireScalarRelationFilter = {
-  is?: Prisma.NiveauScolaireWhereInput
-  isNot?: Prisma.NiveauScolaireWhereInput
+export type niveauscolaireCreateNestedOneWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutClassscolaireInput, Prisma.niveauscolaireUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutClassscolaireInput
+  connect?: Prisma.niveauscolaireWhereUniqueInput
 }
 
-export type NiveauScolaireCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput> | Prisma.NiveauScolaireCreateWithoutEcoleInput[] | Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput | Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.NiveauScolaireCreateManyEcoleInputEnvelope
-  connect?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
+export type niveauscolaireUpdateOneRequiredWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutClassscolaireInput, Prisma.niveauscolaireUncheckedCreateWithoutClassscolaireInput>
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutClassscolaireInput
+  upsert?: Prisma.niveauscolaireUpsertWithoutClassscolaireInput
+  connect?: Prisma.niveauscolaireWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.niveauscolaireUpdateToOneWithWhereWithoutClassscolaireInput, Prisma.niveauscolaireUpdateWithoutClassscolaireInput>, Prisma.niveauscolaireUncheckedUpdateWithoutClassscolaireInput>
 }
 
-export type NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput> | Prisma.NiveauScolaireCreateWithoutEcoleInput[] | Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput | Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.NiveauScolaireCreateManyEcoleInputEnvelope
-  connect?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
+export type niveauscolaireCreateNestedOneWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutConfigurationscolariteInput, Prisma.niveauscolaireUncheckedCreateWithoutConfigurationscolariteInput>
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutConfigurationscolariteInput
+  connect?: Prisma.niveauscolaireWhereUniqueInput
 }
 
-export type NiveauScolaireUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput> | Prisma.NiveauScolaireCreateWithoutEcoleInput[] | Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput | Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.NiveauScolaireUpsertWithWhereUniqueWithoutEcoleInput | Prisma.NiveauScolaireUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.NiveauScolaireCreateManyEcoleInputEnvelope
-  set?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  disconnect?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  delete?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  connect?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  update?: Prisma.NiveauScolaireUpdateWithWhereUniqueWithoutEcoleInput | Prisma.NiveauScolaireUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.NiveauScolaireUpdateManyWithWhereWithoutEcoleInput | Prisma.NiveauScolaireUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.NiveauScolaireScalarWhereInput | Prisma.NiveauScolaireScalarWhereInput[]
+export type niveauscolaireUpdateOneRequiredWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutConfigurationscolariteInput, Prisma.niveauscolaireUncheckedCreateWithoutConfigurationscolariteInput>
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutConfigurationscolariteInput
+  upsert?: Prisma.niveauscolaireUpsertWithoutConfigurationscolariteInput
+  connect?: Prisma.niveauscolaireWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.niveauscolaireUpdateToOneWithWhereWithoutConfigurationscolariteInput, Prisma.niveauscolaireUpdateWithoutConfigurationscolariteInput>, Prisma.niveauscolaireUncheckedUpdateWithoutConfigurationscolariteInput>
 }
 
-export type NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput> | Prisma.NiveauScolaireCreateWithoutEcoleInput[] | Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput | Prisma.NiveauScolaireCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.NiveauScolaireUpsertWithWhereUniqueWithoutEcoleInput | Prisma.NiveauScolaireUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.NiveauScolaireCreateManyEcoleInputEnvelope
-  set?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  disconnect?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  delete?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  connect?: Prisma.NiveauScolaireWhereUniqueInput | Prisma.NiveauScolaireWhereUniqueInput[]
-  update?: Prisma.NiveauScolaireUpdateWithWhereUniqueWithoutEcoleInput | Prisma.NiveauScolaireUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.NiveauScolaireUpdateManyWithWhereWithoutEcoleInput | Prisma.NiveauScolaireUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.NiveauScolaireScalarWhereInput | Prisma.NiveauScolaireScalarWhereInput[]
+export type niveauscolaireCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutEcoleInput, Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput> | Prisma.niveauscolaireCreateWithoutEcoleInput[] | Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput | Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.niveauscolaireCreateManyEcoleInputEnvelope
+  connect?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
 }
 
-export type NiveauScolaireCreateNestedOneWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutClasseScolaireInput, Prisma.NiveauScolaireUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutClasseScolaireInput
-  connect?: Prisma.NiveauScolaireWhereUniqueInput
+export type niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutEcoleInput, Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput> | Prisma.niveauscolaireCreateWithoutEcoleInput[] | Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput | Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.niveauscolaireCreateManyEcoleInputEnvelope
+  connect?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
 }
 
-export type NiveauScolaireUpdateOneRequiredWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutClasseScolaireInput, Prisma.NiveauScolaireUncheckedCreateWithoutClasseScolaireInput>
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutClasseScolaireInput
-  upsert?: Prisma.NiveauScolaireUpsertWithoutClasseScolaireInput
-  connect?: Prisma.NiveauScolaireWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.NiveauScolaireUpdateToOneWithWhereWithoutClasseScolaireInput, Prisma.NiveauScolaireUpdateWithoutClasseScolaireInput>, Prisma.NiveauScolaireUncheckedUpdateWithoutClasseScolaireInput>
+export type niveauscolaireUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutEcoleInput, Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput> | Prisma.niveauscolaireCreateWithoutEcoleInput[] | Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput | Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.niveauscolaireUpsertWithWhereUniqueWithoutEcoleInput | Prisma.niveauscolaireUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.niveauscolaireCreateManyEcoleInputEnvelope
+  set?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  disconnect?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  delete?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  connect?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  update?: Prisma.niveauscolaireUpdateWithWhereUniqueWithoutEcoleInput | Prisma.niveauscolaireUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.niveauscolaireUpdateManyWithWhereWithoutEcoleInput | Prisma.niveauscolaireUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.niveauscolaireScalarWhereInput | Prisma.niveauscolaireScalarWhereInput[]
 }
 
-export type NiveauScolaireCreateNestedOneWithoutConfigScolariteInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutConfigScolariteInput, Prisma.NiveauScolaireUncheckedCreateWithoutConfigScolariteInput>
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutConfigScolariteInput
-  connect?: Prisma.NiveauScolaireWhereUniqueInput
+export type niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.niveauscolaireCreateWithoutEcoleInput, Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput> | Prisma.niveauscolaireCreateWithoutEcoleInput[] | Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput | Prisma.niveauscolaireCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.niveauscolaireUpsertWithWhereUniqueWithoutEcoleInput | Prisma.niveauscolaireUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.niveauscolaireCreateManyEcoleInputEnvelope
+  set?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  disconnect?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  delete?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  connect?: Prisma.niveauscolaireWhereUniqueInput | Prisma.niveauscolaireWhereUniqueInput[]
+  update?: Prisma.niveauscolaireUpdateWithWhereUniqueWithoutEcoleInput | Prisma.niveauscolaireUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.niveauscolaireUpdateManyWithWhereWithoutEcoleInput | Prisma.niveauscolaireUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.niveauscolaireScalarWhereInput | Prisma.niveauscolaireScalarWhereInput[]
 }
 
-export type NiveauScolaireUpdateOneRequiredWithoutConfigScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutConfigScolariteInput, Prisma.NiveauScolaireUncheckedCreateWithoutConfigScolariteInput>
-  connectOrCreate?: Prisma.NiveauScolaireCreateOrConnectWithoutConfigScolariteInput
-  upsert?: Prisma.NiveauScolaireUpsertWithoutConfigScolariteInput
-  connect?: Prisma.NiveauScolaireWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.NiveauScolaireUpdateToOneWithWhereWithoutConfigScolariteInput, Prisma.NiveauScolaireUpdateWithoutConfigScolariteInput>, Prisma.NiveauScolaireUncheckedUpdateWithoutConfigScolariteInput>
-}
-
-export type NiveauScolaireCreateWithoutEcoleInput = {
+export type niveauscolaireCreateWithoutClassscolaireInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireCreateNestedManyWithoutNiveauScolaireInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutNiveauScolaireInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutNiveauscolaireInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutNiveauscolaireInput
 }
 
-export type NiveauScolaireUncheckedCreateWithoutEcoleInput = {
+export type niveauscolaireUncheckedCreateWithoutClassscolaireInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutNiveauscolaireInput
+}
+
+export type niveauscolaireCreateOrConnectWithoutClassscolaireInput = {
+  where: Prisma.niveauscolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.niveauscolaireCreateWithoutClassscolaireInput, Prisma.niveauscolaireUncheckedCreateWithoutClassscolaireInput>
+}
+
+export type niveauscolaireUpsertWithoutClassscolaireInput = {
+  update: Prisma.XOR<Prisma.niveauscolaireUpdateWithoutClassscolaireInput, Prisma.niveauscolaireUncheckedUpdateWithoutClassscolaireInput>
+  create: Prisma.XOR<Prisma.niveauscolaireCreateWithoutClassscolaireInput, Prisma.niveauscolaireUncheckedCreateWithoutClassscolaireInput>
+  where?: Prisma.niveauscolaireWhereInput
+}
+
+export type niveauscolaireUpdateToOneWithWhereWithoutClassscolaireInput = {
+  where?: Prisma.niveauscolaireWhereInput
+  data: Prisma.XOR<Prisma.niveauscolaireUpdateWithoutClassscolaireInput, Prisma.niveauscolaireUncheckedUpdateWithoutClassscolaireInput>
+}
+
+export type niveauscolaireUpdateWithoutClassscolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutNiveauscolaireNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutNiveauscolaireNestedInput
+}
+
+export type niveauscolaireUncheckedUpdateWithoutClassscolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutNiveauscolaireNestedInput
+}
+
+export type niveauscolaireCreateWithoutConfigurationscolariteInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedCreateNestedManyWithoutNiveauScolaireInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutNiveauScolaireInput
+  classscolaire?: Prisma.classscolaireCreateNestedManyWithoutNiveauscolaireInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutNiveauscolaireInput
 }
 
-export type NiveauScolaireCreateOrConnectWithoutEcoleInput = {
-  where: Prisma.NiveauScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput>
+export type niveauscolaireUncheckedCreateWithoutConfigurationscolariteInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  classscolaire?: Prisma.classscolaireUncheckedCreateNestedManyWithoutNiveauscolaireInput
 }
 
-export type NiveauScolaireCreateManyEcoleInputEnvelope = {
-  data: Prisma.NiveauScolaireCreateManyEcoleInput | Prisma.NiveauScolaireCreateManyEcoleInput[]
+export type niveauscolaireCreateOrConnectWithoutConfigurationscolariteInput = {
+  where: Prisma.niveauscolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.niveauscolaireCreateWithoutConfigurationscolariteInput, Prisma.niveauscolaireUncheckedCreateWithoutConfigurationscolariteInput>
+}
+
+export type niveauscolaireUpsertWithoutConfigurationscolariteInput = {
+  update: Prisma.XOR<Prisma.niveauscolaireUpdateWithoutConfigurationscolariteInput, Prisma.niveauscolaireUncheckedUpdateWithoutConfigurationscolariteInput>
+  create: Prisma.XOR<Prisma.niveauscolaireCreateWithoutConfigurationscolariteInput, Prisma.niveauscolaireUncheckedCreateWithoutConfigurationscolariteInput>
+  where?: Prisma.niveauscolaireWhereInput
+}
+
+export type niveauscolaireUpdateToOneWithWhereWithoutConfigurationscolariteInput = {
+  where?: Prisma.niveauscolaireWhereInput
+  data: Prisma.XOR<Prisma.niveauscolaireUpdateWithoutConfigurationscolariteInput, Prisma.niveauscolaireUncheckedUpdateWithoutConfigurationscolariteInput>
+}
+
+export type niveauscolaireUpdateWithoutConfigurationscolariteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUpdateManyWithoutNiveauscolaireNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutNiveauscolaireNestedInput
+}
+
+export type niveauscolaireUncheckedUpdateWithoutConfigurationscolariteInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUncheckedUpdateManyWithoutNiveauscolaireNestedInput
+}
+
+export type niveauscolaireCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  classscolaire?: Prisma.classscolaireCreateNestedManyWithoutNiveauscolaireInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutNiveauscolaireInput
+}
+
+export type niveauscolaireUncheckedCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  classscolaire?: Prisma.classscolaireUncheckedCreateNestedManyWithoutNiveauscolaireInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutNiveauscolaireInput
+}
+
+export type niveauscolaireCreateOrConnectWithoutEcoleInput = {
+  where: Prisma.niveauscolaireWhereUniqueInput
+  create: Prisma.XOR<Prisma.niveauscolaireCreateWithoutEcoleInput, Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput>
+}
+
+export type niveauscolaireCreateManyEcoleInputEnvelope = {
+  data: Prisma.niveauscolaireCreateManyEcoleInput | Prisma.niveauscolaireCreateManyEcoleInput[]
   skipDuplicates?: boolean
 }
 
-export type NiveauScolaireUpsertWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.NiveauScolaireWhereUniqueInput
-  update: Prisma.XOR<Prisma.NiveauScolaireUpdateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedUpdateWithoutEcoleInput>
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedCreateWithoutEcoleInput>
+export type niveauscolaireUpsertWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.niveauscolaireWhereUniqueInput
+  update: Prisma.XOR<Prisma.niveauscolaireUpdateWithoutEcoleInput, Prisma.niveauscolaireUncheckedUpdateWithoutEcoleInput>
+  create: Prisma.XOR<Prisma.niveauscolaireCreateWithoutEcoleInput, Prisma.niveauscolaireUncheckedCreateWithoutEcoleInput>
 }
 
-export type NiveauScolaireUpdateWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.NiveauScolaireWhereUniqueInput
-  data: Prisma.XOR<Prisma.NiveauScolaireUpdateWithoutEcoleInput, Prisma.NiveauScolaireUncheckedUpdateWithoutEcoleInput>
+export type niveauscolaireUpdateWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.niveauscolaireWhereUniqueInput
+  data: Prisma.XOR<Prisma.niveauscolaireUpdateWithoutEcoleInput, Prisma.niveauscolaireUncheckedUpdateWithoutEcoleInput>
 }
 
-export type NiveauScolaireUpdateManyWithWhereWithoutEcoleInput = {
-  where: Prisma.NiveauScolaireScalarWhereInput
-  data: Prisma.XOR<Prisma.NiveauScolaireUpdateManyMutationInput, Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleInput>
+export type niveauscolaireUpdateManyWithWhereWithoutEcoleInput = {
+  where: Prisma.niveauscolaireScalarWhereInput
+  data: Prisma.XOR<Prisma.niveauscolaireUpdateManyMutationInput, Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleInput>
 }
 
-export type NiveauScolaireScalarWhereInput = {
-  AND?: Prisma.NiveauScolaireScalarWhereInput | Prisma.NiveauScolaireScalarWhereInput[]
-  OR?: Prisma.NiveauScolaireScalarWhereInput[]
-  NOT?: Prisma.NiveauScolaireScalarWhereInput | Prisma.NiveauScolaireScalarWhereInput[]
-  id?: Prisma.StringFilter<"NiveauScolaire"> | string
-  ecoleId?: Prisma.StringFilter<"NiveauScolaire"> | string
-  nom?: Prisma.StringFilter<"NiveauScolaire"> | string
-  createdAt?: Prisma.DateTimeFilter<"NiveauScolaire"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"NiveauScolaire"> | Date | string
+export type niveauscolaireScalarWhereInput = {
+  AND?: Prisma.niveauscolaireScalarWhereInput | Prisma.niveauscolaireScalarWhereInput[]
+  OR?: Prisma.niveauscolaireScalarWhereInput[]
+  NOT?: Prisma.niveauscolaireScalarWhereInput | Prisma.niveauscolaireScalarWhereInput[]
+  id?: Prisma.StringFilter<"niveauscolaire"> | string
+  ecoleId?: Prisma.StringFilter<"niveauscolaire"> | string
+  nom?: Prisma.StringFilter<"niveauscolaire"> | string
+  createdAt?: Prisma.DateTimeFilter<"niveauscolaire"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"niveauscolaire"> | Date | string
 }
 
-export type NiveauScolaireCreateWithoutClasseScolaireInput = {
-  id?: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutNiveauxScolairesInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutNiveauScolaireInput
-}
-
-export type NiveauScolaireUncheckedCreateWithoutClasseScolaireInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutNiveauScolaireInput
-}
-
-export type NiveauScolaireCreateOrConnectWithoutClasseScolaireInput = {
-  where: Prisma.NiveauScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutClasseScolaireInput, Prisma.NiveauScolaireUncheckedCreateWithoutClasseScolaireInput>
-}
-
-export type NiveauScolaireUpsertWithoutClasseScolaireInput = {
-  update: Prisma.XOR<Prisma.NiveauScolaireUpdateWithoutClasseScolaireInput, Prisma.NiveauScolaireUncheckedUpdateWithoutClasseScolaireInput>
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutClasseScolaireInput, Prisma.NiveauScolaireUncheckedCreateWithoutClasseScolaireInput>
-  where?: Prisma.NiveauScolaireWhereInput
-}
-
-export type NiveauScolaireUpdateToOneWithWhereWithoutClasseScolaireInput = {
-  where?: Prisma.NiveauScolaireWhereInput
-  data: Prisma.XOR<Prisma.NiveauScolaireUpdateWithoutClasseScolaireInput, Prisma.NiveauScolaireUncheckedUpdateWithoutClasseScolaireInput>
-}
-
-export type NiveauScolaireUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutNiveauxScolairesNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutNiveauScolaireNestedInput
-}
-
-export type NiveauScolaireUncheckedUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireNestedInput
-}
-
-export type NiveauScolaireCreateWithoutConfigScolariteInput = {
-  id?: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutNiveauxScolairesInput
-  classeScolaire?: Prisma.ClassScolaireCreateNestedManyWithoutNiveauScolaireInput
-}
-
-export type NiveauScolaireUncheckedCreateWithoutConfigScolariteInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedCreateNestedManyWithoutNiveauScolaireInput
-}
-
-export type NiveauScolaireCreateOrConnectWithoutConfigScolariteInput = {
-  where: Prisma.NiveauScolaireWhereUniqueInput
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutConfigScolariteInput, Prisma.NiveauScolaireUncheckedCreateWithoutConfigScolariteInput>
-}
-
-export type NiveauScolaireUpsertWithoutConfigScolariteInput = {
-  update: Prisma.XOR<Prisma.NiveauScolaireUpdateWithoutConfigScolariteInput, Prisma.NiveauScolaireUncheckedUpdateWithoutConfigScolariteInput>
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateWithoutConfigScolariteInput, Prisma.NiveauScolaireUncheckedCreateWithoutConfigScolariteInput>
-  where?: Prisma.NiveauScolaireWhereInput
-}
-
-export type NiveauScolaireUpdateToOneWithWhereWithoutConfigScolariteInput = {
-  where?: Prisma.NiveauScolaireWhereInput
-  data: Prisma.XOR<Prisma.NiveauScolaireUpdateWithoutConfigScolariteInput, Prisma.NiveauScolaireUncheckedUpdateWithoutConfigScolariteInput>
-}
-
-export type NiveauScolaireUpdateWithoutConfigScolariteInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutNiveauxScolairesNestedInput
-  classeScolaire?: Prisma.ClassScolaireUpdateManyWithoutNiveauScolaireNestedInput
-}
-
-export type NiveauScolaireUncheckedUpdateWithoutConfigScolariteInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedUpdateManyWithoutNiveauScolaireNestedInput
-}
-
-export type NiveauScolaireCreateManyEcoleInput = {
+export type niveauscolaireCreateManyEcoleInput = {
   id?: string
   nom: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type NiveauScolaireUpdateWithoutEcoleInput = {
+export type niveauscolaireUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUpdateManyWithoutNiveauScolaireNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutNiveauScolaireNestedInput
+  classscolaire?: Prisma.classscolaireUpdateManyWithoutNiveauscolaireNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutNiveauscolaireNestedInput
 }
 
-export type NiveauScolaireUncheckedUpdateWithoutEcoleInput = {
+export type niveauscolaireUncheckedUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUncheckedUpdateManyWithoutNiveauScolaireNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutNiveauScolaireNestedInput
+  classscolaire?: Prisma.classscolaireUncheckedUpdateManyWithoutNiveauscolaireNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutNiveauscolaireNestedInput
 }
 
-export type NiveauScolaireUncheckedUpdateManyWithoutEcoleInput = {
+export type niveauscolaireUncheckedUpdateManyWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -612,59 +612,59 @@ export type NiveauScolaireUncheckedUpdateManyWithoutEcoleInput = {
 
 
 /**
- * Count Type NiveauScolaireCountOutputType
+ * Count Type NiveauscolaireCountOutputType
  */
 
-export type NiveauScolaireCountOutputType = {
-  classeScolaire: number
-  configScolarite: number
+export type NiveauscolaireCountOutputType = {
+  classscolaire: number
+  configurationscolarite: number
 }
 
-export type NiveauScolaireCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  classeScolaire?: boolean | NiveauScolaireCountOutputTypeCountClasseScolaireArgs
-  configScolarite?: boolean | NiveauScolaireCountOutputTypeCountConfigScolariteArgs
+export type NiveauscolaireCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classscolaire?: boolean | NiveauscolaireCountOutputTypeCountClassscolaireArgs
+  configurationscolarite?: boolean | NiveauscolaireCountOutputTypeCountConfigurationscolariteArgs
 }
 
 /**
- * NiveauScolaireCountOutputType without action
+ * NiveauscolaireCountOutputType without action
  */
-export type NiveauScolaireCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type NiveauscolaireCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaireCountOutputType
+   * Select specific fields to fetch from the NiveauscolaireCountOutputType
    */
-  select?: Prisma.NiveauScolaireCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.NiveauscolaireCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * NiveauScolaireCountOutputType without action
+ * NiveauscolaireCountOutputType without action
  */
-export type NiveauScolaireCountOutputTypeCountClasseScolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ClassScolaireWhereInput
+export type NiveauscolaireCountOutputTypeCountClassscolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.classscolaireWhereInput
 }
 
 /**
- * NiveauScolaireCountOutputType without action
+ * NiveauscolaireCountOutputType without action
  */
-export type NiveauScolaireCountOutputTypeCountConfigScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConfigurationScolariteWhereInput
+export type NiveauscolaireCountOutputTypeCountConfigurationscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.configurationscolariteWhereInput
 }
 
 
-export type NiveauScolaireSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type niveauscolaireSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   ecoleId?: boolean
   nom?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.NiveauScolaire$classeScolaireArgs<ExtArgs>
-  configScolarite?: boolean | Prisma.NiveauScolaire$configScolariteArgs<ExtArgs>
-  _count?: boolean | Prisma.NiveauScolaireCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["niveauScolaire"]>
+  classscolaire?: boolean | Prisma.niveauscolaire$classscolaireArgs<ExtArgs>
+  configurationscolarite?: boolean | Prisma.niveauscolaire$configurationscolariteArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  _count?: boolean | Prisma.NiveauscolaireCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["niveauscolaire"]>
 
 
 
-export type NiveauScolaireSelectScalar = {
+export type niveauscolaireSelectScalar = {
   id?: boolean
   ecoleId?: boolean
   nom?: boolean
@@ -672,20 +672,20 @@ export type NiveauScolaireSelectScalar = {
   updatedAt?: boolean
 }
 
-export type NiveauScolaireOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "nom" | "createdAt" | "updatedAt", ExtArgs["result"]["niveauScolaire"]>
-export type NiveauScolaireInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  classeScolaire?: boolean | Prisma.NiveauScolaire$classeScolaireArgs<ExtArgs>
-  configScolarite?: boolean | Prisma.NiveauScolaire$configScolariteArgs<ExtArgs>
-  _count?: boolean | Prisma.NiveauScolaireCountOutputTypeDefaultArgs<ExtArgs>
+export type niveauscolaireOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "nom" | "createdAt" | "updatedAt", ExtArgs["result"]["niveauscolaire"]>
+export type niveauscolaireInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classscolaire?: boolean | Prisma.niveauscolaire$classscolaireArgs<ExtArgs>
+  configurationscolarite?: boolean | Prisma.niveauscolaire$configurationscolariteArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  _count?: boolean | Prisma.NiveauscolaireCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $NiveauScolairePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "NiveauScolaire"
+export type $niveauscolairePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "niveauscolaire"
   objects: {
-    ecole: Prisma.$EcolePayload<ExtArgs>
-    classeScolaire: Prisma.$ClassScolairePayload<ExtArgs>[]
-    configScolarite: Prisma.$ConfigurationScolaritePayload<ExtArgs>[]
+    classscolaire: Prisma.$classscolairePayload<ExtArgs>[]
+    configurationscolarite: Prisma.$configurationscolaritePayload<ExtArgs>[]
+    ecole: Prisma.$ecolePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -693,143 +693,143 @@ export type $NiveauScolairePayload<ExtArgs extends runtime.Types.Extensions.Inte
     nom: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["niveauScolaire"]>
+  }, ExtArgs["result"]["niveauscolaire"]>
   composites: {}
 }
 
-export type NiveauScolaireGetPayload<S extends boolean | null | undefined | NiveauScolaireDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload, S>
+export type niveauscolaireGetPayload<S extends boolean | null | undefined | niveauscolaireDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload, S>
 
-export type NiveauScolaireCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<NiveauScolaireFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: NiveauScolaireCountAggregateInputType | true
+export type niveauscolaireCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<niveauscolaireFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: NiveauscolaireCountAggregateInputType | true
   }
 
-export interface NiveauScolaireDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['NiveauScolaire'], meta: { name: 'NiveauScolaire' } }
+export interface niveauscolaireDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['niveauscolaire'], meta: { name: 'niveauscolaire' } }
   /**
-   * Find zero or one NiveauScolaire that matches the filter.
-   * @param {NiveauScolaireFindUniqueArgs} args - Arguments to find a NiveauScolaire
+   * Find zero or one Niveauscolaire that matches the filter.
+   * @param {niveauscolaireFindUniqueArgs} args - Arguments to find a Niveauscolaire
    * @example
-   * // Get one NiveauScolaire
-   * const niveauScolaire = await prisma.niveauScolaire.findUnique({
+   * // Get one Niveauscolaire
+   * const niveauscolaire = await prisma.niveauscolaire.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends NiveauScolaireFindUniqueArgs>(args: Prisma.SelectSubset<T, NiveauScolaireFindUniqueArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends niveauscolaireFindUniqueArgs>(args: Prisma.SelectSubset<T, niveauscolaireFindUniqueArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one NiveauScolaire that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Niveauscolaire that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {NiveauScolaireFindUniqueOrThrowArgs} args - Arguments to find a NiveauScolaire
+   * @param {niveauscolaireFindUniqueOrThrowArgs} args - Arguments to find a Niveauscolaire
    * @example
-   * // Get one NiveauScolaire
-   * const niveauScolaire = await prisma.niveauScolaire.findUniqueOrThrow({
+   * // Get one Niveauscolaire
+   * const niveauscolaire = await prisma.niveauscolaire.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends NiveauScolaireFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, NiveauScolaireFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends niveauscolaireFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, niveauscolaireFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first NiveauScolaire that matches the filter.
+   * Find the first Niveauscolaire that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireFindFirstArgs} args - Arguments to find a NiveauScolaire
+   * @param {niveauscolaireFindFirstArgs} args - Arguments to find a Niveauscolaire
    * @example
-   * // Get one NiveauScolaire
-   * const niveauScolaire = await prisma.niveauScolaire.findFirst({
+   * // Get one Niveauscolaire
+   * const niveauscolaire = await prisma.niveauscolaire.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends NiveauScolaireFindFirstArgs>(args?: Prisma.SelectSubset<T, NiveauScolaireFindFirstArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends niveauscolaireFindFirstArgs>(args?: Prisma.SelectSubset<T, niveauscolaireFindFirstArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first NiveauScolaire that matches the filter or
+   * Find the first Niveauscolaire that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireFindFirstOrThrowArgs} args - Arguments to find a NiveauScolaire
+   * @param {niveauscolaireFindFirstOrThrowArgs} args - Arguments to find a Niveauscolaire
    * @example
-   * // Get one NiveauScolaire
-   * const niveauScolaire = await prisma.niveauScolaire.findFirstOrThrow({
+   * // Get one Niveauscolaire
+   * const niveauscolaire = await prisma.niveauscolaire.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends NiveauScolaireFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, NiveauScolaireFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends niveauscolaireFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, niveauscolaireFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more NiveauScolaires that matches the filter.
+   * Find zero or more Niveauscolaires that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {niveauscolaireFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all NiveauScolaires
-   * const niveauScolaires = await prisma.niveauScolaire.findMany()
+   * // Get all Niveauscolaires
+   * const niveauscolaires = await prisma.niveauscolaire.findMany()
    * 
-   * // Get first 10 NiveauScolaires
-   * const niveauScolaires = await prisma.niveauScolaire.findMany({ take: 10 })
+   * // Get first 10 Niveauscolaires
+   * const niveauscolaires = await prisma.niveauscolaire.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const niveauScolaireWithIdOnly = await prisma.niveauScolaire.findMany({ select: { id: true } })
+   * const niveauscolaireWithIdOnly = await prisma.niveauscolaire.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends NiveauScolaireFindManyArgs>(args?: Prisma.SelectSubset<T, NiveauScolaireFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends niveauscolaireFindManyArgs>(args?: Prisma.SelectSubset<T, niveauscolaireFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a NiveauScolaire.
-   * @param {NiveauScolaireCreateArgs} args - Arguments to create a NiveauScolaire.
+   * Create a Niveauscolaire.
+   * @param {niveauscolaireCreateArgs} args - Arguments to create a Niveauscolaire.
    * @example
-   * // Create one NiveauScolaire
-   * const NiveauScolaire = await prisma.niveauScolaire.create({
+   * // Create one Niveauscolaire
+   * const Niveauscolaire = await prisma.niveauscolaire.create({
    *   data: {
-   *     // ... data to create a NiveauScolaire
+   *     // ... data to create a Niveauscolaire
    *   }
    * })
    * 
    */
-  create<T extends NiveauScolaireCreateArgs>(args: Prisma.SelectSubset<T, NiveauScolaireCreateArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends niveauscolaireCreateArgs>(args: Prisma.SelectSubset<T, niveauscolaireCreateArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many NiveauScolaires.
-   * @param {NiveauScolaireCreateManyArgs} args - Arguments to create many NiveauScolaires.
+   * Create many Niveauscolaires.
+   * @param {niveauscolaireCreateManyArgs} args - Arguments to create many Niveauscolaires.
    * @example
-   * // Create many NiveauScolaires
-   * const niveauScolaire = await prisma.niveauScolaire.createMany({
+   * // Create many Niveauscolaires
+   * const niveauscolaire = await prisma.niveauscolaire.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends NiveauScolaireCreateManyArgs>(args?: Prisma.SelectSubset<T, NiveauScolaireCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends niveauscolaireCreateManyArgs>(args?: Prisma.SelectSubset<T, niveauscolaireCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a NiveauScolaire.
-   * @param {NiveauScolaireDeleteArgs} args - Arguments to delete one NiveauScolaire.
+   * Delete a Niveauscolaire.
+   * @param {niveauscolaireDeleteArgs} args - Arguments to delete one Niveauscolaire.
    * @example
-   * // Delete one NiveauScolaire
-   * const NiveauScolaire = await prisma.niveauScolaire.delete({
+   * // Delete one Niveauscolaire
+   * const Niveauscolaire = await prisma.niveauscolaire.delete({
    *   where: {
-   *     // ... filter to delete one NiveauScolaire
+   *     // ... filter to delete one Niveauscolaire
    *   }
    * })
    * 
    */
-  delete<T extends NiveauScolaireDeleteArgs>(args: Prisma.SelectSubset<T, NiveauScolaireDeleteArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends niveauscolaireDeleteArgs>(args: Prisma.SelectSubset<T, niveauscolaireDeleteArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one NiveauScolaire.
-   * @param {NiveauScolaireUpdateArgs} args - Arguments to update one NiveauScolaire.
+   * Update one Niveauscolaire.
+   * @param {niveauscolaireUpdateArgs} args - Arguments to update one Niveauscolaire.
    * @example
-   * // Update one NiveauScolaire
-   * const niveauScolaire = await prisma.niveauScolaire.update({
+   * // Update one Niveauscolaire
+   * const niveauscolaire = await prisma.niveauscolaire.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -839,30 +839,30 @@ export interface NiveauScolaireDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  update<T extends NiveauScolaireUpdateArgs>(args: Prisma.SelectSubset<T, NiveauScolaireUpdateArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends niveauscolaireUpdateArgs>(args: Prisma.SelectSubset<T, niveauscolaireUpdateArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more NiveauScolaires.
-   * @param {NiveauScolaireDeleteManyArgs} args - Arguments to filter NiveauScolaires to delete.
+   * Delete zero or more Niveauscolaires.
+   * @param {niveauscolaireDeleteManyArgs} args - Arguments to filter Niveauscolaires to delete.
    * @example
-   * // Delete a few NiveauScolaires
-   * const { count } = await prisma.niveauScolaire.deleteMany({
+   * // Delete a few Niveauscolaires
+   * const { count } = await prisma.niveauscolaire.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends NiveauScolaireDeleteManyArgs>(args?: Prisma.SelectSubset<T, NiveauScolaireDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends niveauscolaireDeleteManyArgs>(args?: Prisma.SelectSubset<T, niveauscolaireDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more NiveauScolaires.
+   * Update zero or more Niveauscolaires.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {niveauscolaireUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many NiveauScolaires
-   * const niveauScolaire = await prisma.niveauScolaire.updateMany({
+   * // Update many Niveauscolaires
+   * const niveauscolaire = await prisma.niveauscolaire.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -872,56 +872,56 @@ export interface NiveauScolaireDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  updateMany<T extends NiveauScolaireUpdateManyArgs>(args: Prisma.SelectSubset<T, NiveauScolaireUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends niveauscolaireUpdateManyArgs>(args: Prisma.SelectSubset<T, niveauscolaireUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one NiveauScolaire.
-   * @param {NiveauScolaireUpsertArgs} args - Arguments to update or create a NiveauScolaire.
+   * Create or update one Niveauscolaire.
+   * @param {niveauscolaireUpsertArgs} args - Arguments to update or create a Niveauscolaire.
    * @example
-   * // Update or create a NiveauScolaire
-   * const niveauScolaire = await prisma.niveauScolaire.upsert({
+   * // Update or create a Niveauscolaire
+   * const niveauscolaire = await prisma.niveauscolaire.upsert({
    *   create: {
-   *     // ... data to create a NiveauScolaire
+   *     // ... data to create a Niveauscolaire
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the NiveauScolaire we want to update
+   *     // ... the filter for the Niveauscolaire we want to update
    *   }
    * })
    */
-  upsert<T extends NiveauScolaireUpsertArgs>(args: Prisma.SelectSubset<T, NiveauScolaireUpsertArgs<ExtArgs>>): Prisma.Prisma__NiveauScolaireClient<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends niveauscolaireUpsertArgs>(args: Prisma.SelectSubset<T, niveauscolaireUpsertArgs<ExtArgs>>): Prisma.Prisma__niveauscolaireClient<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of NiveauScolaires.
+   * Count the number of Niveauscolaires.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireCountArgs} args - Arguments to filter NiveauScolaires to count.
+   * @param {niveauscolaireCountArgs} args - Arguments to filter Niveauscolaires to count.
    * @example
-   * // Count the number of NiveauScolaires
-   * const count = await prisma.niveauScolaire.count({
+   * // Count the number of Niveauscolaires
+   * const count = await prisma.niveauscolaire.count({
    *   where: {
-   *     // ... the filter for the NiveauScolaires we want to count
+   *     // ... the filter for the Niveauscolaires we want to count
    *   }
    * })
   **/
-  count<T extends NiveauScolaireCountArgs>(
-    args?: Prisma.Subset<T, NiveauScolaireCountArgs>,
+  count<T extends niveauscolaireCountArgs>(
+    args?: Prisma.Subset<T, niveauscolaireCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], NiveauScolaireCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], NiveauscolaireCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a NiveauScolaire.
+   * Allows you to perform aggregations operations on a Niveauscolaire.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {NiveauscolaireAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -941,13 +941,13 @@ export interface NiveauScolaireDelegate<ExtArgs extends runtime.Types.Extensions
    *   take: 10,
    * })
   **/
-  aggregate<T extends NiveauScolaireAggregateArgs>(args: Prisma.Subset<T, NiveauScolaireAggregateArgs>): Prisma.PrismaPromise<GetNiveauScolaireAggregateType<T>>
+  aggregate<T extends NiveauscolaireAggregateArgs>(args: Prisma.Subset<T, NiveauscolaireAggregateArgs>): Prisma.PrismaPromise<GetNiveauscolaireAggregateType<T>>
 
   /**
-   * Group by NiveauScolaire.
+   * Group by Niveauscolaire.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {NiveauScolaireGroupByArgs} args - Group by arguments.
+   * @param {niveauscolaireGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -962,14 +962,14 @@ export interface NiveauScolaireDelegate<ExtArgs extends runtime.Types.Extensions
    * 
   **/
   groupBy<
-    T extends NiveauScolaireGroupByArgs,
+    T extends niveauscolaireGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: NiveauScolaireGroupByArgs['orderBy'] }
-      : { orderBy?: NiveauScolaireGroupByArgs['orderBy'] },
+      ? { orderBy: niveauscolaireGroupByArgs['orderBy'] }
+      : { orderBy?: niveauscolaireGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1018,24 +1018,24 @@ export interface NiveauScolaireDelegate<ExtArgs extends runtime.Types.Extensions
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, NiveauScolaireGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNiveauScolaireGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, niveauscolaireGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNiveauscolaireGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the NiveauScolaire model
+ * Fields of the niveauscolaire model
  */
-readonly fields: NiveauScolaireFieldRefs;
+readonly fields: niveauscolaireFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for NiveauScolaire.
+ * The delegate class that acts as a "Promise-like" for niveauscolaire.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__NiveauScolaireClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__niveauscolaireClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  ecole<T extends Prisma.EcoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EcoleDefaultArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  classeScolaire<T extends Prisma.NiveauScolaire$classeScolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.NiveauScolaire$classeScolaireArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassScolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  configScolarite<T extends Prisma.NiveauScolaire$configScolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.NiveauScolaire$configScolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  classscolaire<T extends Prisma.niveauscolaire$classscolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.niveauscolaire$classscolaireArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$classscolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  configurationscolarite<T extends Prisma.niveauscolaire$configurationscolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.niveauscolaire$configurationscolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ecole<T extends Prisma.ecoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecoleDefaultArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1062,423 +1062,423 @@ export interface Prisma__NiveauScolaireClient<T, Null = never, ExtArgs extends r
 
 
 /**
- * Fields of the NiveauScolaire model
+ * Fields of the niveauscolaire model
  */
-export interface NiveauScolaireFieldRefs {
-  readonly id: Prisma.FieldRef<"NiveauScolaire", 'String'>
-  readonly ecoleId: Prisma.FieldRef<"NiveauScolaire", 'String'>
-  readonly nom: Prisma.FieldRef<"NiveauScolaire", 'String'>
-  readonly createdAt: Prisma.FieldRef<"NiveauScolaire", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"NiveauScolaire", 'DateTime'>
+export interface niveauscolaireFieldRefs {
+  readonly id: Prisma.FieldRef<"niveauscolaire", 'String'>
+  readonly ecoleId: Prisma.FieldRef<"niveauscolaire", 'String'>
+  readonly nom: Prisma.FieldRef<"niveauscolaire", 'String'>
+  readonly createdAt: Prisma.FieldRef<"niveauscolaire", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"niveauscolaire", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * NiveauScolaire findUnique
+ * niveauscolaire findUnique
  */
-export type NiveauScolaireFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * Filter, which NiveauScolaire to fetch.
+   * Filter, which niveauscolaire to fetch.
    */
-  where: Prisma.NiveauScolaireWhereUniqueInput
+  where: Prisma.niveauscolaireWhereUniqueInput
 }
 
 /**
- * NiveauScolaire findUniqueOrThrow
+ * niveauscolaire findUniqueOrThrow
  */
-export type NiveauScolaireFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * Filter, which NiveauScolaire to fetch.
+   * Filter, which niveauscolaire to fetch.
    */
-  where: Prisma.NiveauScolaireWhereUniqueInput
+  where: Prisma.niveauscolaireWhereUniqueInput
 }
 
 /**
- * NiveauScolaire findFirst
+ * niveauscolaire findFirst
  */
-export type NiveauScolaireFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * Filter, which NiveauScolaire to fetch.
+   * Filter, which niveauscolaire to fetch.
    */
-  where?: Prisma.NiveauScolaireWhereInput
+  where?: Prisma.niveauscolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of NiveauScolaires to fetch.
+   * Determine the order of niveauscolaires to fetch.
    */
-  orderBy?: Prisma.NiveauScolaireOrderByWithRelationInput | Prisma.NiveauScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.niveauscolaireOrderByWithRelationInput | Prisma.niveauscolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for NiveauScolaires.
+   * Sets the position for searching for niveauscolaires.
    */
-  cursor?: Prisma.NiveauScolaireWhereUniqueInput
+  cursor?: Prisma.niveauscolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` NiveauScolaires from the position of the cursor.
+   * Take `±n` niveauscolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` NiveauScolaires.
+   * Skip the first `n` niveauscolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of NiveauScolaires.
+   * Filter by unique combinations of niveauscolaires.
    */
-  distinct?: Prisma.NiveauScolaireScalarFieldEnum | Prisma.NiveauScolaireScalarFieldEnum[]
+  distinct?: Prisma.NiveauscolaireScalarFieldEnum | Prisma.NiveauscolaireScalarFieldEnum[]
 }
 
 /**
- * NiveauScolaire findFirstOrThrow
+ * niveauscolaire findFirstOrThrow
  */
-export type NiveauScolaireFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * Filter, which NiveauScolaire to fetch.
+   * Filter, which niveauscolaire to fetch.
    */
-  where?: Prisma.NiveauScolaireWhereInput
+  where?: Prisma.niveauscolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of NiveauScolaires to fetch.
+   * Determine the order of niveauscolaires to fetch.
    */
-  orderBy?: Prisma.NiveauScolaireOrderByWithRelationInput | Prisma.NiveauScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.niveauscolaireOrderByWithRelationInput | Prisma.niveauscolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for NiveauScolaires.
+   * Sets the position for searching for niveauscolaires.
    */
-  cursor?: Prisma.NiveauScolaireWhereUniqueInput
+  cursor?: Prisma.niveauscolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` NiveauScolaires from the position of the cursor.
+   * Take `±n` niveauscolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` NiveauScolaires.
+   * Skip the first `n` niveauscolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of NiveauScolaires.
+   * Filter by unique combinations of niveauscolaires.
    */
-  distinct?: Prisma.NiveauScolaireScalarFieldEnum | Prisma.NiveauScolaireScalarFieldEnum[]
+  distinct?: Prisma.NiveauscolaireScalarFieldEnum | Prisma.NiveauscolaireScalarFieldEnum[]
 }
 
 /**
- * NiveauScolaire findMany
+ * niveauscolaire findMany
  */
-export type NiveauScolaireFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * Filter, which NiveauScolaires to fetch.
+   * Filter, which niveauscolaires to fetch.
    */
-  where?: Prisma.NiveauScolaireWhereInput
+  where?: Prisma.niveauscolaireWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of NiveauScolaires to fetch.
+   * Determine the order of niveauscolaires to fetch.
    */
-  orderBy?: Prisma.NiveauScolaireOrderByWithRelationInput | Prisma.NiveauScolaireOrderByWithRelationInput[]
+  orderBy?: Prisma.niveauscolaireOrderByWithRelationInput | Prisma.niveauscolaireOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing NiveauScolaires.
+   * Sets the position for listing niveauscolaires.
    */
-  cursor?: Prisma.NiveauScolaireWhereUniqueInput
+  cursor?: Prisma.niveauscolaireWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` NiveauScolaires from the position of the cursor.
+   * Take `±n` niveauscolaires from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` NiveauScolaires.
+   * Skip the first `n` niveauscolaires.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of NiveauScolaires.
+   * Filter by unique combinations of niveauscolaires.
    */
-  distinct?: Prisma.NiveauScolaireScalarFieldEnum | Prisma.NiveauScolaireScalarFieldEnum[]
+  distinct?: Prisma.NiveauscolaireScalarFieldEnum | Prisma.NiveauscolaireScalarFieldEnum[]
 }
 
 /**
- * NiveauScolaire create
+ * niveauscolaire create
  */
-export type NiveauScolaireCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * The data needed to create a NiveauScolaire.
+   * The data needed to create a niveauscolaire.
    */
-  data: Prisma.XOR<Prisma.NiveauScolaireCreateInput, Prisma.NiveauScolaireUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.niveauscolaireCreateInput, Prisma.niveauscolaireUncheckedCreateInput>
 }
 
 /**
- * NiveauScolaire createMany
+ * niveauscolaire createMany
  */
-export type NiveauScolaireCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many NiveauScolaires.
+   * The data used to create many niveauscolaires.
    */
-  data: Prisma.NiveauScolaireCreateManyInput | Prisma.NiveauScolaireCreateManyInput[]
+  data: Prisma.niveauscolaireCreateManyInput | Prisma.niveauscolaireCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * NiveauScolaire update
+ * niveauscolaire update
  */
-export type NiveauScolaireUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * The data needed to update a NiveauScolaire.
+   * The data needed to update a niveauscolaire.
    */
-  data: Prisma.XOR<Prisma.NiveauScolaireUpdateInput, Prisma.NiveauScolaireUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.niveauscolaireUpdateInput, Prisma.niveauscolaireUncheckedUpdateInput>
   /**
-   * Choose, which NiveauScolaire to update.
+   * Choose, which niveauscolaire to update.
    */
-  where: Prisma.NiveauScolaireWhereUniqueInput
+  where: Prisma.niveauscolaireWhereUniqueInput
 }
 
 /**
- * NiveauScolaire updateMany
+ * niveauscolaire updateMany
  */
-export type NiveauScolaireUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update NiveauScolaires.
+   * The data used to update niveauscolaires.
    */
-  data: Prisma.XOR<Prisma.NiveauScolaireUpdateManyMutationInput, Prisma.NiveauScolaireUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.niveauscolaireUpdateManyMutationInput, Prisma.niveauscolaireUncheckedUpdateManyInput>
   /**
-   * Filter which NiveauScolaires to update
+   * Filter which niveauscolaires to update
    */
-  where?: Prisma.NiveauScolaireWhereInput
+  where?: Prisma.niveauscolaireWhereInput
   /**
-   * Limit how many NiveauScolaires to update.
+   * Limit how many niveauscolaires to update.
    */
   limit?: number
 }
 
 /**
- * NiveauScolaire upsert
+ * niveauscolaire upsert
  */
-export type NiveauScolaireUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * The filter to search for the NiveauScolaire to update in case it exists.
+   * The filter to search for the niveauscolaire to update in case it exists.
    */
-  where: Prisma.NiveauScolaireWhereUniqueInput
+  where: Prisma.niveauscolaireWhereUniqueInput
   /**
-   * In case the NiveauScolaire found by the `where` argument doesn't exist, create a new NiveauScolaire with this data.
+   * In case the niveauscolaire found by the `where` argument doesn't exist, create a new niveauscolaire with this data.
    */
-  create: Prisma.XOR<Prisma.NiveauScolaireCreateInput, Prisma.NiveauScolaireUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.niveauscolaireCreateInput, Prisma.niveauscolaireUncheckedCreateInput>
   /**
-   * In case the NiveauScolaire was found with the provided `where` argument, update it with this data.
+   * In case the niveauscolaire was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.NiveauScolaireUpdateInput, Prisma.NiveauScolaireUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.niveauscolaireUpdateInput, Prisma.niveauscolaireUncheckedUpdateInput>
 }
 
 /**
- * NiveauScolaire delete
+ * niveauscolaire delete
  */
-export type NiveauScolaireDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
   /**
-   * Filter which NiveauScolaire to delete.
+   * Filter which niveauscolaire to delete.
    */
-  where: Prisma.NiveauScolaireWhereUniqueInput
+  where: Prisma.niveauscolaireWhereUniqueInput
 }
 
 /**
- * NiveauScolaire deleteMany
+ * niveauscolaire deleteMany
  */
-export type NiveauScolaireDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which NiveauScolaires to delete
+   * Filter which niveauscolaires to delete
    */
-  where?: Prisma.NiveauScolaireWhereInput
+  where?: Prisma.niveauscolaireWhereInput
   /**
-   * Limit how many NiveauScolaires to delete.
+   * Limit how many niveauscolaires to delete.
    */
   limit?: number
 }
 
 /**
- * NiveauScolaire.classeScolaire
+ * niveauscolaire.classscolaire
  */
-export type NiveauScolaire$classeScolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaire$classscolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClassScolaire
+   * Select specific fields to fetch from the classscolaire
    */
-  select?: Prisma.ClassScolaireSelect<ExtArgs> | null
+  select?: Prisma.classscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClassScolaire
+   * Omit specific fields from the classscolaire
    */
-  omit?: Prisma.ClassScolaireOmit<ExtArgs> | null
+  omit?: Prisma.classscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClassScolaireInclude<ExtArgs> | null
-  where?: Prisma.ClassScolaireWhereInput
-  orderBy?: Prisma.ClassScolaireOrderByWithRelationInput | Prisma.ClassScolaireOrderByWithRelationInput[]
-  cursor?: Prisma.ClassScolaireWhereUniqueInput
+  include?: Prisma.classscolaireInclude<ExtArgs> | null
+  where?: Prisma.classscolaireWhereInput
+  orderBy?: Prisma.classscolaireOrderByWithRelationInput | Prisma.classscolaireOrderByWithRelationInput[]
+  cursor?: Prisma.classscolaireWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ClassScolaireScalarFieldEnum | Prisma.ClassScolaireScalarFieldEnum[]
+  distinct?: Prisma.ClassscolaireScalarFieldEnum | Prisma.ClassscolaireScalarFieldEnum[]
 }
 
 /**
- * NiveauScolaire.configScolarite
+ * niveauscolaire.configurationscolarite
  */
-export type NiveauScolaire$configScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaire$configurationscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
-  where?: Prisma.ConfigurationScolariteWhereInput
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithRelationInput | Prisma.ConfigurationScolariteOrderByWithRelationInput[]
-  cursor?: Prisma.ConfigurationScolariteWhereUniqueInput
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
+  where?: Prisma.configurationscolariteWhereInput
+  orderBy?: Prisma.configurationscolariteOrderByWithRelationInput | Prisma.configurationscolariteOrderByWithRelationInput[]
+  cursor?: Prisma.configurationscolariteWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ConfigurationScolariteScalarFieldEnum | Prisma.ConfigurationScolariteScalarFieldEnum[]
+  distinct?: Prisma.ConfigurationscolariteScalarFieldEnum | Prisma.ConfigurationscolariteScalarFieldEnum[]
 }
 
 /**
- * NiveauScolaire without action
+ * niveauscolaire without action
  */
-export type NiveauScolaireDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type niveauscolaireDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NiveauScolaire
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NiveauScolaire
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
 }

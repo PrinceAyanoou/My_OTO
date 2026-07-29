@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Matiere` model and its related types.
+ * This file exports the `matiere` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Matiere
+ * Model matiere
  * 
  */
-export type MatiereModel = runtime.Types.Result.DefaultSelection<Prisma.$MatierePayload>
+export type matiereModel = runtime.Types.Result.DefaultSelection<Prisma.$matierePayload>
 
 export type AggregateMatiere = {
   _count: MatiereCountAggregateOutputType | null
@@ -89,37 +89,37 @@ export type MatiereCountAggregateInputType = {
 
 export type MatiereAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Matiere to aggregate.
+   * Filter which matiere to aggregate.
    */
-  where?: Prisma.MatiereWhereInput
+  where?: Prisma.matiereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Matieres to fetch.
+   * Determine the order of matieres to fetch.
    */
-  orderBy?: Prisma.MatiereOrderByWithRelationInput | Prisma.MatiereOrderByWithRelationInput[]
+  orderBy?: Prisma.matiereOrderByWithRelationInput | Prisma.matiereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.MatiereWhereUniqueInput
+  cursor?: Prisma.matiereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Matieres from the position of the cursor.
+   * Take `±n` matieres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Matieres.
+   * Skip the first `n` matieres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Matieres
+   * Count returned matieres
   **/
   _count?: true | MatiereCountAggregateInputType
   /**
@@ -147,11 +147,11 @@ export type GetMatiereAggregateType<T extends MatiereAggregateArgs> = {
 
 
 
-export type MatiereGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MatiereWhereInput
-  orderBy?: Prisma.MatiereOrderByWithAggregationInput | Prisma.MatiereOrderByWithAggregationInput[]
+export type matiereGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.matiereWhereInput
+  orderBy?: Prisma.matiereOrderByWithAggregationInput | Prisma.matiereOrderByWithAggregationInput[]
   by: Prisma.MatiereScalarFieldEnum[] | Prisma.MatiereScalarFieldEnum
-  having?: Prisma.MatiereScalarWhereWithAggregatesInput
+  having?: Prisma.matiereScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: MatiereCountAggregateInputType | true
@@ -172,7 +172,7 @@ export type MatiereGroupByOutputType = {
   _max: MatiereMaxAggregateOutputType | null
 }
 
-export type GetMatiereGroupByPayload<T extends MatiereGroupByArgs> = Prisma.PrismaPromise<
+export type GetMatiereGroupByPayload<T extends matiereGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<MatiereGroupByOutputType, T['by']> &
       {
@@ -187,25 +187,25 @@ export type GetMatiereGroupByPayload<T extends MatiereGroupByArgs> = Prisma.Pris
 
 
 
-export type MatiereWhereInput = {
-  AND?: Prisma.MatiereWhereInput | Prisma.MatiereWhereInput[]
-  OR?: Prisma.MatiereWhereInput[]
-  NOT?: Prisma.MatiereWhereInput | Prisma.MatiereWhereInput[]
-  id?: Prisma.StringFilter<"Matiere"> | string
-  ecoleId?: Prisma.StringFilter<"Matiere"> | string
-  nom?: Prisma.StringFilter<"Matiere"> | string
-  CodeMat?: Prisma.StringFilter<"Matiere"> | string
-  description?: Prisma.StringNullableFilter<"Matiere"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"Matiere"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Matiere"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  affectationEnseignant?: Prisma.AffectationEnseignantListRelationFilter
-  matiereUe?: Prisma.MatiereUeListRelationFilter
-  classeMatiere?: Prisma.ClasseMatirereListRelationFilter
-  ligneBulletin?: Prisma.LigneBulletinListRelationFilter
+export type matiereWhereInput = {
+  AND?: Prisma.matiereWhereInput | Prisma.matiereWhereInput[]
+  OR?: Prisma.matiereWhereInput[]
+  NOT?: Prisma.matiereWhereInput | Prisma.matiereWhereInput[]
+  id?: Prisma.StringFilter<"matiere"> | string
+  ecoleId?: Prisma.StringFilter<"matiere"> | string
+  nom?: Prisma.StringFilter<"matiere"> | string
+  CodeMat?: Prisma.StringFilter<"matiere"> | string
+  description?: Prisma.StringNullableFilter<"matiere"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"matiere"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"matiere"> | Date | string
+  affectationenseignant?: Prisma.AffectationenseignantListRelationFilter
+  classematirere?: Prisma.ClassematirereListRelationFilter
+  lignebulletin?: Prisma.LignebulletinListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
+  matiereue?: Prisma.MatiereueListRelationFilter
 }
 
-export type MatiereOrderByWithRelationInput = {
+export type matiereOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -213,34 +213,34 @@ export type MatiereOrderByWithRelationInput = {
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  ecole?: Prisma.EcoleOrderByWithRelationInput
-  affectationEnseignant?: Prisma.AffectationEnseignantOrderByRelationAggregateInput
-  matiereUe?: Prisma.MatiereUeOrderByRelationAggregateInput
-  classeMatiere?: Prisma.ClasseMatirereOrderByRelationAggregateInput
-  ligneBulletin?: Prisma.LigneBulletinOrderByRelationAggregateInput
-  _relevance?: Prisma.MatiereOrderByRelevanceInput
+  affectationenseignant?: Prisma.affectationenseignantOrderByRelationAggregateInput
+  classematirere?: Prisma.classematirereOrderByRelationAggregateInput
+  lignebulletin?: Prisma.lignebulletinOrderByRelationAggregateInput
+  ecole?: Prisma.ecoleOrderByWithRelationInput
+  matiereue?: Prisma.matiereueOrderByRelationAggregateInput
+  _relevance?: Prisma.matiereOrderByRelevanceInput
 }
 
-export type MatiereWhereUniqueInput = Prisma.AtLeast<{
+export type matiereWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  nom_ecoleId?: Prisma.MatiereNomEcoleIdCompoundUniqueInput
-  AND?: Prisma.MatiereWhereInput | Prisma.MatiereWhereInput[]
-  OR?: Prisma.MatiereWhereInput[]
-  NOT?: Prisma.MatiereWhereInput | Prisma.MatiereWhereInput[]
-  ecoleId?: Prisma.StringFilter<"Matiere"> | string
-  nom?: Prisma.StringFilter<"Matiere"> | string
-  CodeMat?: Prisma.StringFilter<"Matiere"> | string
-  description?: Prisma.StringNullableFilter<"Matiere"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"Matiere"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Matiere"> | Date | string
-  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.EcoleWhereInput>
-  affectationEnseignant?: Prisma.AffectationEnseignantListRelationFilter
-  matiereUe?: Prisma.MatiereUeListRelationFilter
-  classeMatiere?: Prisma.ClasseMatirereListRelationFilter
-  ligneBulletin?: Prisma.LigneBulletinListRelationFilter
+  nom_ecoleId?: Prisma.matiereNomEcoleIdCompoundUniqueInput
+  AND?: Prisma.matiereWhereInput | Prisma.matiereWhereInput[]
+  OR?: Prisma.matiereWhereInput[]
+  NOT?: Prisma.matiereWhereInput | Prisma.matiereWhereInput[]
+  ecoleId?: Prisma.StringFilter<"matiere"> | string
+  nom?: Prisma.StringFilter<"matiere"> | string
+  CodeMat?: Prisma.StringFilter<"matiere"> | string
+  description?: Prisma.StringNullableFilter<"matiere"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"matiere"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"matiere"> | Date | string
+  affectationenseignant?: Prisma.AffectationenseignantListRelationFilter
+  classematirere?: Prisma.ClassematirereListRelationFilter
+  lignebulletin?: Prisma.LignebulletinListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
+  matiereue?: Prisma.MatiereueListRelationFilter
 }, "id" | "nom_ecoleId">
 
-export type MatiereOrderByWithAggregationInput = {
+export type matiereOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -248,81 +248,39 @@ export type MatiereOrderByWithAggregationInput = {
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.MatiereCountOrderByAggregateInput
-  _max?: Prisma.MatiereMaxOrderByAggregateInput
-  _min?: Prisma.MatiereMinOrderByAggregateInput
+  _count?: Prisma.matiereCountOrderByAggregateInput
+  _max?: Prisma.matiereMaxOrderByAggregateInput
+  _min?: Prisma.matiereMinOrderByAggregateInput
 }
 
-export type MatiereScalarWhereWithAggregatesInput = {
-  AND?: Prisma.MatiereScalarWhereWithAggregatesInput | Prisma.MatiereScalarWhereWithAggregatesInput[]
-  OR?: Prisma.MatiereScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.MatiereScalarWhereWithAggregatesInput | Prisma.MatiereScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Matiere"> | string
-  ecoleId?: Prisma.StringWithAggregatesFilter<"Matiere"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"Matiere"> | string
-  CodeMat?: Prisma.StringWithAggregatesFilter<"Matiere"> | string
-  description?: Prisma.StringNullableWithAggregatesFilter<"Matiere"> | string | null
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Matiere"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Matiere"> | Date | string
+export type matiereScalarWhereWithAggregatesInput = {
+  AND?: Prisma.matiereScalarWhereWithAggregatesInput | Prisma.matiereScalarWhereWithAggregatesInput[]
+  OR?: Prisma.matiereScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.matiereScalarWhereWithAggregatesInput | Prisma.matiereScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"matiere"> | string
+  ecoleId?: Prisma.StringWithAggregatesFilter<"matiere"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"matiere"> | string
+  CodeMat?: Prisma.StringWithAggregatesFilter<"matiere"> | string
+  description?: Prisma.StringNullableWithAggregatesFilter<"matiere"> | string | null
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"matiere"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"matiere"> | Date | string
 }
 
-export type MatiereCreateInput = {
+export type matiereCreateInput = {
   id?: string
   nom: string
   CodeMat: string
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutMatieresInput
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinCreateNestedManyWithoutMatiereInput
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutMatiereInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutMatiereInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereUncheckedCreateInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  CodeMat: string
-  description?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutMatiereInput
-}
-
-export type MatiereUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutMatieresNestedInput
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUpdateManyWithoutMatiereNestedInput
-}
-
-export type MatiereUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedUpdateManyWithoutMatiereNestedInput
-}
-
-export type MatiereCreateManyInput = {
+export type matiereUncheckedCreateInput = {
   id?: string
   ecoleId: string
   nom: string
@@ -330,18 +288,27 @@ export type MatiereCreateManyInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutMatiereInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereUpdateManyMutationInput = {
+export type matiereUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutMatiereNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutMatiereNestedInput
 }
 
-export type MatiereUncheckedUpdateManyInput = {
+export type matiereUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
@@ -349,30 +316,68 @@ export type MatiereUncheckedUpdateManyInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutMatiereNestedInput
+}
+
+export type matiereCreateManyInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  CodeMat: string
+  description?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type matiereUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type matiereUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type MatiereScalarRelationFilter = {
+  is?: Prisma.matiereWhereInput
+  isNot?: Prisma.matiereWhereInput
 }
 
 export type MatiereListRelationFilter = {
-  every?: Prisma.MatiereWhereInput
-  some?: Prisma.MatiereWhereInput
-  none?: Prisma.MatiereWhereInput
+  every?: Prisma.matiereWhereInput
+  some?: Prisma.matiereWhereInput
+  none?: Prisma.matiereWhereInput
 }
 
-export type MatiereOrderByRelationAggregateInput = {
+export type matiereOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type MatiereOrderByRelevanceInput = {
-  fields: Prisma.MatiereOrderByRelevanceFieldEnum | Prisma.MatiereOrderByRelevanceFieldEnum[]
+export type matiereOrderByRelevanceInput = {
+  fields: Prisma.matiereOrderByRelevanceFieldEnum | Prisma.matiereOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type MatiereNomEcoleIdCompoundUniqueInput = {
+export type matiereNomEcoleIdCompoundUniqueInput = {
   nom: string
   ecoleId: string
 }
 
-export type MatiereCountOrderByAggregateInput = {
+export type matiereCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -382,7 +387,7 @@ export type MatiereCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type MatiereMaxOrderByAggregateInput = {
+export type matiereMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -392,7 +397,7 @@ export type MatiereMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type MatiereMinOrderByAggregateInput = {
+export type matiereMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
@@ -402,256 +407,319 @@ export type MatiereMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type MatiereScalarRelationFilter = {
-  is?: Prisma.MatiereWhereInput
-  isNot?: Prisma.MatiereWhereInput
+export type matiereCreateNestedOneWithoutAffectationenseignantInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutAffectationenseignantInput, Prisma.matiereUncheckedCreateWithoutAffectationenseignantInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutAffectationenseignantInput
+  connect?: Prisma.matiereWhereUniqueInput
 }
 
-export type MatiereCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutEcoleInput, Prisma.MatiereUncheckedCreateWithoutEcoleInput> | Prisma.MatiereCreateWithoutEcoleInput[] | Prisma.MatiereUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutEcoleInput | Prisma.MatiereCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.MatiereCreateManyEcoleInputEnvelope
-  connect?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
+export type matiereUpdateOneRequiredWithoutAffectationenseignantNestedInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutAffectationenseignantInput, Prisma.matiereUncheckedCreateWithoutAffectationenseignantInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutAffectationenseignantInput
+  upsert?: Prisma.matiereUpsertWithoutAffectationenseignantInput
+  connect?: Prisma.matiereWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.matiereUpdateToOneWithWhereWithoutAffectationenseignantInput, Prisma.matiereUpdateWithoutAffectationenseignantInput>, Prisma.matiereUncheckedUpdateWithoutAffectationenseignantInput>
 }
 
-export type MatiereUncheckedCreateNestedManyWithoutEcoleInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutEcoleInput, Prisma.MatiereUncheckedCreateWithoutEcoleInput> | Prisma.MatiereCreateWithoutEcoleInput[] | Prisma.MatiereUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutEcoleInput | Prisma.MatiereCreateOrConnectWithoutEcoleInput[]
-  createMany?: Prisma.MatiereCreateManyEcoleInputEnvelope
-  connect?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
+export type matiereCreateNestedOneWithoutClassematirereInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutClassematirereInput, Prisma.matiereUncheckedCreateWithoutClassematirereInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutClassematirereInput
+  connect?: Prisma.matiereWhereUniqueInput
 }
 
-export type MatiereUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutEcoleInput, Prisma.MatiereUncheckedCreateWithoutEcoleInput> | Prisma.MatiereCreateWithoutEcoleInput[] | Prisma.MatiereUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutEcoleInput | Prisma.MatiereCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.MatiereUpsertWithWhereUniqueWithoutEcoleInput | Prisma.MatiereUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.MatiereCreateManyEcoleInputEnvelope
-  set?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  disconnect?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  delete?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  connect?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  update?: Prisma.MatiereUpdateWithWhereUniqueWithoutEcoleInput | Prisma.MatiereUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.MatiereUpdateManyWithWhereWithoutEcoleInput | Prisma.MatiereUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.MatiereScalarWhereInput | Prisma.MatiereScalarWhereInput[]
+export type matiereUpdateOneRequiredWithoutClassematirereNestedInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutClassematirereInput, Prisma.matiereUncheckedCreateWithoutClassematirereInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutClassematirereInput
+  upsert?: Prisma.matiereUpsertWithoutClassematirereInput
+  connect?: Prisma.matiereWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.matiereUpdateToOneWithWhereWithoutClassematirereInput, Prisma.matiereUpdateWithoutClassematirereInput>, Prisma.matiereUncheckedUpdateWithoutClassematirereInput>
 }
 
-export type MatiereUncheckedUpdateManyWithoutEcoleNestedInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutEcoleInput, Prisma.MatiereUncheckedCreateWithoutEcoleInput> | Prisma.MatiereCreateWithoutEcoleInput[] | Prisma.MatiereUncheckedCreateWithoutEcoleInput[]
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutEcoleInput | Prisma.MatiereCreateOrConnectWithoutEcoleInput[]
-  upsert?: Prisma.MatiereUpsertWithWhereUniqueWithoutEcoleInput | Prisma.MatiereUpsertWithWhereUniqueWithoutEcoleInput[]
-  createMany?: Prisma.MatiereCreateManyEcoleInputEnvelope
-  set?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  disconnect?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  delete?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  connect?: Prisma.MatiereWhereUniqueInput | Prisma.MatiereWhereUniqueInput[]
-  update?: Prisma.MatiereUpdateWithWhereUniqueWithoutEcoleInput | Prisma.MatiereUpdateWithWhereUniqueWithoutEcoleInput[]
-  updateMany?: Prisma.MatiereUpdateManyWithWhereWithoutEcoleInput | Prisma.MatiereUpdateManyWithWhereWithoutEcoleInput[]
-  deleteMany?: Prisma.MatiereScalarWhereInput | Prisma.MatiereScalarWhereInput[]
+export type matiereCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutEcoleInput, Prisma.matiereUncheckedCreateWithoutEcoleInput> | Prisma.matiereCreateWithoutEcoleInput[] | Prisma.matiereUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutEcoleInput | Prisma.matiereCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.matiereCreateManyEcoleInputEnvelope
+  connect?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
 }
 
-export type MatiereCreateNestedOneWithoutMatiereUeInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutMatiereUeInput, Prisma.MatiereUncheckedCreateWithoutMatiereUeInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutMatiereUeInput
-  connect?: Prisma.MatiereWhereUniqueInput
+export type matiereUncheckedCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutEcoleInput, Prisma.matiereUncheckedCreateWithoutEcoleInput> | Prisma.matiereCreateWithoutEcoleInput[] | Prisma.matiereUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutEcoleInput | Prisma.matiereCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.matiereCreateManyEcoleInputEnvelope
+  connect?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
 }
 
-export type MatiereUpdateOneRequiredWithoutMatiereUeNestedInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutMatiereUeInput, Prisma.MatiereUncheckedCreateWithoutMatiereUeInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutMatiereUeInput
-  upsert?: Prisma.MatiereUpsertWithoutMatiereUeInput
-  connect?: Prisma.MatiereWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.MatiereUpdateToOneWithWhereWithoutMatiereUeInput, Prisma.MatiereUpdateWithoutMatiereUeInput>, Prisma.MatiereUncheckedUpdateWithoutMatiereUeInput>
+export type matiereUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutEcoleInput, Prisma.matiereUncheckedCreateWithoutEcoleInput> | Prisma.matiereCreateWithoutEcoleInput[] | Prisma.matiereUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutEcoleInput | Prisma.matiereCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.matiereUpsertWithWhereUniqueWithoutEcoleInput | Prisma.matiereUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.matiereCreateManyEcoleInputEnvelope
+  set?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  disconnect?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  delete?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  connect?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  update?: Prisma.matiereUpdateWithWhereUniqueWithoutEcoleInput | Prisma.matiereUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.matiereUpdateManyWithWhereWithoutEcoleInput | Prisma.matiereUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.matiereScalarWhereInput | Prisma.matiereScalarWhereInput[]
 }
 
-export type MatiereCreateNestedOneWithoutClasseMatiereInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutClasseMatiereInput, Prisma.MatiereUncheckedCreateWithoutClasseMatiereInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutClasseMatiereInput
-  connect?: Prisma.MatiereWhereUniqueInput
+export type matiereUncheckedUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutEcoleInput, Prisma.matiereUncheckedCreateWithoutEcoleInput> | Prisma.matiereCreateWithoutEcoleInput[] | Prisma.matiereUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutEcoleInput | Prisma.matiereCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.matiereUpsertWithWhereUniqueWithoutEcoleInput | Prisma.matiereUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.matiereCreateManyEcoleInputEnvelope
+  set?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  disconnect?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  delete?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  connect?: Prisma.matiereWhereUniqueInput | Prisma.matiereWhereUniqueInput[]
+  update?: Prisma.matiereUpdateWithWhereUniqueWithoutEcoleInput | Prisma.matiereUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.matiereUpdateManyWithWhereWithoutEcoleInput | Prisma.matiereUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.matiereScalarWhereInput | Prisma.matiereScalarWhereInput[]
 }
 
-export type MatiereUpdateOneRequiredWithoutClasseMatiereNestedInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutClasseMatiereInput, Prisma.MatiereUncheckedCreateWithoutClasseMatiereInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutClasseMatiereInput
-  upsert?: Prisma.MatiereUpsertWithoutClasseMatiereInput
-  connect?: Prisma.MatiereWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.MatiereUpdateToOneWithWhereWithoutClasseMatiereInput, Prisma.MatiereUpdateWithoutClasseMatiereInput>, Prisma.MatiereUncheckedUpdateWithoutClasseMatiereInput>
+export type matiereCreateNestedOneWithoutLignebulletinInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutLignebulletinInput, Prisma.matiereUncheckedCreateWithoutLignebulletinInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutLignebulletinInput
+  connect?: Prisma.matiereWhereUniqueInput
 }
 
-export type MatiereCreateNestedOneWithoutAffectationEnseignantInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutAffectationEnseignantInput, Prisma.MatiereUncheckedCreateWithoutAffectationEnseignantInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutAffectationEnseignantInput
-  connect?: Prisma.MatiereWhereUniqueInput
+export type matiereUpdateOneRequiredWithoutLignebulletinNestedInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutLignebulletinInput, Prisma.matiereUncheckedCreateWithoutLignebulletinInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutLignebulletinInput
+  upsert?: Prisma.matiereUpsertWithoutLignebulletinInput
+  connect?: Prisma.matiereWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.matiereUpdateToOneWithWhereWithoutLignebulletinInput, Prisma.matiereUpdateWithoutLignebulletinInput>, Prisma.matiereUncheckedUpdateWithoutLignebulletinInput>
 }
 
-export type MatiereUpdateOneRequiredWithoutAffectationEnseignantNestedInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutAffectationEnseignantInput, Prisma.MatiereUncheckedCreateWithoutAffectationEnseignantInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutAffectationEnseignantInput
-  upsert?: Prisma.MatiereUpsertWithoutAffectationEnseignantInput
-  connect?: Prisma.MatiereWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.MatiereUpdateToOneWithWhereWithoutAffectationEnseignantInput, Prisma.MatiereUpdateWithoutAffectationEnseignantInput>, Prisma.MatiereUncheckedUpdateWithoutAffectationEnseignantInput>
+export type matiereCreateNestedOneWithoutMatiereueInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutMatiereueInput, Prisma.matiereUncheckedCreateWithoutMatiereueInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutMatiereueInput
+  connect?: Prisma.matiereWhereUniqueInput
 }
 
-export type MatiereCreateNestedOneWithoutLigneBulletinInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutLigneBulletinInput, Prisma.MatiereUncheckedCreateWithoutLigneBulletinInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutLigneBulletinInput
-  connect?: Prisma.MatiereWhereUniqueInput
+export type matiereUpdateOneRequiredWithoutMatiereueNestedInput = {
+  create?: Prisma.XOR<Prisma.matiereCreateWithoutMatiereueInput, Prisma.matiereUncheckedCreateWithoutMatiereueInput>
+  connectOrCreate?: Prisma.matiereCreateOrConnectWithoutMatiereueInput
+  upsert?: Prisma.matiereUpsertWithoutMatiereueInput
+  connect?: Prisma.matiereWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.matiereUpdateToOneWithWhereWithoutMatiereueInput, Prisma.matiereUpdateWithoutMatiereueInput>, Prisma.matiereUncheckedUpdateWithoutMatiereueInput>
 }
 
-export type MatiereUpdateOneRequiredWithoutLigneBulletinNestedInput = {
-  create?: Prisma.XOR<Prisma.MatiereCreateWithoutLigneBulletinInput, Prisma.MatiereUncheckedCreateWithoutLigneBulletinInput>
-  connectOrCreate?: Prisma.MatiereCreateOrConnectWithoutLigneBulletinInput
-  upsert?: Prisma.MatiereUpsertWithoutLigneBulletinInput
-  connect?: Prisma.MatiereWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.MatiereUpdateToOneWithWhereWithoutLigneBulletinInput, Prisma.MatiereUpdateWithoutLigneBulletinInput>, Prisma.MatiereUncheckedUpdateWithoutLigneBulletinInput>
-}
-
-export type MatiereCreateWithoutEcoleInput = {
+export type matiereCreateWithoutAffectationenseignantInput = {
   id?: string
   nom: string
   CodeMat: string
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutMatiereInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutMatiereInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereUncheckedCreateWithoutEcoleInput = {
+export type matiereUncheckedCreateWithoutAffectationenseignantInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  CodeMat: string
+  description?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutMatiereInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutMatiereInput
+}
+
+export type matiereCreateOrConnectWithoutAffectationenseignantInput = {
+  where: Prisma.matiereWhereUniqueInput
+  create: Prisma.XOR<Prisma.matiereCreateWithoutAffectationenseignantInput, Prisma.matiereUncheckedCreateWithoutAffectationenseignantInput>
+}
+
+export type matiereUpsertWithoutAffectationenseignantInput = {
+  update: Prisma.XOR<Prisma.matiereUpdateWithoutAffectationenseignantInput, Prisma.matiereUncheckedUpdateWithoutAffectationenseignantInput>
+  create: Prisma.XOR<Prisma.matiereCreateWithoutAffectationenseignantInput, Prisma.matiereUncheckedCreateWithoutAffectationenseignantInput>
+  where?: Prisma.matiereWhereInput
+}
+
+export type matiereUpdateToOneWithWhereWithoutAffectationenseignantInput = {
+  where?: Prisma.matiereWhereInput
+  data: Prisma.XOR<Prisma.matiereUpdateWithoutAffectationenseignantInput, Prisma.matiereUncheckedUpdateWithoutAffectationenseignantInput>
+}
+
+export type matiereUpdateWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classematirere?: Prisma.classematirereUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutMatiereNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutMatiereNestedInput
+}
+
+export type matiereUncheckedUpdateWithoutAffectationenseignantInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutMatiereNestedInput
+}
+
+export type matiereCreateWithoutClassematirereInput = {
   id?: string
   nom: string
   CodeMat: string
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutMatiereInput
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutMatiereInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutMatiereInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereCreateOrConnectWithoutEcoleInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutEcoleInput, Prisma.MatiereUncheckedCreateWithoutEcoleInput>
+export type matiereUncheckedCreateWithoutClassematirereInput = {
+  id?: string
+  ecoleId: string
+  nom: string
+  CodeMat: string
+  description?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutMatiereInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereCreateManyEcoleInputEnvelope = {
-  data: Prisma.MatiereCreateManyEcoleInput | Prisma.MatiereCreateManyEcoleInput[]
+export type matiereCreateOrConnectWithoutClassematirereInput = {
+  where: Prisma.matiereWhereUniqueInput
+  create: Prisma.XOR<Prisma.matiereCreateWithoutClassematirereInput, Prisma.matiereUncheckedCreateWithoutClassematirereInput>
+}
+
+export type matiereUpsertWithoutClassematirereInput = {
+  update: Prisma.XOR<Prisma.matiereUpdateWithoutClassematirereInput, Prisma.matiereUncheckedUpdateWithoutClassematirereInput>
+  create: Prisma.XOR<Prisma.matiereCreateWithoutClassematirereInput, Prisma.matiereUncheckedCreateWithoutClassematirereInput>
+  where?: Prisma.matiereWhereInput
+}
+
+export type matiereUpdateToOneWithWhereWithoutClassematirereInput = {
+  where?: Prisma.matiereWhereInput
+  data: Prisma.XOR<Prisma.matiereUpdateWithoutClassematirereInput, Prisma.matiereUncheckedUpdateWithoutClassematirereInput>
+}
+
+export type matiereUpdateWithoutClassematirereInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutMatiereNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutMatiereNestedInput
+}
+
+export type matiereUncheckedUpdateWithoutClassematirereInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutMatiereNestedInput
+}
+
+export type matiereCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  CodeMat: string
+  description?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutMatiereInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutMatiereInput
+}
+
+export type matiereUncheckedCreateWithoutEcoleInput = {
+  id?: string
+  nom: string
+  CodeMat: string
+  description?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutMatiereInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutMatiereInput
+}
+
+export type matiereCreateOrConnectWithoutEcoleInput = {
+  where: Prisma.matiereWhereUniqueInput
+  create: Prisma.XOR<Prisma.matiereCreateWithoutEcoleInput, Prisma.matiereUncheckedCreateWithoutEcoleInput>
+}
+
+export type matiereCreateManyEcoleInputEnvelope = {
+  data: Prisma.matiereCreateManyEcoleInput | Prisma.matiereCreateManyEcoleInput[]
   skipDuplicates?: boolean
 }
 
-export type MatiereUpsertWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  update: Prisma.XOR<Prisma.MatiereUpdateWithoutEcoleInput, Prisma.MatiereUncheckedUpdateWithoutEcoleInput>
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutEcoleInput, Prisma.MatiereUncheckedCreateWithoutEcoleInput>
+export type matiereUpsertWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.matiereWhereUniqueInput
+  update: Prisma.XOR<Prisma.matiereUpdateWithoutEcoleInput, Prisma.matiereUncheckedUpdateWithoutEcoleInput>
+  create: Prisma.XOR<Prisma.matiereCreateWithoutEcoleInput, Prisma.matiereUncheckedCreateWithoutEcoleInput>
 }
 
-export type MatiereUpdateWithWhereUniqueWithoutEcoleInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  data: Prisma.XOR<Prisma.MatiereUpdateWithoutEcoleInput, Prisma.MatiereUncheckedUpdateWithoutEcoleInput>
+export type matiereUpdateWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.matiereWhereUniqueInput
+  data: Prisma.XOR<Prisma.matiereUpdateWithoutEcoleInput, Prisma.matiereUncheckedUpdateWithoutEcoleInput>
 }
 
-export type MatiereUpdateManyWithWhereWithoutEcoleInput = {
-  where: Prisma.MatiereScalarWhereInput
-  data: Prisma.XOR<Prisma.MatiereUpdateManyMutationInput, Prisma.MatiereUncheckedUpdateManyWithoutEcoleInput>
+export type matiereUpdateManyWithWhereWithoutEcoleInput = {
+  where: Prisma.matiereScalarWhereInput
+  data: Prisma.XOR<Prisma.matiereUpdateManyMutationInput, Prisma.matiereUncheckedUpdateManyWithoutEcoleInput>
 }
 
-export type MatiereScalarWhereInput = {
-  AND?: Prisma.MatiereScalarWhereInput | Prisma.MatiereScalarWhereInput[]
-  OR?: Prisma.MatiereScalarWhereInput[]
-  NOT?: Prisma.MatiereScalarWhereInput | Prisma.MatiereScalarWhereInput[]
-  id?: Prisma.StringFilter<"Matiere"> | string
-  ecoleId?: Prisma.StringFilter<"Matiere"> | string
-  nom?: Prisma.StringFilter<"Matiere"> | string
-  CodeMat?: Prisma.StringFilter<"Matiere"> | string
-  description?: Prisma.StringNullableFilter<"Matiere"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"Matiere"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Matiere"> | Date | string
+export type matiereScalarWhereInput = {
+  AND?: Prisma.matiereScalarWhereInput | Prisma.matiereScalarWhereInput[]
+  OR?: Prisma.matiereScalarWhereInput[]
+  NOT?: Prisma.matiereScalarWhereInput | Prisma.matiereScalarWhereInput[]
+  id?: Prisma.StringFilter<"matiere"> | string
+  ecoleId?: Prisma.StringFilter<"matiere"> | string
+  nom?: Prisma.StringFilter<"matiere"> | string
+  CodeMat?: Prisma.StringFilter<"matiere"> | string
+  description?: Prisma.StringNullableFilter<"matiere"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"matiere"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"matiere"> | Date | string
 }
 
-export type MatiereCreateWithoutMatiereUeInput = {
+export type matiereCreateWithoutLignebulletinInput = {
   id?: string
   nom: string
   CodeMat: string
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutMatieresInput
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinCreateNestedManyWithoutMatiereInput
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutMatiereInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutMatiereInput
+  matiereue?: Prisma.matiereueCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereUncheckedCreateWithoutMatiereUeInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  CodeMat: string
-  description?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutMatiereInput
-}
-
-export type MatiereCreateOrConnectWithoutMatiereUeInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutMatiereUeInput, Prisma.MatiereUncheckedCreateWithoutMatiereUeInput>
-}
-
-export type MatiereUpsertWithoutMatiereUeInput = {
-  update: Prisma.XOR<Prisma.MatiereUpdateWithoutMatiereUeInput, Prisma.MatiereUncheckedUpdateWithoutMatiereUeInput>
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutMatiereUeInput, Prisma.MatiereUncheckedCreateWithoutMatiereUeInput>
-  where?: Prisma.MatiereWhereInput
-}
-
-export type MatiereUpdateToOneWithWhereWithoutMatiereUeInput = {
-  where?: Prisma.MatiereWhereInput
-  data: Prisma.XOR<Prisma.MatiereUpdateWithoutMatiereUeInput, Prisma.MatiereUncheckedUpdateWithoutMatiereUeInput>
-}
-
-export type MatiereUpdateWithoutMatiereUeInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutMatieresNestedInput
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUpdateManyWithoutMatiereNestedInput
-}
-
-export type MatiereUncheckedUpdateWithoutMatiereUeInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedUpdateManyWithoutMatiereNestedInput
-}
-
-export type MatiereCreateWithoutClasseMatiereInput = {
-  id?: string
-  nom: string
-  CodeMat: string
-  description?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutMatieresInput
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinCreateNestedManyWithoutMatiereInput
-}
-
-export type MatiereUncheckedCreateWithoutClasseMatiereInput = {
+export type matiereUncheckedCreateWithoutLignebulletinInput = {
   id?: string
   ecoleId: string
   nom: string
@@ -659,41 +727,41 @@ export type MatiereUncheckedCreateWithoutClasseMatiereInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutMatiereInput
+  affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutMatiereInput
+  matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereCreateOrConnectWithoutClasseMatiereInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutClasseMatiereInput, Prisma.MatiereUncheckedCreateWithoutClasseMatiereInput>
+export type matiereCreateOrConnectWithoutLignebulletinInput = {
+  where: Prisma.matiereWhereUniqueInput
+  create: Prisma.XOR<Prisma.matiereCreateWithoutLignebulletinInput, Prisma.matiereUncheckedCreateWithoutLignebulletinInput>
 }
 
-export type MatiereUpsertWithoutClasseMatiereInput = {
-  update: Prisma.XOR<Prisma.MatiereUpdateWithoutClasseMatiereInput, Prisma.MatiereUncheckedUpdateWithoutClasseMatiereInput>
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutClasseMatiereInput, Prisma.MatiereUncheckedCreateWithoutClasseMatiereInput>
-  where?: Prisma.MatiereWhereInput
+export type matiereUpsertWithoutLignebulletinInput = {
+  update: Prisma.XOR<Prisma.matiereUpdateWithoutLignebulletinInput, Prisma.matiereUncheckedUpdateWithoutLignebulletinInput>
+  create: Prisma.XOR<Prisma.matiereCreateWithoutLignebulletinInput, Prisma.matiereUncheckedCreateWithoutLignebulletinInput>
+  where?: Prisma.matiereWhereInput
 }
 
-export type MatiereUpdateToOneWithWhereWithoutClasseMatiereInput = {
-  where?: Prisma.MatiereWhereInput
-  data: Prisma.XOR<Prisma.MatiereUpdateWithoutClasseMatiereInput, Prisma.MatiereUncheckedUpdateWithoutClasseMatiereInput>
+export type matiereUpdateToOneWithWhereWithoutLignebulletinInput = {
+  where?: Prisma.matiereWhereInput
+  data: Prisma.XOR<Prisma.matiereUpdateWithoutLignebulletinInput, Prisma.matiereUncheckedUpdateWithoutLignebulletinInput>
 }
 
-export type MatiereUpdateWithoutClasseMatiereInput = {
+export type matiereUpdateWithoutLignebulletinInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutMatieresNestedInput
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUpdateManyWithoutMatiereNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUpdateManyWithoutMatiereNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutMatiereNestedInput
 }
 
-export type MatiereUncheckedUpdateWithoutClasseMatiereInput = {
+export type matiereUncheckedUpdateWithoutLignebulletinInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
@@ -701,25 +769,25 @@ export type MatiereUncheckedUpdateWithoutClasseMatiereInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedUpdateManyWithoutMatiereNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutMatiereNestedInput
 }
 
-export type MatiereCreateWithoutAffectationEnseignantInput = {
+export type matiereCreateWithoutMatiereueInput = {
   id?: string
   nom: string
   CodeMat: string
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutMatieresInput
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinCreateNestedManyWithoutMatiereInput
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutMatiereInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutMatiereInput
 }
 
-export type MatiereUncheckedCreateWithoutAffectationEnseignantInput = {
+export type matiereUncheckedCreateWithoutMatiereueInput = {
   id?: string
   ecoleId: string
   nom: string
@@ -727,109 +795,41 @@ export type MatiereUncheckedCreateWithoutAffectationEnseignantInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutMatiereInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutMatiereInput
+  affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutMatiereInput
+  classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutMatiereInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutMatiereInput
 }
 
-export type MatiereCreateOrConnectWithoutAffectationEnseignantInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutAffectationEnseignantInput, Prisma.MatiereUncheckedCreateWithoutAffectationEnseignantInput>
+export type matiereCreateOrConnectWithoutMatiereueInput = {
+  where: Prisma.matiereWhereUniqueInput
+  create: Prisma.XOR<Prisma.matiereCreateWithoutMatiereueInput, Prisma.matiereUncheckedCreateWithoutMatiereueInput>
 }
 
-export type MatiereUpsertWithoutAffectationEnseignantInput = {
-  update: Prisma.XOR<Prisma.MatiereUpdateWithoutAffectationEnseignantInput, Prisma.MatiereUncheckedUpdateWithoutAffectationEnseignantInput>
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutAffectationEnseignantInput, Prisma.MatiereUncheckedCreateWithoutAffectationEnseignantInput>
-  where?: Prisma.MatiereWhereInput
+export type matiereUpsertWithoutMatiereueInput = {
+  update: Prisma.XOR<Prisma.matiereUpdateWithoutMatiereueInput, Prisma.matiereUncheckedUpdateWithoutMatiereueInput>
+  create: Prisma.XOR<Prisma.matiereCreateWithoutMatiereueInput, Prisma.matiereUncheckedCreateWithoutMatiereueInput>
+  where?: Prisma.matiereWhereInput
 }
 
-export type MatiereUpdateToOneWithWhereWithoutAffectationEnseignantInput = {
-  where?: Prisma.MatiereWhereInput
-  data: Prisma.XOR<Prisma.MatiereUpdateWithoutAffectationEnseignantInput, Prisma.MatiereUncheckedUpdateWithoutAffectationEnseignantInput>
+export type matiereUpdateToOneWithWhereWithoutMatiereueInput = {
+  where?: Prisma.matiereWhereInput
+  data: Prisma.XOR<Prisma.matiereUpdateWithoutMatiereueInput, Prisma.matiereUncheckedUpdateWithoutMatiereueInput>
 }
 
-export type MatiereUpdateWithoutAffectationEnseignantInput = {
+export type matiereUpdateWithoutMatiereueInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutMatieresNestedInput
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUpdateManyWithoutMatiereNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutMatiereNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutMatiereNestedInput
 }
 
-export type MatiereUncheckedUpdateWithoutAffectationEnseignantInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedUpdateManyWithoutMatiereNestedInput
-}
-
-export type MatiereCreateWithoutLigneBulletinInput = {
-  id?: string
-  nom: string
-  CodeMat: string
-  description?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  ecole: Prisma.EcoleCreateNestedOneWithoutMatieresInput
-  affectationEnseignant?: Prisma.AffectationEnseignantCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereCreateNestedManyWithoutMatiereInput
-}
-
-export type MatiereUncheckedCreateWithoutLigneBulletinInput = {
-  id?: string
-  ecoleId: string
-  nom: string
-  CodeMat: string
-  description?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedCreateNestedManyWithoutMatiereInput
-  matiereUe?: Prisma.MatiereUeUncheckedCreateNestedManyWithoutMatiereInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedCreateNestedManyWithoutMatiereInput
-}
-
-export type MatiereCreateOrConnectWithoutLigneBulletinInput = {
-  where: Prisma.MatiereWhereUniqueInput
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutLigneBulletinInput, Prisma.MatiereUncheckedCreateWithoutLigneBulletinInput>
-}
-
-export type MatiereUpsertWithoutLigneBulletinInput = {
-  update: Prisma.XOR<Prisma.MatiereUpdateWithoutLigneBulletinInput, Prisma.MatiereUncheckedUpdateWithoutLigneBulletinInput>
-  create: Prisma.XOR<Prisma.MatiereCreateWithoutLigneBulletinInput, Prisma.MatiereUncheckedCreateWithoutLigneBulletinInput>
-  where?: Prisma.MatiereWhereInput
-}
-
-export type MatiereUpdateToOneWithWhereWithoutLigneBulletinInput = {
-  where?: Prisma.MatiereWhereInput
-  data: Prisma.XOR<Prisma.MatiereUpdateWithoutLigneBulletinInput, Prisma.MatiereUncheckedUpdateWithoutLigneBulletinInput>
-}
-
-export type MatiereUpdateWithoutLigneBulletinInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  nom?: Prisma.StringFieldUpdateOperationsInput | string
-  CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  ecole?: Prisma.EcoleUpdateOneRequiredWithoutMatieresNestedInput
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUpdateManyWithoutMatiereNestedInput
-}
-
-export type MatiereUncheckedUpdateWithoutLigneBulletinInput = {
+export type matiereUncheckedUpdateWithoutMatiereueInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
@@ -837,12 +837,12 @@ export type MatiereUncheckedUpdateWithoutLigneBulletinInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutMatiereNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutMatiereNestedInput
 }
 
-export type MatiereCreateManyEcoleInput = {
+export type matiereCreateManyEcoleInput = {
   id?: string
   nom: string
   CodeMat: string
@@ -851,33 +851,33 @@ export type MatiereCreateManyEcoleInput = {
   updatedAt?: Date | string
 }
 
-export type MatiereUpdateWithoutEcoleInput = {
+export type matiereUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUpdateManyWithoutMatiereNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUpdateManyWithoutMatiereNestedInput
 }
 
-export type MatiereUncheckedUpdateWithoutEcoleInput = {
+export type matiereUncheckedUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  affectationEnseignant?: Prisma.AffectationEnseignantUncheckedUpdateManyWithoutMatiereNestedInput
-  matiereUe?: Prisma.MatiereUeUncheckedUpdateManyWithoutMatiereNestedInput
-  classeMatiere?: Prisma.ClasseMatirereUncheckedUpdateManyWithoutMatiereNestedInput
-  ligneBulletin?: Prisma.LigneBulletinUncheckedUpdateManyWithoutMatiereNestedInput
+  affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutMatiereNestedInput
+  classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutMatiereNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutMatiereNestedInput
+  matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutMatiereNestedInput
 }
 
-export type MatiereUncheckedUpdateManyWithoutEcoleInput = {
+export type matiereUncheckedUpdateManyWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   CodeMat?: Prisma.StringFieldUpdateOperationsInput | string
@@ -892,17 +892,17 @@ export type MatiereUncheckedUpdateManyWithoutEcoleInput = {
  */
 
 export type MatiereCountOutputType = {
-  affectationEnseignant: number
-  matiereUe: number
-  classeMatiere: number
-  ligneBulletin: number
+  affectationenseignant: number
+  classematirere: number
+  lignebulletin: number
+  matiereue: number
 }
 
 export type MatiereCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  affectationEnseignant?: boolean | MatiereCountOutputTypeCountAffectationEnseignantArgs
-  matiereUe?: boolean | MatiereCountOutputTypeCountMatiereUeArgs
-  classeMatiere?: boolean | MatiereCountOutputTypeCountClasseMatiereArgs
-  ligneBulletin?: boolean | MatiereCountOutputTypeCountLigneBulletinArgs
+  affectationenseignant?: boolean | MatiereCountOutputTypeCountAffectationenseignantArgs
+  classematirere?: boolean | MatiereCountOutputTypeCountClassematirereArgs
+  lignebulletin?: boolean | MatiereCountOutputTypeCountLignebulletinArgs
+  matiereue?: boolean | MatiereCountOutputTypeCountMatiereueArgs
 }
 
 /**
@@ -918,33 +918,33 @@ export type MatiereCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * MatiereCountOutputType without action
  */
-export type MatiereCountOutputTypeCountAffectationEnseignantArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AffectationEnseignantWhereInput
+export type MatiereCountOutputTypeCountAffectationenseignantArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.affectationenseignantWhereInput
 }
 
 /**
  * MatiereCountOutputType without action
  */
-export type MatiereCountOutputTypeCountMatiereUeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MatiereUeWhereInput
+export type MatiereCountOutputTypeCountClassematirereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.classematirereWhereInput
 }
 
 /**
  * MatiereCountOutputType without action
  */
-export type MatiereCountOutputTypeCountClasseMatiereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ClasseMatirereWhereInput
+export type MatiereCountOutputTypeCountLignebulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.lignebulletinWhereInput
 }
 
 /**
  * MatiereCountOutputType without action
  */
-export type MatiereCountOutputTypeCountLigneBulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.LigneBulletinWhereInput
+export type MatiereCountOutputTypeCountMatiereueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.matiereueWhereInput
 }
 
 
-export type MatiereSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type matiereSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   ecoleId?: boolean
   nom?: boolean
@@ -952,17 +952,17 @@ export type MatiereSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   description?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  affectationEnseignant?: boolean | Prisma.Matiere$affectationEnseignantArgs<ExtArgs>
-  matiereUe?: boolean | Prisma.Matiere$matiereUeArgs<ExtArgs>
-  classeMatiere?: boolean | Prisma.Matiere$classeMatiereArgs<ExtArgs>
-  ligneBulletin?: boolean | Prisma.Matiere$ligneBulletinArgs<ExtArgs>
+  affectationenseignant?: boolean | Prisma.matiere$affectationenseignantArgs<ExtArgs>
+  classematirere?: boolean | Prisma.matiere$classematirereArgs<ExtArgs>
+  lignebulletin?: boolean | Prisma.matiere$lignebulletinArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  matiereue?: boolean | Prisma.matiere$matiereueArgs<ExtArgs>
   _count?: boolean | Prisma.MatiereCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["matiere"]>
 
 
 
-export type MatiereSelectScalar = {
+export type matiereSelectScalar = {
   id?: boolean
   ecoleId?: boolean
   nom?: boolean
@@ -972,24 +972,24 @@ export type MatiereSelectScalar = {
   updatedAt?: boolean
 }
 
-export type MatiereOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "nom" | "CodeMat" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["matiere"]>
-export type MatiereInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  ecole?: boolean | Prisma.EcoleDefaultArgs<ExtArgs>
-  affectationEnseignant?: boolean | Prisma.Matiere$affectationEnseignantArgs<ExtArgs>
-  matiereUe?: boolean | Prisma.Matiere$matiereUeArgs<ExtArgs>
-  classeMatiere?: boolean | Prisma.Matiere$classeMatiereArgs<ExtArgs>
-  ligneBulletin?: boolean | Prisma.Matiere$ligneBulletinArgs<ExtArgs>
+export type matiereOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ecoleId" | "nom" | "CodeMat" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["matiere"]>
+export type matiereInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  affectationenseignant?: boolean | Prisma.matiere$affectationenseignantArgs<ExtArgs>
+  classematirere?: boolean | Prisma.matiere$classematirereArgs<ExtArgs>
+  lignebulletin?: boolean | Prisma.matiere$lignebulletinArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
+  matiereue?: boolean | Prisma.matiere$matiereueArgs<ExtArgs>
   _count?: boolean | Prisma.MatiereCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $MatierePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Matiere"
+export type $matierePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "matiere"
   objects: {
-    ecole: Prisma.$EcolePayload<ExtArgs>
-    affectationEnseignant: Prisma.$AffectationEnseignantPayload<ExtArgs>[]
-    matiereUe: Prisma.$MatiereUePayload<ExtArgs>[]
-    classeMatiere: Prisma.$ClasseMatirerePayload<ExtArgs>[]
-    ligneBulletin: Prisma.$LigneBulletinPayload<ExtArgs>[]
+    affectationenseignant: Prisma.$affectationenseignantPayload<ExtArgs>[]
+    classematirere: Prisma.$classematirerePayload<ExtArgs>[]
+    lignebulletin: Prisma.$lignebulletinPayload<ExtArgs>[]
+    ecole: Prisma.$ecolePayload<ExtArgs>
+    matiereue: Prisma.$matiereuePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1003,18 +1003,18 @@ export type $MatierePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   composites: {}
 }
 
-export type MatiereGetPayload<S extends boolean | null | undefined | MatiereDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$MatierePayload, S>
+export type matiereGetPayload<S extends boolean | null | undefined | matiereDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$matierePayload, S>
 
-export type MatiereCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<MatiereFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type matiereCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<matiereFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: MatiereCountAggregateInputType | true
   }
 
-export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Matiere'], meta: { name: 'Matiere' } }
+export interface matiereDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['matiere'], meta: { name: 'matiere' } }
   /**
    * Find zero or one Matiere that matches the filter.
-   * @param {MatiereFindUniqueArgs} args - Arguments to find a Matiere
+   * @param {matiereFindUniqueArgs} args - Arguments to find a Matiere
    * @example
    * // Get one Matiere
    * const matiere = await prisma.matiere.findUnique({
@@ -1023,12 +1023,12 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUnique<T extends MatiereFindUniqueArgs>(args: Prisma.SelectSubset<T, MatiereFindUniqueArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends matiereFindUniqueArgs>(args: Prisma.SelectSubset<T, matiereFindUniqueArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Matiere that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {MatiereFindUniqueOrThrowArgs} args - Arguments to find a Matiere
+   * @param {matiereFindUniqueOrThrowArgs} args - Arguments to find a Matiere
    * @example
    * // Get one Matiere
    * const matiere = await prisma.matiere.findUniqueOrThrow({
@@ -1037,13 +1037,13 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUniqueOrThrow<T extends MatiereFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, MatiereFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends matiereFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, matiereFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Matiere that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MatiereFindFirstArgs} args - Arguments to find a Matiere
+   * @param {matiereFindFirstArgs} args - Arguments to find a Matiere
    * @example
    * // Get one Matiere
    * const matiere = await prisma.matiere.findFirst({
@@ -1052,14 +1052,14 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirst<T extends MatiereFindFirstArgs>(args?: Prisma.SelectSubset<T, MatiereFindFirstArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends matiereFindFirstArgs>(args?: Prisma.SelectSubset<T, matiereFindFirstArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Matiere that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MatiereFindFirstOrThrowArgs} args - Arguments to find a Matiere
+   * @param {matiereFindFirstOrThrowArgs} args - Arguments to find a Matiere
    * @example
    * // Get one Matiere
    * const matiere = await prisma.matiere.findFirstOrThrow({
@@ -1068,13 +1068,13 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirstOrThrow<T extends MatiereFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, MatiereFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends matiereFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, matiereFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Matieres that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MatiereFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {matiereFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Matieres
    * const matieres = await prisma.matiere.findMany()
@@ -1086,11 +1086,11 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * const matiereWithIdOnly = await prisma.matiere.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends MatiereFindManyArgs>(args?: Prisma.SelectSubset<T, MatiereFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends matiereFindManyArgs>(args?: Prisma.SelectSubset<T, matiereFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Matiere.
-   * @param {MatiereCreateArgs} args - Arguments to create a Matiere.
+   * @param {matiereCreateArgs} args - Arguments to create a Matiere.
    * @example
    * // Create one Matiere
    * const Matiere = await prisma.matiere.create({
@@ -1100,11 +1100,11 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  create<T extends MatiereCreateArgs>(args: Prisma.SelectSubset<T, MatiereCreateArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends matiereCreateArgs>(args: Prisma.SelectSubset<T, matiereCreateArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Matieres.
-   * @param {MatiereCreateManyArgs} args - Arguments to create many Matieres.
+   * @param {matiereCreateManyArgs} args - Arguments to create many Matieres.
    * @example
    * // Create many Matieres
    * const matiere = await prisma.matiere.createMany({
@@ -1114,11 +1114,11 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    *     
    */
-  createMany<T extends MatiereCreateManyArgs>(args?: Prisma.SelectSubset<T, MatiereCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends matiereCreateManyArgs>(args?: Prisma.SelectSubset<T, matiereCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Matiere.
-   * @param {MatiereDeleteArgs} args - Arguments to delete one Matiere.
+   * @param {matiereDeleteArgs} args - Arguments to delete one Matiere.
    * @example
    * // Delete one Matiere
    * const Matiere = await prisma.matiere.delete({
@@ -1128,11 +1128,11 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  delete<T extends MatiereDeleteArgs>(args: Prisma.SelectSubset<T, MatiereDeleteArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends matiereDeleteArgs>(args: Prisma.SelectSubset<T, matiereDeleteArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Matiere.
-   * @param {MatiereUpdateArgs} args - Arguments to update one Matiere.
+   * @param {matiereUpdateArgs} args - Arguments to update one Matiere.
    * @example
    * // Update one Matiere
    * const matiere = await prisma.matiere.update({
@@ -1145,11 +1145,11 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends MatiereUpdateArgs>(args: Prisma.SelectSubset<T, MatiereUpdateArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends matiereUpdateArgs>(args: Prisma.SelectSubset<T, matiereUpdateArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Matieres.
-   * @param {MatiereDeleteManyArgs} args - Arguments to filter Matieres to delete.
+   * @param {matiereDeleteManyArgs} args - Arguments to filter Matieres to delete.
    * @example
    * // Delete a few Matieres
    * const { count } = await prisma.matiere.deleteMany({
@@ -1159,13 +1159,13 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  deleteMany<T extends MatiereDeleteManyArgs>(args?: Prisma.SelectSubset<T, MatiereDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends matiereDeleteManyArgs>(args?: Prisma.SelectSubset<T, matiereDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Matieres.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MatiereUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {matiereUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Matieres
    * const matiere = await prisma.matiere.updateMany({
@@ -1178,11 +1178,11 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends MatiereUpdateManyArgs>(args: Prisma.SelectSubset<T, MatiereUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends matiereUpdateManyArgs>(args: Prisma.SelectSubset<T, matiereUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Matiere.
-   * @param {MatiereUpsertArgs} args - Arguments to update or create a Matiere.
+   * @param {matiereUpsertArgs} args - Arguments to update or create a Matiere.
    * @example
    * // Update or create a Matiere
    * const matiere = await prisma.matiere.upsert({
@@ -1197,14 +1197,14 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  upsert<T extends MatiereUpsertArgs>(args: Prisma.SelectSubset<T, MatiereUpsertArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends matiereUpsertArgs>(args: Prisma.SelectSubset<T, matiereUpsertArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Matieres.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MatiereCountArgs} args - Arguments to filter Matieres to count.
+   * @param {matiereCountArgs} args - Arguments to filter Matieres to count.
    * @example
    * // Count the number of Matieres
    * const count = await prisma.matiere.count({
@@ -1213,8 +1213,8 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
   **/
-  count<T extends MatiereCountArgs>(
-    args?: Prisma.Subset<T, MatiereCountArgs>,
+  count<T extends matiereCountArgs>(
+    args?: Prisma.Subset<T, matiereCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1253,7 +1253,7 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Group by Matiere.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MatiereGroupByArgs} args - Group by arguments.
+   * @param {matiereGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1268,14 +1268,14 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends MatiereGroupByArgs,
+    T extends matiereGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: MatiereGroupByArgs['orderBy'] }
-      : { orderBy?: MatiereGroupByArgs['orderBy'] },
+      ? { orderBy: matiereGroupByArgs['orderBy'] }
+      : { orderBy?: matiereGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1324,26 +1324,26 @@ export interface MatiereDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, MatiereGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMatiereGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, matiereGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMatiereGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Matiere model
+ * Fields of the matiere model
  */
-readonly fields: MatiereFieldRefs;
+readonly fields: matiereFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Matiere.
+ * The delegate class that acts as a "Promise-like" for matiere.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__MatiereClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__matiereClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  ecole<T extends Prisma.EcoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EcoleDefaultArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  affectationEnseignant<T extends Prisma.Matiere$affectationEnseignantArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Matiere$affectationEnseignantArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AffectationEnseignantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  matiereUe<T extends Prisma.Matiere$matiereUeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Matiere$matiereUeArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MatiereUePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  classeMatiere<T extends Prisma.Matiere$classeMatiereArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Matiere$classeMatiereArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  ligneBulletin<T extends Prisma.Matiere$ligneBulletinArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Matiere$ligneBulletinArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  affectationenseignant<T extends Prisma.matiere$affectationenseignantArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.matiere$affectationenseignantArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$affectationenseignantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  classematirere<T extends Prisma.matiere$classematirereArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.matiere$classematirereArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  lignebulletin<T extends Prisma.matiere$lignebulletinArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.matiere$lignebulletinArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ecole<T extends Prisma.ecoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecoleDefaultArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  matiereue<T extends Prisma.matiere$matiereueArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.matiere$matiereueArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$matiereuePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1370,473 +1370,473 @@ export interface Prisma__MatiereClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the Matiere model
+ * Fields of the matiere model
  */
-export interface MatiereFieldRefs {
-  readonly id: Prisma.FieldRef<"Matiere", 'String'>
-  readonly ecoleId: Prisma.FieldRef<"Matiere", 'String'>
-  readonly nom: Prisma.FieldRef<"Matiere", 'String'>
-  readonly CodeMat: Prisma.FieldRef<"Matiere", 'String'>
-  readonly description: Prisma.FieldRef<"Matiere", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Matiere", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Matiere", 'DateTime'>
+export interface matiereFieldRefs {
+  readonly id: Prisma.FieldRef<"matiere", 'String'>
+  readonly ecoleId: Prisma.FieldRef<"matiere", 'String'>
+  readonly nom: Prisma.FieldRef<"matiere", 'String'>
+  readonly CodeMat: Prisma.FieldRef<"matiere", 'String'>
+  readonly description: Prisma.FieldRef<"matiere", 'String'>
+  readonly createdAt: Prisma.FieldRef<"matiere", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"matiere", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Matiere findUnique
+ * matiere findUnique
  */
-export type MatiereFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * Filter, which Matiere to fetch.
+   * Filter, which matiere to fetch.
    */
-  where: Prisma.MatiereWhereUniqueInput
+  where: Prisma.matiereWhereUniqueInput
 }
 
 /**
- * Matiere findUniqueOrThrow
+ * matiere findUniqueOrThrow
  */
-export type MatiereFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * Filter, which Matiere to fetch.
+   * Filter, which matiere to fetch.
    */
-  where: Prisma.MatiereWhereUniqueInput
+  where: Prisma.matiereWhereUniqueInput
 }
 
 /**
- * Matiere findFirst
+ * matiere findFirst
  */
-export type MatiereFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * Filter, which Matiere to fetch.
+   * Filter, which matiere to fetch.
    */
-  where?: Prisma.MatiereWhereInput
+  where?: Prisma.matiereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Matieres to fetch.
+   * Determine the order of matieres to fetch.
    */
-  orderBy?: Prisma.MatiereOrderByWithRelationInput | Prisma.MatiereOrderByWithRelationInput[]
+  orderBy?: Prisma.matiereOrderByWithRelationInput | Prisma.matiereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Matieres.
+   * Sets the position for searching for matieres.
    */
-  cursor?: Prisma.MatiereWhereUniqueInput
+  cursor?: Prisma.matiereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Matieres from the position of the cursor.
+   * Take `±n` matieres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Matieres.
+   * Skip the first `n` matieres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Matieres.
+   * Filter by unique combinations of matieres.
    */
   distinct?: Prisma.MatiereScalarFieldEnum | Prisma.MatiereScalarFieldEnum[]
 }
 
 /**
- * Matiere findFirstOrThrow
+ * matiere findFirstOrThrow
  */
-export type MatiereFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * Filter, which Matiere to fetch.
+   * Filter, which matiere to fetch.
    */
-  where?: Prisma.MatiereWhereInput
+  where?: Prisma.matiereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Matieres to fetch.
+   * Determine the order of matieres to fetch.
    */
-  orderBy?: Prisma.MatiereOrderByWithRelationInput | Prisma.MatiereOrderByWithRelationInput[]
+  orderBy?: Prisma.matiereOrderByWithRelationInput | Prisma.matiereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Matieres.
+   * Sets the position for searching for matieres.
    */
-  cursor?: Prisma.MatiereWhereUniqueInput
+  cursor?: Prisma.matiereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Matieres from the position of the cursor.
+   * Take `±n` matieres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Matieres.
+   * Skip the first `n` matieres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Matieres.
+   * Filter by unique combinations of matieres.
    */
   distinct?: Prisma.MatiereScalarFieldEnum | Prisma.MatiereScalarFieldEnum[]
 }
 
 /**
- * Matiere findMany
+ * matiere findMany
  */
-export type MatiereFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * Filter, which Matieres to fetch.
+   * Filter, which matieres to fetch.
    */
-  where?: Prisma.MatiereWhereInput
+  where?: Prisma.matiereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Matieres to fetch.
+   * Determine the order of matieres to fetch.
    */
-  orderBy?: Prisma.MatiereOrderByWithRelationInput | Prisma.MatiereOrderByWithRelationInput[]
+  orderBy?: Prisma.matiereOrderByWithRelationInput | Prisma.matiereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Matieres.
+   * Sets the position for listing matieres.
    */
-  cursor?: Prisma.MatiereWhereUniqueInput
+  cursor?: Prisma.matiereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Matieres from the position of the cursor.
+   * Take `±n` matieres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Matieres.
+   * Skip the first `n` matieres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Matieres.
+   * Filter by unique combinations of matieres.
    */
   distinct?: Prisma.MatiereScalarFieldEnum | Prisma.MatiereScalarFieldEnum[]
 }
 
 /**
- * Matiere create
+ * matiere create
  */
-export type MatiereCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * The data needed to create a Matiere.
+   * The data needed to create a matiere.
    */
-  data: Prisma.XOR<Prisma.MatiereCreateInput, Prisma.MatiereUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.matiereCreateInput, Prisma.matiereUncheckedCreateInput>
 }
 
 /**
- * Matiere createMany
+ * matiere createMany
  */
-export type MatiereCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Matieres.
+   * The data used to create many matieres.
    */
-  data: Prisma.MatiereCreateManyInput | Prisma.MatiereCreateManyInput[]
+  data: Prisma.matiereCreateManyInput | Prisma.matiereCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Matiere update
+ * matiere update
  */
-export type MatiereUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * The data needed to update a Matiere.
+   * The data needed to update a matiere.
    */
-  data: Prisma.XOR<Prisma.MatiereUpdateInput, Prisma.MatiereUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.matiereUpdateInput, Prisma.matiereUncheckedUpdateInput>
   /**
-   * Choose, which Matiere to update.
+   * Choose, which matiere to update.
    */
-  where: Prisma.MatiereWhereUniqueInput
+  where: Prisma.matiereWhereUniqueInput
 }
 
 /**
- * Matiere updateMany
+ * matiere updateMany
  */
-export type MatiereUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Matieres.
+   * The data used to update matieres.
    */
-  data: Prisma.XOR<Prisma.MatiereUpdateManyMutationInput, Prisma.MatiereUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.matiereUpdateManyMutationInput, Prisma.matiereUncheckedUpdateManyInput>
   /**
-   * Filter which Matieres to update
+   * Filter which matieres to update
    */
-  where?: Prisma.MatiereWhereInput
+  where?: Prisma.matiereWhereInput
   /**
-   * Limit how many Matieres to update.
+   * Limit how many matieres to update.
    */
   limit?: number
 }
 
 /**
- * Matiere upsert
+ * matiere upsert
  */
-export type MatiereUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * The filter to search for the Matiere to update in case it exists.
+   * The filter to search for the matiere to update in case it exists.
    */
-  where: Prisma.MatiereWhereUniqueInput
+  where: Prisma.matiereWhereUniqueInput
   /**
-   * In case the Matiere found by the `where` argument doesn't exist, create a new Matiere with this data.
+   * In case the matiere found by the `where` argument doesn't exist, create a new matiere with this data.
    */
-  create: Prisma.XOR<Prisma.MatiereCreateInput, Prisma.MatiereUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.matiereCreateInput, Prisma.matiereUncheckedCreateInput>
   /**
-   * In case the Matiere was found with the provided `where` argument, update it with this data.
+   * In case the matiere was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.MatiereUpdateInput, Prisma.MatiereUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.matiereUpdateInput, Prisma.matiereUncheckedUpdateInput>
 }
 
 /**
- * Matiere delete
+ * matiere delete
  */
-export type MatiereDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
   /**
-   * Filter which Matiere to delete.
+   * Filter which matiere to delete.
    */
-  where: Prisma.MatiereWhereUniqueInput
+  where: Prisma.matiereWhereUniqueInput
 }
 
 /**
- * Matiere deleteMany
+ * matiere deleteMany
  */
-export type MatiereDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Matieres to delete
+   * Filter which matieres to delete
    */
-  where?: Prisma.MatiereWhereInput
+  where?: Prisma.matiereWhereInput
   /**
-   * Limit how many Matieres to delete.
+   * Limit how many matieres to delete.
    */
   limit?: number
 }
 
 /**
- * Matiere.affectationEnseignant
+ * matiere.affectationenseignant
  */
-export type Matiere$affectationEnseignantArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiere$affectationenseignantArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AffectationEnseignant
+   * Select specific fields to fetch from the affectationenseignant
    */
-  select?: Prisma.AffectationEnseignantSelect<ExtArgs> | null
+  select?: Prisma.affectationenseignantSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AffectationEnseignant
+   * Omit specific fields from the affectationenseignant
    */
-  omit?: Prisma.AffectationEnseignantOmit<ExtArgs> | null
+  omit?: Prisma.affectationenseignantOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AffectationEnseignantInclude<ExtArgs> | null
-  where?: Prisma.AffectationEnseignantWhereInput
-  orderBy?: Prisma.AffectationEnseignantOrderByWithRelationInput | Prisma.AffectationEnseignantOrderByWithRelationInput[]
-  cursor?: Prisma.AffectationEnseignantWhereUniqueInput
+  include?: Prisma.affectationenseignantInclude<ExtArgs> | null
+  where?: Prisma.affectationenseignantWhereInput
+  orderBy?: Prisma.affectationenseignantOrderByWithRelationInput | Prisma.affectationenseignantOrderByWithRelationInput[]
+  cursor?: Prisma.affectationenseignantWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.AffectationEnseignantScalarFieldEnum | Prisma.AffectationEnseignantScalarFieldEnum[]
+  distinct?: Prisma.AffectationenseignantScalarFieldEnum | Prisma.AffectationenseignantScalarFieldEnum[]
 }
 
 /**
- * Matiere.matiereUe
+ * matiere.classematirere
  */
-export type Matiere$matiereUeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiere$classematirereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the MatiereUe
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.MatiereUeSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the MatiereUe
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.MatiereUeOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereUeInclude<ExtArgs> | null
-  where?: Prisma.MatiereUeWhereInput
-  orderBy?: Prisma.MatiereUeOrderByWithRelationInput | Prisma.MatiereUeOrderByWithRelationInput[]
-  cursor?: Prisma.MatiereUeWhereUniqueInput
+  include?: Prisma.classematirereInclude<ExtArgs> | null
+  where?: Prisma.classematirereWhereInput
+  orderBy?: Prisma.classematirereOrderByWithRelationInput | Prisma.classematirereOrderByWithRelationInput[]
+  cursor?: Prisma.classematirereWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.MatiereUeScalarFieldEnum | Prisma.MatiereUeScalarFieldEnum[]
+  distinct?: Prisma.ClassematirereScalarFieldEnum | Prisma.ClassematirereScalarFieldEnum[]
 }
 
 /**
- * Matiere.classeMatiere
+ * matiere.lignebulletin
  */
-export type Matiere$classeMatiereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiere$lignebulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
-  where?: Prisma.ClasseMatirereWhereInput
-  orderBy?: Prisma.ClasseMatirereOrderByWithRelationInput | Prisma.ClasseMatirereOrderByWithRelationInput[]
-  cursor?: Prisma.ClasseMatirereWhereUniqueInput
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
+  where?: Prisma.lignebulletinWhereInput
+  orderBy?: Prisma.lignebulletinOrderByWithRelationInput | Prisma.lignebulletinOrderByWithRelationInput[]
+  cursor?: Prisma.lignebulletinWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ClasseMatirereScalarFieldEnum | Prisma.ClasseMatirereScalarFieldEnum[]
+  distinct?: Prisma.LignebulletinScalarFieldEnum | Prisma.LignebulletinScalarFieldEnum[]
 }
 
 /**
- * Matiere.ligneBulletin
+ * matiere.matiereue
  */
-export type Matiere$ligneBulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiere$matiereueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the matiereue
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.matiereueSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the matiereue
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.matiereueOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
-  where?: Prisma.LigneBulletinWhereInput
-  orderBy?: Prisma.LigneBulletinOrderByWithRelationInput | Prisma.LigneBulletinOrderByWithRelationInput[]
-  cursor?: Prisma.LigneBulletinWhereUniqueInput
+  include?: Prisma.matiereueInclude<ExtArgs> | null
+  where?: Prisma.matiereueWhereInput
+  orderBy?: Prisma.matiereueOrderByWithRelationInput | Prisma.matiereueOrderByWithRelationInput[]
+  cursor?: Prisma.matiereueWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.LigneBulletinScalarFieldEnum | Prisma.LigneBulletinScalarFieldEnum[]
+  distinct?: Prisma.MatiereueScalarFieldEnum | Prisma.MatiereueScalarFieldEnum[]
 }
 
 /**
- * Matiere without action
+ * matiere without action
  */
-export type MatiereDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type matiereDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Matiere
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Matiere
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
+  include?: Prisma.matiereInclude<ExtArgs> | null
 }

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Parent` model and its related types.
+ * This file exports the `parent` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Parent
+ * Model parent
  * 
  */
-export type ParentModel = runtime.Types.Result.DefaultSelection<Prisma.$ParentPayload>
+export type parentModel = runtime.Types.Result.DefaultSelection<Prisma.$parentPayload>
 
 export type AggregateParent = {
   _count: ParentCountAggregateOutputType | null
@@ -71,37 +71,37 @@ export type ParentCountAggregateInputType = {
 
 export type ParentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Parent to aggregate.
+   * Filter which parent to aggregate.
    */
-  where?: Prisma.ParentWhereInput
+  where?: Prisma.parentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Parents to fetch.
+   * Determine the order of parents to fetch.
    */
-  orderBy?: Prisma.ParentOrderByWithRelationInput | Prisma.ParentOrderByWithRelationInput[]
+  orderBy?: Prisma.parentOrderByWithRelationInput | Prisma.parentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ParentWhereUniqueInput
+  cursor?: Prisma.parentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Parents from the position of the cursor.
+   * Take `±n` parents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Parents.
+   * Skip the first `n` parents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Parents
+   * Count returned parents
   **/
   _count?: true | ParentCountAggregateInputType
   /**
@@ -129,11 +129,11 @@ export type GetParentAggregateType<T extends ParentAggregateArgs> = {
 
 
 
-export type ParentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ParentWhereInput
-  orderBy?: Prisma.ParentOrderByWithAggregationInput | Prisma.ParentOrderByWithAggregationInput[]
+export type parentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.parentWhereInput
+  orderBy?: Prisma.parentOrderByWithAggregationInput | Prisma.parentOrderByWithAggregationInput[]
   by: Prisma.ParentScalarFieldEnum[] | Prisma.ParentScalarFieldEnum
-  having?: Prisma.ParentScalarWhereWithAggregatesInput
+  having?: Prisma.parentScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ParentCountAggregateInputType | true
@@ -151,7 +151,7 @@ export type ParentGroupByOutputType = {
   _max: ParentMaxAggregateOutputType | null
 }
 
-export type GetParentGroupByPayload<T extends ParentGroupByArgs> = Prisma.PrismaPromise<
+export type GetParentGroupByPayload<T extends parentGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ParentGroupByOutputType, T['by']> &
       {
@@ -166,328 +166,281 @@ export type GetParentGroupByPayload<T extends ParentGroupByArgs> = Prisma.Prisma
 
 
 
-export type ParentWhereInput = {
-  AND?: Prisma.ParentWhereInput | Prisma.ParentWhereInput[]
-  OR?: Prisma.ParentWhereInput[]
-  NOT?: Prisma.ParentWhereInput | Prisma.ParentWhereInput[]
-  id?: Prisma.StringFilter<"Parent"> | string
-  userId?: Prisma.StringFilter<"Parent"> | string
-  profession?: Prisma.StringFilter<"Parent"> | string
-  createdAt?: Prisma.DateTimeFilter<"Parent"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  apprenantParent?: Prisma.ApprenantParentListRelationFilter
+export type parentWhereInput = {
+  AND?: Prisma.parentWhereInput | Prisma.parentWhereInput[]
+  OR?: Prisma.parentWhereInput[]
+  NOT?: Prisma.parentWhereInput | Prisma.parentWhereInput[]
+  id?: Prisma.StringFilter<"parent"> | string
+  userId?: Prisma.StringFilter<"parent"> | string
+  profession?: Prisma.StringFilter<"parent"> | string
+  createdAt?: Prisma.DateTimeFilter<"parent"> | Date | string
+  apprenantparent?: Prisma.ApprenantparentListRelationFilter
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
 }
 
-export type ParentOrderByWithRelationInput = {
+export type parentOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   profession?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
-  apprenantParent?: Prisma.ApprenantParentOrderByRelationAggregateInput
-  _relevance?: Prisma.ParentOrderByRelevanceInput
+  apprenantparent?: Prisma.apprenantparentOrderByRelationAggregateInput
+  user?: Prisma.userOrderByWithRelationInput
+  _relevance?: Prisma.parentOrderByRelevanceInput
 }
 
-export type ParentWhereUniqueInput = Prisma.AtLeast<{
+export type parentWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   userId?: string
-  AND?: Prisma.ParentWhereInput | Prisma.ParentWhereInput[]
-  OR?: Prisma.ParentWhereInput[]
-  NOT?: Prisma.ParentWhereInput | Prisma.ParentWhereInput[]
-  profession?: Prisma.StringFilter<"Parent"> | string
-  createdAt?: Prisma.DateTimeFilter<"Parent"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  apprenantParent?: Prisma.ApprenantParentListRelationFilter
+  AND?: Prisma.parentWhereInput | Prisma.parentWhereInput[]
+  OR?: Prisma.parentWhereInput[]
+  NOT?: Prisma.parentWhereInput | Prisma.parentWhereInput[]
+  profession?: Prisma.StringFilter<"parent"> | string
+  createdAt?: Prisma.DateTimeFilter<"parent"> | Date | string
+  apprenantparent?: Prisma.ApprenantparentListRelationFilter
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
 }, "id" | "userId">
 
-export type ParentOrderByWithAggregationInput = {
+export type parentOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   profession?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  _count?: Prisma.ParentCountOrderByAggregateInput
-  _max?: Prisma.ParentMaxOrderByAggregateInput
-  _min?: Prisma.ParentMinOrderByAggregateInput
+  _count?: Prisma.parentCountOrderByAggregateInput
+  _max?: Prisma.parentMaxOrderByAggregateInput
+  _min?: Prisma.parentMinOrderByAggregateInput
 }
 
-export type ParentScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ParentScalarWhereWithAggregatesInput | Prisma.ParentScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ParentScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ParentScalarWhereWithAggregatesInput | Prisma.ParentScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Parent"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"Parent"> | string
-  profession?: Prisma.StringWithAggregatesFilter<"Parent"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Parent"> | Date | string
+export type parentScalarWhereWithAggregatesInput = {
+  AND?: Prisma.parentScalarWhereWithAggregatesInput | Prisma.parentScalarWhereWithAggregatesInput[]
+  OR?: Prisma.parentScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.parentScalarWhereWithAggregatesInput | Prisma.parentScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"parent"> | string
+  userId?: Prisma.StringWithAggregatesFilter<"parent"> | string
+  profession?: Prisma.StringWithAggregatesFilter<"parent"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"parent"> | Date | string
 }
 
-export type ParentCreateInput = {
+export type parentCreateInput = {
   id?: string
   profession: string
   createdAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutParentInput
-  apprenantParent?: Prisma.ApprenantParentCreateNestedManyWithoutParentInput
+  apprenantparent?: Prisma.apprenantparentCreateNestedManyWithoutParentInput
+  user: Prisma.userCreateNestedOneWithoutParentInput
 }
 
-export type ParentUncheckedCreateInput = {
-  id?: string
-  userId: string
-  profession: string
-  createdAt?: Date | string
-  apprenantParent?: Prisma.ApprenantParentUncheckedCreateNestedManyWithoutParentInput
-}
-
-export type ParentUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  profession?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutParentNestedInput
-  apprenantParent?: Prisma.ApprenantParentUpdateManyWithoutParentNestedInput
-}
-
-export type ParentUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
-  profession?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenantParent?: Prisma.ApprenantParentUncheckedUpdateManyWithoutParentNestedInput
-}
-
-export type ParentCreateManyInput = {
+export type parentUncheckedCreateInput = {
   id?: string
   userId: string
   profession: string
   createdAt?: Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedCreateNestedManyWithoutParentInput
 }
 
-export type ParentUpdateManyMutationInput = {
+export type parentUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  profession?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apprenantparent?: Prisma.apprenantparentUpdateManyWithoutParentNestedInput
+  user?: Prisma.userUpdateOneRequiredWithoutParentNestedInput
+}
+
+export type parentUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  profession?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedUpdateManyWithoutParentNestedInput
+}
+
+export type parentCreateManyInput = {
+  id?: string
+  userId: string
+  profession: string
+  createdAt?: Date | string
+}
+
+export type parentUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   profession?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParentUncheckedUpdateManyInput = {
+export type parentUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   profession?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParentListRelationFilter = {
-  every?: Prisma.ParentWhereInput
-  some?: Prisma.ParentWhereInput
-  none?: Prisma.ParentWhereInput
+export type ParentScalarRelationFilter = {
+  is?: Prisma.parentWhereInput
+  isNot?: Prisma.parentWhereInput
 }
 
-export type ParentOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
-}
-
-export type ParentOrderByRelevanceInput = {
-  fields: Prisma.ParentOrderByRelevanceFieldEnum | Prisma.ParentOrderByRelevanceFieldEnum[]
+export type parentOrderByRelevanceInput = {
+  fields: Prisma.parentOrderByRelevanceFieldEnum | Prisma.parentOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ParentCountOrderByAggregateInput = {
+export type parentCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   profession?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
-export type ParentMaxOrderByAggregateInput = {
+export type parentMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   profession?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
-export type ParentMinOrderByAggregateInput = {
+export type parentMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   profession?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
-export type ParentScalarRelationFilter = {
-  is?: Prisma.ParentWhereInput
-  isNot?: Prisma.ParentWhereInput
+export type ParentNullableScalarRelationFilter = {
+  is?: Prisma.parentWhereInput | null
+  isNot?: Prisma.parentWhereInput | null
 }
 
-export type ParentCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.ParentCreateWithoutUserInput, Prisma.ParentUncheckedCreateWithoutUserInput> | Prisma.ParentCreateWithoutUserInput[] | Prisma.ParentUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParentCreateOrConnectWithoutUserInput | Prisma.ParentCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.ParentCreateManyUserInputEnvelope
-  connect?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
+export type parentCreateNestedOneWithoutApprenantparentInput = {
+  create?: Prisma.XOR<Prisma.parentCreateWithoutApprenantparentInput, Prisma.parentUncheckedCreateWithoutApprenantparentInput>
+  connectOrCreate?: Prisma.parentCreateOrConnectWithoutApprenantparentInput
+  connect?: Prisma.parentWhereUniqueInput
 }
 
-export type ParentUncheckedCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.ParentCreateWithoutUserInput, Prisma.ParentUncheckedCreateWithoutUserInput> | Prisma.ParentCreateWithoutUserInput[] | Prisma.ParentUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParentCreateOrConnectWithoutUserInput | Prisma.ParentCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.ParentCreateManyUserInputEnvelope
-  connect?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
+export type parentUpdateOneRequiredWithoutApprenantparentNestedInput = {
+  create?: Prisma.XOR<Prisma.parentCreateWithoutApprenantparentInput, Prisma.parentUncheckedCreateWithoutApprenantparentInput>
+  connectOrCreate?: Prisma.parentCreateOrConnectWithoutApprenantparentInput
+  upsert?: Prisma.parentUpsertWithoutApprenantparentInput
+  connect?: Prisma.parentWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.parentUpdateToOneWithWhereWithoutApprenantparentInput, Prisma.parentUpdateWithoutApprenantparentInput>, Prisma.parentUncheckedUpdateWithoutApprenantparentInput>
 }
 
-export type ParentUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.ParentCreateWithoutUserInput, Prisma.ParentUncheckedCreateWithoutUserInput> | Prisma.ParentCreateWithoutUserInput[] | Prisma.ParentUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParentCreateOrConnectWithoutUserInput | Prisma.ParentCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.ParentUpsertWithWhereUniqueWithoutUserInput | Prisma.ParentUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.ParentCreateManyUserInputEnvelope
-  set?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  disconnect?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  delete?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  connect?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  update?: Prisma.ParentUpdateWithWhereUniqueWithoutUserInput | Prisma.ParentUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.ParentUpdateManyWithWhereWithoutUserInput | Prisma.ParentUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.ParentScalarWhereInput | Prisma.ParentScalarWhereInput[]
+export type parentCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.parentCreateWithoutUserInput, Prisma.parentUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.parentCreateOrConnectWithoutUserInput
+  connect?: Prisma.parentWhereUniqueInput
 }
 
-export type ParentUncheckedUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.ParentCreateWithoutUserInput, Prisma.ParentUncheckedCreateWithoutUserInput> | Prisma.ParentCreateWithoutUserInput[] | Prisma.ParentUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.ParentCreateOrConnectWithoutUserInput | Prisma.ParentCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.ParentUpsertWithWhereUniqueWithoutUserInput | Prisma.ParentUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.ParentCreateManyUserInputEnvelope
-  set?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  disconnect?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  delete?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  connect?: Prisma.ParentWhereUniqueInput | Prisma.ParentWhereUniqueInput[]
-  update?: Prisma.ParentUpdateWithWhereUniqueWithoutUserInput | Prisma.ParentUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.ParentUpdateManyWithWhereWithoutUserInput | Prisma.ParentUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.ParentScalarWhereInput | Prisma.ParentScalarWhereInput[]
+export type parentUncheckedCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.parentCreateWithoutUserInput, Prisma.parentUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.parentCreateOrConnectWithoutUserInput
+  connect?: Prisma.parentWhereUniqueInput
 }
 
-export type ParentCreateNestedOneWithoutApprenantParentInput = {
-  create?: Prisma.XOR<Prisma.ParentCreateWithoutApprenantParentInput, Prisma.ParentUncheckedCreateWithoutApprenantParentInput>
-  connectOrCreate?: Prisma.ParentCreateOrConnectWithoutApprenantParentInput
-  connect?: Prisma.ParentWhereUniqueInput
+export type parentUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.parentCreateWithoutUserInput, Prisma.parentUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.parentCreateOrConnectWithoutUserInput
+  upsert?: Prisma.parentUpsertWithoutUserInput
+  disconnect?: Prisma.parentWhereInput | boolean
+  delete?: Prisma.parentWhereInput | boolean
+  connect?: Prisma.parentWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.parentUpdateToOneWithWhereWithoutUserInput, Prisma.parentUpdateWithoutUserInput>, Prisma.parentUncheckedUpdateWithoutUserInput>
 }
 
-export type ParentUpdateOneRequiredWithoutApprenantParentNestedInput = {
-  create?: Prisma.XOR<Prisma.ParentCreateWithoutApprenantParentInput, Prisma.ParentUncheckedCreateWithoutApprenantParentInput>
-  connectOrCreate?: Prisma.ParentCreateOrConnectWithoutApprenantParentInput
-  upsert?: Prisma.ParentUpsertWithoutApprenantParentInput
-  connect?: Prisma.ParentWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ParentUpdateToOneWithWhereWithoutApprenantParentInput, Prisma.ParentUpdateWithoutApprenantParentInput>, Prisma.ParentUncheckedUpdateWithoutApprenantParentInput>
+export type parentUncheckedUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.parentCreateWithoutUserInput, Prisma.parentUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.parentCreateOrConnectWithoutUserInput
+  upsert?: Prisma.parentUpsertWithoutUserInput
+  disconnect?: Prisma.parentWhereInput | boolean
+  delete?: Prisma.parentWhereInput | boolean
+  connect?: Prisma.parentWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.parentUpdateToOneWithWhereWithoutUserInput, Prisma.parentUpdateWithoutUserInput>, Prisma.parentUncheckedUpdateWithoutUserInput>
 }
 
-export type ParentCreateWithoutUserInput = {
+export type parentCreateWithoutApprenantparentInput = {
   id?: string
   profession: string
   createdAt?: Date | string
-  apprenantParent?: Prisma.ApprenantParentCreateNestedManyWithoutParentInput
+  user: Prisma.userCreateNestedOneWithoutParentInput
 }
 
-export type ParentUncheckedCreateWithoutUserInput = {
-  id?: string
-  profession: string
-  createdAt?: Date | string
-  apprenantParent?: Prisma.ApprenantParentUncheckedCreateNestedManyWithoutParentInput
-}
-
-export type ParentCreateOrConnectWithoutUserInput = {
-  where: Prisma.ParentWhereUniqueInput
-  create: Prisma.XOR<Prisma.ParentCreateWithoutUserInput, Prisma.ParentUncheckedCreateWithoutUserInput>
-}
-
-export type ParentCreateManyUserInputEnvelope = {
-  data: Prisma.ParentCreateManyUserInput | Prisma.ParentCreateManyUserInput[]
-  skipDuplicates?: boolean
-}
-
-export type ParentUpsertWithWhereUniqueWithoutUserInput = {
-  where: Prisma.ParentWhereUniqueInput
-  update: Prisma.XOR<Prisma.ParentUpdateWithoutUserInput, Prisma.ParentUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.ParentCreateWithoutUserInput, Prisma.ParentUncheckedCreateWithoutUserInput>
-}
-
-export type ParentUpdateWithWhereUniqueWithoutUserInput = {
-  where: Prisma.ParentWhereUniqueInput
-  data: Prisma.XOR<Prisma.ParentUpdateWithoutUserInput, Prisma.ParentUncheckedUpdateWithoutUserInput>
-}
-
-export type ParentUpdateManyWithWhereWithoutUserInput = {
-  where: Prisma.ParentScalarWhereInput
-  data: Prisma.XOR<Prisma.ParentUpdateManyMutationInput, Prisma.ParentUncheckedUpdateManyWithoutUserInput>
-}
-
-export type ParentScalarWhereInput = {
-  AND?: Prisma.ParentScalarWhereInput | Prisma.ParentScalarWhereInput[]
-  OR?: Prisma.ParentScalarWhereInput[]
-  NOT?: Prisma.ParentScalarWhereInput | Prisma.ParentScalarWhereInput[]
-  id?: Prisma.StringFilter<"Parent"> | string
-  userId?: Prisma.StringFilter<"Parent"> | string
-  profession?: Prisma.StringFilter<"Parent"> | string
-  createdAt?: Prisma.DateTimeFilter<"Parent"> | Date | string
-}
-
-export type ParentCreateWithoutApprenantParentInput = {
-  id?: string
-  profession: string
-  createdAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutParentInput
-}
-
-export type ParentUncheckedCreateWithoutApprenantParentInput = {
+export type parentUncheckedCreateWithoutApprenantparentInput = {
   id?: string
   userId: string
   profession: string
   createdAt?: Date | string
 }
 
-export type ParentCreateOrConnectWithoutApprenantParentInput = {
-  where: Prisma.ParentWhereUniqueInput
-  create: Prisma.XOR<Prisma.ParentCreateWithoutApprenantParentInput, Prisma.ParentUncheckedCreateWithoutApprenantParentInput>
+export type parentCreateOrConnectWithoutApprenantparentInput = {
+  where: Prisma.parentWhereUniqueInput
+  create: Prisma.XOR<Prisma.parentCreateWithoutApprenantparentInput, Prisma.parentUncheckedCreateWithoutApprenantparentInput>
 }
 
-export type ParentUpsertWithoutApprenantParentInput = {
-  update: Prisma.XOR<Prisma.ParentUpdateWithoutApprenantParentInput, Prisma.ParentUncheckedUpdateWithoutApprenantParentInput>
-  create: Prisma.XOR<Prisma.ParentCreateWithoutApprenantParentInput, Prisma.ParentUncheckedCreateWithoutApprenantParentInput>
-  where?: Prisma.ParentWhereInput
+export type parentUpsertWithoutApprenantparentInput = {
+  update: Prisma.XOR<Prisma.parentUpdateWithoutApprenantparentInput, Prisma.parentUncheckedUpdateWithoutApprenantparentInput>
+  create: Prisma.XOR<Prisma.parentCreateWithoutApprenantparentInput, Prisma.parentUncheckedCreateWithoutApprenantparentInput>
+  where?: Prisma.parentWhereInput
 }
 
-export type ParentUpdateToOneWithWhereWithoutApprenantParentInput = {
-  where?: Prisma.ParentWhereInput
-  data: Prisma.XOR<Prisma.ParentUpdateWithoutApprenantParentInput, Prisma.ParentUncheckedUpdateWithoutApprenantParentInput>
+export type parentUpdateToOneWithWhereWithoutApprenantparentInput = {
+  where?: Prisma.parentWhereInput
+  data: Prisma.XOR<Prisma.parentUpdateWithoutApprenantparentInput, Prisma.parentUncheckedUpdateWithoutApprenantparentInput>
 }
 
-export type ParentUpdateWithoutApprenantParentInput = {
+export type parentUpdateWithoutApprenantparentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   profession?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutParentNestedInput
+  user?: Prisma.userUpdateOneRequiredWithoutParentNestedInput
 }
 
-export type ParentUncheckedUpdateWithoutApprenantParentInput = {
+export type parentUncheckedUpdateWithoutApprenantparentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   profession?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ParentCreateManyUserInput = {
+export type parentCreateWithoutUserInput = {
   id?: string
   profession: string
   createdAt?: Date | string
+  apprenantparent?: Prisma.apprenantparentCreateNestedManyWithoutParentInput
 }
 
-export type ParentUpdateWithoutUserInput = {
+export type parentUncheckedCreateWithoutUserInput = {
+  id?: string
+  profession: string
+  createdAt?: Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedCreateNestedManyWithoutParentInput
+}
+
+export type parentCreateOrConnectWithoutUserInput = {
+  where: Prisma.parentWhereUniqueInput
+  create: Prisma.XOR<Prisma.parentCreateWithoutUserInput, Prisma.parentUncheckedCreateWithoutUserInput>
+}
+
+export type parentUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.parentUpdateWithoutUserInput, Prisma.parentUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.parentCreateWithoutUserInput, Prisma.parentUncheckedCreateWithoutUserInput>
+  where?: Prisma.parentWhereInput
+}
+
+export type parentUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.parentWhereInput
+  data: Prisma.XOR<Prisma.parentUpdateWithoutUserInput, Prisma.parentUncheckedUpdateWithoutUserInput>
+}
+
+export type parentUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   profession?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenantParent?: Prisma.ApprenantParentUpdateManyWithoutParentNestedInput
+  apprenantparent?: Prisma.apprenantparentUpdateManyWithoutParentNestedInput
 }
 
-export type ParentUncheckedUpdateWithoutUserInput = {
+export type parentUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   profession?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  apprenantParent?: Prisma.ApprenantParentUncheckedUpdateManyWithoutParentNestedInput
-}
-
-export type ParentUncheckedUpdateManyWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  profession?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apprenantparent?: Prisma.apprenantparentUncheckedUpdateManyWithoutParentNestedInput
 }
 
 
@@ -496,11 +449,11 @@ export type ParentUncheckedUpdateManyWithoutUserInput = {
  */
 
 export type ParentCountOutputType = {
-  apprenantParent: number
+  apprenantparent: number
 }
 
 export type ParentCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  apprenantParent?: boolean | ParentCountOutputTypeCountApprenantParentArgs
+  apprenantparent?: boolean | ParentCountOutputTypeCountApprenantparentArgs
 }
 
 /**
@@ -516,42 +469,42 @@ export type ParentCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exten
 /**
  * ParentCountOutputType without action
  */
-export type ParentCountOutputTypeCountApprenantParentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ApprenantParentWhereInput
+export type ParentCountOutputTypeCountApprenantparentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.apprenantparentWhereInput
 }
 
 
-export type ParentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type parentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
   profession?: boolean
   createdAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  apprenantParent?: boolean | Prisma.Parent$apprenantParentArgs<ExtArgs>
+  apprenantparent?: boolean | Prisma.parent$apprenantparentArgs<ExtArgs>
+  user?: boolean | Prisma.userDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.ParentCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["parent"]>
 
 
 
-export type ParentSelectScalar = {
+export type parentSelectScalar = {
   id?: boolean
   userId?: boolean
   profession?: boolean
   createdAt?: boolean
 }
 
-export type ParentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "profession" | "createdAt", ExtArgs["result"]["parent"]>
-export type ParentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  apprenantParent?: boolean | Prisma.Parent$apprenantParentArgs<ExtArgs>
+export type parentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "profession" | "createdAt", ExtArgs["result"]["parent"]>
+export type parentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  apprenantparent?: boolean | Prisma.parent$apprenantparentArgs<ExtArgs>
+  user?: boolean | Prisma.userDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.ParentCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $ParentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Parent"
+export type $parentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "parent"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
-    apprenantParent: Prisma.$ApprenantParentPayload<ExtArgs>[]
+    apprenantparent: Prisma.$apprenantparentPayload<ExtArgs>[]
+    user: Prisma.$userPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -562,18 +515,18 @@ export type $ParentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   composites: {}
 }
 
-export type ParentGetPayload<S extends boolean | null | undefined | ParentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ParentPayload, S>
+export type parentGetPayload<S extends boolean | null | undefined | parentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$parentPayload, S>
 
-export type ParentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ParentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type parentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<parentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ParentCountAggregateInputType | true
   }
 
-export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Parent'], meta: { name: 'Parent' } }
+export interface parentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['parent'], meta: { name: 'parent' } }
   /**
    * Find zero or one Parent that matches the filter.
-   * @param {ParentFindUniqueArgs} args - Arguments to find a Parent
+   * @param {parentFindUniqueArgs} args - Arguments to find a Parent
    * @example
    * // Get one Parent
    * const parent = await prisma.parent.findUnique({
@@ -582,12 +535,12 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findUnique<T extends ParentFindUniqueArgs>(args: Prisma.SelectSubset<T, ParentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends parentFindUniqueArgs>(args: Prisma.SelectSubset<T, parentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Parent that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ParentFindUniqueOrThrowArgs} args - Arguments to find a Parent
+   * @param {parentFindUniqueOrThrowArgs} args - Arguments to find a Parent
    * @example
    * // Get one Parent
    * const parent = await prisma.parent.findUniqueOrThrow({
@@ -596,13 +549,13 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ParentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ParentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends parentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, parentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Parent that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParentFindFirstArgs} args - Arguments to find a Parent
+   * @param {parentFindFirstArgs} args - Arguments to find a Parent
    * @example
    * // Get one Parent
    * const parent = await prisma.parent.findFirst({
@@ -611,14 +564,14 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findFirst<T extends ParentFindFirstArgs>(args?: Prisma.SelectSubset<T, ParentFindFirstArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends parentFindFirstArgs>(args?: Prisma.SelectSubset<T, parentFindFirstArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Parent that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParentFindFirstOrThrowArgs} args - Arguments to find a Parent
+   * @param {parentFindFirstOrThrowArgs} args - Arguments to find a Parent
    * @example
    * // Get one Parent
    * const parent = await prisma.parent.findFirstOrThrow({
@@ -627,13 +580,13 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findFirstOrThrow<T extends ParentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ParentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends parentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, parentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Parents that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParentFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {parentFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Parents
    * const parents = await prisma.parent.findMany()
@@ -645,11 +598,11 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * const parentWithIdOnly = await prisma.parent.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends ParentFindManyArgs>(args?: Prisma.SelectSubset<T, ParentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends parentFindManyArgs>(args?: Prisma.SelectSubset<T, parentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Parent.
-   * @param {ParentCreateArgs} args - Arguments to create a Parent.
+   * @param {parentCreateArgs} args - Arguments to create a Parent.
    * @example
    * // Create one Parent
    * const Parent = await prisma.parent.create({
@@ -659,11 +612,11 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  create<T extends ParentCreateArgs>(args: Prisma.SelectSubset<T, ParentCreateArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends parentCreateArgs>(args: Prisma.SelectSubset<T, parentCreateArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Parents.
-   * @param {ParentCreateManyArgs} args - Arguments to create many Parents.
+   * @param {parentCreateManyArgs} args - Arguments to create many Parents.
    * @example
    * // Create many Parents
    * const parent = await prisma.parent.createMany({
@@ -673,11 +626,11 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    *     
    */
-  createMany<T extends ParentCreateManyArgs>(args?: Prisma.SelectSubset<T, ParentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends parentCreateManyArgs>(args?: Prisma.SelectSubset<T, parentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Parent.
-   * @param {ParentDeleteArgs} args - Arguments to delete one Parent.
+   * @param {parentDeleteArgs} args - Arguments to delete one Parent.
    * @example
    * // Delete one Parent
    * const Parent = await prisma.parent.delete({
@@ -687,11 +640,11 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  delete<T extends ParentDeleteArgs>(args: Prisma.SelectSubset<T, ParentDeleteArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends parentDeleteArgs>(args: Prisma.SelectSubset<T, parentDeleteArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Parent.
-   * @param {ParentUpdateArgs} args - Arguments to update one Parent.
+   * @param {parentUpdateArgs} args - Arguments to update one Parent.
    * @example
    * // Update one Parent
    * const parent = await prisma.parent.update({
@@ -704,11 +657,11 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  update<T extends ParentUpdateArgs>(args: Prisma.SelectSubset<T, ParentUpdateArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends parentUpdateArgs>(args: Prisma.SelectSubset<T, parentUpdateArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Parents.
-   * @param {ParentDeleteManyArgs} args - Arguments to filter Parents to delete.
+   * @param {parentDeleteManyArgs} args - Arguments to filter Parents to delete.
    * @example
    * // Delete a few Parents
    * const { count } = await prisma.parent.deleteMany({
@@ -718,13 +671,13 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  deleteMany<T extends ParentDeleteManyArgs>(args?: Prisma.SelectSubset<T, ParentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends parentDeleteManyArgs>(args?: Prisma.SelectSubset<T, parentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Parents.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParentUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {parentUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Parents
    * const parent = await prisma.parent.updateMany({
@@ -737,11 +690,11 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  updateMany<T extends ParentUpdateManyArgs>(args: Prisma.SelectSubset<T, ParentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends parentUpdateManyArgs>(args: Prisma.SelectSubset<T, parentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Parent.
-   * @param {ParentUpsertArgs} args - Arguments to update or create a Parent.
+   * @param {parentUpsertArgs} args - Arguments to update or create a Parent.
    * @example
    * // Update or create a Parent
    * const parent = await prisma.parent.upsert({
@@ -756,14 +709,14 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  upsert<T extends ParentUpsertArgs>(args: Prisma.SelectSubset<T, ParentUpsertArgs<ExtArgs>>): Prisma.Prisma__ParentClient<runtime.Types.Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends parentUpsertArgs>(args: Prisma.SelectSubset<T, parentUpsertArgs<ExtArgs>>): Prisma.Prisma__parentClient<runtime.Types.Result.GetResult<Prisma.$parentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Parents.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParentCountArgs} args - Arguments to filter Parents to count.
+   * @param {parentCountArgs} args - Arguments to filter Parents to count.
    * @example
    * // Count the number of Parents
    * const count = await prisma.parent.count({
@@ -772,8 +725,8 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
   **/
-  count<T extends ParentCountArgs>(
-    args?: Prisma.Subset<T, ParentCountArgs>,
+  count<T extends parentCountArgs>(
+    args?: Prisma.Subset<T, parentCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -812,7 +765,7 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * Group by Parent.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ParentGroupByArgs} args - Group by arguments.
+   * @param {parentGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -827,14 +780,14 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * 
   **/
   groupBy<
-    T extends ParentGroupByArgs,
+    T extends parentGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ParentGroupByArgs['orderBy'] }
-      : { orderBy?: ParentGroupByArgs['orderBy'] },
+      ? { orderBy: parentGroupByArgs['orderBy'] }
+      : { orderBy?: parentGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -883,23 +836,23 @@ export interface ParentDelegate<ExtArgs extends runtime.Types.Extensions.Interna
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ParentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetParentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, parentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetParentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Parent model
+ * Fields of the parent model
  */
-readonly fields: ParentFieldRefs;
+readonly fields: parentFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Parent.
+ * The delegate class that acts as a "Promise-like" for parent.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ParentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__parentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  apprenantParent<T extends Prisma.Parent$apprenantParentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Parent$apprenantParentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ApprenantParentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  apprenantparent<T extends Prisma.parent$apprenantparentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.parent$apprenantparentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$apprenantparentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  user<T extends Prisma.userDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.userDefaultArgs<ExtArgs>>): Prisma.Prisma__userClient<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -926,398 +879,398 @@ export interface Prisma__ParentClient<T, Null = never, ExtArgs extends runtime.T
 
 
 /**
- * Fields of the Parent model
+ * Fields of the parent model
  */
-export interface ParentFieldRefs {
-  readonly id: Prisma.FieldRef<"Parent", 'String'>
-  readonly userId: Prisma.FieldRef<"Parent", 'String'>
-  readonly profession: Prisma.FieldRef<"Parent", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Parent", 'DateTime'>
+export interface parentFieldRefs {
+  readonly id: Prisma.FieldRef<"parent", 'String'>
+  readonly userId: Prisma.FieldRef<"parent", 'String'>
+  readonly profession: Prisma.FieldRef<"parent", 'String'>
+  readonly createdAt: Prisma.FieldRef<"parent", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Parent findUnique
+ * parent findUnique
  */
-export type ParentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * Filter, which Parent to fetch.
+   * Filter, which parent to fetch.
    */
-  where: Prisma.ParentWhereUniqueInput
+  where: Prisma.parentWhereUniqueInput
 }
 
 /**
- * Parent findUniqueOrThrow
+ * parent findUniqueOrThrow
  */
-export type ParentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * Filter, which Parent to fetch.
+   * Filter, which parent to fetch.
    */
-  where: Prisma.ParentWhereUniqueInput
+  where: Prisma.parentWhereUniqueInput
 }
 
 /**
- * Parent findFirst
+ * parent findFirst
  */
-export type ParentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * Filter, which Parent to fetch.
+   * Filter, which parent to fetch.
    */
-  where?: Prisma.ParentWhereInput
+  where?: Prisma.parentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Parents to fetch.
+   * Determine the order of parents to fetch.
    */
-  orderBy?: Prisma.ParentOrderByWithRelationInput | Prisma.ParentOrderByWithRelationInput[]
+  orderBy?: Prisma.parentOrderByWithRelationInput | Prisma.parentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Parents.
+   * Sets the position for searching for parents.
    */
-  cursor?: Prisma.ParentWhereUniqueInput
+  cursor?: Prisma.parentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Parents from the position of the cursor.
+   * Take `±n` parents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Parents.
+   * Skip the first `n` parents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Parents.
+   * Filter by unique combinations of parents.
    */
   distinct?: Prisma.ParentScalarFieldEnum | Prisma.ParentScalarFieldEnum[]
 }
 
 /**
- * Parent findFirstOrThrow
+ * parent findFirstOrThrow
  */
-export type ParentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * Filter, which Parent to fetch.
+   * Filter, which parent to fetch.
    */
-  where?: Prisma.ParentWhereInput
+  where?: Prisma.parentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Parents to fetch.
+   * Determine the order of parents to fetch.
    */
-  orderBy?: Prisma.ParentOrderByWithRelationInput | Prisma.ParentOrderByWithRelationInput[]
+  orderBy?: Prisma.parentOrderByWithRelationInput | Prisma.parentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Parents.
+   * Sets the position for searching for parents.
    */
-  cursor?: Prisma.ParentWhereUniqueInput
+  cursor?: Prisma.parentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Parents from the position of the cursor.
+   * Take `±n` parents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Parents.
+   * Skip the first `n` parents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Parents.
+   * Filter by unique combinations of parents.
    */
   distinct?: Prisma.ParentScalarFieldEnum | Prisma.ParentScalarFieldEnum[]
 }
 
 /**
- * Parent findMany
+ * parent findMany
  */
-export type ParentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * Filter, which Parents to fetch.
+   * Filter, which parents to fetch.
    */
-  where?: Prisma.ParentWhereInput
+  where?: Prisma.parentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Parents to fetch.
+   * Determine the order of parents to fetch.
    */
-  orderBy?: Prisma.ParentOrderByWithRelationInput | Prisma.ParentOrderByWithRelationInput[]
+  orderBy?: Prisma.parentOrderByWithRelationInput | Prisma.parentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Parents.
+   * Sets the position for listing parents.
    */
-  cursor?: Prisma.ParentWhereUniqueInput
+  cursor?: Prisma.parentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Parents from the position of the cursor.
+   * Take `±n` parents from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Parents.
+   * Skip the first `n` parents.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Parents.
+   * Filter by unique combinations of parents.
    */
   distinct?: Prisma.ParentScalarFieldEnum | Prisma.ParentScalarFieldEnum[]
 }
 
 /**
- * Parent create
+ * parent create
  */
-export type ParentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * The data needed to create a Parent.
+   * The data needed to create a parent.
    */
-  data: Prisma.XOR<Prisma.ParentCreateInput, Prisma.ParentUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.parentCreateInput, Prisma.parentUncheckedCreateInput>
 }
 
 /**
- * Parent createMany
+ * parent createMany
  */
-export type ParentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Parents.
+   * The data used to create many parents.
    */
-  data: Prisma.ParentCreateManyInput | Prisma.ParentCreateManyInput[]
+  data: Prisma.parentCreateManyInput | Prisma.parentCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Parent update
+ * parent update
  */
-export type ParentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * The data needed to update a Parent.
+   * The data needed to update a parent.
    */
-  data: Prisma.XOR<Prisma.ParentUpdateInput, Prisma.ParentUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.parentUpdateInput, Prisma.parentUncheckedUpdateInput>
   /**
-   * Choose, which Parent to update.
+   * Choose, which parent to update.
    */
-  where: Prisma.ParentWhereUniqueInput
+  where: Prisma.parentWhereUniqueInput
 }
 
 /**
- * Parent updateMany
+ * parent updateMany
  */
-export type ParentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Parents.
+   * The data used to update parents.
    */
-  data: Prisma.XOR<Prisma.ParentUpdateManyMutationInput, Prisma.ParentUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.parentUpdateManyMutationInput, Prisma.parentUncheckedUpdateManyInput>
   /**
-   * Filter which Parents to update
+   * Filter which parents to update
    */
-  where?: Prisma.ParentWhereInput
+  where?: Prisma.parentWhereInput
   /**
-   * Limit how many Parents to update.
+   * Limit how many parents to update.
    */
   limit?: number
 }
 
 /**
- * Parent upsert
+ * parent upsert
  */
-export type ParentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * The filter to search for the Parent to update in case it exists.
+   * The filter to search for the parent to update in case it exists.
    */
-  where: Prisma.ParentWhereUniqueInput
+  where: Prisma.parentWhereUniqueInput
   /**
-   * In case the Parent found by the `where` argument doesn't exist, create a new Parent with this data.
+   * In case the parent found by the `where` argument doesn't exist, create a new parent with this data.
    */
-  create: Prisma.XOR<Prisma.ParentCreateInput, Prisma.ParentUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.parentCreateInput, Prisma.parentUncheckedCreateInput>
   /**
-   * In case the Parent was found with the provided `where` argument, update it with this data.
+   * In case the parent was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ParentUpdateInput, Prisma.ParentUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.parentUpdateInput, Prisma.parentUncheckedUpdateInput>
 }
 
 /**
- * Parent delete
+ * parent delete
  */
-export type ParentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
   /**
-   * Filter which Parent to delete.
+   * Filter which parent to delete.
    */
-  where: Prisma.ParentWhereUniqueInput
+  where: Prisma.parentWhereUniqueInput
 }
 
 /**
- * Parent deleteMany
+ * parent deleteMany
  */
-export type ParentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Parents to delete
+   * Filter which parents to delete
    */
-  where?: Prisma.ParentWhereInput
+  where?: Prisma.parentWhereInput
   /**
-   * Limit how many Parents to delete.
+   * Limit how many parents to delete.
    */
   limit?: number
 }
 
 /**
- * Parent.apprenantParent
+ * parent.apprenantparent
  */
-export type Parent$apprenantParentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parent$apprenantparentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ApprenantParent
+   * Select specific fields to fetch from the apprenantparent
    */
-  select?: Prisma.ApprenantParentSelect<ExtArgs> | null
+  select?: Prisma.apprenantparentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ApprenantParent
+   * Omit specific fields from the apprenantparent
    */
-  omit?: Prisma.ApprenantParentOmit<ExtArgs> | null
+  omit?: Prisma.apprenantparentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ApprenantParentInclude<ExtArgs> | null
-  where?: Prisma.ApprenantParentWhereInput
-  orderBy?: Prisma.ApprenantParentOrderByWithRelationInput | Prisma.ApprenantParentOrderByWithRelationInput[]
-  cursor?: Prisma.ApprenantParentWhereUniqueInput
+  include?: Prisma.apprenantparentInclude<ExtArgs> | null
+  where?: Prisma.apprenantparentWhereInput
+  orderBy?: Prisma.apprenantparentOrderByWithRelationInput | Prisma.apprenantparentOrderByWithRelationInput[]
+  cursor?: Prisma.apprenantparentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ApprenantParentScalarFieldEnum | Prisma.ApprenantParentScalarFieldEnum[]
+  distinct?: Prisma.ApprenantparentScalarFieldEnum | Prisma.ApprenantparentScalarFieldEnum[]
 }
 
 /**
- * Parent without action
+ * parent without action
  */
-export type ParentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type parentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Parent
+   * Select specific fields to fetch from the parent
    */
-  select?: Prisma.ParentSelect<ExtArgs> | null
+  select?: Prisma.parentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Parent
+   * Omit specific fields from the parent
    */
-  omit?: Prisma.ParentOmit<ExtArgs> | null
+  omit?: Prisma.parentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ParentInclude<ExtArgs> | null
+  include?: Prisma.parentInclude<ExtArgs> | null
 }

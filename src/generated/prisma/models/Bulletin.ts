@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Bulletin` model and its related types.
+ * This file exports the `bulletin` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Bulletin
+ * Model bulletin
  * 
  */
-export type BulletinModel = runtime.Types.Result.DefaultSelection<Prisma.$BulletinPayload>
+export type bulletinModel = runtime.Types.Result.DefaultSelection<Prisma.$bulletinPayload>
 
 export type AggregateBulletin = {
   _count: BulletinCountAggregateOutputType | null
@@ -43,7 +43,7 @@ export type BulletinMinAggregateOutputType = {
   estGenere: boolean | null
   dateGeneration: Date | null
   appreciation: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType | null
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee | null
   inscriptionApprenantId: string | null
   inscriptionAnneeId: string | null
   periodeScolaireId: string | null
@@ -58,7 +58,7 @@ export type BulletinMaxAggregateOutputType = {
   estGenere: boolean | null
   dateGeneration: Date | null
   appreciation: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType | null
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee | null
   inscriptionApprenantId: string | null
   inscriptionAnneeId: string | null
   periodeScolaireId: string | null
@@ -141,37 +141,37 @@ export type BulletinCountAggregateInputType = {
 
 export type BulletinAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Bulletin to aggregate.
+   * Filter which bulletin to aggregate.
    */
-  where?: Prisma.BulletinWhereInput
+  where?: Prisma.bulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Bulletins to fetch.
+   * Determine the order of bulletins to fetch.
    */
-  orderBy?: Prisma.BulletinOrderByWithRelationInput | Prisma.BulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.bulletinOrderByWithRelationInput | Prisma.bulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.BulletinWhereUniqueInput
+  cursor?: Prisma.bulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Bulletins from the position of the cursor.
+   * Take `±n` bulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Bulletins.
+   * Skip the first `n` bulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Bulletins
+   * Count returned bulletins
   **/
   _count?: true | BulletinCountAggregateInputType
   /**
@@ -211,11 +211,11 @@ export type GetBulletinAggregateType<T extends BulletinAggregateArgs> = {
 
 
 
-export type BulletinGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.BulletinWhereInput
-  orderBy?: Prisma.BulletinOrderByWithAggregationInput | Prisma.BulletinOrderByWithAggregationInput[]
+export type bulletinGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.bulletinWhereInput
+  orderBy?: Prisma.bulletinOrderByWithAggregationInput | Prisma.bulletinOrderByWithAggregationInput[]
   by: Prisma.BulletinScalarFieldEnum[] | Prisma.BulletinScalarFieldEnum
-  having?: Prisma.BulletinScalarWhereWithAggregatesInput
+  having?: Prisma.bulletinScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: BulletinCountAggregateInputType | true
@@ -232,7 +232,7 @@ export type BulletinGroupByOutputType = {
   estGenere: boolean
   dateGeneration: Date | null
   appreciation: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   periodeScolaireId: string
@@ -245,7 +245,7 @@ export type BulletinGroupByOutputType = {
   _max: BulletinMaxAggregateOutputType | null
 }
 
-export type GetBulletinGroupByPayload<T extends BulletinGroupByArgs> = Prisma.PrismaPromise<
+export type GetBulletinGroupByPayload<T extends bulletinGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<BulletinGroupByOutputType, T['by']> &
       {
@@ -260,28 +260,28 @@ export type GetBulletinGroupByPayload<T extends BulletinGroupByArgs> = Prisma.Pr
 
 
 
-export type BulletinWhereInput = {
-  AND?: Prisma.BulletinWhereInput | Prisma.BulletinWhereInput[]
-  OR?: Prisma.BulletinWhereInput[]
-  NOT?: Prisma.BulletinWhereInput | Prisma.BulletinWhereInput[]
-  moyenneGenerale?: Prisma.FloatFilter<"Bulletin"> | number
-  documentUrl?: Prisma.StringFilter<"Bulletin"> | string
-  Rang?: Prisma.IntNullableFilter<"Bulletin"> | number | null
-  estGenere?: Prisma.BoolFilter<"Bulletin"> | boolean
-  dateGeneration?: Prisma.DateTimeNullableFilter<"Bulletin"> | Date | string | null
-  appreciation?: Prisma.StringNullableFilter<"Bulletin"> | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFilter<"Bulletin"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringFilter<"Bulletin"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"Bulletin"> | string
-  periodeScolaireId?: Prisma.StringFilter<"Bulletin"> | string
-  createdAt?: Prisma.DateTimeFilter<"Bulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Bulletin"> | Date | string
-  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
-  periodeScolaire?: Prisma.XOR<Prisma.PeriodeScolaireScalarRelationFilter, Prisma.PeriodeScolaireWhereInput>
-  lignes?: Prisma.LigneBulletinListRelationFilter
+export type bulletinWhereInput = {
+  AND?: Prisma.bulletinWhereInput | Prisma.bulletinWhereInput[]
+  OR?: Prisma.bulletinWhereInput[]
+  NOT?: Prisma.bulletinWhereInput | Prisma.bulletinWhereInput[]
+  moyenneGenerale?: Prisma.FloatFilter<"bulletin"> | number
+  documentUrl?: Prisma.StringFilter<"bulletin"> | string
+  Rang?: Prisma.IntNullableFilter<"bulletin"> | number | null
+  estGenere?: Prisma.BoolFilter<"bulletin"> | boolean
+  dateGeneration?: Prisma.DateTimeNullableFilter<"bulletin"> | Date | string | null
+  appreciation?: Prisma.StringNullableFilter<"bulletin"> | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFilter<"bulletin"> | $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId?: Prisma.StringFilter<"bulletin"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"bulletin"> | string
+  periodeScolaireId?: Prisma.StringFilter<"bulletin"> | string
+  createdAt?: Prisma.DateTimeFilter<"bulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"bulletin"> | Date | string
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
+  periodescolaire?: Prisma.XOR<Prisma.PeriodescolaireScalarRelationFilter, Prisma.periodescolaireWhereInput>
+  lignebulletin?: Prisma.LignebulletinListRelationFilter
 }
 
-export type BulletinOrderByWithRelationInput = {
+export type bulletinOrderByWithRelationInput = {
   moyenneGenerale?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   Rang?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -294,35 +294,35 @@ export type BulletinOrderByWithRelationInput = {
   periodeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  inscription?: Prisma.InscriptionOrderByWithRelationInput
-  periodeScolaire?: Prisma.PeriodeScolaireOrderByWithRelationInput
-  lignes?: Prisma.LigneBulletinOrderByRelationAggregateInput
-  _relevance?: Prisma.BulletinOrderByRelevanceInput
+  inscription?: Prisma.inscriptionOrderByWithRelationInput
+  periodescolaire?: Prisma.periodescolaireOrderByWithRelationInput
+  lignebulletin?: Prisma.lignebulletinOrderByRelationAggregateInput
+  _relevance?: Prisma.bulletinOrderByRelevanceInput
 }
 
-export type BulletinWhereUniqueInput = Prisma.AtLeast<{
-  inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId?: Prisma.BulletinInscriptionApprenantIdInscriptionAnneeIdPeriodeScolaireIdCompoundUniqueInput
-  AND?: Prisma.BulletinWhereInput | Prisma.BulletinWhereInput[]
-  OR?: Prisma.BulletinWhereInput[]
-  NOT?: Prisma.BulletinWhereInput | Prisma.BulletinWhereInput[]
-  moyenneGenerale?: Prisma.FloatFilter<"Bulletin"> | number
-  documentUrl?: Prisma.StringFilter<"Bulletin"> | string
-  Rang?: Prisma.IntNullableFilter<"Bulletin"> | number | null
-  estGenere?: Prisma.BoolFilter<"Bulletin"> | boolean
-  dateGeneration?: Prisma.DateTimeNullableFilter<"Bulletin"> | Date | string | null
-  appreciation?: Prisma.StringNullableFilter<"Bulletin"> | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFilter<"Bulletin"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringFilter<"Bulletin"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"Bulletin"> | string
-  periodeScolaireId?: Prisma.StringFilter<"Bulletin"> | string
-  createdAt?: Prisma.DateTimeFilter<"Bulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Bulletin"> | Date | string
-  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
-  periodeScolaire?: Prisma.XOR<Prisma.PeriodeScolaireScalarRelationFilter, Prisma.PeriodeScolaireWhereInput>
-  lignes?: Prisma.LigneBulletinListRelationFilter
+export type bulletinWhereUniqueInput = Prisma.AtLeast<{
+  inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId?: Prisma.bulletinInscriptionApprenantIdInscriptionAnneeIdPeriodeScolaireIdCompoundUniqueInput
+  AND?: Prisma.bulletinWhereInput | Prisma.bulletinWhereInput[]
+  OR?: Prisma.bulletinWhereInput[]
+  NOT?: Prisma.bulletinWhereInput | Prisma.bulletinWhereInput[]
+  moyenneGenerale?: Prisma.FloatFilter<"bulletin"> | number
+  documentUrl?: Prisma.StringFilter<"bulletin"> | string
+  Rang?: Prisma.IntNullableFilter<"bulletin"> | number | null
+  estGenere?: Prisma.BoolFilter<"bulletin"> | boolean
+  dateGeneration?: Prisma.DateTimeNullableFilter<"bulletin"> | Date | string | null
+  appreciation?: Prisma.StringNullableFilter<"bulletin"> | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFilter<"bulletin"> | $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId?: Prisma.StringFilter<"bulletin"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"bulletin"> | string
+  periodeScolaireId?: Prisma.StringFilter<"bulletin"> | string
+  createdAt?: Prisma.DateTimeFilter<"bulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"bulletin"> | Date | string
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
+  periodescolaire?: Prisma.XOR<Prisma.PeriodescolaireScalarRelationFilter, Prisma.periodescolaireWhereInput>
+  lignebulletin?: Prisma.LignebulletinListRelationFilter
 }, "inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId">
 
-export type BulletinOrderByWithAggregationInput = {
+export type bulletinOrderByWithAggregationInput = {
   moyenneGenerale?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   Rang?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -335,101 +335,101 @@ export type BulletinOrderByWithAggregationInput = {
   periodeScolaireId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.BulletinCountOrderByAggregateInput
-  _avg?: Prisma.BulletinAvgOrderByAggregateInput
-  _max?: Prisma.BulletinMaxOrderByAggregateInput
-  _min?: Prisma.BulletinMinOrderByAggregateInput
-  _sum?: Prisma.BulletinSumOrderByAggregateInput
+  _count?: Prisma.bulletinCountOrderByAggregateInput
+  _avg?: Prisma.bulletinAvgOrderByAggregateInput
+  _max?: Prisma.bulletinMaxOrderByAggregateInput
+  _min?: Prisma.bulletinMinOrderByAggregateInput
+  _sum?: Prisma.bulletinSumOrderByAggregateInput
 }
 
-export type BulletinScalarWhereWithAggregatesInput = {
-  AND?: Prisma.BulletinScalarWhereWithAggregatesInput | Prisma.BulletinScalarWhereWithAggregatesInput[]
-  OR?: Prisma.BulletinScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.BulletinScalarWhereWithAggregatesInput | Prisma.BulletinScalarWhereWithAggregatesInput[]
-  moyenneGenerale?: Prisma.FloatWithAggregatesFilter<"Bulletin"> | number
-  documentUrl?: Prisma.StringWithAggregatesFilter<"Bulletin"> | string
-  Rang?: Prisma.IntNullableWithAggregatesFilter<"Bulletin"> | number | null
-  estGenere?: Prisma.BoolWithAggregatesFilter<"Bulletin"> | boolean
-  dateGeneration?: Prisma.DateTimeNullableWithAggregatesFilter<"Bulletin"> | Date | string | null
-  appreciation?: Prisma.StringNullableWithAggregatesFilter<"Bulletin"> | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeWithAggregatesFilter<"Bulletin"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"Bulletin"> | string
-  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"Bulletin"> | string
-  periodeScolaireId?: Prisma.StringWithAggregatesFilter<"Bulletin"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Bulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Bulletin"> | Date | string
+export type bulletinScalarWhereWithAggregatesInput = {
+  AND?: Prisma.bulletinScalarWhereWithAggregatesInput | Prisma.bulletinScalarWhereWithAggregatesInput[]
+  OR?: Prisma.bulletinScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.bulletinScalarWhereWithAggregatesInput | Prisma.bulletinScalarWhereWithAggregatesInput[]
+  moyenneGenerale?: Prisma.FloatWithAggregatesFilter<"bulletin"> | number
+  documentUrl?: Prisma.StringWithAggregatesFilter<"bulletin"> | string
+  Rang?: Prisma.IntNullableWithAggregatesFilter<"bulletin"> | number | null
+  estGenere?: Prisma.BoolWithAggregatesFilter<"bulletin"> | boolean
+  dateGeneration?: Prisma.DateTimeNullableWithAggregatesFilter<"bulletin"> | Date | string | null
+  appreciation?: Prisma.StringNullableWithAggregatesFilter<"bulletin"> | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeWithAggregatesFilter<"bulletin"> | $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"bulletin"> | string
+  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"bulletin"> | string
+  periodeScolaireId?: Prisma.StringWithAggregatesFilter<"bulletin"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"bulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"bulletin"> | Date | string
 }
 
-export type BulletinCreateInput = {
+export type bulletinCreateInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutBulletinsInput
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutBulletinInput
-  lignes?: Prisma.LigneBulletinCreateNestedManyWithoutBulletinInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutBulletinInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutBulletinInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutBulletinInput
 }
 
-export type BulletinUncheckedCreateInput = {
+export type bulletinUncheckedCreateInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  lignes?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutBulletinInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutBulletinInput
 }
 
-export type BulletinUpdateInput = {
+export type bulletinUpdateInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutBulletinsNestedInput
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutBulletinNestedInput
-  lignes?: Prisma.LigneBulletinUpdateManyWithoutBulletinNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutBulletinNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutBulletinNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutBulletinNestedInput
 }
 
-export type BulletinUncheckedUpdateInput = {
+export type bulletinUncheckedUpdateInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  lignes?: Prisma.LigneBulletinUncheckedUpdateManyWithoutBulletinNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutBulletinNestedInput
 }
 
-export type BulletinCreateManyInput = {
+export type bulletinCreateManyInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   periodeScolaireId: string
@@ -437,26 +437,26 @@ export type BulletinCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type BulletinUpdateManyMutationInput = {
+export type bulletinUpdateManyMutationInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type BulletinUncheckedUpdateManyInput = {
+export type bulletinUncheckedUpdateManyInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -464,29 +464,19 @@ export type BulletinUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type BulletinListRelationFilter = {
-  every?: Prisma.BulletinWhereInput
-  some?: Prisma.BulletinWhereInput
-  none?: Prisma.BulletinWhereInput
-}
-
-export type BulletinOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
-}
-
-export type BulletinOrderByRelevanceInput = {
-  fields: Prisma.BulletinOrderByRelevanceFieldEnum | Prisma.BulletinOrderByRelevanceFieldEnum[]
+export type bulletinOrderByRelevanceInput = {
+  fields: Prisma.bulletinOrderByRelevanceFieldEnum | Prisma.bulletinOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type BulletinInscriptionApprenantIdInscriptionAnneeIdPeriodeScolaireIdCompoundUniqueInput = {
+export type bulletinInscriptionApprenantIdInscriptionAnneeIdPeriodeScolaireIdCompoundUniqueInput = {
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   periodeScolaireId: string
 }
 
-export type BulletinCountOrderByAggregateInput = {
+export type bulletinCountOrderByAggregateInput = {
   moyenneGenerale?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   Rang?: Prisma.SortOrder
@@ -501,12 +491,12 @@ export type BulletinCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type BulletinAvgOrderByAggregateInput = {
+export type bulletinAvgOrderByAggregateInput = {
   moyenneGenerale?: Prisma.SortOrder
   Rang?: Prisma.SortOrder
 }
 
-export type BulletinMaxOrderByAggregateInput = {
+export type bulletinMaxOrderByAggregateInput = {
   moyenneGenerale?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   Rang?: Prisma.SortOrder
@@ -521,7 +511,7 @@ export type BulletinMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type BulletinMinOrderByAggregateInput = {
+export type bulletinMinOrderByAggregateInput = {
   moyenneGenerale?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   Rang?: Prisma.SortOrder
@@ -536,98 +526,32 @@ export type BulletinMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type BulletinSumOrderByAggregateInput = {
+export type bulletinSumOrderByAggregateInput = {
   moyenneGenerale?: Prisma.SortOrder
   Rang?: Prisma.SortOrder
+}
+
+export type BulletinListRelationFilter = {
+  every?: Prisma.bulletinWhereInput
+  some?: Prisma.bulletinWhereInput
+  none?: Prisma.bulletinWhereInput
+}
+
+export type bulletinOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type BulletinScalarRelationFilter = {
-  is?: Prisma.BulletinWhereInput
-  isNot?: Prisma.BulletinWhereInput
+  is?: Prisma.bulletinWhereInput
+  isNot?: Prisma.bulletinWhereInput
 }
 
-export type BulletinCreateNestedManyWithoutPeriodeScolaireInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.BulletinCreateWithoutPeriodeScolaireInput[] | Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput | Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.BulletinCreateManyPeriodeScolaireInputEnvelope
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-}
-
-export type BulletinUncheckedCreateNestedManyWithoutPeriodeScolaireInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.BulletinCreateWithoutPeriodeScolaireInput[] | Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput | Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.BulletinCreateManyPeriodeScolaireInputEnvelope
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-}
-
-export type BulletinUpdateManyWithoutPeriodeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.BulletinCreateWithoutPeriodeScolaireInput[] | Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput | Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput[]
-  upsert?: Prisma.BulletinUpsertWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.BulletinUpsertWithWhereUniqueWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.BulletinCreateManyPeriodeScolaireInputEnvelope
-  set?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  disconnect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  delete?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  update?: Prisma.BulletinUpdateWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.BulletinUpdateWithWhereUniqueWithoutPeriodeScolaireInput[]
-  updateMany?: Prisma.BulletinUpdateManyWithWhereWithoutPeriodeScolaireInput | Prisma.BulletinUpdateManyWithWhereWithoutPeriodeScolaireInput[]
-  deleteMany?: Prisma.BulletinScalarWhereInput | Prisma.BulletinScalarWhereInput[]
-}
-
-export type BulletinUncheckedUpdateManyWithoutPeriodeScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput> | Prisma.BulletinCreateWithoutPeriodeScolaireInput[] | Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput | Prisma.BulletinCreateOrConnectWithoutPeriodeScolaireInput[]
-  upsert?: Prisma.BulletinUpsertWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.BulletinUpsertWithWhereUniqueWithoutPeriodeScolaireInput[]
-  createMany?: Prisma.BulletinCreateManyPeriodeScolaireInputEnvelope
-  set?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  disconnect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  delete?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  update?: Prisma.BulletinUpdateWithWhereUniqueWithoutPeriodeScolaireInput | Prisma.BulletinUpdateWithWhereUniqueWithoutPeriodeScolaireInput[]
-  updateMany?: Prisma.BulletinUpdateManyWithWhereWithoutPeriodeScolaireInput | Prisma.BulletinUpdateManyWithWhereWithoutPeriodeScolaireInput[]
-  deleteMany?: Prisma.BulletinScalarWhereInput | Prisma.BulletinScalarWhereInput[]
-}
-
-export type BulletinCreateNestedManyWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutInscriptionInput, Prisma.BulletinUncheckedCreateWithoutInscriptionInput> | Prisma.BulletinCreateWithoutInscriptionInput[] | Prisma.BulletinUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutInscriptionInput | Prisma.BulletinCreateOrConnectWithoutInscriptionInput[]
-  createMany?: Prisma.BulletinCreateManyInscriptionInputEnvelope
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-}
-
-export type BulletinUncheckedCreateNestedManyWithoutInscriptionInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutInscriptionInput, Prisma.BulletinUncheckedCreateWithoutInscriptionInput> | Prisma.BulletinCreateWithoutInscriptionInput[] | Prisma.BulletinUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutInscriptionInput | Prisma.BulletinCreateOrConnectWithoutInscriptionInput[]
-  createMany?: Prisma.BulletinCreateManyInscriptionInputEnvelope
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-}
-
-export type BulletinUpdateManyWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutInscriptionInput, Prisma.BulletinUncheckedCreateWithoutInscriptionInput> | Prisma.BulletinCreateWithoutInscriptionInput[] | Prisma.BulletinUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutInscriptionInput | Prisma.BulletinCreateOrConnectWithoutInscriptionInput[]
-  upsert?: Prisma.BulletinUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.BulletinUpsertWithWhereUniqueWithoutInscriptionInput[]
-  createMany?: Prisma.BulletinCreateManyInscriptionInputEnvelope
-  set?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  disconnect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  delete?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  update?: Prisma.BulletinUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.BulletinUpdateWithWhereUniqueWithoutInscriptionInput[]
-  updateMany?: Prisma.BulletinUpdateManyWithWhereWithoutInscriptionInput | Prisma.BulletinUpdateManyWithWhereWithoutInscriptionInput[]
-  deleteMany?: Prisma.BulletinScalarWhereInput | Prisma.BulletinScalarWhereInput[]
-}
-
-export type BulletinUncheckedUpdateManyWithoutInscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutInscriptionInput, Prisma.BulletinUncheckedCreateWithoutInscriptionInput> | Prisma.BulletinCreateWithoutInscriptionInput[] | Prisma.BulletinUncheckedCreateWithoutInscriptionInput[]
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutInscriptionInput | Prisma.BulletinCreateOrConnectWithoutInscriptionInput[]
-  upsert?: Prisma.BulletinUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.BulletinUpsertWithWhereUniqueWithoutInscriptionInput[]
-  createMany?: Prisma.BulletinCreateManyInscriptionInputEnvelope
-  set?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  disconnect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  delete?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  connect?: Prisma.BulletinWhereUniqueInput | Prisma.BulletinWhereUniqueInput[]
-  update?: Prisma.BulletinUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.BulletinUpdateWithWhereUniqueWithoutInscriptionInput[]
-  updateMany?: Prisma.BulletinUpdateManyWithWhereWithoutInscriptionInput | Prisma.BulletinUpdateManyWithWhereWithoutInscriptionInput[]
-  deleteMany?: Prisma.BulletinScalarWhereInput | Prisma.BulletinScalarWhereInput[]
+export type FloatFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 export type NullableIntFieldUpdateOperationsInput = {
@@ -638,336 +562,424 @@ export type NullableIntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
+}
+
 export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
 }
 
-export type EnumDecisionFinAnneeTypeFieldUpdateOperationsInput = {
-  set?: $Enums.DecisionFinAnneeType
+export type Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput = {
+  set?: $Enums.bulletin_decisionFinAnnee
 }
 
-export type BulletinCreateNestedOneWithoutLignesInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutLignesInput, Prisma.BulletinUncheckedCreateWithoutLignesInput>
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutLignesInput
-  connect?: Prisma.BulletinWhereUniqueInput
+export type bulletinCreateNestedManyWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutInscriptionInput, Prisma.bulletinUncheckedCreateWithoutInscriptionInput> | Prisma.bulletinCreateWithoutInscriptionInput[] | Prisma.bulletinUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutInscriptionInput | Prisma.bulletinCreateOrConnectWithoutInscriptionInput[]
+  createMany?: Prisma.bulletinCreateManyInscriptionInputEnvelope
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
 }
 
-export type BulletinUpdateOneRequiredWithoutLignesNestedInput = {
-  create?: Prisma.XOR<Prisma.BulletinCreateWithoutLignesInput, Prisma.BulletinUncheckedCreateWithoutLignesInput>
-  connectOrCreate?: Prisma.BulletinCreateOrConnectWithoutLignesInput
-  upsert?: Prisma.BulletinUpsertWithoutLignesInput
-  connect?: Prisma.BulletinWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.BulletinUpdateToOneWithWhereWithoutLignesInput, Prisma.BulletinUpdateWithoutLignesInput>, Prisma.BulletinUncheckedUpdateWithoutLignesInput>
+export type bulletinUncheckedCreateNestedManyWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutInscriptionInput, Prisma.bulletinUncheckedCreateWithoutInscriptionInput> | Prisma.bulletinCreateWithoutInscriptionInput[] | Prisma.bulletinUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutInscriptionInput | Prisma.bulletinCreateOrConnectWithoutInscriptionInput[]
+  createMany?: Prisma.bulletinCreateManyInscriptionInputEnvelope
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
 }
 
-export type BulletinCreateWithoutPeriodeScolaireInput = {
+export type bulletinUpdateManyWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutInscriptionInput, Prisma.bulletinUncheckedCreateWithoutInscriptionInput> | Prisma.bulletinCreateWithoutInscriptionInput[] | Prisma.bulletinUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutInscriptionInput | Prisma.bulletinCreateOrConnectWithoutInscriptionInput[]
+  upsert?: Prisma.bulletinUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.bulletinUpsertWithWhereUniqueWithoutInscriptionInput[]
+  createMany?: Prisma.bulletinCreateManyInscriptionInputEnvelope
+  set?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  disconnect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  delete?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  update?: Prisma.bulletinUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.bulletinUpdateWithWhereUniqueWithoutInscriptionInput[]
+  updateMany?: Prisma.bulletinUpdateManyWithWhereWithoutInscriptionInput | Prisma.bulletinUpdateManyWithWhereWithoutInscriptionInput[]
+  deleteMany?: Prisma.bulletinScalarWhereInput | Prisma.bulletinScalarWhereInput[]
+}
+
+export type bulletinUncheckedUpdateManyWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutInscriptionInput, Prisma.bulletinUncheckedCreateWithoutInscriptionInput> | Prisma.bulletinCreateWithoutInscriptionInput[] | Prisma.bulletinUncheckedCreateWithoutInscriptionInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutInscriptionInput | Prisma.bulletinCreateOrConnectWithoutInscriptionInput[]
+  upsert?: Prisma.bulletinUpsertWithWhereUniqueWithoutInscriptionInput | Prisma.bulletinUpsertWithWhereUniqueWithoutInscriptionInput[]
+  createMany?: Prisma.bulletinCreateManyInscriptionInputEnvelope
+  set?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  disconnect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  delete?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  update?: Prisma.bulletinUpdateWithWhereUniqueWithoutInscriptionInput | Prisma.bulletinUpdateWithWhereUniqueWithoutInscriptionInput[]
+  updateMany?: Prisma.bulletinUpdateManyWithWhereWithoutInscriptionInput | Prisma.bulletinUpdateManyWithWhereWithoutInscriptionInput[]
+  deleteMany?: Prisma.bulletinScalarWhereInput | Prisma.bulletinScalarWhereInput[]
+}
+
+export type bulletinCreateNestedOneWithoutLignebulletinInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutLignebulletinInput, Prisma.bulletinUncheckedCreateWithoutLignebulletinInput>
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutLignebulletinInput
+  connect?: Prisma.bulletinWhereUniqueInput
+}
+
+export type bulletinUpdateOneRequiredWithoutLignebulletinNestedInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutLignebulletinInput, Prisma.bulletinUncheckedCreateWithoutLignebulletinInput>
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutLignebulletinInput
+  upsert?: Prisma.bulletinUpsertWithoutLignebulletinInput
+  connect?: Prisma.bulletinWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.bulletinUpdateToOneWithWhereWithoutLignebulletinInput, Prisma.bulletinUpdateWithoutLignebulletinInput>, Prisma.bulletinUncheckedUpdateWithoutLignebulletinInput>
+}
+
+export type bulletinCreateNestedManyWithoutPeriodescolaireInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput> | Prisma.bulletinCreateWithoutPeriodescolaireInput[] | Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput | Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput[]
+  createMany?: Prisma.bulletinCreateManyPeriodescolaireInputEnvelope
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+}
+
+export type bulletinUncheckedCreateNestedManyWithoutPeriodescolaireInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput> | Prisma.bulletinCreateWithoutPeriodescolaireInput[] | Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput | Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput[]
+  createMany?: Prisma.bulletinCreateManyPeriodescolaireInputEnvelope
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+}
+
+export type bulletinUpdateManyWithoutPeriodescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput> | Prisma.bulletinCreateWithoutPeriodescolaireInput[] | Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput | Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput[]
+  upsert?: Prisma.bulletinUpsertWithWhereUniqueWithoutPeriodescolaireInput | Prisma.bulletinUpsertWithWhereUniqueWithoutPeriodescolaireInput[]
+  createMany?: Prisma.bulletinCreateManyPeriodescolaireInputEnvelope
+  set?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  disconnect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  delete?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  update?: Prisma.bulletinUpdateWithWhereUniqueWithoutPeriodescolaireInput | Prisma.bulletinUpdateWithWhereUniqueWithoutPeriodescolaireInput[]
+  updateMany?: Prisma.bulletinUpdateManyWithWhereWithoutPeriodescolaireInput | Prisma.bulletinUpdateManyWithWhereWithoutPeriodescolaireInput[]
+  deleteMany?: Prisma.bulletinScalarWhereInput | Prisma.bulletinScalarWhereInput[]
+}
+
+export type bulletinUncheckedUpdateManyWithoutPeriodescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.bulletinCreateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput> | Prisma.bulletinCreateWithoutPeriodescolaireInput[] | Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput[]
+  connectOrCreate?: Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput | Prisma.bulletinCreateOrConnectWithoutPeriodescolaireInput[]
+  upsert?: Prisma.bulletinUpsertWithWhereUniqueWithoutPeriodescolaireInput | Prisma.bulletinUpsertWithWhereUniqueWithoutPeriodescolaireInput[]
+  createMany?: Prisma.bulletinCreateManyPeriodescolaireInputEnvelope
+  set?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  disconnect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  delete?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  connect?: Prisma.bulletinWhereUniqueInput | Prisma.bulletinWhereUniqueInput[]
+  update?: Prisma.bulletinUpdateWithWhereUniqueWithoutPeriodescolaireInput | Prisma.bulletinUpdateWithWhereUniqueWithoutPeriodescolaireInput[]
+  updateMany?: Prisma.bulletinUpdateManyWithWhereWithoutPeriodescolaireInput | Prisma.bulletinUpdateManyWithWhereWithoutPeriodescolaireInput[]
+  deleteMany?: Prisma.bulletinScalarWhereInput | Prisma.bulletinScalarWhereInput[]
+}
+
+export type bulletinCreateWithoutInscriptionInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   createdAt?: Date | string
   updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutBulletinsInput
-  lignes?: Prisma.LigneBulletinCreateNestedManyWithoutBulletinInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutBulletinInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutBulletinInput
 }
 
-export type BulletinUncheckedCreateWithoutPeriodeScolaireInput = {
+export type bulletinUncheckedCreateWithoutInscriptionInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
-  inscriptionApprenantId: string
-  inscriptionAnneeId: string
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
+  periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  lignes?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutBulletinInput
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutBulletinInput
 }
 
-export type BulletinCreateOrConnectWithoutPeriodeScolaireInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  create: Prisma.XOR<Prisma.BulletinCreateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput>
+export type bulletinCreateOrConnectWithoutInscriptionInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  create: Prisma.XOR<Prisma.bulletinCreateWithoutInscriptionInput, Prisma.bulletinUncheckedCreateWithoutInscriptionInput>
 }
 
-export type BulletinCreateManyPeriodeScolaireInputEnvelope = {
-  data: Prisma.BulletinCreateManyPeriodeScolaireInput | Prisma.BulletinCreateManyPeriodeScolaireInput[]
+export type bulletinCreateManyInscriptionInputEnvelope = {
+  data: Prisma.bulletinCreateManyInscriptionInput | Prisma.bulletinCreateManyInscriptionInput[]
   skipDuplicates?: boolean
 }
 
-export type BulletinUpsertWithWhereUniqueWithoutPeriodeScolaireInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  update: Prisma.XOR<Prisma.BulletinUpdateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedUpdateWithoutPeriodeScolaireInput>
-  create: Prisma.XOR<Prisma.BulletinCreateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedCreateWithoutPeriodeScolaireInput>
+export type bulletinUpsertWithWhereUniqueWithoutInscriptionInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  update: Prisma.XOR<Prisma.bulletinUpdateWithoutInscriptionInput, Prisma.bulletinUncheckedUpdateWithoutInscriptionInput>
+  create: Prisma.XOR<Prisma.bulletinCreateWithoutInscriptionInput, Prisma.bulletinUncheckedCreateWithoutInscriptionInput>
 }
 
-export type BulletinUpdateWithWhereUniqueWithoutPeriodeScolaireInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  data: Prisma.XOR<Prisma.BulletinUpdateWithoutPeriodeScolaireInput, Prisma.BulletinUncheckedUpdateWithoutPeriodeScolaireInput>
+export type bulletinUpdateWithWhereUniqueWithoutInscriptionInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  data: Prisma.XOR<Prisma.bulletinUpdateWithoutInscriptionInput, Prisma.bulletinUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type BulletinUpdateManyWithWhereWithoutPeriodeScolaireInput = {
-  where: Prisma.BulletinScalarWhereInput
-  data: Prisma.XOR<Prisma.BulletinUpdateManyMutationInput, Prisma.BulletinUncheckedUpdateManyWithoutPeriodeScolaireInput>
+export type bulletinUpdateManyWithWhereWithoutInscriptionInput = {
+  where: Prisma.bulletinScalarWhereInput
+  data: Prisma.XOR<Prisma.bulletinUpdateManyMutationInput, Prisma.bulletinUncheckedUpdateManyWithoutInscriptionInput>
 }
 
-export type BulletinScalarWhereInput = {
-  AND?: Prisma.BulletinScalarWhereInput | Prisma.BulletinScalarWhereInput[]
-  OR?: Prisma.BulletinScalarWhereInput[]
-  NOT?: Prisma.BulletinScalarWhereInput | Prisma.BulletinScalarWhereInput[]
-  moyenneGenerale?: Prisma.FloatFilter<"Bulletin"> | number
-  documentUrl?: Prisma.StringFilter<"Bulletin"> | string
-  Rang?: Prisma.IntNullableFilter<"Bulletin"> | number | null
-  estGenere?: Prisma.BoolFilter<"Bulletin"> | boolean
-  dateGeneration?: Prisma.DateTimeNullableFilter<"Bulletin"> | Date | string | null
-  appreciation?: Prisma.StringNullableFilter<"Bulletin"> | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFilter<"Bulletin"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringFilter<"Bulletin"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"Bulletin"> | string
-  periodeScolaireId?: Prisma.StringFilter<"Bulletin"> | string
-  createdAt?: Prisma.DateTimeFilter<"Bulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Bulletin"> | Date | string
+export type bulletinScalarWhereInput = {
+  AND?: Prisma.bulletinScalarWhereInput | Prisma.bulletinScalarWhereInput[]
+  OR?: Prisma.bulletinScalarWhereInput[]
+  NOT?: Prisma.bulletinScalarWhereInput | Prisma.bulletinScalarWhereInput[]
+  moyenneGenerale?: Prisma.FloatFilter<"bulletin"> | number
+  documentUrl?: Prisma.StringFilter<"bulletin"> | string
+  Rang?: Prisma.IntNullableFilter<"bulletin"> | number | null
+  estGenere?: Prisma.BoolFilter<"bulletin"> | boolean
+  dateGeneration?: Prisma.DateTimeNullableFilter<"bulletin"> | Date | string | null
+  appreciation?: Prisma.StringNullableFilter<"bulletin"> | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFilter<"bulletin"> | $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId?: Prisma.StringFilter<"bulletin"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"bulletin"> | string
+  periodeScolaireId?: Prisma.StringFilter<"bulletin"> | string
+  createdAt?: Prisma.DateTimeFilter<"bulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"bulletin"> | Date | string
 }
 
-export type BulletinCreateWithoutInscriptionInput = {
+export type bulletinCreateWithoutLignebulletinInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   createdAt?: Date | string
   updatedAt?: Date | string
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutBulletinInput
-  lignes?: Prisma.LigneBulletinCreateNestedManyWithoutBulletinInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutBulletinInput
+  periodescolaire: Prisma.periodescolaireCreateNestedOneWithoutBulletinInput
 }
 
-export type BulletinUncheckedCreateWithoutInscriptionInput = {
+export type bulletinUncheckedCreateWithoutLignebulletinInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId: string
+  inscriptionAnneeId: string
   periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  lignes?: Prisma.LigneBulletinUncheckedCreateNestedManyWithoutBulletinInput
 }
 
-export type BulletinCreateOrConnectWithoutInscriptionInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  create: Prisma.XOR<Prisma.BulletinCreateWithoutInscriptionInput, Prisma.BulletinUncheckedCreateWithoutInscriptionInput>
+export type bulletinCreateOrConnectWithoutLignebulletinInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  create: Prisma.XOR<Prisma.bulletinCreateWithoutLignebulletinInput, Prisma.bulletinUncheckedCreateWithoutLignebulletinInput>
 }
 
-export type BulletinCreateManyInscriptionInputEnvelope = {
-  data: Prisma.BulletinCreateManyInscriptionInput | Prisma.BulletinCreateManyInscriptionInput[]
+export type bulletinUpsertWithoutLignebulletinInput = {
+  update: Prisma.XOR<Prisma.bulletinUpdateWithoutLignebulletinInput, Prisma.bulletinUncheckedUpdateWithoutLignebulletinInput>
+  create: Prisma.XOR<Prisma.bulletinCreateWithoutLignebulletinInput, Prisma.bulletinUncheckedCreateWithoutLignebulletinInput>
+  where?: Prisma.bulletinWhereInput
+}
+
+export type bulletinUpdateToOneWithWhereWithoutLignebulletinInput = {
+  where?: Prisma.bulletinWhereInput
+  data: Prisma.XOR<Prisma.bulletinUpdateWithoutLignebulletinInput, Prisma.bulletinUncheckedUpdateWithoutLignebulletinInput>
+}
+
+export type bulletinUpdateWithoutLignebulletinInput = {
+  moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutBulletinNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutBulletinNestedInput
+}
+
+export type bulletinUncheckedUpdateWithoutLignebulletinInput = {
+  moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
+  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type bulletinCreateWithoutPeriodescolaireInput = {
+  moyenneGenerale: number
+  documentUrl: string
+  Rang?: number | null
+  estGenere?: boolean
+  dateGeneration?: Date | string | null
+  appreciation?: string | null
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  inscription: Prisma.inscriptionCreateNestedOneWithoutBulletinInput
+  lignebulletin?: Prisma.lignebulletinCreateNestedManyWithoutBulletinInput
+}
+
+export type bulletinUncheckedCreateWithoutPeriodescolaireInput = {
+  moyenneGenerale: number
+  documentUrl: string
+  Rang?: number | null
+  estGenere?: boolean
+  dateGeneration?: Date | string | null
+  appreciation?: string | null
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
+  inscriptionApprenantId: string
+  inscriptionAnneeId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lignebulletin?: Prisma.lignebulletinUncheckedCreateNestedManyWithoutBulletinInput
+}
+
+export type bulletinCreateOrConnectWithoutPeriodescolaireInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  create: Prisma.XOR<Prisma.bulletinCreateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput>
+}
+
+export type bulletinCreateManyPeriodescolaireInputEnvelope = {
+  data: Prisma.bulletinCreateManyPeriodescolaireInput | Prisma.bulletinCreateManyPeriodescolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type BulletinUpsertWithWhereUniqueWithoutInscriptionInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  update: Prisma.XOR<Prisma.BulletinUpdateWithoutInscriptionInput, Prisma.BulletinUncheckedUpdateWithoutInscriptionInput>
-  create: Prisma.XOR<Prisma.BulletinCreateWithoutInscriptionInput, Prisma.BulletinUncheckedCreateWithoutInscriptionInput>
+export type bulletinUpsertWithWhereUniqueWithoutPeriodescolaireInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  update: Prisma.XOR<Prisma.bulletinUpdateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedUpdateWithoutPeriodescolaireInput>
+  create: Prisma.XOR<Prisma.bulletinCreateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedCreateWithoutPeriodescolaireInput>
 }
 
-export type BulletinUpdateWithWhereUniqueWithoutInscriptionInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  data: Prisma.XOR<Prisma.BulletinUpdateWithoutInscriptionInput, Prisma.BulletinUncheckedUpdateWithoutInscriptionInput>
+export type bulletinUpdateWithWhereUniqueWithoutPeriodescolaireInput = {
+  where: Prisma.bulletinWhereUniqueInput
+  data: Prisma.XOR<Prisma.bulletinUpdateWithoutPeriodescolaireInput, Prisma.bulletinUncheckedUpdateWithoutPeriodescolaireInput>
 }
 
-export type BulletinUpdateManyWithWhereWithoutInscriptionInput = {
-  where: Prisma.BulletinScalarWhereInput
-  data: Prisma.XOR<Prisma.BulletinUpdateManyMutationInput, Prisma.BulletinUncheckedUpdateManyWithoutInscriptionInput>
+export type bulletinUpdateManyWithWhereWithoutPeriodescolaireInput = {
+  where: Prisma.bulletinScalarWhereInput
+  data: Prisma.XOR<Prisma.bulletinUpdateManyMutationInput, Prisma.bulletinUncheckedUpdateManyWithoutPeriodescolaireInput>
 }
 
-export type BulletinCreateWithoutLignesInput = {
+export type bulletinCreateManyInscriptionInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  inscription: Prisma.InscriptionCreateNestedOneWithoutBulletinsInput
-  periodeScolaire: Prisma.PeriodeScolaireCreateNestedOneWithoutBulletinInput
-}
-
-export type BulletinUncheckedCreateWithoutLignesInput = {
-  moyenneGenerale: number
-  documentUrl: string
-  Rang?: number | null
-  estGenere?: boolean
-  dateGeneration?: Date | string | null
-  appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
-  inscriptionApprenantId: string
-  inscriptionAnneeId: string
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   periodeScolaireId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type BulletinCreateOrConnectWithoutLignesInput = {
-  where: Prisma.BulletinWhereUniqueInput
-  create: Prisma.XOR<Prisma.BulletinCreateWithoutLignesInput, Prisma.BulletinUncheckedCreateWithoutLignesInput>
-}
-
-export type BulletinUpsertWithoutLignesInput = {
-  update: Prisma.XOR<Prisma.BulletinUpdateWithoutLignesInput, Prisma.BulletinUncheckedUpdateWithoutLignesInput>
-  create: Prisma.XOR<Prisma.BulletinCreateWithoutLignesInput, Prisma.BulletinUncheckedCreateWithoutLignesInput>
-  where?: Prisma.BulletinWhereInput
-}
-
-export type BulletinUpdateToOneWithWhereWithoutLignesInput = {
-  where?: Prisma.BulletinWhereInput
-  data: Prisma.XOR<Prisma.BulletinUpdateWithoutLignesInput, Prisma.BulletinUncheckedUpdateWithoutLignesInput>
-}
-
-export type BulletinUpdateWithoutLignesInput = {
+export type bulletinUpdateWithoutInscriptionInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutBulletinsNestedInput
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutBulletinNestedInput
+  periodescolaire?: Prisma.periodescolaireUpdateOneRequiredWithoutBulletinNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutBulletinNestedInput
 }
 
-export type BulletinUncheckedUpdateWithoutLignesInput = {
+export type bulletinUncheckedUpdateWithoutInscriptionInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
+  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutBulletinNestedInput
+}
+
+export type bulletinUncheckedUpdateManyWithoutInscriptionInput = {
+  moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type BulletinCreateManyPeriodeScolaireInput = {
+export type bulletinCreateManyPeriodescolaireInput = {
   moyenneGenerale: number
   documentUrl: string
   Rang?: number | null
   estGenere?: boolean
   dateGeneration?: Date | string | null
   appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
+  decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type BulletinUpdateWithoutPeriodeScolaireInput = {
+export type bulletinUpdateWithoutPeriodescolaireInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  inscription?: Prisma.InscriptionUpdateOneRequiredWithoutBulletinsNestedInput
-  lignes?: Prisma.LigneBulletinUpdateManyWithoutBulletinNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutBulletinNestedInput
+  lignebulletin?: Prisma.lignebulletinUpdateManyWithoutBulletinNestedInput
 }
 
-export type BulletinUncheckedUpdateWithoutPeriodeScolaireInput = {
+export type bulletinUncheckedUpdateWithoutPeriodescolaireInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  lignes?: Prisma.LigneBulletinUncheckedUpdateManyWithoutBulletinNestedInput
+  lignebulletin?: Prisma.lignebulletinUncheckedUpdateManyWithoutBulletinNestedInput
 }
 
-export type BulletinUncheckedUpdateManyWithoutPeriodeScolaireInput = {
+export type bulletinUncheckedUpdateManyWithoutPeriodescolaireInput = {
   moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decisionFinAnnee?: Prisma.Enumbulletin_decisionFinAnneeFieldUpdateOperationsInput | $Enums.bulletin_decisionFinAnnee
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type BulletinCreateManyInscriptionInput = {
-  moyenneGenerale: number
-  documentUrl: string
-  Rang?: number | null
-  estGenere?: boolean
-  dateGeneration?: Date | string | null
-  appreciation?: string | null
-  decisionFinAnnee: $Enums.DecisionFinAnneeType
-  periodeScolaireId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type BulletinUpdateWithoutInscriptionInput = {
-  moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
-  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  periodeScolaire?: Prisma.PeriodeScolaireUpdateOneRequiredWithoutBulletinNestedInput
-  lignes?: Prisma.LigneBulletinUpdateManyWithoutBulletinNestedInput
-}
-
-export type BulletinUncheckedUpdateWithoutInscriptionInput = {
-  moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
-  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
-  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  lignes?: Prisma.LigneBulletinUncheckedUpdateManyWithoutBulletinNestedInput
-}
-
-export type BulletinUncheckedUpdateManyWithoutInscriptionInput = {
-  moyenneGenerale?: Prisma.FloatFieldUpdateOperationsInput | number
-  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  Rang?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  estGenere?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dateGeneration?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  appreciation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  decisionFinAnnee?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
-  periodeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -978,11 +990,11 @@ export type BulletinUncheckedUpdateManyWithoutInscriptionInput = {
  */
 
 export type BulletinCountOutputType = {
-  lignes: number
+  lignebulletin: number
 }
 
 export type BulletinCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  lignes?: boolean | BulletinCountOutputTypeCountLignesArgs
+  lignebulletin?: boolean | BulletinCountOutputTypeCountLignebulletinArgs
 }
 
 /**
@@ -998,12 +1010,12 @@ export type BulletinCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * BulletinCountOutputType without action
  */
-export type BulletinCountOutputTypeCountLignesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.LigneBulletinWhereInput
+export type BulletinCountOutputTypeCountLignebulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.lignebulletinWhereInput
 }
 
 
-export type BulletinSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type bulletinSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   moyenneGenerale?: boolean
   documentUrl?: boolean
   Rang?: boolean
@@ -1016,15 +1028,15 @@ export type BulletinSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   periodeScolaireId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  inscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-  periodeScolaire?: boolean | Prisma.PeriodeScolaireDefaultArgs<ExtArgs>
-  lignes?: boolean | Prisma.Bulletin$lignesArgs<ExtArgs>
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
+  periodescolaire?: boolean | Prisma.periodescolaireDefaultArgs<ExtArgs>
+  lignebulletin?: boolean | Prisma.bulletin$lignebulletinArgs<ExtArgs>
   _count?: boolean | Prisma.BulletinCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["bulletin"]>
 
 
 
-export type BulletinSelectScalar = {
+export type bulletinSelectScalar = {
   moyenneGenerale?: boolean
   documentUrl?: boolean
   Rang?: boolean
@@ -1039,20 +1051,20 @@ export type BulletinSelectScalar = {
   updatedAt?: boolean
 }
 
-export type BulletinOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"moyenneGenerale" | "documentUrl" | "Rang" | "estGenere" | "dateGeneration" | "appreciation" | "decisionFinAnnee" | "inscriptionApprenantId" | "inscriptionAnneeId" | "periodeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["bulletin"]>
-export type BulletinInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  inscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-  periodeScolaire?: boolean | Prisma.PeriodeScolaireDefaultArgs<ExtArgs>
-  lignes?: boolean | Prisma.Bulletin$lignesArgs<ExtArgs>
+export type bulletinOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"moyenneGenerale" | "documentUrl" | "Rang" | "estGenere" | "dateGeneration" | "appreciation" | "decisionFinAnnee" | "inscriptionApprenantId" | "inscriptionAnneeId" | "periodeScolaireId" | "createdAt" | "updatedAt", ExtArgs["result"]["bulletin"]>
+export type bulletinInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
+  periodescolaire?: boolean | Prisma.periodescolaireDefaultArgs<ExtArgs>
+  lignebulletin?: boolean | Prisma.bulletin$lignebulletinArgs<ExtArgs>
   _count?: boolean | Prisma.BulletinCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $BulletinPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Bulletin"
+export type $bulletinPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "bulletin"
   objects: {
-    inscription: Prisma.$InscriptionPayload<ExtArgs>
-    periodeScolaire: Prisma.$PeriodeScolairePayload<ExtArgs>
-    lignes: Prisma.$LigneBulletinPayload<ExtArgs>[]
+    inscription: Prisma.$inscriptionPayload<ExtArgs>
+    periodescolaire: Prisma.$periodescolairePayload<ExtArgs>
+    lignebulletin: Prisma.$lignebulletinPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     moyenneGenerale: number
@@ -1061,7 +1073,7 @@ export type $BulletinPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     estGenere: boolean
     dateGeneration: Date | null
     appreciation: string | null
-    decisionFinAnnee: $Enums.DecisionFinAnneeType
+    decisionFinAnnee: $Enums.bulletin_decisionFinAnnee
     inscriptionApprenantId: string
     inscriptionAnneeId: string
     periodeScolaireId: string
@@ -1071,18 +1083,18 @@ export type $BulletinPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   composites: {}
 }
 
-export type BulletinGetPayload<S extends boolean | null | undefined | BulletinDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$BulletinPayload, S>
+export type bulletinGetPayload<S extends boolean | null | undefined | bulletinDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$bulletinPayload, S>
 
-export type BulletinCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<BulletinFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type bulletinCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<bulletinFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: BulletinCountAggregateInputType | true
   }
 
-export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Bulletin'], meta: { name: 'Bulletin' } }
+export interface bulletinDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bulletin'], meta: { name: 'bulletin' } }
   /**
    * Find zero or one Bulletin that matches the filter.
-   * @param {BulletinFindUniqueArgs} args - Arguments to find a Bulletin
+   * @param {bulletinFindUniqueArgs} args - Arguments to find a Bulletin
    * @example
    * // Get one Bulletin
    * const bulletin = await prisma.bulletin.findUnique({
@@ -1091,12 +1103,12 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUnique<T extends BulletinFindUniqueArgs>(args: Prisma.SelectSubset<T, BulletinFindUniqueArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends bulletinFindUniqueArgs>(args: Prisma.SelectSubset<T, bulletinFindUniqueArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Bulletin that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {BulletinFindUniqueOrThrowArgs} args - Arguments to find a Bulletin
+   * @param {bulletinFindUniqueOrThrowArgs} args - Arguments to find a Bulletin
    * @example
    * // Get one Bulletin
    * const bulletin = await prisma.bulletin.findUniqueOrThrow({
@@ -1105,13 +1117,13 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUniqueOrThrow<T extends BulletinFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, BulletinFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends bulletinFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, bulletinFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Bulletin that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {BulletinFindFirstArgs} args - Arguments to find a Bulletin
+   * @param {bulletinFindFirstArgs} args - Arguments to find a Bulletin
    * @example
    * // Get one Bulletin
    * const bulletin = await prisma.bulletin.findFirst({
@@ -1120,14 +1132,14 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirst<T extends BulletinFindFirstArgs>(args?: Prisma.SelectSubset<T, BulletinFindFirstArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends bulletinFindFirstArgs>(args?: Prisma.SelectSubset<T, bulletinFindFirstArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Bulletin that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {BulletinFindFirstOrThrowArgs} args - Arguments to find a Bulletin
+   * @param {bulletinFindFirstOrThrowArgs} args - Arguments to find a Bulletin
    * @example
    * // Get one Bulletin
    * const bulletin = await prisma.bulletin.findFirstOrThrow({
@@ -1136,13 +1148,13 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirstOrThrow<T extends BulletinFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, BulletinFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends bulletinFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, bulletinFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Bulletins that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {BulletinFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {bulletinFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Bulletins
    * const bulletins = await prisma.bulletin.findMany()
@@ -1154,11 +1166,11 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * const bulletinWithMoyenneGeneraleOnly = await prisma.bulletin.findMany({ select: { moyenneGenerale: true } })
    * 
    */
-  findMany<T extends BulletinFindManyArgs>(args?: Prisma.SelectSubset<T, BulletinFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends bulletinFindManyArgs>(args?: Prisma.SelectSubset<T, bulletinFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Bulletin.
-   * @param {BulletinCreateArgs} args - Arguments to create a Bulletin.
+   * @param {bulletinCreateArgs} args - Arguments to create a Bulletin.
    * @example
    * // Create one Bulletin
    * const Bulletin = await prisma.bulletin.create({
@@ -1168,11 +1180,11 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  create<T extends BulletinCreateArgs>(args: Prisma.SelectSubset<T, BulletinCreateArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends bulletinCreateArgs>(args: Prisma.SelectSubset<T, bulletinCreateArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Bulletins.
-   * @param {BulletinCreateManyArgs} args - Arguments to create many Bulletins.
+   * @param {bulletinCreateManyArgs} args - Arguments to create many Bulletins.
    * @example
    * // Create many Bulletins
    * const bulletin = await prisma.bulletin.createMany({
@@ -1182,11 +1194,11 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    *     
    */
-  createMany<T extends BulletinCreateManyArgs>(args?: Prisma.SelectSubset<T, BulletinCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends bulletinCreateManyArgs>(args?: Prisma.SelectSubset<T, bulletinCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Bulletin.
-   * @param {BulletinDeleteArgs} args - Arguments to delete one Bulletin.
+   * @param {bulletinDeleteArgs} args - Arguments to delete one Bulletin.
    * @example
    * // Delete one Bulletin
    * const Bulletin = await prisma.bulletin.delete({
@@ -1196,11 +1208,11 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  delete<T extends BulletinDeleteArgs>(args: Prisma.SelectSubset<T, BulletinDeleteArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends bulletinDeleteArgs>(args: Prisma.SelectSubset<T, bulletinDeleteArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Bulletin.
-   * @param {BulletinUpdateArgs} args - Arguments to update one Bulletin.
+   * @param {bulletinUpdateArgs} args - Arguments to update one Bulletin.
    * @example
    * // Update one Bulletin
    * const bulletin = await prisma.bulletin.update({
@@ -1213,11 +1225,11 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  update<T extends BulletinUpdateArgs>(args: Prisma.SelectSubset<T, BulletinUpdateArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends bulletinUpdateArgs>(args: Prisma.SelectSubset<T, bulletinUpdateArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Bulletins.
-   * @param {BulletinDeleteManyArgs} args - Arguments to filter Bulletins to delete.
+   * @param {bulletinDeleteManyArgs} args - Arguments to filter Bulletins to delete.
    * @example
    * // Delete a few Bulletins
    * const { count } = await prisma.bulletin.deleteMany({
@@ -1227,13 +1239,13 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  deleteMany<T extends BulletinDeleteManyArgs>(args?: Prisma.SelectSubset<T, BulletinDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends bulletinDeleteManyArgs>(args?: Prisma.SelectSubset<T, bulletinDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Bulletins.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {BulletinUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {bulletinUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Bulletins
    * const bulletin = await prisma.bulletin.updateMany({
@@ -1246,11 +1258,11 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  updateMany<T extends BulletinUpdateManyArgs>(args: Prisma.SelectSubset<T, BulletinUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends bulletinUpdateManyArgs>(args: Prisma.SelectSubset<T, bulletinUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Bulletin.
-   * @param {BulletinUpsertArgs} args - Arguments to update or create a Bulletin.
+   * @param {bulletinUpsertArgs} args - Arguments to update or create a Bulletin.
    * @example
    * // Update or create a Bulletin
    * const bulletin = await prisma.bulletin.upsert({
@@ -1265,14 +1277,14 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  upsert<T extends BulletinUpsertArgs>(args: Prisma.SelectSubset<T, BulletinUpsertArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends bulletinUpsertArgs>(args: Prisma.SelectSubset<T, bulletinUpsertArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Bulletins.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {BulletinCountArgs} args - Arguments to filter Bulletins to count.
+   * @param {bulletinCountArgs} args - Arguments to filter Bulletins to count.
    * @example
    * // Count the number of Bulletins
    * const count = await prisma.bulletin.count({
@@ -1281,8 +1293,8 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
   **/
-  count<T extends BulletinCountArgs>(
-    args?: Prisma.Subset<T, BulletinCountArgs>,
+  count<T extends bulletinCountArgs>(
+    args?: Prisma.Subset<T, bulletinCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1321,7 +1333,7 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Group by Bulletin.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {BulletinGroupByArgs} args - Group by arguments.
+   * @param {bulletinGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1336,14 +1348,14 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * 
   **/
   groupBy<
-    T extends BulletinGroupByArgs,
+    T extends bulletinGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: BulletinGroupByArgs['orderBy'] }
-      : { orderBy?: BulletinGroupByArgs['orderBy'] },
+      ? { orderBy: bulletinGroupByArgs['orderBy'] }
+      : { orderBy?: bulletinGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1392,24 +1404,24 @@ export interface BulletinDelegate<ExtArgs extends runtime.Types.Extensions.Inter
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, BulletinGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBulletinGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, bulletinGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBulletinGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Bulletin model
+ * Fields of the bulletin model
  */
-readonly fields: BulletinFieldRefs;
+readonly fields: bulletinFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Bulletin.
+ * The delegate class that acts as a "Promise-like" for bulletin.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__BulletinClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__bulletinClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  inscription<T extends Prisma.InscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  periodeScolaire<T extends Prisma.PeriodeScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PeriodeScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__PeriodeScolaireClient<runtime.Types.Result.GetResult<Prisma.$PeriodeScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  lignes<T extends Prisma.Bulletin$lignesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bulletin$lignesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  inscription<T extends Prisma.inscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  periodescolaire<T extends Prisma.periodescolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.periodescolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__periodescolaireClient<runtime.Types.Result.GetResult<Prisma.$periodescolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  lignebulletin<T extends Prisma.bulletin$lignebulletinArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.bulletin$lignebulletinArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1436,406 +1448,406 @@ export interface Prisma__BulletinClient<T, Null = never, ExtArgs extends runtime
 
 
 /**
- * Fields of the Bulletin model
+ * Fields of the bulletin model
  */
-export interface BulletinFieldRefs {
-  readonly moyenneGenerale: Prisma.FieldRef<"Bulletin", 'Float'>
-  readonly documentUrl: Prisma.FieldRef<"Bulletin", 'String'>
-  readonly Rang: Prisma.FieldRef<"Bulletin", 'Int'>
-  readonly estGenere: Prisma.FieldRef<"Bulletin", 'Boolean'>
-  readonly dateGeneration: Prisma.FieldRef<"Bulletin", 'DateTime'>
-  readonly appreciation: Prisma.FieldRef<"Bulletin", 'String'>
-  readonly decisionFinAnnee: Prisma.FieldRef<"Bulletin", 'DecisionFinAnneeType'>
-  readonly inscriptionApprenantId: Prisma.FieldRef<"Bulletin", 'String'>
-  readonly inscriptionAnneeId: Prisma.FieldRef<"Bulletin", 'String'>
-  readonly periodeScolaireId: Prisma.FieldRef<"Bulletin", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Bulletin", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Bulletin", 'DateTime'>
+export interface bulletinFieldRefs {
+  readonly moyenneGenerale: Prisma.FieldRef<"bulletin", 'Float'>
+  readonly documentUrl: Prisma.FieldRef<"bulletin", 'String'>
+  readonly Rang: Prisma.FieldRef<"bulletin", 'Int'>
+  readonly estGenere: Prisma.FieldRef<"bulletin", 'Boolean'>
+  readonly dateGeneration: Prisma.FieldRef<"bulletin", 'DateTime'>
+  readonly appreciation: Prisma.FieldRef<"bulletin", 'String'>
+  readonly decisionFinAnnee: Prisma.FieldRef<"bulletin", 'bulletin_decisionFinAnnee'>
+  readonly inscriptionApprenantId: Prisma.FieldRef<"bulletin", 'String'>
+  readonly inscriptionAnneeId: Prisma.FieldRef<"bulletin", 'String'>
+  readonly periodeScolaireId: Prisma.FieldRef<"bulletin", 'String'>
+  readonly createdAt: Prisma.FieldRef<"bulletin", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"bulletin", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Bulletin findUnique
+ * bulletin findUnique
  */
-export type BulletinFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * Filter, which Bulletin to fetch.
+   * Filter, which bulletin to fetch.
    */
-  where: Prisma.BulletinWhereUniqueInput
+  where: Prisma.bulletinWhereUniqueInput
 }
 
 /**
- * Bulletin findUniqueOrThrow
+ * bulletin findUniqueOrThrow
  */
-export type BulletinFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * Filter, which Bulletin to fetch.
+   * Filter, which bulletin to fetch.
    */
-  where: Prisma.BulletinWhereUniqueInput
+  where: Prisma.bulletinWhereUniqueInput
 }
 
 /**
- * Bulletin findFirst
+ * bulletin findFirst
  */
-export type BulletinFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * Filter, which Bulletin to fetch.
+   * Filter, which bulletin to fetch.
    */
-  where?: Prisma.BulletinWhereInput
+  where?: Prisma.bulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Bulletins to fetch.
+   * Determine the order of bulletins to fetch.
    */
-  orderBy?: Prisma.BulletinOrderByWithRelationInput | Prisma.BulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.bulletinOrderByWithRelationInput | Prisma.bulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Bulletins.
+   * Sets the position for searching for bulletins.
    */
-  cursor?: Prisma.BulletinWhereUniqueInput
+  cursor?: Prisma.bulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Bulletins from the position of the cursor.
+   * Take `±n` bulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Bulletins.
+   * Skip the first `n` bulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Bulletins.
+   * Filter by unique combinations of bulletins.
    */
   distinct?: Prisma.BulletinScalarFieldEnum | Prisma.BulletinScalarFieldEnum[]
 }
 
 /**
- * Bulletin findFirstOrThrow
+ * bulletin findFirstOrThrow
  */
-export type BulletinFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * Filter, which Bulletin to fetch.
+   * Filter, which bulletin to fetch.
    */
-  where?: Prisma.BulletinWhereInput
+  where?: Prisma.bulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Bulletins to fetch.
+   * Determine the order of bulletins to fetch.
    */
-  orderBy?: Prisma.BulletinOrderByWithRelationInput | Prisma.BulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.bulletinOrderByWithRelationInput | Prisma.bulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Bulletins.
+   * Sets the position for searching for bulletins.
    */
-  cursor?: Prisma.BulletinWhereUniqueInput
+  cursor?: Prisma.bulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Bulletins from the position of the cursor.
+   * Take `±n` bulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Bulletins.
+   * Skip the first `n` bulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Bulletins.
+   * Filter by unique combinations of bulletins.
    */
   distinct?: Prisma.BulletinScalarFieldEnum | Prisma.BulletinScalarFieldEnum[]
 }
 
 /**
- * Bulletin findMany
+ * bulletin findMany
  */
-export type BulletinFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * Filter, which Bulletins to fetch.
+   * Filter, which bulletins to fetch.
    */
-  where?: Prisma.BulletinWhereInput
+  where?: Prisma.bulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Bulletins to fetch.
+   * Determine the order of bulletins to fetch.
    */
-  orderBy?: Prisma.BulletinOrderByWithRelationInput | Prisma.BulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.bulletinOrderByWithRelationInput | Prisma.bulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Bulletins.
+   * Sets the position for listing bulletins.
    */
-  cursor?: Prisma.BulletinWhereUniqueInput
+  cursor?: Prisma.bulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Bulletins from the position of the cursor.
+   * Take `±n` bulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Bulletins.
+   * Skip the first `n` bulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Bulletins.
+   * Filter by unique combinations of bulletins.
    */
   distinct?: Prisma.BulletinScalarFieldEnum | Prisma.BulletinScalarFieldEnum[]
 }
 
 /**
- * Bulletin create
+ * bulletin create
  */
-export type BulletinCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * The data needed to create a Bulletin.
+   * The data needed to create a bulletin.
    */
-  data: Prisma.XOR<Prisma.BulletinCreateInput, Prisma.BulletinUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.bulletinCreateInput, Prisma.bulletinUncheckedCreateInput>
 }
 
 /**
- * Bulletin createMany
+ * bulletin createMany
  */
-export type BulletinCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Bulletins.
+   * The data used to create many bulletins.
    */
-  data: Prisma.BulletinCreateManyInput | Prisma.BulletinCreateManyInput[]
+  data: Prisma.bulletinCreateManyInput | Prisma.bulletinCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Bulletin update
+ * bulletin update
  */
-export type BulletinUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * The data needed to update a Bulletin.
+   * The data needed to update a bulletin.
    */
-  data: Prisma.XOR<Prisma.BulletinUpdateInput, Prisma.BulletinUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.bulletinUpdateInput, Prisma.bulletinUncheckedUpdateInput>
   /**
-   * Choose, which Bulletin to update.
+   * Choose, which bulletin to update.
    */
-  where: Prisma.BulletinWhereUniqueInput
+  where: Prisma.bulletinWhereUniqueInput
 }
 
 /**
- * Bulletin updateMany
+ * bulletin updateMany
  */
-export type BulletinUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Bulletins.
+   * The data used to update bulletins.
    */
-  data: Prisma.XOR<Prisma.BulletinUpdateManyMutationInput, Prisma.BulletinUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.bulletinUpdateManyMutationInput, Prisma.bulletinUncheckedUpdateManyInput>
   /**
-   * Filter which Bulletins to update
+   * Filter which bulletins to update
    */
-  where?: Prisma.BulletinWhereInput
+  where?: Prisma.bulletinWhereInput
   /**
-   * Limit how many Bulletins to update.
+   * Limit how many bulletins to update.
    */
   limit?: number
 }
 
 /**
- * Bulletin upsert
+ * bulletin upsert
  */
-export type BulletinUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * The filter to search for the Bulletin to update in case it exists.
+   * The filter to search for the bulletin to update in case it exists.
    */
-  where: Prisma.BulletinWhereUniqueInput
+  where: Prisma.bulletinWhereUniqueInput
   /**
-   * In case the Bulletin found by the `where` argument doesn't exist, create a new Bulletin with this data.
+   * In case the bulletin found by the `where` argument doesn't exist, create a new bulletin with this data.
    */
-  create: Prisma.XOR<Prisma.BulletinCreateInput, Prisma.BulletinUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.bulletinCreateInput, Prisma.bulletinUncheckedCreateInput>
   /**
-   * In case the Bulletin was found with the provided `where` argument, update it with this data.
+   * In case the bulletin was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.BulletinUpdateInput, Prisma.BulletinUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.bulletinUpdateInput, Prisma.bulletinUncheckedUpdateInput>
 }
 
 /**
- * Bulletin delete
+ * bulletin delete
  */
-export type BulletinDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
   /**
-   * Filter which Bulletin to delete.
+   * Filter which bulletin to delete.
    */
-  where: Prisma.BulletinWhereUniqueInput
+  where: Prisma.bulletinWhereUniqueInput
 }
 
 /**
- * Bulletin deleteMany
+ * bulletin deleteMany
  */
-export type BulletinDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Bulletins to delete
+   * Filter which bulletins to delete
    */
-  where?: Prisma.BulletinWhereInput
+  where?: Prisma.bulletinWhereInput
   /**
-   * Limit how many Bulletins to delete.
+   * Limit how many bulletins to delete.
    */
   limit?: number
 }
 
 /**
- * Bulletin.lignes
+ * bulletin.lignebulletin
  */
-export type Bulletin$lignesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletin$lignebulletinArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
-  where?: Prisma.LigneBulletinWhereInput
-  orderBy?: Prisma.LigneBulletinOrderByWithRelationInput | Prisma.LigneBulletinOrderByWithRelationInput[]
-  cursor?: Prisma.LigneBulletinWhereUniqueInput
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
+  where?: Prisma.lignebulletinWhereInput
+  orderBy?: Prisma.lignebulletinOrderByWithRelationInput | Prisma.lignebulletinOrderByWithRelationInput[]
+  cursor?: Prisma.lignebulletinWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.LigneBulletinScalarFieldEnum | Prisma.LigneBulletinScalarFieldEnum[]
+  distinct?: Prisma.LignebulletinScalarFieldEnum | Prisma.LignebulletinScalarFieldEnum[]
 }
 
 /**
- * Bulletin without action
+ * bulletin without action
  */
-export type BulletinDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type bulletinDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Bulletin
+   * Select specific fields to fetch from the bulletin
    */
-  select?: Prisma.BulletinSelect<ExtArgs> | null
+  select?: Prisma.bulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Bulletin
+   * Omit specific fields from the bulletin
    */
-  omit?: Prisma.BulletinOmit<ExtArgs> | null
+  omit?: Prisma.bulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BulletinInclude<ExtArgs> | null
+  include?: Prisma.bulletinInclude<ExtArgs> | null
 }

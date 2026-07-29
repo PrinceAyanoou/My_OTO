@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Ecole` model and its related types.
+ * This file exports the `ecole` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Ecole
+ * Model ecole
  * 
  */
-export type EcoleModel = runtime.Types.Result.DefaultSelection<Prisma.$EcolePayload>
+export type ecoleModel = runtime.Types.Result.DefaultSelection<Prisma.$ecolePayload>
 
 export type AggregateEcole = {
   _count: EcoleCountAggregateOutputType | null
@@ -27,14 +27,14 @@ export type AggregateEcole = {
 export type EcoleMinAggregateOutputType = {
   id: string | null
   nom: string | null
-  type: $Enums.EcoleType | null
+  type: $Enums.ecole_type | null
   nomFondateur: string | null
   ville: string | null
   boitePostale: string | null
   email: string | null
   telephone: string | null
   description: string | null
-  statut: $Enums.EcoleStatut | null
+  statut: $Enums.ecole_statut | null
   code: string | null
   createdAt: Date | null
   valideAt: Date | null
@@ -44,14 +44,14 @@ export type EcoleMinAggregateOutputType = {
 export type EcoleMaxAggregateOutputType = {
   id: string | null
   nom: string | null
-  type: $Enums.EcoleType | null
+  type: $Enums.ecole_type | null
   nomFondateur: string | null
   ville: string | null
   boitePostale: string | null
   email: string | null
   telephone: string | null
   description: string | null
-  statut: $Enums.EcoleStatut | null
+  statut: $Enums.ecole_statut | null
   code: string | null
   createdAt: Date | null
   valideAt: Date | null
@@ -131,37 +131,37 @@ export type EcoleCountAggregateInputType = {
 
 export type EcoleAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Ecole to aggregate.
+   * Filter which ecole to aggregate.
    */
-  where?: Prisma.EcoleWhereInput
+  where?: Prisma.ecoleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Ecoles to fetch.
+   * Determine the order of ecoles to fetch.
    */
-  orderBy?: Prisma.EcoleOrderByWithRelationInput | Prisma.EcoleOrderByWithRelationInput[]
+  orderBy?: Prisma.ecoleOrderByWithRelationInput | Prisma.ecoleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.EcoleWhereUniqueInput
+  cursor?: Prisma.ecoleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Ecoles from the position of the cursor.
+   * Take `±n` ecoles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Ecoles.
+   * Skip the first `n` ecoles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Ecoles
+   * Count returned ecoles
   **/
   _count?: true | EcoleCountAggregateInputType
   /**
@@ -189,11 +189,11 @@ export type GetEcoleAggregateType<T extends EcoleAggregateArgs> = {
 
 
 
-export type EcoleGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EcoleWhereInput
-  orderBy?: Prisma.EcoleOrderByWithAggregationInput | Prisma.EcoleOrderByWithAggregationInput[]
+export type ecoleGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ecoleWhereInput
+  orderBy?: Prisma.ecoleOrderByWithAggregationInput | Prisma.ecoleOrderByWithAggregationInput[]
   by: Prisma.EcoleScalarFieldEnum[] | Prisma.EcoleScalarFieldEnum
-  having?: Prisma.EcoleScalarWhereWithAggregatesInput
+  having?: Prisma.ecoleScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: EcoleCountAggregateInputType | true
@@ -204,14 +204,14 @@ export type EcoleGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type EcoleGroupByOutputType = {
   id: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale: string | null
   email: string
   telephone: string
   description: string | null
-  statut: $Enums.EcoleStatut
+  statut: $Enums.ecole_statut
   code: string
   createdAt: Date
   valideAt: Date
@@ -221,7 +221,7 @@ export type EcoleGroupByOutputType = {
   _max: EcoleMaxAggregateOutputType | null
 }
 
-export type GetEcoleGroupByPayload<T extends EcoleGroupByArgs> = Prisma.PrismaPromise<
+export type GetEcoleGroupByPayload<T extends ecoleGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<EcoleGroupByOutputType, T['by']> &
       {
@@ -236,36 +236,37 @@ export type GetEcoleGroupByPayload<T extends EcoleGroupByArgs> = Prisma.PrismaPr
 
 
 
-export type EcoleWhereInput = {
-  AND?: Prisma.EcoleWhereInput | Prisma.EcoleWhereInput[]
-  OR?: Prisma.EcoleWhereInput[]
-  NOT?: Prisma.EcoleWhereInput | Prisma.EcoleWhereInput[]
-  id?: Prisma.StringFilter<"Ecole"> | string
-  nom?: Prisma.StringFilter<"Ecole"> | string
-  type?: Prisma.EnumEcoleTypeFilter<"Ecole"> | $Enums.EcoleType
-  nomFondateur?: Prisma.StringFilter<"Ecole"> | string
-  ville?: Prisma.StringFilter<"Ecole"> | string
-  boitePostale?: Prisma.StringNullableFilter<"Ecole"> | string | null
-  email?: Prisma.StringFilter<"Ecole"> | string
-  telephone?: Prisma.StringFilter<"Ecole"> | string
-  description?: Prisma.StringNullableFilter<"Ecole"> | string | null
-  statut?: Prisma.EnumEcoleStatutFilter<"Ecole"> | $Enums.EcoleStatut
-  code?: Prisma.StringFilter<"Ecole"> | string
-  createdAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  valideAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  users?: Prisma.UserListRelationFilter
-  anneeScolaires?: Prisma.AnneeScolaireListRelationFilter
-  niveauxScolaires?: Prisma.NiveauScolaireListRelationFilter
-  typeEvaluations?: Prisma.TypeEvaluationListRelationFilter
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationListRelationFilter
-  matieres?: Prisma.MatiereListRelationFilter
-  annonces?: Prisma.AnnonceListRelationFilter
-  conversations?: Prisma.ConversationListRelationFilter
-  configScolarite?: Prisma.ConfigurationScolariteListRelationFilter
+export type ecoleWhereInput = {
+  AND?: Prisma.ecoleWhereInput | Prisma.ecoleWhereInput[]
+  OR?: Prisma.ecoleWhereInput[]
+  NOT?: Prisma.ecoleWhereInput | Prisma.ecoleWhereInput[]
+  id?: Prisma.StringFilter<"ecole"> | string
+  nom?: Prisma.StringFilter<"ecole"> | string
+  type?: Prisma.Enumecole_typeFilter<"ecole"> | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFilter<"ecole"> | string
+  ville?: Prisma.StringFilter<"ecole"> | string
+  boitePostale?: Prisma.StringNullableFilter<"ecole"> | string | null
+  email?: Prisma.StringFilter<"ecole"> | string
+  telephone?: Prisma.StringFilter<"ecole"> | string
+  description?: Prisma.StringNullableFilter<"ecole"> | string | null
+  statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
+  code?: Prisma.StringFilter<"ecole"> | string
+  createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  anneescolaire?: Prisma.AnneescolaireListRelationFilter
+  annonce?: Prisma.AnnonceListRelationFilter
+  configurationscolarite?: Prisma.ConfigurationscolariteListRelationFilter
+  conversation?: Prisma.ConversationListRelationFilter
+  matiere?: Prisma.MatiereListRelationFilter
+  niveauscolaire?: Prisma.NiveauscolaireListRelationFilter
+  politiqueevaluation?: Prisma.PolitiqueevaluationListRelationFilter
+  role?: Prisma.RoleListRelationFilter
+  typeevaluation?: Prisma.TypeevaluationListRelationFilter
+  user?: Prisma.UserListRelationFilter
 }
 
-export type EcoleOrderByWithRelationInput = {
+export type ecoleOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -280,48 +281,50 @@ export type EcoleOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   valideAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  users?: Prisma.UserOrderByRelationAggregateInput
-  anneeScolaires?: Prisma.AnneeScolaireOrderByRelationAggregateInput
-  niveauxScolaires?: Prisma.NiveauScolaireOrderByRelationAggregateInput
-  typeEvaluations?: Prisma.TypeEvaluationOrderByRelationAggregateInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationOrderByRelationAggregateInput
-  matieres?: Prisma.MatiereOrderByRelationAggregateInput
-  annonces?: Prisma.AnnonceOrderByRelationAggregateInput
-  conversations?: Prisma.ConversationOrderByRelationAggregateInput
-  configScolarite?: Prisma.ConfigurationScolariteOrderByRelationAggregateInput
-  _relevance?: Prisma.EcoleOrderByRelevanceInput
+  anneescolaire?: Prisma.anneescolaireOrderByRelationAggregateInput
+  annonce?: Prisma.annonceOrderByRelationAggregateInput
+  configurationscolarite?: Prisma.configurationscolariteOrderByRelationAggregateInput
+  conversation?: Prisma.conversationOrderByRelationAggregateInput
+  matiere?: Prisma.matiereOrderByRelationAggregateInput
+  niveauscolaire?: Prisma.niveauscolaireOrderByRelationAggregateInput
+  politiqueevaluation?: Prisma.politiqueevaluationOrderByRelationAggregateInput
+  role?: Prisma.roleOrderByRelationAggregateInput
+  typeevaluation?: Prisma.typeevaluationOrderByRelationAggregateInput
+  user?: Prisma.userOrderByRelationAggregateInput
+  _relevance?: Prisma.ecoleOrderByRelevanceInput
 }
 
-export type EcoleWhereUniqueInput = Prisma.AtLeast<{
+export type ecoleWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   boitePostale?: string
   email?: string
   code?: string
-  AND?: Prisma.EcoleWhereInput | Prisma.EcoleWhereInput[]
-  OR?: Prisma.EcoleWhereInput[]
-  NOT?: Prisma.EcoleWhereInput | Prisma.EcoleWhereInput[]
-  nom?: Prisma.StringFilter<"Ecole"> | string
-  type?: Prisma.EnumEcoleTypeFilter<"Ecole"> | $Enums.EcoleType
-  nomFondateur?: Prisma.StringFilter<"Ecole"> | string
-  ville?: Prisma.StringFilter<"Ecole"> | string
-  telephone?: Prisma.StringFilter<"Ecole"> | string
-  description?: Prisma.StringNullableFilter<"Ecole"> | string | null
-  statut?: Prisma.EnumEcoleStatutFilter<"Ecole"> | $Enums.EcoleStatut
-  createdAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  valideAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  users?: Prisma.UserListRelationFilter
-  anneeScolaires?: Prisma.AnneeScolaireListRelationFilter
-  niveauxScolaires?: Prisma.NiveauScolaireListRelationFilter
-  typeEvaluations?: Prisma.TypeEvaluationListRelationFilter
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationListRelationFilter
-  matieres?: Prisma.MatiereListRelationFilter
-  annonces?: Prisma.AnnonceListRelationFilter
-  conversations?: Prisma.ConversationListRelationFilter
-  configScolarite?: Prisma.ConfigurationScolariteListRelationFilter
+  AND?: Prisma.ecoleWhereInput | Prisma.ecoleWhereInput[]
+  OR?: Prisma.ecoleWhereInput[]
+  NOT?: Prisma.ecoleWhereInput | Prisma.ecoleWhereInput[]
+  nom?: Prisma.StringFilter<"ecole"> | string
+  type?: Prisma.Enumecole_typeFilter<"ecole"> | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFilter<"ecole"> | string
+  ville?: Prisma.StringFilter<"ecole"> | string
+  telephone?: Prisma.StringFilter<"ecole"> | string
+  description?: Prisma.StringNullableFilter<"ecole"> | string | null
+  statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
+  createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  anneescolaire?: Prisma.AnneescolaireListRelationFilter
+  annonce?: Prisma.AnnonceListRelationFilter
+  configurationscolarite?: Prisma.ConfigurationscolariteListRelationFilter
+  conversation?: Prisma.ConversationListRelationFilter
+  matiere?: Prisma.MatiereListRelationFilter
+  niveauscolaire?: Prisma.NiveauscolaireListRelationFilter
+  politiqueevaluation?: Prisma.PolitiqueevaluationListRelationFilter
+  role?: Prisma.RoleListRelationFilter
+  typeevaluation?: Prisma.TypeevaluationListRelationFilter
+  user?: Prisma.UserListRelationFilter
 }, "id" | "boitePostale" | "email" | "code">
 
-export type EcoleOrderByWithAggregationInput = {
+export type ecoleOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -336,203 +339,202 @@ export type EcoleOrderByWithAggregationInput = {
   createdAt?: Prisma.SortOrder
   valideAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.EcoleCountOrderByAggregateInput
-  _max?: Prisma.EcoleMaxOrderByAggregateInput
-  _min?: Prisma.EcoleMinOrderByAggregateInput
+  _count?: Prisma.ecoleCountOrderByAggregateInput
+  _max?: Prisma.ecoleMaxOrderByAggregateInput
+  _min?: Prisma.ecoleMinOrderByAggregateInput
 }
 
-export type EcoleScalarWhereWithAggregatesInput = {
-  AND?: Prisma.EcoleScalarWhereWithAggregatesInput | Prisma.EcoleScalarWhereWithAggregatesInput[]
-  OR?: Prisma.EcoleScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.EcoleScalarWhereWithAggregatesInput | Prisma.EcoleScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  nom?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  type?: Prisma.EnumEcoleTypeWithAggregatesFilter<"Ecole"> | $Enums.EcoleType
-  nomFondateur?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  ville?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  boitePostale?: Prisma.StringNullableWithAggregatesFilter<"Ecole"> | string | null
-  email?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  telephone?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  description?: Prisma.StringNullableWithAggregatesFilter<"Ecole"> | string | null
-  statut?: Prisma.EnumEcoleStatutWithAggregatesFilter<"Ecole"> | $Enums.EcoleStatut
-  code?: Prisma.StringWithAggregatesFilter<"Ecole"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Ecole"> | Date | string
-  valideAt?: Prisma.DateTimeWithAggregatesFilter<"Ecole"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Ecole"> | Date | string
+export type ecoleScalarWhereWithAggregatesInput = {
+  AND?: Prisma.ecoleScalarWhereWithAggregatesInput | Prisma.ecoleScalarWhereWithAggregatesInput[]
+  OR?: Prisma.ecoleScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.ecoleScalarWhereWithAggregatesInput | Prisma.ecoleScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  nom?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  type?: Prisma.Enumecole_typeWithAggregatesFilter<"ecole"> | $Enums.ecole_type
+  nomFondateur?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  ville?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  boitePostale?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
+  email?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  telephone?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  description?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
+  statut?: Prisma.Enumecole_statutWithAggregatesFilter<"ecole"> | $Enums.ecole_statut
+  code?: Prisma.StringWithAggregatesFilter<"ecole"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
 }
 
-export type EcoleCreateInput = {
+export type ecoleCreateInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateInput = {
+export type ecoleUncheckedCreateInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUpdateInput = {
+export type ecoleUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateInput = {
+export type ecoleUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateManyInput = {
+export type ecoleCreateManyInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
 }
 
-export type EcoleUpdateManyMutationInput = {
+export type ecoleUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EcoleUncheckedUpdateManyInput = {
+export type ecoleUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EcoleListRelationFilter = {
-  every?: Prisma.EcoleWhereInput
-  some?: Prisma.EcoleWhereInput
-  none?: Prisma.EcoleWhereInput
+export type EcoleScalarRelationFilter = {
+  is?: Prisma.ecoleWhereInput
+  isNot?: Prisma.ecoleWhereInput
 }
 
-export type EcoleOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
-}
-
-export type EcoleOrderByRelevanceInput = {
-  fields: Prisma.EcoleOrderByRelevanceFieldEnum | Prisma.EcoleOrderByRelevanceFieldEnum[]
+export type ecoleOrderByRelevanceInput = {
+  fields: Prisma.ecoleOrderByRelevanceFieldEnum | Prisma.ecoleOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type EcoleCountOrderByAggregateInput = {
+export type ecoleCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -549,7 +551,7 @@ export type EcoleCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EcoleMaxOrderByAggregateInput = {
+export type ecoleMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -566,7 +568,7 @@ export type EcoleMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EcoleMinOrderByAggregateInput = {
+export type ecoleMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -583,1253 +585,1424 @@ export type EcoleMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type EcoleScalarRelationFilter = {
-  is?: Prisma.EcoleWhereInput
-  isNot?: Prisma.EcoleWhereInput
+export type EcoleListRelationFilter = {
+  every?: Prisma.ecoleWhereInput
+  some?: Prisma.ecoleWhereInput
+  none?: Prisma.ecoleWhereInput
 }
 
-export type EcoleCreateNestedManyWithoutUsersInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutUsersInput, Prisma.EcoleUncheckedCreateWithoutUsersInput> | Prisma.EcoleCreateWithoutUsersInput[] | Prisma.EcoleUncheckedCreateWithoutUsersInput[]
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutUsersInput | Prisma.EcoleCreateOrConnectWithoutUsersInput[]
-  connect?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
+export type ecoleOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
-export type EcoleUncheckedCreateNestedManyWithoutUsersInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutUsersInput, Prisma.EcoleUncheckedCreateWithoutUsersInput> | Prisma.EcoleCreateWithoutUsersInput[] | Prisma.EcoleUncheckedCreateWithoutUsersInput[]
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutUsersInput | Prisma.EcoleCreateOrConnectWithoutUsersInput[]
-  connect?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
+export type ecoleCreateNestedOneWithoutAnneescolaireInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutAnneescolaireInput, Prisma.ecoleUncheckedCreateWithoutAnneescolaireInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutAnneescolaireInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateManyWithoutUsersNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutUsersInput, Prisma.EcoleUncheckedCreateWithoutUsersInput> | Prisma.EcoleCreateWithoutUsersInput[] | Prisma.EcoleUncheckedCreateWithoutUsersInput[]
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutUsersInput | Prisma.EcoleCreateOrConnectWithoutUsersInput[]
-  upsert?: Prisma.EcoleUpsertWithWhereUniqueWithoutUsersInput | Prisma.EcoleUpsertWithWhereUniqueWithoutUsersInput[]
-  set?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  disconnect?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  delete?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  connect?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  update?: Prisma.EcoleUpdateWithWhereUniqueWithoutUsersInput | Prisma.EcoleUpdateWithWhereUniqueWithoutUsersInput[]
-  updateMany?: Prisma.EcoleUpdateManyWithWhereWithoutUsersInput | Prisma.EcoleUpdateManyWithWhereWithoutUsersInput[]
-  deleteMany?: Prisma.EcoleScalarWhereInput | Prisma.EcoleScalarWhereInput[]
+export type ecoleUpdateOneRequiredWithoutAnneescolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutAnneescolaireInput, Prisma.ecoleUncheckedCreateWithoutAnneescolaireInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutAnneescolaireInput
+  upsert?: Prisma.ecoleUpsertWithoutAnneescolaireInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutAnneescolaireInput, Prisma.ecoleUpdateWithoutAnneescolaireInput>, Prisma.ecoleUncheckedUpdateWithoutAnneescolaireInput>
 }
 
-export type EcoleUncheckedUpdateManyWithoutUsersNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutUsersInput, Prisma.EcoleUncheckedCreateWithoutUsersInput> | Prisma.EcoleCreateWithoutUsersInput[] | Prisma.EcoleUncheckedCreateWithoutUsersInput[]
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutUsersInput | Prisma.EcoleCreateOrConnectWithoutUsersInput[]
-  upsert?: Prisma.EcoleUpsertWithWhereUniqueWithoutUsersInput | Prisma.EcoleUpsertWithWhereUniqueWithoutUsersInput[]
-  set?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  disconnect?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  delete?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  connect?: Prisma.EcoleWhereUniqueInput | Prisma.EcoleWhereUniqueInput[]
-  update?: Prisma.EcoleUpdateWithWhereUniqueWithoutUsersInput | Prisma.EcoleUpdateWithWhereUniqueWithoutUsersInput[]
-  updateMany?: Prisma.EcoleUpdateManyWithWhereWithoutUsersInput | Prisma.EcoleUpdateManyWithWhereWithoutUsersInput[]
-  deleteMany?: Prisma.EcoleScalarWhereInput | Prisma.EcoleScalarWhereInput[]
+export type ecoleCreateNestedOneWithoutAnnonceInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutAnnonceInput, Prisma.ecoleUncheckedCreateWithoutAnnonceInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutAnnonceInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EnumEcoleTypeFieldUpdateOperationsInput = {
-  set?: $Enums.EcoleType
+export type ecoleUpdateOneRequiredWithoutAnnonceNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutAnnonceInput, Prisma.ecoleUncheckedCreateWithoutAnnonceInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutAnnonceInput
+  upsert?: Prisma.ecoleUpsertWithoutAnnonceInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutAnnonceInput, Prisma.ecoleUpdateWithoutAnnonceInput>, Prisma.ecoleUncheckedUpdateWithoutAnnonceInput>
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
+export type ecoleCreateNestedOneWithoutConfigurationscolariteInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutConfigurationscolariteInput, Prisma.ecoleUncheckedCreateWithoutConfigurationscolariteInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutConfigurationscolariteInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EnumEcoleStatutFieldUpdateOperationsInput = {
-  set?: $Enums.EcoleStatut
+export type ecoleUpdateOneRequiredWithoutConfigurationscolariteNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutConfigurationscolariteInput, Prisma.ecoleUncheckedCreateWithoutConfigurationscolariteInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutConfigurationscolariteInput
+  upsert?: Prisma.ecoleUpsertWithoutConfigurationscolariteInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutConfigurationscolariteInput, Prisma.ecoleUpdateWithoutConfigurationscolariteInput>, Prisma.ecoleUncheckedUpdateWithoutConfigurationscolariteInput>
 }
 
-export type EcoleCreateNestedOneWithoutAnneeScolairesInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutAnneeScolairesInput, Prisma.EcoleUncheckedCreateWithoutAnneeScolairesInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutAnneeScolairesInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedOneWithoutConversationInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutConversationInput, Prisma.ecoleUncheckedCreateWithoutConversationInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutConversationInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateOneRequiredWithoutAnneeScolairesNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutAnneeScolairesInput, Prisma.EcoleUncheckedCreateWithoutAnneeScolairesInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutAnneeScolairesInput
-  upsert?: Prisma.EcoleUpsertWithoutAnneeScolairesInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutAnneeScolairesInput, Prisma.EcoleUpdateWithoutAnneeScolairesInput>, Prisma.EcoleUncheckedUpdateWithoutAnneeScolairesInput>
+export type ecoleUpdateOneRequiredWithoutConversationNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutConversationInput, Prisma.ecoleUncheckedCreateWithoutConversationInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutConversationInput
+  upsert?: Prisma.ecoleUpsertWithoutConversationInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutConversationInput, Prisma.ecoleUpdateWithoutConversationInput>, Prisma.ecoleUncheckedUpdateWithoutConversationInput>
 }
 
-export type EcoleCreateNestedOneWithoutNiveauxScolairesInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutNiveauxScolairesInput, Prisma.EcoleUncheckedCreateWithoutNiveauxScolairesInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutNiveauxScolairesInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type Enumecole_typeFieldUpdateOperationsInput = {
+  set?: $Enums.ecole_type
 }
 
-export type EcoleUpdateOneRequiredWithoutNiveauxScolairesNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutNiveauxScolairesInput, Prisma.EcoleUncheckedCreateWithoutNiveauxScolairesInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutNiveauxScolairesInput
-  upsert?: Prisma.EcoleUpsertWithoutNiveauxScolairesInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutNiveauxScolairesInput, Prisma.EcoleUpdateWithoutNiveauxScolairesInput>, Prisma.EcoleUncheckedUpdateWithoutNiveauxScolairesInput>
+export type Enumecole_statutFieldUpdateOperationsInput = {
+  set?: $Enums.ecole_statut
 }
 
-export type EcoleCreateNestedOneWithoutMatieresInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutMatieresInput, Prisma.EcoleUncheckedCreateWithoutMatieresInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutMatieresInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedOneWithoutMatiereInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutMatiereInput, Prisma.ecoleUncheckedCreateWithoutMatiereInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutMatiereInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateOneRequiredWithoutMatieresNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutMatieresInput, Prisma.EcoleUncheckedCreateWithoutMatieresInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutMatieresInput
-  upsert?: Prisma.EcoleUpsertWithoutMatieresInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutMatieresInput, Prisma.EcoleUpdateWithoutMatieresInput>, Prisma.EcoleUncheckedUpdateWithoutMatieresInput>
+export type ecoleUpdateOneRequiredWithoutMatiereNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutMatiereInput, Prisma.ecoleUncheckedCreateWithoutMatiereInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutMatiereInput
+  upsert?: Prisma.ecoleUpsertWithoutMatiereInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutMatiereInput, Prisma.ecoleUpdateWithoutMatiereInput>, Prisma.ecoleUncheckedUpdateWithoutMatiereInput>
 }
 
-export type EcoleCreateNestedOneWithoutTypeEvaluationsInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutTypeEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutTypeEvaluationsInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutTypeEvaluationsInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedOneWithoutNiveauscolaireInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutNiveauscolaireInput, Prisma.ecoleUncheckedCreateWithoutNiveauscolaireInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutNiveauscolaireInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateOneRequiredWithoutTypeEvaluationsNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutTypeEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutTypeEvaluationsInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutTypeEvaluationsInput
-  upsert?: Prisma.EcoleUpsertWithoutTypeEvaluationsInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutTypeEvaluationsInput, Prisma.EcoleUpdateWithoutTypeEvaluationsInput>, Prisma.EcoleUncheckedUpdateWithoutTypeEvaluationsInput>
+export type ecoleUpdateOneRequiredWithoutNiveauscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutNiveauscolaireInput, Prisma.ecoleUncheckedCreateWithoutNiveauscolaireInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutNiveauscolaireInput
+  upsert?: Prisma.ecoleUpsertWithoutNiveauscolaireInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutNiveauscolaireInput, Prisma.ecoleUpdateWithoutNiveauscolaireInput>, Prisma.ecoleUncheckedUpdateWithoutNiveauscolaireInput>
 }
 
-export type EcoleCreateNestedOneWithoutPolitiqueEvaluationsInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutPolitiqueEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutPolitiqueEvaluationsInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutPolitiqueEvaluationsInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedOneWithoutPolitiqueevaluationInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutPolitiqueevaluationInput, Prisma.ecoleUncheckedCreateWithoutPolitiqueevaluationInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutPolitiqueevaluationInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateOneRequiredWithoutPolitiqueEvaluationsNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutPolitiqueEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutPolitiqueEvaluationsInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutPolitiqueEvaluationsInput
-  upsert?: Prisma.EcoleUpsertWithoutPolitiqueEvaluationsInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutPolitiqueEvaluationsInput, Prisma.EcoleUpdateWithoutPolitiqueEvaluationsInput>, Prisma.EcoleUncheckedUpdateWithoutPolitiqueEvaluationsInput>
+export type ecoleUpdateOneRequiredWithoutPolitiqueevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutPolitiqueevaluationInput, Prisma.ecoleUncheckedCreateWithoutPolitiqueevaluationInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutPolitiqueevaluationInput
+  upsert?: Prisma.ecoleUpsertWithoutPolitiqueevaluationInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutPolitiqueevaluationInput, Prisma.ecoleUpdateWithoutPolitiqueevaluationInput>, Prisma.ecoleUncheckedUpdateWithoutPolitiqueevaluationInput>
 }
 
-export type EcoleCreateNestedOneWithoutConfigScolariteInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutConfigScolariteInput, Prisma.EcoleUncheckedCreateWithoutConfigScolariteInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutConfigScolariteInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedOneWithoutRoleInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutRoleInput, Prisma.ecoleUncheckedCreateWithoutRoleInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutRoleInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateOneRequiredWithoutConfigScolariteNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutConfigScolariteInput, Prisma.EcoleUncheckedCreateWithoutConfigScolariteInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutConfigScolariteInput
-  upsert?: Prisma.EcoleUpsertWithoutConfigScolariteInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutConfigScolariteInput, Prisma.EcoleUpdateWithoutConfigScolariteInput>, Prisma.EcoleUncheckedUpdateWithoutConfigScolariteInput>
+export type ecoleUpdateOneRequiredWithoutRoleNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutRoleInput, Prisma.ecoleUncheckedCreateWithoutRoleInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutRoleInput
+  upsert?: Prisma.ecoleUpsertWithoutRoleInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutRoleInput, Prisma.ecoleUpdateWithoutRoleInput>, Prisma.ecoleUncheckedUpdateWithoutRoleInput>
 }
 
-export type EcoleCreateNestedOneWithoutAnnoncesInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutAnnoncesInput, Prisma.EcoleUncheckedCreateWithoutAnnoncesInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutAnnoncesInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedOneWithoutTypeevaluationInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutTypeevaluationInput, Prisma.ecoleUncheckedCreateWithoutTypeevaluationInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutTypeevaluationInput
+  connect?: Prisma.ecoleWhereUniqueInput
 }
 
-export type EcoleUpdateOneRequiredWithoutAnnoncesNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutAnnoncesInput, Prisma.EcoleUncheckedCreateWithoutAnnoncesInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutAnnoncesInput
-  upsert?: Prisma.EcoleUpsertWithoutAnnoncesInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutAnnoncesInput, Prisma.EcoleUpdateWithoutAnnoncesInput>, Prisma.EcoleUncheckedUpdateWithoutAnnoncesInput>
+export type ecoleUpdateOneRequiredWithoutTypeevaluationNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutTypeevaluationInput, Prisma.ecoleUncheckedCreateWithoutTypeevaluationInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutTypeevaluationInput
+  upsert?: Prisma.ecoleUpsertWithoutTypeevaluationInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutTypeevaluationInput, Prisma.ecoleUpdateWithoutTypeevaluationInput>, Prisma.ecoleUncheckedUpdateWithoutTypeevaluationInput>
 }
 
-export type EcoleCreateNestedOneWithoutConversationsInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutConversationsInput, Prisma.EcoleUncheckedCreateWithoutConversationsInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutConversationsInput
-  connect?: Prisma.EcoleWhereUniqueInput
+export type ecoleCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput> | Prisma.ecoleCreateWithoutUserInput[] | Prisma.ecoleUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutUserInput | Prisma.ecoleCreateOrConnectWithoutUserInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
 }
 
-export type EcoleUpdateOneRequiredWithoutConversationsNestedInput = {
-  create?: Prisma.XOR<Prisma.EcoleCreateWithoutConversationsInput, Prisma.EcoleUncheckedCreateWithoutConversationsInput>
-  connectOrCreate?: Prisma.EcoleCreateOrConnectWithoutConversationsInput
-  upsert?: Prisma.EcoleUpsertWithoutConversationsInput
-  connect?: Prisma.EcoleWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.EcoleUpdateToOneWithWhereWithoutConversationsInput, Prisma.EcoleUpdateWithoutConversationsInput>, Prisma.EcoleUncheckedUpdateWithoutConversationsInput>
+export type ecoleUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput> | Prisma.ecoleCreateWithoutUserInput[] | Prisma.ecoleUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutUserInput | Prisma.ecoleCreateOrConnectWithoutUserInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
 }
 
-export type EcoleCreateWithoutUsersInput = {
+export type ecoleUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput> | Prisma.ecoleCreateWithoutUserInput[] | Prisma.ecoleUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutUserInput | Prisma.ecoleCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.ecoleUpsertWithWhereUniqueWithoutUserInput | Prisma.ecoleUpsertWithWhereUniqueWithoutUserInput[]
+  set?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  disconnect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  delete?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  update?: Prisma.ecoleUpdateWithWhereUniqueWithoutUserInput | Prisma.ecoleUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.ecoleUpdateManyWithWhereWithoutUserInput | Prisma.ecoleUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
+}
+
+export type ecoleUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput> | Prisma.ecoleCreateWithoutUserInput[] | Prisma.ecoleUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutUserInput | Prisma.ecoleCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.ecoleUpsertWithWhereUniqueWithoutUserInput | Prisma.ecoleUpsertWithWhereUniqueWithoutUserInput[]
+  set?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  disconnect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  delete?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  update?: Prisma.ecoleUpdateWithWhereUniqueWithoutUserInput | Prisma.ecoleUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.ecoleUpdateManyWithWhereWithoutUserInput | Prisma.ecoleUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
+}
+
+export type ecoleCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutUsersInput = {
+export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutUsersInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutUsersInput, Prisma.EcoleUncheckedCreateWithoutUsersInput>
+export type ecoleCreateOrConnectWithoutAnneescolaireInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutAnneescolaireInput, Prisma.ecoleUncheckedCreateWithoutAnneescolaireInput>
 }
 
-export type EcoleUpsertWithWhereUniqueWithoutUsersInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutUsersInput, Prisma.EcoleUncheckedUpdateWithoutUsersInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutUsersInput, Prisma.EcoleUncheckedCreateWithoutUsersInput>
+export type ecoleUpsertWithoutAnneescolaireInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutAnneescolaireInput, Prisma.ecoleUncheckedUpdateWithoutAnneescolaireInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutAnneescolaireInput, Prisma.ecoleUncheckedCreateWithoutAnneescolaireInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateWithWhereUniqueWithoutUsersInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutUsersInput, Prisma.EcoleUncheckedUpdateWithoutUsersInput>
+export type ecoleUpdateToOneWithWhereWithoutAnneescolaireInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutAnneescolaireInput, Prisma.ecoleUncheckedUpdateWithoutAnneescolaireInput>
 }
 
-export type EcoleUpdateManyWithWhereWithoutUsersInput = {
-  where: Prisma.EcoleScalarWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateManyMutationInput, Prisma.EcoleUncheckedUpdateManyWithoutUsersInput>
+export type ecoleUpdateWithoutAnneescolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleScalarWhereInput = {
-  AND?: Prisma.EcoleScalarWhereInput | Prisma.EcoleScalarWhereInput[]
-  OR?: Prisma.EcoleScalarWhereInput[]
-  NOT?: Prisma.EcoleScalarWhereInput | Prisma.EcoleScalarWhereInput[]
-  id?: Prisma.StringFilter<"Ecole"> | string
-  nom?: Prisma.StringFilter<"Ecole"> | string
-  type?: Prisma.EnumEcoleTypeFilter<"Ecole"> | $Enums.EcoleType
-  nomFondateur?: Prisma.StringFilter<"Ecole"> | string
-  ville?: Prisma.StringFilter<"Ecole"> | string
-  boitePostale?: Prisma.StringNullableFilter<"Ecole"> | string | null
-  email?: Prisma.StringFilter<"Ecole"> | string
-  telephone?: Prisma.StringFilter<"Ecole"> | string
-  description?: Prisma.StringNullableFilter<"Ecole"> | string | null
-  statut?: Prisma.EnumEcoleStatutFilter<"Ecole"> | $Enums.EcoleStatut
-  code?: Prisma.StringFilter<"Ecole"> | string
-  createdAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  valideAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Ecole"> | Date | string
+export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutAnneeScolairesInput = {
+export type ecoleCreateWithoutAnnonceInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutAnneeScolairesInput = {
+export type ecoleUncheckedCreateWithoutAnnonceInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutAnneeScolairesInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutAnneeScolairesInput, Prisma.EcoleUncheckedCreateWithoutAnneeScolairesInput>
+export type ecoleCreateOrConnectWithoutAnnonceInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutAnnonceInput, Prisma.ecoleUncheckedCreateWithoutAnnonceInput>
 }
 
-export type EcoleUpsertWithoutAnneeScolairesInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutAnneeScolairesInput, Prisma.EcoleUncheckedUpdateWithoutAnneeScolairesInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutAnneeScolairesInput, Prisma.EcoleUncheckedCreateWithoutAnneeScolairesInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutAnnonceInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutAnnonceInput, Prisma.ecoleUncheckedUpdateWithoutAnnonceInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutAnnonceInput, Prisma.ecoleUncheckedCreateWithoutAnnonceInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutAnneeScolairesInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutAnneeScolairesInput, Prisma.EcoleUncheckedUpdateWithoutAnneeScolairesInput>
+export type ecoleUpdateToOneWithWhereWithoutAnnonceInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutAnnonceInput, Prisma.ecoleUncheckedUpdateWithoutAnnonceInput>
 }
 
-export type EcoleUpdateWithoutAnneeScolairesInput = {
+export type ecoleUpdateWithoutAnnonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutAnneeScolairesInput = {
+export type ecoleUncheckedUpdateWithoutAnnonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutNiveauxScolairesInput = {
+export type ecoleCreateWithoutConfigurationscolariteInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutNiveauxScolairesInput = {
+export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutNiveauxScolairesInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutNiveauxScolairesInput, Prisma.EcoleUncheckedCreateWithoutNiveauxScolairesInput>
+export type ecoleCreateOrConnectWithoutConfigurationscolariteInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutConfigurationscolariteInput, Prisma.ecoleUncheckedCreateWithoutConfigurationscolariteInput>
 }
 
-export type EcoleUpsertWithoutNiveauxScolairesInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutNiveauxScolairesInput, Prisma.EcoleUncheckedUpdateWithoutNiveauxScolairesInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutNiveauxScolairesInput, Prisma.EcoleUncheckedCreateWithoutNiveauxScolairesInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutConfigurationscolariteInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutConfigurationscolariteInput, Prisma.ecoleUncheckedUpdateWithoutConfigurationscolariteInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutConfigurationscolariteInput, Prisma.ecoleUncheckedCreateWithoutConfigurationscolariteInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutNiveauxScolairesInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutNiveauxScolairesInput, Prisma.EcoleUncheckedUpdateWithoutNiveauxScolairesInput>
+export type ecoleUpdateToOneWithWhereWithoutConfigurationscolariteInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutConfigurationscolariteInput, Prisma.ecoleUncheckedUpdateWithoutConfigurationscolariteInput>
 }
 
-export type EcoleUpdateWithoutNiveauxScolairesInput = {
+export type ecoleUpdateWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutNiveauxScolairesInput = {
+export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutMatieresInput = {
+export type ecoleCreateWithoutConversationInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutMatieresInput = {
+export type ecoleUncheckedCreateWithoutConversationInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutMatieresInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutMatieresInput, Prisma.EcoleUncheckedCreateWithoutMatieresInput>
+export type ecoleCreateOrConnectWithoutConversationInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutConversationInput, Prisma.ecoleUncheckedCreateWithoutConversationInput>
 }
 
-export type EcoleUpsertWithoutMatieresInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutMatieresInput, Prisma.EcoleUncheckedUpdateWithoutMatieresInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutMatieresInput, Prisma.EcoleUncheckedCreateWithoutMatieresInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutConversationInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutConversationInput, Prisma.ecoleUncheckedUpdateWithoutConversationInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutConversationInput, Prisma.ecoleUncheckedCreateWithoutConversationInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutMatieresInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutMatieresInput, Prisma.EcoleUncheckedUpdateWithoutMatieresInput>
+export type ecoleUpdateToOneWithWhereWithoutConversationInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutConversationInput, Prisma.ecoleUncheckedUpdateWithoutConversationInput>
 }
 
-export type EcoleUpdateWithoutMatieresInput = {
+export type ecoleUpdateWithoutConversationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutMatieresInput = {
+export type ecoleUncheckedUpdateWithoutConversationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutTypeEvaluationsInput = {
+export type ecoleCreateWithoutMatiereInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutTypeEvaluationsInput = {
+export type ecoleUncheckedCreateWithoutMatiereInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutTypeEvaluationsInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutTypeEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutTypeEvaluationsInput>
+export type ecoleCreateOrConnectWithoutMatiereInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutMatiereInput, Prisma.ecoleUncheckedCreateWithoutMatiereInput>
 }
 
-export type EcoleUpsertWithoutTypeEvaluationsInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutTypeEvaluationsInput, Prisma.EcoleUncheckedUpdateWithoutTypeEvaluationsInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutTypeEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutTypeEvaluationsInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutMatiereInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutMatiereInput, Prisma.ecoleUncheckedUpdateWithoutMatiereInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutMatiereInput, Prisma.ecoleUncheckedCreateWithoutMatiereInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutTypeEvaluationsInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutTypeEvaluationsInput, Prisma.EcoleUncheckedUpdateWithoutTypeEvaluationsInput>
+export type ecoleUpdateToOneWithWhereWithoutMatiereInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutMatiereInput, Prisma.ecoleUncheckedUpdateWithoutMatiereInput>
 }
 
-export type EcoleUpdateWithoutTypeEvaluationsInput = {
+export type ecoleUpdateWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutTypeEvaluationsInput = {
+export type ecoleUncheckedUpdateWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutPolitiqueEvaluationsInput = {
+export type ecoleCreateWithoutNiveauscolaireInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutPolitiqueEvaluationsInput = {
+export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutPolitiqueEvaluationsInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutPolitiqueEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutPolitiqueEvaluationsInput>
+export type ecoleCreateOrConnectWithoutNiveauscolaireInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutNiveauscolaireInput, Prisma.ecoleUncheckedCreateWithoutNiveauscolaireInput>
 }
 
-export type EcoleUpsertWithoutPolitiqueEvaluationsInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutPolitiqueEvaluationsInput, Prisma.EcoleUncheckedUpdateWithoutPolitiqueEvaluationsInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutPolitiqueEvaluationsInput, Prisma.EcoleUncheckedCreateWithoutPolitiqueEvaluationsInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutNiveauscolaireInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutNiveauscolaireInput, Prisma.ecoleUncheckedUpdateWithoutNiveauscolaireInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutNiveauscolaireInput, Prisma.ecoleUncheckedCreateWithoutNiveauscolaireInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutPolitiqueEvaluationsInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutPolitiqueEvaluationsInput, Prisma.EcoleUncheckedUpdateWithoutPolitiqueEvaluationsInput>
+export type ecoleUpdateToOneWithWhereWithoutNiveauscolaireInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutNiveauscolaireInput, Prisma.ecoleUncheckedUpdateWithoutNiveauscolaireInput>
 }
 
-export type EcoleUpdateWithoutPolitiqueEvaluationsInput = {
+export type ecoleUpdateWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutPolitiqueEvaluationsInput = {
+export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutConfigScolariteInput = {
+export type ecoleCreateWithoutPolitiqueevaluationInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutConfigScolariteInput = {
+export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutConfigScolariteInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutConfigScolariteInput, Prisma.EcoleUncheckedCreateWithoutConfigScolariteInput>
+export type ecoleCreateOrConnectWithoutPolitiqueevaluationInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutPolitiqueevaluationInput, Prisma.ecoleUncheckedCreateWithoutPolitiqueevaluationInput>
 }
 
-export type EcoleUpsertWithoutConfigScolariteInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutConfigScolariteInput, Prisma.EcoleUncheckedUpdateWithoutConfigScolariteInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutConfigScolariteInput, Prisma.EcoleUncheckedCreateWithoutConfigScolariteInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutPolitiqueevaluationInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutPolitiqueevaluationInput, Prisma.ecoleUncheckedUpdateWithoutPolitiqueevaluationInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutPolitiqueevaluationInput, Prisma.ecoleUncheckedCreateWithoutPolitiqueevaluationInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutConfigScolariteInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutConfigScolariteInput, Prisma.EcoleUncheckedUpdateWithoutConfigScolariteInput>
+export type ecoleUpdateToOneWithWhereWithoutPolitiqueevaluationInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutPolitiqueevaluationInput, Prisma.ecoleUncheckedUpdateWithoutPolitiqueevaluationInput>
 }
 
-export type EcoleUpdateWithoutConfigScolariteInput = {
+export type ecoleUpdateWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutConfigScolariteInput = {
+export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutAnnoncesInput = {
+export type ecoleCreateWithoutRoleInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutAnnoncesInput = {
+export type ecoleUncheckedCreateWithoutRoleInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutAnnoncesInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutAnnoncesInput, Prisma.EcoleUncheckedCreateWithoutAnnoncesInput>
+export type ecoleCreateOrConnectWithoutRoleInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutRoleInput, Prisma.ecoleUncheckedCreateWithoutRoleInput>
 }
 
-export type EcoleUpsertWithoutAnnoncesInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutAnnoncesInput, Prisma.EcoleUncheckedUpdateWithoutAnnoncesInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutAnnoncesInput, Prisma.EcoleUncheckedCreateWithoutAnnoncesInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutRoleInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutRoleInput, Prisma.ecoleUncheckedUpdateWithoutRoleInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutRoleInput, Prisma.ecoleUncheckedCreateWithoutRoleInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutAnnoncesInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutAnnoncesInput, Prisma.EcoleUncheckedUpdateWithoutAnnoncesInput>
+export type ecoleUpdateToOneWithWhereWithoutRoleInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutRoleInput, Prisma.ecoleUncheckedUpdateWithoutRoleInput>
 }
 
-export type EcoleUpdateWithoutAnnoncesInput = {
+export type ecoleUpdateWithoutRoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutAnnoncesInput = {
+export type ecoleUncheckedUpdateWithoutRoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleCreateWithoutConversationsInput = {
+export type ecoleCreateWithoutTypeevaluationInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleUncheckedCreateWithoutConversationsInput = {
+export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
   id?: string
   nom: string
-  type: $Enums.EcoleType
+  type: $Enums.ecole_type
   nomFondateur: string
   ville: string
   boitePostale?: string | null
   email: string
   telephone: string
   description?: string | null
-  statut?: $Enums.EcoleStatut
+  statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
   valideAt: Date | string
   updatedAt?: Date | string
-  users?: Prisma.UserUncheckedCreateNestedManyWithoutEcoleInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedCreateNestedManyWithoutEcoleInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedCreateNestedManyWithoutEcoleInput
-  matieres?: Prisma.MatiereUncheckedCreateNestedManyWithoutEcoleInput
-  annonces?: Prisma.AnnonceUncheckedCreateNestedManyWithoutEcoleInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedCreateNestedManyWithoutEcoleInput
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type EcoleCreateOrConnectWithoutConversationsInput = {
-  where: Prisma.EcoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutConversationsInput, Prisma.EcoleUncheckedCreateWithoutConversationsInput>
+export type ecoleCreateOrConnectWithoutTypeevaluationInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutTypeevaluationInput, Prisma.ecoleUncheckedCreateWithoutTypeevaluationInput>
 }
 
-export type EcoleUpsertWithoutConversationsInput = {
-  update: Prisma.XOR<Prisma.EcoleUpdateWithoutConversationsInput, Prisma.EcoleUncheckedUpdateWithoutConversationsInput>
-  create: Prisma.XOR<Prisma.EcoleCreateWithoutConversationsInput, Prisma.EcoleUncheckedCreateWithoutConversationsInput>
-  where?: Prisma.EcoleWhereInput
+export type ecoleUpsertWithoutTypeevaluationInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutTypeevaluationInput, Prisma.ecoleUncheckedUpdateWithoutTypeevaluationInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutTypeevaluationInput, Prisma.ecoleUncheckedCreateWithoutTypeevaluationInput>
+  where?: Prisma.ecoleWhereInput
 }
 
-export type EcoleUpdateToOneWithWhereWithoutConversationsInput = {
-  where?: Prisma.EcoleWhereInput
-  data: Prisma.XOR<Prisma.EcoleUpdateWithoutConversationsInput, Prisma.EcoleUncheckedUpdateWithoutConversationsInput>
+export type ecoleUpdateToOneWithWhereWithoutTypeevaluationInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutTypeevaluationInput, Prisma.ecoleUncheckedUpdateWithoutTypeevaluationInput>
 }
 
-export type EcoleUpdateWithoutConversationsInput = {
+export type ecoleUpdateWithoutTypeevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutConversationsInput = {
+export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.UserUncheckedUpdateManyWithoutEcoleNestedInput
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUpdateWithoutUsersInput = {
+export type ecoleCreateWithoutUserInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt: Date | string
+  updatedAt?: Date | string
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleUncheckedCreateWithoutUserInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt: Date | string
+  updatedAt?: Date | string
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleCreateOrConnectWithoutUserInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput>
+}
+
+export type ecoleUpsertWithWhereUniqueWithoutUserInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutUserInput, Prisma.ecoleUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput>
+}
+
+export type ecoleUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutUserInput, Prisma.ecoleUncheckedUpdateWithoutUserInput>
+}
+
+export type ecoleUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.ecoleScalarWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateManyMutationInput, Prisma.ecoleUncheckedUpdateManyWithoutUserInput>
+}
+
+export type ecoleScalarWhereInput = {
+  AND?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
+  OR?: Prisma.ecoleScalarWhereInput[]
+  NOT?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
+  id?: Prisma.StringFilter<"ecole"> | string
+  nom?: Prisma.StringFilter<"ecole"> | string
+  type?: Prisma.Enumecole_typeFilter<"ecole"> | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFilter<"ecole"> | string
+  ville?: Prisma.StringFilter<"ecole"> | string
+  boitePostale?: Prisma.StringNullableFilter<"ecole"> | string | null
+  email?: Prisma.StringFilter<"ecole"> | string
+  telephone?: Prisma.StringFilter<"ecole"> | string
+  description?: Prisma.StringNullableFilter<"ecole"> | string | null
+  statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
+  code?: Prisma.StringFilter<"ecole"> | string
+  createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+}
+
+export type ecoleUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaires?: Prisma.AnneeScolaireUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateWithoutUsersInput = {
+export type ecoleUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  anneeScolaires?: Prisma.AnneeScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  niveauxScolaires?: Prisma.NiveauScolaireUncheckedUpdateManyWithoutEcoleNestedInput
-  typeEvaluations?: Prisma.TypeEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  politiqueEvaluations?: Prisma.PolitiqueEvaluationUncheckedUpdateManyWithoutEcoleNestedInput
-  matieres?: Prisma.MatiereUncheckedUpdateManyWithoutEcoleNestedInput
-  annonces?: Prisma.AnnonceUncheckedUpdateManyWithoutEcoleNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutEcoleNestedInput
-  configScolarite?: Prisma.ConfigurationScolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
-export type EcoleUncheckedUpdateManyWithoutUsersInput = {
+export type ecoleUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumEcoleTypeFieldUpdateOperationsInput | $Enums.EcoleType
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
   nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
   ville?: Prisma.StringFieldUpdateOperationsInput | string
   boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  statut?: Prisma.EnumEcoleStatutFieldUpdateOperationsInput | $Enums.EcoleStatut
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1842,27 +2015,29 @@ export type EcoleUncheckedUpdateManyWithoutUsersInput = {
  */
 
 export type EcoleCountOutputType = {
-  users: number
-  anneeScolaires: number
-  niveauxScolaires: number
-  typeEvaluations: number
-  politiqueEvaluations: number
-  matieres: number
-  annonces: number
-  conversations: number
-  configScolarite: number
+  anneescolaire: number
+  annonce: number
+  configurationscolarite: number
+  conversation: number
+  matiere: number
+  niveauscolaire: number
+  politiqueevaluation: number
+  role: number
+  typeevaluation: number
+  user: number
 }
 
 export type EcoleCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  users?: boolean | EcoleCountOutputTypeCountUsersArgs
-  anneeScolaires?: boolean | EcoleCountOutputTypeCountAnneeScolairesArgs
-  niveauxScolaires?: boolean | EcoleCountOutputTypeCountNiveauxScolairesArgs
-  typeEvaluations?: boolean | EcoleCountOutputTypeCountTypeEvaluationsArgs
-  politiqueEvaluations?: boolean | EcoleCountOutputTypeCountPolitiqueEvaluationsArgs
-  matieres?: boolean | EcoleCountOutputTypeCountMatieresArgs
-  annonces?: boolean | EcoleCountOutputTypeCountAnnoncesArgs
-  conversations?: boolean | EcoleCountOutputTypeCountConversationsArgs
-  configScolarite?: boolean | EcoleCountOutputTypeCountConfigScolariteArgs
+  anneescolaire?: boolean | EcoleCountOutputTypeCountAnneescolaireArgs
+  annonce?: boolean | EcoleCountOutputTypeCountAnnonceArgs
+  configurationscolarite?: boolean | EcoleCountOutputTypeCountConfigurationscolariteArgs
+  conversation?: boolean | EcoleCountOutputTypeCountConversationArgs
+  matiere?: boolean | EcoleCountOutputTypeCountMatiereArgs
+  niveauscolaire?: boolean | EcoleCountOutputTypeCountNiveauscolaireArgs
+  politiqueevaluation?: boolean | EcoleCountOutputTypeCountPolitiqueevaluationArgs
+  role?: boolean | EcoleCountOutputTypeCountRoleArgs
+  typeevaluation?: boolean | EcoleCountOutputTypeCountTypeevaluationArgs
+  user?: boolean | EcoleCountOutputTypeCountUserArgs
 }
 
 /**
@@ -1878,68 +2053,75 @@ export type EcoleCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UserWhereInput
+export type EcoleCountOutputTypeCountAnneescolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.anneescolaireWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountAnneeScolairesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AnneeScolaireWhereInput
+export type EcoleCountOutputTypeCountAnnonceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.annonceWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountNiveauxScolairesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NiveauScolaireWhereInput
+export type EcoleCountOutputTypeCountConfigurationscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.configurationscolariteWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountTypeEvaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TypeEvaluationWhereInput
+export type EcoleCountOutputTypeCountConversationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.conversationWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountPolitiqueEvaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PolitiqueEvaluationWhereInput
+export type EcoleCountOutputTypeCountMatiereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.matiereWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountMatieresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MatiereWhereInput
+export type EcoleCountOutputTypeCountNiveauscolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.niveauscolaireWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountAnnoncesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AnnonceWhereInput
+export type EcoleCountOutputTypeCountPolitiqueevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.politiqueevaluationWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountConversationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConversationWhereInput
+export type EcoleCountOutputTypeCountRoleArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.roleWhereInput
 }
 
 /**
  * EcoleCountOutputType without action
  */
-export type EcoleCountOutputTypeCountConfigScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConfigurationScolariteWhereInput
+export type EcoleCountOutputTypeCountTypeevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.typeevaluationWhereInput
+}
+
+/**
+ * EcoleCountOutputType without action
+ */
+export type EcoleCountOutputTypeCountUserArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.userWhereInput
 }
 
 
-export type EcoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nom?: boolean
   type?: boolean
@@ -1954,21 +2136,22 @@ export type EcoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   createdAt?: boolean
   valideAt?: boolean
   updatedAt?: boolean
-  users?: boolean | Prisma.Ecole$usersArgs<ExtArgs>
-  anneeScolaires?: boolean | Prisma.Ecole$anneeScolairesArgs<ExtArgs>
-  niveauxScolaires?: boolean | Prisma.Ecole$niveauxScolairesArgs<ExtArgs>
-  typeEvaluations?: boolean | Prisma.Ecole$typeEvaluationsArgs<ExtArgs>
-  politiqueEvaluations?: boolean | Prisma.Ecole$politiqueEvaluationsArgs<ExtArgs>
-  matieres?: boolean | Prisma.Ecole$matieresArgs<ExtArgs>
-  annonces?: boolean | Prisma.Ecole$annoncesArgs<ExtArgs>
-  conversations?: boolean | Prisma.Ecole$conversationsArgs<ExtArgs>
-  configScolarite?: boolean | Prisma.Ecole$configScolariteArgs<ExtArgs>
+  anneescolaire?: boolean | Prisma.ecole$anneescolaireArgs<ExtArgs>
+  annonce?: boolean | Prisma.ecole$annonceArgs<ExtArgs>
+  configurationscolarite?: boolean | Prisma.ecole$configurationscolariteArgs<ExtArgs>
+  conversation?: boolean | Prisma.ecole$conversationArgs<ExtArgs>
+  matiere?: boolean | Prisma.ecole$matiereArgs<ExtArgs>
+  niveauscolaire?: boolean | Prisma.ecole$niveauscolaireArgs<ExtArgs>
+  politiqueevaluation?: boolean | Prisma.ecole$politiqueevaluationArgs<ExtArgs>
+  role?: boolean | Prisma.ecole$roleArgs<ExtArgs>
+  typeevaluation?: boolean | Prisma.ecole$typeevaluationArgs<ExtArgs>
+  user?: boolean | Prisma.ecole$userArgs<ExtArgs>
   _count?: boolean | Prisma.EcoleCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["ecole"]>
 
 
 
-export type EcoleSelectScalar = {
+export type ecoleSelectScalar = {
   id?: boolean
   nom?: boolean
   type?: boolean
@@ -1985,44 +2168,46 @@ export type EcoleSelectScalar = {
   updatedAt?: boolean
 }
 
-export type EcoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "type" | "nomFondateur" | "ville" | "boitePostale" | "email" | "telephone" | "description" | "statut" | "code" | "createdAt" | "valideAt" | "updatedAt", ExtArgs["result"]["ecole"]>
-export type EcoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  users?: boolean | Prisma.Ecole$usersArgs<ExtArgs>
-  anneeScolaires?: boolean | Prisma.Ecole$anneeScolairesArgs<ExtArgs>
-  niveauxScolaires?: boolean | Prisma.Ecole$niveauxScolairesArgs<ExtArgs>
-  typeEvaluations?: boolean | Prisma.Ecole$typeEvaluationsArgs<ExtArgs>
-  politiqueEvaluations?: boolean | Prisma.Ecole$politiqueEvaluationsArgs<ExtArgs>
-  matieres?: boolean | Prisma.Ecole$matieresArgs<ExtArgs>
-  annonces?: boolean | Prisma.Ecole$annoncesArgs<ExtArgs>
-  conversations?: boolean | Prisma.Ecole$conversationsArgs<ExtArgs>
-  configScolarite?: boolean | Prisma.Ecole$configScolariteArgs<ExtArgs>
+export type ecoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "type" | "nomFondateur" | "ville" | "boitePostale" | "email" | "telephone" | "description" | "statut" | "code" | "createdAt" | "valideAt" | "updatedAt", ExtArgs["result"]["ecole"]>
+export type ecoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  anneescolaire?: boolean | Prisma.ecole$anneescolaireArgs<ExtArgs>
+  annonce?: boolean | Prisma.ecole$annonceArgs<ExtArgs>
+  configurationscolarite?: boolean | Prisma.ecole$configurationscolariteArgs<ExtArgs>
+  conversation?: boolean | Prisma.ecole$conversationArgs<ExtArgs>
+  matiere?: boolean | Prisma.ecole$matiereArgs<ExtArgs>
+  niveauscolaire?: boolean | Prisma.ecole$niveauscolaireArgs<ExtArgs>
+  politiqueevaluation?: boolean | Prisma.ecole$politiqueevaluationArgs<ExtArgs>
+  role?: boolean | Prisma.ecole$roleArgs<ExtArgs>
+  typeevaluation?: boolean | Prisma.ecole$typeevaluationArgs<ExtArgs>
+  user?: boolean | Prisma.ecole$userArgs<ExtArgs>
   _count?: boolean | Prisma.EcoleCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $EcolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Ecole"
+export type $ecolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "ecole"
   objects: {
-    users: Prisma.$UserPayload<ExtArgs>[]
-    anneeScolaires: Prisma.$AnneeScolairePayload<ExtArgs>[]
-    niveauxScolaires: Prisma.$NiveauScolairePayload<ExtArgs>[]
-    typeEvaluations: Prisma.$TypeEvaluationPayload<ExtArgs>[]
-    politiqueEvaluations: Prisma.$PolitiqueEvaluationPayload<ExtArgs>[]
-    matieres: Prisma.$MatierePayload<ExtArgs>[]
-    annonces: Prisma.$AnnoncePayload<ExtArgs>[]
-    conversations: Prisma.$ConversationPayload<ExtArgs>[]
-    configScolarite: Prisma.$ConfigurationScolaritePayload<ExtArgs>[]
+    anneescolaire: Prisma.$anneescolairePayload<ExtArgs>[]
+    annonce: Prisma.$annoncePayload<ExtArgs>[]
+    configurationscolarite: Prisma.$configurationscolaritePayload<ExtArgs>[]
+    conversation: Prisma.$conversationPayload<ExtArgs>[]
+    matiere: Prisma.$matierePayload<ExtArgs>[]
+    niveauscolaire: Prisma.$niveauscolairePayload<ExtArgs>[]
+    politiqueevaluation: Prisma.$politiqueevaluationPayload<ExtArgs>[]
+    role: Prisma.$rolePayload<ExtArgs>[]
+    typeevaluation: Prisma.$typeevaluationPayload<ExtArgs>[]
+    user: Prisma.$userPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     nom: string
-    type: $Enums.EcoleType
+    type: $Enums.ecole_type
     nomFondateur: string
     ville: string
     boitePostale: string | null
     email: string
     telephone: string
     description: string | null
-    statut: $Enums.EcoleStatut
+    statut: $Enums.ecole_statut
     code: string
     createdAt: Date
     valideAt: Date
@@ -2031,18 +2216,18 @@ export type $EcolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   composites: {}
 }
 
-export type EcoleGetPayload<S extends boolean | null | undefined | EcoleDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EcolePayload, S>
+export type ecoleGetPayload<S extends boolean | null | undefined | ecoleDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ecolePayload, S>
 
-export type EcoleCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<EcoleFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type ecoleCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<ecoleFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: EcoleCountAggregateInputType | true
   }
 
-export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Ecole'], meta: { name: 'Ecole' } }
+export interface ecoleDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ecole'], meta: { name: 'ecole' } }
   /**
    * Find zero or one Ecole that matches the filter.
-   * @param {EcoleFindUniqueArgs} args - Arguments to find a Ecole
+   * @param {ecoleFindUniqueArgs} args - Arguments to find a Ecole
    * @example
    * // Get one Ecole
    * const ecole = await prisma.ecole.findUnique({
@@ -2051,12 +2236,12 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findUnique<T extends EcoleFindUniqueArgs>(args: Prisma.SelectSubset<T, EcoleFindUniqueArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends ecoleFindUniqueArgs>(args: Prisma.SelectSubset<T, ecoleFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Ecole that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {EcoleFindUniqueOrThrowArgs} args - Arguments to find a Ecole
+   * @param {ecoleFindUniqueOrThrowArgs} args - Arguments to find a Ecole
    * @example
    * // Get one Ecole
    * const ecole = await prisma.ecole.findUniqueOrThrow({
@@ -2065,13 +2250,13 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findUniqueOrThrow<T extends EcoleFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, EcoleFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends ecoleFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ecoleFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Ecole that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EcoleFindFirstArgs} args - Arguments to find a Ecole
+   * @param {ecoleFindFirstArgs} args - Arguments to find a Ecole
    * @example
    * // Get one Ecole
    * const ecole = await prisma.ecole.findFirst({
@@ -2080,14 +2265,14 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findFirst<T extends EcoleFindFirstArgs>(args?: Prisma.SelectSubset<T, EcoleFindFirstArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends ecoleFindFirstArgs>(args?: Prisma.SelectSubset<T, ecoleFindFirstArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Ecole that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EcoleFindFirstOrThrowArgs} args - Arguments to find a Ecole
+   * @param {ecoleFindFirstOrThrowArgs} args - Arguments to find a Ecole
    * @example
    * // Get one Ecole
    * const ecole = await prisma.ecole.findFirstOrThrow({
@@ -2096,13 +2281,13 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findFirstOrThrow<T extends EcoleFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, EcoleFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends ecoleFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ecoleFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Ecoles that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EcoleFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {ecoleFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Ecoles
    * const ecoles = await prisma.ecole.findMany()
@@ -2114,11 +2299,11 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * const ecoleWithIdOnly = await prisma.ecole.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends EcoleFindManyArgs>(args?: Prisma.SelectSubset<T, EcoleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends ecoleFindManyArgs>(args?: Prisma.SelectSubset<T, ecoleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Ecole.
-   * @param {EcoleCreateArgs} args - Arguments to create a Ecole.
+   * @param {ecoleCreateArgs} args - Arguments to create a Ecole.
    * @example
    * // Create one Ecole
    * const Ecole = await prisma.ecole.create({
@@ -2128,11 +2313,11 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  create<T extends EcoleCreateArgs>(args: Prisma.SelectSubset<T, EcoleCreateArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends ecoleCreateArgs>(args: Prisma.SelectSubset<T, ecoleCreateArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Ecoles.
-   * @param {EcoleCreateManyArgs} args - Arguments to create many Ecoles.
+   * @param {ecoleCreateManyArgs} args - Arguments to create many Ecoles.
    * @example
    * // Create many Ecoles
    * const ecole = await prisma.ecole.createMany({
@@ -2142,11 +2327,11 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    *     
    */
-  createMany<T extends EcoleCreateManyArgs>(args?: Prisma.SelectSubset<T, EcoleCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends ecoleCreateManyArgs>(args?: Prisma.SelectSubset<T, ecoleCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Ecole.
-   * @param {EcoleDeleteArgs} args - Arguments to delete one Ecole.
+   * @param {ecoleDeleteArgs} args - Arguments to delete one Ecole.
    * @example
    * // Delete one Ecole
    * const Ecole = await prisma.ecole.delete({
@@ -2156,11 +2341,11 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  delete<T extends EcoleDeleteArgs>(args: Prisma.SelectSubset<T, EcoleDeleteArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends ecoleDeleteArgs>(args: Prisma.SelectSubset<T, ecoleDeleteArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Ecole.
-   * @param {EcoleUpdateArgs} args - Arguments to update one Ecole.
+   * @param {ecoleUpdateArgs} args - Arguments to update one Ecole.
    * @example
    * // Update one Ecole
    * const ecole = await prisma.ecole.update({
@@ -2173,11 +2358,11 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  update<T extends EcoleUpdateArgs>(args: Prisma.SelectSubset<T, EcoleUpdateArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends ecoleUpdateArgs>(args: Prisma.SelectSubset<T, ecoleUpdateArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Ecoles.
-   * @param {EcoleDeleteManyArgs} args - Arguments to filter Ecoles to delete.
+   * @param {ecoleDeleteManyArgs} args - Arguments to filter Ecoles to delete.
    * @example
    * // Delete a few Ecoles
    * const { count } = await prisma.ecole.deleteMany({
@@ -2187,13 +2372,13 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  deleteMany<T extends EcoleDeleteManyArgs>(args?: Prisma.SelectSubset<T, EcoleDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends ecoleDeleteManyArgs>(args?: Prisma.SelectSubset<T, ecoleDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Ecoles.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EcoleUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {ecoleUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Ecoles
    * const ecole = await prisma.ecole.updateMany({
@@ -2206,11 +2391,11 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  updateMany<T extends EcoleUpdateManyArgs>(args: Prisma.SelectSubset<T, EcoleUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends ecoleUpdateManyArgs>(args: Prisma.SelectSubset<T, ecoleUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Ecole.
-   * @param {EcoleUpsertArgs} args - Arguments to update or create a Ecole.
+   * @param {ecoleUpsertArgs} args - Arguments to update or create a Ecole.
    * @example
    * // Update or create a Ecole
    * const ecole = await prisma.ecole.upsert({
@@ -2225,14 +2410,14 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  upsert<T extends EcoleUpsertArgs>(args: Prisma.SelectSubset<T, EcoleUpsertArgs<ExtArgs>>): Prisma.Prisma__EcoleClient<runtime.Types.Result.GetResult<Prisma.$EcolePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends ecoleUpsertArgs>(args: Prisma.SelectSubset<T, ecoleUpsertArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Ecoles.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EcoleCountArgs} args - Arguments to filter Ecoles to count.
+   * @param {ecoleCountArgs} args - Arguments to filter Ecoles to count.
    * @example
    * // Count the number of Ecoles
    * const count = await prisma.ecole.count({
@@ -2241,8 +2426,8 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
   **/
-  count<T extends EcoleCountArgs>(
-    args?: Prisma.Subset<T, EcoleCountArgs>,
+  count<T extends ecoleCountArgs>(
+    args?: Prisma.Subset<T, ecoleCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -2281,7 +2466,7 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * Group by Ecole.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EcoleGroupByArgs} args - Group by arguments.
+   * @param {ecoleGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -2296,14 +2481,14 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * 
   **/
   groupBy<
-    T extends EcoleGroupByArgs,
+    T extends ecoleGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: EcoleGroupByArgs['orderBy'] }
-      : { orderBy?: EcoleGroupByArgs['orderBy'] },
+      ? { orderBy: ecoleGroupByArgs['orderBy'] }
+      : { orderBy?: ecoleGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -2352,30 +2537,31 @@ export interface EcoleDelegate<ExtArgs extends runtime.Types.Extensions.Internal
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, EcoleGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEcoleGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, ecoleGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEcoleGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Ecole model
+ * Fields of the ecole model
  */
-readonly fields: EcoleFieldRefs;
+readonly fields: ecoleFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Ecole.
+ * The delegate class that acts as a "Promise-like" for ecole.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EcoleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ecoleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  users<T extends Prisma.Ecole$usersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$usersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  anneeScolaires<T extends Prisma.Ecole$anneeScolairesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$anneeScolairesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnneeScolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  niveauxScolaires<T extends Prisma.Ecole$niveauxScolairesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$niveauxScolairesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NiveauScolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  typeEvaluations<T extends Prisma.Ecole$typeEvaluationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$typeEvaluationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TypeEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  politiqueEvaluations<T extends Prisma.Ecole$politiqueEvaluationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$politiqueEvaluationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PolitiqueEvaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  matieres<T extends Prisma.Ecole$matieresArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$matieresArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  annonces<T extends Prisma.Ecole$annoncesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$annoncesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnnoncePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  conversations<T extends Prisma.Ecole$conversationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$conversationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  configScolarite<T extends Prisma.Ecole$configScolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ecole$configScolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfigurationScolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  anneescolaire<T extends Prisma.ecole$anneescolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$anneescolaireArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$anneescolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  annonce<T extends Prisma.ecole$annonceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$annonceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$annoncePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  configurationscolarite<T extends Prisma.ecole$configurationscolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$configurationscolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  conversation<T extends Prisma.ecole$conversationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$conversationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$conversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  matiere<T extends Prisma.ecole$matiereArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$matiereArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  niveauscolaire<T extends Prisma.ecole$niveauscolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$niveauscolaireArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$niveauscolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  politiqueevaluation<T extends Prisma.ecole$politiqueevaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$politiqueevaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$politiqueevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  role<T extends Prisma.ecole$roleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$roleArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$rolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  typeevaluation<T extends Prisma.ecole$typeevaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$typeevaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  user<T extends Prisma.ecole$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$userArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2402,600 +2588,624 @@ export interface Prisma__EcoleClient<T, Null = never, ExtArgs extends runtime.Ty
 
 
 /**
- * Fields of the Ecole model
+ * Fields of the ecole model
  */
-export interface EcoleFieldRefs {
-  readonly id: Prisma.FieldRef<"Ecole", 'String'>
-  readonly nom: Prisma.FieldRef<"Ecole", 'String'>
-  readonly type: Prisma.FieldRef<"Ecole", 'EcoleType'>
-  readonly nomFondateur: Prisma.FieldRef<"Ecole", 'String'>
-  readonly ville: Prisma.FieldRef<"Ecole", 'String'>
-  readonly boitePostale: Prisma.FieldRef<"Ecole", 'String'>
-  readonly email: Prisma.FieldRef<"Ecole", 'String'>
-  readonly telephone: Prisma.FieldRef<"Ecole", 'String'>
-  readonly description: Prisma.FieldRef<"Ecole", 'String'>
-  readonly statut: Prisma.FieldRef<"Ecole", 'EcoleStatut'>
-  readonly code: Prisma.FieldRef<"Ecole", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Ecole", 'DateTime'>
-  readonly valideAt: Prisma.FieldRef<"Ecole", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Ecole", 'DateTime'>
+export interface ecoleFieldRefs {
+  readonly id: Prisma.FieldRef<"ecole", 'String'>
+  readonly nom: Prisma.FieldRef<"ecole", 'String'>
+  readonly type: Prisma.FieldRef<"ecole", 'ecole_type'>
+  readonly nomFondateur: Prisma.FieldRef<"ecole", 'String'>
+  readonly ville: Prisma.FieldRef<"ecole", 'String'>
+  readonly boitePostale: Prisma.FieldRef<"ecole", 'String'>
+  readonly email: Prisma.FieldRef<"ecole", 'String'>
+  readonly telephone: Prisma.FieldRef<"ecole", 'String'>
+  readonly description: Prisma.FieldRef<"ecole", 'String'>
+  readonly statut: Prisma.FieldRef<"ecole", 'ecole_statut'>
+  readonly code: Prisma.FieldRef<"ecole", 'String'>
+  readonly createdAt: Prisma.FieldRef<"ecole", 'DateTime'>
+  readonly valideAt: Prisma.FieldRef<"ecole", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"ecole", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Ecole findUnique
+ * ecole findUnique
  */
-export type EcoleFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * Filter, which Ecole to fetch.
+   * Filter, which ecole to fetch.
    */
-  where: Prisma.EcoleWhereUniqueInput
+  where: Prisma.ecoleWhereUniqueInput
 }
 
 /**
- * Ecole findUniqueOrThrow
+ * ecole findUniqueOrThrow
  */
-export type EcoleFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * Filter, which Ecole to fetch.
+   * Filter, which ecole to fetch.
    */
-  where: Prisma.EcoleWhereUniqueInput
+  where: Prisma.ecoleWhereUniqueInput
 }
 
 /**
- * Ecole findFirst
+ * ecole findFirst
  */
-export type EcoleFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * Filter, which Ecole to fetch.
+   * Filter, which ecole to fetch.
    */
-  where?: Prisma.EcoleWhereInput
+  where?: Prisma.ecoleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Ecoles to fetch.
+   * Determine the order of ecoles to fetch.
    */
-  orderBy?: Prisma.EcoleOrderByWithRelationInput | Prisma.EcoleOrderByWithRelationInput[]
+  orderBy?: Prisma.ecoleOrderByWithRelationInput | Prisma.ecoleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Ecoles.
+   * Sets the position for searching for ecoles.
    */
-  cursor?: Prisma.EcoleWhereUniqueInput
+  cursor?: Prisma.ecoleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Ecoles from the position of the cursor.
+   * Take `±n` ecoles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Ecoles.
+   * Skip the first `n` ecoles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Ecoles.
+   * Filter by unique combinations of ecoles.
    */
   distinct?: Prisma.EcoleScalarFieldEnum | Prisma.EcoleScalarFieldEnum[]
 }
 
 /**
- * Ecole findFirstOrThrow
+ * ecole findFirstOrThrow
  */
-export type EcoleFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * Filter, which Ecole to fetch.
+   * Filter, which ecole to fetch.
    */
-  where?: Prisma.EcoleWhereInput
+  where?: Prisma.ecoleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Ecoles to fetch.
+   * Determine the order of ecoles to fetch.
    */
-  orderBy?: Prisma.EcoleOrderByWithRelationInput | Prisma.EcoleOrderByWithRelationInput[]
+  orderBy?: Prisma.ecoleOrderByWithRelationInput | Prisma.ecoleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Ecoles.
+   * Sets the position for searching for ecoles.
    */
-  cursor?: Prisma.EcoleWhereUniqueInput
+  cursor?: Prisma.ecoleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Ecoles from the position of the cursor.
+   * Take `±n` ecoles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Ecoles.
+   * Skip the first `n` ecoles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Ecoles.
+   * Filter by unique combinations of ecoles.
    */
   distinct?: Prisma.EcoleScalarFieldEnum | Prisma.EcoleScalarFieldEnum[]
 }
 
 /**
- * Ecole findMany
+ * ecole findMany
  */
-export type EcoleFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * Filter, which Ecoles to fetch.
+   * Filter, which ecoles to fetch.
    */
-  where?: Prisma.EcoleWhereInput
+  where?: Prisma.ecoleWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Ecoles to fetch.
+   * Determine the order of ecoles to fetch.
    */
-  orderBy?: Prisma.EcoleOrderByWithRelationInput | Prisma.EcoleOrderByWithRelationInput[]
+  orderBy?: Prisma.ecoleOrderByWithRelationInput | Prisma.ecoleOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Ecoles.
+   * Sets the position for listing ecoles.
    */
-  cursor?: Prisma.EcoleWhereUniqueInput
+  cursor?: Prisma.ecoleWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Ecoles from the position of the cursor.
+   * Take `±n` ecoles from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Ecoles.
+   * Skip the first `n` ecoles.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Ecoles.
+   * Filter by unique combinations of ecoles.
    */
   distinct?: Prisma.EcoleScalarFieldEnum | Prisma.EcoleScalarFieldEnum[]
 }
 
 /**
- * Ecole create
+ * ecole create
  */
-export type EcoleCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * The data needed to create a Ecole.
+   * The data needed to create a ecole.
    */
-  data: Prisma.XOR<Prisma.EcoleCreateInput, Prisma.EcoleUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.ecoleCreateInput, Prisma.ecoleUncheckedCreateInput>
 }
 
 /**
- * Ecole createMany
+ * ecole createMany
  */
-export type EcoleCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Ecoles.
+   * The data used to create many ecoles.
    */
-  data: Prisma.EcoleCreateManyInput | Prisma.EcoleCreateManyInput[]
+  data: Prisma.ecoleCreateManyInput | Prisma.ecoleCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Ecole update
+ * ecole update
  */
-export type EcoleUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * The data needed to update a Ecole.
+   * The data needed to update a ecole.
    */
-  data: Prisma.XOR<Prisma.EcoleUpdateInput, Prisma.EcoleUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.ecoleUpdateInput, Prisma.ecoleUncheckedUpdateInput>
   /**
-   * Choose, which Ecole to update.
+   * Choose, which ecole to update.
    */
-  where: Prisma.EcoleWhereUniqueInput
+  where: Prisma.ecoleWhereUniqueInput
 }
 
 /**
- * Ecole updateMany
+ * ecole updateMany
  */
-export type EcoleUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Ecoles.
+   * The data used to update ecoles.
    */
-  data: Prisma.XOR<Prisma.EcoleUpdateManyMutationInput, Prisma.EcoleUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ecoleUpdateManyMutationInput, Prisma.ecoleUncheckedUpdateManyInput>
   /**
-   * Filter which Ecoles to update
+   * Filter which ecoles to update
    */
-  where?: Prisma.EcoleWhereInput
+  where?: Prisma.ecoleWhereInput
   /**
-   * Limit how many Ecoles to update.
+   * Limit how many ecoles to update.
    */
   limit?: number
 }
 
 /**
- * Ecole upsert
+ * ecole upsert
  */
-export type EcoleUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * The filter to search for the Ecole to update in case it exists.
+   * The filter to search for the ecole to update in case it exists.
    */
-  where: Prisma.EcoleWhereUniqueInput
+  where: Prisma.ecoleWhereUniqueInput
   /**
-   * In case the Ecole found by the `where` argument doesn't exist, create a new Ecole with this data.
+   * In case the ecole found by the `where` argument doesn't exist, create a new ecole with this data.
    */
-  create: Prisma.XOR<Prisma.EcoleCreateInput, Prisma.EcoleUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.ecoleCreateInput, Prisma.ecoleUncheckedCreateInput>
   /**
-   * In case the Ecole was found with the provided `where` argument, update it with this data.
+   * In case the ecole was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.EcoleUpdateInput, Prisma.EcoleUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.ecoleUpdateInput, Prisma.ecoleUncheckedUpdateInput>
 }
 
 /**
- * Ecole delete
+ * ecole delete
  */
-export type EcoleDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the ecole
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.ecoleSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the ecole
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.ecoleInclude<ExtArgs> | null
   /**
-   * Filter which Ecole to delete.
+   * Filter which ecole to delete.
    */
-  where: Prisma.EcoleWhereUniqueInput
+  where: Prisma.ecoleWhereUniqueInput
 }
 
 /**
- * Ecole deleteMany
+ * ecole deleteMany
  */
-export type EcoleDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecoleDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Ecoles to delete
+   * Filter which ecoles to delete
    */
-  where?: Prisma.EcoleWhereInput
+  where?: Prisma.ecoleWhereInput
   /**
-   * Limit how many Ecoles to delete.
+   * Limit how many ecoles to delete.
    */
   limit?: number
 }
 
 /**
- * Ecole.users
+ * ecole.anneescolaire
  */
-export type Ecole$usersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecole$anneescolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the User
+   * Select specific fields to fetch from the anneescolaire
    */
-  select?: Prisma.UserSelect<ExtArgs> | null
+  select?: Prisma.anneescolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the User
+   * Omit specific fields from the anneescolaire
    */
-  omit?: Prisma.UserOmit<ExtArgs> | null
+  omit?: Prisma.anneescolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
-  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
-  cursor?: Prisma.UserWhereUniqueInput
+  include?: Prisma.anneescolaireInclude<ExtArgs> | null
+  where?: Prisma.anneescolaireWhereInput
+  orderBy?: Prisma.anneescolaireOrderByWithRelationInput | Prisma.anneescolaireOrderByWithRelationInput[]
+  cursor?: Prisma.anneescolaireWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+  distinct?: Prisma.AnneescolaireScalarFieldEnum | Prisma.AnneescolaireScalarFieldEnum[]
 }
 
 /**
- * Ecole.anneeScolaires
+ * ecole.annonce
  */
-export type Ecole$anneeScolairesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecole$annonceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AnneeScolaire
+   * Select specific fields to fetch from the annonce
    */
-  select?: Prisma.AnneeScolaireSelect<ExtArgs> | null
+  select?: Prisma.annonceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AnneeScolaire
+   * Omit specific fields from the annonce
    */
-  omit?: Prisma.AnneeScolaireOmit<ExtArgs> | null
+  omit?: Prisma.annonceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AnneeScolaireInclude<ExtArgs> | null
-  where?: Prisma.AnneeScolaireWhereInput
-  orderBy?: Prisma.AnneeScolaireOrderByWithRelationInput | Prisma.AnneeScolaireOrderByWithRelationInput[]
-  cursor?: Prisma.AnneeScolaireWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.AnneeScolaireScalarFieldEnum | Prisma.AnneeScolaireScalarFieldEnum[]
-}
-
-/**
- * Ecole.niveauxScolaires
- */
-export type Ecole$niveauxScolairesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the NiveauScolaire
-   */
-  select?: Prisma.NiveauScolaireSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the NiveauScolaire
-   */
-  omit?: Prisma.NiveauScolaireOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.NiveauScolaireInclude<ExtArgs> | null
-  where?: Prisma.NiveauScolaireWhereInput
-  orderBy?: Prisma.NiveauScolaireOrderByWithRelationInput | Prisma.NiveauScolaireOrderByWithRelationInput[]
-  cursor?: Prisma.NiveauScolaireWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.NiveauScolaireScalarFieldEnum | Prisma.NiveauScolaireScalarFieldEnum[]
-}
-
-/**
- * Ecole.typeEvaluations
- */
-export type Ecole$typeEvaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the TypeEvaluation
-   */
-  select?: Prisma.TypeEvaluationSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the TypeEvaluation
-   */
-  omit?: Prisma.TypeEvaluationOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.TypeEvaluationInclude<ExtArgs> | null
-  where?: Prisma.TypeEvaluationWhereInput
-  orderBy?: Prisma.TypeEvaluationOrderByWithRelationInput | Prisma.TypeEvaluationOrderByWithRelationInput[]
-  cursor?: Prisma.TypeEvaluationWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.TypeEvaluationScalarFieldEnum | Prisma.TypeEvaluationScalarFieldEnum[]
-}
-
-/**
- * Ecole.politiqueEvaluations
- */
-export type Ecole$politiqueEvaluationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PolitiqueEvaluation
-   */
-  select?: Prisma.PolitiqueEvaluationSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PolitiqueEvaluation
-   */
-  omit?: Prisma.PolitiqueEvaluationOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PolitiqueEvaluationInclude<ExtArgs> | null
-  where?: Prisma.PolitiqueEvaluationWhereInput
-  orderBy?: Prisma.PolitiqueEvaluationOrderByWithRelationInput | Prisma.PolitiqueEvaluationOrderByWithRelationInput[]
-  cursor?: Prisma.PolitiqueEvaluationWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PolitiqueEvaluationScalarFieldEnum | Prisma.PolitiqueEvaluationScalarFieldEnum[]
-}
-
-/**
- * Ecole.matieres
- */
-export type Ecole$matieresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Matiere
-   */
-  select?: Prisma.MatiereSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Matiere
-   */
-  omit?: Prisma.MatiereOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.MatiereInclude<ExtArgs> | null
-  where?: Prisma.MatiereWhereInput
-  orderBy?: Prisma.MatiereOrderByWithRelationInput | Prisma.MatiereOrderByWithRelationInput[]
-  cursor?: Prisma.MatiereWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.MatiereScalarFieldEnum | Prisma.MatiereScalarFieldEnum[]
-}
-
-/**
- * Ecole.annonces
- */
-export type Ecole$annoncesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Annonce
-   */
-  select?: Prisma.AnnonceSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Annonce
-   */
-  omit?: Prisma.AnnonceOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.AnnonceInclude<ExtArgs> | null
-  where?: Prisma.AnnonceWhereInput
-  orderBy?: Prisma.AnnonceOrderByWithRelationInput | Prisma.AnnonceOrderByWithRelationInput[]
-  cursor?: Prisma.AnnonceWhereUniqueInput
+  include?: Prisma.annonceInclude<ExtArgs> | null
+  where?: Prisma.annonceWhereInput
+  orderBy?: Prisma.annonceOrderByWithRelationInput | Prisma.annonceOrderByWithRelationInput[]
+  cursor?: Prisma.annonceWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.AnnonceScalarFieldEnum | Prisma.AnnonceScalarFieldEnum[]
 }
 
 /**
- * Ecole.conversations
+ * ecole.configurationscolarite
  */
-export type Ecole$conversationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecole$configurationscolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Conversation
+   * Select specific fields to fetch from the configurationscolarite
    */
-  select?: Prisma.ConversationSelect<ExtArgs> | null
+  select?: Prisma.configurationscolariteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Conversation
+   * Omit specific fields from the configurationscolarite
    */
-  omit?: Prisma.ConversationOmit<ExtArgs> | null
+  omit?: Prisma.configurationscolariteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConversationInclude<ExtArgs> | null
-  where?: Prisma.ConversationWhereInput
-  orderBy?: Prisma.ConversationOrderByWithRelationInput | Prisma.ConversationOrderByWithRelationInput[]
-  cursor?: Prisma.ConversationWhereUniqueInput
+  include?: Prisma.configurationscolariteInclude<ExtArgs> | null
+  where?: Prisma.configurationscolariteWhereInput
+  orderBy?: Prisma.configurationscolariteOrderByWithRelationInput | Prisma.configurationscolariteOrderByWithRelationInput[]
+  cursor?: Prisma.configurationscolariteWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ConfigurationscolariteScalarFieldEnum | Prisma.ConfigurationscolariteScalarFieldEnum[]
+}
+
+/**
+ * ecole.conversation
+ */
+export type ecole$conversationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the conversation
+   */
+  select?: Prisma.conversationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the conversation
+   */
+  omit?: Prisma.conversationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.conversationInclude<ExtArgs> | null
+  where?: Prisma.conversationWhereInput
+  orderBy?: Prisma.conversationOrderByWithRelationInput | Prisma.conversationOrderByWithRelationInput[]
+  cursor?: Prisma.conversationWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.ConversationScalarFieldEnum | Prisma.ConversationScalarFieldEnum[]
 }
 
 /**
- * Ecole.configScolarite
+ * ecole.matiere
  */
-export type Ecole$configScolariteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecole$matiereArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ConfigurationScolarite
+   * Select specific fields to fetch from the matiere
    */
-  select?: Prisma.ConfigurationScolariteSelect<ExtArgs> | null
+  select?: Prisma.matiereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ConfigurationScolarite
+   * Omit specific fields from the matiere
    */
-  omit?: Prisma.ConfigurationScolariteOmit<ExtArgs> | null
+  omit?: Prisma.matiereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConfigurationScolariteInclude<ExtArgs> | null
-  where?: Prisma.ConfigurationScolariteWhereInput
-  orderBy?: Prisma.ConfigurationScolariteOrderByWithRelationInput | Prisma.ConfigurationScolariteOrderByWithRelationInput[]
-  cursor?: Prisma.ConfigurationScolariteWhereUniqueInput
+  include?: Prisma.matiereInclude<ExtArgs> | null
+  where?: Prisma.matiereWhereInput
+  orderBy?: Prisma.matiereOrderByWithRelationInput | Prisma.matiereOrderByWithRelationInput[]
+  cursor?: Prisma.matiereWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ConfigurationScolariteScalarFieldEnum | Prisma.ConfigurationScolariteScalarFieldEnum[]
+  distinct?: Prisma.MatiereScalarFieldEnum | Prisma.MatiereScalarFieldEnum[]
 }
 
 /**
- * Ecole without action
+ * ecole.niveauscolaire
  */
-export type EcoleDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ecole$niveauscolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Ecole
+   * Select specific fields to fetch from the niveauscolaire
    */
-  select?: Prisma.EcoleSelect<ExtArgs> | null
+  select?: Prisma.niveauscolaireSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Ecole
+   * Omit specific fields from the niveauscolaire
    */
-  omit?: Prisma.EcoleOmit<ExtArgs> | null
+  omit?: Prisma.niveauscolaireOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EcoleInclude<ExtArgs> | null
+  include?: Prisma.niveauscolaireInclude<ExtArgs> | null
+  where?: Prisma.niveauscolaireWhereInput
+  orderBy?: Prisma.niveauscolaireOrderByWithRelationInput | Prisma.niveauscolaireOrderByWithRelationInput[]
+  cursor?: Prisma.niveauscolaireWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NiveauscolaireScalarFieldEnum | Prisma.NiveauscolaireScalarFieldEnum[]
+}
+
+/**
+ * ecole.politiqueevaluation
+ */
+export type ecole$politiqueevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the politiqueevaluation
+   */
+  select?: Prisma.politiqueevaluationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the politiqueevaluation
+   */
+  omit?: Prisma.politiqueevaluationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.politiqueevaluationInclude<ExtArgs> | null
+  where?: Prisma.politiqueevaluationWhereInput
+  orderBy?: Prisma.politiqueevaluationOrderByWithRelationInput | Prisma.politiqueevaluationOrderByWithRelationInput[]
+  cursor?: Prisma.politiqueevaluationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PolitiqueevaluationScalarFieldEnum | Prisma.PolitiqueevaluationScalarFieldEnum[]
+}
+
+/**
+ * ecole.role
+ */
+export type ecole$roleArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the role
+   */
+  select?: Prisma.roleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the role
+   */
+  omit?: Prisma.roleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.roleInclude<ExtArgs> | null
+  where?: Prisma.roleWhereInput
+  orderBy?: Prisma.roleOrderByWithRelationInput | Prisma.roleOrderByWithRelationInput[]
+  cursor?: Prisma.roleWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RoleScalarFieldEnum | Prisma.RoleScalarFieldEnum[]
+}
+
+/**
+ * ecole.typeevaluation
+ */
+export type ecole$typeevaluationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the typeevaluation
+   */
+  select?: Prisma.typeevaluationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the typeevaluation
+   */
+  omit?: Prisma.typeevaluationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.typeevaluationInclude<ExtArgs> | null
+  where?: Prisma.typeevaluationWhereInput
+  orderBy?: Prisma.typeevaluationOrderByWithRelationInput | Prisma.typeevaluationOrderByWithRelationInput[]
+  cursor?: Prisma.typeevaluationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TypeevaluationScalarFieldEnum | Prisma.TypeevaluationScalarFieldEnum[]
+}
+
+/**
+ * ecole.user
+ */
+export type ecole$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the user
+   */
+  select?: Prisma.userSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the user
+   */
+  omit?: Prisma.userOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.userInclude<ExtArgs> | null
+  where?: Prisma.userWhereInput
+  orderBy?: Prisma.userOrderByWithRelationInput | Prisma.userOrderByWithRelationInput[]
+  cursor?: Prisma.userWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
+ * ecole without action
+ */
+export type ecoleDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ecole
+   */
+  select?: Prisma.ecoleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ecole
+   */
+  omit?: Prisma.ecoleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ecoleInclude<ExtArgs> | null
 }

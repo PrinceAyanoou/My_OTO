@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `ClasseMatirere` model and its related types.
+ * This file exports the `classematirere` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,28 +13,28 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model ClasseMatirere
+ * Model classematirere
  * 
  */
-export type ClasseMatirereModel = runtime.Types.Result.DefaultSelection<Prisma.$ClasseMatirerePayload>
+export type classematirereModel = runtime.Types.Result.DefaultSelection<Prisma.$classematirerePayload>
 
-export type AggregateClasseMatirere = {
-  _count: ClasseMatirereCountAggregateOutputType | null
-  _avg: ClasseMatirereAvgAggregateOutputType | null
-  _sum: ClasseMatirereSumAggregateOutputType | null
-  _min: ClasseMatirereMinAggregateOutputType | null
-  _max: ClasseMatirereMaxAggregateOutputType | null
+export type AggregateClassematirere = {
+  _count: ClassematirereCountAggregateOutputType | null
+  _avg: ClassematirereAvgAggregateOutputType | null
+  _sum: ClassematirereSumAggregateOutputType | null
+  _min: ClassematirereMinAggregateOutputType | null
+  _max: ClassematirereMaxAggregateOutputType | null
 }
 
-export type ClasseMatirereAvgAggregateOutputType = {
+export type ClassematirereAvgAggregateOutputType = {
   coefficient: number | null
 }
 
-export type ClasseMatirereSumAggregateOutputType = {
+export type ClassematirereSumAggregateOutputType = {
   coefficient: number | null
 }
 
-export type ClasseMatirereMinAggregateOutputType = {
+export type ClassematirereMinAggregateOutputType = {
   id: string | null
   classeScolaireId: string | null
   matiereId: string | null
@@ -44,7 +44,7 @@ export type ClasseMatirereMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type ClasseMatirereMaxAggregateOutputType = {
+export type ClassematirereMaxAggregateOutputType = {
   id: string | null
   classeScolaireId: string | null
   matiereId: string | null
@@ -54,7 +54,7 @@ export type ClasseMatirereMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type ClasseMatirereCountAggregateOutputType = {
+export type ClassematirereCountAggregateOutputType = {
   id: number
   classeScolaireId: number
   matiereId: number
@@ -66,15 +66,15 @@ export type ClasseMatirereCountAggregateOutputType = {
 }
 
 
-export type ClasseMatirereAvgAggregateInputType = {
+export type ClassematirereAvgAggregateInputType = {
   coefficient?: true
 }
 
-export type ClasseMatirereSumAggregateInputType = {
+export type ClassematirereSumAggregateInputType = {
   coefficient?: true
 }
 
-export type ClasseMatirereMinAggregateInputType = {
+export type ClassematirereMinAggregateInputType = {
   id?: true
   classeScolaireId?: true
   matiereId?: true
@@ -84,7 +84,7 @@ export type ClasseMatirereMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type ClasseMatirereMaxAggregateInputType = {
+export type ClassematirereMaxAggregateInputType = {
   id?: true
   classeScolaireId?: true
   matiereId?: true
@@ -94,7 +94,7 @@ export type ClasseMatirereMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type ClasseMatirereCountAggregateInputType = {
+export type ClassematirereCountAggregateInputType = {
   id?: true
   classeScolaireId?: true
   matiereId?: true
@@ -105,93 +105,93 @@ export type ClasseMatirereCountAggregateInputType = {
   _all?: true
 }
 
-export type ClasseMatirereAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ClassematirereAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ClasseMatirere to aggregate.
+   * Filter which classematirere to aggregate.
    */
-  where?: Prisma.ClasseMatirereWhereInput
+  where?: Prisma.classematirereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ClasseMatireres to fetch.
+   * Determine the order of classematireres to fetch.
    */
-  orderBy?: Prisma.ClasseMatirereOrderByWithRelationInput | Prisma.ClasseMatirereOrderByWithRelationInput[]
+  orderBy?: Prisma.classematirereOrderByWithRelationInput | Prisma.classematirereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ClasseMatirereWhereUniqueInput
+  cursor?: Prisma.classematirereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ClasseMatireres from the position of the cursor.
+   * Take `±n` classematireres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ClasseMatireres.
+   * Skip the first `n` classematireres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned ClasseMatireres
+   * Count returned classematireres
   **/
-  _count?: true | ClasseMatirereCountAggregateInputType
+  _count?: true | ClassematirereCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: ClasseMatirereAvgAggregateInputType
+  _avg?: ClassematirereAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: ClasseMatirereSumAggregateInputType
+  _sum?: ClassematirereSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: ClasseMatirereMinAggregateInputType
+  _min?: ClassematirereMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: ClasseMatirereMaxAggregateInputType
+  _max?: ClassematirereMaxAggregateInputType
 }
 
-export type GetClasseMatirereAggregateType<T extends ClasseMatirereAggregateArgs> = {
-      [P in keyof T & keyof AggregateClasseMatirere]: P extends '_count' | 'count'
+export type GetClassematirereAggregateType<T extends ClassematirereAggregateArgs> = {
+      [P in keyof T & keyof AggregateClassematirere]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateClasseMatirere[P]>
-    : Prisma.GetScalarType<T[P], AggregateClasseMatirere[P]>
+      : Prisma.GetScalarType<T[P], AggregateClassematirere[P]>
+    : Prisma.GetScalarType<T[P], AggregateClassematirere[P]>
 }
 
 
 
 
-export type ClasseMatirereGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ClasseMatirereWhereInput
-  orderBy?: Prisma.ClasseMatirereOrderByWithAggregationInput | Prisma.ClasseMatirereOrderByWithAggregationInput[]
-  by: Prisma.ClasseMatirereScalarFieldEnum[] | Prisma.ClasseMatirereScalarFieldEnum
-  having?: Prisma.ClasseMatirereScalarWhereWithAggregatesInput
+export type classematirereGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.classematirereWhereInput
+  orderBy?: Prisma.classematirereOrderByWithAggregationInput | Prisma.classematirereOrderByWithAggregationInput[]
+  by: Prisma.ClassematirereScalarFieldEnum[] | Prisma.ClassematirereScalarFieldEnum
+  having?: Prisma.classematirereScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: ClasseMatirereCountAggregateInputType | true
-  _avg?: ClasseMatirereAvgAggregateInputType
-  _sum?: ClasseMatirereSumAggregateInputType
-  _min?: ClasseMatirereMinAggregateInputType
-  _max?: ClasseMatirereMaxAggregateInputType
+  _count?: ClassematirereCountAggregateInputType | true
+  _avg?: ClassematirereAvgAggregateInputType
+  _sum?: ClassematirereSumAggregateInputType
+  _min?: ClassematirereMinAggregateInputType
+  _max?: ClassematirereMaxAggregateInputType
 }
 
-export type ClasseMatirereGroupByOutputType = {
+export type ClassematirereGroupByOutputType = {
   id: string
   classeScolaireId: string
   matiereId: string
@@ -199,45 +199,45 @@ export type ClasseMatirereGroupByOutputType = {
   coefficient: number
   createdAt: Date
   updatedAt: Date
-  _count: ClasseMatirereCountAggregateOutputType | null
-  _avg: ClasseMatirereAvgAggregateOutputType | null
-  _sum: ClasseMatirereSumAggregateOutputType | null
-  _min: ClasseMatirereMinAggregateOutputType | null
-  _max: ClasseMatirereMaxAggregateOutputType | null
+  _count: ClassematirereCountAggregateOutputType | null
+  _avg: ClassematirereAvgAggregateOutputType | null
+  _sum: ClassematirereSumAggregateOutputType | null
+  _min: ClassematirereMinAggregateOutputType | null
+  _max: ClassematirereMaxAggregateOutputType | null
 }
 
-export type GetClasseMatirereGroupByPayload<T extends ClasseMatirereGroupByArgs> = Prisma.PrismaPromise<
+export type GetClassematirereGroupByPayload<T extends classematirereGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<ClasseMatirereGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<ClassematirereGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof ClasseMatirereGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof ClassematirereGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], ClasseMatirereGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], ClasseMatirereGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], ClassematirereGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], ClassematirereGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type ClasseMatirereWhereInput = {
-  AND?: Prisma.ClasseMatirereWhereInput | Prisma.ClasseMatirereWhereInput[]
-  OR?: Prisma.ClasseMatirereWhereInput[]
-  NOT?: Prisma.ClasseMatirereWhereInput | Prisma.ClasseMatirereWhereInput[]
-  id?: Prisma.StringFilter<"ClasseMatirere"> | string
-  classeScolaireId?: Prisma.StringFilter<"ClasseMatirere"> | string
-  matiereId?: Prisma.StringFilter<"ClasseMatirere"> | string
-  uniteEnseignementId?: Prisma.StringNullableFilter<"ClasseMatirere"> | string | null
-  coefficient?: Prisma.IntFilter<"ClasseMatirere"> | number
-  createdAt?: Prisma.DateTimeFilter<"ClasseMatirere"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ClasseMatirere"> | Date | string
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireScalarRelationFilter, Prisma.ClassScolaireWhereInput>
-  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.MatiereWhereInput>
-  uniteEnseignement?: Prisma.XOR<Prisma.UniteEnseignementNullableScalarRelationFilter, Prisma.UniteEnseignementWhereInput> | null
+export type classematirereWhereInput = {
+  AND?: Prisma.classematirereWhereInput | Prisma.classematirereWhereInput[]
+  OR?: Prisma.classematirereWhereInput[]
+  NOT?: Prisma.classematirereWhereInput | Prisma.classematirereWhereInput[]
+  id?: Prisma.StringFilter<"classematirere"> | string
+  classeScolaireId?: Prisma.StringFilter<"classematirere"> | string
+  matiereId?: Prisma.StringFilter<"classematirere"> | string
+  uniteEnseignementId?: Prisma.StringNullableFilter<"classematirere"> | string | null
+  coefficient?: Prisma.IntFilter<"classematirere"> | number
+  createdAt?: Prisma.DateTimeFilter<"classematirere"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"classematirere"> | Date | string
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireScalarRelationFilter, Prisma.classscolaireWhereInput>
+  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.matiereWhereInput>
+  uniteenseignement?: Prisma.XOR<Prisma.UniteenseignementNullableScalarRelationFilter, Prisma.uniteenseignementWhereInput> | null
 }
 
-export type ClasseMatirereOrderByWithRelationInput = {
+export type classematirereOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrder
   matiereId?: Prisma.SortOrder
@@ -245,30 +245,30 @@ export type ClasseMatirereOrderByWithRelationInput = {
   coefficient?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  classeScolaire?: Prisma.ClassScolaireOrderByWithRelationInput
-  matiere?: Prisma.MatiereOrderByWithRelationInput
-  uniteEnseignement?: Prisma.UniteEnseignementOrderByWithRelationInput
-  _relevance?: Prisma.ClasseMatirereOrderByRelevanceInput
+  classscolaire?: Prisma.classscolaireOrderByWithRelationInput
+  matiere?: Prisma.matiereOrderByWithRelationInput
+  uniteenseignement?: Prisma.uniteenseignementOrderByWithRelationInput
+  _relevance?: Prisma.classematirereOrderByRelevanceInput
 }
 
-export type ClasseMatirereWhereUniqueInput = Prisma.AtLeast<{
+export type classematirereWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  classeScolaireId_matiereId?: Prisma.ClasseMatirereClasseScolaireIdMatiereIdCompoundUniqueInput
-  AND?: Prisma.ClasseMatirereWhereInput | Prisma.ClasseMatirereWhereInput[]
-  OR?: Prisma.ClasseMatirereWhereInput[]
-  NOT?: Prisma.ClasseMatirereWhereInput | Prisma.ClasseMatirereWhereInput[]
-  classeScolaireId?: Prisma.StringFilter<"ClasseMatirere"> | string
-  matiereId?: Prisma.StringFilter<"ClasseMatirere"> | string
-  uniteEnseignementId?: Prisma.StringNullableFilter<"ClasseMatirere"> | string | null
-  coefficient?: Prisma.IntFilter<"ClasseMatirere"> | number
-  createdAt?: Prisma.DateTimeFilter<"ClasseMatirere"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ClasseMatirere"> | Date | string
-  classeScolaire?: Prisma.XOR<Prisma.ClassScolaireScalarRelationFilter, Prisma.ClassScolaireWhereInput>
-  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.MatiereWhereInput>
-  uniteEnseignement?: Prisma.XOR<Prisma.UniteEnseignementNullableScalarRelationFilter, Prisma.UniteEnseignementWhereInput> | null
+  classeScolaireId_matiereId?: Prisma.classematirereClasseScolaireIdMatiereIdCompoundUniqueInput
+  AND?: Prisma.classematirereWhereInput | Prisma.classematirereWhereInput[]
+  OR?: Prisma.classematirereWhereInput[]
+  NOT?: Prisma.classematirereWhereInput | Prisma.classematirereWhereInput[]
+  classeScolaireId?: Prisma.StringFilter<"classematirere"> | string
+  matiereId?: Prisma.StringFilter<"classematirere"> | string
+  uniteEnseignementId?: Prisma.StringNullableFilter<"classematirere"> | string | null
+  coefficient?: Prisma.IntFilter<"classematirere"> | number
+  createdAt?: Prisma.DateTimeFilter<"classematirere"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"classematirere"> | Date | string
+  classscolaire?: Prisma.XOR<Prisma.ClassscolaireScalarRelationFilter, Prisma.classscolaireWhereInput>
+  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.matiereWhereInput>
+  uniteenseignement?: Prisma.XOR<Prisma.UniteenseignementNullableScalarRelationFilter, Prisma.uniteenseignementWhereInput> | null
 }, "id" | "classeScolaireId_matiereId">
 
-export type ClasseMatirereOrderByWithAggregationInput = {
+export type classematirereOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrder
   matiereId?: Prisma.SortOrder
@@ -276,67 +276,37 @@ export type ClasseMatirereOrderByWithAggregationInput = {
   coefficient?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.ClasseMatirereCountOrderByAggregateInput
-  _avg?: Prisma.ClasseMatirereAvgOrderByAggregateInput
-  _max?: Prisma.ClasseMatirereMaxOrderByAggregateInput
-  _min?: Prisma.ClasseMatirereMinOrderByAggregateInput
-  _sum?: Prisma.ClasseMatirereSumOrderByAggregateInput
+  _count?: Prisma.classematirereCountOrderByAggregateInput
+  _avg?: Prisma.classematirereAvgOrderByAggregateInput
+  _max?: Prisma.classematirereMaxOrderByAggregateInput
+  _min?: Prisma.classematirereMinOrderByAggregateInput
+  _sum?: Prisma.classematirereSumOrderByAggregateInput
 }
 
-export type ClasseMatirereScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ClasseMatirereScalarWhereWithAggregatesInput | Prisma.ClasseMatirereScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ClasseMatirereScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ClasseMatirereScalarWhereWithAggregatesInput | Prisma.ClasseMatirereScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"ClasseMatirere"> | string
-  classeScolaireId?: Prisma.StringWithAggregatesFilter<"ClasseMatirere"> | string
-  matiereId?: Prisma.StringWithAggregatesFilter<"ClasseMatirere"> | string
-  uniteEnseignementId?: Prisma.StringNullableWithAggregatesFilter<"ClasseMatirere"> | string | null
-  coefficient?: Prisma.IntWithAggregatesFilter<"ClasseMatirere"> | number
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"ClasseMatirere"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ClasseMatirere"> | Date | string
+export type classematirereScalarWhereWithAggregatesInput = {
+  AND?: Prisma.classematirereScalarWhereWithAggregatesInput | Prisma.classematirereScalarWhereWithAggregatesInput[]
+  OR?: Prisma.classematirereScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.classematirereScalarWhereWithAggregatesInput | Prisma.classematirereScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"classematirere"> | string
+  classeScolaireId?: Prisma.StringWithAggregatesFilter<"classematirere"> | string
+  matiereId?: Prisma.StringWithAggregatesFilter<"classematirere"> | string
+  uniteEnseignementId?: Prisma.StringNullableWithAggregatesFilter<"classematirere"> | string | null
+  coefficient?: Prisma.IntWithAggregatesFilter<"classematirere"> | number
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"classematirere"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"classematirere"> | Date | string
 }
 
-export type ClasseMatirereCreateInput = {
+export type classematirereCreateInput = {
   id?: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutClasseMatiereInput
-  matiere: Prisma.MatiereCreateNestedOneWithoutClasseMatiereInput
-  uniteEnseignement?: Prisma.UniteEnseignementCreateNestedOneWithoutClaseMatiereInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutClassematirereInput
+  matiere: Prisma.matiereCreateNestedOneWithoutClassematirereInput
+  uniteenseignement?: Prisma.uniteenseignementCreateNestedOneWithoutClassematirereInput
 }
 
-export type ClasseMatirereUncheckedCreateInput = {
-  id?: string
-  classeScolaireId: string
-  matiereId: string
-  uniteEnseignementId?: string | null
-  coefficient: number
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type ClasseMatirereUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutClasseMatiereNestedInput
-  matiere?: Prisma.MatiereUpdateOneRequiredWithoutClasseMatiereNestedInput
-  uniteEnseignement?: Prisma.UniteEnseignementUpdateOneWithoutClaseMatiereNestedInput
-}
-
-export type ClasseMatirereUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
-  uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type ClasseMatirereCreateManyInput = {
+export type classematirereUncheckedCreateInput = {
   id?: string
   classeScolaireId: string
   matiereId: string
@@ -346,14 +316,17 @@ export type ClasseMatirereCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereUpdateManyMutationInput = {
+export type classematirereUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutClassematirereNestedInput
+  matiere?: Prisma.matiereUpdateOneRequiredWithoutClassematirereNestedInput
+  uniteenseignement?: Prisma.uniteenseignementUpdateOneWithoutClassematirereNestedInput
 }
 
-export type ClasseMatirereUncheckedUpdateManyInput = {
+export type classematirereUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   matiereId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -363,28 +336,45 @@ export type ClasseMatirereUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ClasseMatirereListRelationFilter = {
-  every?: Prisma.ClasseMatirereWhereInput
-  some?: Prisma.ClasseMatirereWhereInput
-  none?: Prisma.ClasseMatirereWhereInput
+export type classematirereCreateManyInput = {
+  id?: string
+  classeScolaireId: string
+  matiereId: string
+  uniteEnseignementId?: string | null
+  coefficient: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
-export type ClasseMatirereOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
+export type classematirereUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ClasseMatirereOrderByRelevanceInput = {
-  fields: Prisma.ClasseMatirereOrderByRelevanceFieldEnum | Prisma.ClasseMatirereOrderByRelevanceFieldEnum[]
+export type classematirereUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type classematirereOrderByRelevanceInput = {
+  fields: Prisma.classematirereOrderByRelevanceFieldEnum | Prisma.classematirereOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ClasseMatirereClasseScolaireIdMatiereIdCompoundUniqueInput = {
+export type classematirereClasseScolaireIdMatiereIdCompoundUniqueInput = {
   classeScolaireId: string
   matiereId: string
 }
 
-export type ClasseMatirereCountOrderByAggregateInput = {
+export type classematirereCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrder
   matiereId?: Prisma.SortOrder
@@ -394,11 +384,11 @@ export type ClasseMatirereCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ClasseMatirereAvgOrderByAggregateInput = {
+export type classematirereAvgOrderByAggregateInput = {
   coefficient?: Prisma.SortOrder
 }
 
-export type ClasseMatirereMaxOrderByAggregateInput = {
+export type classematirereMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrder
   matiereId?: Prisma.SortOrder
@@ -408,7 +398,7 @@ export type ClasseMatirereMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ClasseMatirereMinOrderByAggregateInput = {
+export type classematirereMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   classeScolaireId?: Prisma.SortOrder
   matiereId?: Prisma.SortOrder
@@ -418,146 +408,164 @@ export type ClasseMatirereMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ClasseMatirereSumOrderByAggregateInput = {
+export type classematirereSumOrderByAggregateInput = {
   coefficient?: Prisma.SortOrder
 }
 
-export type ClasseMatirereCreateNestedManyWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput> | Prisma.ClasseMatirereCreateWithoutClasseScolaireInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput | Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyClasseScolaireInputEnvelope
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
+export type ClassematirereListRelationFilter = {
+  every?: Prisma.classematirereWhereInput
+  some?: Prisma.classematirereWhereInput
+  none?: Prisma.classematirereWhereInput
 }
 
-export type ClasseMatirereUncheckedCreateNestedManyWithoutClasseScolaireInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput> | Prisma.ClasseMatirereCreateWithoutClasseScolaireInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput | Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyClasseScolaireInputEnvelope
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
+export type classematirereOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
-export type ClasseMatirereUpdateManyWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput> | Prisma.ClasseMatirereCreateWithoutClasseScolaireInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput | Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput[]
-  upsert?: Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutClasseScolaireInput | Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutClasseScolaireInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyClasseScolaireInputEnvelope
-  set?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  disconnect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  delete?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  update?: Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutClasseScolaireInput | Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutClasseScolaireInput[]
-  updateMany?: Prisma.ClasseMatirereUpdateManyWithWhereWithoutClasseScolaireInput | Prisma.ClasseMatirereUpdateManyWithWhereWithoutClasseScolaireInput[]
-  deleteMany?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
-export type ClasseMatirereUncheckedUpdateManyWithoutClasseScolaireNestedInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput> | Prisma.ClasseMatirereCreateWithoutClasseScolaireInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput | Prisma.ClasseMatirereCreateOrConnectWithoutClasseScolaireInput[]
-  upsert?: Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutClasseScolaireInput | Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutClasseScolaireInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyClasseScolaireInputEnvelope
-  set?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  disconnect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  delete?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  update?: Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutClasseScolaireInput | Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutClasseScolaireInput[]
-  updateMany?: Prisma.ClasseMatirereUpdateManyWithWhereWithoutClasseScolaireInput | Prisma.ClasseMatirereUpdateManyWithWhereWithoutClasseScolaireInput[]
-  deleteMany?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
+export type classematirereCreateNestedManyWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutClassscolaireInput, Prisma.classematirereUncheckedCreateWithoutClassscolaireInput> | Prisma.classematirereCreateWithoutClassscolaireInput[] | Prisma.classematirereUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutClassscolaireInput | Prisma.classematirereCreateOrConnectWithoutClassscolaireInput[]
+  createMany?: Prisma.classematirereCreateManyClassscolaireInputEnvelope
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
 }
 
-export type ClasseMatirereCreateNestedManyWithoutMatiereInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput> | Prisma.ClasseMatirereCreateWithoutMatiereInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput | Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyMatiereInputEnvelope
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
+export type classematirereUncheckedCreateNestedManyWithoutClassscolaireInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutClassscolaireInput, Prisma.classematirereUncheckedCreateWithoutClassscolaireInput> | Prisma.classematirereCreateWithoutClassscolaireInput[] | Prisma.classematirereUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutClassscolaireInput | Prisma.classematirereCreateOrConnectWithoutClassscolaireInput[]
+  createMany?: Prisma.classematirereCreateManyClassscolaireInputEnvelope
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
 }
 
-export type ClasseMatirereUncheckedCreateNestedManyWithoutMatiereInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput> | Prisma.ClasseMatirereCreateWithoutMatiereInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput | Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyMatiereInputEnvelope
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
+export type classematirereUpdateManyWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutClassscolaireInput, Prisma.classematirereUncheckedCreateWithoutClassscolaireInput> | Prisma.classematirereCreateWithoutClassscolaireInput[] | Prisma.classematirereUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutClassscolaireInput | Prisma.classematirereCreateOrConnectWithoutClassscolaireInput[]
+  upsert?: Prisma.classematirereUpsertWithWhereUniqueWithoutClassscolaireInput | Prisma.classematirereUpsertWithWhereUniqueWithoutClassscolaireInput[]
+  createMany?: Prisma.classematirereCreateManyClassscolaireInputEnvelope
+  set?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  disconnect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  delete?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  update?: Prisma.classematirereUpdateWithWhereUniqueWithoutClassscolaireInput | Prisma.classematirereUpdateWithWhereUniqueWithoutClassscolaireInput[]
+  updateMany?: Prisma.classematirereUpdateManyWithWhereWithoutClassscolaireInput | Prisma.classematirereUpdateManyWithWhereWithoutClassscolaireInput[]
+  deleteMany?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
 }
 
-export type ClasseMatirereUpdateManyWithoutMatiereNestedInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput> | Prisma.ClasseMatirereCreateWithoutMatiereInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput | Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput[]
-  upsert?: Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutMatiereInput | Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutMatiereInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyMatiereInputEnvelope
-  set?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  disconnect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  delete?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  update?: Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutMatiereInput | Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutMatiereInput[]
-  updateMany?: Prisma.ClasseMatirereUpdateManyWithWhereWithoutMatiereInput | Prisma.ClasseMatirereUpdateManyWithWhereWithoutMatiereInput[]
-  deleteMany?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
+export type classematirereUncheckedUpdateManyWithoutClassscolaireNestedInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutClassscolaireInput, Prisma.classematirereUncheckedCreateWithoutClassscolaireInput> | Prisma.classematirereCreateWithoutClassscolaireInput[] | Prisma.classematirereUncheckedCreateWithoutClassscolaireInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutClassscolaireInput | Prisma.classematirereCreateOrConnectWithoutClassscolaireInput[]
+  upsert?: Prisma.classematirereUpsertWithWhereUniqueWithoutClassscolaireInput | Prisma.classematirereUpsertWithWhereUniqueWithoutClassscolaireInput[]
+  createMany?: Prisma.classematirereCreateManyClassscolaireInputEnvelope
+  set?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  disconnect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  delete?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  update?: Prisma.classematirereUpdateWithWhereUniqueWithoutClassscolaireInput | Prisma.classematirereUpdateWithWhereUniqueWithoutClassscolaireInput[]
+  updateMany?: Prisma.classematirereUpdateManyWithWhereWithoutClassscolaireInput | Prisma.classematirereUpdateManyWithWhereWithoutClassscolaireInput[]
+  deleteMany?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
 }
 
-export type ClasseMatirereUncheckedUpdateManyWithoutMatiereNestedInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput> | Prisma.ClasseMatirereCreateWithoutMatiereInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput | Prisma.ClasseMatirereCreateOrConnectWithoutMatiereInput[]
-  upsert?: Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutMatiereInput | Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutMatiereInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyMatiereInputEnvelope
-  set?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  disconnect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  delete?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  update?: Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutMatiereInput | Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutMatiereInput[]
-  updateMany?: Prisma.ClasseMatirereUpdateManyWithWhereWithoutMatiereInput | Prisma.ClasseMatirereUpdateManyWithWhereWithoutMatiereInput[]
-  deleteMany?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
+export type classematirereCreateNestedManyWithoutMatiereInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutMatiereInput, Prisma.classematirereUncheckedCreateWithoutMatiereInput> | Prisma.classematirereCreateWithoutMatiereInput[] | Prisma.classematirereUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutMatiereInput | Prisma.classematirereCreateOrConnectWithoutMatiereInput[]
+  createMany?: Prisma.classematirereCreateManyMatiereInputEnvelope
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
 }
 
-export type ClasseMatirereCreateNestedManyWithoutUniteEnseignementInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput> | Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput | Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyUniteEnseignementInputEnvelope
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
+export type classematirereUncheckedCreateNestedManyWithoutMatiereInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutMatiereInput, Prisma.classematirereUncheckedCreateWithoutMatiereInput> | Prisma.classematirereCreateWithoutMatiereInput[] | Prisma.classematirereUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutMatiereInput | Prisma.classematirereCreateOrConnectWithoutMatiereInput[]
+  createMany?: Prisma.classematirereCreateManyMatiereInputEnvelope
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
 }
 
-export type ClasseMatirereUncheckedCreateNestedManyWithoutUniteEnseignementInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput> | Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput | Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyUniteEnseignementInputEnvelope
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
+export type classematirereUpdateManyWithoutMatiereNestedInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutMatiereInput, Prisma.classematirereUncheckedCreateWithoutMatiereInput> | Prisma.classematirereCreateWithoutMatiereInput[] | Prisma.classematirereUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutMatiereInput | Prisma.classematirereCreateOrConnectWithoutMatiereInput[]
+  upsert?: Prisma.classematirereUpsertWithWhereUniqueWithoutMatiereInput | Prisma.classematirereUpsertWithWhereUniqueWithoutMatiereInput[]
+  createMany?: Prisma.classematirereCreateManyMatiereInputEnvelope
+  set?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  disconnect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  delete?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  update?: Prisma.classematirereUpdateWithWhereUniqueWithoutMatiereInput | Prisma.classematirereUpdateWithWhereUniqueWithoutMatiereInput[]
+  updateMany?: Prisma.classematirereUpdateManyWithWhereWithoutMatiereInput | Prisma.classematirereUpdateManyWithWhereWithoutMatiereInput[]
+  deleteMany?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
 }
 
-export type ClasseMatirereUpdateManyWithoutUniteEnseignementNestedInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput> | Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput | Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput[]
-  upsert?: Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutUniteEnseignementInput | Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutUniteEnseignementInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyUniteEnseignementInputEnvelope
-  set?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  disconnect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  delete?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  update?: Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutUniteEnseignementInput | Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutUniteEnseignementInput[]
-  updateMany?: Prisma.ClasseMatirereUpdateManyWithWhereWithoutUniteEnseignementInput | Prisma.ClasseMatirereUpdateManyWithWhereWithoutUniteEnseignementInput[]
-  deleteMany?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
+export type classematirereUncheckedUpdateManyWithoutMatiereNestedInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutMatiereInput, Prisma.classematirereUncheckedCreateWithoutMatiereInput> | Prisma.classematirereCreateWithoutMatiereInput[] | Prisma.classematirereUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutMatiereInput | Prisma.classematirereCreateOrConnectWithoutMatiereInput[]
+  upsert?: Prisma.classematirereUpsertWithWhereUniqueWithoutMatiereInput | Prisma.classematirereUpsertWithWhereUniqueWithoutMatiereInput[]
+  createMany?: Prisma.classematirereCreateManyMatiereInputEnvelope
+  set?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  disconnect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  delete?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  update?: Prisma.classematirereUpdateWithWhereUniqueWithoutMatiereInput | Prisma.classematirereUpdateWithWhereUniqueWithoutMatiereInput[]
+  updateMany?: Prisma.classematirereUpdateManyWithWhereWithoutMatiereInput | Prisma.classematirereUpdateManyWithWhereWithoutMatiereInput[]
+  deleteMany?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
 }
 
-export type ClasseMatirereUncheckedUpdateManyWithoutUniteEnseignementNestedInput = {
-  create?: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput> | Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput[] | Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput[]
-  connectOrCreate?: Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput | Prisma.ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput[]
-  upsert?: Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutUniteEnseignementInput | Prisma.ClasseMatirereUpsertWithWhereUniqueWithoutUniteEnseignementInput[]
-  createMany?: Prisma.ClasseMatirereCreateManyUniteEnseignementInputEnvelope
-  set?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  disconnect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  delete?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  connect?: Prisma.ClasseMatirereWhereUniqueInput | Prisma.ClasseMatirereWhereUniqueInput[]
-  update?: Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutUniteEnseignementInput | Prisma.ClasseMatirereUpdateWithWhereUniqueWithoutUniteEnseignementInput[]
-  updateMany?: Prisma.ClasseMatirereUpdateManyWithWhereWithoutUniteEnseignementInput | Prisma.ClasseMatirereUpdateManyWithWhereWithoutUniteEnseignementInput[]
-  deleteMany?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
+export type classematirereCreateNestedManyWithoutUniteenseignementInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutUniteenseignementInput, Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput> | Prisma.classematirereCreateWithoutUniteenseignementInput[] | Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput | Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput[]
+  createMany?: Prisma.classematirereCreateManyUniteenseignementInputEnvelope
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
 }
 
-export type ClasseMatirereCreateWithoutClasseScolaireInput = {
+export type classematirereUncheckedCreateNestedManyWithoutUniteenseignementInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutUniteenseignementInput, Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput> | Prisma.classematirereCreateWithoutUniteenseignementInput[] | Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput | Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput[]
+  createMany?: Prisma.classematirereCreateManyUniteenseignementInputEnvelope
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+}
+
+export type classematirereUpdateManyWithoutUniteenseignementNestedInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutUniteenseignementInput, Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput> | Prisma.classematirereCreateWithoutUniteenseignementInput[] | Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput | Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput[]
+  upsert?: Prisma.classematirereUpsertWithWhereUniqueWithoutUniteenseignementInput | Prisma.classematirereUpsertWithWhereUniqueWithoutUniteenseignementInput[]
+  createMany?: Prisma.classematirereCreateManyUniteenseignementInputEnvelope
+  set?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  disconnect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  delete?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  update?: Prisma.classematirereUpdateWithWhereUniqueWithoutUniteenseignementInput | Prisma.classematirereUpdateWithWhereUniqueWithoutUniteenseignementInput[]
+  updateMany?: Prisma.classematirereUpdateManyWithWhereWithoutUniteenseignementInput | Prisma.classematirereUpdateManyWithWhereWithoutUniteenseignementInput[]
+  deleteMany?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
+}
+
+export type classematirereUncheckedUpdateManyWithoutUniteenseignementNestedInput = {
+  create?: Prisma.XOR<Prisma.classematirereCreateWithoutUniteenseignementInput, Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput> | Prisma.classematirereCreateWithoutUniteenseignementInput[] | Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput[]
+  connectOrCreate?: Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput | Prisma.classematirereCreateOrConnectWithoutUniteenseignementInput[]
+  upsert?: Prisma.classematirereUpsertWithWhereUniqueWithoutUniteenseignementInput | Prisma.classematirereUpsertWithWhereUniqueWithoutUniteenseignementInput[]
+  createMany?: Prisma.classematirereCreateManyUniteenseignementInputEnvelope
+  set?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  disconnect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  delete?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  connect?: Prisma.classematirereWhereUniqueInput | Prisma.classematirereWhereUniqueInput[]
+  update?: Prisma.classematirereUpdateWithWhereUniqueWithoutUniteenseignementInput | Prisma.classematirereUpdateWithWhereUniqueWithoutUniteenseignementInput[]
+  updateMany?: Prisma.classematirereUpdateManyWithWhereWithoutUniteenseignementInput | Prisma.classematirereUpdateManyWithWhereWithoutUniteenseignementInput[]
+  deleteMany?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
+}
+
+export type classematirereCreateWithoutClassscolaireInput = {
   id?: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  matiere: Prisma.MatiereCreateNestedOneWithoutClasseMatiereInput
-  uniteEnseignement?: Prisma.UniteEnseignementCreateNestedOneWithoutClaseMatiereInput
+  matiere: Prisma.matiereCreateNestedOneWithoutClassematirereInput
+  uniteenseignement?: Prisma.uniteenseignementCreateNestedOneWithoutClassematirereInput
 }
 
-export type ClasseMatirereUncheckedCreateWithoutClasseScolaireInput = {
+export type classematirereUncheckedCreateWithoutClassscolaireInput = {
   id?: string
   matiereId: string
   uniteEnseignementId?: string | null
@@ -566,55 +574,55 @@ export type ClasseMatirereUncheckedCreateWithoutClasseScolaireInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereCreateOrConnectWithoutClasseScolaireInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput>
+export type classematirereCreateOrConnectWithoutClassscolaireInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  create: Prisma.XOR<Prisma.classematirereCreateWithoutClassscolaireInput, Prisma.classematirereUncheckedCreateWithoutClassscolaireInput>
 }
 
-export type ClasseMatirereCreateManyClasseScolaireInputEnvelope = {
-  data: Prisma.ClasseMatirereCreateManyClasseScolaireInput | Prisma.ClasseMatirereCreateManyClasseScolaireInput[]
+export type classematirereCreateManyClassscolaireInputEnvelope = {
+  data: Prisma.classematirereCreateManyClassscolaireInput | Prisma.classematirereCreateManyClassscolaireInput[]
   skipDuplicates?: boolean
 }
 
-export type ClasseMatirereUpsertWithWhereUniqueWithoutClasseScolaireInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  update: Prisma.XOR<Prisma.ClasseMatirereUpdateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedUpdateWithoutClasseScolaireInput>
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedCreateWithoutClasseScolaireInput>
+export type classematirereUpsertWithWhereUniqueWithoutClassscolaireInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  update: Prisma.XOR<Prisma.classematirereUpdateWithoutClassscolaireInput, Prisma.classematirereUncheckedUpdateWithoutClassscolaireInput>
+  create: Prisma.XOR<Prisma.classematirereCreateWithoutClassscolaireInput, Prisma.classematirereUncheckedCreateWithoutClassscolaireInput>
 }
 
-export type ClasseMatirereUpdateWithWhereUniqueWithoutClasseScolaireInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateWithoutClasseScolaireInput, Prisma.ClasseMatirereUncheckedUpdateWithoutClasseScolaireInput>
+export type classematirereUpdateWithWhereUniqueWithoutClassscolaireInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  data: Prisma.XOR<Prisma.classematirereUpdateWithoutClassscolaireInput, Prisma.classematirereUncheckedUpdateWithoutClassscolaireInput>
 }
 
-export type ClasseMatirereUpdateManyWithWhereWithoutClasseScolaireInput = {
-  where: Prisma.ClasseMatirereScalarWhereInput
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateManyMutationInput, Prisma.ClasseMatirereUncheckedUpdateManyWithoutClasseScolaireInput>
+export type classematirereUpdateManyWithWhereWithoutClassscolaireInput = {
+  where: Prisma.classematirereScalarWhereInput
+  data: Prisma.XOR<Prisma.classematirereUpdateManyMutationInput, Prisma.classematirereUncheckedUpdateManyWithoutClassscolaireInput>
 }
 
-export type ClasseMatirereScalarWhereInput = {
-  AND?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
-  OR?: Prisma.ClasseMatirereScalarWhereInput[]
-  NOT?: Prisma.ClasseMatirereScalarWhereInput | Prisma.ClasseMatirereScalarWhereInput[]
-  id?: Prisma.StringFilter<"ClasseMatirere"> | string
-  classeScolaireId?: Prisma.StringFilter<"ClasseMatirere"> | string
-  matiereId?: Prisma.StringFilter<"ClasseMatirere"> | string
-  uniteEnseignementId?: Prisma.StringNullableFilter<"ClasseMatirere"> | string | null
-  coefficient?: Prisma.IntFilter<"ClasseMatirere"> | number
-  createdAt?: Prisma.DateTimeFilter<"ClasseMatirere"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ClasseMatirere"> | Date | string
+export type classematirereScalarWhereInput = {
+  AND?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
+  OR?: Prisma.classematirereScalarWhereInput[]
+  NOT?: Prisma.classematirereScalarWhereInput | Prisma.classematirereScalarWhereInput[]
+  id?: Prisma.StringFilter<"classematirere"> | string
+  classeScolaireId?: Prisma.StringFilter<"classematirere"> | string
+  matiereId?: Prisma.StringFilter<"classematirere"> | string
+  uniteEnseignementId?: Prisma.StringNullableFilter<"classematirere"> | string | null
+  coefficient?: Prisma.IntFilter<"classematirere"> | number
+  createdAt?: Prisma.DateTimeFilter<"classematirere"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"classematirere"> | Date | string
 }
 
-export type ClasseMatirereCreateWithoutMatiereInput = {
+export type classematirereCreateWithoutMatiereInput = {
   id?: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutClasseMatiereInput
-  uniteEnseignement?: Prisma.UniteEnseignementCreateNestedOneWithoutClaseMatiereInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutClassematirereInput
+  uniteenseignement?: Prisma.uniteenseignementCreateNestedOneWithoutClassematirereInput
 }
 
-export type ClasseMatirereUncheckedCreateWithoutMatiereInput = {
+export type classematirereUncheckedCreateWithoutMatiereInput = {
   id?: string
   classeScolaireId: string
   uniteEnseignementId?: string | null
@@ -623,42 +631,42 @@ export type ClasseMatirereUncheckedCreateWithoutMatiereInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereCreateOrConnectWithoutMatiereInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput>
+export type classematirereCreateOrConnectWithoutMatiereInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  create: Prisma.XOR<Prisma.classematirereCreateWithoutMatiereInput, Prisma.classematirereUncheckedCreateWithoutMatiereInput>
 }
 
-export type ClasseMatirereCreateManyMatiereInputEnvelope = {
-  data: Prisma.ClasseMatirereCreateManyMatiereInput | Prisma.ClasseMatirereCreateManyMatiereInput[]
+export type classematirereCreateManyMatiereInputEnvelope = {
+  data: Prisma.classematirereCreateManyMatiereInput | Prisma.classematirereCreateManyMatiereInput[]
   skipDuplicates?: boolean
 }
 
-export type ClasseMatirereUpsertWithWhereUniqueWithoutMatiereInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  update: Prisma.XOR<Prisma.ClasseMatirereUpdateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedUpdateWithoutMatiereInput>
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedCreateWithoutMatiereInput>
+export type classematirereUpsertWithWhereUniqueWithoutMatiereInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  update: Prisma.XOR<Prisma.classematirereUpdateWithoutMatiereInput, Prisma.classematirereUncheckedUpdateWithoutMatiereInput>
+  create: Prisma.XOR<Prisma.classematirereCreateWithoutMatiereInput, Prisma.classematirereUncheckedCreateWithoutMatiereInput>
 }
 
-export type ClasseMatirereUpdateWithWhereUniqueWithoutMatiereInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateWithoutMatiereInput, Prisma.ClasseMatirereUncheckedUpdateWithoutMatiereInput>
+export type classematirereUpdateWithWhereUniqueWithoutMatiereInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  data: Prisma.XOR<Prisma.classematirereUpdateWithoutMatiereInput, Prisma.classematirereUncheckedUpdateWithoutMatiereInput>
 }
 
-export type ClasseMatirereUpdateManyWithWhereWithoutMatiereInput = {
-  where: Prisma.ClasseMatirereScalarWhereInput
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateManyMutationInput, Prisma.ClasseMatirereUncheckedUpdateManyWithoutMatiereInput>
+export type classematirereUpdateManyWithWhereWithoutMatiereInput = {
+  where: Prisma.classematirereScalarWhereInput
+  data: Prisma.XOR<Prisma.classematirereUpdateManyMutationInput, Prisma.classematirereUncheckedUpdateManyWithoutMatiereInput>
 }
 
-export type ClasseMatirereCreateWithoutUniteEnseignementInput = {
+export type classematirereCreateWithoutUniteenseignementInput = {
   id?: string
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  classeScolaire: Prisma.ClassScolaireCreateNestedOneWithoutClasseMatiereInput
-  matiere: Prisma.MatiereCreateNestedOneWithoutClasseMatiereInput
+  classscolaire: Prisma.classscolaireCreateNestedOneWithoutClassematirereInput
+  matiere: Prisma.matiereCreateNestedOneWithoutClassematirereInput
 }
 
-export type ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput = {
+export type classematirereUncheckedCreateWithoutUniteenseignementInput = {
   id?: string
   classeScolaireId: string
   matiereId: string
@@ -667,33 +675,33 @@ export type ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereCreateOrConnectWithoutUniteEnseignementInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput>
+export type classematirereCreateOrConnectWithoutUniteenseignementInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  create: Prisma.XOR<Prisma.classematirereCreateWithoutUniteenseignementInput, Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput>
 }
 
-export type ClasseMatirereCreateManyUniteEnseignementInputEnvelope = {
-  data: Prisma.ClasseMatirereCreateManyUniteEnseignementInput | Prisma.ClasseMatirereCreateManyUniteEnseignementInput[]
+export type classematirereCreateManyUniteenseignementInputEnvelope = {
+  data: Prisma.classematirereCreateManyUniteenseignementInput | Prisma.classematirereCreateManyUniteenseignementInput[]
   skipDuplicates?: boolean
 }
 
-export type ClasseMatirereUpsertWithWhereUniqueWithoutUniteEnseignementInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  update: Prisma.XOR<Prisma.ClasseMatirereUpdateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedUpdateWithoutUniteEnseignementInput>
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedCreateWithoutUniteEnseignementInput>
+export type classematirereUpsertWithWhereUniqueWithoutUniteenseignementInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  update: Prisma.XOR<Prisma.classematirereUpdateWithoutUniteenseignementInput, Prisma.classematirereUncheckedUpdateWithoutUniteenseignementInput>
+  create: Prisma.XOR<Prisma.classematirereCreateWithoutUniteenseignementInput, Prisma.classematirereUncheckedCreateWithoutUniteenseignementInput>
 }
 
-export type ClasseMatirereUpdateWithWhereUniqueWithoutUniteEnseignementInput = {
-  where: Prisma.ClasseMatirereWhereUniqueInput
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateWithoutUniteEnseignementInput, Prisma.ClasseMatirereUncheckedUpdateWithoutUniteEnseignementInput>
+export type classematirereUpdateWithWhereUniqueWithoutUniteenseignementInput = {
+  where: Prisma.classematirereWhereUniqueInput
+  data: Prisma.XOR<Prisma.classematirereUpdateWithoutUniteenseignementInput, Prisma.classematirereUncheckedUpdateWithoutUniteenseignementInput>
 }
 
-export type ClasseMatirereUpdateManyWithWhereWithoutUniteEnseignementInput = {
-  where: Prisma.ClasseMatirereScalarWhereInput
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateManyMutationInput, Prisma.ClasseMatirereUncheckedUpdateManyWithoutUniteEnseignementInput>
+export type classematirereUpdateManyWithWhereWithoutUniteenseignementInput = {
+  where: Prisma.classematirereScalarWhereInput
+  data: Prisma.XOR<Prisma.classematirereUpdateManyMutationInput, Prisma.classematirereUncheckedUpdateManyWithoutUniteenseignementInput>
 }
 
-export type ClasseMatirereCreateManyClasseScolaireInput = {
+export type classematirereCreateManyClassscolaireInput = {
   id?: string
   matiereId: string
   uniteEnseignementId?: string | null
@@ -702,25 +710,16 @@ export type ClasseMatirereCreateManyClasseScolaireInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereUpdateWithoutClasseScolaireInput = {
+export type classematirereUpdateWithoutClassscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiere?: Prisma.MatiereUpdateOneRequiredWithoutClasseMatiereNestedInput
-  uniteEnseignement?: Prisma.UniteEnseignementUpdateOneWithoutClaseMatiereNestedInput
+  matiere?: Prisma.matiereUpdateOneRequiredWithoutClassematirereNestedInput
+  uniteenseignement?: Prisma.uniteenseignementUpdateOneWithoutClassematirereNestedInput
 }
 
-export type ClasseMatirereUncheckedUpdateWithoutClasseScolaireInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
-  uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type ClasseMatirereUncheckedUpdateManyWithoutClasseScolaireInput = {
+export type classematirereUncheckedUpdateWithoutClassscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   matiereId?: Prisma.StringFieldUpdateOperationsInput | string
   uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -729,7 +728,16 @@ export type ClasseMatirereUncheckedUpdateManyWithoutClasseScolaireInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ClasseMatirereCreateManyMatiereInput = {
+export type classematirereUncheckedUpdateManyWithoutClassscolaireInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type classematirereCreateManyMatiereInput = {
   id?: string
   classeScolaireId: string
   uniteEnseignementId?: string | null
@@ -738,25 +746,16 @@ export type ClasseMatirereCreateManyMatiereInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereUpdateWithoutMatiereInput = {
+export type classematirereUpdateWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutClasseMatiereNestedInput
-  uniteEnseignement?: Prisma.UniteEnseignementUpdateOneWithoutClaseMatiereNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutClassematirereNestedInput
+  uniteenseignement?: Prisma.uniteenseignementUpdateOneWithoutClassematirereNestedInput
 }
 
-export type ClasseMatirereUncheckedUpdateWithoutMatiereInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type ClasseMatirereUncheckedUpdateManyWithoutMatiereInput = {
+export type classematirereUncheckedUpdateWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -765,7 +764,16 @@ export type ClasseMatirereUncheckedUpdateManyWithoutMatiereInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ClasseMatirereCreateManyUniteEnseignementInput = {
+export type classematirereUncheckedUpdateManyWithoutMatiereInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  uniteEnseignementId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type classematirereCreateManyUniteenseignementInput = {
   id?: string
   classeScolaireId: string
   matiereId: string
@@ -774,25 +782,16 @@ export type ClasseMatirereCreateManyUniteEnseignementInput = {
   updatedAt?: Date | string
 }
 
-export type ClasseMatirereUpdateWithoutUniteEnseignementInput = {
+export type classematirereUpdateWithoutUniteenseignementInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  classeScolaire?: Prisma.ClassScolaireUpdateOneRequiredWithoutClasseMatiereNestedInput
-  matiere?: Prisma.MatiereUpdateOneRequiredWithoutClasseMatiereNestedInput
+  classscolaire?: Prisma.classscolaireUpdateOneRequiredWithoutClassematirereNestedInput
+  matiere?: Prisma.matiereUpdateOneRequiredWithoutClassematirereNestedInput
 }
 
-export type ClasseMatirereUncheckedUpdateWithoutUniteEnseignementInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
-  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type ClasseMatirereUncheckedUpdateManyWithoutUniteEnseignementInput = {
+export type classematirereUncheckedUpdateWithoutUniteenseignementInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   matiereId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -801,9 +800,18 @@ export type ClasseMatirereUncheckedUpdateManyWithoutUniteEnseignementInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type classematirereUncheckedUpdateManyWithoutUniteenseignementInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  classeScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
+  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
 
 
-export type ClasseMatirereSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+
+export type classematirereSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   classeScolaireId?: boolean
   matiereId?: boolean
@@ -811,14 +819,14 @@ export type ClasseMatirereSelect<ExtArgs extends runtime.Types.Extensions.Intern
   coefficient?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  classeScolaire?: boolean | Prisma.ClassScolaireDefaultArgs<ExtArgs>
-  matiere?: boolean | Prisma.MatiereDefaultArgs<ExtArgs>
-  uniteEnseignement?: boolean | Prisma.ClasseMatirere$uniteEnseignementArgs<ExtArgs>
-}, ExtArgs["result"]["classeMatirere"]>
+  classscolaire?: boolean | Prisma.classscolaireDefaultArgs<ExtArgs>
+  matiere?: boolean | Prisma.matiereDefaultArgs<ExtArgs>
+  uniteenseignement?: boolean | Prisma.classematirere$uniteenseignementArgs<ExtArgs>
+}, ExtArgs["result"]["classematirere"]>
 
 
 
-export type ClasseMatirereSelectScalar = {
+export type classematirereSelectScalar = {
   id?: boolean
   classeScolaireId?: boolean
   matiereId?: boolean
@@ -828,19 +836,19 @@ export type ClasseMatirereSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ClasseMatirereOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "classeScolaireId" | "matiereId" | "uniteEnseignementId" | "coefficient" | "createdAt" | "updatedAt", ExtArgs["result"]["classeMatirere"]>
-export type ClasseMatirereInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  classeScolaire?: boolean | Prisma.ClassScolaireDefaultArgs<ExtArgs>
-  matiere?: boolean | Prisma.MatiereDefaultArgs<ExtArgs>
-  uniteEnseignement?: boolean | Prisma.ClasseMatirere$uniteEnseignementArgs<ExtArgs>
+export type classematirereOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "classeScolaireId" | "matiereId" | "uniteEnseignementId" | "coefficient" | "createdAt" | "updatedAt", ExtArgs["result"]["classematirere"]>
+export type classematirereInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classscolaire?: boolean | Prisma.classscolaireDefaultArgs<ExtArgs>
+  matiere?: boolean | Prisma.matiereDefaultArgs<ExtArgs>
+  uniteenseignement?: boolean | Prisma.classematirere$uniteenseignementArgs<ExtArgs>
 }
 
-export type $ClasseMatirerePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "ClasseMatirere"
+export type $classematirerePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "classematirere"
   objects: {
-    classeScolaire: Prisma.$ClassScolairePayload<ExtArgs>
-    matiere: Prisma.$MatierePayload<ExtArgs>
-    uniteEnseignement: Prisma.$UniteEnseignementPayload<ExtArgs> | null
+    classscolaire: Prisma.$classscolairePayload<ExtArgs>
+    matiere: Prisma.$matierePayload<ExtArgs>
+    uniteenseignement: Prisma.$uniteenseignementPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -850,143 +858,143 @@ export type $ClasseMatirerePayload<ExtArgs extends runtime.Types.Extensions.Inte
     coefficient: number
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["classeMatirere"]>
+  }, ExtArgs["result"]["classematirere"]>
   composites: {}
 }
 
-export type ClasseMatirereGetPayload<S extends boolean | null | undefined | ClasseMatirereDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload, S>
+export type classematirereGetPayload<S extends boolean | null | undefined | classematirereDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$classematirerePayload, S>
 
-export type ClasseMatirereCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ClasseMatirereFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: ClasseMatirereCountAggregateInputType | true
+export type classematirereCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<classematirereFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ClassematirereCountAggregateInputType | true
   }
 
-export interface ClasseMatirereDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ClasseMatirere'], meta: { name: 'ClasseMatirere' } }
+export interface classematirereDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['classematirere'], meta: { name: 'classematirere' } }
   /**
-   * Find zero or one ClasseMatirere that matches the filter.
-   * @param {ClasseMatirereFindUniqueArgs} args - Arguments to find a ClasseMatirere
+   * Find zero or one Classematirere that matches the filter.
+   * @param {classematirereFindUniqueArgs} args - Arguments to find a Classematirere
    * @example
-   * // Get one ClasseMatirere
-   * const classeMatirere = await prisma.classeMatirere.findUnique({
+   * // Get one Classematirere
+   * const classematirere = await prisma.classematirere.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends ClasseMatirereFindUniqueArgs>(args: Prisma.SelectSubset<T, ClasseMatirereFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends classematirereFindUniqueArgs>(args: Prisma.SelectSubset<T, classematirereFindUniqueArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one ClasseMatirere that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Classematirere that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ClasseMatirereFindUniqueOrThrowArgs} args - Arguments to find a ClasseMatirere
+   * @param {classematirereFindUniqueOrThrowArgs} args - Arguments to find a Classematirere
    * @example
-   * // Get one ClasseMatirere
-   * const classeMatirere = await prisma.classeMatirere.findUniqueOrThrow({
+   * // Get one Classematirere
+   * const classematirere = await prisma.classematirere.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ClasseMatirereFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ClasseMatirereFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends classematirereFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, classematirereFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ClasseMatirere that matches the filter.
+   * Find the first Classematirere that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereFindFirstArgs} args - Arguments to find a ClasseMatirere
+   * @param {classematirereFindFirstArgs} args - Arguments to find a Classematirere
    * @example
-   * // Get one ClasseMatirere
-   * const classeMatirere = await prisma.classeMatirere.findFirst({
+   * // Get one Classematirere
+   * const classematirere = await prisma.classematirere.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends ClasseMatirereFindFirstArgs>(args?: Prisma.SelectSubset<T, ClasseMatirereFindFirstArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends classematirereFindFirstArgs>(args?: Prisma.SelectSubset<T, classematirereFindFirstArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first ClasseMatirere that matches the filter or
+   * Find the first Classematirere that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereFindFirstOrThrowArgs} args - Arguments to find a ClasseMatirere
+   * @param {classematirereFindFirstOrThrowArgs} args - Arguments to find a Classematirere
    * @example
-   * // Get one ClasseMatirere
-   * const classeMatirere = await prisma.classeMatirere.findFirstOrThrow({
+   * // Get one Classematirere
+   * const classematirere = await prisma.classematirere.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends ClasseMatirereFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ClasseMatirereFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends classematirereFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, classematirereFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more ClasseMatireres that matches the filter.
+   * Find zero or more Classematireres that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {classematirereFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all ClasseMatireres
-   * const classeMatireres = await prisma.classeMatirere.findMany()
+   * // Get all Classematireres
+   * const classematireres = await prisma.classematirere.findMany()
    * 
-   * // Get first 10 ClasseMatireres
-   * const classeMatireres = await prisma.classeMatirere.findMany({ take: 10 })
+   * // Get first 10 Classematireres
+   * const classematireres = await prisma.classematirere.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const classeMatirereWithIdOnly = await prisma.classeMatirere.findMany({ select: { id: true } })
+   * const classematirereWithIdOnly = await prisma.classematirere.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends ClasseMatirereFindManyArgs>(args?: Prisma.SelectSubset<T, ClasseMatirereFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends classematirereFindManyArgs>(args?: Prisma.SelectSubset<T, classematirereFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a ClasseMatirere.
-   * @param {ClasseMatirereCreateArgs} args - Arguments to create a ClasseMatirere.
+   * Create a Classematirere.
+   * @param {classematirereCreateArgs} args - Arguments to create a Classematirere.
    * @example
-   * // Create one ClasseMatirere
-   * const ClasseMatirere = await prisma.classeMatirere.create({
+   * // Create one Classematirere
+   * const Classematirere = await prisma.classematirere.create({
    *   data: {
-   *     // ... data to create a ClasseMatirere
+   *     // ... data to create a Classematirere
    *   }
    * })
    * 
    */
-  create<T extends ClasseMatirereCreateArgs>(args: Prisma.SelectSubset<T, ClasseMatirereCreateArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends classematirereCreateArgs>(args: Prisma.SelectSubset<T, classematirereCreateArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many ClasseMatireres.
-   * @param {ClasseMatirereCreateManyArgs} args - Arguments to create many ClasseMatireres.
+   * Create many Classematireres.
+   * @param {classematirereCreateManyArgs} args - Arguments to create many Classematireres.
    * @example
-   * // Create many ClasseMatireres
-   * const classeMatirere = await prisma.classeMatirere.createMany({
+   * // Create many Classematireres
+   * const classematirere = await prisma.classematirere.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends ClasseMatirereCreateManyArgs>(args?: Prisma.SelectSubset<T, ClasseMatirereCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends classematirereCreateManyArgs>(args?: Prisma.SelectSubset<T, classematirereCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a ClasseMatirere.
-   * @param {ClasseMatirereDeleteArgs} args - Arguments to delete one ClasseMatirere.
+   * Delete a Classematirere.
+   * @param {classematirereDeleteArgs} args - Arguments to delete one Classematirere.
    * @example
-   * // Delete one ClasseMatirere
-   * const ClasseMatirere = await prisma.classeMatirere.delete({
+   * // Delete one Classematirere
+   * const Classematirere = await prisma.classematirere.delete({
    *   where: {
-   *     // ... filter to delete one ClasseMatirere
+   *     // ... filter to delete one Classematirere
    *   }
    * })
    * 
    */
-  delete<T extends ClasseMatirereDeleteArgs>(args: Prisma.SelectSubset<T, ClasseMatirereDeleteArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends classematirereDeleteArgs>(args: Prisma.SelectSubset<T, classematirereDeleteArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one ClasseMatirere.
-   * @param {ClasseMatirereUpdateArgs} args - Arguments to update one ClasseMatirere.
+   * Update one Classematirere.
+   * @param {classematirereUpdateArgs} args - Arguments to update one Classematirere.
    * @example
-   * // Update one ClasseMatirere
-   * const classeMatirere = await prisma.classeMatirere.update({
+   * // Update one Classematirere
+   * const classematirere = await prisma.classematirere.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -996,30 +1004,30 @@ export interface ClasseMatirereDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  update<T extends ClasseMatirereUpdateArgs>(args: Prisma.SelectSubset<T, ClasseMatirereUpdateArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends classematirereUpdateArgs>(args: Prisma.SelectSubset<T, classematirereUpdateArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more ClasseMatireres.
-   * @param {ClasseMatirereDeleteManyArgs} args - Arguments to filter ClasseMatireres to delete.
+   * Delete zero or more Classematireres.
+   * @param {classematirereDeleteManyArgs} args - Arguments to filter Classematireres to delete.
    * @example
-   * // Delete a few ClasseMatireres
-   * const { count } = await prisma.classeMatirere.deleteMany({
+   * // Delete a few Classematireres
+   * const { count } = await prisma.classematirere.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends ClasseMatirereDeleteManyArgs>(args?: Prisma.SelectSubset<T, ClasseMatirereDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends classematirereDeleteManyArgs>(args?: Prisma.SelectSubset<T, classematirereDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more ClasseMatireres.
+   * Update zero or more Classematireres.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {classematirereUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many ClasseMatireres
-   * const classeMatirere = await prisma.classeMatirere.updateMany({
+   * // Update many Classematireres
+   * const classematirere = await prisma.classematirere.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1029,56 +1037,56 @@ export interface ClasseMatirereDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  updateMany<T extends ClasseMatirereUpdateManyArgs>(args: Prisma.SelectSubset<T, ClasseMatirereUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends classematirereUpdateManyArgs>(args: Prisma.SelectSubset<T, classematirereUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one ClasseMatirere.
-   * @param {ClasseMatirereUpsertArgs} args - Arguments to update or create a ClasseMatirere.
+   * Create or update one Classematirere.
+   * @param {classematirereUpsertArgs} args - Arguments to update or create a Classematirere.
    * @example
-   * // Update or create a ClasseMatirere
-   * const classeMatirere = await prisma.classeMatirere.upsert({
+   * // Update or create a Classematirere
+   * const classematirere = await prisma.classematirere.upsert({
    *   create: {
-   *     // ... data to create a ClasseMatirere
+   *     // ... data to create a Classematirere
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the ClasseMatirere we want to update
+   *     // ... the filter for the Classematirere we want to update
    *   }
    * })
    */
-  upsert<T extends ClasseMatirereUpsertArgs>(args: Prisma.SelectSubset<T, ClasseMatirereUpsertArgs<ExtArgs>>): Prisma.Prisma__ClasseMatirereClient<runtime.Types.Result.GetResult<Prisma.$ClasseMatirerePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends classematirereUpsertArgs>(args: Prisma.SelectSubset<T, classematirereUpsertArgs<ExtArgs>>): Prisma.Prisma__classematirereClient<runtime.Types.Result.GetResult<Prisma.$classematirerePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of ClasseMatireres.
+   * Count the number of Classematireres.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereCountArgs} args - Arguments to filter ClasseMatireres to count.
+   * @param {classematirereCountArgs} args - Arguments to filter Classematireres to count.
    * @example
-   * // Count the number of ClasseMatireres
-   * const count = await prisma.classeMatirere.count({
+   * // Count the number of Classematireres
+   * const count = await prisma.classematirere.count({
    *   where: {
-   *     // ... the filter for the ClasseMatireres we want to count
+   *     // ... the filter for the Classematireres we want to count
    *   }
    * })
   **/
-  count<T extends ClasseMatirereCountArgs>(
-    args?: Prisma.Subset<T, ClasseMatirereCountArgs>,
+  count<T extends classematirereCountArgs>(
+    args?: Prisma.Subset<T, classematirereCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], ClasseMatirereCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], ClassematirereCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a ClasseMatirere.
+   * Allows you to perform aggregations operations on a Classematirere.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {ClassematirereAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1098,13 +1106,13 @@ export interface ClasseMatirereDelegate<ExtArgs extends runtime.Types.Extensions
    *   take: 10,
    * })
   **/
-  aggregate<T extends ClasseMatirereAggregateArgs>(args: Prisma.Subset<T, ClasseMatirereAggregateArgs>): Prisma.PrismaPromise<GetClasseMatirereAggregateType<T>>
+  aggregate<T extends ClassematirereAggregateArgs>(args: Prisma.Subset<T, ClassematirereAggregateArgs>): Prisma.PrismaPromise<GetClassematirereAggregateType<T>>
 
   /**
-   * Group by ClasseMatirere.
+   * Group by Classematirere.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ClasseMatirereGroupByArgs} args - Group by arguments.
+   * @param {classematirereGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1119,14 +1127,14 @@ export interface ClasseMatirereDelegate<ExtArgs extends runtime.Types.Extensions
    * 
   **/
   groupBy<
-    T extends ClasseMatirereGroupByArgs,
+    T extends classematirereGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ClasseMatirereGroupByArgs['orderBy'] }
-      : { orderBy?: ClasseMatirereGroupByArgs['orderBy'] },
+      ? { orderBy: classematirereGroupByArgs['orderBy'] }
+      : { orderBy?: classematirereGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1175,24 +1183,24 @@ export interface ClasseMatirereDelegate<ExtArgs extends runtime.Types.Extensions
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ClasseMatirereGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetClasseMatirereGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, classematirereGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetClassematirereGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the ClasseMatirere model
+ * Fields of the classematirere model
  */
-readonly fields: ClasseMatirereFieldRefs;
+readonly fields: classematirereFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for ClasseMatirere.
+ * The delegate class that acts as a "Promise-like" for classematirere.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ClasseMatirereClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__classematirereClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  classeScolaire<T extends Prisma.ClassScolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassScolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassScolaireClient<runtime.Types.Result.GetResult<Prisma.$ClassScolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  matiere<T extends Prisma.MatiereDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MatiereDefaultArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  uniteEnseignement<T extends Prisma.ClasseMatirere$uniteEnseignementArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClasseMatirere$uniteEnseignementArgs<ExtArgs>>): Prisma.Prisma__UniteEnseignementClient<runtime.Types.Result.GetResult<Prisma.$UniteEnseignementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  classscolaire<T extends Prisma.classscolaireDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.classscolaireDefaultArgs<ExtArgs>>): Prisma.Prisma__classscolaireClient<runtime.Types.Result.GetResult<Prisma.$classscolairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  matiere<T extends Prisma.matiereDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.matiereDefaultArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  uniteenseignement<T extends Prisma.classematirere$uniteenseignementArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.classematirere$uniteenseignementArgs<ExtArgs>>): Prisma.Prisma__uniteenseignementClient<runtime.Types.Result.GetResult<Prisma.$uniteenseignementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1219,396 +1227,396 @@ export interface Prisma__ClasseMatirereClient<T, Null = never, ExtArgs extends r
 
 
 /**
- * Fields of the ClasseMatirere model
+ * Fields of the classematirere model
  */
-export interface ClasseMatirereFieldRefs {
-  readonly id: Prisma.FieldRef<"ClasseMatirere", 'String'>
-  readonly classeScolaireId: Prisma.FieldRef<"ClasseMatirere", 'String'>
-  readonly matiereId: Prisma.FieldRef<"ClasseMatirere", 'String'>
-  readonly uniteEnseignementId: Prisma.FieldRef<"ClasseMatirere", 'String'>
-  readonly coefficient: Prisma.FieldRef<"ClasseMatirere", 'Int'>
-  readonly createdAt: Prisma.FieldRef<"ClasseMatirere", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"ClasseMatirere", 'DateTime'>
+export interface classematirereFieldRefs {
+  readonly id: Prisma.FieldRef<"classematirere", 'String'>
+  readonly classeScolaireId: Prisma.FieldRef<"classematirere", 'String'>
+  readonly matiereId: Prisma.FieldRef<"classematirere", 'String'>
+  readonly uniteEnseignementId: Prisma.FieldRef<"classematirere", 'String'>
+  readonly coefficient: Prisma.FieldRef<"classematirere", 'Int'>
+  readonly createdAt: Prisma.FieldRef<"classematirere", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"classematirere", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * ClasseMatirere findUnique
+ * classematirere findUnique
  */
-export type ClasseMatirereFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * Filter, which ClasseMatirere to fetch.
+   * Filter, which classematirere to fetch.
    */
-  where: Prisma.ClasseMatirereWhereUniqueInput
+  where: Prisma.classematirereWhereUniqueInput
 }
 
 /**
- * ClasseMatirere findUniqueOrThrow
+ * classematirere findUniqueOrThrow
  */
-export type ClasseMatirereFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * Filter, which ClasseMatirere to fetch.
+   * Filter, which classematirere to fetch.
    */
-  where: Prisma.ClasseMatirereWhereUniqueInput
+  where: Prisma.classematirereWhereUniqueInput
 }
 
 /**
- * ClasseMatirere findFirst
+ * classematirere findFirst
  */
-export type ClasseMatirereFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * Filter, which ClasseMatirere to fetch.
+   * Filter, which classematirere to fetch.
    */
-  where?: Prisma.ClasseMatirereWhereInput
+  where?: Prisma.classematirereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ClasseMatireres to fetch.
+   * Determine the order of classematireres to fetch.
    */
-  orderBy?: Prisma.ClasseMatirereOrderByWithRelationInput | Prisma.ClasseMatirereOrderByWithRelationInput[]
+  orderBy?: Prisma.classematirereOrderByWithRelationInput | Prisma.classematirereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ClasseMatireres.
+   * Sets the position for searching for classematireres.
    */
-  cursor?: Prisma.ClasseMatirereWhereUniqueInput
+  cursor?: Prisma.classematirereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ClasseMatireres from the position of the cursor.
+   * Take `±n` classematireres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ClasseMatireres.
+   * Skip the first `n` classematireres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ClasseMatireres.
+   * Filter by unique combinations of classematireres.
    */
-  distinct?: Prisma.ClasseMatirereScalarFieldEnum | Prisma.ClasseMatirereScalarFieldEnum[]
+  distinct?: Prisma.ClassematirereScalarFieldEnum | Prisma.ClassematirereScalarFieldEnum[]
 }
 
 /**
- * ClasseMatirere findFirstOrThrow
+ * classematirere findFirstOrThrow
  */
-export type ClasseMatirereFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * Filter, which ClasseMatirere to fetch.
+   * Filter, which classematirere to fetch.
    */
-  where?: Prisma.ClasseMatirereWhereInput
+  where?: Prisma.classematirereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ClasseMatireres to fetch.
+   * Determine the order of classematireres to fetch.
    */
-  orderBy?: Prisma.ClasseMatirereOrderByWithRelationInput | Prisma.ClasseMatirereOrderByWithRelationInput[]
+  orderBy?: Prisma.classematirereOrderByWithRelationInput | Prisma.classematirereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for ClasseMatireres.
+   * Sets the position for searching for classematireres.
    */
-  cursor?: Prisma.ClasseMatirereWhereUniqueInput
+  cursor?: Prisma.classematirereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ClasseMatireres from the position of the cursor.
+   * Take `±n` classematireres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ClasseMatireres.
+   * Skip the first `n` classematireres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ClasseMatireres.
+   * Filter by unique combinations of classematireres.
    */
-  distinct?: Prisma.ClasseMatirereScalarFieldEnum | Prisma.ClasseMatirereScalarFieldEnum[]
+  distinct?: Prisma.ClassematirereScalarFieldEnum | Prisma.ClassematirereScalarFieldEnum[]
 }
 
 /**
- * ClasseMatirere findMany
+ * classematirere findMany
  */
-export type ClasseMatirereFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * Filter, which ClasseMatireres to fetch.
+   * Filter, which classematireres to fetch.
    */
-  where?: Prisma.ClasseMatirereWhereInput
+  where?: Prisma.classematirereWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of ClasseMatireres to fetch.
+   * Determine the order of classematireres to fetch.
    */
-  orderBy?: Prisma.ClasseMatirereOrderByWithRelationInput | Prisma.ClasseMatirereOrderByWithRelationInput[]
+  orderBy?: Prisma.classematirereOrderByWithRelationInput | Prisma.classematirereOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing ClasseMatireres.
+   * Sets the position for listing classematireres.
    */
-  cursor?: Prisma.ClasseMatirereWhereUniqueInput
+  cursor?: Prisma.classematirereWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` ClasseMatireres from the position of the cursor.
+   * Take `±n` classematireres from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` ClasseMatireres.
+   * Skip the first `n` classematireres.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of ClasseMatireres.
+   * Filter by unique combinations of classematireres.
    */
-  distinct?: Prisma.ClasseMatirereScalarFieldEnum | Prisma.ClasseMatirereScalarFieldEnum[]
+  distinct?: Prisma.ClassematirereScalarFieldEnum | Prisma.ClassematirereScalarFieldEnum[]
 }
 
 /**
- * ClasseMatirere create
+ * classematirere create
  */
-export type ClasseMatirereCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * The data needed to create a ClasseMatirere.
+   * The data needed to create a classematirere.
    */
-  data: Prisma.XOR<Prisma.ClasseMatirereCreateInput, Prisma.ClasseMatirereUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.classematirereCreateInput, Prisma.classematirereUncheckedCreateInput>
 }
 
 /**
- * ClasseMatirere createMany
+ * classematirere createMany
  */
-export type ClasseMatirereCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many ClasseMatireres.
+   * The data used to create many classematireres.
    */
-  data: Prisma.ClasseMatirereCreateManyInput | Prisma.ClasseMatirereCreateManyInput[]
+  data: Prisma.classematirereCreateManyInput | Prisma.classematirereCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * ClasseMatirere update
+ * classematirere update
  */
-export type ClasseMatirereUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * The data needed to update a ClasseMatirere.
+   * The data needed to update a classematirere.
    */
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateInput, Prisma.ClasseMatirereUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.classematirereUpdateInput, Prisma.classematirereUncheckedUpdateInput>
   /**
-   * Choose, which ClasseMatirere to update.
+   * Choose, which classematirere to update.
    */
-  where: Prisma.ClasseMatirereWhereUniqueInput
+  where: Prisma.classematirereWhereUniqueInput
 }
 
 /**
- * ClasseMatirere updateMany
+ * classematirere updateMany
  */
-export type ClasseMatirereUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update ClasseMatireres.
+   * The data used to update classematireres.
    */
-  data: Prisma.XOR<Prisma.ClasseMatirereUpdateManyMutationInput, Prisma.ClasseMatirereUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.classematirereUpdateManyMutationInput, Prisma.classematirereUncheckedUpdateManyInput>
   /**
-   * Filter which ClasseMatireres to update
+   * Filter which classematireres to update
    */
-  where?: Prisma.ClasseMatirereWhereInput
+  where?: Prisma.classematirereWhereInput
   /**
-   * Limit how many ClasseMatireres to update.
+   * Limit how many classematireres to update.
    */
   limit?: number
 }
 
 /**
- * ClasseMatirere upsert
+ * classematirere upsert
  */
-export type ClasseMatirereUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * The filter to search for the ClasseMatirere to update in case it exists.
+   * The filter to search for the classematirere to update in case it exists.
    */
-  where: Prisma.ClasseMatirereWhereUniqueInput
+  where: Prisma.classematirereWhereUniqueInput
   /**
-   * In case the ClasseMatirere found by the `where` argument doesn't exist, create a new ClasseMatirere with this data.
+   * In case the classematirere found by the `where` argument doesn't exist, create a new classematirere with this data.
    */
-  create: Prisma.XOR<Prisma.ClasseMatirereCreateInput, Prisma.ClasseMatirereUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.classematirereCreateInput, Prisma.classematirereUncheckedCreateInput>
   /**
-   * In case the ClasseMatirere was found with the provided `where` argument, update it with this data.
+   * In case the classematirere was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ClasseMatirereUpdateInput, Prisma.ClasseMatirereUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.classematirereUpdateInput, Prisma.classematirereUncheckedUpdateInput>
 }
 
 /**
- * ClasseMatirere delete
+ * classematirere delete
  */
-export type ClasseMatirereDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
   /**
-   * Filter which ClasseMatirere to delete.
+   * Filter which classematirere to delete.
    */
-  where: Prisma.ClasseMatirereWhereUniqueInput
+  where: Prisma.classematirereWhereUniqueInput
 }
 
 /**
- * ClasseMatirere deleteMany
+ * classematirere deleteMany
  */
-export type ClasseMatirereDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which ClasseMatireres to delete
+   * Filter which classematireres to delete
    */
-  where?: Prisma.ClasseMatirereWhereInput
+  where?: Prisma.classematirereWhereInput
   /**
-   * Limit how many ClasseMatireres to delete.
+   * Limit how many classematireres to delete.
    */
   limit?: number
 }
 
 /**
- * ClasseMatirere.uniteEnseignement
+ * classematirere.uniteenseignement
  */
-export type ClasseMatirere$uniteEnseignementArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirere$uniteenseignementArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the UniteEnseignement
+   * Select specific fields to fetch from the uniteenseignement
    */
-  select?: Prisma.UniteEnseignementSelect<ExtArgs> | null
+  select?: Prisma.uniteenseignementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the UniteEnseignement
+   * Omit specific fields from the uniteenseignement
    */
-  omit?: Prisma.UniteEnseignementOmit<ExtArgs> | null
+  omit?: Prisma.uniteenseignementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UniteEnseignementInclude<ExtArgs> | null
-  where?: Prisma.UniteEnseignementWhereInput
+  include?: Prisma.uniteenseignementInclude<ExtArgs> | null
+  where?: Prisma.uniteenseignementWhereInput
 }
 
 /**
- * ClasseMatirere without action
+ * classematirere without action
  */
-export type ClasseMatirereDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type classematirereDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ClasseMatirere
+   * Select specific fields to fetch from the classematirere
    */
-  select?: Prisma.ClasseMatirereSelect<ExtArgs> | null
+  select?: Prisma.classematirereSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ClasseMatirere
+   * Omit specific fields from the classematirere
    */
-  omit?: Prisma.ClasseMatirereOmit<ExtArgs> | null
+  omit?: Prisma.classematirereOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClasseMatirereInclude<ExtArgs> | null
+  include?: Prisma.classematirereInclude<ExtArgs> | null
 }

@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `DecisionFinAnnee` model and its related types.
+ * This file exports the `decisionfinannee` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,36 +13,36 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model DecisionFinAnnee
+ * Model decisionfinannee
  * 
  */
-export type DecisionFinAnneeModel = runtime.Types.Result.DefaultSelection<Prisma.$DecisionFinAnneePayload>
+export type decisionfinanneeModel = runtime.Types.Result.DefaultSelection<Prisma.$decisionfinanneePayload>
 
-export type AggregateDecisionFinAnnee = {
-  _count: DecisionFinAnneeCountAggregateOutputType | null
-  _min: DecisionFinAnneeMinAggregateOutputType | null
-  _max: DecisionFinAnneeMaxAggregateOutputType | null
+export type AggregateDecisionfinannee = {
+  _count: DecisionfinanneeCountAggregateOutputType | null
+  _min: DecisionfinanneeMinAggregateOutputType | null
+  _max: DecisionfinanneeMaxAggregateOutputType | null
 }
 
-export type DecisionFinAnneeMinAggregateOutputType = {
+export type DecisionfinanneeMinAggregateOutputType = {
   id: string | null
-  decision: $Enums.DecisionFinAnneeType | null
+  decision: $Enums.decisionfinannee_decision | null
   inscriptionApprenantId: string | null
   inscriptionAnneeId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type DecisionFinAnneeMaxAggregateOutputType = {
+export type DecisionfinanneeMaxAggregateOutputType = {
   id: string | null
-  decision: $Enums.DecisionFinAnneeType | null
+  decision: $Enums.decisionfinannee_decision | null
   inscriptionApprenantId: string | null
   inscriptionAnneeId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
-export type DecisionFinAnneeCountAggregateOutputType = {
+export type DecisionfinanneeCountAggregateOutputType = {
   id: number
   decision: number
   inscriptionApprenantId: number
@@ -53,7 +53,7 @@ export type DecisionFinAnneeCountAggregateOutputType = {
 }
 
 
-export type DecisionFinAnneeMinAggregateInputType = {
+export type DecisionfinanneeMinAggregateInputType = {
   id?: true
   decision?: true
   inscriptionApprenantId?: true
@@ -62,7 +62,7 @@ export type DecisionFinAnneeMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type DecisionFinAnneeMaxAggregateInputType = {
+export type DecisionfinanneeMaxAggregateInputType = {
   id?: true
   decision?: true
   inscriptionApprenantId?: true
@@ -71,7 +71,7 @@ export type DecisionFinAnneeMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type DecisionFinAnneeCountAggregateInputType = {
+export type DecisionfinanneeCountAggregateInputType = {
   id?: true
   decision?: true
   inscriptionApprenantId?: true
@@ -81,243 +81,238 @@ export type DecisionFinAnneeCountAggregateInputType = {
   _all?: true
 }
 
-export type DecisionFinAnneeAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DecisionfinanneeAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which DecisionFinAnnee to aggregate.
+   * Filter which decisionfinannee to aggregate.
    */
-  where?: Prisma.DecisionFinAnneeWhereInput
+  where?: Prisma.decisionfinanneeWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DecisionFinAnnees to fetch.
+   * Determine the order of decisionfinannees to fetch.
    */
-  orderBy?: Prisma.DecisionFinAnneeOrderByWithRelationInput | Prisma.DecisionFinAnneeOrderByWithRelationInput[]
+  orderBy?: Prisma.decisionfinanneeOrderByWithRelationInput | Prisma.decisionfinanneeOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.DecisionFinAnneeWhereUniqueInput
+  cursor?: Prisma.decisionfinanneeWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DecisionFinAnnees from the position of the cursor.
+   * Take `±n` decisionfinannees from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DecisionFinAnnees.
+   * Skip the first `n` decisionfinannees.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned DecisionFinAnnees
+   * Count returned decisionfinannees
   **/
-  _count?: true | DecisionFinAnneeCountAggregateInputType
+  _count?: true | DecisionfinanneeCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: DecisionFinAnneeMinAggregateInputType
+  _min?: DecisionfinanneeMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: DecisionFinAnneeMaxAggregateInputType
+  _max?: DecisionfinanneeMaxAggregateInputType
 }
 
-export type GetDecisionFinAnneeAggregateType<T extends DecisionFinAnneeAggregateArgs> = {
-      [P in keyof T & keyof AggregateDecisionFinAnnee]: P extends '_count' | 'count'
+export type GetDecisionfinanneeAggregateType<T extends DecisionfinanneeAggregateArgs> = {
+      [P in keyof T & keyof AggregateDecisionfinannee]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateDecisionFinAnnee[P]>
-    : Prisma.GetScalarType<T[P], AggregateDecisionFinAnnee[P]>
+      : Prisma.GetScalarType<T[P], AggregateDecisionfinannee[P]>
+    : Prisma.GetScalarType<T[P], AggregateDecisionfinannee[P]>
 }
 
 
 
 
-export type DecisionFinAnneeGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DecisionFinAnneeWhereInput
-  orderBy?: Prisma.DecisionFinAnneeOrderByWithAggregationInput | Prisma.DecisionFinAnneeOrderByWithAggregationInput[]
-  by: Prisma.DecisionFinAnneeScalarFieldEnum[] | Prisma.DecisionFinAnneeScalarFieldEnum
-  having?: Prisma.DecisionFinAnneeScalarWhereWithAggregatesInput
+export type decisionfinanneeGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.decisionfinanneeWhereInput
+  orderBy?: Prisma.decisionfinanneeOrderByWithAggregationInput | Prisma.decisionfinanneeOrderByWithAggregationInput[]
+  by: Prisma.DecisionfinanneeScalarFieldEnum[] | Prisma.DecisionfinanneeScalarFieldEnum
+  having?: Prisma.decisionfinanneeScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: DecisionFinAnneeCountAggregateInputType | true
-  _min?: DecisionFinAnneeMinAggregateInputType
-  _max?: DecisionFinAnneeMaxAggregateInputType
+  _count?: DecisionfinanneeCountAggregateInputType | true
+  _min?: DecisionfinanneeMinAggregateInputType
+  _max?: DecisionfinanneeMaxAggregateInputType
 }
 
-export type DecisionFinAnneeGroupByOutputType = {
+export type DecisionfinanneeGroupByOutputType = {
   id: string
-  decision: $Enums.DecisionFinAnneeType
+  decision: $Enums.decisionfinannee_decision
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   createdAt: Date
   updatedAt: Date
-  _count: DecisionFinAnneeCountAggregateOutputType | null
-  _min: DecisionFinAnneeMinAggregateOutputType | null
-  _max: DecisionFinAnneeMaxAggregateOutputType | null
+  _count: DecisionfinanneeCountAggregateOutputType | null
+  _min: DecisionfinanneeMinAggregateOutputType | null
+  _max: DecisionfinanneeMaxAggregateOutputType | null
 }
 
-export type GetDecisionFinAnneeGroupByPayload<T extends DecisionFinAnneeGroupByArgs> = Prisma.PrismaPromise<
+export type GetDecisionfinanneeGroupByPayload<T extends decisionfinanneeGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<DecisionFinAnneeGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<DecisionfinanneeGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof DecisionFinAnneeGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof DecisionfinanneeGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], DecisionFinAnneeGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], DecisionFinAnneeGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], DecisionfinanneeGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], DecisionfinanneeGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type DecisionFinAnneeWhereInput = {
-  AND?: Prisma.DecisionFinAnneeWhereInput | Prisma.DecisionFinAnneeWhereInput[]
-  OR?: Prisma.DecisionFinAnneeWhereInput[]
-  NOT?: Prisma.DecisionFinAnneeWhereInput | Prisma.DecisionFinAnneeWhereInput[]
-  id?: Prisma.StringFilter<"DecisionFinAnnee"> | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFilter<"DecisionFinAnnee"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringFilter<"DecisionFinAnnee"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"DecisionFinAnnee"> | string
-  createdAt?: Prisma.DateTimeFilter<"DecisionFinAnnee"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"DecisionFinAnnee"> | Date | string
-  incscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
+export type decisionfinanneeWhereInput = {
+  AND?: Prisma.decisionfinanneeWhereInput | Prisma.decisionfinanneeWhereInput[]
+  OR?: Prisma.decisionfinanneeWhereInput[]
+  NOT?: Prisma.decisionfinanneeWhereInput | Prisma.decisionfinanneeWhereInput[]
+  id?: Prisma.StringFilter<"decisionfinannee"> | string
+  decision?: Prisma.Enumdecisionfinannee_decisionFilter<"decisionfinannee"> | $Enums.decisionfinannee_decision
+  inscriptionApprenantId?: Prisma.StringFilter<"decisionfinannee"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"decisionfinannee"> | string
+  createdAt?: Prisma.DateTimeFilter<"decisionfinannee"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"decisionfinannee"> | Date | string
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
 }
 
-export type DecisionFinAnneeOrderByWithRelationInput = {
+export type decisionfinanneeOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   decision?: Prisma.SortOrder
   inscriptionApprenantId?: Prisma.SortOrder
   inscriptionAnneeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  incscription?: Prisma.InscriptionOrderByWithRelationInput
-  _relevance?: Prisma.DecisionFinAnneeOrderByRelevanceInput
+  inscription?: Prisma.inscriptionOrderByWithRelationInput
+  _relevance?: Prisma.decisionfinanneeOrderByRelevanceInput
 }
 
-export type DecisionFinAnneeWhereUniqueInput = Prisma.AtLeast<{
+export type decisionfinanneeWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  inscriptionApprenantId_inscriptionAnneeId?: Prisma.DecisionFinAnneeInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput
-  AND?: Prisma.DecisionFinAnneeWhereInput | Prisma.DecisionFinAnneeWhereInput[]
-  OR?: Prisma.DecisionFinAnneeWhereInput[]
-  NOT?: Prisma.DecisionFinAnneeWhereInput | Prisma.DecisionFinAnneeWhereInput[]
-  decision?: Prisma.EnumDecisionFinAnneeTypeFilter<"DecisionFinAnnee"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringFilter<"DecisionFinAnnee"> | string
-  inscriptionAnneeId?: Prisma.StringFilter<"DecisionFinAnnee"> | string
-  createdAt?: Prisma.DateTimeFilter<"DecisionFinAnnee"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"DecisionFinAnnee"> | Date | string
-  incscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.InscriptionWhereInput>
+  inscriptionApprenantId_inscriptionAnneeId?: Prisma.decisionfinanneeInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput
+  AND?: Prisma.decisionfinanneeWhereInput | Prisma.decisionfinanneeWhereInput[]
+  OR?: Prisma.decisionfinanneeWhereInput[]
+  NOT?: Prisma.decisionfinanneeWhereInput | Prisma.decisionfinanneeWhereInput[]
+  decision?: Prisma.Enumdecisionfinannee_decisionFilter<"decisionfinannee"> | $Enums.decisionfinannee_decision
+  inscriptionApprenantId?: Prisma.StringFilter<"decisionfinannee"> | string
+  inscriptionAnneeId?: Prisma.StringFilter<"decisionfinannee"> | string
+  createdAt?: Prisma.DateTimeFilter<"decisionfinannee"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"decisionfinannee"> | Date | string
+  inscription?: Prisma.XOR<Prisma.InscriptionScalarRelationFilter, Prisma.inscriptionWhereInput>
 }, "id" | "inscriptionApprenantId_inscriptionAnneeId">
 
-export type DecisionFinAnneeOrderByWithAggregationInput = {
+export type decisionfinanneeOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   decision?: Prisma.SortOrder
   inscriptionApprenantId?: Prisma.SortOrder
   inscriptionAnneeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.DecisionFinAnneeCountOrderByAggregateInput
-  _max?: Prisma.DecisionFinAnneeMaxOrderByAggregateInput
-  _min?: Prisma.DecisionFinAnneeMinOrderByAggregateInput
+  _count?: Prisma.decisionfinanneeCountOrderByAggregateInput
+  _max?: Prisma.decisionfinanneeMaxOrderByAggregateInput
+  _min?: Prisma.decisionfinanneeMinOrderByAggregateInput
 }
 
-export type DecisionFinAnneeScalarWhereWithAggregatesInput = {
-  AND?: Prisma.DecisionFinAnneeScalarWhereWithAggregatesInput | Prisma.DecisionFinAnneeScalarWhereWithAggregatesInput[]
-  OR?: Prisma.DecisionFinAnneeScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.DecisionFinAnneeScalarWhereWithAggregatesInput | Prisma.DecisionFinAnneeScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"DecisionFinAnnee"> | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeWithAggregatesFilter<"DecisionFinAnnee"> | $Enums.DecisionFinAnneeType
-  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"DecisionFinAnnee"> | string
-  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"DecisionFinAnnee"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"DecisionFinAnnee"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"DecisionFinAnnee"> | Date | string
+export type decisionfinanneeScalarWhereWithAggregatesInput = {
+  AND?: Prisma.decisionfinanneeScalarWhereWithAggregatesInput | Prisma.decisionfinanneeScalarWhereWithAggregatesInput[]
+  OR?: Prisma.decisionfinanneeScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.decisionfinanneeScalarWhereWithAggregatesInput | Prisma.decisionfinanneeScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"decisionfinannee"> | string
+  decision?: Prisma.Enumdecisionfinannee_decisionWithAggregatesFilter<"decisionfinannee"> | $Enums.decisionfinannee_decision
+  inscriptionApprenantId?: Prisma.StringWithAggregatesFilter<"decisionfinannee"> | string
+  inscriptionAnneeId?: Prisma.StringWithAggregatesFilter<"decisionfinannee"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"decisionfinannee"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"decisionfinannee"> | Date | string
 }
 
-export type DecisionFinAnneeCreateInput = {
+export type decisionfinanneeCreateInput = {
   id?: string
-  decision: $Enums.DecisionFinAnneeType
+  decision: $Enums.decisionfinannee_decision
   createdAt?: Date | string
   updatedAt?: Date | string
-  incscription: Prisma.InscriptionCreateNestedOneWithoutDecisionFinaleInput
+  inscription: Prisma.inscriptionCreateNestedOneWithoutDecisionfinanneeInput
 }
 
-export type DecisionFinAnneeUncheckedCreateInput = {
+export type decisionfinanneeUncheckedCreateInput = {
   id?: string
-  decision: $Enums.DecisionFinAnneeType
+  decision: $Enums.decisionfinannee_decision
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type DecisionFinAnneeUpdateInput = {
+export type decisionfinanneeUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decision?: Prisma.Enumdecisionfinannee_decisionFieldUpdateOperationsInput | $Enums.decisionfinannee_decision
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  incscription?: Prisma.InscriptionUpdateOneRequiredWithoutDecisionFinaleNestedInput
+  inscription?: Prisma.inscriptionUpdateOneRequiredWithoutDecisionfinanneeNestedInput
 }
 
-export type DecisionFinAnneeUncheckedUpdateInput = {
+export type decisionfinanneeUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decision?: Prisma.Enumdecisionfinannee_decisionFieldUpdateOperationsInput | $Enums.decisionfinannee_decision
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DecisionFinAnneeCreateManyInput = {
+export type decisionfinanneeCreateManyInput = {
   id?: string
-  decision: $Enums.DecisionFinAnneeType
+  decision: $Enums.decisionfinannee_decision
   inscriptionApprenantId: string
   inscriptionAnneeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type DecisionFinAnneeUpdateManyMutationInput = {
+export type decisionfinanneeUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decision?: Prisma.Enumdecisionfinannee_decisionFieldUpdateOperationsInput | $Enums.decisionfinannee_decision
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DecisionFinAnneeUncheckedUpdateManyInput = {
+export type decisionfinanneeUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decision?: Prisma.Enumdecisionfinannee_decisionFieldUpdateOperationsInput | $Enums.decisionfinannee_decision
   inscriptionApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
   inscriptionAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DecisionFinAnneeNullableScalarRelationFilter = {
-  is?: Prisma.DecisionFinAnneeWhereInput | null
-  isNot?: Prisma.DecisionFinAnneeWhereInput | null
-}
-
-export type DecisionFinAnneeOrderByRelevanceInput = {
-  fields: Prisma.DecisionFinAnneeOrderByRelevanceFieldEnum | Prisma.DecisionFinAnneeOrderByRelevanceFieldEnum[]
+export type decisionfinanneeOrderByRelevanceInput = {
+  fields: Prisma.decisionfinanneeOrderByRelevanceFieldEnum | Prisma.decisionfinanneeOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type DecisionFinAnneeInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput = {
+export type decisionfinanneeInscriptionApprenantIdInscriptionAnneeIdCompoundUniqueInput = {
   inscriptionApprenantId: string
   inscriptionAnneeId: string
 }
 
-export type DecisionFinAnneeCountOrderByAggregateInput = {
+export type decisionfinanneeCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   decision?: Prisma.SortOrder
   inscriptionApprenantId?: Prisma.SortOrder
@@ -326,7 +321,7 @@ export type DecisionFinAnneeCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DecisionFinAnneeMaxOrderByAggregateInput = {
+export type decisionfinanneeMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   decision?: Prisma.SortOrder
   inscriptionApprenantId?: Prisma.SortOrder
@@ -335,7 +330,7 @@ export type DecisionFinAnneeMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DecisionFinAnneeMinOrderByAggregateInput = {
+export type decisionfinanneeMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   decision?: Prisma.SortOrder
   inscriptionApprenantId?: Prisma.SortOrder
@@ -344,97 +339,106 @@ export type DecisionFinAnneeMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DecisionFinAnneeCreateNestedOneWithoutIncscriptionInput = {
-  create?: Prisma.XOR<Prisma.DecisionFinAnneeCreateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput>
-  connectOrCreate?: Prisma.DecisionFinAnneeCreateOrConnectWithoutIncscriptionInput
-  connect?: Prisma.DecisionFinAnneeWhereUniqueInput
+export type DecisionfinanneeNullableScalarRelationFilter = {
+  is?: Prisma.decisionfinanneeWhereInput | null
+  isNot?: Prisma.decisionfinanneeWhereInput | null
 }
 
-export type DecisionFinAnneeUncheckedCreateNestedOneWithoutIncscriptionInput = {
-  create?: Prisma.XOR<Prisma.DecisionFinAnneeCreateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput>
-  connectOrCreate?: Prisma.DecisionFinAnneeCreateOrConnectWithoutIncscriptionInput
-  connect?: Prisma.DecisionFinAnneeWhereUniqueInput
+export type Enumdecisionfinannee_decisionFieldUpdateOperationsInput = {
+  set?: $Enums.decisionfinannee_decision
 }
 
-export type DecisionFinAnneeUpdateOneWithoutIncscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.DecisionFinAnneeCreateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput>
-  connectOrCreate?: Prisma.DecisionFinAnneeCreateOrConnectWithoutIncscriptionInput
-  upsert?: Prisma.DecisionFinAnneeUpsertWithoutIncscriptionInput
-  disconnect?: Prisma.DecisionFinAnneeWhereInput | boolean
-  delete?: Prisma.DecisionFinAnneeWhereInput | boolean
-  connect?: Prisma.DecisionFinAnneeWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.DecisionFinAnneeUpdateToOneWithWhereWithoutIncscriptionInput, Prisma.DecisionFinAnneeUpdateWithoutIncscriptionInput>, Prisma.DecisionFinAnneeUncheckedUpdateWithoutIncscriptionInput>
+export type decisionfinanneeCreateNestedOneWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.decisionfinanneeCreateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.decisionfinanneeCreateOrConnectWithoutInscriptionInput
+  connect?: Prisma.decisionfinanneeWhereUniqueInput
 }
 
-export type DecisionFinAnneeUncheckedUpdateOneWithoutIncscriptionNestedInput = {
-  create?: Prisma.XOR<Prisma.DecisionFinAnneeCreateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput>
-  connectOrCreate?: Prisma.DecisionFinAnneeCreateOrConnectWithoutIncscriptionInput
-  upsert?: Prisma.DecisionFinAnneeUpsertWithoutIncscriptionInput
-  disconnect?: Prisma.DecisionFinAnneeWhereInput | boolean
-  delete?: Prisma.DecisionFinAnneeWhereInput | boolean
-  connect?: Prisma.DecisionFinAnneeWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.DecisionFinAnneeUpdateToOneWithWhereWithoutIncscriptionInput, Prisma.DecisionFinAnneeUpdateWithoutIncscriptionInput>, Prisma.DecisionFinAnneeUncheckedUpdateWithoutIncscriptionInput>
+export type decisionfinanneeUncheckedCreateNestedOneWithoutInscriptionInput = {
+  create?: Prisma.XOR<Prisma.decisionfinanneeCreateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.decisionfinanneeCreateOrConnectWithoutInscriptionInput
+  connect?: Prisma.decisionfinanneeWhereUniqueInput
 }
 
-export type DecisionFinAnneeCreateWithoutIncscriptionInput = {
+export type decisionfinanneeUpdateOneWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.decisionfinanneeCreateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.decisionfinanneeCreateOrConnectWithoutInscriptionInput
+  upsert?: Prisma.decisionfinanneeUpsertWithoutInscriptionInput
+  disconnect?: Prisma.decisionfinanneeWhereInput | boolean
+  delete?: Prisma.decisionfinanneeWhereInput | boolean
+  connect?: Prisma.decisionfinanneeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.decisionfinanneeUpdateToOneWithWhereWithoutInscriptionInput, Prisma.decisionfinanneeUpdateWithoutInscriptionInput>, Prisma.decisionfinanneeUncheckedUpdateWithoutInscriptionInput>
+}
+
+export type decisionfinanneeUncheckedUpdateOneWithoutInscriptionNestedInput = {
+  create?: Prisma.XOR<Prisma.decisionfinanneeCreateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedCreateWithoutInscriptionInput>
+  connectOrCreate?: Prisma.decisionfinanneeCreateOrConnectWithoutInscriptionInput
+  upsert?: Prisma.decisionfinanneeUpsertWithoutInscriptionInput
+  disconnect?: Prisma.decisionfinanneeWhereInput | boolean
+  delete?: Prisma.decisionfinanneeWhereInput | boolean
+  connect?: Prisma.decisionfinanneeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.decisionfinanneeUpdateToOneWithWhereWithoutInscriptionInput, Prisma.decisionfinanneeUpdateWithoutInscriptionInput>, Prisma.decisionfinanneeUncheckedUpdateWithoutInscriptionInput>
+}
+
+export type decisionfinanneeCreateWithoutInscriptionInput = {
   id?: string
-  decision: $Enums.DecisionFinAnneeType
+  decision: $Enums.decisionfinannee_decision
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput = {
+export type decisionfinanneeUncheckedCreateWithoutInscriptionInput = {
   id?: string
-  decision: $Enums.DecisionFinAnneeType
+  decision: $Enums.decisionfinannee_decision
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type DecisionFinAnneeCreateOrConnectWithoutIncscriptionInput = {
-  where: Prisma.DecisionFinAnneeWhereUniqueInput
-  create: Prisma.XOR<Prisma.DecisionFinAnneeCreateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput>
+export type decisionfinanneeCreateOrConnectWithoutInscriptionInput = {
+  where: Prisma.decisionfinanneeWhereUniqueInput
+  create: Prisma.XOR<Prisma.decisionfinanneeCreateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedCreateWithoutInscriptionInput>
 }
 
-export type DecisionFinAnneeUpsertWithoutIncscriptionInput = {
-  update: Prisma.XOR<Prisma.DecisionFinAnneeUpdateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedUpdateWithoutIncscriptionInput>
-  create: Prisma.XOR<Prisma.DecisionFinAnneeCreateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedCreateWithoutIncscriptionInput>
-  where?: Prisma.DecisionFinAnneeWhereInput
+export type decisionfinanneeUpsertWithoutInscriptionInput = {
+  update: Prisma.XOR<Prisma.decisionfinanneeUpdateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedUpdateWithoutInscriptionInput>
+  create: Prisma.XOR<Prisma.decisionfinanneeCreateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedCreateWithoutInscriptionInput>
+  where?: Prisma.decisionfinanneeWhereInput
 }
 
-export type DecisionFinAnneeUpdateToOneWithWhereWithoutIncscriptionInput = {
-  where?: Prisma.DecisionFinAnneeWhereInput
-  data: Prisma.XOR<Prisma.DecisionFinAnneeUpdateWithoutIncscriptionInput, Prisma.DecisionFinAnneeUncheckedUpdateWithoutIncscriptionInput>
+export type decisionfinanneeUpdateToOneWithWhereWithoutInscriptionInput = {
+  where?: Prisma.decisionfinanneeWhereInput
+  data: Prisma.XOR<Prisma.decisionfinanneeUpdateWithoutInscriptionInput, Prisma.decisionfinanneeUncheckedUpdateWithoutInscriptionInput>
 }
 
-export type DecisionFinAnneeUpdateWithoutIncscriptionInput = {
+export type decisionfinanneeUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decision?: Prisma.Enumdecisionfinannee_decisionFieldUpdateOperationsInput | $Enums.decisionfinannee_decision
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DecisionFinAnneeUncheckedUpdateWithoutIncscriptionInput = {
+export type decisionfinanneeUncheckedUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  decision?: Prisma.EnumDecisionFinAnneeTypeFieldUpdateOperationsInput | $Enums.DecisionFinAnneeType
+  decision?: Prisma.Enumdecisionfinannee_decisionFieldUpdateOperationsInput | $Enums.decisionfinannee_decision
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
 
-export type DecisionFinAnneeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type decisionfinanneeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   decision?: boolean
   inscriptionApprenantId?: boolean
   inscriptionAnneeId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  incscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["decisionFinAnnee"]>
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["decisionfinannee"]>
 
 
 
-export type DecisionFinAnneeSelectScalar = {
+export type decisionfinanneeSelectScalar = {
   id?: boolean
   decision?: boolean
   inscriptionApprenantId?: boolean
@@ -443,160 +447,160 @@ export type DecisionFinAnneeSelectScalar = {
   updatedAt?: boolean
 }
 
-export type DecisionFinAnneeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "decision" | "inscriptionApprenantId" | "inscriptionAnneeId" | "createdAt" | "updatedAt", ExtArgs["result"]["decisionFinAnnee"]>
-export type DecisionFinAnneeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  incscription?: boolean | Prisma.InscriptionDefaultArgs<ExtArgs>
+export type decisionfinanneeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "decision" | "inscriptionApprenantId" | "inscriptionAnneeId" | "createdAt" | "updatedAt", ExtArgs["result"]["decisionfinannee"]>
+export type decisionfinanneeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  inscription?: boolean | Prisma.inscriptionDefaultArgs<ExtArgs>
 }
 
-export type $DecisionFinAnneePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "DecisionFinAnnee"
+export type $decisionfinanneePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "decisionfinannee"
   objects: {
-    incscription: Prisma.$InscriptionPayload<ExtArgs>
+    inscription: Prisma.$inscriptionPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    decision: $Enums.DecisionFinAnneeType
+    decision: $Enums.decisionfinannee_decision
     inscriptionApprenantId: string
     inscriptionAnneeId: string
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["decisionFinAnnee"]>
+  }, ExtArgs["result"]["decisionfinannee"]>
   composites: {}
 }
 
-export type DecisionFinAnneeGetPayload<S extends boolean | null | undefined | DecisionFinAnneeDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload, S>
+export type decisionfinanneeGetPayload<S extends boolean | null | undefined | decisionfinanneeDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload, S>
 
-export type DecisionFinAnneeCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<DecisionFinAnneeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: DecisionFinAnneeCountAggregateInputType | true
+export type decisionfinanneeCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<decisionfinanneeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: DecisionfinanneeCountAggregateInputType | true
   }
 
-export interface DecisionFinAnneeDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['DecisionFinAnnee'], meta: { name: 'DecisionFinAnnee' } }
+export interface decisionfinanneeDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['decisionfinannee'], meta: { name: 'decisionfinannee' } }
   /**
-   * Find zero or one DecisionFinAnnee that matches the filter.
-   * @param {DecisionFinAnneeFindUniqueArgs} args - Arguments to find a DecisionFinAnnee
+   * Find zero or one Decisionfinannee that matches the filter.
+   * @param {decisionfinanneeFindUniqueArgs} args - Arguments to find a Decisionfinannee
    * @example
-   * // Get one DecisionFinAnnee
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.findUnique({
+   * // Get one Decisionfinannee
+   * const decisionfinannee = await prisma.decisionfinannee.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends DecisionFinAnneeFindUniqueArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeFindUniqueArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends decisionfinanneeFindUniqueArgs>(args: Prisma.SelectSubset<T, decisionfinanneeFindUniqueArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one DecisionFinAnnee that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Decisionfinannee that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {DecisionFinAnneeFindUniqueOrThrowArgs} args - Arguments to find a DecisionFinAnnee
+   * @param {decisionfinanneeFindUniqueOrThrowArgs} args - Arguments to find a Decisionfinannee
    * @example
-   * // Get one DecisionFinAnnee
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.findUniqueOrThrow({
+   * // Get one Decisionfinannee
+   * const decisionfinannee = await prisma.decisionfinannee.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends DecisionFinAnneeFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends decisionfinanneeFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, decisionfinanneeFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first DecisionFinAnnee that matches the filter.
+   * Find the first Decisionfinannee that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeFindFirstArgs} args - Arguments to find a DecisionFinAnnee
+   * @param {decisionfinanneeFindFirstArgs} args - Arguments to find a Decisionfinannee
    * @example
-   * // Get one DecisionFinAnnee
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.findFirst({
+   * // Get one Decisionfinannee
+   * const decisionfinannee = await prisma.decisionfinannee.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends DecisionFinAnneeFindFirstArgs>(args?: Prisma.SelectSubset<T, DecisionFinAnneeFindFirstArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends decisionfinanneeFindFirstArgs>(args?: Prisma.SelectSubset<T, decisionfinanneeFindFirstArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first DecisionFinAnnee that matches the filter or
+   * Find the first Decisionfinannee that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeFindFirstOrThrowArgs} args - Arguments to find a DecisionFinAnnee
+   * @param {decisionfinanneeFindFirstOrThrowArgs} args - Arguments to find a Decisionfinannee
    * @example
-   * // Get one DecisionFinAnnee
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.findFirstOrThrow({
+   * // Get one Decisionfinannee
+   * const decisionfinannee = await prisma.decisionfinannee.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends DecisionFinAnneeFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, DecisionFinAnneeFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends decisionfinanneeFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, decisionfinanneeFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more DecisionFinAnnees that matches the filter.
+   * Find zero or more Decisionfinannees that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {decisionfinanneeFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all DecisionFinAnnees
-   * const decisionFinAnnees = await prisma.decisionFinAnnee.findMany()
+   * // Get all Decisionfinannees
+   * const decisionfinannees = await prisma.decisionfinannee.findMany()
    * 
-   * // Get first 10 DecisionFinAnnees
-   * const decisionFinAnnees = await prisma.decisionFinAnnee.findMany({ take: 10 })
+   * // Get first 10 Decisionfinannees
+   * const decisionfinannees = await prisma.decisionfinannee.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const decisionFinAnneeWithIdOnly = await prisma.decisionFinAnnee.findMany({ select: { id: true } })
+   * const decisionfinanneeWithIdOnly = await prisma.decisionfinannee.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends DecisionFinAnneeFindManyArgs>(args?: Prisma.SelectSubset<T, DecisionFinAnneeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends decisionfinanneeFindManyArgs>(args?: Prisma.SelectSubset<T, decisionfinanneeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a DecisionFinAnnee.
-   * @param {DecisionFinAnneeCreateArgs} args - Arguments to create a DecisionFinAnnee.
+   * Create a Decisionfinannee.
+   * @param {decisionfinanneeCreateArgs} args - Arguments to create a Decisionfinannee.
    * @example
-   * // Create one DecisionFinAnnee
-   * const DecisionFinAnnee = await prisma.decisionFinAnnee.create({
+   * // Create one Decisionfinannee
+   * const Decisionfinannee = await prisma.decisionfinannee.create({
    *   data: {
-   *     // ... data to create a DecisionFinAnnee
+   *     // ... data to create a Decisionfinannee
    *   }
    * })
    * 
    */
-  create<T extends DecisionFinAnneeCreateArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeCreateArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends decisionfinanneeCreateArgs>(args: Prisma.SelectSubset<T, decisionfinanneeCreateArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many DecisionFinAnnees.
-   * @param {DecisionFinAnneeCreateManyArgs} args - Arguments to create many DecisionFinAnnees.
+   * Create many Decisionfinannees.
+   * @param {decisionfinanneeCreateManyArgs} args - Arguments to create many Decisionfinannees.
    * @example
-   * // Create many DecisionFinAnnees
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.createMany({
+   * // Create many Decisionfinannees
+   * const decisionfinannee = await prisma.decisionfinannee.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends DecisionFinAnneeCreateManyArgs>(args?: Prisma.SelectSubset<T, DecisionFinAnneeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends decisionfinanneeCreateManyArgs>(args?: Prisma.SelectSubset<T, decisionfinanneeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a DecisionFinAnnee.
-   * @param {DecisionFinAnneeDeleteArgs} args - Arguments to delete one DecisionFinAnnee.
+   * Delete a Decisionfinannee.
+   * @param {decisionfinanneeDeleteArgs} args - Arguments to delete one Decisionfinannee.
    * @example
-   * // Delete one DecisionFinAnnee
-   * const DecisionFinAnnee = await prisma.decisionFinAnnee.delete({
+   * // Delete one Decisionfinannee
+   * const Decisionfinannee = await prisma.decisionfinannee.delete({
    *   where: {
-   *     // ... filter to delete one DecisionFinAnnee
+   *     // ... filter to delete one Decisionfinannee
    *   }
    * })
    * 
    */
-  delete<T extends DecisionFinAnneeDeleteArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeDeleteArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends decisionfinanneeDeleteArgs>(args: Prisma.SelectSubset<T, decisionfinanneeDeleteArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one DecisionFinAnnee.
-   * @param {DecisionFinAnneeUpdateArgs} args - Arguments to update one DecisionFinAnnee.
+   * Update one Decisionfinannee.
+   * @param {decisionfinanneeUpdateArgs} args - Arguments to update one Decisionfinannee.
    * @example
-   * // Update one DecisionFinAnnee
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.update({
+   * // Update one Decisionfinannee
+   * const decisionfinannee = await prisma.decisionfinannee.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -606,30 +610,30 @@ export interface DecisionFinAnneeDelegate<ExtArgs extends runtime.Types.Extensio
    * })
    * 
    */
-  update<T extends DecisionFinAnneeUpdateArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeUpdateArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends decisionfinanneeUpdateArgs>(args: Prisma.SelectSubset<T, decisionfinanneeUpdateArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more DecisionFinAnnees.
-   * @param {DecisionFinAnneeDeleteManyArgs} args - Arguments to filter DecisionFinAnnees to delete.
+   * Delete zero or more Decisionfinannees.
+   * @param {decisionfinanneeDeleteManyArgs} args - Arguments to filter Decisionfinannees to delete.
    * @example
-   * // Delete a few DecisionFinAnnees
-   * const { count } = await prisma.decisionFinAnnee.deleteMany({
+   * // Delete a few Decisionfinannees
+   * const { count } = await prisma.decisionfinannee.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends DecisionFinAnneeDeleteManyArgs>(args?: Prisma.SelectSubset<T, DecisionFinAnneeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends decisionfinanneeDeleteManyArgs>(args?: Prisma.SelectSubset<T, decisionfinanneeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more DecisionFinAnnees.
+   * Update zero or more Decisionfinannees.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {decisionfinanneeUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many DecisionFinAnnees
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.updateMany({
+   * // Update many Decisionfinannees
+   * const decisionfinannee = await prisma.decisionfinannee.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -639,56 +643,56 @@ export interface DecisionFinAnneeDelegate<ExtArgs extends runtime.Types.Extensio
    * })
    * 
    */
-  updateMany<T extends DecisionFinAnneeUpdateManyArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends decisionfinanneeUpdateManyArgs>(args: Prisma.SelectSubset<T, decisionfinanneeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one DecisionFinAnnee.
-   * @param {DecisionFinAnneeUpsertArgs} args - Arguments to update or create a DecisionFinAnnee.
+   * Create or update one Decisionfinannee.
+   * @param {decisionfinanneeUpsertArgs} args - Arguments to update or create a Decisionfinannee.
    * @example
-   * // Update or create a DecisionFinAnnee
-   * const decisionFinAnnee = await prisma.decisionFinAnnee.upsert({
+   * // Update or create a Decisionfinannee
+   * const decisionfinannee = await prisma.decisionfinannee.upsert({
    *   create: {
-   *     // ... data to create a DecisionFinAnnee
+   *     // ... data to create a Decisionfinannee
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the DecisionFinAnnee we want to update
+   *     // ... the filter for the Decisionfinannee we want to update
    *   }
    * })
    */
-  upsert<T extends DecisionFinAnneeUpsertArgs>(args: Prisma.SelectSubset<T, DecisionFinAnneeUpsertArgs<ExtArgs>>): Prisma.Prisma__DecisionFinAnneeClient<runtime.Types.Result.GetResult<Prisma.$DecisionFinAnneePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends decisionfinanneeUpsertArgs>(args: Prisma.SelectSubset<T, decisionfinanneeUpsertArgs<ExtArgs>>): Prisma.Prisma__decisionfinanneeClient<runtime.Types.Result.GetResult<Prisma.$decisionfinanneePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of DecisionFinAnnees.
+   * Count the number of Decisionfinannees.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeCountArgs} args - Arguments to filter DecisionFinAnnees to count.
+   * @param {decisionfinanneeCountArgs} args - Arguments to filter Decisionfinannees to count.
    * @example
-   * // Count the number of DecisionFinAnnees
-   * const count = await prisma.decisionFinAnnee.count({
+   * // Count the number of Decisionfinannees
+   * const count = await prisma.decisionfinannee.count({
    *   where: {
-   *     // ... the filter for the DecisionFinAnnees we want to count
+   *     // ... the filter for the Decisionfinannees we want to count
    *   }
    * })
   **/
-  count<T extends DecisionFinAnneeCountArgs>(
-    args?: Prisma.Subset<T, DecisionFinAnneeCountArgs>,
+  count<T extends decisionfinanneeCountArgs>(
+    args?: Prisma.Subset<T, decisionfinanneeCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], DecisionFinAnneeCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], DecisionfinanneeCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a DecisionFinAnnee.
+   * Allows you to perform aggregations operations on a Decisionfinannee.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {DecisionfinanneeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -708,13 +712,13 @@ export interface DecisionFinAnneeDelegate<ExtArgs extends runtime.Types.Extensio
    *   take: 10,
    * })
   **/
-  aggregate<T extends DecisionFinAnneeAggregateArgs>(args: Prisma.Subset<T, DecisionFinAnneeAggregateArgs>): Prisma.PrismaPromise<GetDecisionFinAnneeAggregateType<T>>
+  aggregate<T extends DecisionfinanneeAggregateArgs>(args: Prisma.Subset<T, DecisionfinanneeAggregateArgs>): Prisma.PrismaPromise<GetDecisionfinanneeAggregateType<T>>
 
   /**
-   * Group by DecisionFinAnnee.
+   * Group by Decisionfinannee.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DecisionFinAnneeGroupByArgs} args - Group by arguments.
+   * @param {decisionfinanneeGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -729,14 +733,14 @@ export interface DecisionFinAnneeDelegate<ExtArgs extends runtime.Types.Extensio
    * 
   **/
   groupBy<
-    T extends DecisionFinAnneeGroupByArgs,
+    T extends decisionfinanneeGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: DecisionFinAnneeGroupByArgs['orderBy'] }
-      : { orderBy?: DecisionFinAnneeGroupByArgs['orderBy'] },
+      ? { orderBy: decisionfinanneeGroupByArgs['orderBy'] }
+      : { orderBy?: decisionfinanneeGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -785,22 +789,22 @@ export interface DecisionFinAnneeDelegate<ExtArgs extends runtime.Types.Extensio
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, DecisionFinAnneeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDecisionFinAnneeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, decisionfinanneeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDecisionfinanneeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the DecisionFinAnnee model
+ * Fields of the decisionfinannee model
  */
-readonly fields: DecisionFinAnneeFieldRefs;
+readonly fields: decisionfinanneeFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for DecisionFinAnnee.
+ * The delegate class that acts as a "Promise-like" for decisionfinannee.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__DecisionFinAnneeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__decisionfinanneeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  incscription<T extends Prisma.InscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__InscriptionClient<runtime.Types.Result.GetResult<Prisma.$InscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  inscription<T extends Prisma.inscriptionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.inscriptionDefaultArgs<ExtArgs>>): Prisma.Prisma__inscriptionClient<runtime.Types.Result.GetResult<Prisma.$inscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -827,376 +831,376 @@ export interface Prisma__DecisionFinAnneeClient<T, Null = never, ExtArgs extends
 
 
 /**
- * Fields of the DecisionFinAnnee model
+ * Fields of the decisionfinannee model
  */
-export interface DecisionFinAnneeFieldRefs {
-  readonly id: Prisma.FieldRef<"DecisionFinAnnee", 'String'>
-  readonly decision: Prisma.FieldRef<"DecisionFinAnnee", 'DecisionFinAnneeType'>
-  readonly inscriptionApprenantId: Prisma.FieldRef<"DecisionFinAnnee", 'String'>
-  readonly inscriptionAnneeId: Prisma.FieldRef<"DecisionFinAnnee", 'String'>
-  readonly createdAt: Prisma.FieldRef<"DecisionFinAnnee", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"DecisionFinAnnee", 'DateTime'>
+export interface decisionfinanneeFieldRefs {
+  readonly id: Prisma.FieldRef<"decisionfinannee", 'String'>
+  readonly decision: Prisma.FieldRef<"decisionfinannee", 'decisionfinannee_decision'>
+  readonly inscriptionApprenantId: Prisma.FieldRef<"decisionfinannee", 'String'>
+  readonly inscriptionAnneeId: Prisma.FieldRef<"decisionfinannee", 'String'>
+  readonly createdAt: Prisma.FieldRef<"decisionfinannee", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"decisionfinannee", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * DecisionFinAnnee findUnique
+ * decisionfinannee findUnique
  */
-export type DecisionFinAnneeFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * Filter, which DecisionFinAnnee to fetch.
+   * Filter, which decisionfinannee to fetch.
    */
-  where: Prisma.DecisionFinAnneeWhereUniqueInput
+  where: Prisma.decisionfinanneeWhereUniqueInput
 }
 
 /**
- * DecisionFinAnnee findUniqueOrThrow
+ * decisionfinannee findUniqueOrThrow
  */
-export type DecisionFinAnneeFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * Filter, which DecisionFinAnnee to fetch.
+   * Filter, which decisionfinannee to fetch.
    */
-  where: Prisma.DecisionFinAnneeWhereUniqueInput
+  where: Prisma.decisionfinanneeWhereUniqueInput
 }
 
 /**
- * DecisionFinAnnee findFirst
+ * decisionfinannee findFirst
  */
-export type DecisionFinAnneeFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * Filter, which DecisionFinAnnee to fetch.
+   * Filter, which decisionfinannee to fetch.
    */
-  where?: Prisma.DecisionFinAnneeWhereInput
+  where?: Prisma.decisionfinanneeWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DecisionFinAnnees to fetch.
+   * Determine the order of decisionfinannees to fetch.
    */
-  orderBy?: Prisma.DecisionFinAnneeOrderByWithRelationInput | Prisma.DecisionFinAnneeOrderByWithRelationInput[]
+  orderBy?: Prisma.decisionfinanneeOrderByWithRelationInput | Prisma.decisionfinanneeOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for DecisionFinAnnees.
+   * Sets the position for searching for decisionfinannees.
    */
-  cursor?: Prisma.DecisionFinAnneeWhereUniqueInput
+  cursor?: Prisma.decisionfinanneeWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DecisionFinAnnees from the position of the cursor.
+   * Take `±n` decisionfinannees from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DecisionFinAnnees.
+   * Skip the first `n` decisionfinannees.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of DecisionFinAnnees.
+   * Filter by unique combinations of decisionfinannees.
    */
-  distinct?: Prisma.DecisionFinAnneeScalarFieldEnum | Prisma.DecisionFinAnneeScalarFieldEnum[]
+  distinct?: Prisma.DecisionfinanneeScalarFieldEnum | Prisma.DecisionfinanneeScalarFieldEnum[]
 }
 
 /**
- * DecisionFinAnnee findFirstOrThrow
+ * decisionfinannee findFirstOrThrow
  */
-export type DecisionFinAnneeFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * Filter, which DecisionFinAnnee to fetch.
+   * Filter, which decisionfinannee to fetch.
    */
-  where?: Prisma.DecisionFinAnneeWhereInput
+  where?: Prisma.decisionfinanneeWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DecisionFinAnnees to fetch.
+   * Determine the order of decisionfinannees to fetch.
    */
-  orderBy?: Prisma.DecisionFinAnneeOrderByWithRelationInput | Prisma.DecisionFinAnneeOrderByWithRelationInput[]
+  orderBy?: Prisma.decisionfinanneeOrderByWithRelationInput | Prisma.decisionfinanneeOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for DecisionFinAnnees.
+   * Sets the position for searching for decisionfinannees.
    */
-  cursor?: Prisma.DecisionFinAnneeWhereUniqueInput
+  cursor?: Prisma.decisionfinanneeWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DecisionFinAnnees from the position of the cursor.
+   * Take `±n` decisionfinannees from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DecisionFinAnnees.
+   * Skip the first `n` decisionfinannees.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of DecisionFinAnnees.
+   * Filter by unique combinations of decisionfinannees.
    */
-  distinct?: Prisma.DecisionFinAnneeScalarFieldEnum | Prisma.DecisionFinAnneeScalarFieldEnum[]
+  distinct?: Prisma.DecisionfinanneeScalarFieldEnum | Prisma.DecisionfinanneeScalarFieldEnum[]
 }
 
 /**
- * DecisionFinAnnee findMany
+ * decisionfinannee findMany
  */
-export type DecisionFinAnneeFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * Filter, which DecisionFinAnnees to fetch.
+   * Filter, which decisionfinannees to fetch.
    */
-  where?: Prisma.DecisionFinAnneeWhereInput
+  where?: Prisma.decisionfinanneeWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of DecisionFinAnnees to fetch.
+   * Determine the order of decisionfinannees to fetch.
    */
-  orderBy?: Prisma.DecisionFinAnneeOrderByWithRelationInput | Prisma.DecisionFinAnneeOrderByWithRelationInput[]
+  orderBy?: Prisma.decisionfinanneeOrderByWithRelationInput | Prisma.decisionfinanneeOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing DecisionFinAnnees.
+   * Sets the position for listing decisionfinannees.
    */
-  cursor?: Prisma.DecisionFinAnneeWhereUniqueInput
+  cursor?: Prisma.decisionfinanneeWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` DecisionFinAnnees from the position of the cursor.
+   * Take `±n` decisionfinannees from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` DecisionFinAnnees.
+   * Skip the first `n` decisionfinannees.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of DecisionFinAnnees.
+   * Filter by unique combinations of decisionfinannees.
    */
-  distinct?: Prisma.DecisionFinAnneeScalarFieldEnum | Prisma.DecisionFinAnneeScalarFieldEnum[]
+  distinct?: Prisma.DecisionfinanneeScalarFieldEnum | Prisma.DecisionfinanneeScalarFieldEnum[]
 }
 
 /**
- * DecisionFinAnnee create
+ * decisionfinannee create
  */
-export type DecisionFinAnneeCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * The data needed to create a DecisionFinAnnee.
+   * The data needed to create a decisionfinannee.
    */
-  data: Prisma.XOR<Prisma.DecisionFinAnneeCreateInput, Prisma.DecisionFinAnneeUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.decisionfinanneeCreateInput, Prisma.decisionfinanneeUncheckedCreateInput>
 }
 
 /**
- * DecisionFinAnnee createMany
+ * decisionfinannee createMany
  */
-export type DecisionFinAnneeCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many DecisionFinAnnees.
+   * The data used to create many decisionfinannees.
    */
-  data: Prisma.DecisionFinAnneeCreateManyInput | Prisma.DecisionFinAnneeCreateManyInput[]
+  data: Prisma.decisionfinanneeCreateManyInput | Prisma.decisionfinanneeCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * DecisionFinAnnee update
+ * decisionfinannee update
  */
-export type DecisionFinAnneeUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * The data needed to update a DecisionFinAnnee.
+   * The data needed to update a decisionfinannee.
    */
-  data: Prisma.XOR<Prisma.DecisionFinAnneeUpdateInput, Prisma.DecisionFinAnneeUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.decisionfinanneeUpdateInput, Prisma.decisionfinanneeUncheckedUpdateInput>
   /**
-   * Choose, which DecisionFinAnnee to update.
+   * Choose, which decisionfinannee to update.
    */
-  where: Prisma.DecisionFinAnneeWhereUniqueInput
+  where: Prisma.decisionfinanneeWhereUniqueInput
 }
 
 /**
- * DecisionFinAnnee updateMany
+ * decisionfinannee updateMany
  */
-export type DecisionFinAnneeUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update DecisionFinAnnees.
+   * The data used to update decisionfinannees.
    */
-  data: Prisma.XOR<Prisma.DecisionFinAnneeUpdateManyMutationInput, Prisma.DecisionFinAnneeUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.decisionfinanneeUpdateManyMutationInput, Prisma.decisionfinanneeUncheckedUpdateManyInput>
   /**
-   * Filter which DecisionFinAnnees to update
+   * Filter which decisionfinannees to update
    */
-  where?: Prisma.DecisionFinAnneeWhereInput
+  where?: Prisma.decisionfinanneeWhereInput
   /**
-   * Limit how many DecisionFinAnnees to update.
+   * Limit how many decisionfinannees to update.
    */
   limit?: number
 }
 
 /**
- * DecisionFinAnnee upsert
+ * decisionfinannee upsert
  */
-export type DecisionFinAnneeUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * The filter to search for the DecisionFinAnnee to update in case it exists.
+   * The filter to search for the decisionfinannee to update in case it exists.
    */
-  where: Prisma.DecisionFinAnneeWhereUniqueInput
+  where: Prisma.decisionfinanneeWhereUniqueInput
   /**
-   * In case the DecisionFinAnnee found by the `where` argument doesn't exist, create a new DecisionFinAnnee with this data.
+   * In case the decisionfinannee found by the `where` argument doesn't exist, create a new decisionfinannee with this data.
    */
-  create: Prisma.XOR<Prisma.DecisionFinAnneeCreateInput, Prisma.DecisionFinAnneeUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.decisionfinanneeCreateInput, Prisma.decisionfinanneeUncheckedCreateInput>
   /**
-   * In case the DecisionFinAnnee was found with the provided `where` argument, update it with this data.
+   * In case the decisionfinannee was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.DecisionFinAnneeUpdateInput, Prisma.DecisionFinAnneeUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.decisionfinanneeUpdateInput, Prisma.decisionfinanneeUncheckedUpdateInput>
 }
 
 /**
- * DecisionFinAnnee delete
+ * decisionfinannee delete
  */
-export type DecisionFinAnneeDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
   /**
-   * Filter which DecisionFinAnnee to delete.
+   * Filter which decisionfinannee to delete.
    */
-  where: Prisma.DecisionFinAnneeWhereUniqueInput
+  where: Prisma.decisionfinanneeWhereUniqueInput
 }
 
 /**
- * DecisionFinAnnee deleteMany
+ * decisionfinannee deleteMany
  */
-export type DecisionFinAnneeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which DecisionFinAnnees to delete
+   * Filter which decisionfinannees to delete
    */
-  where?: Prisma.DecisionFinAnneeWhereInput
+  where?: Prisma.decisionfinanneeWhereInput
   /**
-   * Limit how many DecisionFinAnnees to delete.
+   * Limit how many decisionfinannees to delete.
    */
   limit?: number
 }
 
 /**
- * DecisionFinAnnee without action
+ * decisionfinannee without action
  */
-export type DecisionFinAnneeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type decisionfinanneeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the DecisionFinAnnee
+   * Select specific fields to fetch from the decisionfinannee
    */
-  select?: Prisma.DecisionFinAnneeSelect<ExtArgs> | null
+  select?: Prisma.decisionfinanneeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the DecisionFinAnnee
+   * Omit specific fields from the decisionfinannee
    */
-  omit?: Prisma.DecisionFinAnneeOmit<ExtArgs> | null
+  omit?: Prisma.decisionfinanneeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DecisionFinAnneeInclude<ExtArgs> | null
+  include?: Prisma.decisionfinanneeInclude<ExtArgs> | null
 }

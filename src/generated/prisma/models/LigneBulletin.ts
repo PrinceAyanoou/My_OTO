@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `LigneBulletin` model and its related types.
+ * This file exports the `lignebulletin` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,30 +13,30 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model LigneBulletin
+ * Model lignebulletin
  * 
  */
-export type LigneBulletinModel = runtime.Types.Result.DefaultSelection<Prisma.$LigneBulletinPayload>
+export type lignebulletinModel = runtime.Types.Result.DefaultSelection<Prisma.$lignebulletinPayload>
 
-export type AggregateLigneBulletin = {
-  _count: LigneBulletinCountAggregateOutputType | null
-  _avg: LigneBulletinAvgAggregateOutputType | null
-  _sum: LigneBulletinSumAggregateOutputType | null
-  _min: LigneBulletinMinAggregateOutputType | null
-  _max: LigneBulletinMaxAggregateOutputType | null
+export type AggregateLignebulletin = {
+  _count: LignebulletinCountAggregateOutputType | null
+  _avg: LignebulletinAvgAggregateOutputType | null
+  _sum: LignebulletinSumAggregateOutputType | null
+  _min: LignebulletinMinAggregateOutputType | null
+  _max: LignebulletinMaxAggregateOutputType | null
 }
 
-export type LigneBulletinAvgAggregateOutputType = {
+export type LignebulletinAvgAggregateOutputType = {
   moyenne: number | null
   coefficient: number | null
 }
 
-export type LigneBulletinSumAggregateOutputType = {
+export type LignebulletinSumAggregateOutputType = {
   moyenne: number | null
   coefficient: number | null
 }
 
-export type LigneBulletinMinAggregateOutputType = {
+export type LignebulletinMinAggregateOutputType = {
   id: string | null
   bulletinId: string | null
   bulletinApprenantId: string | null
@@ -48,7 +48,7 @@ export type LigneBulletinMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type LigneBulletinMaxAggregateOutputType = {
+export type LignebulletinMaxAggregateOutputType = {
   id: string | null
   bulletinId: string | null
   bulletinApprenantId: string | null
@@ -60,7 +60,7 @@ export type LigneBulletinMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type LigneBulletinCountAggregateOutputType = {
+export type LignebulletinCountAggregateOutputType = {
   id: number
   bulletinId: number
   bulletinApprenantId: number
@@ -74,17 +74,17 @@ export type LigneBulletinCountAggregateOutputType = {
 }
 
 
-export type LigneBulletinAvgAggregateInputType = {
+export type LignebulletinAvgAggregateInputType = {
   moyenne?: true
   coefficient?: true
 }
 
-export type LigneBulletinSumAggregateInputType = {
+export type LignebulletinSumAggregateInputType = {
   moyenne?: true
   coefficient?: true
 }
 
-export type LigneBulletinMinAggregateInputType = {
+export type LignebulletinMinAggregateInputType = {
   id?: true
   bulletinId?: true
   bulletinApprenantId?: true
@@ -96,7 +96,7 @@ export type LigneBulletinMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type LigneBulletinMaxAggregateInputType = {
+export type LignebulletinMaxAggregateInputType = {
   id?: true
   bulletinId?: true
   bulletinApprenantId?: true
@@ -108,7 +108,7 @@ export type LigneBulletinMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type LigneBulletinCountAggregateInputType = {
+export type LignebulletinCountAggregateInputType = {
   id?: true
   bulletinId?: true
   bulletinApprenantId?: true
@@ -121,93 +121,93 @@ export type LigneBulletinCountAggregateInputType = {
   _all?: true
 }
 
-export type LigneBulletinAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LignebulletinAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which LigneBulletin to aggregate.
+   * Filter which lignebulletin to aggregate.
    */
-  where?: Prisma.LigneBulletinWhereInput
+  where?: Prisma.lignebulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LigneBulletins to fetch.
+   * Determine the order of lignebulletins to fetch.
    */
-  orderBy?: Prisma.LigneBulletinOrderByWithRelationInput | Prisma.LigneBulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.lignebulletinOrderByWithRelationInput | Prisma.lignebulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.LigneBulletinWhereUniqueInput
+  cursor?: Prisma.lignebulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LigneBulletins from the position of the cursor.
+   * Take `±n` lignebulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LigneBulletins.
+   * Skip the first `n` lignebulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned LigneBulletins
+   * Count returned lignebulletins
   **/
-  _count?: true | LigneBulletinCountAggregateInputType
+  _count?: true | LignebulletinCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: LigneBulletinAvgAggregateInputType
+  _avg?: LignebulletinAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: LigneBulletinSumAggregateInputType
+  _sum?: LignebulletinSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: LigneBulletinMinAggregateInputType
+  _min?: LignebulletinMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: LigneBulletinMaxAggregateInputType
+  _max?: LignebulletinMaxAggregateInputType
 }
 
-export type GetLigneBulletinAggregateType<T extends LigneBulletinAggregateArgs> = {
-      [P in keyof T & keyof AggregateLigneBulletin]: P extends '_count' | 'count'
+export type GetLignebulletinAggregateType<T extends LignebulletinAggregateArgs> = {
+      [P in keyof T & keyof AggregateLignebulletin]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateLigneBulletin[P]>
-    : Prisma.GetScalarType<T[P], AggregateLigneBulletin[P]>
+      : Prisma.GetScalarType<T[P], AggregateLignebulletin[P]>
+    : Prisma.GetScalarType<T[P], AggregateLignebulletin[P]>
 }
 
 
 
 
-export type LigneBulletinGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.LigneBulletinWhereInput
-  orderBy?: Prisma.LigneBulletinOrderByWithAggregationInput | Prisma.LigneBulletinOrderByWithAggregationInput[]
-  by: Prisma.LigneBulletinScalarFieldEnum[] | Prisma.LigneBulletinScalarFieldEnum
-  having?: Prisma.LigneBulletinScalarWhereWithAggregatesInput
+export type lignebulletinGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.lignebulletinWhereInput
+  orderBy?: Prisma.lignebulletinOrderByWithAggregationInput | Prisma.lignebulletinOrderByWithAggregationInput[]
+  by: Prisma.LignebulletinScalarFieldEnum[] | Prisma.LignebulletinScalarFieldEnum
+  having?: Prisma.lignebulletinScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: LigneBulletinCountAggregateInputType | true
-  _avg?: LigneBulletinAvgAggregateInputType
-  _sum?: LigneBulletinSumAggregateInputType
-  _min?: LigneBulletinMinAggregateInputType
-  _max?: LigneBulletinMaxAggregateInputType
+  _count?: LignebulletinCountAggregateInputType | true
+  _avg?: LignebulletinAvgAggregateInputType
+  _sum?: LignebulletinSumAggregateInputType
+  _min?: LignebulletinMinAggregateInputType
+  _max?: LignebulletinMaxAggregateInputType
 }
 
-export type LigneBulletinGroupByOutputType = {
+export type LignebulletinGroupByOutputType = {
   id: string
   bulletinId: string
   bulletinApprenantId: string
@@ -217,46 +217,46 @@ export type LigneBulletinGroupByOutputType = {
   coefficient: number
   createdAt: Date
   updatedAt: Date
-  _count: LigneBulletinCountAggregateOutputType | null
-  _avg: LigneBulletinAvgAggregateOutputType | null
-  _sum: LigneBulletinSumAggregateOutputType | null
-  _min: LigneBulletinMinAggregateOutputType | null
-  _max: LigneBulletinMaxAggregateOutputType | null
+  _count: LignebulletinCountAggregateOutputType | null
+  _avg: LignebulletinAvgAggregateOutputType | null
+  _sum: LignebulletinSumAggregateOutputType | null
+  _min: LignebulletinMinAggregateOutputType | null
+  _max: LignebulletinMaxAggregateOutputType | null
 }
 
-export type GetLigneBulletinGroupByPayload<T extends LigneBulletinGroupByArgs> = Prisma.PrismaPromise<
+export type GetLignebulletinGroupByPayload<T extends lignebulletinGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<LigneBulletinGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<LignebulletinGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof LigneBulletinGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof LignebulletinGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], LigneBulletinGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], LigneBulletinGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], LignebulletinGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], LignebulletinGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type LigneBulletinWhereInput = {
-  AND?: Prisma.LigneBulletinWhereInput | Prisma.LigneBulletinWhereInput[]
-  OR?: Prisma.LigneBulletinWhereInput[]
-  NOT?: Prisma.LigneBulletinWhereInput | Prisma.LigneBulletinWhereInput[]
-  id?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinId?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinApprenantId?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinAnneeId?: Prisma.StringFilter<"LigneBulletin"> | string
-  matiereId?: Prisma.StringFilter<"LigneBulletin"> | string
-  moyenne?: Prisma.FloatFilter<"LigneBulletin"> | number
-  coefficient?: Prisma.IntFilter<"LigneBulletin"> | number
-  createdAt?: Prisma.DateTimeFilter<"LigneBulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"LigneBulletin"> | Date | string
-  bulletin?: Prisma.XOR<Prisma.BulletinScalarRelationFilter, Prisma.BulletinWhereInput>
-  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.MatiereWhereInput>
+export type lignebulletinWhereInput = {
+  AND?: Prisma.lignebulletinWhereInput | Prisma.lignebulletinWhereInput[]
+  OR?: Prisma.lignebulletinWhereInput[]
+  NOT?: Prisma.lignebulletinWhereInput | Prisma.lignebulletinWhereInput[]
+  id?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinId?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinApprenantId?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinAnneeId?: Prisma.StringFilter<"lignebulletin"> | string
+  matiereId?: Prisma.StringFilter<"lignebulletin"> | string
+  moyenne?: Prisma.FloatFilter<"lignebulletin"> | number
+  coefficient?: Prisma.IntFilter<"lignebulletin"> | number
+  createdAt?: Prisma.DateTimeFilter<"lignebulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"lignebulletin"> | Date | string
+  bulletin?: Prisma.XOR<Prisma.BulletinScalarRelationFilter, Prisma.bulletinWhereInput>
+  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.matiereWhereInput>
 }
 
-export type LigneBulletinOrderByWithRelationInput = {
+export type lignebulletinOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   bulletinId?: Prisma.SortOrder
   bulletinApprenantId?: Prisma.SortOrder
@@ -266,29 +266,29 @@ export type LigneBulletinOrderByWithRelationInput = {
   coefficient?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  bulletin?: Prisma.BulletinOrderByWithRelationInput
-  matiere?: Prisma.MatiereOrderByWithRelationInput
-  _relevance?: Prisma.LigneBulletinOrderByRelevanceInput
+  bulletin?: Prisma.bulletinOrderByWithRelationInput
+  matiere?: Prisma.matiereOrderByWithRelationInput
+  _relevance?: Prisma.lignebulletinOrderByRelevanceInput
 }
 
-export type LigneBulletinWhereUniqueInput = Prisma.AtLeast<{
+export type lignebulletinWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.LigneBulletinWhereInput | Prisma.LigneBulletinWhereInput[]
-  OR?: Prisma.LigneBulletinWhereInput[]
-  NOT?: Prisma.LigneBulletinWhereInput | Prisma.LigneBulletinWhereInput[]
-  bulletinId?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinApprenantId?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinAnneeId?: Prisma.StringFilter<"LigneBulletin"> | string
-  matiereId?: Prisma.StringFilter<"LigneBulletin"> | string
-  moyenne?: Prisma.FloatFilter<"LigneBulletin"> | number
-  coefficient?: Prisma.IntFilter<"LigneBulletin"> | number
-  createdAt?: Prisma.DateTimeFilter<"LigneBulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"LigneBulletin"> | Date | string
-  bulletin?: Prisma.XOR<Prisma.BulletinScalarRelationFilter, Prisma.BulletinWhereInput>
-  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.MatiereWhereInput>
+  AND?: Prisma.lignebulletinWhereInput | Prisma.lignebulletinWhereInput[]
+  OR?: Prisma.lignebulletinWhereInput[]
+  NOT?: Prisma.lignebulletinWhereInput | Prisma.lignebulletinWhereInput[]
+  bulletinId?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinApprenantId?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinAnneeId?: Prisma.StringFilter<"lignebulletin"> | string
+  matiereId?: Prisma.StringFilter<"lignebulletin"> | string
+  moyenne?: Prisma.FloatFilter<"lignebulletin"> | number
+  coefficient?: Prisma.IntFilter<"lignebulletin"> | number
+  createdAt?: Prisma.DateTimeFilter<"lignebulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"lignebulletin"> | Date | string
+  bulletin?: Prisma.XOR<Prisma.BulletinScalarRelationFilter, Prisma.bulletinWhereInput>
+  matiere?: Prisma.XOR<Prisma.MatiereScalarRelationFilter, Prisma.matiereWhereInput>
 }, "id">
 
-export type LigneBulletinOrderByWithAggregationInput = {
+export type lignebulletinOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   bulletinId?: Prisma.SortOrder
   bulletinApprenantId?: Prisma.SortOrder
@@ -298,73 +298,39 @@ export type LigneBulletinOrderByWithAggregationInput = {
   coefficient?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.LigneBulletinCountOrderByAggregateInput
-  _avg?: Prisma.LigneBulletinAvgOrderByAggregateInput
-  _max?: Prisma.LigneBulletinMaxOrderByAggregateInput
-  _min?: Prisma.LigneBulletinMinOrderByAggregateInput
-  _sum?: Prisma.LigneBulletinSumOrderByAggregateInput
+  _count?: Prisma.lignebulletinCountOrderByAggregateInput
+  _avg?: Prisma.lignebulletinAvgOrderByAggregateInput
+  _max?: Prisma.lignebulletinMaxOrderByAggregateInput
+  _min?: Prisma.lignebulletinMinOrderByAggregateInput
+  _sum?: Prisma.lignebulletinSumOrderByAggregateInput
 }
 
-export type LigneBulletinScalarWhereWithAggregatesInput = {
-  AND?: Prisma.LigneBulletinScalarWhereWithAggregatesInput | Prisma.LigneBulletinScalarWhereWithAggregatesInput[]
-  OR?: Prisma.LigneBulletinScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.LigneBulletinScalarWhereWithAggregatesInput | Prisma.LigneBulletinScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"LigneBulletin"> | string
-  bulletinId?: Prisma.StringWithAggregatesFilter<"LigneBulletin"> | string
-  bulletinApprenantId?: Prisma.StringWithAggregatesFilter<"LigneBulletin"> | string
-  bulletinAnneeId?: Prisma.StringWithAggregatesFilter<"LigneBulletin"> | string
-  matiereId?: Prisma.StringWithAggregatesFilter<"LigneBulletin"> | string
-  moyenne?: Prisma.FloatWithAggregatesFilter<"LigneBulletin"> | number
-  coefficient?: Prisma.IntWithAggregatesFilter<"LigneBulletin"> | number
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"LigneBulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"LigneBulletin"> | Date | string
+export type lignebulletinScalarWhereWithAggregatesInput = {
+  AND?: Prisma.lignebulletinScalarWhereWithAggregatesInput | Prisma.lignebulletinScalarWhereWithAggregatesInput[]
+  OR?: Prisma.lignebulletinScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.lignebulletinScalarWhereWithAggregatesInput | Prisma.lignebulletinScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"lignebulletin"> | string
+  bulletinId?: Prisma.StringWithAggregatesFilter<"lignebulletin"> | string
+  bulletinApprenantId?: Prisma.StringWithAggregatesFilter<"lignebulletin"> | string
+  bulletinAnneeId?: Prisma.StringWithAggregatesFilter<"lignebulletin"> | string
+  matiereId?: Prisma.StringWithAggregatesFilter<"lignebulletin"> | string
+  moyenne?: Prisma.FloatWithAggregatesFilter<"lignebulletin"> | number
+  coefficient?: Prisma.IntWithAggregatesFilter<"lignebulletin"> | number
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"lignebulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"lignebulletin"> | Date | string
 }
 
-export type LigneBulletinCreateInput = {
+export type lignebulletinCreateInput = {
   id?: string
   moyenne: number
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  bulletin: Prisma.BulletinCreateNestedOneWithoutLignesInput
-  matiere: Prisma.MatiereCreateNestedOneWithoutLigneBulletinInput
+  bulletin: Prisma.bulletinCreateNestedOneWithoutLignebulletinInput
+  matiere: Prisma.matiereCreateNestedOneWithoutLignebulletinInput
 }
 
-export type LigneBulletinUncheckedCreateInput = {
-  id?: string
-  bulletinId: string
-  bulletinApprenantId: string
-  bulletinAnneeId: string
-  matiereId: string
-  moyenne: number
-  coefficient: number
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type LigneBulletinUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUpdateOneRequiredWithoutLignesNestedInput
-  matiere?: Prisma.MatiereUpdateOneRequiredWithoutLigneBulletinNestedInput
-}
-
-export type LigneBulletinUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  bulletinId?: Prisma.StringFieldUpdateOperationsInput | string
-  bulletinApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  bulletinAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
-  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
-  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type LigneBulletinCreateManyInput = {
+export type lignebulletinUncheckedCreateInput = {
   id?: string
   bulletinId: string
   bulletinApprenantId: string
@@ -376,15 +342,17 @@ export type LigneBulletinCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type LigneBulletinUpdateManyMutationInput = {
+export type lignebulletinUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bulletin?: Prisma.bulletinUpdateOneRequiredWithoutLignebulletinNestedInput
+  matiere?: Prisma.matiereUpdateOneRequiredWithoutLignebulletinNestedInput
 }
 
-export type LigneBulletinUncheckedUpdateManyInput = {
+export type lignebulletinUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   bulletinId?: Prisma.StringFieldUpdateOperationsInput | string
   bulletinApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -396,23 +364,55 @@ export type LigneBulletinUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LigneBulletinListRelationFilter = {
-  every?: Prisma.LigneBulletinWhereInput
-  some?: Prisma.LigneBulletinWhereInput
-  none?: Prisma.LigneBulletinWhereInput
+export type lignebulletinCreateManyInput = {
+  id?: string
+  bulletinId: string
+  bulletinApprenantId: string
+  bulletinAnneeId: string
+  matiereId: string
+  moyenne: number
+  coefficient: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
-export type LigneBulletinOrderByRelationAggregateInput = {
+export type lignebulletinUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type lignebulletinUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  bulletinId?: Prisma.StringFieldUpdateOperationsInput | string
+  bulletinApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  bulletinAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
+  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type LignebulletinListRelationFilter = {
+  every?: Prisma.lignebulletinWhereInput
+  some?: Prisma.lignebulletinWhereInput
+  none?: Prisma.lignebulletinWhereInput
+}
+
+export type lignebulletinOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type LigneBulletinOrderByRelevanceInput = {
-  fields: Prisma.LigneBulletinOrderByRelevanceFieldEnum | Prisma.LigneBulletinOrderByRelevanceFieldEnum[]
+export type lignebulletinOrderByRelevanceInput = {
+  fields: Prisma.lignebulletinOrderByRelevanceFieldEnum | Prisma.lignebulletinOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type LigneBulletinCountOrderByAggregateInput = {
+export type lignebulletinCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bulletinId?: Prisma.SortOrder
   bulletinApprenantId?: Prisma.SortOrder
@@ -424,12 +424,12 @@ export type LigneBulletinCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type LigneBulletinAvgOrderByAggregateInput = {
+export type lignebulletinAvgOrderByAggregateInput = {
   moyenne?: Prisma.SortOrder
   coefficient?: Prisma.SortOrder
 }
 
-export type LigneBulletinMaxOrderByAggregateInput = {
+export type lignebulletinMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bulletinId?: Prisma.SortOrder
   bulletinApprenantId?: Prisma.SortOrder
@@ -441,7 +441,7 @@ export type LigneBulletinMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type LigneBulletinMinOrderByAggregateInput = {
+export type lignebulletinMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bulletinId?: Prisma.SortOrder
   bulletinApprenantId?: Prisma.SortOrder
@@ -453,105 +453,164 @@ export type LigneBulletinMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type LigneBulletinSumOrderByAggregateInput = {
+export type lignebulletinSumOrderByAggregateInput = {
   moyenne?: Prisma.SortOrder
   coefficient?: Prisma.SortOrder
 }
 
-export type LigneBulletinCreateNestedManyWithoutMatiereInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutMatiereInput, Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput> | Prisma.LigneBulletinCreateWithoutMatiereInput[] | Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput | Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput[]
-  createMany?: Prisma.LigneBulletinCreateManyMatiereInputEnvelope
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
+export type lignebulletinCreateNestedManyWithoutBulletinInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutBulletinInput, Prisma.lignebulletinUncheckedCreateWithoutBulletinInput> | Prisma.lignebulletinCreateWithoutBulletinInput[] | Prisma.lignebulletinUncheckedCreateWithoutBulletinInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutBulletinInput | Prisma.lignebulletinCreateOrConnectWithoutBulletinInput[]
+  createMany?: Prisma.lignebulletinCreateManyBulletinInputEnvelope
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
 }
 
-export type LigneBulletinUncheckedCreateNestedManyWithoutMatiereInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutMatiereInput, Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput> | Prisma.LigneBulletinCreateWithoutMatiereInput[] | Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput | Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput[]
-  createMany?: Prisma.LigneBulletinCreateManyMatiereInputEnvelope
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
+export type lignebulletinUncheckedCreateNestedManyWithoutBulletinInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutBulletinInput, Prisma.lignebulletinUncheckedCreateWithoutBulletinInput> | Prisma.lignebulletinCreateWithoutBulletinInput[] | Prisma.lignebulletinUncheckedCreateWithoutBulletinInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutBulletinInput | Prisma.lignebulletinCreateOrConnectWithoutBulletinInput[]
+  createMany?: Prisma.lignebulletinCreateManyBulletinInputEnvelope
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
 }
 
-export type LigneBulletinUpdateManyWithoutMatiereNestedInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutMatiereInput, Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput> | Prisma.LigneBulletinCreateWithoutMatiereInput[] | Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput | Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput[]
-  upsert?: Prisma.LigneBulletinUpsertWithWhereUniqueWithoutMatiereInput | Prisma.LigneBulletinUpsertWithWhereUniqueWithoutMatiereInput[]
-  createMany?: Prisma.LigneBulletinCreateManyMatiereInputEnvelope
-  set?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  disconnect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  delete?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  update?: Prisma.LigneBulletinUpdateWithWhereUniqueWithoutMatiereInput | Prisma.LigneBulletinUpdateWithWhereUniqueWithoutMatiereInput[]
-  updateMany?: Prisma.LigneBulletinUpdateManyWithWhereWithoutMatiereInput | Prisma.LigneBulletinUpdateManyWithWhereWithoutMatiereInput[]
-  deleteMany?: Prisma.LigneBulletinScalarWhereInput | Prisma.LigneBulletinScalarWhereInput[]
+export type lignebulletinUpdateManyWithoutBulletinNestedInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutBulletinInput, Prisma.lignebulletinUncheckedCreateWithoutBulletinInput> | Prisma.lignebulletinCreateWithoutBulletinInput[] | Prisma.lignebulletinUncheckedCreateWithoutBulletinInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutBulletinInput | Prisma.lignebulletinCreateOrConnectWithoutBulletinInput[]
+  upsert?: Prisma.lignebulletinUpsertWithWhereUniqueWithoutBulletinInput | Prisma.lignebulletinUpsertWithWhereUniqueWithoutBulletinInput[]
+  createMany?: Prisma.lignebulletinCreateManyBulletinInputEnvelope
+  set?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  disconnect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  delete?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  update?: Prisma.lignebulletinUpdateWithWhereUniqueWithoutBulletinInput | Prisma.lignebulletinUpdateWithWhereUniqueWithoutBulletinInput[]
+  updateMany?: Prisma.lignebulletinUpdateManyWithWhereWithoutBulletinInput | Prisma.lignebulletinUpdateManyWithWhereWithoutBulletinInput[]
+  deleteMany?: Prisma.lignebulletinScalarWhereInput | Prisma.lignebulletinScalarWhereInput[]
 }
 
-export type LigneBulletinUncheckedUpdateManyWithoutMatiereNestedInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutMatiereInput, Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput> | Prisma.LigneBulletinCreateWithoutMatiereInput[] | Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput | Prisma.LigneBulletinCreateOrConnectWithoutMatiereInput[]
-  upsert?: Prisma.LigneBulletinUpsertWithWhereUniqueWithoutMatiereInput | Prisma.LigneBulletinUpsertWithWhereUniqueWithoutMatiereInput[]
-  createMany?: Prisma.LigneBulletinCreateManyMatiereInputEnvelope
-  set?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  disconnect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  delete?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  update?: Prisma.LigneBulletinUpdateWithWhereUniqueWithoutMatiereInput | Prisma.LigneBulletinUpdateWithWhereUniqueWithoutMatiereInput[]
-  updateMany?: Prisma.LigneBulletinUpdateManyWithWhereWithoutMatiereInput | Prisma.LigneBulletinUpdateManyWithWhereWithoutMatiereInput[]
-  deleteMany?: Prisma.LigneBulletinScalarWhereInput | Prisma.LigneBulletinScalarWhereInput[]
+export type lignebulletinUncheckedUpdateManyWithoutBulletinNestedInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutBulletinInput, Prisma.lignebulletinUncheckedCreateWithoutBulletinInput> | Prisma.lignebulletinCreateWithoutBulletinInput[] | Prisma.lignebulletinUncheckedCreateWithoutBulletinInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutBulletinInput | Prisma.lignebulletinCreateOrConnectWithoutBulletinInput[]
+  upsert?: Prisma.lignebulletinUpsertWithWhereUniqueWithoutBulletinInput | Prisma.lignebulletinUpsertWithWhereUniqueWithoutBulletinInput[]
+  createMany?: Prisma.lignebulletinCreateManyBulletinInputEnvelope
+  set?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  disconnect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  delete?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  update?: Prisma.lignebulletinUpdateWithWhereUniqueWithoutBulletinInput | Prisma.lignebulletinUpdateWithWhereUniqueWithoutBulletinInput[]
+  updateMany?: Prisma.lignebulletinUpdateManyWithWhereWithoutBulletinInput | Prisma.lignebulletinUpdateManyWithWhereWithoutBulletinInput[]
+  deleteMany?: Prisma.lignebulletinScalarWhereInput | Prisma.lignebulletinScalarWhereInput[]
 }
 
-export type LigneBulletinCreateNestedManyWithoutBulletinInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutBulletinInput, Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput> | Prisma.LigneBulletinCreateWithoutBulletinInput[] | Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput | Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput[]
-  createMany?: Prisma.LigneBulletinCreateManyBulletinInputEnvelope
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
+export type lignebulletinCreateNestedManyWithoutMatiereInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutMatiereInput, Prisma.lignebulletinUncheckedCreateWithoutMatiereInput> | Prisma.lignebulletinCreateWithoutMatiereInput[] | Prisma.lignebulletinUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutMatiereInput | Prisma.lignebulletinCreateOrConnectWithoutMatiereInput[]
+  createMany?: Prisma.lignebulletinCreateManyMatiereInputEnvelope
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
 }
 
-export type LigneBulletinUncheckedCreateNestedManyWithoutBulletinInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutBulletinInput, Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput> | Prisma.LigneBulletinCreateWithoutBulletinInput[] | Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput | Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput[]
-  createMany?: Prisma.LigneBulletinCreateManyBulletinInputEnvelope
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
+export type lignebulletinUncheckedCreateNestedManyWithoutMatiereInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutMatiereInput, Prisma.lignebulletinUncheckedCreateWithoutMatiereInput> | Prisma.lignebulletinCreateWithoutMatiereInput[] | Prisma.lignebulletinUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutMatiereInput | Prisma.lignebulletinCreateOrConnectWithoutMatiereInput[]
+  createMany?: Prisma.lignebulletinCreateManyMatiereInputEnvelope
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
 }
 
-export type LigneBulletinUpdateManyWithoutBulletinNestedInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutBulletinInput, Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput> | Prisma.LigneBulletinCreateWithoutBulletinInput[] | Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput | Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput[]
-  upsert?: Prisma.LigneBulletinUpsertWithWhereUniqueWithoutBulletinInput | Prisma.LigneBulletinUpsertWithWhereUniqueWithoutBulletinInput[]
-  createMany?: Prisma.LigneBulletinCreateManyBulletinInputEnvelope
-  set?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  disconnect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  delete?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  update?: Prisma.LigneBulletinUpdateWithWhereUniqueWithoutBulletinInput | Prisma.LigneBulletinUpdateWithWhereUniqueWithoutBulletinInput[]
-  updateMany?: Prisma.LigneBulletinUpdateManyWithWhereWithoutBulletinInput | Prisma.LigneBulletinUpdateManyWithWhereWithoutBulletinInput[]
-  deleteMany?: Prisma.LigneBulletinScalarWhereInput | Prisma.LigneBulletinScalarWhereInput[]
+export type lignebulletinUpdateManyWithoutMatiereNestedInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutMatiereInput, Prisma.lignebulletinUncheckedCreateWithoutMatiereInput> | Prisma.lignebulletinCreateWithoutMatiereInput[] | Prisma.lignebulletinUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutMatiereInput | Prisma.lignebulletinCreateOrConnectWithoutMatiereInput[]
+  upsert?: Prisma.lignebulletinUpsertWithWhereUniqueWithoutMatiereInput | Prisma.lignebulletinUpsertWithWhereUniqueWithoutMatiereInput[]
+  createMany?: Prisma.lignebulletinCreateManyMatiereInputEnvelope
+  set?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  disconnect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  delete?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  update?: Prisma.lignebulletinUpdateWithWhereUniqueWithoutMatiereInput | Prisma.lignebulletinUpdateWithWhereUniqueWithoutMatiereInput[]
+  updateMany?: Prisma.lignebulletinUpdateManyWithWhereWithoutMatiereInput | Prisma.lignebulletinUpdateManyWithWhereWithoutMatiereInput[]
+  deleteMany?: Prisma.lignebulletinScalarWhereInput | Prisma.lignebulletinScalarWhereInput[]
 }
 
-export type LigneBulletinUncheckedUpdateManyWithoutBulletinNestedInput = {
-  create?: Prisma.XOR<Prisma.LigneBulletinCreateWithoutBulletinInput, Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput> | Prisma.LigneBulletinCreateWithoutBulletinInput[] | Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput[]
-  connectOrCreate?: Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput | Prisma.LigneBulletinCreateOrConnectWithoutBulletinInput[]
-  upsert?: Prisma.LigneBulletinUpsertWithWhereUniqueWithoutBulletinInput | Prisma.LigneBulletinUpsertWithWhereUniqueWithoutBulletinInput[]
-  createMany?: Prisma.LigneBulletinCreateManyBulletinInputEnvelope
-  set?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  disconnect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  delete?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  connect?: Prisma.LigneBulletinWhereUniqueInput | Prisma.LigneBulletinWhereUniqueInput[]
-  update?: Prisma.LigneBulletinUpdateWithWhereUniqueWithoutBulletinInput | Prisma.LigneBulletinUpdateWithWhereUniqueWithoutBulletinInput[]
-  updateMany?: Prisma.LigneBulletinUpdateManyWithWhereWithoutBulletinInput | Prisma.LigneBulletinUpdateManyWithWhereWithoutBulletinInput[]
-  deleteMany?: Prisma.LigneBulletinScalarWhereInput | Prisma.LigneBulletinScalarWhereInput[]
+export type lignebulletinUncheckedUpdateManyWithoutMatiereNestedInput = {
+  create?: Prisma.XOR<Prisma.lignebulletinCreateWithoutMatiereInput, Prisma.lignebulletinUncheckedCreateWithoutMatiereInput> | Prisma.lignebulletinCreateWithoutMatiereInput[] | Prisma.lignebulletinUncheckedCreateWithoutMatiereInput[]
+  connectOrCreate?: Prisma.lignebulletinCreateOrConnectWithoutMatiereInput | Prisma.lignebulletinCreateOrConnectWithoutMatiereInput[]
+  upsert?: Prisma.lignebulletinUpsertWithWhereUniqueWithoutMatiereInput | Prisma.lignebulletinUpsertWithWhereUniqueWithoutMatiereInput[]
+  createMany?: Prisma.lignebulletinCreateManyMatiereInputEnvelope
+  set?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  disconnect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  delete?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  connect?: Prisma.lignebulletinWhereUniqueInput | Prisma.lignebulletinWhereUniqueInput[]
+  update?: Prisma.lignebulletinUpdateWithWhereUniqueWithoutMatiereInput | Prisma.lignebulletinUpdateWithWhereUniqueWithoutMatiereInput[]
+  updateMany?: Prisma.lignebulletinUpdateManyWithWhereWithoutMatiereInput | Prisma.lignebulletinUpdateManyWithWhereWithoutMatiereInput[]
+  deleteMany?: Prisma.lignebulletinScalarWhereInput | Prisma.lignebulletinScalarWhereInput[]
 }
 
-export type LigneBulletinCreateWithoutMatiereInput = {
+export type lignebulletinCreateWithoutBulletinInput = {
   id?: string
   moyenne: number
   coefficient: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  bulletin: Prisma.BulletinCreateNestedOneWithoutLignesInput
+  matiere: Prisma.matiereCreateNestedOneWithoutLignebulletinInput
 }
 
-export type LigneBulletinUncheckedCreateWithoutMatiereInput = {
+export type lignebulletinUncheckedCreateWithoutBulletinInput = {
+  id?: string
+  matiereId: string
+  moyenne: number
+  coefficient: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type lignebulletinCreateOrConnectWithoutBulletinInput = {
+  where: Prisma.lignebulletinWhereUniqueInput
+  create: Prisma.XOR<Prisma.lignebulletinCreateWithoutBulletinInput, Prisma.lignebulletinUncheckedCreateWithoutBulletinInput>
+}
+
+export type lignebulletinCreateManyBulletinInputEnvelope = {
+  data: Prisma.lignebulletinCreateManyBulletinInput | Prisma.lignebulletinCreateManyBulletinInput[]
+  skipDuplicates?: boolean
+}
+
+export type lignebulletinUpsertWithWhereUniqueWithoutBulletinInput = {
+  where: Prisma.lignebulletinWhereUniqueInput
+  update: Prisma.XOR<Prisma.lignebulletinUpdateWithoutBulletinInput, Prisma.lignebulletinUncheckedUpdateWithoutBulletinInput>
+  create: Prisma.XOR<Prisma.lignebulletinCreateWithoutBulletinInput, Prisma.lignebulletinUncheckedCreateWithoutBulletinInput>
+}
+
+export type lignebulletinUpdateWithWhereUniqueWithoutBulletinInput = {
+  where: Prisma.lignebulletinWhereUniqueInput
+  data: Prisma.XOR<Prisma.lignebulletinUpdateWithoutBulletinInput, Prisma.lignebulletinUncheckedUpdateWithoutBulletinInput>
+}
+
+export type lignebulletinUpdateManyWithWhereWithoutBulletinInput = {
+  where: Prisma.lignebulletinScalarWhereInput
+  data: Prisma.XOR<Prisma.lignebulletinUpdateManyMutationInput, Prisma.lignebulletinUncheckedUpdateManyWithoutBulletinInput>
+}
+
+export type lignebulletinScalarWhereInput = {
+  AND?: Prisma.lignebulletinScalarWhereInput | Prisma.lignebulletinScalarWhereInput[]
+  OR?: Prisma.lignebulletinScalarWhereInput[]
+  NOT?: Prisma.lignebulletinScalarWhereInput | Prisma.lignebulletinScalarWhereInput[]
+  id?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinId?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinApprenantId?: Prisma.StringFilter<"lignebulletin"> | string
+  bulletinAnneeId?: Prisma.StringFilter<"lignebulletin"> | string
+  matiereId?: Prisma.StringFilter<"lignebulletin"> | string
+  moyenne?: Prisma.FloatFilter<"lignebulletin"> | number
+  coefficient?: Prisma.IntFilter<"lignebulletin"> | number
+  createdAt?: Prisma.DateTimeFilter<"lignebulletin"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"lignebulletin"> | Date | string
+}
+
+export type lignebulletinCreateWithoutMatiereInput = {
+  id?: string
+  moyenne: number
+  coefficient: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bulletin: Prisma.bulletinCreateNestedOneWithoutLignebulletinInput
+}
+
+export type lignebulletinUncheckedCreateWithoutMatiereInput = {
   id?: string
   bulletinId: string
   bulletinApprenantId: string
@@ -562,57 +621,33 @@ export type LigneBulletinUncheckedCreateWithoutMatiereInput = {
   updatedAt?: Date | string
 }
 
-export type LigneBulletinCreateOrConnectWithoutMatiereInput = {
-  where: Prisma.LigneBulletinWhereUniqueInput
-  create: Prisma.XOR<Prisma.LigneBulletinCreateWithoutMatiereInput, Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput>
+export type lignebulletinCreateOrConnectWithoutMatiereInput = {
+  where: Prisma.lignebulletinWhereUniqueInput
+  create: Prisma.XOR<Prisma.lignebulletinCreateWithoutMatiereInput, Prisma.lignebulletinUncheckedCreateWithoutMatiereInput>
 }
 
-export type LigneBulletinCreateManyMatiereInputEnvelope = {
-  data: Prisma.LigneBulletinCreateManyMatiereInput | Prisma.LigneBulletinCreateManyMatiereInput[]
+export type lignebulletinCreateManyMatiereInputEnvelope = {
+  data: Prisma.lignebulletinCreateManyMatiereInput | Prisma.lignebulletinCreateManyMatiereInput[]
   skipDuplicates?: boolean
 }
 
-export type LigneBulletinUpsertWithWhereUniqueWithoutMatiereInput = {
-  where: Prisma.LigneBulletinWhereUniqueInput
-  update: Prisma.XOR<Prisma.LigneBulletinUpdateWithoutMatiereInput, Prisma.LigneBulletinUncheckedUpdateWithoutMatiereInput>
-  create: Prisma.XOR<Prisma.LigneBulletinCreateWithoutMatiereInput, Prisma.LigneBulletinUncheckedCreateWithoutMatiereInput>
+export type lignebulletinUpsertWithWhereUniqueWithoutMatiereInput = {
+  where: Prisma.lignebulletinWhereUniqueInput
+  update: Prisma.XOR<Prisma.lignebulletinUpdateWithoutMatiereInput, Prisma.lignebulletinUncheckedUpdateWithoutMatiereInput>
+  create: Prisma.XOR<Prisma.lignebulletinCreateWithoutMatiereInput, Prisma.lignebulletinUncheckedCreateWithoutMatiereInput>
 }
 
-export type LigneBulletinUpdateWithWhereUniqueWithoutMatiereInput = {
-  where: Prisma.LigneBulletinWhereUniqueInput
-  data: Prisma.XOR<Prisma.LigneBulletinUpdateWithoutMatiereInput, Prisma.LigneBulletinUncheckedUpdateWithoutMatiereInput>
+export type lignebulletinUpdateWithWhereUniqueWithoutMatiereInput = {
+  where: Prisma.lignebulletinWhereUniqueInput
+  data: Prisma.XOR<Prisma.lignebulletinUpdateWithoutMatiereInput, Prisma.lignebulletinUncheckedUpdateWithoutMatiereInput>
 }
 
-export type LigneBulletinUpdateManyWithWhereWithoutMatiereInput = {
-  where: Prisma.LigneBulletinScalarWhereInput
-  data: Prisma.XOR<Prisma.LigneBulletinUpdateManyMutationInput, Prisma.LigneBulletinUncheckedUpdateManyWithoutMatiereInput>
+export type lignebulletinUpdateManyWithWhereWithoutMatiereInput = {
+  where: Prisma.lignebulletinScalarWhereInput
+  data: Prisma.XOR<Prisma.lignebulletinUpdateManyMutationInput, Prisma.lignebulletinUncheckedUpdateManyWithoutMatiereInput>
 }
 
-export type LigneBulletinScalarWhereInput = {
-  AND?: Prisma.LigneBulletinScalarWhereInput | Prisma.LigneBulletinScalarWhereInput[]
-  OR?: Prisma.LigneBulletinScalarWhereInput[]
-  NOT?: Prisma.LigneBulletinScalarWhereInput | Prisma.LigneBulletinScalarWhereInput[]
-  id?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinId?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinApprenantId?: Prisma.StringFilter<"LigneBulletin"> | string
-  bulletinAnneeId?: Prisma.StringFilter<"LigneBulletin"> | string
-  matiereId?: Prisma.StringFilter<"LigneBulletin"> | string
-  moyenne?: Prisma.FloatFilter<"LigneBulletin"> | number
-  coefficient?: Prisma.IntFilter<"LigneBulletin"> | number
-  createdAt?: Prisma.DateTimeFilter<"LigneBulletin"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"LigneBulletin"> | Date | string
-}
-
-export type LigneBulletinCreateWithoutBulletinInput = {
-  id?: string
-  moyenne: number
-  coefficient: number
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  matiere: Prisma.MatiereCreateNestedOneWithoutLigneBulletinInput
-}
-
-export type LigneBulletinUncheckedCreateWithoutBulletinInput = {
+export type lignebulletinCreateManyBulletinInput = {
   id?: string
   matiereId: string
   moyenne: number
@@ -621,33 +656,34 @@ export type LigneBulletinUncheckedCreateWithoutBulletinInput = {
   updatedAt?: Date | string
 }
 
-export type LigneBulletinCreateOrConnectWithoutBulletinInput = {
-  where: Prisma.LigneBulletinWhereUniqueInput
-  create: Prisma.XOR<Prisma.LigneBulletinCreateWithoutBulletinInput, Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput>
+export type lignebulletinUpdateWithoutBulletinInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  matiere?: Prisma.matiereUpdateOneRequiredWithoutLignebulletinNestedInput
 }
 
-export type LigneBulletinCreateManyBulletinInputEnvelope = {
-  data: Prisma.LigneBulletinCreateManyBulletinInput | Prisma.LigneBulletinCreateManyBulletinInput[]
-  skipDuplicates?: boolean
+export type lignebulletinUncheckedUpdateWithoutBulletinInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LigneBulletinUpsertWithWhereUniqueWithoutBulletinInput = {
-  where: Prisma.LigneBulletinWhereUniqueInput
-  update: Prisma.XOR<Prisma.LigneBulletinUpdateWithoutBulletinInput, Prisma.LigneBulletinUncheckedUpdateWithoutBulletinInput>
-  create: Prisma.XOR<Prisma.LigneBulletinCreateWithoutBulletinInput, Prisma.LigneBulletinUncheckedCreateWithoutBulletinInput>
+export type lignebulletinUncheckedUpdateManyWithoutBulletinInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
+  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LigneBulletinUpdateWithWhereUniqueWithoutBulletinInput = {
-  where: Prisma.LigneBulletinWhereUniqueInput
-  data: Prisma.XOR<Prisma.LigneBulletinUpdateWithoutBulletinInput, Prisma.LigneBulletinUncheckedUpdateWithoutBulletinInput>
-}
-
-export type LigneBulletinUpdateManyWithWhereWithoutBulletinInput = {
-  where: Prisma.LigneBulletinScalarWhereInput
-  data: Prisma.XOR<Prisma.LigneBulletinUpdateManyMutationInput, Prisma.LigneBulletinUncheckedUpdateManyWithoutBulletinInput>
-}
-
-export type LigneBulletinCreateManyMatiereInput = {
+export type lignebulletinCreateManyMatiereInput = {
   id?: string
   bulletinId: string
   bulletinApprenantId: string
@@ -658,27 +694,16 @@ export type LigneBulletinCreateManyMatiereInput = {
   updatedAt?: Date | string
 }
 
-export type LigneBulletinUpdateWithoutMatiereInput = {
+export type lignebulletinUpdateWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  bulletin?: Prisma.BulletinUpdateOneRequiredWithoutLignesNestedInput
+  bulletin?: Prisma.bulletinUpdateOneRequiredWithoutLignebulletinNestedInput
 }
 
-export type LigneBulletinUncheckedUpdateWithoutMatiereInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  bulletinId?: Prisma.StringFieldUpdateOperationsInput | string
-  bulletinApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
-  bulletinAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
-  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type LigneBulletinUncheckedUpdateManyWithoutMatiereInput = {
+export type lignebulletinUncheckedUpdateWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   bulletinId?: Prisma.StringFieldUpdateOperationsInput | string
   bulletinApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -689,36 +714,11 @@ export type LigneBulletinUncheckedUpdateManyWithoutMatiereInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LigneBulletinCreateManyBulletinInput = {
-  id?: string
-  matiereId: string
-  moyenne: number
-  coefficient: number
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type LigneBulletinUpdateWithoutBulletinInput = {
+export type lignebulletinUncheckedUpdateManyWithoutMatiereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  matiere?: Prisma.MatiereUpdateOneRequiredWithoutLigneBulletinNestedInput
-}
-
-export type LigneBulletinUncheckedUpdateWithoutBulletinInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
-  moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type LigneBulletinUncheckedUpdateManyWithoutBulletinInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  matiereId?: Prisma.StringFieldUpdateOperationsInput | string
+  bulletinId?: Prisma.StringFieldUpdateOperationsInput | string
+  bulletinApprenantId?: Prisma.StringFieldUpdateOperationsInput | string
+  bulletinAnneeId?: Prisma.StringFieldUpdateOperationsInput | string
   moyenne?: Prisma.FloatFieldUpdateOperationsInput | number
   coefficient?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -727,7 +727,7 @@ export type LigneBulletinUncheckedUpdateManyWithoutBulletinInput = {
 
 
 
-export type LigneBulletinSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type lignebulletinSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   bulletinId?: boolean
   bulletinApprenantId?: boolean
@@ -737,13 +737,13 @@ export type LigneBulletinSelect<ExtArgs extends runtime.Types.Extensions.Interna
   coefficient?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  bulletin?: boolean | Prisma.BulletinDefaultArgs<ExtArgs>
-  matiere?: boolean | Prisma.MatiereDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["ligneBulletin"]>
+  bulletin?: boolean | Prisma.bulletinDefaultArgs<ExtArgs>
+  matiere?: boolean | Prisma.matiereDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["lignebulletin"]>
 
 
 
-export type LigneBulletinSelectScalar = {
+export type lignebulletinSelectScalar = {
   id?: boolean
   bulletinId?: boolean
   bulletinApprenantId?: boolean
@@ -755,17 +755,17 @@ export type LigneBulletinSelectScalar = {
   updatedAt?: boolean
 }
 
-export type LigneBulletinOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "bulletinId" | "bulletinApprenantId" | "bulletinAnneeId" | "matiereId" | "moyenne" | "coefficient" | "createdAt" | "updatedAt", ExtArgs["result"]["ligneBulletin"]>
-export type LigneBulletinInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  bulletin?: boolean | Prisma.BulletinDefaultArgs<ExtArgs>
-  matiere?: boolean | Prisma.MatiereDefaultArgs<ExtArgs>
+export type lignebulletinOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "bulletinId" | "bulletinApprenantId" | "bulletinAnneeId" | "matiereId" | "moyenne" | "coefficient" | "createdAt" | "updatedAt", ExtArgs["result"]["lignebulletin"]>
+export type lignebulletinInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bulletin?: boolean | Prisma.bulletinDefaultArgs<ExtArgs>
+  matiere?: boolean | Prisma.matiereDefaultArgs<ExtArgs>
 }
 
-export type $LigneBulletinPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "LigneBulletin"
+export type $lignebulletinPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "lignebulletin"
   objects: {
-    bulletin: Prisma.$BulletinPayload<ExtArgs>
-    matiere: Prisma.$MatierePayload<ExtArgs>
+    bulletin: Prisma.$bulletinPayload<ExtArgs>
+    matiere: Prisma.$matierePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -777,143 +777,143 @@ export type $LigneBulletinPayload<ExtArgs extends runtime.Types.Extensions.Inter
     coefficient: number
     createdAt: Date
     updatedAt: Date
-  }, ExtArgs["result"]["ligneBulletin"]>
+  }, ExtArgs["result"]["lignebulletin"]>
   composites: {}
 }
 
-export type LigneBulletinGetPayload<S extends boolean | null | undefined | LigneBulletinDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload, S>
+export type lignebulletinGetPayload<S extends boolean | null | undefined | lignebulletinDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload, S>
 
-export type LigneBulletinCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<LigneBulletinFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: LigneBulletinCountAggregateInputType | true
+export type lignebulletinCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<lignebulletinFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: LignebulletinCountAggregateInputType | true
   }
 
-export interface LigneBulletinDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LigneBulletin'], meta: { name: 'LigneBulletin' } }
+export interface lignebulletinDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['lignebulletin'], meta: { name: 'lignebulletin' } }
   /**
-   * Find zero or one LigneBulletin that matches the filter.
-   * @param {LigneBulletinFindUniqueArgs} args - Arguments to find a LigneBulletin
+   * Find zero or one Lignebulletin that matches the filter.
+   * @param {lignebulletinFindUniqueArgs} args - Arguments to find a Lignebulletin
    * @example
-   * // Get one LigneBulletin
-   * const ligneBulletin = await prisma.ligneBulletin.findUnique({
+   * // Get one Lignebulletin
+   * const lignebulletin = await prisma.lignebulletin.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends LigneBulletinFindUniqueArgs>(args: Prisma.SelectSubset<T, LigneBulletinFindUniqueArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends lignebulletinFindUniqueArgs>(args: Prisma.SelectSubset<T, lignebulletinFindUniqueArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one LigneBulletin that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Lignebulletin that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {LigneBulletinFindUniqueOrThrowArgs} args - Arguments to find a LigneBulletin
+   * @param {lignebulletinFindUniqueOrThrowArgs} args - Arguments to find a Lignebulletin
    * @example
-   * // Get one LigneBulletin
-   * const ligneBulletin = await prisma.ligneBulletin.findUniqueOrThrow({
+   * // Get one Lignebulletin
+   * const lignebulletin = await prisma.lignebulletin.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends LigneBulletinFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, LigneBulletinFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends lignebulletinFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, lignebulletinFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first LigneBulletin that matches the filter.
+   * Find the first Lignebulletin that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinFindFirstArgs} args - Arguments to find a LigneBulletin
+   * @param {lignebulletinFindFirstArgs} args - Arguments to find a Lignebulletin
    * @example
-   * // Get one LigneBulletin
-   * const ligneBulletin = await prisma.ligneBulletin.findFirst({
+   * // Get one Lignebulletin
+   * const lignebulletin = await prisma.lignebulletin.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends LigneBulletinFindFirstArgs>(args?: Prisma.SelectSubset<T, LigneBulletinFindFirstArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends lignebulletinFindFirstArgs>(args?: Prisma.SelectSubset<T, lignebulletinFindFirstArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first LigneBulletin that matches the filter or
+   * Find the first Lignebulletin that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinFindFirstOrThrowArgs} args - Arguments to find a LigneBulletin
+   * @param {lignebulletinFindFirstOrThrowArgs} args - Arguments to find a Lignebulletin
    * @example
-   * // Get one LigneBulletin
-   * const ligneBulletin = await prisma.ligneBulletin.findFirstOrThrow({
+   * // Get one Lignebulletin
+   * const lignebulletin = await prisma.lignebulletin.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends LigneBulletinFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, LigneBulletinFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends lignebulletinFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, lignebulletinFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more LigneBulletins that matches the filter.
+   * Find zero or more Lignebulletins that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {lignebulletinFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all LigneBulletins
-   * const ligneBulletins = await prisma.ligneBulletin.findMany()
+   * // Get all Lignebulletins
+   * const lignebulletins = await prisma.lignebulletin.findMany()
    * 
-   * // Get first 10 LigneBulletins
-   * const ligneBulletins = await prisma.ligneBulletin.findMany({ take: 10 })
+   * // Get first 10 Lignebulletins
+   * const lignebulletins = await prisma.lignebulletin.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const ligneBulletinWithIdOnly = await prisma.ligneBulletin.findMany({ select: { id: true } })
+   * const lignebulletinWithIdOnly = await prisma.lignebulletin.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends LigneBulletinFindManyArgs>(args?: Prisma.SelectSubset<T, LigneBulletinFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends lignebulletinFindManyArgs>(args?: Prisma.SelectSubset<T, lignebulletinFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a LigneBulletin.
-   * @param {LigneBulletinCreateArgs} args - Arguments to create a LigneBulletin.
+   * Create a Lignebulletin.
+   * @param {lignebulletinCreateArgs} args - Arguments to create a Lignebulletin.
    * @example
-   * // Create one LigneBulletin
-   * const LigneBulletin = await prisma.ligneBulletin.create({
+   * // Create one Lignebulletin
+   * const Lignebulletin = await prisma.lignebulletin.create({
    *   data: {
-   *     // ... data to create a LigneBulletin
+   *     // ... data to create a Lignebulletin
    *   }
    * })
    * 
    */
-  create<T extends LigneBulletinCreateArgs>(args: Prisma.SelectSubset<T, LigneBulletinCreateArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends lignebulletinCreateArgs>(args: Prisma.SelectSubset<T, lignebulletinCreateArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many LigneBulletins.
-   * @param {LigneBulletinCreateManyArgs} args - Arguments to create many LigneBulletins.
+   * Create many Lignebulletins.
+   * @param {lignebulletinCreateManyArgs} args - Arguments to create many Lignebulletins.
    * @example
-   * // Create many LigneBulletins
-   * const ligneBulletin = await prisma.ligneBulletin.createMany({
+   * // Create many Lignebulletins
+   * const lignebulletin = await prisma.lignebulletin.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends LigneBulletinCreateManyArgs>(args?: Prisma.SelectSubset<T, LigneBulletinCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends lignebulletinCreateManyArgs>(args?: Prisma.SelectSubset<T, lignebulletinCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a LigneBulletin.
-   * @param {LigneBulletinDeleteArgs} args - Arguments to delete one LigneBulletin.
+   * Delete a Lignebulletin.
+   * @param {lignebulletinDeleteArgs} args - Arguments to delete one Lignebulletin.
    * @example
-   * // Delete one LigneBulletin
-   * const LigneBulletin = await prisma.ligneBulletin.delete({
+   * // Delete one Lignebulletin
+   * const Lignebulletin = await prisma.lignebulletin.delete({
    *   where: {
-   *     // ... filter to delete one LigneBulletin
+   *     // ... filter to delete one Lignebulletin
    *   }
    * })
    * 
    */
-  delete<T extends LigneBulletinDeleteArgs>(args: Prisma.SelectSubset<T, LigneBulletinDeleteArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends lignebulletinDeleteArgs>(args: Prisma.SelectSubset<T, lignebulletinDeleteArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one LigneBulletin.
-   * @param {LigneBulletinUpdateArgs} args - Arguments to update one LigneBulletin.
+   * Update one Lignebulletin.
+   * @param {lignebulletinUpdateArgs} args - Arguments to update one Lignebulletin.
    * @example
-   * // Update one LigneBulletin
-   * const ligneBulletin = await prisma.ligneBulletin.update({
+   * // Update one Lignebulletin
+   * const lignebulletin = await prisma.lignebulletin.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -923,30 +923,30 @@ export interface LigneBulletinDelegate<ExtArgs extends runtime.Types.Extensions.
    * })
    * 
    */
-  update<T extends LigneBulletinUpdateArgs>(args: Prisma.SelectSubset<T, LigneBulletinUpdateArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends lignebulletinUpdateArgs>(args: Prisma.SelectSubset<T, lignebulletinUpdateArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more LigneBulletins.
-   * @param {LigneBulletinDeleteManyArgs} args - Arguments to filter LigneBulletins to delete.
+   * Delete zero or more Lignebulletins.
+   * @param {lignebulletinDeleteManyArgs} args - Arguments to filter Lignebulletins to delete.
    * @example
-   * // Delete a few LigneBulletins
-   * const { count } = await prisma.ligneBulletin.deleteMany({
+   * // Delete a few Lignebulletins
+   * const { count } = await prisma.lignebulletin.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends LigneBulletinDeleteManyArgs>(args?: Prisma.SelectSubset<T, LigneBulletinDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends lignebulletinDeleteManyArgs>(args?: Prisma.SelectSubset<T, lignebulletinDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more LigneBulletins.
+   * Update zero or more Lignebulletins.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {lignebulletinUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many LigneBulletins
-   * const ligneBulletin = await prisma.ligneBulletin.updateMany({
+   * // Update many Lignebulletins
+   * const lignebulletin = await prisma.lignebulletin.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -956,56 +956,56 @@ export interface LigneBulletinDelegate<ExtArgs extends runtime.Types.Extensions.
    * })
    * 
    */
-  updateMany<T extends LigneBulletinUpdateManyArgs>(args: Prisma.SelectSubset<T, LigneBulletinUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends lignebulletinUpdateManyArgs>(args: Prisma.SelectSubset<T, lignebulletinUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one LigneBulletin.
-   * @param {LigneBulletinUpsertArgs} args - Arguments to update or create a LigneBulletin.
+   * Create or update one Lignebulletin.
+   * @param {lignebulletinUpsertArgs} args - Arguments to update or create a Lignebulletin.
    * @example
-   * // Update or create a LigneBulletin
-   * const ligneBulletin = await prisma.ligneBulletin.upsert({
+   * // Update or create a Lignebulletin
+   * const lignebulletin = await prisma.lignebulletin.upsert({
    *   create: {
-   *     // ... data to create a LigneBulletin
+   *     // ... data to create a Lignebulletin
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the LigneBulletin we want to update
+   *     // ... the filter for the Lignebulletin we want to update
    *   }
    * })
    */
-  upsert<T extends LigneBulletinUpsertArgs>(args: Prisma.SelectSubset<T, LigneBulletinUpsertArgs<ExtArgs>>): Prisma.Prisma__LigneBulletinClient<runtime.Types.Result.GetResult<Prisma.$LigneBulletinPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends lignebulletinUpsertArgs>(args: Prisma.SelectSubset<T, lignebulletinUpsertArgs<ExtArgs>>): Prisma.Prisma__lignebulletinClient<runtime.Types.Result.GetResult<Prisma.$lignebulletinPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of LigneBulletins.
+   * Count the number of Lignebulletins.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinCountArgs} args - Arguments to filter LigneBulletins to count.
+   * @param {lignebulletinCountArgs} args - Arguments to filter Lignebulletins to count.
    * @example
-   * // Count the number of LigneBulletins
-   * const count = await prisma.ligneBulletin.count({
+   * // Count the number of Lignebulletins
+   * const count = await prisma.lignebulletin.count({
    *   where: {
-   *     // ... the filter for the LigneBulletins we want to count
+   *     // ... the filter for the Lignebulletins we want to count
    *   }
    * })
   **/
-  count<T extends LigneBulletinCountArgs>(
-    args?: Prisma.Subset<T, LigneBulletinCountArgs>,
+  count<T extends lignebulletinCountArgs>(
+    args?: Prisma.Subset<T, lignebulletinCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], LigneBulletinCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], LignebulletinCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a LigneBulletin.
+   * Allows you to perform aggregations operations on a Lignebulletin.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {LignebulletinAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1025,13 +1025,13 @@ export interface LigneBulletinDelegate<ExtArgs extends runtime.Types.Extensions.
    *   take: 10,
    * })
   **/
-  aggregate<T extends LigneBulletinAggregateArgs>(args: Prisma.Subset<T, LigneBulletinAggregateArgs>): Prisma.PrismaPromise<GetLigneBulletinAggregateType<T>>
+  aggregate<T extends LignebulletinAggregateArgs>(args: Prisma.Subset<T, LignebulletinAggregateArgs>): Prisma.PrismaPromise<GetLignebulletinAggregateType<T>>
 
   /**
-   * Group by LigneBulletin.
+   * Group by Lignebulletin.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LigneBulletinGroupByArgs} args - Group by arguments.
+   * @param {lignebulletinGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1046,14 +1046,14 @@ export interface LigneBulletinDelegate<ExtArgs extends runtime.Types.Extensions.
    * 
   **/
   groupBy<
-    T extends LigneBulletinGroupByArgs,
+    T extends lignebulletinGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: LigneBulletinGroupByArgs['orderBy'] }
-      : { orderBy?: LigneBulletinGroupByArgs['orderBy'] },
+      ? { orderBy: lignebulletinGroupByArgs['orderBy'] }
+      : { orderBy?: lignebulletinGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1102,23 +1102,23 @@ export interface LigneBulletinDelegate<ExtArgs extends runtime.Types.Extensions.
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, LigneBulletinGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLigneBulletinGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, lignebulletinGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLignebulletinGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the LigneBulletin model
+ * Fields of the lignebulletin model
  */
-readonly fields: LigneBulletinFieldRefs;
+readonly fields: lignebulletinFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for LigneBulletin.
+ * The delegate class that acts as a "Promise-like" for lignebulletin.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__LigneBulletinClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__lignebulletinClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  bulletin<T extends Prisma.BulletinDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BulletinDefaultArgs<ExtArgs>>): Prisma.Prisma__BulletinClient<runtime.Types.Result.GetResult<Prisma.$BulletinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  matiere<T extends Prisma.MatiereDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MatiereDefaultArgs<ExtArgs>>): Prisma.Prisma__MatiereClient<runtime.Types.Result.GetResult<Prisma.$MatierePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  bulletin<T extends Prisma.bulletinDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.bulletinDefaultArgs<ExtArgs>>): Prisma.Prisma__bulletinClient<runtime.Types.Result.GetResult<Prisma.$bulletinPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  matiere<T extends Prisma.matiereDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.matiereDefaultArgs<ExtArgs>>): Prisma.Prisma__matiereClient<runtime.Types.Result.GetResult<Prisma.$matierePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1145,379 +1145,379 @@ export interface Prisma__LigneBulletinClient<T, Null = never, ExtArgs extends ru
 
 
 /**
- * Fields of the LigneBulletin model
+ * Fields of the lignebulletin model
  */
-export interface LigneBulletinFieldRefs {
-  readonly id: Prisma.FieldRef<"LigneBulletin", 'String'>
-  readonly bulletinId: Prisma.FieldRef<"LigneBulletin", 'String'>
-  readonly bulletinApprenantId: Prisma.FieldRef<"LigneBulletin", 'String'>
-  readonly bulletinAnneeId: Prisma.FieldRef<"LigneBulletin", 'String'>
-  readonly matiereId: Prisma.FieldRef<"LigneBulletin", 'String'>
-  readonly moyenne: Prisma.FieldRef<"LigneBulletin", 'Float'>
-  readonly coefficient: Prisma.FieldRef<"LigneBulletin", 'Int'>
-  readonly createdAt: Prisma.FieldRef<"LigneBulletin", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"LigneBulletin", 'DateTime'>
+export interface lignebulletinFieldRefs {
+  readonly id: Prisma.FieldRef<"lignebulletin", 'String'>
+  readonly bulletinId: Prisma.FieldRef<"lignebulletin", 'String'>
+  readonly bulletinApprenantId: Prisma.FieldRef<"lignebulletin", 'String'>
+  readonly bulletinAnneeId: Prisma.FieldRef<"lignebulletin", 'String'>
+  readonly matiereId: Prisma.FieldRef<"lignebulletin", 'String'>
+  readonly moyenne: Prisma.FieldRef<"lignebulletin", 'Float'>
+  readonly coefficient: Prisma.FieldRef<"lignebulletin", 'Int'>
+  readonly createdAt: Prisma.FieldRef<"lignebulletin", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"lignebulletin", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * LigneBulletin findUnique
+ * lignebulletin findUnique
  */
-export type LigneBulletinFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * Filter, which LigneBulletin to fetch.
+   * Filter, which lignebulletin to fetch.
    */
-  where: Prisma.LigneBulletinWhereUniqueInput
+  where: Prisma.lignebulletinWhereUniqueInput
 }
 
 /**
- * LigneBulletin findUniqueOrThrow
+ * lignebulletin findUniqueOrThrow
  */
-export type LigneBulletinFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * Filter, which LigneBulletin to fetch.
+   * Filter, which lignebulletin to fetch.
    */
-  where: Prisma.LigneBulletinWhereUniqueInput
+  where: Prisma.lignebulletinWhereUniqueInput
 }
 
 /**
- * LigneBulletin findFirst
+ * lignebulletin findFirst
  */
-export type LigneBulletinFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * Filter, which LigneBulletin to fetch.
+   * Filter, which lignebulletin to fetch.
    */
-  where?: Prisma.LigneBulletinWhereInput
+  where?: Prisma.lignebulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LigneBulletins to fetch.
+   * Determine the order of lignebulletins to fetch.
    */
-  orderBy?: Prisma.LigneBulletinOrderByWithRelationInput | Prisma.LigneBulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.lignebulletinOrderByWithRelationInput | Prisma.lignebulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for LigneBulletins.
+   * Sets the position for searching for lignebulletins.
    */
-  cursor?: Prisma.LigneBulletinWhereUniqueInput
+  cursor?: Prisma.lignebulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LigneBulletins from the position of the cursor.
+   * Take `±n` lignebulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LigneBulletins.
+   * Skip the first `n` lignebulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of LigneBulletins.
+   * Filter by unique combinations of lignebulletins.
    */
-  distinct?: Prisma.LigneBulletinScalarFieldEnum | Prisma.LigneBulletinScalarFieldEnum[]
+  distinct?: Prisma.LignebulletinScalarFieldEnum | Prisma.LignebulletinScalarFieldEnum[]
 }
 
 /**
- * LigneBulletin findFirstOrThrow
+ * lignebulletin findFirstOrThrow
  */
-export type LigneBulletinFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * Filter, which LigneBulletin to fetch.
+   * Filter, which lignebulletin to fetch.
    */
-  where?: Prisma.LigneBulletinWhereInput
+  where?: Prisma.lignebulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LigneBulletins to fetch.
+   * Determine the order of lignebulletins to fetch.
    */
-  orderBy?: Prisma.LigneBulletinOrderByWithRelationInput | Prisma.LigneBulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.lignebulletinOrderByWithRelationInput | Prisma.lignebulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for LigneBulletins.
+   * Sets the position for searching for lignebulletins.
    */
-  cursor?: Prisma.LigneBulletinWhereUniqueInput
+  cursor?: Prisma.lignebulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LigneBulletins from the position of the cursor.
+   * Take `±n` lignebulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LigneBulletins.
+   * Skip the first `n` lignebulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of LigneBulletins.
+   * Filter by unique combinations of lignebulletins.
    */
-  distinct?: Prisma.LigneBulletinScalarFieldEnum | Prisma.LigneBulletinScalarFieldEnum[]
+  distinct?: Prisma.LignebulletinScalarFieldEnum | Prisma.LignebulletinScalarFieldEnum[]
 }
 
 /**
- * LigneBulletin findMany
+ * lignebulletin findMany
  */
-export type LigneBulletinFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * Filter, which LigneBulletins to fetch.
+   * Filter, which lignebulletins to fetch.
    */
-  where?: Prisma.LigneBulletinWhereInput
+  where?: Prisma.lignebulletinWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LigneBulletins to fetch.
+   * Determine the order of lignebulletins to fetch.
    */
-  orderBy?: Prisma.LigneBulletinOrderByWithRelationInput | Prisma.LigneBulletinOrderByWithRelationInput[]
+  orderBy?: Prisma.lignebulletinOrderByWithRelationInput | Prisma.lignebulletinOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing LigneBulletins.
+   * Sets the position for listing lignebulletins.
    */
-  cursor?: Prisma.LigneBulletinWhereUniqueInput
+  cursor?: Prisma.lignebulletinWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LigneBulletins from the position of the cursor.
+   * Take `±n` lignebulletins from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LigneBulletins.
+   * Skip the first `n` lignebulletins.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of LigneBulletins.
+   * Filter by unique combinations of lignebulletins.
    */
-  distinct?: Prisma.LigneBulletinScalarFieldEnum | Prisma.LigneBulletinScalarFieldEnum[]
+  distinct?: Prisma.LignebulletinScalarFieldEnum | Prisma.LignebulletinScalarFieldEnum[]
 }
 
 /**
- * LigneBulletin create
+ * lignebulletin create
  */
-export type LigneBulletinCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * The data needed to create a LigneBulletin.
+   * The data needed to create a lignebulletin.
    */
-  data: Prisma.XOR<Prisma.LigneBulletinCreateInput, Prisma.LigneBulletinUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.lignebulletinCreateInput, Prisma.lignebulletinUncheckedCreateInput>
 }
 
 /**
- * LigneBulletin createMany
+ * lignebulletin createMany
  */
-export type LigneBulletinCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many LigneBulletins.
+   * The data used to create many lignebulletins.
    */
-  data: Prisma.LigneBulletinCreateManyInput | Prisma.LigneBulletinCreateManyInput[]
+  data: Prisma.lignebulletinCreateManyInput | Prisma.lignebulletinCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * LigneBulletin update
+ * lignebulletin update
  */
-export type LigneBulletinUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * The data needed to update a LigneBulletin.
+   * The data needed to update a lignebulletin.
    */
-  data: Prisma.XOR<Prisma.LigneBulletinUpdateInput, Prisma.LigneBulletinUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.lignebulletinUpdateInput, Prisma.lignebulletinUncheckedUpdateInput>
   /**
-   * Choose, which LigneBulletin to update.
+   * Choose, which lignebulletin to update.
    */
-  where: Prisma.LigneBulletinWhereUniqueInput
+  where: Prisma.lignebulletinWhereUniqueInput
 }
 
 /**
- * LigneBulletin updateMany
+ * lignebulletin updateMany
  */
-export type LigneBulletinUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update LigneBulletins.
+   * The data used to update lignebulletins.
    */
-  data: Prisma.XOR<Prisma.LigneBulletinUpdateManyMutationInput, Prisma.LigneBulletinUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.lignebulletinUpdateManyMutationInput, Prisma.lignebulletinUncheckedUpdateManyInput>
   /**
-   * Filter which LigneBulletins to update
+   * Filter which lignebulletins to update
    */
-  where?: Prisma.LigneBulletinWhereInput
+  where?: Prisma.lignebulletinWhereInput
   /**
-   * Limit how many LigneBulletins to update.
+   * Limit how many lignebulletins to update.
    */
   limit?: number
 }
 
 /**
- * LigneBulletin upsert
+ * lignebulletin upsert
  */
-export type LigneBulletinUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * The filter to search for the LigneBulletin to update in case it exists.
+   * The filter to search for the lignebulletin to update in case it exists.
    */
-  where: Prisma.LigneBulletinWhereUniqueInput
+  where: Prisma.lignebulletinWhereUniqueInput
   /**
-   * In case the LigneBulletin found by the `where` argument doesn't exist, create a new LigneBulletin with this data.
+   * In case the lignebulletin found by the `where` argument doesn't exist, create a new lignebulletin with this data.
    */
-  create: Prisma.XOR<Prisma.LigneBulletinCreateInput, Prisma.LigneBulletinUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.lignebulletinCreateInput, Prisma.lignebulletinUncheckedCreateInput>
   /**
-   * In case the LigneBulletin was found with the provided `where` argument, update it with this data.
+   * In case the lignebulletin was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.LigneBulletinUpdateInput, Prisma.LigneBulletinUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.lignebulletinUpdateInput, Prisma.lignebulletinUncheckedUpdateInput>
 }
 
 /**
- * LigneBulletin delete
+ * lignebulletin delete
  */
-export type LigneBulletinDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
   /**
-   * Filter which LigneBulletin to delete.
+   * Filter which lignebulletin to delete.
    */
-  where: Prisma.LigneBulletinWhereUniqueInput
+  where: Prisma.lignebulletinWhereUniqueInput
 }
 
 /**
- * LigneBulletin deleteMany
+ * lignebulletin deleteMany
  */
-export type LigneBulletinDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which LigneBulletins to delete
+   * Filter which lignebulletins to delete
    */
-  where?: Prisma.LigneBulletinWhereInput
+  where?: Prisma.lignebulletinWhereInput
   /**
-   * Limit how many LigneBulletins to delete.
+   * Limit how many lignebulletins to delete.
    */
   limit?: number
 }
 
 /**
- * LigneBulletin without action
+ * lignebulletin without action
  */
-export type LigneBulletinDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type lignebulletinDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LigneBulletin
+   * Select specific fields to fetch from the lignebulletin
    */
-  select?: Prisma.LigneBulletinSelect<ExtArgs> | null
+  select?: Prisma.lignebulletinSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LigneBulletin
+   * Omit specific fields from the lignebulletin
    */
-  omit?: Prisma.LigneBulletinOmit<ExtArgs> | null
+  omit?: Prisma.lignebulletinOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LigneBulletinInclude<ExtArgs> | null
+  include?: Prisma.lignebulletinInclude<ExtArgs> | null
 }

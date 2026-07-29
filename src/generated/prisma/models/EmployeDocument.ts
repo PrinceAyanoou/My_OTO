@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `EmployeDocument` model and its related types.
+ * This file exports the `employedocument` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,36 +13,36 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model EmployeDocument
+ * Model employedocument
  * 
  */
-export type EmployeDocumentModel = runtime.Types.Result.DefaultSelection<Prisma.$EmployeDocumentPayload>
+export type employedocumentModel = runtime.Types.Result.DefaultSelection<Prisma.$employedocumentPayload>
 
-export type AggregateEmployeDocument = {
-  _count: EmployeDocumentCountAggregateOutputType | null
-  _min: EmployeDocumentMinAggregateOutputType | null
-  _max: EmployeDocumentMaxAggregateOutputType | null
+export type AggregateEmployedocument = {
+  _count: EmployedocumentCountAggregateOutputType | null
+  _min: EmployedocumentMinAggregateOutputType | null
+  _max: EmployedocumentMaxAggregateOutputType | null
 }
 
-export type EmployeDocumentMinAggregateOutputType = {
+export type EmployedocumentMinAggregateOutputType = {
   id: string | null
   employeId: string | null
-  type: $Enums.DocumentType | null
+  type: $Enums.employedocument_type | null
   titre: string | null
   documentUrl: string | null
   createdAt: Date | null
 }
 
-export type EmployeDocumentMaxAggregateOutputType = {
+export type EmployedocumentMaxAggregateOutputType = {
   id: string | null
   employeId: string | null
-  type: $Enums.DocumentType | null
+  type: $Enums.employedocument_type | null
   titre: string | null
   documentUrl: string | null
   createdAt: Date | null
 }
 
-export type EmployeDocumentCountAggregateOutputType = {
+export type EmployedocumentCountAggregateOutputType = {
   id: number
   employeId: number
   type: number
@@ -53,7 +53,7 @@ export type EmployeDocumentCountAggregateOutputType = {
 }
 
 
-export type EmployeDocumentMinAggregateInputType = {
+export type EmployedocumentMinAggregateInputType = {
   id?: true
   employeId?: true
   type?: true
@@ -62,7 +62,7 @@ export type EmployeDocumentMinAggregateInputType = {
   createdAt?: true
 }
 
-export type EmployeDocumentMaxAggregateInputType = {
+export type EmployedocumentMaxAggregateInputType = {
   id?: true
   employeId?: true
   type?: true
@@ -71,7 +71,7 @@ export type EmployeDocumentMaxAggregateInputType = {
   createdAt?: true
 }
 
-export type EmployeDocumentCountAggregateInputType = {
+export type EmployedocumentCountAggregateInputType = {
   id?: true
   employeId?: true
   type?: true
@@ -81,245 +81,245 @@ export type EmployeDocumentCountAggregateInputType = {
   _all?: true
 }
 
-export type EmployeDocumentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type EmployedocumentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which EmployeDocument to aggregate.
+   * Filter which employedocument to aggregate.
    */
-  where?: Prisma.EmployeDocumentWhereInput
+  where?: Prisma.employedocumentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeDocuments to fetch.
+   * Determine the order of employedocuments to fetch.
    */
-  orderBy?: Prisma.EmployeDocumentOrderByWithRelationInput | Prisma.EmployeDocumentOrderByWithRelationInput[]
+  orderBy?: Prisma.employedocumentOrderByWithRelationInput | Prisma.employedocumentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.EmployeDocumentWhereUniqueInput
+  cursor?: Prisma.employedocumentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeDocuments from the position of the cursor.
+   * Take `±n` employedocuments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeDocuments.
+   * Skip the first `n` employedocuments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned EmployeDocuments
+   * Count returned employedocuments
   **/
-  _count?: true | EmployeDocumentCountAggregateInputType
+  _count?: true | EmployedocumentCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: EmployeDocumentMinAggregateInputType
+  _min?: EmployedocumentMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: EmployeDocumentMaxAggregateInputType
+  _max?: EmployedocumentMaxAggregateInputType
 }
 
-export type GetEmployeDocumentAggregateType<T extends EmployeDocumentAggregateArgs> = {
-      [P in keyof T & keyof AggregateEmployeDocument]: P extends '_count' | 'count'
+export type GetEmployedocumentAggregateType<T extends EmployedocumentAggregateArgs> = {
+      [P in keyof T & keyof AggregateEmployedocument]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateEmployeDocument[P]>
-    : Prisma.GetScalarType<T[P], AggregateEmployeDocument[P]>
+      : Prisma.GetScalarType<T[P], AggregateEmployedocument[P]>
+    : Prisma.GetScalarType<T[P], AggregateEmployedocument[P]>
 }
 
 
 
 
-export type EmployeDocumentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EmployeDocumentWhereInput
-  orderBy?: Prisma.EmployeDocumentOrderByWithAggregationInput | Prisma.EmployeDocumentOrderByWithAggregationInput[]
-  by: Prisma.EmployeDocumentScalarFieldEnum[] | Prisma.EmployeDocumentScalarFieldEnum
-  having?: Prisma.EmployeDocumentScalarWhereWithAggregatesInput
+export type employedocumentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.employedocumentWhereInput
+  orderBy?: Prisma.employedocumentOrderByWithAggregationInput | Prisma.employedocumentOrderByWithAggregationInput[]
+  by: Prisma.EmployedocumentScalarFieldEnum[] | Prisma.EmployedocumentScalarFieldEnum
+  having?: Prisma.employedocumentScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: EmployeDocumentCountAggregateInputType | true
-  _min?: EmployeDocumentMinAggregateInputType
-  _max?: EmployeDocumentMaxAggregateInputType
+  _count?: EmployedocumentCountAggregateInputType | true
+  _min?: EmployedocumentMinAggregateInputType
+  _max?: EmployedocumentMaxAggregateInputType
 }
 
-export type EmployeDocumentGroupByOutputType = {
+export type EmployedocumentGroupByOutputType = {
   id: string
   employeId: string
-  type: $Enums.DocumentType
+  type: $Enums.employedocument_type
   titre: string
   documentUrl: string
   createdAt: Date
-  _count: EmployeDocumentCountAggregateOutputType | null
-  _min: EmployeDocumentMinAggregateOutputType | null
-  _max: EmployeDocumentMaxAggregateOutputType | null
+  _count: EmployedocumentCountAggregateOutputType | null
+  _min: EmployedocumentMinAggregateOutputType | null
+  _max: EmployedocumentMaxAggregateOutputType | null
 }
 
-export type GetEmployeDocumentGroupByPayload<T extends EmployeDocumentGroupByArgs> = Prisma.PrismaPromise<
+export type GetEmployedocumentGroupByPayload<T extends employedocumentGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<EmployeDocumentGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<EmployedocumentGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof EmployeDocumentGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof EmployedocumentGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], EmployeDocumentGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], EmployeDocumentGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], EmployedocumentGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], EmployedocumentGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type EmployeDocumentWhereInput = {
-  AND?: Prisma.EmployeDocumentWhereInput | Prisma.EmployeDocumentWhereInput[]
-  OR?: Prisma.EmployeDocumentWhereInput[]
-  NOT?: Prisma.EmployeDocumentWhereInput | Prisma.EmployeDocumentWhereInput[]
-  id?: Prisma.StringFilter<"EmployeDocument"> | string
-  employeId?: Prisma.StringFilter<"EmployeDocument"> | string
-  type?: Prisma.EnumDocumentTypeFilter<"EmployeDocument"> | $Enums.DocumentType
-  titre?: Prisma.StringFilter<"EmployeDocument"> | string
-  documentUrl?: Prisma.StringFilter<"EmployeDocument"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmployeDocument"> | Date | string
-  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.EmployeWhereInput>
+export type employedocumentWhereInput = {
+  AND?: Prisma.employedocumentWhereInput | Prisma.employedocumentWhereInput[]
+  OR?: Prisma.employedocumentWhereInput[]
+  NOT?: Prisma.employedocumentWhereInput | Prisma.employedocumentWhereInput[]
+  id?: Prisma.StringFilter<"employedocument"> | string
+  employeId?: Prisma.StringFilter<"employedocument"> | string
+  type?: Prisma.Enumemployedocument_typeFilter<"employedocument"> | $Enums.employedocument_type
+  titre?: Prisma.StringFilter<"employedocument"> | string
+  documentUrl?: Prisma.StringFilter<"employedocument"> | string
+  createdAt?: Prisma.DateTimeFilter<"employedocument"> | Date | string
+  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.employeWhereInput>
 }
 
-export type EmployeDocumentOrderByWithRelationInput = {
+export type employedocumentOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   employeId?: Prisma.SortOrder
   type?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  employe?: Prisma.EmployeOrderByWithRelationInput
-  _relevance?: Prisma.EmployeDocumentOrderByRelevanceInput
+  employe?: Prisma.employeOrderByWithRelationInput
+  _relevance?: Prisma.employedocumentOrderByRelevanceInput
 }
 
-export type EmployeDocumentWhereUniqueInput = Prisma.AtLeast<{
+export type employedocumentWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.EmployeDocumentWhereInput | Prisma.EmployeDocumentWhereInput[]
-  OR?: Prisma.EmployeDocumentWhereInput[]
-  NOT?: Prisma.EmployeDocumentWhereInput | Prisma.EmployeDocumentWhereInput[]
-  employeId?: Prisma.StringFilter<"EmployeDocument"> | string
-  type?: Prisma.EnumDocumentTypeFilter<"EmployeDocument"> | $Enums.DocumentType
-  titre?: Prisma.StringFilter<"EmployeDocument"> | string
-  documentUrl?: Prisma.StringFilter<"EmployeDocument"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmployeDocument"> | Date | string
-  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.EmployeWhereInput>
+  AND?: Prisma.employedocumentWhereInput | Prisma.employedocumentWhereInput[]
+  OR?: Prisma.employedocumentWhereInput[]
+  NOT?: Prisma.employedocumentWhereInput | Prisma.employedocumentWhereInput[]
+  employeId?: Prisma.StringFilter<"employedocument"> | string
+  type?: Prisma.Enumemployedocument_typeFilter<"employedocument"> | $Enums.employedocument_type
+  titre?: Prisma.StringFilter<"employedocument"> | string
+  documentUrl?: Prisma.StringFilter<"employedocument"> | string
+  createdAt?: Prisma.DateTimeFilter<"employedocument"> | Date | string
+  employe?: Prisma.XOR<Prisma.EmployeScalarRelationFilter, Prisma.employeWhereInput>
 }, "id">
 
-export type EmployeDocumentOrderByWithAggregationInput = {
+export type employedocumentOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   employeId?: Prisma.SortOrder
   type?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   documentUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  _count?: Prisma.EmployeDocumentCountOrderByAggregateInput
-  _max?: Prisma.EmployeDocumentMaxOrderByAggregateInput
-  _min?: Prisma.EmployeDocumentMinOrderByAggregateInput
+  _count?: Prisma.employedocumentCountOrderByAggregateInput
+  _max?: Prisma.employedocumentMaxOrderByAggregateInput
+  _min?: Prisma.employedocumentMinOrderByAggregateInput
 }
 
-export type EmployeDocumentScalarWhereWithAggregatesInput = {
-  AND?: Prisma.EmployeDocumentScalarWhereWithAggregatesInput | Prisma.EmployeDocumentScalarWhereWithAggregatesInput[]
-  OR?: Prisma.EmployeDocumentScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.EmployeDocumentScalarWhereWithAggregatesInput | Prisma.EmployeDocumentScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"EmployeDocument"> | string
-  employeId?: Prisma.StringWithAggregatesFilter<"EmployeDocument"> | string
-  type?: Prisma.EnumDocumentTypeWithAggregatesFilter<"EmployeDocument"> | $Enums.DocumentType
-  titre?: Prisma.StringWithAggregatesFilter<"EmployeDocument"> | string
-  documentUrl?: Prisma.StringWithAggregatesFilter<"EmployeDocument"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"EmployeDocument"> | Date | string
+export type employedocumentScalarWhereWithAggregatesInput = {
+  AND?: Prisma.employedocumentScalarWhereWithAggregatesInput | Prisma.employedocumentScalarWhereWithAggregatesInput[]
+  OR?: Prisma.employedocumentScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.employedocumentScalarWhereWithAggregatesInput | Prisma.employedocumentScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"employedocument"> | string
+  employeId?: Prisma.StringWithAggregatesFilter<"employedocument"> | string
+  type?: Prisma.Enumemployedocument_typeWithAggregatesFilter<"employedocument"> | $Enums.employedocument_type
+  titre?: Prisma.StringWithAggregatesFilter<"employedocument"> | string
+  documentUrl?: Prisma.StringWithAggregatesFilter<"employedocument"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"employedocument"> | Date | string
 }
 
-export type EmployeDocumentCreateInput = {
+export type employedocumentCreateInput = {
   id?: string
-  type: $Enums.DocumentType
+  type: $Enums.employedocument_type
   titre: string
   documentUrl: string
   createdAt?: Date | string
-  employe: Prisma.EmployeCreateNestedOneWithoutEmployeDocumentInput
+  employe: Prisma.employeCreateNestedOneWithoutEmployedocumentInput
 }
 
-export type EmployeDocumentUncheckedCreateInput = {
-  id?: string
-  employeId: string
-  type: $Enums.DocumentType
-  titre: string
-  documentUrl: string
-  createdAt?: Date | string
-}
-
-export type EmployeDocumentUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  employe?: Prisma.EmployeUpdateOneRequiredWithoutEmployeDocumentNestedInput
-}
-
-export type EmployeDocumentUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  employeId?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
-  titre?: Prisma.StringFieldUpdateOperationsInput | string
-  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type EmployeDocumentCreateManyInput = {
+export type employedocumentUncheckedCreateInput = {
   id?: string
   employeId: string
-  type: $Enums.DocumentType
+  type: $Enums.employedocument_type
   titre: string
   documentUrl: string
   createdAt?: Date | string
 }
 
-export type EmployeDocumentUpdateManyMutationInput = {
+export type employedocumentUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  employe?: Prisma.employeUpdateOneRequiredWithoutEmployedocumentNestedInput
 }
 
-export type EmployeDocumentUncheckedUpdateManyInput = {
+export type employedocumentUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   employeId?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeDocumentListRelationFilter = {
-  every?: Prisma.EmployeDocumentWhereInput
-  some?: Prisma.EmployeDocumentWhereInput
-  none?: Prisma.EmployeDocumentWhereInput
+export type employedocumentCreateManyInput = {
+  id?: string
+  employeId: string
+  type: $Enums.employedocument_type
+  titre: string
+  documentUrl: string
+  createdAt?: Date | string
 }
 
-export type EmployeDocumentOrderByRelationAggregateInput = {
+export type employedocumentUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type employedocumentUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  employeId?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
+  titre?: Prisma.StringFieldUpdateOperationsInput | string
+  documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type EmployedocumentListRelationFilter = {
+  every?: Prisma.employedocumentWhereInput
+  some?: Prisma.employedocumentWhereInput
+  none?: Prisma.employedocumentWhereInput
+}
+
+export type employedocumentOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type EmployeDocumentOrderByRelevanceInput = {
-  fields: Prisma.EmployeDocumentOrderByRelevanceFieldEnum | Prisma.EmployeDocumentOrderByRelevanceFieldEnum[]
+export type employedocumentOrderByRelevanceInput = {
+  fields: Prisma.employedocumentOrderByRelevanceFieldEnum | Prisma.employedocumentOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type EmployeDocumentCountOrderByAggregateInput = {
+export type employedocumentCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   employeId?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -328,7 +328,7 @@ export type EmployeDocumentCountOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
 }
 
-export type EmployeDocumentMaxOrderByAggregateInput = {
+export type employedocumentMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   employeId?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -337,7 +337,7 @@ export type EmployeDocumentMaxOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
 }
 
-export type EmployeDocumentMinOrderByAggregateInput = {
+export type employedocumentMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   employeId?: Prisma.SortOrder
   type?: Prisma.SortOrder
@@ -346,133 +346,133 @@ export type EmployeDocumentMinOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
 }
 
-export type EmployeDocumentCreateNestedManyWithoutEmployeInput = {
-  create?: Prisma.XOR<Prisma.EmployeDocumentCreateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput> | Prisma.EmployeDocumentCreateWithoutEmployeInput[] | Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput | Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput[]
-  createMany?: Prisma.EmployeDocumentCreateManyEmployeInputEnvelope
-  connect?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
+export type employedocumentCreateNestedManyWithoutEmployeInput = {
+  create?: Prisma.XOR<Prisma.employedocumentCreateWithoutEmployeInput, Prisma.employedocumentUncheckedCreateWithoutEmployeInput> | Prisma.employedocumentCreateWithoutEmployeInput[] | Prisma.employedocumentUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employedocumentCreateOrConnectWithoutEmployeInput | Prisma.employedocumentCreateOrConnectWithoutEmployeInput[]
+  createMany?: Prisma.employedocumentCreateManyEmployeInputEnvelope
+  connect?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
 }
 
-export type EmployeDocumentUncheckedCreateNestedManyWithoutEmployeInput = {
-  create?: Prisma.XOR<Prisma.EmployeDocumentCreateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput> | Prisma.EmployeDocumentCreateWithoutEmployeInput[] | Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput | Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput[]
-  createMany?: Prisma.EmployeDocumentCreateManyEmployeInputEnvelope
-  connect?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
+export type employedocumentUncheckedCreateNestedManyWithoutEmployeInput = {
+  create?: Prisma.XOR<Prisma.employedocumentCreateWithoutEmployeInput, Prisma.employedocumentUncheckedCreateWithoutEmployeInput> | Prisma.employedocumentCreateWithoutEmployeInput[] | Prisma.employedocumentUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employedocumentCreateOrConnectWithoutEmployeInput | Prisma.employedocumentCreateOrConnectWithoutEmployeInput[]
+  createMany?: Prisma.employedocumentCreateManyEmployeInputEnvelope
+  connect?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
 }
 
-export type EmployeDocumentUpdateManyWithoutEmployeNestedInput = {
-  create?: Prisma.XOR<Prisma.EmployeDocumentCreateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput> | Prisma.EmployeDocumentCreateWithoutEmployeInput[] | Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput | Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput[]
-  upsert?: Prisma.EmployeDocumentUpsertWithWhereUniqueWithoutEmployeInput | Prisma.EmployeDocumentUpsertWithWhereUniqueWithoutEmployeInput[]
-  createMany?: Prisma.EmployeDocumentCreateManyEmployeInputEnvelope
-  set?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  disconnect?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  delete?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  connect?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  update?: Prisma.EmployeDocumentUpdateWithWhereUniqueWithoutEmployeInput | Prisma.EmployeDocumentUpdateWithWhereUniqueWithoutEmployeInput[]
-  updateMany?: Prisma.EmployeDocumentUpdateManyWithWhereWithoutEmployeInput | Prisma.EmployeDocumentUpdateManyWithWhereWithoutEmployeInput[]
-  deleteMany?: Prisma.EmployeDocumentScalarWhereInput | Prisma.EmployeDocumentScalarWhereInput[]
+export type employedocumentUpdateManyWithoutEmployeNestedInput = {
+  create?: Prisma.XOR<Prisma.employedocumentCreateWithoutEmployeInput, Prisma.employedocumentUncheckedCreateWithoutEmployeInput> | Prisma.employedocumentCreateWithoutEmployeInput[] | Prisma.employedocumentUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employedocumentCreateOrConnectWithoutEmployeInput | Prisma.employedocumentCreateOrConnectWithoutEmployeInput[]
+  upsert?: Prisma.employedocumentUpsertWithWhereUniqueWithoutEmployeInput | Prisma.employedocumentUpsertWithWhereUniqueWithoutEmployeInput[]
+  createMany?: Prisma.employedocumentCreateManyEmployeInputEnvelope
+  set?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  disconnect?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  delete?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  connect?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  update?: Prisma.employedocumentUpdateWithWhereUniqueWithoutEmployeInput | Prisma.employedocumentUpdateWithWhereUniqueWithoutEmployeInput[]
+  updateMany?: Prisma.employedocumentUpdateManyWithWhereWithoutEmployeInput | Prisma.employedocumentUpdateManyWithWhereWithoutEmployeInput[]
+  deleteMany?: Prisma.employedocumentScalarWhereInput | Prisma.employedocumentScalarWhereInput[]
 }
 
-export type EmployeDocumentUncheckedUpdateManyWithoutEmployeNestedInput = {
-  create?: Prisma.XOR<Prisma.EmployeDocumentCreateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput> | Prisma.EmployeDocumentCreateWithoutEmployeInput[] | Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput[]
-  connectOrCreate?: Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput | Prisma.EmployeDocumentCreateOrConnectWithoutEmployeInput[]
-  upsert?: Prisma.EmployeDocumentUpsertWithWhereUniqueWithoutEmployeInput | Prisma.EmployeDocumentUpsertWithWhereUniqueWithoutEmployeInput[]
-  createMany?: Prisma.EmployeDocumentCreateManyEmployeInputEnvelope
-  set?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  disconnect?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  delete?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  connect?: Prisma.EmployeDocumentWhereUniqueInput | Prisma.EmployeDocumentWhereUniqueInput[]
-  update?: Prisma.EmployeDocumentUpdateWithWhereUniqueWithoutEmployeInput | Prisma.EmployeDocumentUpdateWithWhereUniqueWithoutEmployeInput[]
-  updateMany?: Prisma.EmployeDocumentUpdateManyWithWhereWithoutEmployeInput | Prisma.EmployeDocumentUpdateManyWithWhereWithoutEmployeInput[]
-  deleteMany?: Prisma.EmployeDocumentScalarWhereInput | Prisma.EmployeDocumentScalarWhereInput[]
+export type employedocumentUncheckedUpdateManyWithoutEmployeNestedInput = {
+  create?: Prisma.XOR<Prisma.employedocumentCreateWithoutEmployeInput, Prisma.employedocumentUncheckedCreateWithoutEmployeInput> | Prisma.employedocumentCreateWithoutEmployeInput[] | Prisma.employedocumentUncheckedCreateWithoutEmployeInput[]
+  connectOrCreate?: Prisma.employedocumentCreateOrConnectWithoutEmployeInput | Prisma.employedocumentCreateOrConnectWithoutEmployeInput[]
+  upsert?: Prisma.employedocumentUpsertWithWhereUniqueWithoutEmployeInput | Prisma.employedocumentUpsertWithWhereUniqueWithoutEmployeInput[]
+  createMany?: Prisma.employedocumentCreateManyEmployeInputEnvelope
+  set?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  disconnect?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  delete?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  connect?: Prisma.employedocumentWhereUniqueInput | Prisma.employedocumentWhereUniqueInput[]
+  update?: Prisma.employedocumentUpdateWithWhereUniqueWithoutEmployeInput | Prisma.employedocumentUpdateWithWhereUniqueWithoutEmployeInput[]
+  updateMany?: Prisma.employedocumentUpdateManyWithWhereWithoutEmployeInput | Prisma.employedocumentUpdateManyWithWhereWithoutEmployeInput[]
+  deleteMany?: Prisma.employedocumentScalarWhereInput | Prisma.employedocumentScalarWhereInput[]
 }
 
-export type EnumDocumentTypeFieldUpdateOperationsInput = {
-  set?: $Enums.DocumentType
+export type Enumemployedocument_typeFieldUpdateOperationsInput = {
+  set?: $Enums.employedocument_type
 }
 
-export type EmployeDocumentCreateWithoutEmployeInput = {
+export type employedocumentCreateWithoutEmployeInput = {
   id?: string
-  type: $Enums.DocumentType
+  type: $Enums.employedocument_type
   titre: string
   documentUrl: string
   createdAt?: Date | string
 }
 
-export type EmployeDocumentUncheckedCreateWithoutEmployeInput = {
+export type employedocumentUncheckedCreateWithoutEmployeInput = {
   id?: string
-  type: $Enums.DocumentType
+  type: $Enums.employedocument_type
   titre: string
   documentUrl: string
   createdAt?: Date | string
 }
 
-export type EmployeDocumentCreateOrConnectWithoutEmployeInput = {
-  where: Prisma.EmployeDocumentWhereUniqueInput
-  create: Prisma.XOR<Prisma.EmployeDocumentCreateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput>
+export type employedocumentCreateOrConnectWithoutEmployeInput = {
+  where: Prisma.employedocumentWhereUniqueInput
+  create: Prisma.XOR<Prisma.employedocumentCreateWithoutEmployeInput, Prisma.employedocumentUncheckedCreateWithoutEmployeInput>
 }
 
-export type EmployeDocumentCreateManyEmployeInputEnvelope = {
-  data: Prisma.EmployeDocumentCreateManyEmployeInput | Prisma.EmployeDocumentCreateManyEmployeInput[]
+export type employedocumentCreateManyEmployeInputEnvelope = {
+  data: Prisma.employedocumentCreateManyEmployeInput | Prisma.employedocumentCreateManyEmployeInput[]
   skipDuplicates?: boolean
 }
 
-export type EmployeDocumentUpsertWithWhereUniqueWithoutEmployeInput = {
-  where: Prisma.EmployeDocumentWhereUniqueInput
-  update: Prisma.XOR<Prisma.EmployeDocumentUpdateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedUpdateWithoutEmployeInput>
-  create: Prisma.XOR<Prisma.EmployeDocumentCreateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedCreateWithoutEmployeInput>
+export type employedocumentUpsertWithWhereUniqueWithoutEmployeInput = {
+  where: Prisma.employedocumentWhereUniqueInput
+  update: Prisma.XOR<Prisma.employedocumentUpdateWithoutEmployeInput, Prisma.employedocumentUncheckedUpdateWithoutEmployeInput>
+  create: Prisma.XOR<Prisma.employedocumentCreateWithoutEmployeInput, Prisma.employedocumentUncheckedCreateWithoutEmployeInput>
 }
 
-export type EmployeDocumentUpdateWithWhereUniqueWithoutEmployeInput = {
-  where: Prisma.EmployeDocumentWhereUniqueInput
-  data: Prisma.XOR<Prisma.EmployeDocumentUpdateWithoutEmployeInput, Prisma.EmployeDocumentUncheckedUpdateWithoutEmployeInput>
+export type employedocumentUpdateWithWhereUniqueWithoutEmployeInput = {
+  where: Prisma.employedocumentWhereUniqueInput
+  data: Prisma.XOR<Prisma.employedocumentUpdateWithoutEmployeInput, Prisma.employedocumentUncheckedUpdateWithoutEmployeInput>
 }
 
-export type EmployeDocumentUpdateManyWithWhereWithoutEmployeInput = {
-  where: Prisma.EmployeDocumentScalarWhereInput
-  data: Prisma.XOR<Prisma.EmployeDocumentUpdateManyMutationInput, Prisma.EmployeDocumentUncheckedUpdateManyWithoutEmployeInput>
+export type employedocumentUpdateManyWithWhereWithoutEmployeInput = {
+  where: Prisma.employedocumentScalarWhereInput
+  data: Prisma.XOR<Prisma.employedocumentUpdateManyMutationInput, Prisma.employedocumentUncheckedUpdateManyWithoutEmployeInput>
 }
 
-export type EmployeDocumentScalarWhereInput = {
-  AND?: Prisma.EmployeDocumentScalarWhereInput | Prisma.EmployeDocumentScalarWhereInput[]
-  OR?: Prisma.EmployeDocumentScalarWhereInput[]
-  NOT?: Prisma.EmployeDocumentScalarWhereInput | Prisma.EmployeDocumentScalarWhereInput[]
-  id?: Prisma.StringFilter<"EmployeDocument"> | string
-  employeId?: Prisma.StringFilter<"EmployeDocument"> | string
-  type?: Prisma.EnumDocumentTypeFilter<"EmployeDocument"> | $Enums.DocumentType
-  titre?: Prisma.StringFilter<"EmployeDocument"> | string
-  documentUrl?: Prisma.StringFilter<"EmployeDocument"> | string
-  createdAt?: Prisma.DateTimeFilter<"EmployeDocument"> | Date | string
+export type employedocumentScalarWhereInput = {
+  AND?: Prisma.employedocumentScalarWhereInput | Prisma.employedocumentScalarWhereInput[]
+  OR?: Prisma.employedocumentScalarWhereInput[]
+  NOT?: Prisma.employedocumentScalarWhereInput | Prisma.employedocumentScalarWhereInput[]
+  id?: Prisma.StringFilter<"employedocument"> | string
+  employeId?: Prisma.StringFilter<"employedocument"> | string
+  type?: Prisma.Enumemployedocument_typeFilter<"employedocument"> | $Enums.employedocument_type
+  titre?: Prisma.StringFilter<"employedocument"> | string
+  documentUrl?: Prisma.StringFilter<"employedocument"> | string
+  createdAt?: Prisma.DateTimeFilter<"employedocument"> | Date | string
 }
 
-export type EmployeDocumentCreateManyEmployeInput = {
+export type employedocumentCreateManyEmployeInput = {
   id?: string
-  type: $Enums.DocumentType
+  type: $Enums.employedocument_type
   titre: string
   documentUrl: string
   createdAt?: Date | string
 }
 
-export type EmployeDocumentUpdateWithoutEmployeInput = {
+export type employedocumentUpdateWithoutEmployeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeDocumentUncheckedUpdateWithoutEmployeInput = {
+export type employedocumentUncheckedUpdateWithoutEmployeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type EmployeDocumentUncheckedUpdateManyWithoutEmployeInput = {
+export type employedocumentUncheckedUpdateManyWithoutEmployeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumDocumentTypeFieldUpdateOperationsInput | $Enums.DocumentType
+  type?: Prisma.Enumemployedocument_typeFieldUpdateOperationsInput | $Enums.employedocument_type
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   documentUrl?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -480,19 +480,19 @@ export type EmployeDocumentUncheckedUpdateManyWithoutEmployeInput = {
 
 
 
-export type EmployeDocumentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type employedocumentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   employeId?: boolean
   type?: boolean
   titre?: boolean
   documentUrl?: boolean
   createdAt?: boolean
-  employe?: boolean | Prisma.EmployeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["employeDocument"]>
+  employe?: boolean | Prisma.employeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["employedocument"]>
 
 
 
-export type EmployeDocumentSelectScalar = {
+export type employedocumentSelectScalar = {
   id?: boolean
   employeId?: boolean
   type?: boolean
@@ -501,160 +501,160 @@ export type EmployeDocumentSelectScalar = {
   createdAt?: boolean
 }
 
-export type EmployeDocumentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "employeId" | "type" | "titre" | "documentUrl" | "createdAt", ExtArgs["result"]["employeDocument"]>
-export type EmployeDocumentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  employe?: boolean | Prisma.EmployeDefaultArgs<ExtArgs>
+export type employedocumentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "employeId" | "type" | "titre" | "documentUrl" | "createdAt", ExtArgs["result"]["employedocument"]>
+export type employedocumentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  employe?: boolean | Prisma.employeDefaultArgs<ExtArgs>
 }
 
-export type $EmployeDocumentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "EmployeDocument"
+export type $employedocumentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "employedocument"
   objects: {
-    employe: Prisma.$EmployePayload<ExtArgs>
+    employe: Prisma.$employePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     employeId: string
-    type: $Enums.DocumentType
+    type: $Enums.employedocument_type
     titre: string
     documentUrl: string
     createdAt: Date
-  }, ExtArgs["result"]["employeDocument"]>
+  }, ExtArgs["result"]["employedocument"]>
   composites: {}
 }
 
-export type EmployeDocumentGetPayload<S extends boolean | null | undefined | EmployeDocumentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload, S>
+export type employedocumentGetPayload<S extends boolean | null | undefined | employedocumentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$employedocumentPayload, S>
 
-export type EmployeDocumentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<EmployeDocumentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: EmployeDocumentCountAggregateInputType | true
+export type employedocumentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<employedocumentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: EmployedocumentCountAggregateInputType | true
   }
 
-export interface EmployeDocumentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['EmployeDocument'], meta: { name: 'EmployeDocument' } }
+export interface employedocumentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['employedocument'], meta: { name: 'employedocument' } }
   /**
-   * Find zero or one EmployeDocument that matches the filter.
-   * @param {EmployeDocumentFindUniqueArgs} args - Arguments to find a EmployeDocument
+   * Find zero or one Employedocument that matches the filter.
+   * @param {employedocumentFindUniqueArgs} args - Arguments to find a Employedocument
    * @example
-   * // Get one EmployeDocument
-   * const employeDocument = await prisma.employeDocument.findUnique({
+   * // Get one Employedocument
+   * const employedocument = await prisma.employedocument.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends EmployeDocumentFindUniqueArgs>(args: Prisma.SelectSubset<T, EmployeDocumentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends employedocumentFindUniqueArgs>(args: Prisma.SelectSubset<T, employedocumentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one EmployeDocument that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Employedocument that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {EmployeDocumentFindUniqueOrThrowArgs} args - Arguments to find a EmployeDocument
+   * @param {employedocumentFindUniqueOrThrowArgs} args - Arguments to find a Employedocument
    * @example
-   * // Get one EmployeDocument
-   * const employeDocument = await prisma.employeDocument.findUniqueOrThrow({
+   * // Get one Employedocument
+   * const employedocument = await prisma.employedocument.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends EmployeDocumentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, EmployeDocumentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends employedocumentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, employedocumentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first EmployeDocument that matches the filter.
+   * Find the first Employedocument that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentFindFirstArgs} args - Arguments to find a EmployeDocument
+   * @param {employedocumentFindFirstArgs} args - Arguments to find a Employedocument
    * @example
-   * // Get one EmployeDocument
-   * const employeDocument = await prisma.employeDocument.findFirst({
+   * // Get one Employedocument
+   * const employedocument = await prisma.employedocument.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends EmployeDocumentFindFirstArgs>(args?: Prisma.SelectSubset<T, EmployeDocumentFindFirstArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends employedocumentFindFirstArgs>(args?: Prisma.SelectSubset<T, employedocumentFindFirstArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first EmployeDocument that matches the filter or
+   * Find the first Employedocument that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentFindFirstOrThrowArgs} args - Arguments to find a EmployeDocument
+   * @param {employedocumentFindFirstOrThrowArgs} args - Arguments to find a Employedocument
    * @example
-   * // Get one EmployeDocument
-   * const employeDocument = await prisma.employeDocument.findFirstOrThrow({
+   * // Get one Employedocument
+   * const employedocument = await prisma.employedocument.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends EmployeDocumentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, EmployeDocumentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends employedocumentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, employedocumentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more EmployeDocuments that matches the filter.
+   * Find zero or more Employedocuments that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {employedocumentFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all EmployeDocuments
-   * const employeDocuments = await prisma.employeDocument.findMany()
+   * // Get all Employedocuments
+   * const employedocuments = await prisma.employedocument.findMany()
    * 
-   * // Get first 10 EmployeDocuments
-   * const employeDocuments = await prisma.employeDocument.findMany({ take: 10 })
+   * // Get first 10 Employedocuments
+   * const employedocuments = await prisma.employedocument.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const employeDocumentWithIdOnly = await prisma.employeDocument.findMany({ select: { id: true } })
+   * const employedocumentWithIdOnly = await prisma.employedocument.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends EmployeDocumentFindManyArgs>(args?: Prisma.SelectSubset<T, EmployeDocumentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends employedocumentFindManyArgs>(args?: Prisma.SelectSubset<T, employedocumentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a EmployeDocument.
-   * @param {EmployeDocumentCreateArgs} args - Arguments to create a EmployeDocument.
+   * Create a Employedocument.
+   * @param {employedocumentCreateArgs} args - Arguments to create a Employedocument.
    * @example
-   * // Create one EmployeDocument
-   * const EmployeDocument = await prisma.employeDocument.create({
+   * // Create one Employedocument
+   * const Employedocument = await prisma.employedocument.create({
    *   data: {
-   *     // ... data to create a EmployeDocument
+   *     // ... data to create a Employedocument
    *   }
    * })
    * 
    */
-  create<T extends EmployeDocumentCreateArgs>(args: Prisma.SelectSubset<T, EmployeDocumentCreateArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends employedocumentCreateArgs>(args: Prisma.SelectSubset<T, employedocumentCreateArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many EmployeDocuments.
-   * @param {EmployeDocumentCreateManyArgs} args - Arguments to create many EmployeDocuments.
+   * Create many Employedocuments.
+   * @param {employedocumentCreateManyArgs} args - Arguments to create many Employedocuments.
    * @example
-   * // Create many EmployeDocuments
-   * const employeDocument = await prisma.employeDocument.createMany({
+   * // Create many Employedocuments
+   * const employedocument = await prisma.employedocument.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends EmployeDocumentCreateManyArgs>(args?: Prisma.SelectSubset<T, EmployeDocumentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends employedocumentCreateManyArgs>(args?: Prisma.SelectSubset<T, employedocumentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a EmployeDocument.
-   * @param {EmployeDocumentDeleteArgs} args - Arguments to delete one EmployeDocument.
+   * Delete a Employedocument.
+   * @param {employedocumentDeleteArgs} args - Arguments to delete one Employedocument.
    * @example
-   * // Delete one EmployeDocument
-   * const EmployeDocument = await prisma.employeDocument.delete({
+   * // Delete one Employedocument
+   * const Employedocument = await prisma.employedocument.delete({
    *   where: {
-   *     // ... filter to delete one EmployeDocument
+   *     // ... filter to delete one Employedocument
    *   }
    * })
    * 
    */
-  delete<T extends EmployeDocumentDeleteArgs>(args: Prisma.SelectSubset<T, EmployeDocumentDeleteArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends employedocumentDeleteArgs>(args: Prisma.SelectSubset<T, employedocumentDeleteArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one EmployeDocument.
-   * @param {EmployeDocumentUpdateArgs} args - Arguments to update one EmployeDocument.
+   * Update one Employedocument.
+   * @param {employedocumentUpdateArgs} args - Arguments to update one Employedocument.
    * @example
-   * // Update one EmployeDocument
-   * const employeDocument = await prisma.employeDocument.update({
+   * // Update one Employedocument
+   * const employedocument = await prisma.employedocument.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -664,30 +664,30 @@ export interface EmployeDocumentDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  update<T extends EmployeDocumentUpdateArgs>(args: Prisma.SelectSubset<T, EmployeDocumentUpdateArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends employedocumentUpdateArgs>(args: Prisma.SelectSubset<T, employedocumentUpdateArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more EmployeDocuments.
-   * @param {EmployeDocumentDeleteManyArgs} args - Arguments to filter EmployeDocuments to delete.
+   * Delete zero or more Employedocuments.
+   * @param {employedocumentDeleteManyArgs} args - Arguments to filter Employedocuments to delete.
    * @example
-   * // Delete a few EmployeDocuments
-   * const { count } = await prisma.employeDocument.deleteMany({
+   * // Delete a few Employedocuments
+   * const { count } = await prisma.employedocument.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends EmployeDocumentDeleteManyArgs>(args?: Prisma.SelectSubset<T, EmployeDocumentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends employedocumentDeleteManyArgs>(args?: Prisma.SelectSubset<T, employedocumentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more EmployeDocuments.
+   * Update zero or more Employedocuments.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {employedocumentUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many EmployeDocuments
-   * const employeDocument = await prisma.employeDocument.updateMany({
+   * // Update many Employedocuments
+   * const employedocument = await prisma.employedocument.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -697,56 +697,56 @@ export interface EmployeDocumentDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  updateMany<T extends EmployeDocumentUpdateManyArgs>(args: Prisma.SelectSubset<T, EmployeDocumentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends employedocumentUpdateManyArgs>(args: Prisma.SelectSubset<T, employedocumentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one EmployeDocument.
-   * @param {EmployeDocumentUpsertArgs} args - Arguments to update or create a EmployeDocument.
+   * Create or update one Employedocument.
+   * @param {employedocumentUpsertArgs} args - Arguments to update or create a Employedocument.
    * @example
-   * // Update or create a EmployeDocument
-   * const employeDocument = await prisma.employeDocument.upsert({
+   * // Update or create a Employedocument
+   * const employedocument = await prisma.employedocument.upsert({
    *   create: {
-   *     // ... data to create a EmployeDocument
+   *     // ... data to create a Employedocument
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the EmployeDocument we want to update
+   *     // ... the filter for the Employedocument we want to update
    *   }
    * })
    */
-  upsert<T extends EmployeDocumentUpsertArgs>(args: Prisma.SelectSubset<T, EmployeDocumentUpsertArgs<ExtArgs>>): Prisma.Prisma__EmployeDocumentClient<runtime.Types.Result.GetResult<Prisma.$EmployeDocumentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends employedocumentUpsertArgs>(args: Prisma.SelectSubset<T, employedocumentUpsertArgs<ExtArgs>>): Prisma.Prisma__employedocumentClient<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of EmployeDocuments.
+   * Count the number of Employedocuments.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentCountArgs} args - Arguments to filter EmployeDocuments to count.
+   * @param {employedocumentCountArgs} args - Arguments to filter Employedocuments to count.
    * @example
-   * // Count the number of EmployeDocuments
-   * const count = await prisma.employeDocument.count({
+   * // Count the number of Employedocuments
+   * const count = await prisma.employedocument.count({
    *   where: {
-   *     // ... the filter for the EmployeDocuments we want to count
+   *     // ... the filter for the Employedocuments we want to count
    *   }
    * })
   **/
-  count<T extends EmployeDocumentCountArgs>(
-    args?: Prisma.Subset<T, EmployeDocumentCountArgs>,
+  count<T extends employedocumentCountArgs>(
+    args?: Prisma.Subset<T, employedocumentCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], EmployeDocumentCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], EmployedocumentCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a EmployeDocument.
+   * Allows you to perform aggregations operations on a Employedocument.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {EmployedocumentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -766,13 +766,13 @@ export interface EmployeDocumentDelegate<ExtArgs extends runtime.Types.Extension
    *   take: 10,
    * })
   **/
-  aggregate<T extends EmployeDocumentAggregateArgs>(args: Prisma.Subset<T, EmployeDocumentAggregateArgs>): Prisma.PrismaPromise<GetEmployeDocumentAggregateType<T>>
+  aggregate<T extends EmployedocumentAggregateArgs>(args: Prisma.Subset<T, EmployedocumentAggregateArgs>): Prisma.PrismaPromise<GetEmployedocumentAggregateType<T>>
 
   /**
-   * Group by EmployeDocument.
+   * Group by Employedocument.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {EmployeDocumentGroupByArgs} args - Group by arguments.
+   * @param {employedocumentGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -787,14 +787,14 @@ export interface EmployeDocumentDelegate<ExtArgs extends runtime.Types.Extension
    * 
   **/
   groupBy<
-    T extends EmployeDocumentGroupByArgs,
+    T extends employedocumentGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: EmployeDocumentGroupByArgs['orderBy'] }
-      : { orderBy?: EmployeDocumentGroupByArgs['orderBy'] },
+      ? { orderBy: employedocumentGroupByArgs['orderBy'] }
+      : { orderBy?: employedocumentGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -843,22 +843,22 @@ export interface EmployeDocumentDelegate<ExtArgs extends runtime.Types.Extension
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, EmployeDocumentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmployeDocumentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, employedocumentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEmployedocumentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the EmployeDocument model
+ * Fields of the employedocument model
  */
-readonly fields: EmployeDocumentFieldRefs;
+readonly fields: employedocumentFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for EmployeDocument.
+ * The delegate class that acts as a "Promise-like" for employedocument.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EmployeDocumentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__employedocumentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  employe<T extends Prisma.EmployeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EmployeDefaultArgs<ExtArgs>>): Prisma.Prisma__EmployeClient<runtime.Types.Result.GetResult<Prisma.$EmployePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  employe<T extends Prisma.employeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.employeDefaultArgs<ExtArgs>>): Prisma.Prisma__employeClient<runtime.Types.Result.GetResult<Prisma.$employePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -885,376 +885,376 @@ export interface Prisma__EmployeDocumentClient<T, Null = never, ExtArgs extends 
 
 
 /**
- * Fields of the EmployeDocument model
+ * Fields of the employedocument model
  */
-export interface EmployeDocumentFieldRefs {
-  readonly id: Prisma.FieldRef<"EmployeDocument", 'String'>
-  readonly employeId: Prisma.FieldRef<"EmployeDocument", 'String'>
-  readonly type: Prisma.FieldRef<"EmployeDocument", 'DocumentType'>
-  readonly titre: Prisma.FieldRef<"EmployeDocument", 'String'>
-  readonly documentUrl: Prisma.FieldRef<"EmployeDocument", 'String'>
-  readonly createdAt: Prisma.FieldRef<"EmployeDocument", 'DateTime'>
+export interface employedocumentFieldRefs {
+  readonly id: Prisma.FieldRef<"employedocument", 'String'>
+  readonly employeId: Prisma.FieldRef<"employedocument", 'String'>
+  readonly type: Prisma.FieldRef<"employedocument", 'employedocument_type'>
+  readonly titre: Prisma.FieldRef<"employedocument", 'String'>
+  readonly documentUrl: Prisma.FieldRef<"employedocument", 'String'>
+  readonly createdAt: Prisma.FieldRef<"employedocument", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * EmployeDocument findUnique
+ * employedocument findUnique
  */
-export type EmployeDocumentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeDocument to fetch.
+   * Filter, which employedocument to fetch.
    */
-  where: Prisma.EmployeDocumentWhereUniqueInput
+  where: Prisma.employedocumentWhereUniqueInput
 }
 
 /**
- * EmployeDocument findUniqueOrThrow
+ * employedocument findUniqueOrThrow
  */
-export type EmployeDocumentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeDocument to fetch.
+   * Filter, which employedocument to fetch.
    */
-  where: Prisma.EmployeDocumentWhereUniqueInput
+  where: Prisma.employedocumentWhereUniqueInput
 }
 
 /**
- * EmployeDocument findFirst
+ * employedocument findFirst
  */
-export type EmployeDocumentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeDocument to fetch.
+   * Filter, which employedocument to fetch.
    */
-  where?: Prisma.EmployeDocumentWhereInput
+  where?: Prisma.employedocumentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeDocuments to fetch.
+   * Determine the order of employedocuments to fetch.
    */
-  orderBy?: Prisma.EmployeDocumentOrderByWithRelationInput | Prisma.EmployeDocumentOrderByWithRelationInput[]
+  orderBy?: Prisma.employedocumentOrderByWithRelationInput | Prisma.employedocumentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for EmployeDocuments.
+   * Sets the position for searching for employedocuments.
    */
-  cursor?: Prisma.EmployeDocumentWhereUniqueInput
+  cursor?: Prisma.employedocumentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeDocuments from the position of the cursor.
+   * Take `±n` employedocuments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeDocuments.
+   * Skip the first `n` employedocuments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmployeDocuments.
+   * Filter by unique combinations of employedocuments.
    */
-  distinct?: Prisma.EmployeDocumentScalarFieldEnum | Prisma.EmployeDocumentScalarFieldEnum[]
+  distinct?: Prisma.EmployedocumentScalarFieldEnum | Prisma.EmployedocumentScalarFieldEnum[]
 }
 
 /**
- * EmployeDocument findFirstOrThrow
+ * employedocument findFirstOrThrow
  */
-export type EmployeDocumentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeDocument to fetch.
+   * Filter, which employedocument to fetch.
    */
-  where?: Prisma.EmployeDocumentWhereInput
+  where?: Prisma.employedocumentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeDocuments to fetch.
+   * Determine the order of employedocuments to fetch.
    */
-  orderBy?: Prisma.EmployeDocumentOrderByWithRelationInput | Prisma.EmployeDocumentOrderByWithRelationInput[]
+  orderBy?: Prisma.employedocumentOrderByWithRelationInput | Prisma.employedocumentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for EmployeDocuments.
+   * Sets the position for searching for employedocuments.
    */
-  cursor?: Prisma.EmployeDocumentWhereUniqueInput
+  cursor?: Prisma.employedocumentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeDocuments from the position of the cursor.
+   * Take `±n` employedocuments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeDocuments.
+   * Skip the first `n` employedocuments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmployeDocuments.
+   * Filter by unique combinations of employedocuments.
    */
-  distinct?: Prisma.EmployeDocumentScalarFieldEnum | Prisma.EmployeDocumentScalarFieldEnum[]
+  distinct?: Prisma.EmployedocumentScalarFieldEnum | Prisma.EmployedocumentScalarFieldEnum[]
 }
 
 /**
- * EmployeDocument findMany
+ * employedocument findMany
  */
-export type EmployeDocumentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * Filter, which EmployeDocuments to fetch.
+   * Filter, which employedocuments to fetch.
    */
-  where?: Prisma.EmployeDocumentWhereInput
+  where?: Prisma.employedocumentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of EmployeDocuments to fetch.
+   * Determine the order of employedocuments to fetch.
    */
-  orderBy?: Prisma.EmployeDocumentOrderByWithRelationInput | Prisma.EmployeDocumentOrderByWithRelationInput[]
+  orderBy?: Prisma.employedocumentOrderByWithRelationInput | Prisma.employedocumentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing EmployeDocuments.
+   * Sets the position for listing employedocuments.
    */
-  cursor?: Prisma.EmployeDocumentWhereUniqueInput
+  cursor?: Prisma.employedocumentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` EmployeDocuments from the position of the cursor.
+   * Take `±n` employedocuments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` EmployeDocuments.
+   * Skip the first `n` employedocuments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of EmployeDocuments.
+   * Filter by unique combinations of employedocuments.
    */
-  distinct?: Prisma.EmployeDocumentScalarFieldEnum | Prisma.EmployeDocumentScalarFieldEnum[]
+  distinct?: Prisma.EmployedocumentScalarFieldEnum | Prisma.EmployedocumentScalarFieldEnum[]
 }
 
 /**
- * EmployeDocument create
+ * employedocument create
  */
-export type EmployeDocumentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * The data needed to create a EmployeDocument.
+   * The data needed to create a employedocument.
    */
-  data: Prisma.XOR<Prisma.EmployeDocumentCreateInput, Prisma.EmployeDocumentUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.employedocumentCreateInput, Prisma.employedocumentUncheckedCreateInput>
 }
 
 /**
- * EmployeDocument createMany
+ * employedocument createMany
  */
-export type EmployeDocumentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many EmployeDocuments.
+   * The data used to create many employedocuments.
    */
-  data: Prisma.EmployeDocumentCreateManyInput | Prisma.EmployeDocumentCreateManyInput[]
+  data: Prisma.employedocumentCreateManyInput | Prisma.employedocumentCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * EmployeDocument update
+ * employedocument update
  */
-export type EmployeDocumentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * The data needed to update a EmployeDocument.
+   * The data needed to update a employedocument.
    */
-  data: Prisma.XOR<Prisma.EmployeDocumentUpdateInput, Prisma.EmployeDocumentUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.employedocumentUpdateInput, Prisma.employedocumentUncheckedUpdateInput>
   /**
-   * Choose, which EmployeDocument to update.
+   * Choose, which employedocument to update.
    */
-  where: Prisma.EmployeDocumentWhereUniqueInput
+  where: Prisma.employedocumentWhereUniqueInput
 }
 
 /**
- * EmployeDocument updateMany
+ * employedocument updateMany
  */
-export type EmployeDocumentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update EmployeDocuments.
+   * The data used to update employedocuments.
    */
-  data: Prisma.XOR<Prisma.EmployeDocumentUpdateManyMutationInput, Prisma.EmployeDocumentUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.employedocumentUpdateManyMutationInput, Prisma.employedocumentUncheckedUpdateManyInput>
   /**
-   * Filter which EmployeDocuments to update
+   * Filter which employedocuments to update
    */
-  where?: Prisma.EmployeDocumentWhereInput
+  where?: Prisma.employedocumentWhereInput
   /**
-   * Limit how many EmployeDocuments to update.
+   * Limit how many employedocuments to update.
    */
   limit?: number
 }
 
 /**
- * EmployeDocument upsert
+ * employedocument upsert
  */
-export type EmployeDocumentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * The filter to search for the EmployeDocument to update in case it exists.
+   * The filter to search for the employedocument to update in case it exists.
    */
-  where: Prisma.EmployeDocumentWhereUniqueInput
+  where: Prisma.employedocumentWhereUniqueInput
   /**
-   * In case the EmployeDocument found by the `where` argument doesn't exist, create a new EmployeDocument with this data.
+   * In case the employedocument found by the `where` argument doesn't exist, create a new employedocument with this data.
    */
-  create: Prisma.XOR<Prisma.EmployeDocumentCreateInput, Prisma.EmployeDocumentUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.employedocumentCreateInput, Prisma.employedocumentUncheckedCreateInput>
   /**
-   * In case the EmployeDocument was found with the provided `where` argument, update it with this data.
+   * In case the employedocument was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.EmployeDocumentUpdateInput, Prisma.EmployeDocumentUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.employedocumentUpdateInput, Prisma.employedocumentUncheckedUpdateInput>
 }
 
 /**
- * EmployeDocument delete
+ * employedocument delete
  */
-export type EmployeDocumentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
   /**
-   * Filter which EmployeDocument to delete.
+   * Filter which employedocument to delete.
    */
-  where: Prisma.EmployeDocumentWhereUniqueInput
+  where: Prisma.employedocumentWhereUniqueInput
 }
 
 /**
- * EmployeDocument deleteMany
+ * employedocument deleteMany
  */
-export type EmployeDocumentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which EmployeDocuments to delete
+   * Filter which employedocuments to delete
    */
-  where?: Prisma.EmployeDocumentWhereInput
+  where?: Prisma.employedocumentWhereInput
   /**
-   * Limit how many EmployeDocuments to delete.
+   * Limit how many employedocuments to delete.
    */
   limit?: number
 }
 
 /**
- * EmployeDocument without action
+ * employedocument without action
  */
-export type EmployeDocumentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type employedocumentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmployeDocument
+   * Select specific fields to fetch from the employedocument
    */
-  select?: Prisma.EmployeDocumentSelect<ExtArgs> | null
+  select?: Prisma.employedocumentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmployeDocument
+   * Omit specific fields from the employedocument
    */
-  omit?: Prisma.EmployeDocumentOmit<ExtArgs> | null
+  omit?: Prisma.employedocumentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmployeDocumentInclude<ExtArgs> | null
+  include?: Prisma.employedocumentInclude<ExtArgs> | null
 }

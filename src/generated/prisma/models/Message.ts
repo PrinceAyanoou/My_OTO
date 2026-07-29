@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Message` model and its related types.
+ * This file exports the `message` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Message
+ * Model message
  * 
  */
-export type MessageModel = runtime.Types.Result.DefaultSelection<Prisma.$MessagePayload>
+export type messageModel = runtime.Types.Result.DefaultSelection<Prisma.$messagePayload>
 
 export type AggregateMessage = {
   _count: MessageCountAggregateOutputType | null
@@ -95,37 +95,37 @@ export type MessageCountAggregateInputType = {
 
 export type MessageAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Message to aggregate.
+   * Filter which message to aggregate.
    */
-  where?: Prisma.MessageWhereInput
+  where?: Prisma.messageWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Messages to fetch.
+   * Determine the order of messages to fetch.
    */
-  orderBy?: Prisma.MessageOrderByWithRelationInput | Prisma.MessageOrderByWithRelationInput[]
+  orderBy?: Prisma.messageOrderByWithRelationInput | Prisma.messageOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.MessageWhereUniqueInput
+  cursor?: Prisma.messageWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Messages from the position of the cursor.
+   * Take `±n` messages from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Messages.
+   * Skip the first `n` messages.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Messages
+   * Count returned messages
   **/
   _count?: true | MessageCountAggregateInputType
   /**
@@ -153,11 +153,11 @@ export type GetMessageAggregateType<T extends MessageAggregateArgs> = {
 
 
 
-export type MessageGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MessageWhereInput
-  orderBy?: Prisma.MessageOrderByWithAggregationInput | Prisma.MessageOrderByWithAggregationInput[]
+export type messageGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.messageWhereInput
+  orderBy?: Prisma.messageOrderByWithAggregationInput | Prisma.messageOrderByWithAggregationInput[]
   by: Prisma.MessageScalarFieldEnum[] | Prisma.MessageScalarFieldEnum
-  having?: Prisma.MessageScalarWhereWithAggregatesInput
+  having?: Prisma.messageScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: MessageCountAggregateInputType | true
@@ -179,7 +179,7 @@ export type MessageGroupByOutputType = {
   _max: MessageMaxAggregateOutputType | null
 }
 
-export type GetMessageGroupByPayload<T extends MessageGroupByArgs> = Prisma.PrismaPromise<
+export type GetMessageGroupByPayload<T extends messageGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<MessageGroupByOutputType, T['by']> &
       {
@@ -194,22 +194,22 @@ export type GetMessageGroupByPayload<T extends MessageGroupByArgs> = Prisma.Pris
 
 
 
-export type MessageWhereInput = {
-  AND?: Prisma.MessageWhereInput | Prisma.MessageWhereInput[]
-  OR?: Prisma.MessageWhereInput[]
-  NOT?: Prisma.MessageWhereInput | Prisma.MessageWhereInput[]
-  id?: Prisma.StringFilter<"Message"> | string
-  contenu?: Prisma.StringFilter<"Message"> | string
-  fichierUrl?: Prisma.StringNullableFilter<"Message"> | string | null
-  dateEnvoi?: Prisma.DateTimeFilter<"Message"> | Date | string
-  lu?: Prisma.BoolFilter<"Message"> | boolean
-  conversationId?: Prisma.StringFilter<"Message"> | string
-  createdAt?: Prisma.DateTimeFilter<"Message"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Message"> | Date | string
-  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.ConversationWhereInput>
+export type messageWhereInput = {
+  AND?: Prisma.messageWhereInput | Prisma.messageWhereInput[]
+  OR?: Prisma.messageWhereInput[]
+  NOT?: Prisma.messageWhereInput | Prisma.messageWhereInput[]
+  id?: Prisma.StringFilter<"message"> | string
+  contenu?: Prisma.StringFilter<"message"> | string
+  fichierUrl?: Prisma.StringNullableFilter<"message"> | string | null
+  dateEnvoi?: Prisma.DateTimeFilter<"message"> | Date | string
+  lu?: Prisma.BoolFilter<"message"> | boolean
+  conversationId?: Prisma.StringFilter<"message"> | string
+  createdAt?: Prisma.DateTimeFilter<"message"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"message"> | Date | string
+  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.conversationWhereInput>
 }
 
-export type MessageOrderByWithRelationInput = {
+export type messageOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
   fichierUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -218,26 +218,26 @@ export type MessageOrderByWithRelationInput = {
   conversationId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  conversation?: Prisma.ConversationOrderByWithRelationInput
-  _relevance?: Prisma.MessageOrderByRelevanceInput
+  conversation?: Prisma.conversationOrderByWithRelationInput
+  _relevance?: Prisma.messageOrderByRelevanceInput
 }
 
-export type MessageWhereUniqueInput = Prisma.AtLeast<{
+export type messageWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  AND?: Prisma.MessageWhereInput | Prisma.MessageWhereInput[]
-  OR?: Prisma.MessageWhereInput[]
-  NOT?: Prisma.MessageWhereInput | Prisma.MessageWhereInput[]
-  contenu?: Prisma.StringFilter<"Message"> | string
-  fichierUrl?: Prisma.StringNullableFilter<"Message"> | string | null
-  dateEnvoi?: Prisma.DateTimeFilter<"Message"> | Date | string
-  lu?: Prisma.BoolFilter<"Message"> | boolean
-  conversationId?: Prisma.StringFilter<"Message"> | string
-  createdAt?: Prisma.DateTimeFilter<"Message"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Message"> | Date | string
-  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.ConversationWhereInput>
+  AND?: Prisma.messageWhereInput | Prisma.messageWhereInput[]
+  OR?: Prisma.messageWhereInput[]
+  NOT?: Prisma.messageWhereInput | Prisma.messageWhereInput[]
+  contenu?: Prisma.StringFilter<"message"> | string
+  fichierUrl?: Prisma.StringNullableFilter<"message"> | string | null
+  dateEnvoi?: Prisma.DateTimeFilter<"message"> | Date | string
+  lu?: Prisma.BoolFilter<"message"> | boolean
+  conversationId?: Prisma.StringFilter<"message"> | string
+  createdAt?: Prisma.DateTimeFilter<"message"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"message"> | Date | string
+  conversation?: Prisma.XOR<Prisma.ConversationScalarRelationFilter, Prisma.conversationWhereInput>
 }, "id">
 
-export type MessageOrderByWithAggregationInput = {
+export type messageOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
   fichierUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -246,26 +246,26 @@ export type MessageOrderByWithAggregationInput = {
   conversationId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.MessageCountOrderByAggregateInput
-  _max?: Prisma.MessageMaxOrderByAggregateInput
-  _min?: Prisma.MessageMinOrderByAggregateInput
+  _count?: Prisma.messageCountOrderByAggregateInput
+  _max?: Prisma.messageMaxOrderByAggregateInput
+  _min?: Prisma.messageMinOrderByAggregateInput
 }
 
-export type MessageScalarWhereWithAggregatesInput = {
-  AND?: Prisma.MessageScalarWhereWithAggregatesInput | Prisma.MessageScalarWhereWithAggregatesInput[]
-  OR?: Prisma.MessageScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.MessageScalarWhereWithAggregatesInput | Prisma.MessageScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Message"> | string
-  contenu?: Prisma.StringWithAggregatesFilter<"Message"> | string
-  fichierUrl?: Prisma.StringNullableWithAggregatesFilter<"Message"> | string | null
-  dateEnvoi?: Prisma.DateTimeWithAggregatesFilter<"Message"> | Date | string
-  lu?: Prisma.BoolWithAggregatesFilter<"Message"> | boolean
-  conversationId?: Prisma.StringWithAggregatesFilter<"Message"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Message"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Message"> | Date | string
+export type messageScalarWhereWithAggregatesInput = {
+  AND?: Prisma.messageScalarWhereWithAggregatesInput | Prisma.messageScalarWhereWithAggregatesInput[]
+  OR?: Prisma.messageScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.messageScalarWhereWithAggregatesInput | Prisma.messageScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"message"> | string
+  contenu?: Prisma.StringWithAggregatesFilter<"message"> | string
+  fichierUrl?: Prisma.StringNullableWithAggregatesFilter<"message"> | string | null
+  dateEnvoi?: Prisma.DateTimeWithAggregatesFilter<"message"> | Date | string
+  lu?: Prisma.BoolWithAggregatesFilter<"message"> | boolean
+  conversationId?: Prisma.StringWithAggregatesFilter<"message"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"message"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"message"> | Date | string
 }
 
-export type MessageCreateInput = {
+export type messageCreateInput = {
   id?: string
   contenu: string
   fichierUrl?: string | null
@@ -273,10 +273,10 @@ export type MessageCreateInput = {
   lu?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  conversation: Prisma.ConversationCreateNestedOneWithoutMessagesInput
+  conversation: Prisma.conversationCreateNestedOneWithoutMessageInput
 }
 
-export type MessageUncheckedCreateInput = {
+export type messageUncheckedCreateInput = {
   id?: string
   contenu: string
   fichierUrl?: string | null
@@ -287,7 +287,7 @@ export type MessageUncheckedCreateInput = {
   updatedAt?: Date | string
 }
 
-export type MessageUpdateInput = {
+export type messageUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -295,10 +295,10 @@ export type MessageUpdateInput = {
   lu?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  conversation?: Prisma.ConversationUpdateOneRequiredWithoutMessagesNestedInput
+  conversation?: Prisma.conversationUpdateOneRequiredWithoutMessageNestedInput
 }
 
-export type MessageUncheckedUpdateInput = {
+export type messageUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -309,7 +309,7 @@ export type MessageUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type MessageCreateManyInput = {
+export type messageCreateManyInput = {
   id?: string
   contenu: string
   fichierUrl?: string | null
@@ -320,7 +320,7 @@ export type MessageCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type MessageUpdateManyMutationInput = {
+export type messageUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -330,7 +330,7 @@ export type MessageUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type MessageUncheckedUpdateManyInput = {
+export type messageUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -342,22 +342,22 @@ export type MessageUncheckedUpdateManyInput = {
 }
 
 export type MessageListRelationFilter = {
-  every?: Prisma.MessageWhereInput
-  some?: Prisma.MessageWhereInput
-  none?: Prisma.MessageWhereInput
+  every?: Prisma.messageWhereInput
+  some?: Prisma.messageWhereInput
+  none?: Prisma.messageWhereInput
 }
 
-export type MessageOrderByRelationAggregateInput = {
+export type messageOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type MessageOrderByRelevanceInput = {
-  fields: Prisma.MessageOrderByRelevanceFieldEnum | Prisma.MessageOrderByRelevanceFieldEnum[]
+export type messageOrderByRelevanceInput = {
+  fields: Prisma.messageOrderByRelevanceFieldEnum | Prisma.messageOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type MessageCountOrderByAggregateInput = {
+export type messageCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
   fichierUrl?: Prisma.SortOrder
@@ -368,7 +368,7 @@ export type MessageCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type MessageMaxOrderByAggregateInput = {
+export type messageMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
   fichierUrl?: Prisma.SortOrder
@@ -379,7 +379,7 @@ export type MessageMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type MessageMinOrderByAggregateInput = {
+export type messageMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
   fichierUrl?: Prisma.SortOrder
@@ -390,49 +390,49 @@ export type MessageMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type MessageCreateNestedManyWithoutConversationInput = {
-  create?: Prisma.XOR<Prisma.MessageCreateWithoutConversationInput, Prisma.MessageUncheckedCreateWithoutConversationInput> | Prisma.MessageCreateWithoutConversationInput[] | Prisma.MessageUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.MessageCreateOrConnectWithoutConversationInput | Prisma.MessageCreateOrConnectWithoutConversationInput[]
-  createMany?: Prisma.MessageCreateManyConversationInputEnvelope
-  connect?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
+export type messageCreateNestedManyWithoutConversationInput = {
+  create?: Prisma.XOR<Prisma.messageCreateWithoutConversationInput, Prisma.messageUncheckedCreateWithoutConversationInput> | Prisma.messageCreateWithoutConversationInput[] | Prisma.messageUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.messageCreateOrConnectWithoutConversationInput | Prisma.messageCreateOrConnectWithoutConversationInput[]
+  createMany?: Prisma.messageCreateManyConversationInputEnvelope
+  connect?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
 }
 
-export type MessageUncheckedCreateNestedManyWithoutConversationInput = {
-  create?: Prisma.XOR<Prisma.MessageCreateWithoutConversationInput, Prisma.MessageUncheckedCreateWithoutConversationInput> | Prisma.MessageCreateWithoutConversationInput[] | Prisma.MessageUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.MessageCreateOrConnectWithoutConversationInput | Prisma.MessageCreateOrConnectWithoutConversationInput[]
-  createMany?: Prisma.MessageCreateManyConversationInputEnvelope
-  connect?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
+export type messageUncheckedCreateNestedManyWithoutConversationInput = {
+  create?: Prisma.XOR<Prisma.messageCreateWithoutConversationInput, Prisma.messageUncheckedCreateWithoutConversationInput> | Prisma.messageCreateWithoutConversationInput[] | Prisma.messageUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.messageCreateOrConnectWithoutConversationInput | Prisma.messageCreateOrConnectWithoutConversationInput[]
+  createMany?: Prisma.messageCreateManyConversationInputEnvelope
+  connect?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
 }
 
-export type MessageUpdateManyWithoutConversationNestedInput = {
-  create?: Prisma.XOR<Prisma.MessageCreateWithoutConversationInput, Prisma.MessageUncheckedCreateWithoutConversationInput> | Prisma.MessageCreateWithoutConversationInput[] | Prisma.MessageUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.MessageCreateOrConnectWithoutConversationInput | Prisma.MessageCreateOrConnectWithoutConversationInput[]
-  upsert?: Prisma.MessageUpsertWithWhereUniqueWithoutConversationInput | Prisma.MessageUpsertWithWhereUniqueWithoutConversationInput[]
-  createMany?: Prisma.MessageCreateManyConversationInputEnvelope
-  set?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  disconnect?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  delete?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  connect?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  update?: Prisma.MessageUpdateWithWhereUniqueWithoutConversationInput | Prisma.MessageUpdateWithWhereUniqueWithoutConversationInput[]
-  updateMany?: Prisma.MessageUpdateManyWithWhereWithoutConversationInput | Prisma.MessageUpdateManyWithWhereWithoutConversationInput[]
-  deleteMany?: Prisma.MessageScalarWhereInput | Prisma.MessageScalarWhereInput[]
+export type messageUpdateManyWithoutConversationNestedInput = {
+  create?: Prisma.XOR<Prisma.messageCreateWithoutConversationInput, Prisma.messageUncheckedCreateWithoutConversationInput> | Prisma.messageCreateWithoutConversationInput[] | Prisma.messageUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.messageCreateOrConnectWithoutConversationInput | Prisma.messageCreateOrConnectWithoutConversationInput[]
+  upsert?: Prisma.messageUpsertWithWhereUniqueWithoutConversationInput | Prisma.messageUpsertWithWhereUniqueWithoutConversationInput[]
+  createMany?: Prisma.messageCreateManyConversationInputEnvelope
+  set?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  disconnect?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  delete?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  connect?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  update?: Prisma.messageUpdateWithWhereUniqueWithoutConversationInput | Prisma.messageUpdateWithWhereUniqueWithoutConversationInput[]
+  updateMany?: Prisma.messageUpdateManyWithWhereWithoutConversationInput | Prisma.messageUpdateManyWithWhereWithoutConversationInput[]
+  deleteMany?: Prisma.messageScalarWhereInput | Prisma.messageScalarWhereInput[]
 }
 
-export type MessageUncheckedUpdateManyWithoutConversationNestedInput = {
-  create?: Prisma.XOR<Prisma.MessageCreateWithoutConversationInput, Prisma.MessageUncheckedCreateWithoutConversationInput> | Prisma.MessageCreateWithoutConversationInput[] | Prisma.MessageUncheckedCreateWithoutConversationInput[]
-  connectOrCreate?: Prisma.MessageCreateOrConnectWithoutConversationInput | Prisma.MessageCreateOrConnectWithoutConversationInput[]
-  upsert?: Prisma.MessageUpsertWithWhereUniqueWithoutConversationInput | Prisma.MessageUpsertWithWhereUniqueWithoutConversationInput[]
-  createMany?: Prisma.MessageCreateManyConversationInputEnvelope
-  set?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  disconnect?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  delete?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  connect?: Prisma.MessageWhereUniqueInput | Prisma.MessageWhereUniqueInput[]
-  update?: Prisma.MessageUpdateWithWhereUniqueWithoutConversationInput | Prisma.MessageUpdateWithWhereUniqueWithoutConversationInput[]
-  updateMany?: Prisma.MessageUpdateManyWithWhereWithoutConversationInput | Prisma.MessageUpdateManyWithWhereWithoutConversationInput[]
-  deleteMany?: Prisma.MessageScalarWhereInput | Prisma.MessageScalarWhereInput[]
+export type messageUncheckedUpdateManyWithoutConversationNestedInput = {
+  create?: Prisma.XOR<Prisma.messageCreateWithoutConversationInput, Prisma.messageUncheckedCreateWithoutConversationInput> | Prisma.messageCreateWithoutConversationInput[] | Prisma.messageUncheckedCreateWithoutConversationInput[]
+  connectOrCreate?: Prisma.messageCreateOrConnectWithoutConversationInput | Prisma.messageCreateOrConnectWithoutConversationInput[]
+  upsert?: Prisma.messageUpsertWithWhereUniqueWithoutConversationInput | Prisma.messageUpsertWithWhereUniqueWithoutConversationInput[]
+  createMany?: Prisma.messageCreateManyConversationInputEnvelope
+  set?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  disconnect?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  delete?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  connect?: Prisma.messageWhereUniqueInput | Prisma.messageWhereUniqueInput[]
+  update?: Prisma.messageUpdateWithWhereUniqueWithoutConversationInput | Prisma.messageUpdateWithWhereUniqueWithoutConversationInput[]
+  updateMany?: Prisma.messageUpdateManyWithWhereWithoutConversationInput | Prisma.messageUpdateManyWithWhereWithoutConversationInput[]
+  deleteMany?: Prisma.messageScalarWhereInput | Prisma.messageScalarWhereInput[]
 }
 
-export type MessageCreateWithoutConversationInput = {
+export type messageCreateWithoutConversationInput = {
   id?: string
   contenu: string
   fichierUrl?: string | null
@@ -442,7 +442,7 @@ export type MessageCreateWithoutConversationInput = {
   updatedAt?: Date | string
 }
 
-export type MessageUncheckedCreateWithoutConversationInput = {
+export type messageUncheckedCreateWithoutConversationInput = {
   id?: string
   contenu: string
   fichierUrl?: string | null
@@ -452,47 +452,47 @@ export type MessageUncheckedCreateWithoutConversationInput = {
   updatedAt?: Date | string
 }
 
-export type MessageCreateOrConnectWithoutConversationInput = {
-  where: Prisma.MessageWhereUniqueInput
-  create: Prisma.XOR<Prisma.MessageCreateWithoutConversationInput, Prisma.MessageUncheckedCreateWithoutConversationInput>
+export type messageCreateOrConnectWithoutConversationInput = {
+  where: Prisma.messageWhereUniqueInput
+  create: Prisma.XOR<Prisma.messageCreateWithoutConversationInput, Prisma.messageUncheckedCreateWithoutConversationInput>
 }
 
-export type MessageCreateManyConversationInputEnvelope = {
-  data: Prisma.MessageCreateManyConversationInput | Prisma.MessageCreateManyConversationInput[]
+export type messageCreateManyConversationInputEnvelope = {
+  data: Prisma.messageCreateManyConversationInput | Prisma.messageCreateManyConversationInput[]
   skipDuplicates?: boolean
 }
 
-export type MessageUpsertWithWhereUniqueWithoutConversationInput = {
-  where: Prisma.MessageWhereUniqueInput
-  update: Prisma.XOR<Prisma.MessageUpdateWithoutConversationInput, Prisma.MessageUncheckedUpdateWithoutConversationInput>
-  create: Prisma.XOR<Prisma.MessageCreateWithoutConversationInput, Prisma.MessageUncheckedCreateWithoutConversationInput>
+export type messageUpsertWithWhereUniqueWithoutConversationInput = {
+  where: Prisma.messageWhereUniqueInput
+  update: Prisma.XOR<Prisma.messageUpdateWithoutConversationInput, Prisma.messageUncheckedUpdateWithoutConversationInput>
+  create: Prisma.XOR<Prisma.messageCreateWithoutConversationInput, Prisma.messageUncheckedCreateWithoutConversationInput>
 }
 
-export type MessageUpdateWithWhereUniqueWithoutConversationInput = {
-  where: Prisma.MessageWhereUniqueInput
-  data: Prisma.XOR<Prisma.MessageUpdateWithoutConversationInput, Prisma.MessageUncheckedUpdateWithoutConversationInput>
+export type messageUpdateWithWhereUniqueWithoutConversationInput = {
+  where: Prisma.messageWhereUniqueInput
+  data: Prisma.XOR<Prisma.messageUpdateWithoutConversationInput, Prisma.messageUncheckedUpdateWithoutConversationInput>
 }
 
-export type MessageUpdateManyWithWhereWithoutConversationInput = {
-  where: Prisma.MessageScalarWhereInput
-  data: Prisma.XOR<Prisma.MessageUpdateManyMutationInput, Prisma.MessageUncheckedUpdateManyWithoutConversationInput>
+export type messageUpdateManyWithWhereWithoutConversationInput = {
+  where: Prisma.messageScalarWhereInput
+  data: Prisma.XOR<Prisma.messageUpdateManyMutationInput, Prisma.messageUncheckedUpdateManyWithoutConversationInput>
 }
 
-export type MessageScalarWhereInput = {
-  AND?: Prisma.MessageScalarWhereInput | Prisma.MessageScalarWhereInput[]
-  OR?: Prisma.MessageScalarWhereInput[]
-  NOT?: Prisma.MessageScalarWhereInput | Prisma.MessageScalarWhereInput[]
-  id?: Prisma.StringFilter<"Message"> | string
-  contenu?: Prisma.StringFilter<"Message"> | string
-  fichierUrl?: Prisma.StringNullableFilter<"Message"> | string | null
-  dateEnvoi?: Prisma.DateTimeFilter<"Message"> | Date | string
-  lu?: Prisma.BoolFilter<"Message"> | boolean
-  conversationId?: Prisma.StringFilter<"Message"> | string
-  createdAt?: Prisma.DateTimeFilter<"Message"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Message"> | Date | string
+export type messageScalarWhereInput = {
+  AND?: Prisma.messageScalarWhereInput | Prisma.messageScalarWhereInput[]
+  OR?: Prisma.messageScalarWhereInput[]
+  NOT?: Prisma.messageScalarWhereInput | Prisma.messageScalarWhereInput[]
+  id?: Prisma.StringFilter<"message"> | string
+  contenu?: Prisma.StringFilter<"message"> | string
+  fichierUrl?: Prisma.StringNullableFilter<"message"> | string | null
+  dateEnvoi?: Prisma.DateTimeFilter<"message"> | Date | string
+  lu?: Prisma.BoolFilter<"message"> | boolean
+  conversationId?: Prisma.StringFilter<"message"> | string
+  createdAt?: Prisma.DateTimeFilter<"message"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"message"> | Date | string
 }
 
-export type MessageCreateManyConversationInput = {
+export type messageCreateManyConversationInput = {
   id?: string
   contenu: string
   fichierUrl?: string | null
@@ -502,7 +502,7 @@ export type MessageCreateManyConversationInput = {
   updatedAt?: Date | string
 }
 
-export type MessageUpdateWithoutConversationInput = {
+export type messageUpdateWithoutConversationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -512,7 +512,7 @@ export type MessageUpdateWithoutConversationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type MessageUncheckedUpdateWithoutConversationInput = {
+export type messageUncheckedUpdateWithoutConversationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -522,7 +522,7 @@ export type MessageUncheckedUpdateWithoutConversationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type MessageUncheckedUpdateManyWithoutConversationInput = {
+export type messageUncheckedUpdateManyWithoutConversationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
   fichierUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -534,7 +534,7 @@ export type MessageUncheckedUpdateManyWithoutConversationInput = {
 
 
 
-export type MessageSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type messageSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   contenu?: boolean
   fichierUrl?: boolean
@@ -543,12 +543,12 @@ export type MessageSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   conversationId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  conversation?: boolean | Prisma.ConversationDefaultArgs<ExtArgs>
+  conversation?: boolean | Prisma.conversationDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["message"]>
 
 
 
-export type MessageSelectScalar = {
+export type messageSelectScalar = {
   id?: boolean
   contenu?: boolean
   fichierUrl?: boolean
@@ -559,15 +559,15 @@ export type MessageSelectScalar = {
   updatedAt?: boolean
 }
 
-export type MessageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "contenu" | "fichierUrl" | "dateEnvoi" | "lu" | "conversationId" | "createdAt" | "updatedAt", ExtArgs["result"]["message"]>
-export type MessageInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  conversation?: boolean | Prisma.ConversationDefaultArgs<ExtArgs>
+export type messageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "contenu" | "fichierUrl" | "dateEnvoi" | "lu" | "conversationId" | "createdAt" | "updatedAt", ExtArgs["result"]["message"]>
+export type messageInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  conversation?: boolean | Prisma.conversationDefaultArgs<ExtArgs>
 }
 
-export type $MessagePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Message"
+export type $messagePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "message"
   objects: {
-    conversation: Prisma.$ConversationPayload<ExtArgs>
+    conversation: Prisma.$conversationPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -582,18 +582,18 @@ export type $MessagePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   composites: {}
 }
 
-export type MessageGetPayload<S extends boolean | null | undefined | MessageDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$MessagePayload, S>
+export type messageGetPayload<S extends boolean | null | undefined | messageDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$messagePayload, S>
 
-export type MessageCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<MessageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type messageCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<messageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: MessageCountAggregateInputType | true
   }
 
-export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Message'], meta: { name: 'Message' } }
+export interface messageDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['message'], meta: { name: 'message' } }
   /**
    * Find zero or one Message that matches the filter.
-   * @param {MessageFindUniqueArgs} args - Arguments to find a Message
+   * @param {messageFindUniqueArgs} args - Arguments to find a Message
    * @example
    * // Get one Message
    * const message = await prisma.message.findUnique({
@@ -602,12 +602,12 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUnique<T extends MessageFindUniqueArgs>(args: Prisma.SelectSubset<T, MessageFindUniqueArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends messageFindUniqueArgs>(args: Prisma.SelectSubset<T, messageFindUniqueArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Message that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {MessageFindUniqueOrThrowArgs} args - Arguments to find a Message
+   * @param {messageFindUniqueOrThrowArgs} args - Arguments to find a Message
    * @example
    * // Get one Message
    * const message = await prisma.message.findUniqueOrThrow({
@@ -616,13 +616,13 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUniqueOrThrow<T extends MessageFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, MessageFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends messageFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, messageFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Message that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MessageFindFirstArgs} args - Arguments to find a Message
+   * @param {messageFindFirstArgs} args - Arguments to find a Message
    * @example
    * // Get one Message
    * const message = await prisma.message.findFirst({
@@ -631,14 +631,14 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirst<T extends MessageFindFirstArgs>(args?: Prisma.SelectSubset<T, MessageFindFirstArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends messageFindFirstArgs>(args?: Prisma.SelectSubset<T, messageFindFirstArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Message that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MessageFindFirstOrThrowArgs} args - Arguments to find a Message
+   * @param {messageFindFirstOrThrowArgs} args - Arguments to find a Message
    * @example
    * // Get one Message
    * const message = await prisma.message.findFirstOrThrow({
@@ -647,13 +647,13 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirstOrThrow<T extends MessageFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, MessageFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends messageFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, messageFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Messages that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MessageFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {messageFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Messages
    * const messages = await prisma.message.findMany()
@@ -665,11 +665,11 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * const messageWithIdOnly = await prisma.message.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends MessageFindManyArgs>(args?: Prisma.SelectSubset<T, MessageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends messageFindManyArgs>(args?: Prisma.SelectSubset<T, messageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Message.
-   * @param {MessageCreateArgs} args - Arguments to create a Message.
+   * @param {messageCreateArgs} args - Arguments to create a Message.
    * @example
    * // Create one Message
    * const Message = await prisma.message.create({
@@ -679,11 +679,11 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  create<T extends MessageCreateArgs>(args: Prisma.SelectSubset<T, MessageCreateArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends messageCreateArgs>(args: Prisma.SelectSubset<T, messageCreateArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Messages.
-   * @param {MessageCreateManyArgs} args - Arguments to create many Messages.
+   * @param {messageCreateManyArgs} args - Arguments to create many Messages.
    * @example
    * // Create many Messages
    * const message = await prisma.message.createMany({
@@ -693,11 +693,11 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    *     
    */
-  createMany<T extends MessageCreateManyArgs>(args?: Prisma.SelectSubset<T, MessageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends messageCreateManyArgs>(args?: Prisma.SelectSubset<T, messageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Message.
-   * @param {MessageDeleteArgs} args - Arguments to delete one Message.
+   * @param {messageDeleteArgs} args - Arguments to delete one Message.
    * @example
    * // Delete one Message
    * const Message = await prisma.message.delete({
@@ -707,11 +707,11 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  delete<T extends MessageDeleteArgs>(args: Prisma.SelectSubset<T, MessageDeleteArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends messageDeleteArgs>(args: Prisma.SelectSubset<T, messageDeleteArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Message.
-   * @param {MessageUpdateArgs} args - Arguments to update one Message.
+   * @param {messageUpdateArgs} args - Arguments to update one Message.
    * @example
    * // Update one Message
    * const message = await prisma.message.update({
@@ -724,11 +724,11 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends MessageUpdateArgs>(args: Prisma.SelectSubset<T, MessageUpdateArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends messageUpdateArgs>(args: Prisma.SelectSubset<T, messageUpdateArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Messages.
-   * @param {MessageDeleteManyArgs} args - Arguments to filter Messages to delete.
+   * @param {messageDeleteManyArgs} args - Arguments to filter Messages to delete.
    * @example
    * // Delete a few Messages
    * const { count } = await prisma.message.deleteMany({
@@ -738,13 +738,13 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  deleteMany<T extends MessageDeleteManyArgs>(args?: Prisma.SelectSubset<T, MessageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends messageDeleteManyArgs>(args?: Prisma.SelectSubset<T, messageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Messages.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MessageUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {messageUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Messages
    * const message = await prisma.message.updateMany({
@@ -757,11 +757,11 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends MessageUpdateManyArgs>(args: Prisma.SelectSubset<T, MessageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends messageUpdateManyArgs>(args: Prisma.SelectSubset<T, messageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Message.
-   * @param {MessageUpsertArgs} args - Arguments to update or create a Message.
+   * @param {messageUpsertArgs} args - Arguments to update or create a Message.
    * @example
    * // Update or create a Message
    * const message = await prisma.message.upsert({
@@ -776,14 +776,14 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  upsert<T extends MessageUpsertArgs>(args: Prisma.SelectSubset<T, MessageUpsertArgs<ExtArgs>>): Prisma.Prisma__MessageClient<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends messageUpsertArgs>(args: Prisma.SelectSubset<T, messageUpsertArgs<ExtArgs>>): Prisma.Prisma__messageClient<runtime.Types.Result.GetResult<Prisma.$messagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Messages.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MessageCountArgs} args - Arguments to filter Messages to count.
+   * @param {messageCountArgs} args - Arguments to filter Messages to count.
    * @example
    * // Count the number of Messages
    * const count = await prisma.message.count({
@@ -792,8 +792,8 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
   **/
-  count<T extends MessageCountArgs>(
-    args?: Prisma.Subset<T, MessageCountArgs>,
+  count<T extends messageCountArgs>(
+    args?: Prisma.Subset<T, messageCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -832,7 +832,7 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Group by Message.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {MessageGroupByArgs} args - Group by arguments.
+   * @param {messageGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -847,14 +847,14 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends MessageGroupByArgs,
+    T extends messageGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: MessageGroupByArgs['orderBy'] }
-      : { orderBy?: MessageGroupByArgs['orderBy'] },
+      ? { orderBy: messageGroupByArgs['orderBy'] }
+      : { orderBy?: messageGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -903,22 +903,22 @@ export interface MessageDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, MessageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMessageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, messageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMessageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Message model
+ * Fields of the message model
  */
-readonly fields: MessageFieldRefs;
+readonly fields: messageFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Message.
+ * The delegate class that acts as a "Promise-like" for message.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__MessageClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__messageClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  conversation<T extends Prisma.ConversationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConversationDefaultArgs<ExtArgs>>): Prisma.Prisma__ConversationClient<runtime.Types.Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  conversation<T extends Prisma.conversationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.conversationDefaultArgs<ExtArgs>>): Prisma.Prisma__conversationClient<runtime.Types.Result.GetResult<Prisma.$conversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -945,378 +945,378 @@ export interface Prisma__MessageClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the Message model
+ * Fields of the message model
  */
-export interface MessageFieldRefs {
-  readonly id: Prisma.FieldRef<"Message", 'String'>
-  readonly contenu: Prisma.FieldRef<"Message", 'String'>
-  readonly fichierUrl: Prisma.FieldRef<"Message", 'String'>
-  readonly dateEnvoi: Prisma.FieldRef<"Message", 'DateTime'>
-  readonly lu: Prisma.FieldRef<"Message", 'Boolean'>
-  readonly conversationId: Prisma.FieldRef<"Message", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Message", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Message", 'DateTime'>
+export interface messageFieldRefs {
+  readonly id: Prisma.FieldRef<"message", 'String'>
+  readonly contenu: Prisma.FieldRef<"message", 'String'>
+  readonly fichierUrl: Prisma.FieldRef<"message", 'String'>
+  readonly dateEnvoi: Prisma.FieldRef<"message", 'DateTime'>
+  readonly lu: Prisma.FieldRef<"message", 'Boolean'>
+  readonly conversationId: Prisma.FieldRef<"message", 'String'>
+  readonly createdAt: Prisma.FieldRef<"message", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"message", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Message findUnique
+ * message findUnique
  */
-export type MessageFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * Filter, which Message to fetch.
+   * Filter, which message to fetch.
    */
-  where: Prisma.MessageWhereUniqueInput
+  where: Prisma.messageWhereUniqueInput
 }
 
 /**
- * Message findUniqueOrThrow
+ * message findUniqueOrThrow
  */
-export type MessageFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * Filter, which Message to fetch.
+   * Filter, which message to fetch.
    */
-  where: Prisma.MessageWhereUniqueInput
+  where: Prisma.messageWhereUniqueInput
 }
 
 /**
- * Message findFirst
+ * message findFirst
  */
-export type MessageFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * Filter, which Message to fetch.
+   * Filter, which message to fetch.
    */
-  where?: Prisma.MessageWhereInput
+  where?: Prisma.messageWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Messages to fetch.
+   * Determine the order of messages to fetch.
    */
-  orderBy?: Prisma.MessageOrderByWithRelationInput | Prisma.MessageOrderByWithRelationInput[]
+  orderBy?: Prisma.messageOrderByWithRelationInput | Prisma.messageOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Messages.
+   * Sets the position for searching for messages.
    */
-  cursor?: Prisma.MessageWhereUniqueInput
+  cursor?: Prisma.messageWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Messages from the position of the cursor.
+   * Take `±n` messages from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Messages.
+   * Skip the first `n` messages.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Messages.
+   * Filter by unique combinations of messages.
    */
   distinct?: Prisma.MessageScalarFieldEnum | Prisma.MessageScalarFieldEnum[]
 }
 
 /**
- * Message findFirstOrThrow
+ * message findFirstOrThrow
  */
-export type MessageFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * Filter, which Message to fetch.
+   * Filter, which message to fetch.
    */
-  where?: Prisma.MessageWhereInput
+  where?: Prisma.messageWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Messages to fetch.
+   * Determine the order of messages to fetch.
    */
-  orderBy?: Prisma.MessageOrderByWithRelationInput | Prisma.MessageOrderByWithRelationInput[]
+  orderBy?: Prisma.messageOrderByWithRelationInput | Prisma.messageOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Messages.
+   * Sets the position for searching for messages.
    */
-  cursor?: Prisma.MessageWhereUniqueInput
+  cursor?: Prisma.messageWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Messages from the position of the cursor.
+   * Take `±n` messages from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Messages.
+   * Skip the first `n` messages.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Messages.
+   * Filter by unique combinations of messages.
    */
   distinct?: Prisma.MessageScalarFieldEnum | Prisma.MessageScalarFieldEnum[]
 }
 
 /**
- * Message findMany
+ * message findMany
  */
-export type MessageFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * Filter, which Messages to fetch.
+   * Filter, which messages to fetch.
    */
-  where?: Prisma.MessageWhereInput
+  where?: Prisma.messageWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Messages to fetch.
+   * Determine the order of messages to fetch.
    */
-  orderBy?: Prisma.MessageOrderByWithRelationInput | Prisma.MessageOrderByWithRelationInput[]
+  orderBy?: Prisma.messageOrderByWithRelationInput | Prisma.messageOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Messages.
+   * Sets the position for listing messages.
    */
-  cursor?: Prisma.MessageWhereUniqueInput
+  cursor?: Prisma.messageWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Messages from the position of the cursor.
+   * Take `±n` messages from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Messages.
+   * Skip the first `n` messages.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Messages.
+   * Filter by unique combinations of messages.
    */
   distinct?: Prisma.MessageScalarFieldEnum | Prisma.MessageScalarFieldEnum[]
 }
 
 /**
- * Message create
+ * message create
  */
-export type MessageCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * The data needed to create a Message.
+   * The data needed to create a message.
    */
-  data: Prisma.XOR<Prisma.MessageCreateInput, Prisma.MessageUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.messageCreateInput, Prisma.messageUncheckedCreateInput>
 }
 
 /**
- * Message createMany
+ * message createMany
  */
-export type MessageCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Messages.
+   * The data used to create many messages.
    */
-  data: Prisma.MessageCreateManyInput | Prisma.MessageCreateManyInput[]
+  data: Prisma.messageCreateManyInput | Prisma.messageCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Message update
+ * message update
  */
-export type MessageUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * The data needed to update a Message.
+   * The data needed to update a message.
    */
-  data: Prisma.XOR<Prisma.MessageUpdateInput, Prisma.MessageUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.messageUpdateInput, Prisma.messageUncheckedUpdateInput>
   /**
-   * Choose, which Message to update.
+   * Choose, which message to update.
    */
-  where: Prisma.MessageWhereUniqueInput
+  where: Prisma.messageWhereUniqueInput
 }
 
 /**
- * Message updateMany
+ * message updateMany
  */
-export type MessageUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Messages.
+   * The data used to update messages.
    */
-  data: Prisma.XOR<Prisma.MessageUpdateManyMutationInput, Prisma.MessageUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.messageUpdateManyMutationInput, Prisma.messageUncheckedUpdateManyInput>
   /**
-   * Filter which Messages to update
+   * Filter which messages to update
    */
-  where?: Prisma.MessageWhereInput
+  where?: Prisma.messageWhereInput
   /**
-   * Limit how many Messages to update.
+   * Limit how many messages to update.
    */
   limit?: number
 }
 
 /**
- * Message upsert
+ * message upsert
  */
-export type MessageUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * The filter to search for the Message to update in case it exists.
+   * The filter to search for the message to update in case it exists.
    */
-  where: Prisma.MessageWhereUniqueInput
+  where: Prisma.messageWhereUniqueInput
   /**
-   * In case the Message found by the `where` argument doesn't exist, create a new Message with this data.
+   * In case the message found by the `where` argument doesn't exist, create a new message with this data.
    */
-  create: Prisma.XOR<Prisma.MessageCreateInput, Prisma.MessageUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.messageCreateInput, Prisma.messageUncheckedCreateInput>
   /**
-   * In case the Message was found with the provided `where` argument, update it with this data.
+   * In case the message was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.MessageUpdateInput, Prisma.MessageUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.messageUpdateInput, Prisma.messageUncheckedUpdateInput>
 }
 
 /**
- * Message delete
+ * message delete
  */
-export type MessageDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
   /**
-   * Filter which Message to delete.
+   * Filter which message to delete.
    */
-  where: Prisma.MessageWhereUniqueInput
+  where: Prisma.messageWhereUniqueInput
 }
 
 /**
- * Message deleteMany
+ * message deleteMany
  */
-export type MessageDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Messages to delete
+   * Filter which messages to delete
    */
-  where?: Prisma.MessageWhereInput
+  where?: Prisma.messageWhereInput
   /**
-   * Limit how many Messages to delete.
+   * Limit how many messages to delete.
    */
   limit?: number
 }
 
 /**
- * Message without action
+ * message without action
  */
-export type MessageDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type messageDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the message
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.messageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the message
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.messageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
+  include?: Prisma.messageInclude<ExtArgs> | null
 }

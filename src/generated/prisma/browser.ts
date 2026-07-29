@@ -18,202 +18,207 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model User
+ * Model absence
  * 
  */
-export type User = Prisma.UserModel
+export type absence = Prisma.absenceModel
 /**
- * Model Ecole
+ * Model affectationenseignant
  * 
  */
-export type Ecole = Prisma.EcoleModel
+export type affectationenseignant = Prisma.affectationenseignantModel
 /**
- * Model Role
+ * Model anneescolaire
  * 
  */
-export type Role = Prisma.RoleModel
+export type anneescolaire = Prisma.anneescolaireModel
 /**
- * Model EmployeRole
+ * Model annonce
  * 
  */
-export type EmployeRole = Prisma.EmployeRoleModel
+export type annonce = Prisma.annonceModel
 /**
- * Model Permission
+ * Model apprenant
  * 
  */
-export type Permission = Prisma.PermissionModel
+export type apprenant = Prisma.apprenantModel
 /**
- * Model RolePermission
+ * Model apprenantparent
  * 
  */
-export type RolePermission = Prisma.RolePermissionModel
+export type apprenantparent = Prisma.apprenantparentModel
 /**
- * Model Employe
+ * Model bulletin
  * 
  */
-export type Employe = Prisma.EmployeModel
+export type bulletin = Prisma.bulletinModel
 /**
- * Model EmployeDocument
+ * Model cibleannonce
  * 
  */
-export type EmployeDocument = Prisma.EmployeDocumentModel
+export type cibleannonce = Prisma.cibleannonceModel
 /**
- * Model Parent
+ * Model classematirere
  * 
  */
-export type Parent = Prisma.ParentModel
+export type classematirere = Prisma.classematirereModel
 /**
- * Model Apprenant
+ * Model classscolaire
  * 
  */
-export type Apprenant = Prisma.ApprenantModel
+export type classscolaire = Prisma.classscolaireModel
 /**
- * Model ApprenantParent
+ * Model configurationscolarite
  * 
  */
-export type ApprenantParent = Prisma.ApprenantParentModel
+export type configurationscolarite = Prisma.configurationscolariteModel
 /**
- * Model AnneeScolaire
+ * Model conversation
  * 
  */
-export type AnneeScolaire = Prisma.AnneeScolaireModel
+export type conversation = Prisma.conversationModel
 /**
- * Model PeriodeScolaire
+ * Model decisionfinannee
  * 
  */
-export type PeriodeScolaire = Prisma.PeriodeScolaireModel
+export type decisionfinannee = Prisma.decisionfinanneeModel
 /**
- * Model NiveauScolaire
+ * Model dossierscolarite
  * 
  */
-export type NiveauScolaire = Prisma.NiveauScolaireModel
+export type dossierscolarite = Prisma.dossierscolariteModel
 /**
- * Model ClassScolaire
+ * Model ecole
  * 
  */
-export type ClassScolaire = Prisma.ClassScolaireModel
+export type ecole = Prisma.ecoleModel
 /**
- * Model Matiere
+ * Model emploidutemps
  * 
  */
-export type Matiere = Prisma.MatiereModel
+export type emploidutemps = Prisma.emploidutempsModel
 /**
- * Model UniteEnseignement
+ * Model employe
  * 
  */
-export type UniteEnseignement = Prisma.UniteEnseignementModel
+export type employe = Prisma.employeModel
 /**
- * Model MatiereUe
+ * Model employedocument
  * 
  */
-export type MatiereUe = Prisma.MatiereUeModel
+export type employedocument = Prisma.employedocumentModel
 /**
- * Model ClasseMatirere
+ * Model employerole
  * 
  */
-export type ClasseMatirere = Prisma.ClasseMatirereModel
+export type employerole = Prisma.employeroleModel
 /**
- * Model AffectationEnseignant
+ * Model evaluation
  * 
  */
-export type AffectationEnseignant = Prisma.AffectationEnseignantModel
+export type evaluation = Prisma.evaluationModel
 /**
- * Model EmploiDuTemps
+ * Model inscription
  * 
  */
-export type EmploiDuTemps = Prisma.EmploiDuTempsModel
+export type inscription = Prisma.inscriptionModel
 /**
- * Model TypeEvaluation
+ * Model lignebulletin
  * 
  */
-export type TypeEvaluation = Prisma.TypeEvaluationModel
+export type lignebulletin = Prisma.lignebulletinModel
 /**
- * Model PolitiqueEvaluation
+ * Model matiere
  * 
  */
-export type PolitiqueEvaluation = Prisma.PolitiqueEvaluationModel
+export type matiere = Prisma.matiereModel
 /**
- * Model RegleEvaluation
+ * Model matiereue
  * 
  */
-export type RegleEvaluation = Prisma.RegleEvaluationModel
+export type matiereue = Prisma.matiereueModel
 /**
- * Model Evaluation
- * Évaluation (devoir, interro, contrôle), créée par un enseignant pour une classe
- */
-export type Evaluation = Prisma.EvaluationModel
-/**
- * Model Note
+ * Model message
  * 
  */
-export type Note = Prisma.NoteModel
+export type message = Prisma.messageModel
 /**
- * Model Inscription
+ * Model niveauscolaire
  * 
  */
-export type Inscription = Prisma.InscriptionModel
+export type niveauscolaire = Prisma.niveauscolaireModel
 /**
- * Model Bulletin
+ * Model note
  * 
  */
-export type Bulletin = Prisma.BulletinModel
+export type note = Prisma.noteModel
 /**
- * Model LigneBulletin
+ * Model paiement
  * 
  */
-export type LigneBulletin = Prisma.LigneBulletinModel
+export type paiement = Prisma.paiementModel
 /**
- * Model Absence
+ * Model parent
  * 
  */
-export type Absence = Prisma.AbsenceModel
+export type parent = Prisma.parentModel
 /**
- * Model ConfigurationScolarite
+ * Model participantconversation
  * 
  */
-export type ConfigurationScolarite = Prisma.ConfigurationScolariteModel
+export type participantconversation = Prisma.participantconversationModel
 /**
- * Model TrancheScolarite
+ * Model periodescolaire
  * 
  */
-export type TrancheScolarite = Prisma.TrancheScolariteModel
+export type periodescolaire = Prisma.periodescolaireModel
 /**
- * Model DossierScolarite
+ * Model permission
  * 
  */
-export type DossierScolarite = Prisma.DossierScolariteModel
+export type permission = Prisma.permissionModel
 /**
- * Model Paiement
+ * Model politiqueevaluation
  * 
  */
-export type Paiement = Prisma.PaiementModel
+export type politiqueevaluation = Prisma.politiqueevaluationModel
 /**
- * Model Annonce
+ * Model regleevaluation
  * 
  */
-export type Annonce = Prisma.AnnonceModel
+export type regleevaluation = Prisma.regleevaluationModel
 /**
- * Model CibleAnnonce
+ * Model role
  * 
  */
-export type CibleAnnonce = Prisma.CibleAnnonceModel
+export type role = Prisma.roleModel
 /**
- * Model Conversation
+ * Model rolepermission
  * 
  */
-export type Conversation = Prisma.ConversationModel
+export type rolepermission = Prisma.rolepermissionModel
 /**
- * Model ParticipantConversation
+ * Model tranchescolarite
  * 
  */
-export type ParticipantConversation = Prisma.ParticipantConversationModel
+export type tranchescolarite = Prisma.tranchescolariteModel
 /**
- * Model Message
+ * Model typeevaluation
  * 
  */
-export type Message = Prisma.MessageModel
+export type typeevaluation = Prisma.typeevaluationModel
 /**
- * Model DecisionFinAnnee
+ * Model uniteenseignement
  * 
  */
-export type DecisionFinAnnee = Prisma.DecisionFinAnneeModel
+export type uniteenseignement = Prisma.uniteenseignementModel
+/**
+ * Model user
+ * 
+ */
+export type user = Prisma.userModel
+/**
+ * Model UserAuthorizationContext
+ * 
+ */
+export type UserAuthorizationContext = Prisma.UserAuthorizationContextModel

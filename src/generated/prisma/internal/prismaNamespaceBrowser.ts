@@ -51,46 +51,47 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User',
-  Ecole: 'Ecole',
-  Role: 'Role',
-  EmployeRole: 'EmployeRole',
-  Permission: 'Permission',
-  RolePermission: 'RolePermission',
-  Employe: 'Employe',
-  EmployeDocument: 'EmployeDocument',
-  Parent: 'Parent',
-  Apprenant: 'Apprenant',
-  ApprenantParent: 'ApprenantParent',
-  AnneeScolaire: 'AnneeScolaire',
-  PeriodeScolaire: 'PeriodeScolaire',
-  NiveauScolaire: 'NiveauScolaire',
-  ClassScolaire: 'ClassScolaire',
-  Matiere: 'Matiere',
-  UniteEnseignement: 'UniteEnseignement',
-  MatiereUe: 'MatiereUe',
-  ClasseMatirere: 'ClasseMatirere',
-  AffectationEnseignant: 'AffectationEnseignant',
-  EmploiDuTemps: 'EmploiDuTemps',
-  TypeEvaluation: 'TypeEvaluation',
-  PolitiqueEvaluation: 'PolitiqueEvaluation',
-  RegleEvaluation: 'RegleEvaluation',
-  Evaluation: 'Evaluation',
-  Note: 'Note',
-  Inscription: 'Inscription',
-  Bulletin: 'Bulletin',
-  LigneBulletin: 'LigneBulletin',
-  Absence: 'Absence',
-  ConfigurationScolarite: 'ConfigurationScolarite',
-  TrancheScolarite: 'TrancheScolarite',
-  DossierScolarite: 'DossierScolarite',
-  Paiement: 'Paiement',
-  Annonce: 'Annonce',
-  CibleAnnonce: 'CibleAnnonce',
-  Conversation: 'Conversation',
-  ParticipantConversation: 'ParticipantConversation',
-  Message: 'Message',
-  DecisionFinAnnee: 'DecisionFinAnnee'
+  absence: 'absence',
+  affectationenseignant: 'affectationenseignant',
+  anneescolaire: 'anneescolaire',
+  annonce: 'annonce',
+  apprenant: 'apprenant',
+  apprenantparent: 'apprenantparent',
+  bulletin: 'bulletin',
+  cibleannonce: 'cibleannonce',
+  classematirere: 'classematirere',
+  classscolaire: 'classscolaire',
+  configurationscolarite: 'configurationscolarite',
+  conversation: 'conversation',
+  decisionfinannee: 'decisionfinannee',
+  dossierscolarite: 'dossierscolarite',
+  ecole: 'ecole',
+  emploidutemps: 'emploidutemps',
+  employe: 'employe',
+  employedocument: 'employedocument',
+  employerole: 'employerole',
+  evaluation: 'evaluation',
+  inscription: 'inscription',
+  lignebulletin: 'lignebulletin',
+  matiere: 'matiere',
+  matiereue: 'matiereue',
+  message: 'message',
+  niveauscolaire: 'niveauscolaire',
+  note: 'note',
+  paiement: 'paiement',
+  parent: 'parent',
+  participantconversation: 'participantconversation',
+  periodescolaire: 'periodescolaire',
+  permission: 'permission',
+  politiqueevaluation: 'politiqueevaluation',
+  regleevaluation: 'regleevaluation',
+  role: 'role',
+  rolepermission: 'rolepermission',
+  tranchescolarite: 'tranchescolarite',
+  typeevaluation: 'typeevaluation',
+  uniteenseignement: 'uniteenseignement',
+  user: 'user',
+  UserAuthorizationContext: 'UserAuthorizationContext'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -109,19 +110,197 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const UserScalarFieldEnum = {
+export const AbsenceScalarFieldEnum = {
   id: 'id',
-  clerkUserId: 'clerkUserId',
+  dateDebut: 'dateDebut',
+  dateFin: 'dateFin',
+  motif: 'motif',
+  statut: 'statut',
+  commentaire: 'commentaire',
+  declareParUserId: 'declareParUserId',
+  justificatifUrl: 'justificatifUrl',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  affectationEnseignantId: 'affectationEnseignantId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AbsenceScalarFieldEnum = (typeof AbsenceScalarFieldEnum)[keyof typeof AbsenceScalarFieldEnum]
+
+
+export const AffectationenseignantScalarFieldEnum = {
+  id: 'id',
+  employeId: 'employeId',
+  classeScolaireId: 'classeScolaireId',
+  matiereId: 'matiereId',
+  anneeScolaireId: 'anneeScolaireId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AffectationenseignantScalarFieldEnum = (typeof AffectationenseignantScalarFieldEnum)[keyof typeof AffectationenseignantScalarFieldEnum]
+
+
+export const AnneescolaireScalarFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
   nom: 'nom',
-  prenoms: 'prenoms',
-  email: 'email',
-  telephone: 'telephone',
+  dateDebut: 'dateDebut',
+  dateFin: 'dateFin',
   statut: 'statut',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+export type AnneescolaireScalarFieldEnum = (typeof AnneescolaireScalarFieldEnum)[keyof typeof AnneescolaireScalarFieldEnum]
+
+
+export const AnnonceScalarFieldEnum = {
+  id: 'id',
+  titre: 'titre',
+  contenu: 'contenu',
+  datePubication: 'datePubication',
+  dateExpiration: 'dateExpiration',
+  ecoleId: 'ecoleId',
+  auteurId: 'auteurId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AnnonceScalarFieldEnum = (typeof AnnonceScalarFieldEnum)[keyof typeof AnnonceScalarFieldEnum]
+
+
+export const ApprenantScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  matricule: 'matricule',
+  nom: 'nom',
+  prenoms: 'prenoms',
+  Sexe: 'Sexe',
+  dateNaissance: 'dateNaissance',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ApprenantScalarFieldEnum = (typeof ApprenantScalarFieldEnum)[keyof typeof ApprenantScalarFieldEnum]
+
+
+export const ApprenantparentScalarFieldEnum = {
+  apprenantId: 'apprenantId',
+  parentId: 'parentId',
+  lien: 'lien'
+} as const
+
+export type ApprenantparentScalarFieldEnum = (typeof ApprenantparentScalarFieldEnum)[keyof typeof ApprenantparentScalarFieldEnum]
+
+
+export const BulletinScalarFieldEnum = {
+  moyenneGenerale: 'moyenneGenerale',
+  documentUrl: 'documentUrl',
+  Rang: 'Rang',
+  estGenere: 'estGenere',
+  dateGeneration: 'dateGeneration',
+  appreciation: 'appreciation',
+  decisionFinAnnee: 'decisionFinAnnee',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  periodeScolaireId: 'periodeScolaireId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BulletinScalarFieldEnum = (typeof BulletinScalarFieldEnum)[keyof typeof BulletinScalarFieldEnum]
+
+
+export const CibleannonceScalarFieldEnum = {
+  id: 'id',
+  public: 'public',
+  annonceId: 'annonceId',
+  classeScolaireId: 'classeScolaireId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CibleannonceScalarFieldEnum = (typeof CibleannonceScalarFieldEnum)[keyof typeof CibleannonceScalarFieldEnum]
+
+
+export const ClassematirereScalarFieldEnum = {
+  id: 'id',
+  classeScolaireId: 'classeScolaireId',
+  matiereId: 'matiereId',
+  uniteEnseignementId: 'uniteEnseignementId',
+  coefficient: 'coefficient',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ClassematirereScalarFieldEnum = (typeof ClassematirereScalarFieldEnum)[keyof typeof ClassematirereScalarFieldEnum]
+
+
+export const ClassscolaireScalarFieldEnum = {
+  id: 'id',
+  niveauScolaireId: 'niveauScolaireId',
+  nom: 'nom',
+  capacite: 'capacite',
+  emploiDuTempsId: 'emploiDuTempsId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ClassscolaireScalarFieldEnum = (typeof ClassscolaireScalarFieldEnum)[keyof typeof ClassscolaireScalarFieldEnum]
+
+
+export const ConfigurationscolariteScalarFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  estActive: 'estActive',
+  ecoleId: 'ecoleId',
+  niveauScolaireId: 'niveauScolaireId',
+  anneeScolaireId: 'anneeScolaireId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ConfigurationscolariteScalarFieldEnum = (typeof ConfigurationscolariteScalarFieldEnum)[keyof typeof ConfigurationscolariteScalarFieldEnum]
+
+
+export const ConversationScalarFieldEnum = {
+  id: 'id',
+  type: 'type',
+  ecoleId: 'ecoleId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ConversationScalarFieldEnum = (typeof ConversationScalarFieldEnum)[keyof typeof ConversationScalarFieldEnum]
+
+
+export const DecisionfinanneeScalarFieldEnum = {
+  id: 'id',
+  decision: 'decision',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DecisionfinanneeScalarFieldEnum = (typeof DecisionfinanneeScalarFieldEnum)[keyof typeof DecisionfinanneeScalarFieldEnum]
+
+
+export const DossierscolariteScalarFieldEnum = {
+  id: 'id',
+  montant: 'montant',
+  resteAPayer: 'resteAPayer',
+  statut: 'statut',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  configurationScolariteId: 'configurationScolariteId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DossierscolariteScalarFieldEnum = (typeof DossierscolariteScalarFieldEnum)[keyof typeof DossierscolariteScalarFieldEnum]
 
 
 export const EcoleScalarFieldEnum = {
@@ -144,47 +323,18 @@ export const EcoleScalarFieldEnum = {
 export type EcoleScalarFieldEnum = (typeof EcoleScalarFieldEnum)[keyof typeof EcoleScalarFieldEnum]
 
 
-export const RoleScalarFieldEnum = {
+export const EmploidutempsScalarFieldEnum = {
   id: 'id',
-  nom: 'nom',
-  description: 'description',
-  estSystem: 'estSystem',
+  affectationEnseignantId: 'affectationEnseignantId',
+  jourDeLaSemaine: 'jourDeLaSemaine',
+  heureDebut: 'heureDebut',
+  heureFin: 'heureFin',
+  classeScolaireId: 'classeScolaireId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type RoleScalarFieldEnum = (typeof RoleScalarFieldEnum)[keyof typeof RoleScalarFieldEnum]
-
-
-export const EmployeRoleScalarFieldEnum = {
-  employeId: 'employeId',
-  roleId: 'roleId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type EmployeRoleScalarFieldEnum = (typeof EmployeRoleScalarFieldEnum)[keyof typeof EmployeRoleScalarFieldEnum]
-
-
-export const PermissionScalarFieldEnum = {
-  id: 'id',
-  action: 'action',
-  cible: 'cible',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type PermissionScalarFieldEnum = (typeof PermissionScalarFieldEnum)[keyof typeof PermissionScalarFieldEnum]
-
-
-export const RolePermissionScalarFieldEnum = {
-  roleId: 'roleId',
-  permissionId: 'permissionId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type RolePermissionScalarFieldEnum = (typeof RolePermissionScalarFieldEnum)[keyof typeof RolePermissionScalarFieldEnum]
+export type EmploidutempsScalarFieldEnum = (typeof EmploidutempsScalarFieldEnum)[keyof typeof EmploidutempsScalarFieldEnum]
 
 
 export const EmployeScalarFieldEnum = {
@@ -199,7 +349,7 @@ export const EmployeScalarFieldEnum = {
 export type EmployeScalarFieldEnum = (typeof EmployeScalarFieldEnum)[keyof typeof EmployeScalarFieldEnum]
 
 
-export const EmployeDocumentScalarFieldEnum = {
+export const EmployedocumentScalarFieldEnum = {
   id: 'id',
   employeId: 'employeId',
   type: 'type',
@@ -208,94 +358,61 @@ export const EmployeDocumentScalarFieldEnum = {
   createdAt: 'createdAt'
 } as const
 
-export type EmployeDocumentScalarFieldEnum = (typeof EmployeDocumentScalarFieldEnum)[keyof typeof EmployeDocumentScalarFieldEnum]
+export type EmployedocumentScalarFieldEnum = (typeof EmployedocumentScalarFieldEnum)[keyof typeof EmployedocumentScalarFieldEnum]
 
 
-export const ParentScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  profession: 'profession',
-  createdAt: 'createdAt'
+export const EmployeroleScalarFieldEnum = {
+  employeId: 'employeId',
+  roleId: 'roleId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
-export type ParentScalarFieldEnum = (typeof ParentScalarFieldEnum)[keyof typeof ParentScalarFieldEnum]
+export type EmployeroleScalarFieldEnum = (typeof EmployeroleScalarFieldEnum)[keyof typeof EmployeroleScalarFieldEnum]
 
 
-export const ApprenantScalarFieldEnum = {
+export const EvaluationScalarFieldEnum = {
   id: 'id',
-  userId: 'userId',
+  titre: 'titre',
+  date: 'date',
+  affectationId: 'affectationId',
+  typeEvaluationId: 'typeEvaluationId',
+  periodeScolaireId: 'periodeScolaireId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type EvaluationScalarFieldEnum = (typeof EvaluationScalarFieldEnum)[keyof typeof EvaluationScalarFieldEnum]
+
+
+export const InscriptionScalarFieldEnum = {
   matricule: 'matricule',
-  nom: 'nom',
-  prenoms: 'prenoms',
-  Sexe: 'Sexe',
-  dateNaissance: 'dateNaissance',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ApprenantScalarFieldEnum = (typeof ApprenantScalarFieldEnum)[keyof typeof ApprenantScalarFieldEnum]
-
-
-export const ApprenantParentScalarFieldEnum = {
+  dateInscription: 'dateInscription',
+  type: 'type',
   apprenantId: 'apprenantId',
-  parentId: 'parentId',
-  lien: 'lien'
-} as const
-
-export type ApprenantParentScalarFieldEnum = (typeof ApprenantParentScalarFieldEnum)[keyof typeof ApprenantParentScalarFieldEnum]
-
-
-export const AnneeScolaireScalarFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId',
-  nom: 'nom',
-  dateDebut: 'dateDebut',
-  dateFin: 'dateFin',
-  statut: 'statut',
+  anneeScolaireId: 'anneeScolaireId',
+  classeScolaireId: 'classeScolaireId',
+  configuartionScolariteId: 'configuartionScolariteId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type AnneeScolaireScalarFieldEnum = (typeof AnneeScolaireScalarFieldEnum)[keyof typeof AnneeScolaireScalarFieldEnum]
+export type InscriptionScalarFieldEnum = (typeof InscriptionScalarFieldEnum)[keyof typeof InscriptionScalarFieldEnum]
 
 
-export const PeriodeScolaireScalarFieldEnum = {
+export const LignebulletinScalarFieldEnum = {
   id: 'id',
-  annneScolaireId: 'annneScolaireId',
-  nom: 'nom',
-  ordre: 'ordre',
-  dateDebut: 'dateDebut',
-  dateFin: 'dateFin',
-  statut: 'statut',
+  bulletinId: 'bulletinId',
+  bulletinApprenantId: 'bulletinApprenantId',
+  bulletinAnneeId: 'bulletinAnneeId',
+  matiereId: 'matiereId',
+  moyenne: 'moyenne',
+  coefficient: 'coefficient',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type PeriodeScolaireScalarFieldEnum = (typeof PeriodeScolaireScalarFieldEnum)[keyof typeof PeriodeScolaireScalarFieldEnum]
-
-
-export const NiveauScolaireScalarFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId',
-  nom: 'nom',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type NiveauScolaireScalarFieldEnum = (typeof NiveauScolaireScalarFieldEnum)[keyof typeof NiveauScolaireScalarFieldEnum]
-
-
-export const ClassScolaireScalarFieldEnum = {
-  id: 'id',
-  niveauScolaireId: 'niveauScolaireId',
-  nom: 'nom',
-  capacite: 'capacite',
-  emploiDuTempsId: 'emploiDuTempsId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ClassScolaireScalarFieldEnum = (typeof ClassScolaireScalarFieldEnum)[keyof typeof ClassScolaireScalarFieldEnum]
+export type LignebulletinScalarFieldEnum = (typeof LignebulletinScalarFieldEnum)[keyof typeof LignebulletinScalarFieldEnum]
 
 
 export const MatiereScalarFieldEnum = {
@@ -311,19 +428,7 @@ export const MatiereScalarFieldEnum = {
 export type MatiereScalarFieldEnum = (typeof MatiereScalarFieldEnum)[keyof typeof MatiereScalarFieldEnum]
 
 
-export const UniteEnseignementScalarFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  code: 'code',
-  coefficient: 'coefficient',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type UniteEnseignementScalarFieldEnum = (typeof UniteEnseignementScalarFieldEnum)[keyof typeof UniteEnseignementScalarFieldEnum]
-
-
-export const MatiereUeScalarFieldEnum = {
+export const MatiereueScalarFieldEnum = {
   uniteEnseignementId: 'uniteEnseignementId',
   matiereId: 'matiereId',
   coefficient: 'coefficient',
@@ -331,50 +436,24 @@ export const MatiereUeScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type MatiereUeScalarFieldEnum = (typeof MatiereUeScalarFieldEnum)[keyof typeof MatiereUeScalarFieldEnum]
+export type MatiereueScalarFieldEnum = (typeof MatiereueScalarFieldEnum)[keyof typeof MatiereueScalarFieldEnum]
 
 
-export const ClasseMatirereScalarFieldEnum = {
+export const MessageScalarFieldEnum = {
   id: 'id',
-  classeScolaireId: 'classeScolaireId',
-  matiereId: 'matiereId',
-  uniteEnseignementId: 'uniteEnseignementId',
-  coefficient: 'coefficient',
+  contenu: 'contenu',
+  fichierUrl: 'fichierUrl',
+  dateEnvoi: 'dateEnvoi',
+  lu: 'lu',
+  conversationId: 'conversationId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type ClasseMatirereScalarFieldEnum = (typeof ClasseMatirereScalarFieldEnum)[keyof typeof ClasseMatirereScalarFieldEnum]
+export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
 
 
-export const AffectationEnseignantScalarFieldEnum = {
-  id: 'id',
-  employeId: 'employeId',
-  classeScolaireId: 'classeScolaireId',
-  matiereId: 'matiereId',
-  anneeScolaireId: 'anneeScolaireId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type AffectationEnseignantScalarFieldEnum = (typeof AffectationEnseignantScalarFieldEnum)[keyof typeof AffectationEnseignantScalarFieldEnum]
-
-
-export const EmploiDuTempsScalarFieldEnum = {
-  id: 'id',
-  affectationEnseignantId: 'affectationEnseignantId',
-  jourDeLaSemaine: 'jourDeLaSemaine',
-  heureDebut: 'heureDebut',
-  heureFin: 'heureFin',
-  classeScolaireId: 'classeScolaireId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type EmploiDuTempsScalarFieldEnum = (typeof EmploiDuTempsScalarFieldEnum)[keyof typeof EmploiDuTempsScalarFieldEnum]
-
-
-export const TypeEvaluationScalarFieldEnum = {
+export const NiveauscolaireScalarFieldEnum = {
   id: 'id',
   ecoleId: 'ecoleId',
   nom: 'nom',
@@ -382,51 +461,7 @@ export const TypeEvaluationScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type TypeEvaluationScalarFieldEnum = (typeof TypeEvaluationScalarFieldEnum)[keyof typeof TypeEvaluationScalarFieldEnum]
-
-
-export const PolitiqueEvaluationScalarFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId',
-  anneeScolaireId: 'anneeScolaireId',
-  classeScolaireId: 'classeScolaireId',
-  nom: 'nom',
-  methodeCalcul: 'methodeCalcul',
-  methodeArrondi: 'methodeArrondi',
-  afficherRang: 'afficherRang',
-  estActive: 'estActive',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type PolitiqueEvaluationScalarFieldEnum = (typeof PolitiqueEvaluationScalarFieldEnum)[keyof typeof PolitiqueEvaluationScalarFieldEnum]
-
-
-export const RegleEvaluationScalarFieldEnum = {
-  id: 'id',
-  nombreMin: 'nombreMin',
-  coefficientType: 'coefficientType',
-  politiqueId: 'politiqueId',
-  typeEvaluationId: 'typeEvaluationId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type RegleEvaluationScalarFieldEnum = (typeof RegleEvaluationScalarFieldEnum)[keyof typeof RegleEvaluationScalarFieldEnum]
-
-
-export const EvaluationScalarFieldEnum = {
-  id: 'id',
-  titre: 'titre',
-  date: 'date',
-  affectationId: 'affectationId',
-  typeEvaluationId: 'typeEvaluationId',
-  periodeScolaireId: 'periodeScolaireId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type EvaluationScalarFieldEnum = (typeof EvaluationScalarFieldEnum)[keyof typeof EvaluationScalarFieldEnum]
+export type NiveauscolaireScalarFieldEnum = (typeof NiveauscolaireScalarFieldEnum)[keyof typeof NiveauscolaireScalarFieldEnum]
 
 
 export const NoteScalarFieldEnum = {
@@ -447,116 +482,6 @@ export const NoteScalarFieldEnum = {
 export type NoteScalarFieldEnum = (typeof NoteScalarFieldEnum)[keyof typeof NoteScalarFieldEnum]
 
 
-export const InscriptionScalarFieldEnum = {
-  matricule: 'matricule',
-  dateInscription: 'dateInscription',
-  type: 'type',
-  apprenantId: 'apprenantId',
-  anneeScolaireId: 'anneeScolaireId',
-  classeScolaireId: 'classeScolaireId',
-  configuartionScolariteId: 'configuartionScolariteId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type InscriptionScalarFieldEnum = (typeof InscriptionScalarFieldEnum)[keyof typeof InscriptionScalarFieldEnum]
-
-
-export const BulletinScalarFieldEnum = {
-  moyenneGenerale: 'moyenneGenerale',
-  documentUrl: 'documentUrl',
-  Rang: 'Rang',
-  estGenere: 'estGenere',
-  dateGeneration: 'dateGeneration',
-  appreciation: 'appreciation',
-  decisionFinAnnee: 'decisionFinAnnee',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
-  periodeScolaireId: 'periodeScolaireId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type BulletinScalarFieldEnum = (typeof BulletinScalarFieldEnum)[keyof typeof BulletinScalarFieldEnum]
-
-
-export const LigneBulletinScalarFieldEnum = {
-  id: 'id',
-  bulletinId: 'bulletinId',
-  bulletinApprenantId: 'bulletinApprenantId',
-  bulletinAnneeId: 'bulletinAnneeId',
-  matiereId: 'matiereId',
-  moyenne: 'moyenne',
-  coefficient: 'coefficient',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type LigneBulletinScalarFieldEnum = (typeof LigneBulletinScalarFieldEnum)[keyof typeof LigneBulletinScalarFieldEnum]
-
-
-export const AbsenceScalarFieldEnum = {
-  id: 'id',
-  dateDebut: 'dateDebut',
-  dateFin: 'dateFin',
-  motif: 'motif',
-  statut: 'statut',
-  commentaire: 'commentaire',
-  declareParUserId: 'declareParUserId',
-  justificatifUrl: 'justificatifUrl',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
-  affectationEnseignantId: 'affectationEnseignantId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type AbsenceScalarFieldEnum = (typeof AbsenceScalarFieldEnum)[keyof typeof AbsenceScalarFieldEnum]
-
-
-export const ConfigurationScolariteScalarFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  estActive: 'estActive',
-  ecoleId: 'ecoleId',
-  niveauScolaireId: 'niveauScolaireId',
-  anneeScolaireId: 'anneeScolaireId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ConfigurationScolariteScalarFieldEnum = (typeof ConfigurationScolariteScalarFieldEnum)[keyof typeof ConfigurationScolariteScalarFieldEnum]
-
-
-export const TrancheScolariteScalarFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  montant: 'montant',
-  dateEcheance: 'dateEcheance',
-  ordre: 'ordre',
-  configurationScolariteId: 'configurationScolariteId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type TrancheScolariteScalarFieldEnum = (typeof TrancheScolariteScalarFieldEnum)[keyof typeof TrancheScolariteScalarFieldEnum]
-
-
-export const DossierScolariteScalarFieldEnum = {
-  id: 'id',
-  montant: 'montant',
-  resteAPayer: 'resteAPayer',
-  statut: 'statut',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
-  configurationScolariteId: 'configurationScolariteId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type DossierScolariteScalarFieldEnum = (typeof DossierScolariteScalarFieldEnum)[keyof typeof DossierScolariteScalarFieldEnum]
-
-
 export const PaiementScalarFieldEnum = {
   id: 'id',
   montant: 'montant',
@@ -572,78 +497,168 @@ export const PaiementScalarFieldEnum = {
 export type PaiementScalarFieldEnum = (typeof PaiementScalarFieldEnum)[keyof typeof PaiementScalarFieldEnum]
 
 
-export const AnnonceScalarFieldEnum = {
+export const ParentScalarFieldEnum = {
   id: 'id',
-  titre: 'titre',
-  contenu: 'contenu',
-  datePubication: 'datePubication',
-  dateExpiration: 'dateExpiration',
-  ecoleId: 'ecoleId',
-  auteurId: 'auteurId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  userId: 'userId',
+  profession: 'profession',
+  createdAt: 'createdAt'
 } as const
 
-export type AnnonceScalarFieldEnum = (typeof AnnonceScalarFieldEnum)[keyof typeof AnnonceScalarFieldEnum]
+export type ParentScalarFieldEnum = (typeof ParentScalarFieldEnum)[keyof typeof ParentScalarFieldEnum]
 
 
-export const CibleAnnonceScalarFieldEnum = {
-  id: 'id',
-  public: 'public',
-  annonceId: 'annonceId',
-  classeScolaireId: 'classeScolaireId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type CibleAnnonceScalarFieldEnum = (typeof CibleAnnonceScalarFieldEnum)[keyof typeof CibleAnnonceScalarFieldEnum]
-
-
-export const ConversationScalarFieldEnum = {
-  id: 'id',
-  type: 'type',
-  ecoleId: 'ecoleId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ConversationScalarFieldEnum = (typeof ConversationScalarFieldEnum)[keyof typeof ConversationScalarFieldEnum]
-
-
-export const ParticipantConversationScalarFieldEnum = {
+export const ParticipantconversationScalarFieldEnum = {
   conversationId: 'conversationId',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type ParticipantConversationScalarFieldEnum = (typeof ParticipantConversationScalarFieldEnum)[keyof typeof ParticipantConversationScalarFieldEnum]
+export type ParticipantconversationScalarFieldEnum = (typeof ParticipantconversationScalarFieldEnum)[keyof typeof ParticipantconversationScalarFieldEnum]
 
 
-export const MessageScalarFieldEnum = {
+export const PeriodescolaireScalarFieldEnum = {
   id: 'id',
-  contenu: 'contenu',
-  fichierUrl: 'fichierUrl',
-  dateEnvoi: 'dateEnvoi',
-  lu: 'lu',
-  conversationId: 'conversationId',
+  annneScolaireId: 'annneScolaireId',
+  nom: 'nom',
+  ordre: 'ordre',
+  dateDebut: 'dateDebut',
+  dateFin: 'dateFin',
+  statut: 'statut',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
+export type PeriodescolaireScalarFieldEnum = (typeof PeriodescolaireScalarFieldEnum)[keyof typeof PeriodescolaireScalarFieldEnum]
 
 
-export const DecisionFinAnneeScalarFieldEnum = {
+export const PermissionScalarFieldEnum = {
   id: 'id',
-  decision: 'decision',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  action: 'action',
+  cible: 'cible'
+} as const
+
+export type PermissionScalarFieldEnum = (typeof PermissionScalarFieldEnum)[keyof typeof PermissionScalarFieldEnum]
+
+
+export const PolitiqueevaluationScalarFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  anneeScolaireId: 'anneeScolaireId',
+  classeScolaireId: 'classeScolaireId',
+  nom: 'nom',
+  methodeCalcul: 'methodeCalcul',
+  methodeArrondi: 'methodeArrondi',
+  afficherRang: 'afficherRang',
+  estActive: 'estActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type DecisionFinAnneeScalarFieldEnum = (typeof DecisionFinAnneeScalarFieldEnum)[keyof typeof DecisionFinAnneeScalarFieldEnum]
+export type PolitiqueevaluationScalarFieldEnum = (typeof PolitiqueevaluationScalarFieldEnum)[keyof typeof PolitiqueevaluationScalarFieldEnum]
+
+
+export const RegleevaluationScalarFieldEnum = {
+  id: 'id',
+  nombreMin: 'nombreMin',
+  coefficientType: 'coefficientType',
+  politiqueId: 'politiqueId',
+  typeEvaluationId: 'typeEvaluationId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type RegleevaluationScalarFieldEnum = (typeof RegleevaluationScalarFieldEnum)[keyof typeof RegleevaluationScalarFieldEnum]
+
+
+export const RoleScalarFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  description: 'description',
+  estSystem: 'estSystem',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  ecoleId: 'ecoleId'
+} as const
+
+export type RoleScalarFieldEnum = (typeof RoleScalarFieldEnum)[keyof typeof RoleScalarFieldEnum]
+
+
+export const RolepermissionScalarFieldEnum = {
+  roleId: 'roleId',
+  permissionId: 'permissionId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type RolepermissionScalarFieldEnum = (typeof RolepermissionScalarFieldEnum)[keyof typeof RolepermissionScalarFieldEnum]
+
+
+export const TranchescolariteScalarFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  montant: 'montant',
+  dateEcheance: 'dateEcheance',
+  ordre: 'ordre',
+  configurationScolariteId: 'configurationScolariteId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TranchescolariteScalarFieldEnum = (typeof TranchescolariteScalarFieldEnum)[keyof typeof TranchescolariteScalarFieldEnum]
+
+
+export const TypeevaluationScalarFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nom: 'nom',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TypeevaluationScalarFieldEnum = (typeof TypeevaluationScalarFieldEnum)[keyof typeof TypeevaluationScalarFieldEnum]
+
+
+export const UniteenseignementScalarFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  code: 'code',
+  coefficient: 'coefficient',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UniteenseignementScalarFieldEnum = (typeof UniteenseignementScalarFieldEnum)[keyof typeof UniteenseignementScalarFieldEnum]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  clerkUserId: 'clerkUserId',
+  nom: 'nom',
+  prenoms: 'prenoms',
+  email: 'email',
+  telephone: 'telephone',
+  statut: 'statut',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const UserAuthorizationContextScalarFieldEnum = {
+  userId: 'userId',
+  clerkUserId: 'clerkUserId',
+  typeUtilisateur: 'typeUtilisateur',
+  ecoleId: 'ecoleId',
+  action: 'action',
+  cible: 'cible',
+  apprenantId: 'apprenantId'
+} as const
+
+export type UserAuthorizationContextScalarFieldEnum = (typeof UserAuthorizationContextScalarFieldEnum)[keyof typeof UserAuthorizationContextScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -654,18 +669,6 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-export const UserOrderByRelevanceFieldEnum = {
-  id: 'id',
-  clerkUserId: 'clerkUserId',
-  nom: 'nom',
-  prenoms: 'prenoms',
-  email: 'email',
-  telephone: 'telephone'
-} as const
-
-export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
-
-
 export const NullsOrder = {
   first: 'first',
   last: 'last'
@@ -674,7 +677,149 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const EcoleOrderByRelevanceFieldEnum = {
+export const absenceOrderByRelevanceFieldEnum = {
+  id: 'id',
+  motif: 'motif',
+  commentaire: 'commentaire',
+  declareParUserId: 'declareParUserId',
+  justificatifUrl: 'justificatifUrl',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  affectationEnseignantId: 'affectationEnseignantId'
+} as const
+
+export type absenceOrderByRelevanceFieldEnum = (typeof absenceOrderByRelevanceFieldEnum)[keyof typeof absenceOrderByRelevanceFieldEnum]
+
+
+export const affectationenseignantOrderByRelevanceFieldEnum = {
+  id: 'id',
+  employeId: 'employeId',
+  classeScolaireId: 'classeScolaireId',
+  matiereId: 'matiereId',
+  anneeScolaireId: 'anneeScolaireId'
+} as const
+
+export type affectationenseignantOrderByRelevanceFieldEnum = (typeof affectationenseignantOrderByRelevanceFieldEnum)[keyof typeof affectationenseignantOrderByRelevanceFieldEnum]
+
+
+export const anneescolaireOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nom: 'nom'
+} as const
+
+export type anneescolaireOrderByRelevanceFieldEnum = (typeof anneescolaireOrderByRelevanceFieldEnum)[keyof typeof anneescolaireOrderByRelevanceFieldEnum]
+
+
+export const annonceOrderByRelevanceFieldEnum = {
+  id: 'id',
+  titre: 'titre',
+  contenu: 'contenu',
+  ecoleId: 'ecoleId',
+  auteurId: 'auteurId'
+} as const
+
+export type annonceOrderByRelevanceFieldEnum = (typeof annonceOrderByRelevanceFieldEnum)[keyof typeof annonceOrderByRelevanceFieldEnum]
+
+
+export const apprenantOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  matricule: 'matricule',
+  nom: 'nom',
+  prenoms: 'prenoms'
+} as const
+
+export type apprenantOrderByRelevanceFieldEnum = (typeof apprenantOrderByRelevanceFieldEnum)[keyof typeof apprenantOrderByRelevanceFieldEnum]
+
+
+export const apprenantparentOrderByRelevanceFieldEnum = {
+  apprenantId: 'apprenantId',
+  parentId: 'parentId'
+} as const
+
+export type apprenantparentOrderByRelevanceFieldEnum = (typeof apprenantparentOrderByRelevanceFieldEnum)[keyof typeof apprenantparentOrderByRelevanceFieldEnum]
+
+
+export const bulletinOrderByRelevanceFieldEnum = {
+  documentUrl: 'documentUrl',
+  appreciation: 'appreciation',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  periodeScolaireId: 'periodeScolaireId'
+} as const
+
+export type bulletinOrderByRelevanceFieldEnum = (typeof bulletinOrderByRelevanceFieldEnum)[keyof typeof bulletinOrderByRelevanceFieldEnum]
+
+
+export const cibleannonceOrderByRelevanceFieldEnum = {
+  id: 'id',
+  annonceId: 'annonceId',
+  classeScolaireId: 'classeScolaireId'
+} as const
+
+export type cibleannonceOrderByRelevanceFieldEnum = (typeof cibleannonceOrderByRelevanceFieldEnum)[keyof typeof cibleannonceOrderByRelevanceFieldEnum]
+
+
+export const classematirereOrderByRelevanceFieldEnum = {
+  id: 'id',
+  classeScolaireId: 'classeScolaireId',
+  matiereId: 'matiereId',
+  uniteEnseignementId: 'uniteEnseignementId'
+} as const
+
+export type classematirereOrderByRelevanceFieldEnum = (typeof classematirereOrderByRelevanceFieldEnum)[keyof typeof classematirereOrderByRelevanceFieldEnum]
+
+
+export const classscolaireOrderByRelevanceFieldEnum = {
+  id: 'id',
+  niveauScolaireId: 'niveauScolaireId',
+  nom: 'nom',
+  emploiDuTempsId: 'emploiDuTempsId'
+} as const
+
+export type classscolaireOrderByRelevanceFieldEnum = (typeof classscolaireOrderByRelevanceFieldEnum)[keyof typeof classscolaireOrderByRelevanceFieldEnum]
+
+
+export const configurationscolariteOrderByRelevanceFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  ecoleId: 'ecoleId',
+  niveauScolaireId: 'niveauScolaireId',
+  anneeScolaireId: 'anneeScolaireId'
+} as const
+
+export type configurationscolariteOrderByRelevanceFieldEnum = (typeof configurationscolariteOrderByRelevanceFieldEnum)[keyof typeof configurationscolariteOrderByRelevanceFieldEnum]
+
+
+export const conversationOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId'
+} as const
+
+export type conversationOrderByRelevanceFieldEnum = (typeof conversationOrderByRelevanceFieldEnum)[keyof typeof conversationOrderByRelevanceFieldEnum]
+
+
+export const decisionfinanneeOrderByRelevanceFieldEnum = {
+  id: 'id',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId'
+} as const
+
+export type decisionfinanneeOrderByRelevanceFieldEnum = (typeof decisionfinanneeOrderByRelevanceFieldEnum)[keyof typeof decisionfinanneeOrderByRelevanceFieldEnum]
+
+
+export const dossierscolariteOrderByRelevanceFieldEnum = {
+  id: 'id',
+  inscriptionApprenantId: 'inscriptionApprenantId',
+  inscriptionAnneeId: 'inscriptionAnneeId',
+  configurationScolariteId: 'configurationScolariteId'
+} as const
+
+export type dossierscolariteOrderByRelevanceFieldEnum = (typeof dossierscolariteOrderByRelevanceFieldEnum)[keyof typeof dossierscolariteOrderByRelevanceFieldEnum]
+
+
+export const ecoleOrderByRelevanceFieldEnum = {
   id: 'id',
   nom: 'nom',
   nomFondateur: 'nomFondateur',
@@ -686,175 +831,10 @@ export const EcoleOrderByRelevanceFieldEnum = {
   code: 'code'
 } as const
 
-export type EcoleOrderByRelevanceFieldEnum = (typeof EcoleOrderByRelevanceFieldEnum)[keyof typeof EcoleOrderByRelevanceFieldEnum]
+export type ecoleOrderByRelevanceFieldEnum = (typeof ecoleOrderByRelevanceFieldEnum)[keyof typeof ecoleOrderByRelevanceFieldEnum]
 
 
-export const RoleOrderByRelevanceFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  description: 'description'
-} as const
-
-export type RoleOrderByRelevanceFieldEnum = (typeof RoleOrderByRelevanceFieldEnum)[keyof typeof RoleOrderByRelevanceFieldEnum]
-
-
-export const EmployeRoleOrderByRelevanceFieldEnum = {
-  employeId: 'employeId',
-  roleId: 'roleId'
-} as const
-
-export type EmployeRoleOrderByRelevanceFieldEnum = (typeof EmployeRoleOrderByRelevanceFieldEnum)[keyof typeof EmployeRoleOrderByRelevanceFieldEnum]
-
-
-export const PermissionOrderByRelevanceFieldEnum = {
-  id: 'id'
-} as const
-
-export type PermissionOrderByRelevanceFieldEnum = (typeof PermissionOrderByRelevanceFieldEnum)[keyof typeof PermissionOrderByRelevanceFieldEnum]
-
-
-export const RolePermissionOrderByRelevanceFieldEnum = {
-  roleId: 'roleId',
-  permissionId: 'permissionId'
-} as const
-
-export type RolePermissionOrderByRelevanceFieldEnum = (typeof RolePermissionOrderByRelevanceFieldEnum)[keyof typeof RolePermissionOrderByRelevanceFieldEnum]
-
-
-export const EmployeOrderByRelevanceFieldEnum = {
-  id: 'id',
-  matricule: 'matricule',
-  clerkUserId: 'clerkUserId'
-} as const
-
-export type EmployeOrderByRelevanceFieldEnum = (typeof EmployeOrderByRelevanceFieldEnum)[keyof typeof EmployeOrderByRelevanceFieldEnum]
-
-
-export const EmployeDocumentOrderByRelevanceFieldEnum = {
-  id: 'id',
-  employeId: 'employeId',
-  titre: 'titre',
-  documentUrl: 'documentUrl'
-} as const
-
-export type EmployeDocumentOrderByRelevanceFieldEnum = (typeof EmployeDocumentOrderByRelevanceFieldEnum)[keyof typeof EmployeDocumentOrderByRelevanceFieldEnum]
-
-
-export const ParentOrderByRelevanceFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  profession: 'profession'
-} as const
-
-export type ParentOrderByRelevanceFieldEnum = (typeof ParentOrderByRelevanceFieldEnum)[keyof typeof ParentOrderByRelevanceFieldEnum]
-
-
-export const ApprenantOrderByRelevanceFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  matricule: 'matricule',
-  nom: 'nom',
-  prenoms: 'prenoms'
-} as const
-
-export type ApprenantOrderByRelevanceFieldEnum = (typeof ApprenantOrderByRelevanceFieldEnum)[keyof typeof ApprenantOrderByRelevanceFieldEnum]
-
-
-export const ApprenantParentOrderByRelevanceFieldEnum = {
-  apprenantId: 'apprenantId',
-  parentId: 'parentId'
-} as const
-
-export type ApprenantParentOrderByRelevanceFieldEnum = (typeof ApprenantParentOrderByRelevanceFieldEnum)[keyof typeof ApprenantParentOrderByRelevanceFieldEnum]
-
-
-export const AnneeScolaireOrderByRelevanceFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId',
-  nom: 'nom'
-} as const
-
-export type AnneeScolaireOrderByRelevanceFieldEnum = (typeof AnneeScolaireOrderByRelevanceFieldEnum)[keyof typeof AnneeScolaireOrderByRelevanceFieldEnum]
-
-
-export const PeriodeScolaireOrderByRelevanceFieldEnum = {
-  id: 'id',
-  annneScolaireId: 'annneScolaireId',
-  nom: 'nom'
-} as const
-
-export type PeriodeScolaireOrderByRelevanceFieldEnum = (typeof PeriodeScolaireOrderByRelevanceFieldEnum)[keyof typeof PeriodeScolaireOrderByRelevanceFieldEnum]
-
-
-export const NiveauScolaireOrderByRelevanceFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId',
-  nom: 'nom'
-} as const
-
-export type NiveauScolaireOrderByRelevanceFieldEnum = (typeof NiveauScolaireOrderByRelevanceFieldEnum)[keyof typeof NiveauScolaireOrderByRelevanceFieldEnum]
-
-
-export const ClassScolaireOrderByRelevanceFieldEnum = {
-  id: 'id',
-  niveauScolaireId: 'niveauScolaireId',
-  nom: 'nom',
-  emploiDuTempsId: 'emploiDuTempsId'
-} as const
-
-export type ClassScolaireOrderByRelevanceFieldEnum = (typeof ClassScolaireOrderByRelevanceFieldEnum)[keyof typeof ClassScolaireOrderByRelevanceFieldEnum]
-
-
-export const MatiereOrderByRelevanceFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId',
-  nom: 'nom',
-  CodeMat: 'CodeMat',
-  description: 'description'
-} as const
-
-export type MatiereOrderByRelevanceFieldEnum = (typeof MatiereOrderByRelevanceFieldEnum)[keyof typeof MatiereOrderByRelevanceFieldEnum]
-
-
-export const UniteEnseignementOrderByRelevanceFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  code: 'code'
-} as const
-
-export type UniteEnseignementOrderByRelevanceFieldEnum = (typeof UniteEnseignementOrderByRelevanceFieldEnum)[keyof typeof UniteEnseignementOrderByRelevanceFieldEnum]
-
-
-export const MatiereUeOrderByRelevanceFieldEnum = {
-  uniteEnseignementId: 'uniteEnseignementId',
-  matiereId: 'matiereId'
-} as const
-
-export type MatiereUeOrderByRelevanceFieldEnum = (typeof MatiereUeOrderByRelevanceFieldEnum)[keyof typeof MatiereUeOrderByRelevanceFieldEnum]
-
-
-export const ClasseMatirereOrderByRelevanceFieldEnum = {
-  id: 'id',
-  classeScolaireId: 'classeScolaireId',
-  matiereId: 'matiereId',
-  uniteEnseignementId: 'uniteEnseignementId'
-} as const
-
-export type ClasseMatirereOrderByRelevanceFieldEnum = (typeof ClasseMatirereOrderByRelevanceFieldEnum)[keyof typeof ClasseMatirereOrderByRelevanceFieldEnum]
-
-
-export const AffectationEnseignantOrderByRelevanceFieldEnum = {
-  id: 'id',
-  employeId: 'employeId',
-  classeScolaireId: 'classeScolaireId',
-  matiereId: 'matiereId',
-  anneeScolaireId: 'anneeScolaireId'
-} as const
-
-export type AffectationEnseignantOrderByRelevanceFieldEnum = (typeof AffectationEnseignantOrderByRelevanceFieldEnum)[keyof typeof AffectationEnseignantOrderByRelevanceFieldEnum]
-
-
-export const EmploiDuTempsOrderByRelevanceFieldEnum = {
+export const emploidutempsOrderByRelevanceFieldEnum = {
   id: 'id',
   affectationEnseignantId: 'affectationEnseignantId',
   heureDebut: 'heureDebut',
@@ -862,39 +842,37 @@ export const EmploiDuTempsOrderByRelevanceFieldEnum = {
   classeScolaireId: 'classeScolaireId'
 } as const
 
-export type EmploiDuTempsOrderByRelevanceFieldEnum = (typeof EmploiDuTempsOrderByRelevanceFieldEnum)[keyof typeof EmploiDuTempsOrderByRelevanceFieldEnum]
+export type emploidutempsOrderByRelevanceFieldEnum = (typeof emploidutempsOrderByRelevanceFieldEnum)[keyof typeof emploidutempsOrderByRelevanceFieldEnum]
 
 
-export const TypeEvaluationOrderByRelevanceFieldEnum = {
+export const employeOrderByRelevanceFieldEnum = {
   id: 'id',
-  ecoleId: 'ecoleId',
-  nom: 'nom'
+  matricule: 'matricule',
+  clerkUserId: 'clerkUserId'
 } as const
 
-export type TypeEvaluationOrderByRelevanceFieldEnum = (typeof TypeEvaluationOrderByRelevanceFieldEnum)[keyof typeof TypeEvaluationOrderByRelevanceFieldEnum]
+export type employeOrderByRelevanceFieldEnum = (typeof employeOrderByRelevanceFieldEnum)[keyof typeof employeOrderByRelevanceFieldEnum]
 
 
-export const PolitiqueEvaluationOrderByRelevanceFieldEnum = {
+export const employedocumentOrderByRelevanceFieldEnum = {
   id: 'id',
-  ecoleId: 'ecoleId',
-  anneeScolaireId: 'anneeScolaireId',
-  classeScolaireId: 'classeScolaireId',
-  nom: 'nom'
+  employeId: 'employeId',
+  titre: 'titre',
+  documentUrl: 'documentUrl'
 } as const
 
-export type PolitiqueEvaluationOrderByRelevanceFieldEnum = (typeof PolitiqueEvaluationOrderByRelevanceFieldEnum)[keyof typeof PolitiqueEvaluationOrderByRelevanceFieldEnum]
+export type employedocumentOrderByRelevanceFieldEnum = (typeof employedocumentOrderByRelevanceFieldEnum)[keyof typeof employedocumentOrderByRelevanceFieldEnum]
 
 
-export const RegleEvaluationOrderByRelevanceFieldEnum = {
-  id: 'id',
-  politiqueId: 'politiqueId',
-  typeEvaluationId: 'typeEvaluationId'
+export const employeroleOrderByRelevanceFieldEnum = {
+  employeId: 'employeId',
+  roleId: 'roleId'
 } as const
 
-export type RegleEvaluationOrderByRelevanceFieldEnum = (typeof RegleEvaluationOrderByRelevanceFieldEnum)[keyof typeof RegleEvaluationOrderByRelevanceFieldEnum]
+export type employeroleOrderByRelevanceFieldEnum = (typeof employeroleOrderByRelevanceFieldEnum)[keyof typeof employeroleOrderByRelevanceFieldEnum]
 
 
-export const EvaluationOrderByRelevanceFieldEnum = {
+export const evaluationOrderByRelevanceFieldEnum = {
   id: 'id',
   titre: 'titre',
   affectationId: 'affectationId',
@@ -902,10 +880,70 @@ export const EvaluationOrderByRelevanceFieldEnum = {
   periodeScolaireId: 'periodeScolaireId'
 } as const
 
-export type EvaluationOrderByRelevanceFieldEnum = (typeof EvaluationOrderByRelevanceFieldEnum)[keyof typeof EvaluationOrderByRelevanceFieldEnum]
+export type evaluationOrderByRelevanceFieldEnum = (typeof evaluationOrderByRelevanceFieldEnum)[keyof typeof evaluationOrderByRelevanceFieldEnum]
 
 
-export const NoteOrderByRelevanceFieldEnum = {
+export const inscriptionOrderByRelevanceFieldEnum = {
+  matricule: 'matricule',
+  apprenantId: 'apprenantId',
+  anneeScolaireId: 'anneeScolaireId',
+  classeScolaireId: 'classeScolaireId',
+  configuartionScolariteId: 'configuartionScolariteId'
+} as const
+
+export type inscriptionOrderByRelevanceFieldEnum = (typeof inscriptionOrderByRelevanceFieldEnum)[keyof typeof inscriptionOrderByRelevanceFieldEnum]
+
+
+export const lignebulletinOrderByRelevanceFieldEnum = {
+  id: 'id',
+  bulletinId: 'bulletinId',
+  bulletinApprenantId: 'bulletinApprenantId',
+  bulletinAnneeId: 'bulletinAnneeId',
+  matiereId: 'matiereId'
+} as const
+
+export type lignebulletinOrderByRelevanceFieldEnum = (typeof lignebulletinOrderByRelevanceFieldEnum)[keyof typeof lignebulletinOrderByRelevanceFieldEnum]
+
+
+export const matiereOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nom: 'nom',
+  CodeMat: 'CodeMat',
+  description: 'description'
+} as const
+
+export type matiereOrderByRelevanceFieldEnum = (typeof matiereOrderByRelevanceFieldEnum)[keyof typeof matiereOrderByRelevanceFieldEnum]
+
+
+export const matiereueOrderByRelevanceFieldEnum = {
+  uniteEnseignementId: 'uniteEnseignementId',
+  matiereId: 'matiereId'
+} as const
+
+export type matiereueOrderByRelevanceFieldEnum = (typeof matiereueOrderByRelevanceFieldEnum)[keyof typeof matiereueOrderByRelevanceFieldEnum]
+
+
+export const messageOrderByRelevanceFieldEnum = {
+  id: 'id',
+  contenu: 'contenu',
+  fichierUrl: 'fichierUrl',
+  conversationId: 'conversationId'
+} as const
+
+export type messageOrderByRelevanceFieldEnum = (typeof messageOrderByRelevanceFieldEnum)[keyof typeof messageOrderByRelevanceFieldEnum]
+
+
+export const niveauscolaireOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nom: 'nom'
+} as const
+
+export type niveauscolaireOrderByRelevanceFieldEnum = (typeof niveauscolaireOrderByRelevanceFieldEnum)[keyof typeof niveauscolaireOrderByRelevanceFieldEnum]
+
+
+export const noteOrderByRelevanceFieldEnum = {
   id: 'id',
   Observation: 'Observation',
   inscriptionApprenantId: 'inscriptionApprenantId',
@@ -916,147 +954,136 @@ export const NoteOrderByRelevanceFieldEnum = {
   evaluationId: 'evaluationId'
 } as const
 
-export type NoteOrderByRelevanceFieldEnum = (typeof NoteOrderByRelevanceFieldEnum)[keyof typeof NoteOrderByRelevanceFieldEnum]
+export type noteOrderByRelevanceFieldEnum = (typeof noteOrderByRelevanceFieldEnum)[keyof typeof noteOrderByRelevanceFieldEnum]
 
 
-export const InscriptionOrderByRelevanceFieldEnum = {
-  matricule: 'matricule',
-  apprenantId: 'apprenantId',
-  anneeScolaireId: 'anneeScolaireId',
-  classeScolaireId: 'classeScolaireId',
-  configuartionScolariteId: 'configuartionScolariteId'
-} as const
-
-export type InscriptionOrderByRelevanceFieldEnum = (typeof InscriptionOrderByRelevanceFieldEnum)[keyof typeof InscriptionOrderByRelevanceFieldEnum]
-
-
-export const BulletinOrderByRelevanceFieldEnum = {
-  documentUrl: 'documentUrl',
-  appreciation: 'appreciation',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
-  periodeScolaireId: 'periodeScolaireId'
-} as const
-
-export type BulletinOrderByRelevanceFieldEnum = (typeof BulletinOrderByRelevanceFieldEnum)[keyof typeof BulletinOrderByRelevanceFieldEnum]
-
-
-export const LigneBulletinOrderByRelevanceFieldEnum = {
-  id: 'id',
-  bulletinId: 'bulletinId',
-  bulletinApprenantId: 'bulletinApprenantId',
-  bulletinAnneeId: 'bulletinAnneeId',
-  matiereId: 'matiereId'
-} as const
-
-export type LigneBulletinOrderByRelevanceFieldEnum = (typeof LigneBulletinOrderByRelevanceFieldEnum)[keyof typeof LigneBulletinOrderByRelevanceFieldEnum]
-
-
-export const AbsenceOrderByRelevanceFieldEnum = {
-  id: 'id',
-  motif: 'motif',
-  commentaire: 'commentaire',
-  declareParUserId: 'declareParUserId',
-  justificatifUrl: 'justificatifUrl',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
-  affectationEnseignantId: 'affectationEnseignantId'
-} as const
-
-export type AbsenceOrderByRelevanceFieldEnum = (typeof AbsenceOrderByRelevanceFieldEnum)[keyof typeof AbsenceOrderByRelevanceFieldEnum]
-
-
-export const ConfigurationScolariteOrderByRelevanceFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  ecoleId: 'ecoleId',
-  niveauScolaireId: 'niveauScolaireId',
-  anneeScolaireId: 'anneeScolaireId'
-} as const
-
-export type ConfigurationScolariteOrderByRelevanceFieldEnum = (typeof ConfigurationScolariteOrderByRelevanceFieldEnum)[keyof typeof ConfigurationScolariteOrderByRelevanceFieldEnum]
-
-
-export const TrancheScolariteOrderByRelevanceFieldEnum = {
-  id: 'id',
-  nom: 'nom',
-  configurationScolariteId: 'configurationScolariteId'
-} as const
-
-export type TrancheScolariteOrderByRelevanceFieldEnum = (typeof TrancheScolariteOrderByRelevanceFieldEnum)[keyof typeof TrancheScolariteOrderByRelevanceFieldEnum]
-
-
-export const DossierScolariteOrderByRelevanceFieldEnum = {
-  id: 'id',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId',
-  configurationScolariteId: 'configurationScolariteId'
-} as const
-
-export type DossierScolariteOrderByRelevanceFieldEnum = (typeof DossierScolariteOrderByRelevanceFieldEnum)[keyof typeof DossierScolariteOrderByRelevanceFieldEnum]
-
-
-export const PaiementOrderByRelevanceFieldEnum = {
+export const paiementOrderByRelevanceFieldEnum = {
   id: 'id',
   references: 'references',
   recuUrl: 'recuUrl',
   dossierScolariteId: 'dossierScolariteId'
 } as const
 
-export type PaiementOrderByRelevanceFieldEnum = (typeof PaiementOrderByRelevanceFieldEnum)[keyof typeof PaiementOrderByRelevanceFieldEnum]
+export type paiementOrderByRelevanceFieldEnum = (typeof paiementOrderByRelevanceFieldEnum)[keyof typeof paiementOrderByRelevanceFieldEnum]
 
 
-export const AnnonceOrderByRelevanceFieldEnum = {
+export const parentOrderByRelevanceFieldEnum = {
   id: 'id',
-  titre: 'titre',
-  contenu: 'contenu',
-  ecoleId: 'ecoleId',
-  auteurId: 'auteurId'
+  userId: 'userId',
+  profession: 'profession'
 } as const
 
-export type AnnonceOrderByRelevanceFieldEnum = (typeof AnnonceOrderByRelevanceFieldEnum)[keyof typeof AnnonceOrderByRelevanceFieldEnum]
+export type parentOrderByRelevanceFieldEnum = (typeof parentOrderByRelevanceFieldEnum)[keyof typeof parentOrderByRelevanceFieldEnum]
 
 
-export const CibleAnnonceOrderByRelevanceFieldEnum = {
-  id: 'id',
-  annonceId: 'annonceId',
-  classeScolaireId: 'classeScolaireId'
-} as const
-
-export type CibleAnnonceOrderByRelevanceFieldEnum = (typeof CibleAnnonceOrderByRelevanceFieldEnum)[keyof typeof CibleAnnonceOrderByRelevanceFieldEnum]
-
-
-export const ConversationOrderByRelevanceFieldEnum = {
-  id: 'id',
-  ecoleId: 'ecoleId'
-} as const
-
-export type ConversationOrderByRelevanceFieldEnum = (typeof ConversationOrderByRelevanceFieldEnum)[keyof typeof ConversationOrderByRelevanceFieldEnum]
-
-
-export const ParticipantConversationOrderByRelevanceFieldEnum = {
+export const participantconversationOrderByRelevanceFieldEnum = {
   conversationId: 'conversationId',
   userId: 'userId'
 } as const
 
-export type ParticipantConversationOrderByRelevanceFieldEnum = (typeof ParticipantConversationOrderByRelevanceFieldEnum)[keyof typeof ParticipantConversationOrderByRelevanceFieldEnum]
+export type participantconversationOrderByRelevanceFieldEnum = (typeof participantconversationOrderByRelevanceFieldEnum)[keyof typeof participantconversationOrderByRelevanceFieldEnum]
 
 
-export const MessageOrderByRelevanceFieldEnum = {
+export const periodescolaireOrderByRelevanceFieldEnum = {
   id: 'id',
-  contenu: 'contenu',
-  fichierUrl: 'fichierUrl',
-  conversationId: 'conversationId'
+  annneScolaireId: 'annneScolaireId',
+  nom: 'nom'
 } as const
 
-export type MessageOrderByRelevanceFieldEnum = (typeof MessageOrderByRelevanceFieldEnum)[keyof typeof MessageOrderByRelevanceFieldEnum]
+export type periodescolaireOrderByRelevanceFieldEnum = (typeof periodescolaireOrderByRelevanceFieldEnum)[keyof typeof periodescolaireOrderByRelevanceFieldEnum]
 
 
-export const DecisionFinAnneeOrderByRelevanceFieldEnum = {
-  id: 'id',
-  inscriptionApprenantId: 'inscriptionApprenantId',
-  inscriptionAnneeId: 'inscriptionAnneeId'
+export const permissionOrderByRelevanceFieldEnum = {
+  id: 'id'
 } as const
 
-export type DecisionFinAnneeOrderByRelevanceFieldEnum = (typeof DecisionFinAnneeOrderByRelevanceFieldEnum)[keyof typeof DecisionFinAnneeOrderByRelevanceFieldEnum]
+export type permissionOrderByRelevanceFieldEnum = (typeof permissionOrderByRelevanceFieldEnum)[keyof typeof permissionOrderByRelevanceFieldEnum]
+
+
+export const politiqueevaluationOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  anneeScolaireId: 'anneeScolaireId',
+  classeScolaireId: 'classeScolaireId',
+  nom: 'nom'
+} as const
+
+export type politiqueevaluationOrderByRelevanceFieldEnum = (typeof politiqueevaluationOrderByRelevanceFieldEnum)[keyof typeof politiqueevaluationOrderByRelevanceFieldEnum]
+
+
+export const regleevaluationOrderByRelevanceFieldEnum = {
+  id: 'id',
+  politiqueId: 'politiqueId',
+  typeEvaluationId: 'typeEvaluationId'
+} as const
+
+export type regleevaluationOrderByRelevanceFieldEnum = (typeof regleevaluationOrderByRelevanceFieldEnum)[keyof typeof regleevaluationOrderByRelevanceFieldEnum]
+
+
+export const roleOrderByRelevanceFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  description: 'description',
+  ecoleId: 'ecoleId'
+} as const
+
+export type roleOrderByRelevanceFieldEnum = (typeof roleOrderByRelevanceFieldEnum)[keyof typeof roleOrderByRelevanceFieldEnum]
+
+
+export const rolepermissionOrderByRelevanceFieldEnum = {
+  roleId: 'roleId',
+  permissionId: 'permissionId'
+} as const
+
+export type rolepermissionOrderByRelevanceFieldEnum = (typeof rolepermissionOrderByRelevanceFieldEnum)[keyof typeof rolepermissionOrderByRelevanceFieldEnum]
+
+
+export const tranchescolariteOrderByRelevanceFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  configurationScolariteId: 'configurationScolariteId'
+} as const
+
+export type tranchescolariteOrderByRelevanceFieldEnum = (typeof tranchescolariteOrderByRelevanceFieldEnum)[keyof typeof tranchescolariteOrderByRelevanceFieldEnum]
+
+
+export const typeevaluationOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nom: 'nom'
+} as const
+
+export type typeevaluationOrderByRelevanceFieldEnum = (typeof typeevaluationOrderByRelevanceFieldEnum)[keyof typeof typeevaluationOrderByRelevanceFieldEnum]
+
+
+export const uniteenseignementOrderByRelevanceFieldEnum = {
+  id: 'id',
+  nom: 'nom',
+  code: 'code'
+} as const
+
+export type uniteenseignementOrderByRelevanceFieldEnum = (typeof uniteenseignementOrderByRelevanceFieldEnum)[keyof typeof uniteenseignementOrderByRelevanceFieldEnum]
+
+
+export const userOrderByRelevanceFieldEnum = {
+  id: 'id',
+  clerkUserId: 'clerkUserId',
+  nom: 'nom',
+  prenoms: 'prenoms',
+  email: 'email',
+  telephone: 'telephone'
+} as const
+
+export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
+
+
+export const UserAuthorizationContextOrderByRelevanceFieldEnum = {
+  userId: 'userId',
+  clerkUserId: 'clerkUserId',
+  typeUtilisateur: 'typeUtilisateur',
+  ecoleId: 'ecoleId',
+  apprenantId: 'apprenantId'
+} as const
+
+export type UserAuthorizationContextOrderByRelevanceFieldEnum = (typeof UserAuthorizationContextOrderByRelevanceFieldEnum)[keyof typeof UserAuthorizationContextOrderByRelevanceFieldEnum]
 
