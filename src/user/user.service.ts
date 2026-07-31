@@ -2,8 +2,8 @@ import {
   Injectable,
   NotFoundException,
   ConflictException,
-  InternalServerErrorException,
   Logger,
+  BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import {
@@ -16,6 +16,13 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { FilterUserDto } from './dto/filter-user.dto';
 import { Prisma } from 'src/generated/prisma/client';
 
+export interface CreateOrUpdateClerkUserDto {
+  clerkUserId: string;
+  email: string;
+  nom: string;
+  prenoms: string;
+  telephone: string;
+}
 @Injectable()
 export class UsersService {
   private readonly logger = new Logger(UsersService.name);
@@ -33,8 +40,8 @@ export class UsersService {
     });
   }
 
-  // Créer un utilisateur (Clerk + Prisma)
-  async create(dto: CreateUserDto) {
+  // Créer un utilisateur (Prisma)
+  async createUser(dto: CreateUserDto) {
     // Vérifier si l'email existe déjà en BDD local
     const existingUser = await this.prisma.user.findUnique({
       where: { email: dto.email },
@@ -44,33 +51,34 @@ export class UsersService {
       throw new ConflictException('Un utilisateur avec cet email existe déjà');
     }
 
-    let clerkUser: ClerkUser;
-    try {
-      //Créer l'utilisateur chez Clerk
-      clerkUser = await this.clerkClient.users.createUser({
-        emailAddress: [dto.email],
-        firstName: dto.prenoms,
-        lastName: dto.nom,
-      });
-    } catch (error) {
-      this.logger.error(`Erreur création Clerk: ${(error as Error).message}`);
-      throw new InternalServerErrorException(
-        "Échec de la création de l'compte d'authentification",
-      );
-    }
+    // let clerkUser: ClerkUser;
+    // try {
+    //   //Créer l'utilisateur chez Clerk
+    //   clerkUser = await this.clerkClient.users.createUser({
+    //     emailAddress: [dto.email],
+    //     firstName: dto.prenoms,
+    //     lastName: dto.nom,
+    //   });
+    // } catch (error) {
+    //   this.logger.error(`Erreur création Clerk: ${(error as Error).message}`);
+    //   throw new InternalServerErrorException(
+    //     "Échec de la création de l'compte d'authentification",
+    //   );
+    // }
 
     try {
       //Sauvegarder dans Prisma avec le clerkUserId
-      return await this.prisma.user.create({
+      await this.prisma.user.create({
         data: {
-          ...dto,
-          clerkUserId: clerkUser.id, // On associe l'ID émis par Clerk
+          ...dto, //l'id clerk est déjà contenu dans la réponse reçu.
         },
       });
+      return true;
     } catch (dbError) {
       // Rollback : Si Prisma échoue, on nettoie le compte créé sur Clerk
-      await this.clerkClient.users.deleteUser(clerkUser.id);
-      throw dbError;
+      throw new BadRequestException(
+        `Impossible de créer l'utilisateur : ${dbError}`,
+      );
     }
   }
 
@@ -188,5 +196,29 @@ export class UsersService {
     }
 
     return deletedUser;
+  }
+
+  async createOrUpdateFromClerk(data: CreateOrUpdateClerkUserDto) {
+    return this.prisma.user.upsert({
+      where: {
+        clerkUserId: data.clerkUserId, // Vérifie si cet ID Clerk existe déjà
+      },
+      update: {
+        // En cas de mise à jour (ex: l'utilisateur modifie son nom sur Clerk)
+        email: data.email,
+        nom: data.nom,
+        prenoms: data.prenoms,
+        telephone: data.telephone,
+      },
+      create: {
+        // En cas de création
+        clerkUserId: data.clerkUserId,
+        email: data.email,
+        nom: data.nom,
+        prenoms: data.prenoms,
+        telephone: data.telephone,
+        statut: 'ACTIF', // Définissez la valeur par défaut requise par votre schéma Prisma
+      },
+    });
   }
 }

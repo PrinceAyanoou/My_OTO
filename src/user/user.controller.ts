@@ -42,7 +42,7 @@ export class UsersController {
       "Échec de la création du compte sur le service d'authentification (Clerk) ou problème BDD.",
   })
   create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+    return this.usersService.createUser(createUserDto);
   }
 
   @Get()

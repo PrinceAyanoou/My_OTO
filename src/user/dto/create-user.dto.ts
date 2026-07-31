@@ -28,6 +28,16 @@ export const CreateUserSchema = z.object({
     .min(10, 'Numéro de téléphone trop court'),
 
   statut: z.enum(user_statut).optional().default(user_statut.ACTIF),
+
+  clerkUserId: z
+    .string({
+      message: "L'ID Clerk est requis.",
+    })
+    .startsWith('user_', {
+      message: "Format d'ID Clerk invalide (doit commencer par 'user_').",
+    })
+    .min(25, "L'ID Clerk est trop court.")
+    .max(50, "L'ID Clerk est trop long."),
 });
 
 // 2. Création de la classe DTO NestJS à partir du schéma Zod

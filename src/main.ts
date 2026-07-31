@@ -5,7 +5,7 @@ import { ZodValidationPipe } from 'nestjs-zod';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { rawBody: true });
 
   // Activation du middleware Clerk globalement
   app.use(clerkMiddleware());
@@ -23,6 +23,9 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('My_OTO/api', app, document);
+
+  // Active le CORS pour autoriser le frontend React/Next.js à faire des requêtes
+  app.enableCors();
 
   await app.listen(process.env.PORT ?? 3000);
 }
