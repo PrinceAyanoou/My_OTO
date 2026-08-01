@@ -148,6 +148,21 @@ export class UsersService {
     return user;
   }
 
+  // Met à jour l'email local de l'utilisateur lié à Clerk
+  async updateUserEmailByClerkId(clerkUserId: string, email: string) {
+    await this.prisma.user.update({
+      where: { clerkUserId },
+      data: { email },
+    });
+  }
+
+  // Supprime l'utilisateur local lié à Clerk
+  async deleteUserByClerkId(clerkUserId: string) {
+    await this.prisma.user.delete({
+      where: { clerkUserId },
+    });
+  }
+
   //Mettre à jour l'utilisateur (Prisma + Sync Clerk)
   async update(id: string, dto: UpdateUserDto) {
     const user = await this.findOne(id);
