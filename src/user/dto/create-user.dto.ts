@@ -40,5 +40,5 @@ export const CreateUserSchema = z.object({
     .max(50, "L'ID Clerk est trop long."),
 });
 
-// 2. Création de la classe DTO NestJS à partir du schéma Zod
+// Création de la classe DTO NestJS à partir du schéma Zod
 export class CreateUserDto extends createZodDto(CreateUserSchema) {}

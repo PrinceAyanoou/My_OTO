@@ -6,11 +6,7 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import {
-  createClerkClient,
-  ClerkClient,
-  User as ClerkUser,
-} from '@clerk/express';
+import { createClerkClient, ClerkClient } from '@clerk/express';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { FilterUserDto } from './dto/filter-user.dto';

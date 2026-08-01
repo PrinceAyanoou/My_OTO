@@ -11,7 +11,7 @@ export class EcoleService {
   findAll() {
     return `This action returns all ecole`;
   }
-
+ 
   findOne(id: number) {
     return `This action returns a #${id} ecole`;
   }
