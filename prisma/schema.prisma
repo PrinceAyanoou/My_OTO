@@ -270,6 +270,8 @@ model ecole {
   createdAt              DateTime                 @default(now())
   valideAt               DateTime
   updatedAt              DateTime                 @default(now())
+  createurId             String?
+  createur               user?                     @relation("EcoleCreateur", fields: [createurId], references: [clerkUserId], onDelete:SetNull )
   anneescolaire          anneescolaire[]
   annonce                annonce[]
   configurationscolarite configurationscolarite[]
@@ -674,6 +676,7 @@ model user {
   parent                  parent?
   participantconversation participantconversation[]
   ecole                   ecole[]                   @relation("ecoletouser")
+  ecolesCrees             ecole[]                   @relation("EcoleCreateur")
 }
 
 view UserAuthorizationContext {
