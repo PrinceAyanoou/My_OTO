@@ -365,6 +365,57 @@ export type Enumdecisionfinannee_decisionWithAggregatesFilter<$PrismaModel = nev
   _max?: Prisma.NestedEnumdecisionfinannee_decisionFilter<$PrismaModel>
 }
 
+export type Enumdemande_ecole_typeFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_type | Prisma.Enumdemande_ecole_typeFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_type[]
+  notIn?: $Enums.demande_ecole_type[]
+  not?: Prisma.NestedEnumdemande_ecole_typeFilter<$PrismaModel> | $Enums.demande_ecole_type
+}
+
+export type Enumdemande_ecole_statutFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_statut | Prisma.Enumdemande_ecole_statutFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_statut[]
+  notIn?: $Enums.demande_ecole_statut[]
+  not?: Prisma.NestedEnumdemande_ecole_statutFilter<$PrismaModel> | $Enums.demande_ecole_statut
+}
+
+export type Enumecole_typeNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.ecole_type | Prisma.Enumecole_typeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ecole_type[] | null
+  notIn?: $Enums.ecole_type[] | null
+  not?: Prisma.NestedEnumecole_typeNullableFilter<$PrismaModel> | $Enums.ecole_type | null
+}
+
+export type Enumdemande_ecole_typeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_type | Prisma.Enumdemande_ecole_typeFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_type[]
+  notIn?: $Enums.demande_ecole_type[]
+  not?: Prisma.NestedEnumdemande_ecole_typeWithAggregatesFilter<$PrismaModel> | $Enums.demande_ecole_type
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumdemande_ecole_typeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumdemande_ecole_typeFilter<$PrismaModel>
+}
+
+export type Enumdemande_ecole_statutWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_statut | Prisma.Enumdemande_ecole_statutFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_statut[]
+  notIn?: $Enums.demande_ecole_statut[]
+  not?: Prisma.NestedEnumdemande_ecole_statutWithAggregatesFilter<$PrismaModel> | $Enums.demande_ecole_statut
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumdemande_ecole_statutFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumdemande_ecole_statutFilter<$PrismaModel>
+}
+
+export type Enumecole_typeNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ecole_type | Prisma.Enumecole_typeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ecole_type[] | null
+  notIn?: $Enums.ecole_type[] | null
+  not?: Prisma.NestedEnumecole_typeNullableWithAggregatesFilter<$PrismaModel> | $Enums.ecole_type | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumecole_typeNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumecole_typeNullableFilter<$PrismaModel>
+}
+
 export type Enumdossierscolarite_statutFilter<$PrismaModel = never> = {
   equals?: $Enums.dossierscolarite_statut | Prisma.Enumdossierscolarite_statutFieldRefInput<$PrismaModel>
   in?: $Enums.dossierscolarite_statut[]
@@ -975,6 +1026,57 @@ export type NestedEnumdecisionfinannee_decisionWithAggregatesFilter<$PrismaModel
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumdecisionfinannee_decisionFilter<$PrismaModel>
   _max?: Prisma.NestedEnumdecisionfinannee_decisionFilter<$PrismaModel>
+}
+
+export type NestedEnumdemande_ecole_typeFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_type | Prisma.Enumdemande_ecole_typeFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_type[]
+  notIn?: $Enums.demande_ecole_type[]
+  not?: Prisma.NestedEnumdemande_ecole_typeFilter<$PrismaModel> | $Enums.demande_ecole_type
+}
+
+export type NestedEnumdemande_ecole_statutFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_statut | Prisma.Enumdemande_ecole_statutFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_statut[]
+  notIn?: $Enums.demande_ecole_statut[]
+  not?: Prisma.NestedEnumdemande_ecole_statutFilter<$PrismaModel> | $Enums.demande_ecole_statut
+}
+
+export type NestedEnumecole_typeNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.ecole_type | Prisma.Enumecole_typeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ecole_type[] | null
+  notIn?: $Enums.ecole_type[] | null
+  not?: Prisma.NestedEnumecole_typeNullableFilter<$PrismaModel> | $Enums.ecole_type | null
+}
+
+export type NestedEnumdemande_ecole_typeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_type | Prisma.Enumdemande_ecole_typeFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_type[]
+  notIn?: $Enums.demande_ecole_type[]
+  not?: Prisma.NestedEnumdemande_ecole_typeWithAggregatesFilter<$PrismaModel> | $Enums.demande_ecole_type
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumdemande_ecole_typeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumdemande_ecole_typeFilter<$PrismaModel>
+}
+
+export type NestedEnumdemande_ecole_statutWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.demande_ecole_statut | Prisma.Enumdemande_ecole_statutFieldRefInput<$PrismaModel>
+  in?: $Enums.demande_ecole_statut[]
+  notIn?: $Enums.demande_ecole_statut[]
+  not?: Prisma.NestedEnumdemande_ecole_statutWithAggregatesFilter<$PrismaModel> | $Enums.demande_ecole_statut
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumdemande_ecole_statutFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumdemande_ecole_statutFilter<$PrismaModel>
+}
+
+export type NestedEnumecole_typeNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ecole_type | Prisma.Enumecole_typeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ecole_type[] | null
+  notIn?: $Enums.ecole_type[] | null
+  not?: Prisma.NestedEnumecole_typeNullableWithAggregatesFilter<$PrismaModel> | $Enums.ecole_type | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumecole_typeNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumecole_typeNullableFilter<$PrismaModel>
 }
 
 export type NestedEnumdossierscolarite_statutFilter<$PrismaModel = never> = {

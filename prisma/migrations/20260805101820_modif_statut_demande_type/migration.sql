@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `demandeecole` MODIFY `type` ENUM('CREATION', 'MODIFICATION', 'SUPPRESSION') NOT NULL;

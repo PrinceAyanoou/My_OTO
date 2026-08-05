@@ -236,6 +236,34 @@ model decisionfinannee {
   @@unique([inscriptionApprenantId, inscriptionAnneeId], map: "DecisionFinAnnee_inscriptionApprenantId_inscriptionAnneeId_key")
 }
 
+model demandeecole {
+  id                  String               @id @default(uuid())
+  ecoleId             String?
+  type                demande_ecole_type
+  statut              demande_ecole_statut @default(EN_ATTENTE)
+
+  nomPropose          String?
+  typePropose         ecole_type?
+  nomFondateurPropose String?
+  villePropose        String?
+  boitePostalePropose String?
+  emailPropose        String?
+  telephonePropose    String?
+  descriptionPropose  String?              @db.Text
+
+  motif               String?              @db.Text
+  commentaireAdmin    String?              @db.Text
+  demandeurId         String
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @default(now())
+
+  ecole               ecole?                @relation(fields: [ecoleId], references: [id], onDelete: Cascade)
+  demandeur           user                 @relation(fields: [demandeurId], references: [clerkUserId], onDelete: Cascade)
+
+  @@index([ecoleId])
+  @@index([demandeurId])
+}
+
 model dossierscolarite {
   id                       String                  @id @default(uuid())
   montant                  Int
@@ -268,7 +296,7 @@ model ecole {
   statut                 ecole_statut             @default(EN_ATTENTE)
   code                   String                   @unique(map: "Ecole_code_key")
   createdAt              DateTime                 @default(now())
-  valideAt               DateTime
+  valideAt               DateTime?
   updatedAt              DateTime                 @default(now())
   createurId             String?
   createur               user?                     @relation("EcoleCreateur", fields: [createurId], references: [clerkUserId], onDelete:SetNull )
@@ -282,6 +310,7 @@ model ecole {
   role                   role[]
   typeevaluation         typeevaluation[]
   user                   user[]                   @relation("ecoletouser")
+  demandes               demandeecole[]
 
   @@index([ville], map: "Ecole_ville_idx")
 }
@@ -677,6 +706,7 @@ model user {
   participantconversation participantconversation[]
   ecole                   ecole[]                   @relation("ecoletouser")
   ecolesCrees             ecole[]                   @relation("EcoleCreateur")
+  demandes                demandeecole[]
 }
 
 view UserAuthorizationContext {
@@ -912,7 +942,21 @@ enum user_statut {
 
 enum ecole_statut {
   EN_ATTENTE
+  TRAITEMENT_MODIFICATION
+  TRAITEMENT_SUPPRESSION 
   ACTIF
   SUSPENDU
   DESACTIVE
+}
+
+enum demande_ecole_type {
+  CREATION
+  MODIFICATION
+  SUPPRESSION
+}
+
+enum demande_ecole_statut {
+  EN_ATTENTE
+  APPROUVEE
+  REJETEE
 }

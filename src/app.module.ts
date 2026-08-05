@@ -45,6 +45,7 @@ import { APP_PIPE } from '@nestjs/core';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { CaslModule } from '../src/auth/casl/casl.module';
 import { ConfigModule } from '@nestjs/config';
+import { DemandeEcoleModule } from './demande-ecole/demande-ecole.module';
 @Module({
   imports: [
     AbsencesModule,
@@ -87,10 +88,12 @@ import { ConfigModule } from '@nestjs/config';
     TypeEvaluationModule,
     UniteEnseignementModule,
     UserModule,
+    DemandeEcoleModule,
     CaslModule,
     ConfigModule.forRoot({
       isGlobal: true, // Rend les variables disponibles partout dans le projet
     }),
+    DemandeEcoleModule,
   ],
   controllers: [AppController],
   providers: [

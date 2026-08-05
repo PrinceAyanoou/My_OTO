@@ -64,7 +64,7 @@ model Ecole {
   configScolarite      ConfigurationScolarite[]
 
   createdAt DateTime @default(now())
-  valideAt  DateTime
+  valideAt  DateTime?
   updatedAt DateTime @default(now()) @updatedAt
 
   @@index([ville])

@@ -39,6 +39,7 @@ export type EcoleMinAggregateOutputType = {
   createdAt: Date | null
   valideAt: Date | null
   updatedAt: Date | null
+  createurId: string | null
 }
 
 export type EcoleMaxAggregateOutputType = {
@@ -56,6 +57,7 @@ export type EcoleMaxAggregateOutputType = {
   createdAt: Date | null
   valideAt: Date | null
   updatedAt: Date | null
+  createurId: string | null
 }
 
 export type EcoleCountAggregateOutputType = {
@@ -73,6 +75,7 @@ export type EcoleCountAggregateOutputType = {
   createdAt: number
   valideAt: number
   updatedAt: number
+  createurId: number
   _all: number
 }
 
@@ -92,6 +95,7 @@ export type EcoleMinAggregateInputType = {
   createdAt?: true
   valideAt?: true
   updatedAt?: true
+  createurId?: true
 }
 
 export type EcoleMaxAggregateInputType = {
@@ -109,6 +113,7 @@ export type EcoleMaxAggregateInputType = {
   createdAt?: true
   valideAt?: true
   updatedAt?: true
+  createurId?: true
 }
 
 export type EcoleCountAggregateInputType = {
@@ -126,6 +131,7 @@ export type EcoleCountAggregateInputType = {
   createdAt?: true
   valideAt?: true
   updatedAt?: true
+  createurId?: true
   _all?: true
 }
 
@@ -214,8 +220,9 @@ export type EcoleGroupByOutputType = {
   statut: $Enums.ecole_statut
   code: string
   createdAt: Date
-  valideAt: Date
+  valideAt: Date | null
   updatedAt: Date
+  createurId: string | null
   _count: EcoleCountAggregateOutputType | null
   _min: EcoleMinAggregateOutputType | null
   _max: EcoleMaxAggregateOutputType | null
@@ -252,8 +259,10 @@ export type ecoleWhereInput = {
   statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
   code?: Prisma.StringFilter<"ecole"> | string
   createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
-  valideAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeNullableFilter<"ecole"> | Date | string | null
   updatedAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  createurId?: Prisma.StringNullableFilter<"ecole"> | string | null
+  createur?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.userWhereInput> | null
   anneescolaire?: Prisma.AnneescolaireListRelationFilter
   annonce?: Prisma.AnnonceListRelationFilter
   configurationscolarite?: Prisma.ConfigurationscolariteListRelationFilter
@@ -264,6 +273,7 @@ export type ecoleWhereInput = {
   role?: Prisma.RoleListRelationFilter
   typeevaluation?: Prisma.TypeevaluationListRelationFilter
   user?: Prisma.UserListRelationFilter
+  demandes?: Prisma.DemandeecoleListRelationFilter
 }
 
 export type ecoleOrderByWithRelationInput = {
@@ -279,8 +289,10 @@ export type ecoleOrderByWithRelationInput = {
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  valideAt?: Prisma.SortOrder
+  valideAt?: Prisma.SortOrderInput | Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  createurId?: Prisma.SortOrderInput | Prisma.SortOrder
+  createur?: Prisma.userOrderByWithRelationInput
   anneescolaire?: Prisma.anneescolaireOrderByRelationAggregateInput
   annonce?: Prisma.annonceOrderByRelationAggregateInput
   configurationscolarite?: Prisma.configurationscolariteOrderByRelationAggregateInput
@@ -291,6 +303,7 @@ export type ecoleOrderByWithRelationInput = {
   role?: Prisma.roleOrderByRelationAggregateInput
   typeevaluation?: Prisma.typeevaluationOrderByRelationAggregateInput
   user?: Prisma.userOrderByRelationAggregateInput
+  demandes?: Prisma.demandeecoleOrderByRelationAggregateInput
   _relevance?: Prisma.ecoleOrderByRelevanceInput
 }
 
@@ -310,8 +323,10 @@ export type ecoleWhereUniqueInput = Prisma.AtLeast<{
   description?: Prisma.StringNullableFilter<"ecole"> | string | null
   statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
   createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
-  valideAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeNullableFilter<"ecole"> | Date | string | null
   updatedAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  createurId?: Prisma.StringNullableFilter<"ecole"> | string | null
+  createur?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.userWhereInput> | null
   anneescolaire?: Prisma.AnneescolaireListRelationFilter
   annonce?: Prisma.AnnonceListRelationFilter
   configurationscolarite?: Prisma.ConfigurationscolariteListRelationFilter
@@ -322,6 +337,7 @@ export type ecoleWhereUniqueInput = Prisma.AtLeast<{
   role?: Prisma.RoleListRelationFilter
   typeevaluation?: Prisma.TypeevaluationListRelationFilter
   user?: Prisma.UserListRelationFilter
+  demandes?: Prisma.DemandeecoleListRelationFilter
 }, "id" | "boitePostale" | "email" | "code">
 
 export type ecoleOrderByWithAggregationInput = {
@@ -337,8 +353,9 @@ export type ecoleOrderByWithAggregationInput = {
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  valideAt?: Prisma.SortOrder
+  valideAt?: Prisma.SortOrderInput | Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  createurId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ecoleCountOrderByAggregateInput
   _max?: Prisma.ecoleMaxOrderByAggregateInput
   _min?: Prisma.ecoleMinOrderByAggregateInput
@@ -360,8 +377,9 @@ export type ecoleScalarWhereWithAggregatesInput = {
   statut?: Prisma.Enumecole_statutWithAggregatesFilter<"ecole"> | $Enums.ecole_statut
   code?: Prisma.StringWithAggregatesFilter<"ecole"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
-  valideAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ecole"> | Date | string | null
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
+  createurId?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
 }
 
 export type ecoleCreateInput = {
@@ -377,8 +395,9 @@ export type ecoleCreateInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -389,6 +408,7 @@ export type ecoleCreateInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateInput = {
@@ -404,8 +424,9 @@ export type ecoleUncheckedCreateInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -416,6 +437,7 @@ export type ecoleUncheckedCreateInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUpdateInput = {
@@ -431,8 +453,9 @@ export type ecoleUpdateInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -443,6 +466,7 @@ export type ecoleUpdateInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateInput = {
@@ -458,8 +482,9 @@ export type ecoleUncheckedUpdateInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -470,6 +495,7 @@ export type ecoleUncheckedUpdateInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateManyInput = {
@@ -485,8 +511,9 @@ export type ecoleCreateManyInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
 }
 
 export type ecoleUpdateManyMutationInput = {
@@ -502,7 +529,7 @@ export type ecoleUpdateManyMutationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -519,13 +546,19 @@ export type ecoleUncheckedUpdateManyInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type EcoleScalarRelationFilter = {
   is?: Prisma.ecoleWhereInput
   isNot?: Prisma.ecoleWhereInput
+}
+
+export type EcoleNullableScalarRelationFilter = {
+  is?: Prisma.ecoleWhereInput | null
+  isNot?: Prisma.ecoleWhereInput | null
 }
 
 export type ecoleOrderByRelevanceInput = {
@@ -549,6 +582,7 @@ export type ecoleCountOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   valideAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  createurId?: Prisma.SortOrder
 }
 
 export type ecoleMaxOrderByAggregateInput = {
@@ -566,6 +600,7 @@ export type ecoleMaxOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   valideAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  createurId?: Prisma.SortOrder
 }
 
 export type ecoleMinOrderByAggregateInput = {
@@ -583,6 +618,7 @@ export type ecoleMinOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   valideAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  createurId?: Prisma.SortOrder
 }
 
 export type EcoleListRelationFilter = {
@@ -649,6 +685,22 @@ export type ecoleUpdateOneRequiredWithoutConversationNestedInput = {
   upsert?: Prisma.ecoleUpsertWithoutConversationInput
   connect?: Prisma.ecoleWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutConversationInput, Prisma.ecoleUpdateWithoutConversationInput>, Prisma.ecoleUncheckedUpdateWithoutConversationInput>
+}
+
+export type ecoleCreateNestedOneWithoutDemandesInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutDemandesInput, Prisma.ecoleUncheckedCreateWithoutDemandesInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutDemandesInput
+  connect?: Prisma.ecoleWhereUniqueInput
+}
+
+export type ecoleUpdateOneWithoutDemandesNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutDemandesInput, Prisma.ecoleUncheckedCreateWithoutDemandesInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutDemandesInput
+  upsert?: Prisma.ecoleUpsertWithoutDemandesInput
+  disconnect?: Prisma.ecoleWhereInput | boolean
+  delete?: Prisma.ecoleWhereInput | boolean
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutDemandesInput, Prisma.ecoleUpdateWithoutDemandesInput>, Prisma.ecoleUncheckedUpdateWithoutDemandesInput>
 }
 
 export type Enumecole_typeFieldUpdateOperationsInput = {
@@ -735,9 +787,23 @@ export type ecoleCreateNestedManyWithoutUserInput = {
   connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
 }
 
+export type ecoleCreateNestedManyWithoutCreateurInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutCreateurInput, Prisma.ecoleUncheckedCreateWithoutCreateurInput> | Prisma.ecoleCreateWithoutCreateurInput[] | Prisma.ecoleUncheckedCreateWithoutCreateurInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutCreateurInput | Prisma.ecoleCreateOrConnectWithoutCreateurInput[]
+  createMany?: Prisma.ecoleCreateManyCreateurInputEnvelope
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+}
+
 export type ecoleUncheckedCreateNestedManyWithoutUserInput = {
   create?: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput> | Prisma.ecoleCreateWithoutUserInput[] | Prisma.ecoleUncheckedCreateWithoutUserInput[]
   connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutUserInput | Prisma.ecoleCreateOrConnectWithoutUserInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+}
+
+export type ecoleUncheckedCreateNestedManyWithoutCreateurInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutCreateurInput, Prisma.ecoleUncheckedCreateWithoutCreateurInput> | Prisma.ecoleCreateWithoutCreateurInput[] | Prisma.ecoleUncheckedCreateWithoutCreateurInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutCreateurInput | Prisma.ecoleCreateOrConnectWithoutCreateurInput[]
+  createMany?: Prisma.ecoleCreateManyCreateurInputEnvelope
   connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
 }
 
@@ -754,6 +820,20 @@ export type ecoleUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
 }
 
+export type ecoleUpdateManyWithoutCreateurNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutCreateurInput, Prisma.ecoleUncheckedCreateWithoutCreateurInput> | Prisma.ecoleCreateWithoutCreateurInput[] | Prisma.ecoleUncheckedCreateWithoutCreateurInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutCreateurInput | Prisma.ecoleCreateOrConnectWithoutCreateurInput[]
+  upsert?: Prisma.ecoleUpsertWithWhereUniqueWithoutCreateurInput | Prisma.ecoleUpsertWithWhereUniqueWithoutCreateurInput[]
+  createMany?: Prisma.ecoleCreateManyCreateurInputEnvelope
+  set?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  disconnect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  delete?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  update?: Prisma.ecoleUpdateWithWhereUniqueWithoutCreateurInput | Prisma.ecoleUpdateWithWhereUniqueWithoutCreateurInput[]
+  updateMany?: Prisma.ecoleUpdateManyWithWhereWithoutCreateurInput | Prisma.ecoleUpdateManyWithWhereWithoutCreateurInput[]
+  deleteMany?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
+}
+
 export type ecoleUncheckedUpdateManyWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput> | Prisma.ecoleCreateWithoutUserInput[] | Prisma.ecoleUncheckedCreateWithoutUserInput[]
   connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutUserInput | Prisma.ecoleCreateOrConnectWithoutUserInput[]
@@ -764,6 +844,20 @@ export type ecoleUncheckedUpdateManyWithoutUserNestedInput = {
   connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
   update?: Prisma.ecoleUpdateWithWhereUniqueWithoutUserInput | Prisma.ecoleUpdateWithWhereUniqueWithoutUserInput[]
   updateMany?: Prisma.ecoleUpdateManyWithWhereWithoutUserInput | Prisma.ecoleUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
+}
+
+export type ecoleUncheckedUpdateManyWithoutCreateurNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutCreateurInput, Prisma.ecoleUncheckedCreateWithoutCreateurInput> | Prisma.ecoleCreateWithoutCreateurInput[] | Prisma.ecoleUncheckedCreateWithoutCreateurInput[]
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutCreateurInput | Prisma.ecoleCreateOrConnectWithoutCreateurInput[]
+  upsert?: Prisma.ecoleUpsertWithWhereUniqueWithoutCreateurInput | Prisma.ecoleUpsertWithWhereUniqueWithoutCreateurInput[]
+  createMany?: Prisma.ecoleCreateManyCreateurInputEnvelope
+  set?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  disconnect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  delete?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  connect?: Prisma.ecoleWhereUniqueInput | Prisma.ecoleWhereUniqueInput[]
+  update?: Prisma.ecoleUpdateWithWhereUniqueWithoutCreateurInput | Prisma.ecoleUpdateWithWhereUniqueWithoutCreateurInput[]
+  updateMany?: Prisma.ecoleUpdateManyWithWhereWithoutCreateurInput | Prisma.ecoleUpdateManyWithWhereWithoutCreateurInput[]
   deleteMany?: Prisma.ecoleScalarWhereInput | Prisma.ecoleScalarWhereInput[]
 }
 
@@ -780,8 +874,9 @@ export type ecoleCreateWithoutAnneescolaireInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
   conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
@@ -791,6 +886,7 @@ export type ecoleCreateWithoutAnneescolaireInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
@@ -806,8 +902,9 @@ export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
   conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
@@ -817,6 +914,7 @@ export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutAnneescolaireInput = {
@@ -848,8 +946,9 @@ export type ecoleUpdateWithoutAnneescolaireInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
   conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
@@ -859,6 +958,7 @@ export type ecoleUpdateWithoutAnneescolaireInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
@@ -874,8 +974,9 @@ export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
   conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
@@ -885,6 +986,7 @@ export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutAnnonceInput = {
@@ -900,8 +1002,9 @@ export type ecoleCreateWithoutAnnonceInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
   conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
@@ -911,6 +1014,7 @@ export type ecoleCreateWithoutAnnonceInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutAnnonceInput = {
@@ -926,8 +1030,9 @@ export type ecoleUncheckedCreateWithoutAnnonceInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
   conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
@@ -937,6 +1042,7 @@ export type ecoleUncheckedCreateWithoutAnnonceInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutAnnonceInput = {
@@ -968,8 +1074,9 @@ export type ecoleUpdateWithoutAnnonceInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
   conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
@@ -979,6 +1086,7 @@ export type ecoleUpdateWithoutAnnonceInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutAnnonceInput = {
@@ -994,8 +1102,9 @@ export type ecoleUncheckedUpdateWithoutAnnonceInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
   conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1005,6 +1114,7 @@ export type ecoleUncheckedUpdateWithoutAnnonceInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutConfigurationscolariteInput = {
@@ -1020,8 +1130,9 @@ export type ecoleCreateWithoutConfigurationscolariteInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
@@ -1031,6 +1142,7 @@ export type ecoleCreateWithoutConfigurationscolariteInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
@@ -1046,8 +1158,9 @@ export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
@@ -1057,6 +1170,7 @@ export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutConfigurationscolariteInput = {
@@ -1088,8 +1202,9 @@ export type ecoleUpdateWithoutConfigurationscolariteInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
@@ -1099,6 +1214,7 @@ export type ecoleUpdateWithoutConfigurationscolariteInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
@@ -1114,8 +1230,9 @@ export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1125,6 +1242,7 @@ export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutConversationInput = {
@@ -1140,8 +1258,9 @@ export type ecoleCreateWithoutConversationInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1151,6 +1270,7 @@ export type ecoleCreateWithoutConversationInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutConversationInput = {
@@ -1166,8 +1286,9 @@ export type ecoleUncheckedCreateWithoutConversationInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -1177,6 +1298,7 @@ export type ecoleUncheckedCreateWithoutConversationInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutConversationInput = {
@@ -1208,8 +1330,9 @@ export type ecoleUpdateWithoutConversationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1219,6 +1342,7 @@ export type ecoleUpdateWithoutConversationInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutConversationInput = {
@@ -1234,11 +1358,141 @@ export type ecoleUncheckedUpdateWithoutConversationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+}
+
+export type ecoleCreateWithoutDemandesInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleUncheckedCreateWithoutDemandesInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
+  createurId?: string | null
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleCreateOrConnectWithoutDemandesInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutDemandesInput, Prisma.ecoleUncheckedCreateWithoutDemandesInput>
+}
+
+export type ecoleUpsertWithoutDemandesInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutDemandesInput, Prisma.ecoleUncheckedUpdateWithoutDemandesInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutDemandesInput, Prisma.ecoleUncheckedCreateWithoutDemandesInput>
+  where?: Prisma.ecoleWhereInput
+}
+
+export type ecoleUpdateToOneWithWhereWithoutDemandesInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutDemandesInput, Prisma.ecoleUncheckedUpdateWithoutDemandesInput>
+}
+
+export type ecoleUpdateWithoutDemandesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+}
+
+export type ecoleUncheckedUpdateWithoutDemandesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
   matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
   niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1260,8 +1514,9 @@ export type ecoleCreateWithoutMatiereInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1271,6 +1526,7 @@ export type ecoleCreateWithoutMatiereInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutMatiereInput = {
@@ -1286,8 +1542,9 @@ export type ecoleUncheckedCreateWithoutMatiereInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -1297,6 +1554,7 @@ export type ecoleUncheckedCreateWithoutMatiereInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutMatiereInput = {
@@ -1328,8 +1586,9 @@ export type ecoleUpdateWithoutMatiereInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1339,6 +1598,7 @@ export type ecoleUpdateWithoutMatiereInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutMatiereInput = {
@@ -1354,8 +1614,9 @@ export type ecoleUncheckedUpdateWithoutMatiereInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1365,6 +1626,7 @@ export type ecoleUncheckedUpdateWithoutMatiereInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutNiveauscolaireInput = {
@@ -1380,8 +1642,9 @@ export type ecoleCreateWithoutNiveauscolaireInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1391,6 +1654,7 @@ export type ecoleCreateWithoutNiveauscolaireInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
@@ -1406,8 +1670,9 @@ export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -1417,6 +1682,7 @@ export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutNiveauscolaireInput = {
@@ -1448,8 +1714,9 @@ export type ecoleUpdateWithoutNiveauscolaireInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1459,6 +1726,7 @@ export type ecoleUpdateWithoutNiveauscolaireInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
@@ -1474,8 +1742,9 @@ export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1485,6 +1754,7 @@ export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutPolitiqueevaluationInput = {
@@ -1500,8 +1770,9 @@ export type ecoleCreateWithoutPolitiqueevaluationInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1511,6 +1782,7 @@ export type ecoleCreateWithoutPolitiqueevaluationInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
@@ -1526,8 +1798,9 @@ export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -1537,6 +1810,7 @@ export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutPolitiqueevaluationInput = {
@@ -1568,8 +1842,9 @@ export type ecoleUpdateWithoutPolitiqueevaluationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1579,6 +1854,7 @@ export type ecoleUpdateWithoutPolitiqueevaluationInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
@@ -1594,8 +1870,9 @@ export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1605,6 +1882,7 @@ export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutRoleInput = {
@@ -1620,8 +1898,9 @@ export type ecoleCreateWithoutRoleInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1631,6 +1910,7 @@ export type ecoleCreateWithoutRoleInput = {
   politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutRoleInput = {
@@ -1646,8 +1926,9 @@ export type ecoleUncheckedCreateWithoutRoleInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -1657,6 +1938,7 @@ export type ecoleUncheckedCreateWithoutRoleInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutRoleInput = {
@@ -1688,8 +1970,9 @@ export type ecoleUpdateWithoutRoleInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1699,6 +1982,7 @@ export type ecoleUpdateWithoutRoleInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutRoleInput = {
@@ -1714,8 +1998,9 @@ export type ecoleUncheckedUpdateWithoutRoleInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1725,6 +2010,7 @@ export type ecoleUncheckedUpdateWithoutRoleInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutTypeevaluationInput = {
@@ -1740,8 +2026,9 @@ export type ecoleCreateWithoutTypeevaluationInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1751,6 +2038,7 @@ export type ecoleCreateWithoutTypeevaluationInput = {
   politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
@@ -1766,8 +2054,9 @@ export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createurId?: string | null
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
@@ -1777,6 +2066,7 @@ export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutTypeevaluationInput = {
@@ -1808,8 +2098,9 @@ export type ecoleUpdateWithoutTypeevaluationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1819,6 +2110,7 @@ export type ecoleUpdateWithoutTypeevaluationInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
@@ -1834,8 +2126,9 @@ export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1845,6 +2138,7 @@ export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutUserInput = {
@@ -1860,8 +2154,9 @@ export type ecoleCreateWithoutUserInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
   anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
   configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
@@ -1871,6 +2166,7 @@ export type ecoleCreateWithoutUserInput = {
   politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutUserInput = {
@@ -1886,7 +2182,68 @@ export type ecoleUncheckedCreateWithoutUserInput = {
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
-  valideAt: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
+  createurId?: string | null
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleCreateOrConnectWithoutUserInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput>
+}
+
+export type ecoleCreateWithoutCreateurInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleUncheckedCreateWithoutCreateurInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
   updatedAt?: Date | string
   anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
@@ -1897,11 +2254,18 @@ export type ecoleUncheckedCreateWithoutUserInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
 }
 
-export type ecoleCreateOrConnectWithoutUserInput = {
+export type ecoleCreateOrConnectWithoutCreateurInput = {
   where: Prisma.ecoleWhereUniqueInput
-  create: Prisma.XOR<Prisma.ecoleCreateWithoutUserInput, Prisma.ecoleUncheckedCreateWithoutUserInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutCreateurInput, Prisma.ecoleUncheckedCreateWithoutCreateurInput>
+}
+
+export type ecoleCreateManyCreateurInputEnvelope = {
+  data: Prisma.ecoleCreateManyCreateurInput | Prisma.ecoleCreateManyCreateurInput[]
+  skipDuplicates?: boolean
 }
 
 export type ecoleUpsertWithWhereUniqueWithoutUserInput = {
@@ -1936,8 +2300,42 @@ export type ecoleScalarWhereInput = {
   statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
   code?: Prisma.StringFilter<"ecole"> | string
   createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
-  valideAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  valideAt?: Prisma.DateTimeNullableFilter<"ecole"> | Date | string | null
   updatedAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
+  createurId?: Prisma.StringNullableFilter<"ecole"> | string | null
+}
+
+export type ecoleUpsertWithWhereUniqueWithoutCreateurInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutCreateurInput, Prisma.ecoleUncheckedUpdateWithoutCreateurInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutCreateurInput, Prisma.ecoleUncheckedCreateWithoutCreateurInput>
+}
+
+export type ecoleUpdateWithWhereUniqueWithoutCreateurInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutCreateurInput, Prisma.ecoleUncheckedUpdateWithoutCreateurInput>
+}
+
+export type ecoleUpdateManyWithWhereWithoutCreateurInput = {
+  where: Prisma.ecoleScalarWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateManyMutationInput, Prisma.ecoleUncheckedUpdateManyWithoutCreateurInput>
+}
+
+export type ecoleCreateManyCreateurInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
 }
 
 export type ecoleUpdateWithoutUserInput = {
@@ -1953,8 +2351,9 @@ export type ecoleUpdateWithoutUserInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
   anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
@@ -1964,6 +2363,7 @@ export type ecoleUpdateWithoutUserInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutUserInput = {
@@ -1979,8 +2379,9 @@ export type ecoleUncheckedUpdateWithoutUserInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
   configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
@@ -1990,6 +2391,7 @@ export type ecoleUncheckedUpdateWithoutUserInput = {
   politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateManyWithoutUserInput = {
@@ -2005,7 +2407,81 @@ export type ecoleUncheckedUpdateManyWithoutUserInput = {
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  valideAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type ecoleUpdateWithoutCreateurInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+}
+
+export type ecoleUncheckedUpdateWithoutCreateurInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+}
+
+export type ecoleUncheckedUpdateManyWithoutCreateurInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -2025,6 +2501,7 @@ export type EcoleCountOutputType = {
   role: number
   typeevaluation: number
   user: number
+  demandes: number
 }
 
 export type EcoleCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2038,6 +2515,7 @@ export type EcoleCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   role?: boolean | EcoleCountOutputTypeCountRoleArgs
   typeevaluation?: boolean | EcoleCountOutputTypeCountTypeevaluationArgs
   user?: boolean | EcoleCountOutputTypeCountUserArgs
+  demandes?: boolean | EcoleCountOutputTypeCountDemandesArgs
 }
 
 /**
@@ -2120,6 +2598,13 @@ export type EcoleCountOutputTypeCountUserArgs<ExtArgs extends runtime.Types.Exte
   where?: Prisma.userWhereInput
 }
 
+/**
+ * EcoleCountOutputType without action
+ */
+export type EcoleCountOutputTypeCountDemandesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.demandeecoleWhereInput
+}
+
 
 export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2136,6 +2621,8 @@ export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   createdAt?: boolean
   valideAt?: boolean
   updatedAt?: boolean
+  createurId?: boolean
+  createur?: boolean | Prisma.ecole$createurArgs<ExtArgs>
   anneescolaire?: boolean | Prisma.ecole$anneescolaireArgs<ExtArgs>
   annonce?: boolean | Prisma.ecole$annonceArgs<ExtArgs>
   configurationscolarite?: boolean | Prisma.ecole$configurationscolariteArgs<ExtArgs>
@@ -2146,6 +2633,7 @@ export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   role?: boolean | Prisma.ecole$roleArgs<ExtArgs>
   typeevaluation?: boolean | Prisma.ecole$typeevaluationArgs<ExtArgs>
   user?: boolean | Prisma.ecole$userArgs<ExtArgs>
+  demandes?: boolean | Prisma.ecole$demandesArgs<ExtArgs>
   _count?: boolean | Prisma.EcoleCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["ecole"]>
 
@@ -2166,10 +2654,12 @@ export type ecoleSelectScalar = {
   createdAt?: boolean
   valideAt?: boolean
   updatedAt?: boolean
+  createurId?: boolean
 }
 
-export type ecoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "type" | "nomFondateur" | "ville" | "boitePostale" | "email" | "telephone" | "description" | "statut" | "code" | "createdAt" | "valideAt" | "updatedAt", ExtArgs["result"]["ecole"]>
+export type ecoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "type" | "nomFondateur" | "ville" | "boitePostale" | "email" | "telephone" | "description" | "statut" | "code" | "createdAt" | "valideAt" | "updatedAt" | "createurId", ExtArgs["result"]["ecole"]>
 export type ecoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  createur?: boolean | Prisma.ecole$createurArgs<ExtArgs>
   anneescolaire?: boolean | Prisma.ecole$anneescolaireArgs<ExtArgs>
   annonce?: boolean | Prisma.ecole$annonceArgs<ExtArgs>
   configurationscolarite?: boolean | Prisma.ecole$configurationscolariteArgs<ExtArgs>
@@ -2180,12 +2670,14 @@ export type ecoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   role?: boolean | Prisma.ecole$roleArgs<ExtArgs>
   typeevaluation?: boolean | Prisma.ecole$typeevaluationArgs<ExtArgs>
   user?: boolean | Prisma.ecole$userArgs<ExtArgs>
+  demandes?: boolean | Prisma.ecole$demandesArgs<ExtArgs>
   _count?: boolean | Prisma.EcoleCountOutputTypeDefaultArgs<ExtArgs>
 }
 
 export type $ecolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ecole"
   objects: {
+    createur: Prisma.$userPayload<ExtArgs> | null
     anneescolaire: Prisma.$anneescolairePayload<ExtArgs>[]
     annonce: Prisma.$annoncePayload<ExtArgs>[]
     configurationscolarite: Prisma.$configurationscolaritePayload<ExtArgs>[]
@@ -2196,6 +2688,7 @@ export type $ecolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     role: Prisma.$rolePayload<ExtArgs>[]
     typeevaluation: Prisma.$typeevaluationPayload<ExtArgs>[]
     user: Prisma.$userPayload<ExtArgs>[]
+    demandes: Prisma.$demandeecolePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2210,8 +2703,9 @@ export type $ecolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     statut: $Enums.ecole_statut
     code: string
     createdAt: Date
-    valideAt: Date
+    valideAt: Date | null
     updatedAt: Date
+    createurId: string | null
   }, ExtArgs["result"]["ecole"]>
   composites: {}
 }
@@ -2552,6 +3046,7 @@ readonly fields: ecoleFieldRefs;
  */
 export interface Prisma__ecoleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  createur<T extends Prisma.ecole$createurArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$createurArgs<ExtArgs>>): Prisma.Prisma__userClient<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   anneescolaire<T extends Prisma.ecole$anneescolaireArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$anneescolaireArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$anneescolairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   annonce<T extends Prisma.ecole$annonceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$annonceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$annoncePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   configurationscolarite<T extends Prisma.ecole$configurationscolariteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$configurationscolariteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$configurationscolaritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -2562,6 +3057,7 @@ export interface Prisma__ecoleClient<T, Null = never, ExtArgs extends runtime.Ty
   role<T extends Prisma.ecole$roleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$roleArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$rolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   typeevaluation<T extends Prisma.ecole$typeevaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$typeevaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   user<T extends Prisma.ecole$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$userArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  demandes<T extends Prisma.ecole$demandesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$demandesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$demandeecolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2605,6 +3101,7 @@ export interface ecoleFieldRefs {
   readonly createdAt: Prisma.FieldRef<"ecole", 'DateTime'>
   readonly valideAt: Prisma.FieldRef<"ecole", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"ecole", 'DateTime'>
+  readonly createurId: Prisma.FieldRef<"ecole", 'String'>
 }
     
 
@@ -2953,6 +3450,25 @@ export type ecoleDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
+ * ecole.createur
+ */
+export type ecole$createurArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the user
+   */
+  select?: Prisma.userSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the user
+   */
+  omit?: Prisma.userOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.userInclude<ExtArgs> | null
+  where?: Prisma.userWhereInput
+}
+
+/**
  * ecole.anneescolaire
  */
 export type ecole$anneescolaireArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3190,6 +3706,30 @@ export type ecole$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
   take?: number
   skip?: number
   distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
+ * ecole.demandes
+ */
+export type ecole$demandesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the demandeecole
+   */
+  select?: Prisma.demandeecoleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the demandeecole
+   */
+  omit?: Prisma.demandeecoleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.demandeecoleInclude<ExtArgs> | null
+  where?: Prisma.demandeecoleWhereInput
+  orderBy?: Prisma.demandeecoleOrderByWithRelationInput | Prisma.demandeecoleOrderByWithRelationInput[]
+  cursor?: Prisma.demandeecoleWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DemandeecoleScalarFieldEnum | Prisma.DemandeecoleScalarFieldEnum[]
 }
 
 /**

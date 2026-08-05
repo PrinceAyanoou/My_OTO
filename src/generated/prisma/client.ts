@@ -105,6 +105,11 @@ export type conversation = Prisma.conversationModel
  */
 export type decisionfinannee = Prisma.decisionfinanneeModel
 /**
+ * Model demandeecole
+ * 
+ */
+export type demandeecole = Prisma.demandeecoleModel
+/**
  * Model dossierscolarite
  * 
  */

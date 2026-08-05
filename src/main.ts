@@ -18,7 +18,14 @@ async function bootstrap() {
     .setTitle('API (Backend) My_OTO')
     .setDescription('Documentation interactive des endpoints')
     .setVersion('1.0')
-    .addBearerAuth() // Activer le bouton Bearer Auth dans Swagger
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'clerk-auth',
+    ) // Activer le bouton Bearer Auth dans Swagger
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

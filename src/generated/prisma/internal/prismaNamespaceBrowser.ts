@@ -64,6 +64,7 @@ export const ModelName = {
   configurationscolarite: 'configurationscolarite',
   conversation: 'conversation',
   decisionfinannee: 'decisionfinannee',
+  demandeecole: 'demandeecole',
   dossierscolarite: 'dossierscolarite',
   ecole: 'ecole',
   emploidutemps: 'emploidutemps',
@@ -288,6 +289,29 @@ export const DecisionfinanneeScalarFieldEnum = {
 export type DecisionfinanneeScalarFieldEnum = (typeof DecisionfinanneeScalarFieldEnum)[keyof typeof DecisionfinanneeScalarFieldEnum]
 
 
+export const DemandeecoleScalarFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  type: 'type',
+  statut: 'statut',
+  nomPropose: 'nomPropose',
+  typePropose: 'typePropose',
+  nomFondateurPropose: 'nomFondateurPropose',
+  villePropose: 'villePropose',
+  boitePostalePropose: 'boitePostalePropose',
+  emailPropose: 'emailPropose',
+  telephonePropose: 'telephonePropose',
+  descriptionPropose: 'descriptionPropose',
+  motif: 'motif',
+  commentaireAdmin: 'commentaireAdmin',
+  demandeurId: 'demandeurId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DemandeecoleScalarFieldEnum = (typeof DemandeecoleScalarFieldEnum)[keyof typeof DemandeecoleScalarFieldEnum]
+
+
 export const DossierscolariteScalarFieldEnum = {
   id: 'id',
   montant: 'montant',
@@ -317,7 +341,8 @@ export const EcoleScalarFieldEnum = {
   code: 'code',
   createdAt: 'createdAt',
   valideAt: 'valideAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  createurId: 'createurId'
 } as const
 
 export type EcoleScalarFieldEnum = (typeof EcoleScalarFieldEnum)[keyof typeof EcoleScalarFieldEnum]
@@ -809,6 +834,24 @@ export const decisionfinanneeOrderByRelevanceFieldEnum = {
 export type decisionfinanneeOrderByRelevanceFieldEnum = (typeof decisionfinanneeOrderByRelevanceFieldEnum)[keyof typeof decisionfinanneeOrderByRelevanceFieldEnum]
 
 
+export const demandeecoleOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nomPropose: 'nomPropose',
+  nomFondateurPropose: 'nomFondateurPropose',
+  villePropose: 'villePropose',
+  boitePostalePropose: 'boitePostalePropose',
+  emailPropose: 'emailPropose',
+  telephonePropose: 'telephonePropose',
+  descriptionPropose: 'descriptionPropose',
+  motif: 'motif',
+  commentaireAdmin: 'commentaireAdmin',
+  demandeurId: 'demandeurId'
+} as const
+
+export type demandeecoleOrderByRelevanceFieldEnum = (typeof demandeecoleOrderByRelevanceFieldEnum)[keyof typeof demandeecoleOrderByRelevanceFieldEnum]
+
+
 export const dossierscolariteOrderByRelevanceFieldEnum = {
   id: 'id',
   inscriptionApprenantId: 'inscriptionApprenantId',
@@ -828,7 +871,8 @@ export const ecoleOrderByRelevanceFieldEnum = {
   email: 'email',
   telephone: 'telephone',
   description: 'description',
-  code: 'code'
+  code: 'code',
+  createurId: 'createurId'
 } as const
 
 export type ecoleOrderByRelevanceFieldEnum = (typeof ecoleOrderByRelevanceFieldEnum)[keyof typeof ecoleOrderByRelevanceFieldEnum]

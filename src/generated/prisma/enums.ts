@@ -295,9 +295,29 @@ export type user_statut = (typeof user_statut)[keyof typeof user_statut]
 
 export const ecole_statut = {
   EN_ATTENTE: 'EN_ATTENTE',
+  TRAITEMENT_MODIFICATION: 'TRAITEMENT_MODIFICATION',
+  TRAITEMENT_SUPPRESSION: 'TRAITEMENT_SUPPRESSION',
   ACTIF: 'ACTIF',
   SUSPENDU: 'SUSPENDU',
   DESACTIVE: 'DESACTIVE'
 } as const
 
 export type ecole_statut = (typeof ecole_statut)[keyof typeof ecole_statut]
+
+
+export const demande_ecole_type = {
+  CREATION: 'CREATION',
+  MODIFICATION: 'MODIFICATION',
+  SUPPRESSION: 'SUPPRESSION'
+} as const
+
+export type demande_ecole_type = (typeof demande_ecole_type)[keyof typeof demande_ecole_type]
+
+
+export const demande_ecole_statut = {
+  EN_ATTENTE: 'EN_ATTENTE',
+  APPROUVEE: 'APPROUVEE',
+  REJETEE: 'REJETEE'
+} as const
+
+export type demande_ecole_statut = (typeof demande_ecole_statut)[keyof typeof demande_ecole_statut]

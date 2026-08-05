@@ -9,12 +9,20 @@ import {
   Query,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 import { UsersService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { FilterUserDto } from './dto/filter-user.dto';
+import { ClerkAuthGuard } from 'src/auth/guards/clerk-auth.guard';
 
 @ApiTags('Users')
 @Controller('users')
@@ -46,7 +54,9 @@ export class UsersController {
   }
 
   @Get()
+  @UseGuards(ClerkAuthGuard)
   @HttpCode(HttpStatus.OK)
+  @ApiBearerAuth('clerk-auth')
   @ApiOperation({
     summary: 'Lister les utilisateurs avec filtres et recherche',
   })

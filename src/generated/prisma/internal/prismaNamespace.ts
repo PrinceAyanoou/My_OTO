@@ -410,6 +410,7 @@ export const ModelName = {
   configurationscolarite: 'configurationscolarite',
   conversation: 'conversation',
   decisionfinannee: 'decisionfinannee',
+  demandeecole: 'demandeecole',
   dossierscolarite: 'dossierscolarite',
   ecole: 'ecole',
   emploidutemps: 'emploidutemps',
@@ -453,7 +454,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "absence" | "affectationenseignant" | "anneescolaire" | "annonce" | "apprenant" | "apprenantparent" | "bulletin" | "cibleannonce" | "classematirere" | "classscolaire" | "configurationscolarite" | "conversation" | "decisionfinannee" | "dossierscolarite" | "ecole" | "emploidutemps" | "employe" | "employedocument" | "employerole" | "evaluation" | "inscription" | "lignebulletin" | "matiere" | "matiereue" | "message" | "niveauscolaire" | "note" | "paiement" | "parent" | "participantconversation" | "periodescolaire" | "permission" | "politiqueevaluation" | "regleevaluation" | "role" | "rolepermission" | "tranchescolarite" | "typeevaluation" | "uniteenseignement" | "user" | "userAuthorizationContext"
+    modelProps: "absence" | "affectationenseignant" | "anneescolaire" | "annonce" | "apprenant" | "apprenantparent" | "bulletin" | "cibleannonce" | "classematirere" | "classscolaire" | "configurationscolarite" | "conversation" | "decisionfinannee" | "demandeecole" | "dossierscolarite" | "ecole" | "emploidutemps" | "employe" | "employedocument" | "employerole" | "evaluation" | "inscription" | "lignebulletin" | "matiere" | "matiereue" | "message" | "niveauscolaire" | "note" | "paiement" | "parent" | "participantconversation" | "periodescolaire" | "permission" | "politiqueevaluation" | "regleevaluation" | "role" | "rolepermission" | "tranchescolarite" | "typeevaluation" | "uniteenseignement" | "user" | "userAuthorizationContext"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1312,6 +1313,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.decisionfinanneeCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.DecisionfinanneeCountAggregateOutputType> | number
+        }
+      }
+    }
+    demandeecole: {
+      payload: Prisma.$demandeecolePayload<ExtArgs>
+      fields: Prisma.demandeecoleFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.demandeecoleFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.demandeecoleFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>
+        }
+        findFirst: {
+          args: Prisma.demandeecoleFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.demandeecoleFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>
+        }
+        findMany: {
+          args: Prisma.demandeecoleFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>[]
+        }
+        create: {
+          args: Prisma.demandeecoleCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>
+        }
+        createMany: {
+          args: Prisma.demandeecoleCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.demandeecoleDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>
+        }
+        update: {
+          args: Prisma.demandeecoleUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>
+        }
+        deleteMany: {
+          args: Prisma.demandeecoleDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.demandeecoleUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.demandeecoleUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$demandeecolePayload>
+        }
+        aggregate: {
+          args: Prisma.DemandeecoleAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDemandeecole>
+        }
+        groupBy: {
+          args: Prisma.demandeecoleGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DemandeecoleGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.demandeecoleCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DemandeecoleCountAggregateOutputType> | number
         }
       }
     }
@@ -3344,6 +3411,29 @@ export const DecisionfinanneeScalarFieldEnum = {
 export type DecisionfinanneeScalarFieldEnum = (typeof DecisionfinanneeScalarFieldEnum)[keyof typeof DecisionfinanneeScalarFieldEnum]
 
 
+export const DemandeecoleScalarFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  type: 'type',
+  statut: 'statut',
+  nomPropose: 'nomPropose',
+  typePropose: 'typePropose',
+  nomFondateurPropose: 'nomFondateurPropose',
+  villePropose: 'villePropose',
+  boitePostalePropose: 'boitePostalePropose',
+  emailPropose: 'emailPropose',
+  telephonePropose: 'telephonePropose',
+  descriptionPropose: 'descriptionPropose',
+  motif: 'motif',
+  commentaireAdmin: 'commentaireAdmin',
+  demandeurId: 'demandeurId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DemandeecoleScalarFieldEnum = (typeof DemandeecoleScalarFieldEnum)[keyof typeof DemandeecoleScalarFieldEnum]
+
+
 export const DossierscolariteScalarFieldEnum = {
   id: 'id',
   montant: 'montant',
@@ -3373,7 +3463,8 @@ export const EcoleScalarFieldEnum = {
   code: 'code',
   createdAt: 'createdAt',
   valideAt: 'valideAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  createurId: 'createurId'
 } as const
 
 export type EcoleScalarFieldEnum = (typeof EcoleScalarFieldEnum)[keyof typeof EcoleScalarFieldEnum]
@@ -3865,6 +3956,24 @@ export const decisionfinanneeOrderByRelevanceFieldEnum = {
 export type decisionfinanneeOrderByRelevanceFieldEnum = (typeof decisionfinanneeOrderByRelevanceFieldEnum)[keyof typeof decisionfinanneeOrderByRelevanceFieldEnum]
 
 
+export const demandeecoleOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ecoleId: 'ecoleId',
+  nomPropose: 'nomPropose',
+  nomFondateurPropose: 'nomFondateurPropose',
+  villePropose: 'villePropose',
+  boitePostalePropose: 'boitePostalePropose',
+  emailPropose: 'emailPropose',
+  telephonePropose: 'telephonePropose',
+  descriptionPropose: 'descriptionPropose',
+  motif: 'motif',
+  commentaireAdmin: 'commentaireAdmin',
+  demandeurId: 'demandeurId'
+} as const
+
+export type demandeecoleOrderByRelevanceFieldEnum = (typeof demandeecoleOrderByRelevanceFieldEnum)[keyof typeof demandeecoleOrderByRelevanceFieldEnum]
+
+
 export const dossierscolariteOrderByRelevanceFieldEnum = {
   id: 'id',
   inscriptionApprenantId: 'inscriptionApprenantId',
@@ -3884,7 +3993,8 @@ export const ecoleOrderByRelevanceFieldEnum = {
   email: 'email',
   telephone: 'telephone',
   description: 'description',
-  code: 'code'
+  code: 'code',
+  createurId: 'createurId'
 } as const
 
 export type ecoleOrderByRelevanceFieldEnum = (typeof ecoleOrderByRelevanceFieldEnum)[keyof typeof ecoleOrderByRelevanceFieldEnum]
@@ -4242,9 +4352,16 @@ export type Enumdecisionfinannee_decisionFieldRefInput<$PrismaModel> = FieldRefI
 
 
 /**
- * Reference to a field of type 'dossierscolarite_statut'
+ * Reference to a field of type 'demande_ecole_type'
  */
-export type Enumdossierscolarite_statutFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'dossierscolarite_statut'>
+export type Enumdemande_ecole_typeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'demande_ecole_type'>
+    
+
+
+/**
+ * Reference to a field of type 'demande_ecole_statut'
+ */
+export type Enumdemande_ecole_statutFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'demande_ecole_statut'>
     
 
 
@@ -4252,6 +4369,13 @@ export type Enumdossierscolarite_statutFieldRefInput<$PrismaModel> = FieldRefInp
  * Reference to a field of type 'ecole_type'
  */
 export type Enumecole_typeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ecole_type'>
+    
+
+
+/**
+ * Reference to a field of type 'dossierscolarite_statut'
+ */
+export type Enumdossierscolarite_statutFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'dossierscolarite_statut'>
     
 
 
@@ -4509,6 +4633,7 @@ export type GlobalOmitConfig = {
   configurationscolarite?: Prisma.configurationscolariteOmit
   conversation?: Prisma.conversationOmit
   decisionfinannee?: Prisma.decisionfinanneeOmit
+  demandeecole?: Prisma.demandeecoleOmit
   dossierscolarite?: Prisma.dossierscolariteOmit
   ecole?: Prisma.ecoleOmit
   emploidutemps?: Prisma.emploidutempsOmit
