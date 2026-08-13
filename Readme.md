@@ -14,3 +14,7 @@
 
 
 ### dans le clerk-auth.guard.ts on vérifie le présence du secret dans l'environnement à chaque requête. Essayons de le faire de manière globale si possible
+
+
+### il faut finir les modules d'inscriptions et de confi école avant de t'attaquer à parent pour de bon car actuellement la manière dont on l'a fait donne la possibilité de créer un parent sans affilaition avec un enfant. Si l'on continue comme celà, alors il nous sera possible d'avoir un parent qui n'est dans aucune école, alors c'est complètement inutile. Il faut finir les autres puis au tour du parent on va faie en sorte que la taille tableau des enfants soit > 0.
+
