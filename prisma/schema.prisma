@@ -311,6 +311,7 @@ model ecole {
   typeevaluation         typeevaluation[]
   user                   user[]                   @relation("ecoletouser")
   demandes               demandeecole[]
+  employes               employe[]
 
   @@index([ville], map: "Ecole_ville_idx")
 }
@@ -335,6 +336,7 @@ model employe {
   matricule             String                  @unique(map: "Employe_matricule_key")
   dateEmbauche          DateTime
   clerkUserId           String                  @unique(map: "Employe_clerkUserId_key")
+  ecoleId               String
   createdAt             DateTime                @default(now())
   updatedAt             DateTime                @default(now())
   affectationenseignant affectationenseignant[]
@@ -342,6 +344,7 @@ model employe {
   user                  user                    @relation(fields: [clerkUserId], references: [clerkUserId], onDelete: Cascade, map: "Employe_clerkUserId_fkey")
   employedocument       employedocument[]
   employerole           employerole[]
+  ecole                 ecole                   @relation(fields: [ecoleId], references: [id], onDelete: Cascade)
 }
 
 model employedocument {
@@ -355,6 +358,8 @@ model employedocument {
 
   @@index([employeId], map: "EmployeDocument_employeId_idx")
 }
+
+
 
 model employerole {
   employeId String
@@ -539,6 +544,7 @@ model parent {
   createdAt       DateTime          @default(now())
   apprenantparent apprenantparent[]
   user            user              @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Parent_userId_fkey")
+
 
   @@index([userId], map: "Parent_userId_idx")
 }

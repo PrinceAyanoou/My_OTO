@@ -3489,6 +3489,7 @@ export const EmployeScalarFieldEnum = {
   matricule: 'matricule',
   dateEmbauche: 'dateEmbauche',
   clerkUserId: 'clerkUserId',
+  ecoleId: 'ecoleId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -4014,7 +4015,8 @@ export type emploidutempsOrderByRelevanceFieldEnum = (typeof emploidutempsOrderB
 export const employeOrderByRelevanceFieldEnum = {
   id: 'id',
   matricule: 'matricule',
-  clerkUserId: 'clerkUserId'
+  clerkUserId: 'clerkUserId',
+  ecoleId: 'ecoleId'
 } as const
 
 export type employeOrderByRelevanceFieldEnum = (typeof employeOrderByRelevanceFieldEnum)[keyof typeof employeOrderByRelevanceFieldEnum]

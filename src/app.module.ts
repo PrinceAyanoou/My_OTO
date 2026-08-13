@@ -37,7 +37,7 @@ import { ClasseMatirereModule } from './classe-matirere/classe-matirere.module';
 import { CibleAnnonceModule } from './cible-annonce/cible-annonce.module';
 import { BulletinModule } from './bulletin/bulletin.module';
 import { ApprenantParentModule } from './apprenant-parent/apprenant-parent.module';
-import { ApprenantModule } from './apprenant/apprenant.module';
+//mport { ApprenantModule } from './apprenant/apprenant.module';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AnneeScolaireModule } from './annee-scolaire/annee-scolaire.module';
 import { AffectationEnseignantModule } from './affectation-enseignant/affectation-enseignant.module';
@@ -46,13 +46,15 @@ import { ZodValidationPipe } from 'nestjs-zod';
 import { CaslModule } from '../src/auth/casl/casl.module';
 import { ConfigModule } from '@nestjs/config';
 import { DemandeEcoleModule } from './demande-ecole/demande-ecole.module';
+import { CloudinaryModule } from './cloudinary/cloudinary.module';
+import { BackofficeModule } from './backoffice/backoffice.module';
 @Module({
   imports: [
     AbsencesModule,
     AffectationEnseignantModule,
     AnneeScolaireModule,
     AnnonceModule,
-    ApprenantModule,
+    //ApprenantModule,
     ApprenantParentModule,
     BulletinModule,
     CibleAnnonceModule,
@@ -89,11 +91,14 @@ import { DemandeEcoleModule } from './demande-ecole/demande-ecole.module';
     UniteEnseignementModule,
     UserModule,
     DemandeEcoleModule,
+    CloudinaryModule,
+    BackofficeModule,
     CaslModule,
     ConfigModule.forRoot({
       isGlobal: true, // Rend les variables disponibles partout dans le projet
     }),
     DemandeEcoleModule,
+    BackofficeModule,
   ],
   controllers: [AppController],
   providers: [

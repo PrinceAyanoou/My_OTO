@@ -10,6 +10,7 @@ export const AffecterMembreSchema = z.discriminatedUnion('role', [
       .date()
       .optional()
       .default(() => new Date()),
+    ecoleId: z.uuid(),
   }),
   // Cas PARENT
   z.object({

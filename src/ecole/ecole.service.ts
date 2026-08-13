@@ -104,16 +104,28 @@ export class EcoleService {
 
     // Transaction pour lier à l'école + créer l'entité selon le rôle
     return this.prisma.$transaction(async (tx) => {
-      // Lier l'utilisateur à l'école via la table de jonction
-      await tx.ecole.update({
-        where: { id: ecoleId },
-        data: {
+      const existingUserInSchool = await this.prisma.ecole.findFirst({
+        where: {
+          id: ecoleId,
           user: {
-            connect: { id: dto.userId },
+            some: {
+              id: dto.userId,
+            },
           },
         },
       });
 
+      if (!existingUserInSchool) {
+        // Lier l'utilisateur à l'école via la table de jonction
+        await tx.ecole.update({
+          where: { id: ecoleId },
+          data: {
+            user: {
+              connect: { id: dto.userId },
+            },
+          },
+        });
+      }
       // Gérer le profil spécifique
       switch (dto.role) {
         case 'EMPLOYE':
@@ -123,6 +135,7 @@ export class EcoleService {
               clerkUserId: user.clerkUserId,
               matricule: dto.matricule,
               dateEmbauche: dto.dateEmbauche,
+              ecoleId: dto.ecoleId,
             },
             update: {
               matricule: dto.matricule,

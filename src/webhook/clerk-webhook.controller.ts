@@ -58,7 +58,47 @@ export class ClerkWebhookController {
     const eventType = payload.type;
     const eventData = payload.data;
 
-    if (eventType === 'user.created' || eventType === 'user.updated') {
+    if (eventType === 'user.created') {
+      if (typeof eventData === 'object' && eventData !== null) {
+        const maybeClerkUser = eventData as {
+          id?: unknown;
+          email_addresses?: unknown;
+          primary_email_address_id?: unknown;
+        };
+
+        if (
+          typeof maybeClerkUser.id === 'string' &&
+          Array.isArray(maybeClerkUser.email_addresses) &&
+          typeof maybeClerkUser.primary_email_address_id === 'string'
+        ) {
+          const emailAddresses = maybeClerkUser.email_addresses as Array<{
+            id: string;
+            email_address: string;
+          }>;
+          const primaryEmail = emailAddresses.find(
+            (email) => email.id === maybeClerkUser.primary_email_address_id,
+          )?.email_address;
+
+          if (typeof primaryEmail === 'string') {
+            // 🔹 1. Si c'est une invitation, remplace l'ID inv_... par l'ID réel user_... et passe le statut à ACTIF
+            if (typeof this.usersService.activateInvitedUser === 'function') {
+              await this.usersService.activateInvitedUser(
+                primaryEmail,
+                maybeClerkUser.id,
+              );
+            } else {
+              // Fallback si la méthode spécifique n'est pas définie
+              await this.usersService.updateUserEmailByClerkId(
+                maybeClerkUser.id,
+                primaryEmail,
+              );
+            }
+          }
+        }
+      }
+    }
+
+    if (eventType === 'user.updated') {
       if (typeof eventData === 'object' && eventData !== null) {
         const maybeClerkUser = eventData as {
           id?: unknown;

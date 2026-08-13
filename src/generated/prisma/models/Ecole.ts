@@ -274,6 +274,7 @@ export type ecoleWhereInput = {
   typeevaluation?: Prisma.TypeevaluationListRelationFilter
   user?: Prisma.UserListRelationFilter
   demandes?: Prisma.DemandeecoleListRelationFilter
+  employes?: Prisma.EmployeListRelationFilter
 }
 
 export type ecoleOrderByWithRelationInput = {
@@ -304,6 +305,7 @@ export type ecoleOrderByWithRelationInput = {
   typeevaluation?: Prisma.typeevaluationOrderByRelationAggregateInput
   user?: Prisma.userOrderByRelationAggregateInput
   demandes?: Prisma.demandeecoleOrderByRelationAggregateInput
+  employes?: Prisma.employeOrderByRelationAggregateInput
   _relevance?: Prisma.ecoleOrderByRelevanceInput
 }
 
@@ -338,6 +340,7 @@ export type ecoleWhereUniqueInput = Prisma.AtLeast<{
   typeevaluation?: Prisma.TypeevaluationListRelationFilter
   user?: Prisma.UserListRelationFilter
   demandes?: Prisma.DemandeecoleListRelationFilter
+  employes?: Prisma.EmployeListRelationFilter
 }, "id" | "boitePostale" | "email" | "code">
 
 export type ecoleOrderByWithAggregationInput = {
@@ -409,6 +412,7 @@ export type ecoleCreateInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateInput = {
@@ -438,6 +442,7 @@ export type ecoleUncheckedCreateInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUpdateInput = {
@@ -467,6 +472,7 @@ export type ecoleUpdateInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateInput = {
@@ -496,6 +502,7 @@ export type ecoleUncheckedUpdateInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateManyInput = {
@@ -711,6 +718,20 @@ export type Enumecole_statutFieldUpdateOperationsInput = {
   set?: $Enums.ecole_statut
 }
 
+export type ecoleCreateNestedOneWithoutEmployesInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutEmployesInput, Prisma.ecoleUncheckedCreateWithoutEmployesInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutEmployesInput
+  connect?: Prisma.ecoleWhereUniqueInput
+}
+
+export type ecoleUpdateOneRequiredWithoutEmployesNestedInput = {
+  create?: Prisma.XOR<Prisma.ecoleCreateWithoutEmployesInput, Prisma.ecoleUncheckedCreateWithoutEmployesInput>
+  connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutEmployesInput
+  upsert?: Prisma.ecoleUpsertWithoutEmployesInput
+  connect?: Prisma.ecoleWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ecoleUpdateToOneWithWhereWithoutEmployesInput, Prisma.ecoleUpdateWithoutEmployesInput>, Prisma.ecoleUncheckedUpdateWithoutEmployesInput>
+}
+
 export type ecoleCreateNestedOneWithoutMatiereInput = {
   create?: Prisma.XOR<Prisma.ecoleCreateWithoutMatiereInput, Prisma.ecoleUncheckedCreateWithoutMatiereInput>
   connectOrCreate?: Prisma.ecoleCreateOrConnectWithoutMatiereInput
@@ -887,6 +908,7 @@ export type ecoleCreateWithoutAnneescolaireInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
@@ -915,6 +937,7 @@ export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutAnneescolaireInput = {
@@ -959,6 +982,7 @@ export type ecoleUpdateWithoutAnneescolaireInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
@@ -987,6 +1011,7 @@ export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutAnnonceInput = {
@@ -1015,6 +1040,7 @@ export type ecoleCreateWithoutAnnonceInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutAnnonceInput = {
@@ -1043,6 +1069,7 @@ export type ecoleUncheckedCreateWithoutAnnonceInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutAnnonceInput = {
@@ -1087,6 +1114,7 @@ export type ecoleUpdateWithoutAnnonceInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutAnnonceInput = {
@@ -1115,6 +1143,7 @@ export type ecoleUncheckedUpdateWithoutAnnonceInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutConfigurationscolariteInput = {
@@ -1143,6 +1172,7 @@ export type ecoleCreateWithoutConfigurationscolariteInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
@@ -1171,6 +1201,7 @@ export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutConfigurationscolariteInput = {
@@ -1215,6 +1246,7 @@ export type ecoleUpdateWithoutConfigurationscolariteInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
@@ -1243,6 +1275,7 @@ export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutConversationInput = {
@@ -1271,6 +1304,7 @@ export type ecoleCreateWithoutConversationInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutConversationInput = {
@@ -1299,6 +1333,7 @@ export type ecoleUncheckedCreateWithoutConversationInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutConversationInput = {
@@ -1343,6 +1378,7 @@ export type ecoleUpdateWithoutConversationInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutConversationInput = {
@@ -1371,6 +1407,7 @@ export type ecoleUncheckedUpdateWithoutConversationInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutDemandesInput = {
@@ -1399,6 +1436,7 @@ export type ecoleCreateWithoutDemandesInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutDemandesInput = {
@@ -1427,6 +1465,7 @@ export type ecoleUncheckedCreateWithoutDemandesInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutDemandesInput = {
@@ -1471,6 +1510,7 @@ export type ecoleUpdateWithoutDemandesInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutDemandesInput = {
@@ -1499,6 +1539,139 @@ export type ecoleUncheckedUpdateWithoutDemandesInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
+}
+
+export type ecoleCreateWithoutEmployesInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
+  createur?: Prisma.userCreateNestedOneWithoutEcolesCreesInput
+  anneescolaire?: Prisma.anneescolaireCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleUncheckedCreateWithoutEmployesInput = {
+  id?: string
+  nom: string
+  type: $Enums.ecole_type
+  nomFondateur: string
+  ville: string
+  boitePostale?: string | null
+  email: string
+  telephone: string
+  description?: string | null
+  statut?: $Enums.ecole_statut
+  code: string
+  createdAt?: Date | string
+  valideAt?: Date | string | null
+  updatedAt?: Date | string
+  createurId?: string | null
+  anneescolaire?: Prisma.anneescolaireUncheckedCreateNestedManyWithoutEcoleInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEcoleInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedCreateNestedManyWithoutEcoleInput
+  conversation?: Prisma.conversationUncheckedCreateNestedManyWithoutEcoleInput
+  matiere?: Prisma.matiereUncheckedCreateNestedManyWithoutEcoleInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedCreateNestedManyWithoutEcoleInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
+  typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
+  user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
+  demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+}
+
+export type ecoleCreateOrConnectWithoutEmployesInput = {
+  where: Prisma.ecoleWhereUniqueInput
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutEmployesInput, Prisma.ecoleUncheckedCreateWithoutEmployesInput>
+}
+
+export type ecoleUpsertWithoutEmployesInput = {
+  update: Prisma.XOR<Prisma.ecoleUpdateWithoutEmployesInput, Prisma.ecoleUncheckedUpdateWithoutEmployesInput>
+  create: Prisma.XOR<Prisma.ecoleCreateWithoutEmployesInput, Prisma.ecoleUncheckedCreateWithoutEmployesInput>
+  where?: Prisma.ecoleWhereInput
+}
+
+export type ecoleUpdateToOneWithWhereWithoutEmployesInput = {
+  where?: Prisma.ecoleWhereInput
+  data: Prisma.XOR<Prisma.ecoleUpdateWithoutEmployesInput, Prisma.ecoleUncheckedUpdateWithoutEmployesInput>
+}
+
+export type ecoleUpdateWithoutEmployesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createur?: Prisma.userUpdateOneWithoutEcolesCreesNestedInput
+  anneescolaire?: Prisma.anneescolaireUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+}
+
+export type ecoleUncheckedUpdateWithoutEmployesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nom?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.Enumecole_typeFieldUpdateOperationsInput | $Enums.ecole_type
+  nomFondateur?: Prisma.StringFieldUpdateOperationsInput | string
+  ville?: Prisma.StringFieldUpdateOperationsInput | string
+  boitePostale?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  telephone?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  valideAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createurId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  anneescolaire?: Prisma.anneescolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEcoleNestedInput
+  configurationscolarite?: Prisma.configurationscolariteUncheckedUpdateManyWithoutEcoleNestedInput
+  conversation?: Prisma.conversationUncheckedUpdateManyWithoutEcoleNestedInput
+  matiere?: Prisma.matiereUncheckedUpdateManyWithoutEcoleNestedInput
+  niveauscolaire?: Prisma.niveauscolaireUncheckedUpdateManyWithoutEcoleNestedInput
+  politiqueevaluation?: Prisma.politiqueevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
+  typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
+  user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
+  demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutMatiereInput = {
@@ -1527,6 +1700,7 @@ export type ecoleCreateWithoutMatiereInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutMatiereInput = {
@@ -1555,6 +1729,7 @@ export type ecoleUncheckedCreateWithoutMatiereInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutMatiereInput = {
@@ -1599,6 +1774,7 @@ export type ecoleUpdateWithoutMatiereInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutMatiereInput = {
@@ -1627,6 +1803,7 @@ export type ecoleUncheckedUpdateWithoutMatiereInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutNiveauscolaireInput = {
@@ -1655,6 +1832,7 @@ export type ecoleCreateWithoutNiveauscolaireInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
@@ -1683,6 +1861,7 @@ export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutNiveauscolaireInput = {
@@ -1727,6 +1906,7 @@ export type ecoleUpdateWithoutNiveauscolaireInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
@@ -1755,6 +1935,7 @@ export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutPolitiqueevaluationInput = {
@@ -1783,6 +1964,7 @@ export type ecoleCreateWithoutPolitiqueevaluationInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
@@ -1811,6 +1993,7 @@ export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutPolitiqueevaluationInput = {
@@ -1855,6 +2038,7 @@ export type ecoleUpdateWithoutPolitiqueevaluationInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
@@ -1883,6 +2067,7 @@ export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutRoleInput = {
@@ -1911,6 +2096,7 @@ export type ecoleCreateWithoutRoleInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutRoleInput = {
@@ -1939,6 +2125,7 @@ export type ecoleUncheckedCreateWithoutRoleInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutRoleInput = {
@@ -1983,6 +2170,7 @@ export type ecoleUpdateWithoutRoleInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutRoleInput = {
@@ -2011,6 +2199,7 @@ export type ecoleUncheckedUpdateWithoutRoleInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutTypeevaluationInput = {
@@ -2039,6 +2228,7 @@ export type ecoleCreateWithoutTypeevaluationInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
@@ -2067,6 +2257,7 @@ export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutTypeevaluationInput = {
@@ -2111,6 +2302,7 @@ export type ecoleUpdateWithoutTypeevaluationInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
@@ -2139,6 +2331,7 @@ export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleCreateWithoutUserInput = {
@@ -2167,6 +2360,7 @@ export type ecoleCreateWithoutUserInput = {
   role?: Prisma.roleCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutUserInput = {
@@ -2195,6 +2389,7 @@ export type ecoleUncheckedCreateWithoutUserInput = {
   role?: Prisma.roleUncheckedCreateNestedManyWithoutEcoleInput
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutUserInput = {
@@ -2228,6 +2423,7 @@ export type ecoleCreateWithoutCreateurInput = {
   typeevaluation?: Prisma.typeevaluationCreateNestedManyWithoutEcoleInput
   user?: Prisma.userCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleUncheckedCreateWithoutCreateurInput = {
@@ -2256,6 +2452,7 @@ export type ecoleUncheckedCreateWithoutCreateurInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedCreateNestedManyWithoutEcoleInput
   user?: Prisma.userUncheckedCreateNestedManyWithoutEcoleInput
   demandes?: Prisma.demandeecoleUncheckedCreateNestedManyWithoutEcoleInput
+  employes?: Prisma.employeUncheckedCreateNestedManyWithoutEcoleInput
 }
 
 export type ecoleCreateOrConnectWithoutCreateurInput = {
@@ -2364,6 +2561,7 @@ export type ecoleUpdateWithoutUserInput = {
   role?: Prisma.roleUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutUserInput = {
@@ -2392,6 +2590,7 @@ export type ecoleUncheckedUpdateWithoutUserInput = {
   role?: Prisma.roleUncheckedUpdateManyWithoutEcoleNestedInput
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateManyWithoutUserInput = {
@@ -2438,6 +2637,7 @@ export type ecoleUpdateWithoutCreateurInput = {
   typeevaluation?: Prisma.typeevaluationUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateWithoutCreateurInput = {
@@ -2466,6 +2666,7 @@ export type ecoleUncheckedUpdateWithoutCreateurInput = {
   typeevaluation?: Prisma.typeevaluationUncheckedUpdateManyWithoutEcoleNestedInput
   user?: Prisma.userUncheckedUpdateManyWithoutEcoleNestedInput
   demandes?: Prisma.demandeecoleUncheckedUpdateManyWithoutEcoleNestedInput
+  employes?: Prisma.employeUncheckedUpdateManyWithoutEcoleNestedInput
 }
 
 export type ecoleUncheckedUpdateManyWithoutCreateurInput = {
@@ -2502,6 +2703,7 @@ export type EcoleCountOutputType = {
   typeevaluation: number
   user: number
   demandes: number
+  employes: number
 }
 
 export type EcoleCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2516,6 +2718,7 @@ export type EcoleCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   typeevaluation?: boolean | EcoleCountOutputTypeCountTypeevaluationArgs
   user?: boolean | EcoleCountOutputTypeCountUserArgs
   demandes?: boolean | EcoleCountOutputTypeCountDemandesArgs
+  employes?: boolean | EcoleCountOutputTypeCountEmployesArgs
 }
 
 /**
@@ -2605,6 +2808,13 @@ export type EcoleCountOutputTypeCountDemandesArgs<ExtArgs extends runtime.Types.
   where?: Prisma.demandeecoleWhereInput
 }
 
+/**
+ * EcoleCountOutputType without action
+ */
+export type EcoleCountOutputTypeCountEmployesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.employeWhereInput
+}
+
 
 export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2634,6 +2844,7 @@ export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   typeevaluation?: boolean | Prisma.ecole$typeevaluationArgs<ExtArgs>
   user?: boolean | Prisma.ecole$userArgs<ExtArgs>
   demandes?: boolean | Prisma.ecole$demandesArgs<ExtArgs>
+  employes?: boolean | Prisma.ecole$employesArgs<ExtArgs>
   _count?: boolean | Prisma.EcoleCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["ecole"]>
 
@@ -2671,6 +2882,7 @@ export type ecoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   typeevaluation?: boolean | Prisma.ecole$typeevaluationArgs<ExtArgs>
   user?: boolean | Prisma.ecole$userArgs<ExtArgs>
   demandes?: boolean | Prisma.ecole$demandesArgs<ExtArgs>
+  employes?: boolean | Prisma.ecole$employesArgs<ExtArgs>
   _count?: boolean | Prisma.EcoleCountOutputTypeDefaultArgs<ExtArgs>
 }
 
@@ -2689,6 +2901,7 @@ export type $ecolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     typeevaluation: Prisma.$typeevaluationPayload<ExtArgs>[]
     user: Prisma.$userPayload<ExtArgs>[]
     demandes: Prisma.$demandeecolePayload<ExtArgs>[]
+    employes: Prisma.$employePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -3058,6 +3271,7 @@ export interface Prisma__ecoleClient<T, Null = never, ExtArgs extends runtime.Ty
   typeevaluation<T extends Prisma.ecole$typeevaluationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$typeevaluationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$typeevaluationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   user<T extends Prisma.ecole$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$userArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   demandes<T extends Prisma.ecole$demandesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$demandesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$demandeecolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  employes<T extends Prisma.ecole$employesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecole$employesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$employePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3730,6 +3944,30 @@ export type ecole$demandesArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.DemandeecoleScalarFieldEnum | Prisma.DemandeecoleScalarFieldEnum[]
+}
+
+/**
+ * ecole.employes
+ */
+export type ecole$employesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the employe
+   */
+  select?: Prisma.employeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the employe
+   */
+  omit?: Prisma.employeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.employeInclude<ExtArgs> | null
+  where?: Prisma.employeWhereInput
+  orderBy?: Prisma.employeOrderByWithRelationInput | Prisma.employeOrderByWithRelationInput[]
+  cursor?: Prisma.employeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.EmployeScalarFieldEnum | Prisma.EmployeScalarFieldEnum[]
 }
 
 /**

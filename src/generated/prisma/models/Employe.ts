@@ -29,6 +29,7 @@ export type EmployeMinAggregateOutputType = {
   matricule: string | null
   dateEmbauche: Date | null
   clerkUserId: string | null
+  ecoleId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -38,6 +39,7 @@ export type EmployeMaxAggregateOutputType = {
   matricule: string | null
   dateEmbauche: Date | null
   clerkUserId: string | null
+  ecoleId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -47,6 +49,7 @@ export type EmployeCountAggregateOutputType = {
   matricule: number
   dateEmbauche: number
   clerkUserId: number
+  ecoleId: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -58,6 +61,7 @@ export type EmployeMinAggregateInputType = {
   matricule?: true
   dateEmbauche?: true
   clerkUserId?: true
+  ecoleId?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -67,6 +71,7 @@ export type EmployeMaxAggregateInputType = {
   matricule?: true
   dateEmbauche?: true
   clerkUserId?: true
+  ecoleId?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -76,6 +81,7 @@ export type EmployeCountAggregateInputType = {
   matricule?: true
   dateEmbauche?: true
   clerkUserId?: true
+  ecoleId?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -158,6 +164,7 @@ export type EmployeGroupByOutputType = {
   matricule: string
   dateEmbauche: Date
   clerkUserId: string
+  ecoleId: string
   createdAt: Date
   updatedAt: Date
   _count: EmployeCountAggregateOutputType | null
@@ -188,6 +195,7 @@ export type employeWhereInput = {
   matricule?: Prisma.StringFilter<"employe"> | string
   dateEmbauche?: Prisma.DateTimeFilter<"employe"> | Date | string
   clerkUserId?: Prisma.StringFilter<"employe"> | string
+  ecoleId?: Prisma.StringFilter<"employe"> | string
   createdAt?: Prisma.DateTimeFilter<"employe"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"employe"> | Date | string
   affectationenseignant?: Prisma.AffectationenseignantListRelationFilter
@@ -195,6 +203,7 @@ export type employeWhereInput = {
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
   employedocument?: Prisma.EmployedocumentListRelationFilter
   employerole?: Prisma.EmployeroleListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
 }
 
 export type employeOrderByWithRelationInput = {
@@ -202,6 +211,7 @@ export type employeOrderByWithRelationInput = {
   matricule?: Prisma.SortOrder
   dateEmbauche?: Prisma.SortOrder
   clerkUserId?: Prisma.SortOrder
+  ecoleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   affectationenseignant?: Prisma.affectationenseignantOrderByRelationAggregateInput
@@ -209,6 +219,7 @@ export type employeOrderByWithRelationInput = {
   user?: Prisma.userOrderByWithRelationInput
   employedocument?: Prisma.employedocumentOrderByRelationAggregateInput
   employerole?: Prisma.employeroleOrderByRelationAggregateInput
+  ecole?: Prisma.ecoleOrderByWithRelationInput
   _relevance?: Prisma.employeOrderByRelevanceInput
 }
 
@@ -220,6 +231,7 @@ export type employeWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.employeWhereInput[]
   NOT?: Prisma.employeWhereInput | Prisma.employeWhereInput[]
   dateEmbauche?: Prisma.DateTimeFilter<"employe"> | Date | string
+  ecoleId?: Prisma.StringFilter<"employe"> | string
   createdAt?: Prisma.DateTimeFilter<"employe"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"employe"> | Date | string
   affectationenseignant?: Prisma.AffectationenseignantListRelationFilter
@@ -227,6 +239,7 @@ export type employeWhereUniqueInput = Prisma.AtLeast<{
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
   employedocument?: Prisma.EmployedocumentListRelationFilter
   employerole?: Prisma.EmployeroleListRelationFilter
+  ecole?: Prisma.XOR<Prisma.EcoleScalarRelationFilter, Prisma.ecoleWhereInput>
 }, "id" | "matricule" | "clerkUserId">
 
 export type employeOrderByWithAggregationInput = {
@@ -234,6 +247,7 @@ export type employeOrderByWithAggregationInput = {
   matricule?: Prisma.SortOrder
   dateEmbauche?: Prisma.SortOrder
   clerkUserId?: Prisma.SortOrder
+  ecoleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.employeCountOrderByAggregateInput
@@ -249,6 +263,7 @@ export type employeScalarWhereWithAggregatesInput = {
   matricule?: Prisma.StringWithAggregatesFilter<"employe"> | string
   dateEmbauche?: Prisma.DateTimeWithAggregatesFilter<"employe"> | Date | string
   clerkUserId?: Prisma.StringWithAggregatesFilter<"employe"> | string
+  ecoleId?: Prisma.StringWithAggregatesFilter<"employe"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"employe"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"employe"> | Date | string
 }
@@ -264,6 +279,7 @@ export type employeCreateInput = {
   user: Prisma.userCreateNestedOneWithoutEmployeInput
   employedocument?: Prisma.employedocumentCreateNestedManyWithoutEmployeInput
   employerole?: Prisma.employeroleCreateNestedManyWithoutEmployeInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutEmployesInput
 }
 
 export type employeUncheckedCreateInput = {
@@ -271,6 +287,7 @@ export type employeUncheckedCreateInput = {
   matricule: string
   dateEmbauche: Date | string
   clerkUserId: string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutEmployeInput
@@ -290,6 +307,7 @@ export type employeUpdateInput = {
   user?: Prisma.userUpdateOneRequiredWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUpdateManyWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUpdateManyWithoutEmployeNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutEmployesNestedInput
 }
 
 export type employeUncheckedUpdateInput = {
@@ -297,6 +315,7 @@ export type employeUncheckedUpdateInput = {
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutEmployeNestedInput
@@ -310,6 +329,7 @@ export type employeCreateManyInput = {
   matricule: string
   dateEmbauche: Date | string
   clerkUserId: string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -327,6 +347,7 @@ export type employeUncheckedUpdateManyInput = {
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -334,6 +355,16 @@ export type employeUncheckedUpdateManyInput = {
 export type EmployeScalarRelationFilter = {
   is?: Prisma.employeWhereInput
   isNot?: Prisma.employeWhereInput
+}
+
+export type EmployeListRelationFilter = {
+  every?: Prisma.employeWhereInput
+  some?: Prisma.employeWhereInput
+  none?: Prisma.employeWhereInput
+}
+
+export type employeOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type employeOrderByRelevanceInput = {
@@ -347,6 +378,7 @@ export type employeCountOrderByAggregateInput = {
   matricule?: Prisma.SortOrder
   dateEmbauche?: Prisma.SortOrder
   clerkUserId?: Prisma.SortOrder
+  ecoleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -356,6 +388,7 @@ export type employeMaxOrderByAggregateInput = {
   matricule?: Prisma.SortOrder
   dateEmbauche?: Prisma.SortOrder
   clerkUserId?: Prisma.SortOrder
+  ecoleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -365,6 +398,7 @@ export type employeMinOrderByAggregateInput = {
   matricule?: Prisma.SortOrder
   dateEmbauche?: Prisma.SortOrder
   clerkUserId?: Prisma.SortOrder
+  ecoleId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -400,6 +434,48 @@ export type employeUpdateOneRequiredWithoutAnnonceNestedInput = {
   upsert?: Prisma.employeUpsertWithoutAnnonceInput
   connect?: Prisma.employeWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.employeUpdateToOneWithWhereWithoutAnnonceInput, Prisma.employeUpdateWithoutAnnonceInput>, Prisma.employeUncheckedUpdateWithoutAnnonceInput>
+}
+
+export type employeCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.employeCreateWithoutEcoleInput, Prisma.employeUncheckedCreateWithoutEcoleInput> | Prisma.employeCreateWithoutEcoleInput[] | Prisma.employeUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.employeCreateOrConnectWithoutEcoleInput | Prisma.employeCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.employeCreateManyEcoleInputEnvelope
+  connect?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+}
+
+export type employeUncheckedCreateNestedManyWithoutEcoleInput = {
+  create?: Prisma.XOR<Prisma.employeCreateWithoutEcoleInput, Prisma.employeUncheckedCreateWithoutEcoleInput> | Prisma.employeCreateWithoutEcoleInput[] | Prisma.employeUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.employeCreateOrConnectWithoutEcoleInput | Prisma.employeCreateOrConnectWithoutEcoleInput[]
+  createMany?: Prisma.employeCreateManyEcoleInputEnvelope
+  connect?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+}
+
+export type employeUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.employeCreateWithoutEcoleInput, Prisma.employeUncheckedCreateWithoutEcoleInput> | Prisma.employeCreateWithoutEcoleInput[] | Prisma.employeUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.employeCreateOrConnectWithoutEcoleInput | Prisma.employeCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.employeUpsertWithWhereUniqueWithoutEcoleInput | Prisma.employeUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.employeCreateManyEcoleInputEnvelope
+  set?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  disconnect?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  delete?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  connect?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  update?: Prisma.employeUpdateWithWhereUniqueWithoutEcoleInput | Prisma.employeUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.employeUpdateManyWithWhereWithoutEcoleInput | Prisma.employeUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.employeScalarWhereInput | Prisma.employeScalarWhereInput[]
+}
+
+export type employeUncheckedUpdateManyWithoutEcoleNestedInput = {
+  create?: Prisma.XOR<Prisma.employeCreateWithoutEcoleInput, Prisma.employeUncheckedCreateWithoutEcoleInput> | Prisma.employeCreateWithoutEcoleInput[] | Prisma.employeUncheckedCreateWithoutEcoleInput[]
+  connectOrCreate?: Prisma.employeCreateOrConnectWithoutEcoleInput | Prisma.employeCreateOrConnectWithoutEcoleInput[]
+  upsert?: Prisma.employeUpsertWithWhereUniqueWithoutEcoleInput | Prisma.employeUpsertWithWhereUniqueWithoutEcoleInput[]
+  createMany?: Prisma.employeCreateManyEcoleInputEnvelope
+  set?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  disconnect?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  delete?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  connect?: Prisma.employeWhereUniqueInput | Prisma.employeWhereUniqueInput[]
+  update?: Prisma.employeUpdateWithWhereUniqueWithoutEcoleInput | Prisma.employeUpdateWithWhereUniqueWithoutEcoleInput[]
+  updateMany?: Prisma.employeUpdateManyWithWhereWithoutEcoleInput | Prisma.employeUpdateManyWithWhereWithoutEcoleInput[]
+  deleteMany?: Prisma.employeScalarWhereInput | Prisma.employeScalarWhereInput[]
 }
 
 export type employeCreateNestedOneWithoutEmployedocumentInput = {
@@ -472,6 +548,7 @@ export type employeCreateWithoutAffectationenseignantInput = {
   user: Prisma.userCreateNestedOneWithoutEmployeInput
   employedocument?: Prisma.employedocumentCreateNestedManyWithoutEmployeInput
   employerole?: Prisma.employeroleCreateNestedManyWithoutEmployeInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutEmployesInput
 }
 
 export type employeUncheckedCreateWithoutAffectationenseignantInput = {
@@ -479,6 +556,7 @@ export type employeUncheckedCreateWithoutAffectationenseignantInput = {
   matricule: string
   dateEmbauche: Date | string
   clerkUserId: string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEmployeInput
@@ -512,6 +590,7 @@ export type employeUpdateWithoutAffectationenseignantInput = {
   user?: Prisma.userUpdateOneRequiredWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUpdateManyWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUpdateManyWithoutEmployeNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutEmployesNestedInput
 }
 
 export type employeUncheckedUpdateWithoutAffectationenseignantInput = {
@@ -519,6 +598,7 @@ export type employeUncheckedUpdateWithoutAffectationenseignantInput = {
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEmployeNestedInput
@@ -536,6 +616,7 @@ export type employeCreateWithoutAnnonceInput = {
   user: Prisma.userCreateNestedOneWithoutEmployeInput
   employedocument?: Prisma.employedocumentCreateNestedManyWithoutEmployeInput
   employerole?: Prisma.employeroleCreateNestedManyWithoutEmployeInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutEmployesInput
 }
 
 export type employeUncheckedCreateWithoutAnnonceInput = {
@@ -543,6 +624,7 @@ export type employeUncheckedCreateWithoutAnnonceInput = {
   matricule: string
   dateEmbauche: Date | string
   clerkUserId: string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutEmployeInput
@@ -576,6 +658,7 @@ export type employeUpdateWithoutAnnonceInput = {
   user?: Prisma.userUpdateOneRequiredWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUpdateManyWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUpdateManyWithoutEmployeNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutEmployesNestedInput
 }
 
 export type employeUncheckedUpdateWithoutAnnonceInput = {
@@ -583,11 +666,77 @@ export type employeUncheckedUpdateWithoutAnnonceInput = {
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUncheckedUpdateManyWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUncheckedUpdateManyWithoutEmployeNestedInput
+}
+
+export type employeCreateWithoutEcoleInput = {
+  id?: string
+  matricule: string
+  dateEmbauche: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutEmployeInput
+  annonce?: Prisma.annonceCreateNestedManyWithoutEmployeInput
+  user: Prisma.userCreateNestedOneWithoutEmployeInput
+  employedocument?: Prisma.employedocumentCreateNestedManyWithoutEmployeInput
+  employerole?: Prisma.employeroleCreateNestedManyWithoutEmployeInput
+}
+
+export type employeUncheckedCreateWithoutEcoleInput = {
+  id?: string
+  matricule: string
+  dateEmbauche: Date | string
+  clerkUserId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutEmployeInput
+  annonce?: Prisma.annonceUncheckedCreateNestedManyWithoutEmployeInput
+  employedocument?: Prisma.employedocumentUncheckedCreateNestedManyWithoutEmployeInput
+  employerole?: Prisma.employeroleUncheckedCreateNestedManyWithoutEmployeInput
+}
+
+export type employeCreateOrConnectWithoutEcoleInput = {
+  where: Prisma.employeWhereUniqueInput
+  create: Prisma.XOR<Prisma.employeCreateWithoutEcoleInput, Prisma.employeUncheckedCreateWithoutEcoleInput>
+}
+
+export type employeCreateManyEcoleInputEnvelope = {
+  data: Prisma.employeCreateManyEcoleInput | Prisma.employeCreateManyEcoleInput[]
+  skipDuplicates?: boolean
+}
+
+export type employeUpsertWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.employeWhereUniqueInput
+  update: Prisma.XOR<Prisma.employeUpdateWithoutEcoleInput, Prisma.employeUncheckedUpdateWithoutEcoleInput>
+  create: Prisma.XOR<Prisma.employeCreateWithoutEcoleInput, Prisma.employeUncheckedCreateWithoutEcoleInput>
+}
+
+export type employeUpdateWithWhereUniqueWithoutEcoleInput = {
+  where: Prisma.employeWhereUniqueInput
+  data: Prisma.XOR<Prisma.employeUpdateWithoutEcoleInput, Prisma.employeUncheckedUpdateWithoutEcoleInput>
+}
+
+export type employeUpdateManyWithWhereWithoutEcoleInput = {
+  where: Prisma.employeScalarWhereInput
+  data: Prisma.XOR<Prisma.employeUpdateManyMutationInput, Prisma.employeUncheckedUpdateManyWithoutEcoleInput>
+}
+
+export type employeScalarWhereInput = {
+  AND?: Prisma.employeScalarWhereInput | Prisma.employeScalarWhereInput[]
+  OR?: Prisma.employeScalarWhereInput[]
+  NOT?: Prisma.employeScalarWhereInput | Prisma.employeScalarWhereInput[]
+  id?: Prisma.StringFilter<"employe"> | string
+  matricule?: Prisma.StringFilter<"employe"> | string
+  dateEmbauche?: Prisma.DateTimeFilter<"employe"> | Date | string
+  clerkUserId?: Prisma.StringFilter<"employe"> | string
+  ecoleId?: Prisma.StringFilter<"employe"> | string
+  createdAt?: Prisma.DateTimeFilter<"employe"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"employe"> | Date | string
 }
 
 export type employeCreateWithoutEmployedocumentInput = {
@@ -600,6 +749,7 @@ export type employeCreateWithoutEmployedocumentInput = {
   annonce?: Prisma.annonceCreateNestedManyWithoutEmployeInput
   user: Prisma.userCreateNestedOneWithoutEmployeInput
   employerole?: Prisma.employeroleCreateNestedManyWithoutEmployeInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutEmployesInput
 }
 
 export type employeUncheckedCreateWithoutEmployedocumentInput = {
@@ -607,6 +757,7 @@ export type employeUncheckedCreateWithoutEmployedocumentInput = {
   matricule: string
   dateEmbauche: Date | string
   clerkUserId: string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutEmployeInput
@@ -640,6 +791,7 @@ export type employeUpdateWithoutEmployedocumentInput = {
   annonce?: Prisma.annonceUpdateManyWithoutEmployeNestedInput
   user?: Prisma.userUpdateOneRequiredWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUpdateManyWithoutEmployeNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutEmployesNestedInput
 }
 
 export type employeUncheckedUpdateWithoutEmployedocumentInput = {
@@ -647,6 +799,7 @@ export type employeUncheckedUpdateWithoutEmployedocumentInput = {
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutEmployeNestedInput
@@ -664,6 +817,7 @@ export type employeCreateWithoutEmployeroleInput = {
   annonce?: Prisma.annonceCreateNestedManyWithoutEmployeInput
   user: Prisma.userCreateNestedOneWithoutEmployeInput
   employedocument?: Prisma.employedocumentCreateNestedManyWithoutEmployeInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutEmployesInput
 }
 
 export type employeUncheckedCreateWithoutEmployeroleInput = {
@@ -671,6 +825,7 @@ export type employeUncheckedCreateWithoutEmployeroleInput = {
   matricule: string
   dateEmbauche: Date | string
   clerkUserId: string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutEmployeInput
@@ -704,6 +859,7 @@ export type employeUpdateWithoutEmployeroleInput = {
   annonce?: Prisma.annonceUpdateManyWithoutEmployeNestedInput
   user?: Prisma.userUpdateOneRequiredWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUpdateManyWithoutEmployeNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutEmployesNestedInput
 }
 
 export type employeUncheckedUpdateWithoutEmployeroleInput = {
@@ -711,6 +867,7 @@ export type employeUncheckedUpdateWithoutEmployeroleInput = {
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutEmployeNestedInput
@@ -728,12 +885,14 @@ export type employeCreateWithoutUserInput = {
   annonce?: Prisma.annonceCreateNestedManyWithoutEmployeInput
   employedocument?: Prisma.employedocumentCreateNestedManyWithoutEmployeInput
   employerole?: Prisma.employeroleCreateNestedManyWithoutEmployeInput
+  ecole: Prisma.ecoleCreateNestedOneWithoutEmployesInput
 }
 
 export type employeUncheckedCreateWithoutUserInput = {
   id?: string
   matricule: string
   dateEmbauche: Date | string
+  ecoleId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutEmployeInput
@@ -768,18 +927,64 @@ export type employeUpdateWithoutUserInput = {
   annonce?: Prisma.annonceUpdateManyWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUpdateManyWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUpdateManyWithoutEmployeNestedInput
+  ecole?: Prisma.ecoleUpdateOneRequiredWithoutEmployesNestedInput
 }
 
 export type employeUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   matricule?: Prisma.StringFieldUpdateOperationsInput | string
   dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutEmployeNestedInput
   annonce?: Prisma.annonceUncheckedUpdateManyWithoutEmployeNestedInput
   employedocument?: Prisma.employedocumentUncheckedUpdateManyWithoutEmployeNestedInput
   employerole?: Prisma.employeroleUncheckedUpdateManyWithoutEmployeNestedInput
+}
+
+export type employeCreateManyEcoleInput = {
+  id?: string
+  matricule: string
+  dateEmbauche: Date | string
+  clerkUserId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type employeUpdateWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutEmployeNestedInput
+  annonce?: Prisma.annonceUpdateManyWithoutEmployeNestedInput
+  user?: Prisma.userUpdateOneRequiredWithoutEmployeNestedInput
+  employedocument?: Prisma.employedocumentUpdateManyWithoutEmployeNestedInput
+  employerole?: Prisma.employeroleUpdateManyWithoutEmployeNestedInput
+}
+
+export type employeUncheckedUpdateWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutEmployeNestedInput
+  annonce?: Prisma.annonceUncheckedUpdateManyWithoutEmployeNestedInput
+  employedocument?: Prisma.employedocumentUncheckedUpdateManyWithoutEmployeNestedInput
+  employerole?: Prisma.employeroleUncheckedUpdateManyWithoutEmployeNestedInput
+}
+
+export type employeUncheckedUpdateManyWithoutEcoleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  matricule?: Prisma.StringFieldUpdateOperationsInput | string
+  dateEmbauche?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -845,6 +1050,7 @@ export type employeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   matricule?: boolean
   dateEmbauche?: boolean
   clerkUserId?: boolean
+  ecoleId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   affectationenseignant?: boolean | Prisma.employe$affectationenseignantArgs<ExtArgs>
@@ -852,6 +1058,7 @@ export type employeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   user?: boolean | Prisma.userDefaultArgs<ExtArgs>
   employedocument?: boolean | Prisma.employe$employedocumentArgs<ExtArgs>
   employerole?: boolean | Prisma.employe$employeroleArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.EmployeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["employe"]>
 
@@ -862,17 +1069,19 @@ export type employeSelectScalar = {
   matricule?: boolean
   dateEmbauche?: boolean
   clerkUserId?: boolean
+  ecoleId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type employeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "matricule" | "dateEmbauche" | "clerkUserId" | "createdAt" | "updatedAt", ExtArgs["result"]["employe"]>
+export type employeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "matricule" | "dateEmbauche" | "clerkUserId" | "ecoleId" | "createdAt" | "updatedAt", ExtArgs["result"]["employe"]>
 export type employeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   affectationenseignant?: boolean | Prisma.employe$affectationenseignantArgs<ExtArgs>
   annonce?: boolean | Prisma.employe$annonceArgs<ExtArgs>
   user?: boolean | Prisma.userDefaultArgs<ExtArgs>
   employedocument?: boolean | Prisma.employe$employedocumentArgs<ExtArgs>
   employerole?: boolean | Prisma.employe$employeroleArgs<ExtArgs>
+  ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.EmployeCountOutputTypeDefaultArgs<ExtArgs>
 }
 
@@ -884,12 +1093,14 @@ export type $employePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     user: Prisma.$userPayload<ExtArgs>
     employedocument: Prisma.$employedocumentPayload<ExtArgs>[]
     employerole: Prisma.$employerolePayload<ExtArgs>[]
+    ecole: Prisma.$ecolePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     matricule: string
     dateEmbauche: Date
     clerkUserId: string
+    ecoleId: string
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["employe"]>
@@ -1237,6 +1448,7 @@ export interface Prisma__employeClient<T, Null = never, ExtArgs extends runtime.
   user<T extends Prisma.userDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.userDefaultArgs<ExtArgs>>): Prisma.Prisma__userClient<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   employedocument<T extends Prisma.employe$employedocumentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.employe$employedocumentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$employedocumentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   employerole<T extends Prisma.employe$employeroleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.employe$employeroleArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$employerolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ecole<T extends Prisma.ecoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ecoleDefaultArgs<ExtArgs>>): Prisma.Prisma__ecoleClient<runtime.Types.Result.GetResult<Prisma.$ecolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1270,6 +1482,7 @@ export interface employeFieldRefs {
   readonly matricule: Prisma.FieldRef<"employe", 'String'>
   readonly dateEmbauche: Prisma.FieldRef<"employe", 'DateTime'>
   readonly clerkUserId: Prisma.FieldRef<"employe", 'String'>
+  readonly ecoleId: Prisma.FieldRef<"employe", 'String'>
   readonly createdAt: Prisma.FieldRef<"employe", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"employe", 'DateTime'>
 }

@@ -232,4 +232,25 @@ export class UsersService {
       },
     });
   }
+  // user.service.ts
+  async activateInvitedUser(email: string, realClerkUserId: string) {
+    // 1. Mise à jour de la table User
+    const updatedUser = await this.prisma.user.updateMany({
+      where: { email: email }, // On cherche par EMAIL car le clerkUserId en BDD est 'inv_...'
+      data: {
+        clerkUserId: realClerkUserId, // On remplace 'inv_...' par 'user_...'
+        statut: 'ACTIF', // Ajustez selon votre Enum Prisma (ex: StatutUser.ACTIF)
+      },
+    });
+
+    // 2. Mise à jour de la table Employe liée
+    await this.prisma.employe.updateMany({
+      where: { user: { email: email } },
+      data: {
+        clerkUserId: realClerkUserId,
+      },
+    });
+
+    return updatedUser;
+  }
 }
