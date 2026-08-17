@@ -234,12 +234,11 @@ export class ParentService {
           },
           select: {
             apprenantId: true,
-            lienParente: true,
+            lien: true,
             apprenant: {
               select: {
                 nom: true,
                 prenoms: true,
-                sexe: true,
                 dateNaissance: true,
                 matricule: true,
                 inscription: {

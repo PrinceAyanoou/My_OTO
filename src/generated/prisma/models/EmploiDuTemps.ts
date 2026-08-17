@@ -359,9 +359,9 @@ export type emploidutempsOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type EmploidutempsScalarRelationFilter = {
-  is?: Prisma.emploidutempsWhereInput
-  isNot?: Prisma.emploidutempsWhereInput
+export type EmploidutempsNullableScalarRelationFilter = {
+  is?: Prisma.emploidutempsWhereInput | null
+  isNot?: Prisma.emploidutempsWhereInput | null
 }
 
 export type emploidutempsOrderByRelevanceInput = {
@@ -457,10 +457,12 @@ export type emploidutempsCreateNestedOneWithoutClassscolaireInput = {
   connect?: Prisma.emploidutempsWhereUniqueInput
 }
 
-export type emploidutempsUpdateOneRequiredWithoutClassscolaireNestedInput = {
+export type emploidutempsUpdateOneWithoutClassscolaireNestedInput = {
   create?: Prisma.XOR<Prisma.emploidutempsCreateWithoutClassscolaireInput, Prisma.emploidutempsUncheckedCreateWithoutClassscolaireInput>
   connectOrCreate?: Prisma.emploidutempsCreateOrConnectWithoutClassscolaireInput
   upsert?: Prisma.emploidutempsUpsertWithoutClassscolaireInput
+  disconnect?: Prisma.emploidutempsWhereInput | boolean
+  delete?: Prisma.emploidutempsWhereInput | boolean
   connect?: Prisma.emploidutempsWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.emploidutempsUpdateToOneWithWhereWithoutClassscolaireInput, Prisma.emploidutempsUpdateWithoutClassscolaireInput>, Prisma.emploidutempsUncheckedUpdateWithoutClassscolaireInput>
 }

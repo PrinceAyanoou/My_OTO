@@ -176,12 +176,12 @@ model classscolaire {
   niveauScolaireId      String
   nom                   String
   capacite              Int
-  emploiDuTempsId       String                  @unique(map: "ClassScolaire_emploiDuTempsId_key")
+  emploiDuTempsId       String?                  @unique(map: "ClassScolaire_emploiDuTempsId_key")
   createdAt             DateTime                @default(now())
   updatedAt             DateTime                @default(now())
   affectationenseignant affectationenseignant[]
   classematirere        classematirere[]
-  emploidutemps         emploidutemps           @relation(fields: [emploiDuTempsId], references: [id], onDelete: Cascade, map: "ClassScolaire_emploiDuTempsId_fkey")
+  emploidutemps         emploidutemps?           @relation(fields: [emploiDuTempsId], references: [id], onDelete: Cascade, map: "ClassScolaire_emploiDuTempsId_fkey")
   niveauscolaire        niveauscolaire          @relation(fields: [niveauScolaireId], references: [id], onDelete: Cascade, map: "ClassScolaire_niveauScolaireId_fkey")
   inscription           inscription[]
   politiqueevaluation   politiqueevaluation?

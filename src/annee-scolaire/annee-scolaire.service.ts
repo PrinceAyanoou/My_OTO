@@ -115,7 +115,6 @@ export class AnneeScolaireService {
   }
 
   // Récupérer les détails d'une année scolaire par ID.
-
   async findOne(ecoleId: string, anneescolaireId: string) {
     const anneeScolaire = await this.prisma.anneescolaire.findFirst({
       where: { id: anneescolaireId, ecoleId: ecoleId },
