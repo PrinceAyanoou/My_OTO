@@ -1,57 +1,107 @@
+import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
 
-export const ApprenantSexeEnum = z.enum(['MASCULIN', 'FEMININ']);
-export const ApprenantParentLienEnum = z.enum(['PERE', 'MERE', 'TUTEUR']);
+/**
+ * ============================================================
+ * ENUMS
+ * ============================================================
+ */
 
-//dto pour créer un apprenant
+const SexeSchema = z.enum(['MASCULIN', 'FEMININ']);
+
+const TypeInscriptionSchema = z.enum([
+  'INSCRIPTION',
+  'REINSCRIPTION',
+  'TRANSFERT_EN_COURS_D_ANNEE',
+]);
+
 export const CreateApprenantSchema = z.object({
   nom: z
     .string()
-    .min(3, 'Le nom est requis')
-    .max(100, 'Le nom ne peut pas dépasser 100 caractères'),
+    .trim()
+    .min(3, 'Le nom est obligatoire.')
+    .max(100, 'Le nom ne doit pas dépasser 100 caractères.'),
+
   prenoms: z
     .string()
-    .min(3, 'Le prénom est requis')
-    .max(150, 'Le prénom ne peut pas dépasser 150 caractères'),
-  sexe: ApprenantSexeEnum,
-  dateNaissance: z.coerce.date({
-    message: 'Date de naissance invalide',
+    .trim()
+    .min(3, 'Les prénoms sont obligatoires.')
+    .max(150, 'Les prénoms ne doivent pas dépasser 150 caractères.'),
+
+  Sexe: SexeSchema,
+
+  dateNaissance: z.iso.date({
+    error: 'La date de naissance doit être au format YYYY-MM-DD.',
   }),
 
-  // Optionnel : Créer et associer un compte utilisateur
-  createUserAccount: z.boolean().default(false).optional(),
-  email: z.email("Format d'email invalide").toLowerCase().optional(),
-  telephone: z.string().optional(),
+  matricule: z
+    .string()
+    .trim()
+    .min(1, 'Le matricule est obligatoire.')
+    .max(50, 'Le matricule ne doit pas dépasser 50 caractères.'),
 
-  // Optionnel : Association initiale de parents existants
-  parents: z
-    .array(
-      z.object({
-        parentId: z.string().uuid("L'ID du parent doit être un UUID valide"),
-        lien: ApprenantParentLienEnum,
-      }),
-    )
+  email: z
+    .email({
+      error: "L'adresse email est invalide.",
+    })
+    .optional(),
+
+  anneeScolaireId: z.uuid('L’identifiant de l’année scolaire est invalide.'),
+
+  classeScolaireId: z.uuid('L’identifiant de la classe scolaire est invalide.'),
+
+  configuartionScolariteId: z.uuid(
+    'L’identifiant de la configuration scolaire est invalide.',
+  ),
+  telephone: z
+    .string()
+    .min(10, 'Le numéro de téléphone doit contenir au moins 10 chiffres'),
+
+  type: TypeInscriptionSchema,
+});
+
+export class CreateApprenantDto extends createZodDto(CreateApprenantSchema) {}
+
+export const UpdateApprenantSchema = z.object({
+  nom: z.string().trim().min(1).max(100).optional(),
+
+  prenoms: z.string().trim().min(1).max(150).optional(),
+
+  Sexe: SexeSchema.optional(),
+
+  dateNaissance: z.iso
+    .date({
+      error: 'La date doit être au format YYYY-MM-DD.',
+    })
+    .optional(),
+
+  matricule: z.string().trim().min(1).max(50).optional(),
+
+  email: z
+    .email({
+      error: "L'adresse email est invalide.",
+    })
     .optional(),
 });
 
-//dto pour mettre à jour les informations d'un apprenant.
-export const UpdateApprenantSchema = z.object({
-  nom: z.string().min(2).max(100).optional(),
-  prenoms: z.string().min(2).max(150).optional(),
-  sexe: ApprenantSexeEnum.optional(),
-  dateNaissance: z.coerce.date().optional(),
-});
+export class UpdateApprenantDto extends createZodDto(UpdateApprenantSchema) {}
 
-//dto pour filtrer et paginer les apprenants
 export const QueryApprenantSchema = z.object({
-  page: z.coerce.number().int().positive().default(1),
-  limit: z.coerce.number().int().positive().max(100).default(10),
-  search: z.string().optional(),
-  sexe: ApprenantSexeEnum.optional(),
-  classeId: z.string().uuid().optional(),
-  anneeScolaireId: z.string().uuid().optional(),
+  page: z.coerce.number().int().min(1).default(1),
+
+  limit: z.coerce.number().int().min(1).max(100).default(20),
+
+  search: z.string().trim().min(1).optional(),
+
+  matricule: z.string().trim().optional(),
+
+  sexe: SexeSchema.optional(),
+
+  anneeScolaireId: z.uuid().optional(),
+
+  classeScolaireId: z.uuid().optional(),
+
+  userId: z.uuid().optional(),
 });
 
-export type CreateApprenantDto = z.infer<typeof CreateApprenantSchema>;
-export type UpdateApprenantDto = z.infer<typeof UpdateApprenantSchema>;
-export type QueryApprenantDto = z.infer<typeof QueryApprenantSchema>;
+export class QueryApprenantDto extends createZodDto(QueryApprenantSchema) {}

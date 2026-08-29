@@ -1,319 +1,545 @@
-// import {
-//   Injectable,
-//   NotFoundException,
-//   ConflictException,
-//   InternalServerErrorException,
-//   BadRequestException,
-// } from '@nestjs/common';
-// import { createClerkClient, User as ClerkUser } from '@clerk/backend';
-// import { PrismaService } from '../prisma/prisma.service';
-// import * as crypto from 'crypto';
-// import {
-//   CreateApprenantDto,
-//   UpdateApprenantDto,
-//   QueryApprenantDto,
-// } from './dto/apprenant.dto';
-// import { Prisma } from '../generated/prisma';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 
-// @Injectable()
-// export class ApprenantService {
-//   private clerkClient = createClerkClient({
-//     secretKey: process.env.CLERK_SECRET_KEY,
-//   });
+import { createClerkClient, Invitation } from '@clerk/backend';
 
-//   constructor(private readonly prisma: PrismaService) {}
+import { PrismaService } from '../prisma/prisma.service';
 
-//   //Génère un matricule unique (ex: APP-2026-A1B2C3)
-//   private generateMatricule(): string {
-//     const year = new Date().getFullYear();
-//     const randomHex = crypto.randomBytes(3).toString('hex').toUpperCase();
-//     return `APP-${year}-${randomHex}`;
-//   }
+import {
+  CreateApprenantDto,
+  UpdateApprenantDto,
+  QueryApprenantDto,
+} from './dto/apprenant.dto';
 
-//   //Création d'un apprenant (+ compte User/Clerk optionnel + liaisons parents)
-//   async create(dto: CreateApprenantDto) {
-//     let clerkUser: ClerkUser | null = null;
-//     let userId: string | undefined = undefined;
+import { Prisma, user_statut } from 'src/generated/prisma/client';
 
-//     // Gestion de la création du compte utilisateur si demandée
-//     if (dto.createUserAccount) {
-//       if (!dto.email || !dto.telephone) {
-//         throw new BadRequestException(
-//           "L'email et le téléphone sont requis pour créer un compte utilisateur.",
-//         );
-//       }
+@Injectable()
+export class ApprenantService {
+  private readonly clerkClient = createClerkClient({
+    secretKey: process.env.CLERK_SECRET_KEY,
+  });
 
-//       const existingUser = await this.prisma.user.findUnique({
-//         where: { email: dto.email },
-//       });
-//       if (existingUser) {
-//         throw new ConflictException(
-//           `Un utilisateur avec l'email ${dto.email} existe déjà.`,
-//         );
-//       }
+  constructor(private readonly prisma: PrismaService) {}
 
-//       const tempPassword = `P@ss-${crypto.randomBytes(4).toString('hex')}-${Math.floor(1000 + Math.random() * 9000)}`;
+  //créer un apprenant avec son compte user si l'email est fourni
+  async create(dto: CreateApprenantDto, ecoleId: string) {
+    //vérifier l'existe de l'école.
+    const ecole = await this.prisma.ecole.findUnique({
+      where: {
+        id: ecoleId,
+      },
+    });
 
-//       try {
-//         clerkUser = await this.clerkClient.users.createUser({
-//           emailAddress: [dto.email],
-//           firstName: dto.prenoms,
-//           lastName: dto.nom,
-//           password: tempPassword,
-//           skipPasswordRequirement: false,
-//         });
-//       } catch (error) {
-//         throw new InternalServerErrorException(
-//           `Erreur lors de la création du compte Clerk: ${error}`,
-//         );
-//       }
-//     }
+    if (!ecole) {
+      throw new NotFoundException(`L'école '${ecoleId}' n'existe pas.`);
+    }
 
-//     try {
-//       // 2. Générer un matricule unique non existant en base
-//       let matricule = this.generateMatricule();
-//       let exists = await this.prisma.apprenant.findUnique({
-//         where: { matricule },
-//       });
-//       while (exists) {
-//         matricule = this.generateMatricule();
-//         exists = await this.prisma.apprenant.findUnique({
-//           where: { matricule },
-//         });
-//       }
+    //vérifier l'existence de l'année scolaire.
+    const anneeScolaire = await this.prisma.anneescolaire.findFirst({
+      where: {
+        id: dto.anneeScolaireId,
+        ecoleId,
+      },
+    });
 
-//       // 3. Transaction Prisma : User (si besoin) + Apprenant + Liaisons Parents
-//       const result = await this.prisma.$transaction(async (tx) => {
-//         if (clerkUser && dto.email && dto.telephone) {
-//           const user = await tx.user.create({
-//             data: {
-//               clerkUserId: clerkUser.id,
-//               nom: dto.nom,
-//               prenoms: dto.prenoms,
-//               email: dto.email,
-//               telephone: dto.telephone,
-//               statut: 'DOIT_MODIFIER_MDP',
-//             },
-//           });
-//           userId = user.id;
-//         }
+    if (!anneeScolaire) {
+      throw new NotFoundException(
+        `L'année scolaire '${dto.anneeScolaireId}' n'existe pas dans cette école.`,
+      );
+    }
 
-//         const apprenant = await tx.apprenant.create({
-//           data: {
-//             matricule,
-//             nom: dto.nom,
-//             prenoms: dto.prenoms,
-//             Sexe: dto.sexe,
-//             dateNaissance: dto.dateNaissance,
-//             userId,
-//             apprenantparent: dto.parents?.length
-//               ? {
-//                   create: dto.parents.map((p) => ({
-//                     parentId: p.parentId,
-//                     lien: p.lien,
-//                   })),
-//                 }
-//               : undefined,
-//           },
-//           include: {
-//             user: true,
-//             apprenantparent: {
-//               include: {
-//                 parent: {
-//                   include: { user: true },
-//                 },
-//               },
-//             },
-//           },
-//         });
+    //vérifier l'existence de la classe scolaire.
+    const classe = await this.prisma.classscolaire.findUnique({
+      where: {
+        id: dto.classeScolaireId,
+      },
+      include: {
+        niveauscolaire: true,
+      },
+    });
 
-//         return apprenant;
-//       });
+    if (!classe) {
+      throw new NotFoundException(
+        `La classe '${dto.classeScolaireId}' n'existe pas.`,
+      );
+    }
 
-//       return result;
-//     } catch (error) {
-//       // Rollback du compte Clerk si la transaction Prisma échoue
-//       if (clerkUser) {
-//         await this.clerkClient.users.deleteUser(clerkUser.id);
-//       }
-//       throw error;
-//     }
-//   }
+    if (classe.niveauscolaire.ecoleId !== ecoleId) {
+      throw new BadRequestException(
+        `Cette classe n'appartient pas à cette école.`,
+      );
+    }
 
-//   /**
-//    * Recherche paginée des apprenants avec filtres
-//    */
-//   async findAll(query: QueryApprenantDto) {
-//     const { page, limit, search, sexe, classeId, anneeScolaireId } = query;
-//     const skip = (page - 1) * limit;
+    //vérifier l'existence de la configuration scolaire.
+    const configuration = await this.prisma.configurationscolarite.findFirst({
+      where: {
+        id: dto.configuartionScolariteId,
+        ecoleId,
+        anneeScolaireId: dto.anneeScolaireId,
+        niveauScolaireId: classe.niveauScolaireId,
+      },
+    });
 
-//     const whereConditions: Prisma.ApprenantWhereInput[] = [];
+    if (!configuration) {
+      throw new BadRequestException(
+        `La configuration scolaire ne correspond pas à l'école, à l'année ou au niveau de la classe.`,
+      );
+    }
 
-//     if (sexe) {
-//       whereConditions.push({ Sexe: sexe });
-//     }
+    //vérifier le matricule.
+    const existingMatricule = await this.prisma.apprenant.findUnique({
+      where: {
+        matricule: dto.matricule,
+      },
+    });
 
-//     if (search) {
-//       whereConditions.push({
-//         OR: [
-//           { nom: { contains: search } },
-//           { prenoms: { contains: search } },
-//           { matricule: { contains: search } },
-//         ],
-//       });
-//     }
+    if (existingMatricule) {
+      throw new ConflictException(
+        `Le matricule '${dto.matricule}' est déjà utilisé.`,
+      );
+    }
 
-//     if (classeId || anneeScolaireId) {
-//       whereConditions.push({
-//         inscriptions: {
-//           some: {
-//             ...(classeId && { classeScolaireId: classeId }),
-//             ...(anneeScolaireId && { anneeScolaireId }),
-//           },
-//         },
-//       });
-//     }
+    //vérifier si l'email a été renseigné et s'il n'existe pas déjà à cette école.
+    if (dto.email) {
+      const existingUser = await this.prisma.user.findUnique({
+        where: {
+          email: dto.email,
+        },
+        include: {
+          ecole: true,
+          apprenant: true,
+          employe: true,
+          parent: true,
+        },
+      });
 
-//     const where: Prisma.ApprenantWhereInput =
-//       whereConditions.length > 0 ? { AND: whereConditions } : {};
+      if (existingUser) {
+        const appartientEcole = existingUser.ecole.some(
+          (ecoleUser) => ecoleUser.id === ecoleId,
+        );
 
-//     const [total, data] = await Promise.all([
-//       this.prisma.apprenant.count({ where }),
-//       this.prisma.apprenant.findMany({
-//         where,
-//         skip,
-//         take: limit,
-//         include: {
-//           user: true,
-//           apprenantparent: {
-//             include: {
-//               parent: {
-//                 include: { user: true },
-//               },
-//             },
-//           },
-//           inscription: {
-//             include: {
-//               classscolaire: true,
-//               anneescolaire: true,
-//             },
-//           },
-//         },
-//         orderBy: { createdAt: 'desc' },
-//       }),
-//     ]);
+        if (appartientEcole) {
+          throw new ConflictException(
+            `L'utilisateur avec l'email '${dto.email}' appartient déjà à cette école.`,
+          );
+        }
+      }
+    }
+    let invitation: Invitation | null = null;
 
-//     return {
-//       data,
-//       meta: {
-//         total,
-//         page,
-//         limit,
-//         totalPages: Math.ceil(total / limit),
-//       },
-//     };
-//   }
+    //invitations clerk.
+    if (dto.email) {
+      try {
+        invitation = await this.clerkClient.invitations.createInvitation({
+          emailAddress: dto.email,
+          redirectUrl: 'http://localhost:3001/sign-up',
+          publicMetadata: {
+            nom: dto.nom,
+            prenoms: dto.prenoms,
+          },
+        });
+      } catch (error) {
+        throw new InternalServerErrorException(
+          `Impossible d'envoyer l'invitation Clerk: ${
+            error instanceof Error ? error.message : String(error)
+          }`,
+        );
+      }
+    }
 
-//   /**
-//    * Récupération d'un apprenant par son ID
-//    */
-//   async findOne(id: string) {
-//     const apprenant = await this.prisma.apprenant.findUnique({
-//       where: { id },
-//       include: {
-//         user: true,
-//         apprenantparent: {
-//           include: {
-//             parent: {
-//               include: { user: true },
-//             },
-//           },
-//         },
-//         inscription: {
-//           include: {
-//             classscolaire: true,
-//             anneescolaire: true,
-//             dossierscolarite: true,
-//           },
-//         },
-//       },
-//     });
+    //on essaye de créer l'apprenant en bd et on l'inscrit par la même occasion.
+    try {
+      const result = await this.prisma.$transaction(async (tx) => {
+        const createdUser =
+          dto.email && invitation
+            ? await tx.user.create({
+                data: {
+                  clerkUserId: invitation.id,
+                  nom: dto.nom,
+                  prenoms: dto.prenoms,
+                  email: dto.email,
+                  telephone: dto.telephone,
+                  statut: user_statut.DOIT_MODIFIER_MDP,
+                },
+              })
+            : null;
+        const apprenant = await tx.apprenant.create({
+          data: {
+            userId: createdUser?.id,
+            matricule: dto.matricule,
+            nom: dto.nom,
+            prenoms: dto.prenoms,
+            Sexe: dto.Sexe,
+            dateNaissance: new Date(dto.dateNaissance),
+          },
+        });
 
-//     if (!apprenant) {
-//       throw new NotFoundException(`Apprenant avec l'ID '${id}' introuvable.`);
-//     }
+        const inscription = await tx.inscription.create({
+          data: {
+            apprenantId: apprenant.id,
 
-//     return apprenant;
-//   }
+            matricule: dto.matricule,
 
-//   /**
-//    * Récupération d'un apprenant par son matricule
-//    */
-//   async findByMatricule(matricule: string) {
-//     const apprenant = await this.prisma.apprenant.findUnique({
-//       where: { matricule },
-//       include: {
-//         user: true,
-//         apprenantparent: {
-//           include: {
-//             parent: {
-//               include: { user: true },
-//             },
-//           },
-//         },
-//         inscription: {
-//           include: {
-//             classscolaire: true,
-//             anneescolaire: true,
-//           },
-//         },
-//       },
-//     });
+            anneeScolaireId: dto.anneeScolaireId,
 
-//     if (!apprenant) {
-//       throw new NotFoundException(
-//         `Apprenant avec le matricule '${matricule}' introuvable.`,
-//       );
-//     }
+            classeScolaireId: dto.classeScolaireId,
 
-//     return apprenant;
-//   }
+            configuartionScolariteId: dto.configuartionScolariteId,
 
-//   /**
-//    * Mise à jour des informations de l'apprenant
-//    */
-//   async update(id: string, dto: UpdateApprenantDto) {
-//     await this.findOne(id);
+            type: dto.type,
+          },
+        });
 
-//     return this.prisma.apprenant.update({
-//       where: { id },
-//       data: {
-//         ...(dto.nom && { nom: dto.nom }),
-//         ...(dto.prenoms && { prenoms: dto.prenoms }),
-//         ...(dto.sexe && { Sexe: dto.sexe }),
-//         ...(dto.dateNaissance && { dateNaissance: dto.dateNaissance }),
-//       },
-//       include: {
-//         user: true,
-//         apprenantparent: {
-//           include: {
-//             parent: {
-//               include: { user: true },
-//             },
-//           },
-//         },
-//       },
-//     });
-//   }
+        return {
+          createdUser,
+          apprenant,
+          inscription,
+        };
+      });
 
-//   /**
-//    * Suppression d'un apprenant
-//    */
-//   async remove(id: string) {
-//     const apprenant = await this.findOne(id);
+      return {
+        message: dto.email
+          ? 'Apprenant créé et invitation envoyée.'
+          : 'Apprenant créé et inscrit.',
 
-//     return this.prisma.apprenant.delete({
-//       where: { id: apprenant.id },
-//     });
-//   }
-// }
+        apprenant: result.apprenant,
+        inscription: result.inscription,
+        user: result.createdUser,
+
+        invitationEnvoyee: Boolean(invitation),
+
+        invitationId: invitation?.id ?? null,
+      };
+    } catch (error) {
+      if (invitation?.id) {
+        try {
+          await this.clerkClient.invitations.revokeInvitation(invitation.id);
+        } catch (revokeError) {
+          console.error('Erreur lors de la révocation Clerk:', revokeError);
+        }
+      }
+      throw error;
+    }
+  }
+
+  //Lister les apprenant pour une école.
+  async findAll(query: QueryApprenantDto, ecoleId: string) {
+    const {
+      page,
+      limit,
+      search,
+      matricule,
+      sexe,
+      anneeScolaireId,
+      classeScolaireId,
+      userId,
+    } = query;
+
+    const skip = (page - 1) * limit;
+
+    const conditions: Prisma.apprenantWhereInput[] = [];
+
+    if (search) {
+      conditions.push({
+        OR: [
+          {
+            matricule: {
+              contains: search,
+            },
+          },
+          {
+            nom: {
+              contains: search,
+            },
+          },
+          {
+            prenoms: {
+              contains: search,
+            },
+          },
+          {
+            user: {
+              email: {
+                contains: search,
+              },
+            },
+          },
+        ],
+      });
+    }
+
+    if (matricule) {
+      conditions.push({
+        matricule: {
+          contains: matricule,
+        },
+      });
+    }
+
+    if (sexe) {
+      conditions.push({
+        Sexe: sexe,
+      });
+    }
+
+    if (userId) {
+      conditions.push({
+        userId,
+      });
+    }
+
+    if (anneeScolaireId || classeScolaireId) {
+      conditions.push({
+        inscription: {
+          some: {
+            ...(anneeScolaireId ? { anneeScolaireId } : {}),
+
+            ...(classeScolaireId ? { classeScolaireId } : {}),
+
+            anneescolaire: {
+              ecoleId,
+            },
+          },
+        },
+      });
+    } else {
+      conditions.push({
+        inscription: {
+          some: {
+            anneescolaire: {
+              ecoleId: ecoleId,
+            },
+          },
+        },
+      });
+    }
+
+    const where: Prisma.apprenantWhereInput = conditions.length
+      ? {
+          AND: conditions,
+        }
+      : {};
+
+    const [total, data] = await Promise.all([
+      this.prisma.apprenant.count({
+        where,
+      }),
+
+      this.prisma.apprenant.findMany({
+        where,
+
+        skip,
+        take: limit,
+
+        include: {
+          user: true,
+
+          apprenantparent: {
+            include: {
+              parent: {
+                include: {
+                  user: true,
+                },
+              },
+            },
+          },
+
+          inscription: {
+            where: {
+              anneescolaire: {
+                ecoleId,
+              },
+            },
+
+            include: {
+              anneescolaire: true,
+              classscolaire: true,
+              configurationscolarite: true,
+            },
+
+            orderBy: {
+              dateInscription: 'desc',
+            },
+          },
+        },
+
+        orderBy: {
+          createdAt: 'desc',
+        },
+      }),
+    ]);
+
+    return {
+      data,
+
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  }
+
+  //Trouver un apprenant dans une école.
+  async findOne(apprenantId: string, ecoleId: string) {
+    const apprenant = await this.prisma.apprenant.findFirst({
+      where: {
+        id: apprenantId,
+        inscription: {
+          some: {
+            anneescolaire: {
+              ecoleId: ecoleId,
+            },
+          },
+        },
+      },
+      include: {
+        user: true,
+        apprenantparent: {
+          include: {
+            parent: {
+              include: {
+                user: true,
+              },
+            },
+          },
+        },
+        inscription: {
+          where: {
+            anneescolaire: {
+              ecoleId,
+            },
+          },
+          include: {
+            anneescolaire: true,
+            classscolaire: true,
+            configurationscolarite: true,
+
+            absence: true,
+            bulletin: true,
+            decisionfinannee: true,
+            dossierscolarite: {
+              include: {
+                paiement: true,
+              },
+            },
+          },
+          orderBy: {
+            dateInscription: 'desc',
+          },
+        },
+      },
+    });
+
+    if (!apprenant) {
+      throw new NotFoundException(
+        `L'apprenant '${apprenantId}' est introuvable dans cette école.`,
+      );
+    }
+    return apprenant;
+  }
+
+  //Mettre à jour les informations d'un apprenant.
+  async update(apprenantId: string, dto: UpdateApprenantDto, ecoleId: string) {
+    await this.findOne(apprenantId, ecoleId);
+
+    //vérifier le matricule.
+    if (dto.matricule) {
+      const existing = await this.prisma.apprenant.findFirst({
+        where: {
+          matricule: dto.matricule,
+
+          NOT: {
+            id: apprenantId,
+          },
+        },
+      });
+
+      if (existing) {
+        throw new ConflictException(
+          `Le matricule '${dto.matricule}' est déjà utilisé.`,
+        );
+      }
+    }
+    //vérifier l'email.
+    if (dto.email) {
+      const user = await this.prisma.user.findUnique({
+        where: {
+          email: dto.email,
+        },
+      });
+
+      if (
+        user &&
+        user.id !==
+          (
+            await this.prisma.apprenant.findUnique({
+              where: {
+                id: apprenantId,
+              },
+              select: {
+                userId: true,
+              },
+            })
+          )?.userId
+      ) {
+        throw new ConflictException(`L'email '${dto.email}' est déjà utilisé.`);
+      }
+    }
+
+    return this.prisma.apprenant.update({
+      where: {
+        id: apprenantId,
+      },
+
+      data: {
+        ...(dto.nom !== undefined ? { nom: dto.nom } : {}),
+
+        ...(dto.prenoms !== undefined ? { prenoms: dto.prenoms } : {}),
+
+        ...(dto.Sexe !== undefined
+          ? {
+              Sexe: dto.Sexe,
+            }
+          : {}),
+
+        ...(dto.dateNaissance !== undefined
+          ? {
+              dateNaissance: new Date(dto.dateNaissance),
+            }
+          : {}),
+
+        ...(dto.matricule !== undefined
+          ? {
+              matricule: dto.matricule,
+            }
+          : {}),
+      },
+      include: {
+        user: true,
+        apprenantparent: {
+          include: {
+            parent: true,
+          },
+        },
+      },
+    });
+  }
+
+  //supprimer un apprenant d'une école.
+  async remove(apprenantId: string, ecoleId: string) {
+    const apprenant = await this.findOne(apprenantId, ecoleId);
+
+    return this.prisma.apprenant.delete({
+      where: {
+        id: apprenant.id,
+      },
+    });
+  }
+}
