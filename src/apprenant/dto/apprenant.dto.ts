@@ -1,12 +1,6 @@
 import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
 
-/**
- * ============================================================
- * ENUMS
- * ============================================================
- */
-
 const SexeSchema = z.enum(['MASCULIN', 'FEMININ']);
 
 const TypeInscriptionSchema = z.enum([
