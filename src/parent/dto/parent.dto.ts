@@ -38,12 +38,6 @@ export const UpdateParentSchema = z.object({
   profession: z.string().min(2).optional(),
 });
 
-//Liaison d'un enfant (Apprenant) à un Parent
-export const LinkApprenantSchema = z.object({
-  apprenantId: z.string().uuid("L'ID de l'apprenant doit être un UUID valide"),
-  lien: ApprenantParentLienEnum,
-});
-
 //Filtres et Pagination pour la recherche des parents
 export const QueryParentSchema = z.object({
   page: z.coerce.number().int().positive().default(1),
@@ -55,5 +49,4 @@ export class CreateParentWithUserDto extends createZodDto(
   CreateParentWithUserSchema,
 ) {}
 export class UpdateParentDto extends createZodDto(UpdateParentSchema) {}
-export class LinkApprenantDto extends createZodDto(LinkApprenantSchema) {}
 export class QueryParentDto extends createZodDto(QueryParentSchema) {}

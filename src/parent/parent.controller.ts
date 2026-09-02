@@ -16,7 +16,6 @@ import { ParentService } from './parent.service';
 import {
   CreateParentWithUserDto,
   UpdateParentDto,
-  LinkApprenantDto,
   QueryParentDto,
 } from './dto/parent.dto';
 
@@ -25,7 +24,6 @@ import {
 export class ParentController {
   constructor(private readonly parentService: ParentService) {}
 
-  //créer un parent avec son compte user en l'invitant par mail via clerk.
   @Post()
   @ApiOperation({
     summary:
@@ -51,13 +49,12 @@ export class ParentController {
     description: 'Données transmises invalides.',
   })
   async create(
-    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) _ecoleId: string,
     @Body() createParentWithUserDto: CreateParentWithUserDto,
   ) {
     return this.parentService.createParentWithUser(createParentWithUserDto);
   }
 
-  //
   @Get()
   @ApiOperation({
     summary: 'Lister les parents avec recherche textuelle et pagination',
@@ -103,6 +100,35 @@ export class ParentController {
     description: 'Parent non trouvé ou sans enfants inscrits dans cette école.',
   })
   async findOne(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('parentId', ParseUUIDPipe) parentId: string,
+  ) {
+    return this.parentService.findOne(parentId, ecoleId);
+  }
+
+  @Get(':parentId/enfants')
+  @ApiOperation({
+    summary: 'Récupérer les enfants d’un parent triés par école',
+  })
+  @ApiParam({
+    name: 'ecoleId',
+    description: "ID de l'école (UUID)",
+    type: String,
+  })
+  @ApiParam({
+    name: 'parentId',
+    description: 'ID du parent (UUID)',
+    type: String,
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Liste des enfants du parent pour cette école.',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Parent introuvable.',
+  })
+  async findChildrenOfParentBySchool(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('parentId', ParseUUIDPipe) parentId: string,
   ) {
@@ -163,72 +189,5 @@ export class ParentController {
     @Param('parentId', ParseUUIDPipe) parentId: string,
   ) {
     return this.parentService.remove(parentId, ecoleId);
-  }
-
-  @Post(':parentId/apprenants')
-  @ApiOperation({ summary: 'Lier un enfant (apprenant) à un parent' })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID de l'école (UUID)",
-    type: String,
-  })
-  @ApiParam({
-    name: 'parentId',
-    description: 'ID du parent (UUID)',
-    type: String,
-  })
-  @ApiResponse({
-    status: HttpStatus.CREATED,
-    description: 'Liaison parent-apprenant créée avec succès.',
-  })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: 'Parent ou apprenant introuvable.',
-  })
-  @ApiResponse({
-    status: HttpStatus.CONFLICT,
-    description: 'Cet apprenant est déjà lié à ce parent.',
-  })
-  async linkApprenant(
-    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
-    @Param('parentId', ParseUUIDPipe) parentId: string,
-    @Body() linkDto: LinkApprenantDto,
-  ) {
-    return this.parentService.linkApprenant(parentId, linkDto, ecoleId);
-  }
-
-  @Delete(':parentId/apprenants/:apprenantId')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: 'Délier un enfant (apprenant) d’un parent' })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID de l'école (UUID)",
-    type: String,
-  })
-  @ApiParam({
-    name: 'parentId',
-    description: 'ID du parent (UUID)',
-    type: String,
-  })
-  @ApiParam({
-    name: 'apprenantId',
-    description: "ID de l'apprenant à délier (UUID)",
-    type: String,
-  })
-  @ApiResponse({
-    status: HttpStatus.OK,
-    description: 'Liaison parent-apprenant supprimée avec succès.',
-  })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description:
-      'Liaison inexistante ou apprenant introuvable dans cette école.',
-  })
-  async unlinkApprenant(
-    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
-    @Param('parentId', ParseUUIDPipe) parentId: string,
-    @Param('apprenantId', ParseUUIDPipe) apprenantId: string,
-  ) {
-    return this.parentService.unlinkApprenant(parentId, apprenantId, ecoleId);
   }
 }

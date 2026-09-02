@@ -9,7 +9,6 @@ import { PrismaService } from '../prisma/prisma.service';
 import {
   CreateParentWithUserDto,
   UpdateParentDto,
-  LinkApprenantDto,
   QueryParentDto,
 } from './dto/parent.dto';
 import { Prisma, user_statut } from 'src/generated/prisma/client';
@@ -42,7 +41,6 @@ export class ParentService {
         publicMetadata: {
           nom: dto.nom,
           prenoms: dto.prenoms,
-          role: 'PARENT',
         },
       });
     } catch (error: any) {
@@ -175,17 +173,48 @@ export class ParentService {
     };
   }
 
-  // Récupération d'un parent par son ID avec ses enfants et leurs inscriptions
-  async findOne(id: string) {
-    const parent = await this.prisma.parent.findUnique({
-      where: { id },
+  // Récupération d'un parent par son ID dans une école spécifique avec ses enfants inscrits dans cette école
+  async findOne(parentId: string, ecoleId: string) {
+    const parent = await this.prisma.parent.findFirst({
+      where: {
+        id: parentId,
+        apprenantparent: {
+          some: {
+            apprenant: {
+              inscription: {
+                some: {
+                  anneescolaire: {
+                    ecoleId: ecoleId,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       include: {
         user: true,
         apprenantparent: {
+          where: {
+            apprenant: {
+              inscription: {
+                some: {
+                  anneescolaire: {
+                    ecoleId: ecoleId,
+                  },
+                },
+              },
+            },
+          },
           include: {
             apprenant: {
               include: {
                 inscription: {
+                  where: {
+                    anneescolaire: {
+                      ecoleId: ecoleId,
+                    },
+                  },
                   include: {
                     classscolaire: true,
                     anneescolaire: true,
@@ -199,7 +228,9 @@ export class ParentService {
     });
 
     if (!parent) {
-      throw new NotFoundException(`Parent avec l'ID '${id}' introuvable.`);
+      throw new NotFoundException(
+        `Parent introuvable ou non associé à l'école spécifiée.`,
+      );
     }
 
     return parent;
@@ -307,98 +338,6 @@ export class ParentService {
 
     return this.prisma.parent.delete({
       where: { id: parent.id },
-    });
-  }
-
-  // Lier un enfant à un parent
-  async linkApprenant(
-    parentId: string,
-    dto: LinkApprenantDto,
-    ecoleId: string,
-  ) {
-    await this.findChildrenOfParentBySchool(parentId, ecoleId);
-
-    const apprenant = await this.prisma.apprenant.findUnique({
-      where: { id: dto.apprenantId },
-    });
-
-    if (!apprenant) {
-      throw new NotFoundException(
-        `Apprenant avec l'ID '${dto.apprenantId}' introuvable.`,
-      );
-    }
-
-    const existingLink = await this.prisma.apprenantparent.findUnique({
-      where: {
-        apprenantId_parentId: {
-          apprenantId: dto.apprenantId,
-          parentId,
-        },
-      },
-    });
-
-    if (existingLink) {
-      throw new ConflictException('Cet apprenant est déjà lié à ce parent.');
-    }
-
-    return this.prisma.apprenantparent.create({
-      data: {
-        parentId,
-        apprenantId: dto.apprenantId,
-        lien: dto.lien,
-      },
-      include: {
-        apprenant: true,
-        parent: {
-          include: { user: true },
-        },
-      },
-    });
-  }
-
-  // Supprimer une association parent-enfant
-  async unlinkApprenant(
-    parentId: string,
-    apprenantId: string,
-    ecoleId: string,
-  ) {
-    const link = await this.prisma.apprenantparent.findUnique({
-      where: {
-        apprenantId_parentId: {
-          apprenantId,
-          parentId,
-        },
-      },
-    });
-
-    const trueEcoleId = await this.prisma.inscription.findFirst({
-      where: {
-        apprenantId: apprenantId,
-        anneescolaire: {
-          ecoleId: ecoleId,
-        },
-      },
-    });
-
-    if (!link) {
-      throw new NotFoundException(
-        "La liaison entre ce parent et cet apprenant n'existe pas.",
-      );
-    }
-
-    if (!trueEcoleId) {
-      throw new NotFoundException(
-        "Nous ne trouvons pas l'apprenant en question dans cette école",
-      );
-    }
-
-    return this.prisma.apprenantparent.delete({
-      where: {
-        apprenantId_parentId: {
-          apprenantId,
-          parentId,
-        },
-      },
     });
   }
 }
