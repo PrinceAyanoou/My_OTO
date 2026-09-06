@@ -54,24 +54,26 @@ export class ApprenantService {
     }
 
     //vérifier l'existence de la classe scolaire.
-    const classe = await this.prisma.classscolaire.findUnique({
+    // Vérifier l'existence et la capacité de la nouvelle classe
+    const classe = await this.prisma.classscolaire.findFirst({
       where: {
         id: dto.classeScolaireId,
+        niveauscolaire: { ecoleId: ecoleId },
       },
       include: {
-        niveauscolaire: true,
+        _count: { select: { inscription: true } },
       },
     });
 
     if (!classe) {
       throw new NotFoundException(
-        `La classe '${dto.classeScolaireId}' n'existe pas.`,
+        "La classe de destination n'existe pas dans cette école.",
       );
     }
 
-    if (classe.niveauscolaire.ecoleId !== ecoleId) {
+    if (classe.capacite && classe._count.inscription >= classe.capacite) {
       throw new BadRequestException(
-        `Cette classe n'appartient pas à cette école.`,
+        "La classe de destination a atteint sa capacité maximale d'accueil.",
       );
     }
 
@@ -79,10 +81,10 @@ export class ApprenantService {
     const configuration = await this.prisma.configurationscolarite.findFirst({
       where: {
         id: dto.configuartionScolariteId,
-        ecoleId,
         anneeScolaireId: dto.anneeScolaireId,
-        niveauScolaireId: classe.niveauScolaireId,
+        ecoleId,
       },
+      include: { tranchescolarite: true },
     });
 
     if (!configuration) {
@@ -131,6 +133,11 @@ export class ApprenantService {
       }
     }
     let invitation: Invitation | null = null;
+
+    const totalMontant = configuration.tranchescolarite.reduce(
+      (sum, tranche) => sum + tranche.montant,
+      0,
+    );
 
     //invitations clerk.
     if (dto.email) {
@@ -195,7 +202,19 @@ export class ApprenantService {
           },
         });
 
+        const dossierScolairite = await tx.dossierscolarite.create({
+          data: {
+            montant: totalMontant,
+            resteAPayer: totalMontant,
+            statut: 'EN_RETARD',
+            inscriptionApprenantId: apprenant.id,
+            inscriptionAnneeId: dto.anneeScolaireId,
+            configurationScolariteId: dto.configuartionScolariteId,
+          },
+        });
+
         return {
+          dossierScolairite,
           createdUser,
           apprenant,
           inscription,
@@ -210,6 +229,7 @@ export class ApprenantService {
         apprenant: result.apprenant,
         inscription: result.inscription,
         user: result.createdUser,
+        scolarite: result.dossierScolairite,
 
         invitationEnvoyee: Boolean(invitation),
 
