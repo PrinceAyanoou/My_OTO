@@ -77,7 +77,7 @@ model annonce {
   id             String         @id @default(uuid())
   titre          String
   contenu        String
-  datePubication DateTime       @default(now())
+  datePublication DateTime       @default(now())
   dateExpiration DateTime
   ecoleId        String
   auteurId       String
@@ -101,7 +101,7 @@ model apprenant {
   dateNaissance   DateTime
   createdAt       DateTime          @default(now())
   updatedAt       DateTime          @default(now())
-  user            user?             @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Apprenant_userId_fkey")
+  user            user?             @relation(fields: [userId], references: [id], onDelete: SetNull, map: "Apprenant_userId_fkey")
   apprenantparent apprenantparent[]
   inscription     inscription[]
 
@@ -175,7 +175,7 @@ model classscolaire {
   id                    String                  @id @default(uuid())
   niveauScolaireId      String
   nom                   String
-  capacite              Int
+  capacite              Int?
   emploiDuTempsId       String?                  @unique(map: "ClassScolaire_emploiDuTempsId_key")
   createdAt             DateTime                @default(now())
   updatedAt             DateTime                @default(now())
@@ -293,6 +293,10 @@ model ecole {
   email                  String                   @unique(map: "Ecole_email_key")
   telephone              String
   description            String?
+  logoUrl                String?                  // Logo affiché sur l'en-tête
+  slogan                 String?                  // Ex: "Discipline - Travail - Succès"
+  adresse                String?                  // Adresse physique complète
+  ministereTutelle       String?                  @default("Ministère de l'Éducation Nationale") // En-tête officiel
   statut                 ecole_statut             @default(EN_ATTENTE)
   code                   String                   @unique(map: "Ecole_code_key")
   createdAt              DateTime                 @default(now())
@@ -686,10 +690,10 @@ model typeevaluation {
 }
 
 model uniteenseignement {
-  id             String           @id
+  id             String           @id @default(uuid())
   nom            String
   code           String           @unique(map: "UniteEnseignement_code_key")
-  coefficient    Int
+  coefficient    Int?
   createdAt      DateTime         @default(now())
   updatedAt      DateTime         @default(now())
   classematirere classematirere[]

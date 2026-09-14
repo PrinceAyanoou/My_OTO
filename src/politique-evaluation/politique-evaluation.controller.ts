@@ -1,34 +1,168 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Query,
+  ParseUUIDPipe,
+  HttpCode,
+  HttpStatus,
+} from '@nestjs/common';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+  ApiQuery,
+} from '@nestjs/swagger';
 import { PolitiqueEvaluationService } from './politique-evaluation.service';
-import { CreatePolitiqueEvaluationDto } from './dto/create-politique-evaluation.dto';
-import { UpdatePolitiqueEvaluationDto } from './dto/update-politique-evaluation.dto';
+import {
+  CreatePolitiqueEvaluationDto,
+  UpdatePolitiqueEvaluationDto,
+} from './dto/politique-evaluation.dto';
 
-@Controller('politique-evaluation')
+@ApiTags("Politiques d'Évaluation")
+@Controller('ecoles/:ecoleId/politiques-evaluation')
 export class PolitiqueEvaluationController {
-  constructor(private readonly politiqueEvaluationService: PolitiqueEvaluationService) {}
+  constructor(
+    private readonly politiqueEvaluationService: PolitiqueEvaluationService,
+  ) {}
 
   @Post()
-  create(@Body() createPolitiqueEvaluationDto: CreatePolitiqueEvaluationDto) {
-    return this.politiqueEvaluationService.create(createPolitiqueEvaluationDto);
+  @ApiOperation({ summary: "Créer une nouvelle politique d'évaluation" })
+  @ApiParam({
+    name: 'ecoleId',
+    description: 'UUID de l’école',
+  })
+  @ApiResponse({
+    status: HttpStatus.CREATED,
+    description: 'La politique d’évaluation a été créée avec succès.',
+  })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'Données de requête invalides.',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Année scolaire ou classe introuvable.',
+  })
+  @ApiResponse({
+    status: HttpStatus.CONFLICT,
+    description:
+      'Une politique porte déjà ce nom ou est déjà liée à cette classe.',
+  })
+  create(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Body() dto: CreatePolitiqueEvaluationDto,
+  ) {
+    return this.politiqueEvaluationService.create(dto, ecoleId);
   }
 
   @Get()
-  findAll() {
-    return this.politiqueEvaluationService.findAll();
+  @ApiOperation({
+    summary: "Lister toutes les politiques d'évaluation d'une école",
+  })
+  @ApiParam({
+    name: 'ecoleId',
+    description: 'UUID de l’école',
+  })
+  @ApiQuery({
+    name: 'anneeScolaireId',
+    required: false,
+    description: 'Filtrer par année scolaire',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Liste des politiques d’évaluation récupérée.',
+  })
+  findAll(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Query('anneeScolaireId') anneeScolaireId?: string,
+  ) {
+    return this.politiqueEvaluationService.findAll(ecoleId, anneeScolaireId);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.politiqueEvaluationService.findOne(+id);
+  @ApiOperation({ summary: "Récupérer une politique d'évaluation par son ID" })
+  @ApiParam({
+    name: 'ecoleId',
+    description: 'UUID de l’école',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'UUID de la politique d’évaluation',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Détails de la politique d’évaluation.',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Politique d’évaluation introuvable.',
+  })
+  findOne(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
+    return this.politiqueEvaluationService.findOne(id, ecoleId);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePolitiqueEvaluationDto: UpdatePolitiqueEvaluationDto) {
-    return this.politiqueEvaluationService.update(+id, updatePolitiqueEvaluationDto);
+  @ApiOperation({ summary: "Mettre à jour une politique d'évaluation" })
+  @ApiParam({
+    name: 'ecoleId',
+    description: 'UUID de l’école',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'UUID de la politique d’évaluation',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Politique d’évaluation mise à jour avec succès.',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Politique d’évaluation introuvable.',
+  })
+  @ApiResponse({
+    status: HttpStatus.CONFLICT,
+    description: 'Conflit sur le nom ou la classe sélectionnée.',
+  })
+  update(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() dto: UpdatePolitiqueEvaluationDto,
+  ) {
+    return this.politiqueEvaluationService.update(id, dto, ecoleId);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.politiqueEvaluationService.remove(+id);
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiOperation({ summary: "Supprimer une politique d'évaluation" })
+  @ApiParam({
+    name: 'ecoleId',
+    description: 'UUID de l’école',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'UUID de la politique d’évaluation',
+  })
+  @ApiResponse({
+    status: HttpStatus.NO_CONTENT,
+    description: 'Politique d’évaluation supprimée avec succès.',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Politique d’évaluation introuvable.',
+  })
+  remove(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
+    return this.politiqueEvaluationService.remove(id, ecoleId);
   }
 }

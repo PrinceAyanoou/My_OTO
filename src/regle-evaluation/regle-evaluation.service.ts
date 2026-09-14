@@ -1,26 +1,134 @@
-import { Injectable } from '@nestjs/common';
-import { CreateRegleEvaluationDto } from './dto/create-regle-evaluation.dto';
-import { UpdateRegleEvaluationDto } from './dto/update-regle-evaluation.dto';
+import {
+  Injectable,
+  NotFoundException,
+  ConflictException,
+  ForbiddenException,
+} from '@nestjs/common';
+import { PrismaService } from '../prisma/prisma.service';
+import {
+  CreateRegleEvaluationDto,
+  UpdateRegleEvaluationDto,
+} from './dto/regle-evaluation.dto';
 
 @Injectable()
 export class RegleEvaluationService {
-  create(createRegleEvaluationDto: CreateRegleEvaluationDto) {
-    return 'This action adds a new regleEvaluation';
+  constructor(private readonly prisma: PrismaService) {}
+
+  // Créer une règle d'évaluation
+  async create(dto: CreateRegleEvaluationDto, ecoleId: string) {
+    // Vérifier si la politique existe et appartient à l'école
+    const politique = await this.prisma.politiqueevaluation.findFirst({
+      where: { id: dto.politiqueId, ecoleId },
+    });
+
+    if (!politique) {
+      throw new NotFoundException(
+        "La politique d'évaluation est introuvable pour cette école.",
+      );
+    }
+
+    // Vérifier si le type d'évaluation existe et appartient à l'école
+    const typeEvaluation = await this.prisma.typeevaluation.findFirst({
+      where: { id: dto.typeEvaluationId, ecoleId },
+    });
+
+    if (!typeEvaluation) {
+      throw new NotFoundException(
+        "Le type d'évaluation est introuvable pour cette école.",
+      );
+    }
+
+    // Vérifier la contrainte d'unicité (politiqueId, typeEvaluationId)
+    const existingRegle = await this.prisma.regleevaluation.findUnique({
+      where: {
+        politiqueId_typeEvaluationId: {
+          politiqueId: dto.politiqueId,
+          typeEvaluationId: dto.typeEvaluationId,
+        },
+      },
+    });
+
+    if (existingRegle) {
+      throw new ConflictException(
+        "Une règle existe déjà pour ce type d'évaluation dans cette politique.",
+      );
+    }
+
+    return this.prisma.regleevaluation.create({
+      data: {
+        politiqueId: dto.politiqueId,
+        typeEvaluationId: dto.typeEvaluationId,
+        nombreMin: dto.nombreMin,
+        coefficientType: dto.coefficientType,
+      },
+      include: {
+        typeevaluation: true,
+      },
+    });
   }
 
-  findAll() {
-    return `This action returns all regleEvaluation`;
+  // Récupérer toutes les règles associées à une politique d'évaluation
+  async findByPolitique(politiqueId: string, ecoleId: string) {
+    const politique = await this.prisma.politiqueevaluation.findFirst({
+      where: { id: politiqueId, ecoleId },
+    });
+
+    if (!politique) {
+      throw new NotFoundException(
+        "La politique d'évaluation est introuvable pour cette école.",
+      );
+    }
+
+    return this.prisma.regleevaluation.findMany({
+      where: { politiqueId },
+      include: {
+        typeevaluation: true,
+      },
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} regleEvaluation`;
+  //Récupérer une règle par son ID
+  async findOne(id: string, ecoleId: string) {
+    const regle = await this.prisma.regleevaluation.findUnique({
+      where: { id },
+      include: {
+        politiqueevaluation: true,
+        typeevaluation: true,
+      },
+    });
+
+    if (!regle) {
+      throw new NotFoundException("La règle d'évaluation n'existe pas.");
+    }
+
+    if (regle.politiqueevaluation.ecoleId !== ecoleId) {
+      throw new ForbiddenException(
+        "Vous n'avez pas accès à cette règle d'évaluation.",
+      );
+    }
+
+    return regle;
   }
 
-  update(id: number, updateRegleEvaluationDto: UpdateRegleEvaluationDto) {
-    return `This action updates a #${id} regleEvaluation`;
+  //Mettre à jour les paramètres d'une règle
+  async update(id: string, dto: UpdateRegleEvaluationDto, ecoleId: string) {
+    await this.findOne(id, ecoleId);
+
+    return this.prisma.regleevaluation.update({
+      where: { id },
+      data: dto,
+      include: {
+        typeevaluation: true,
+      },
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} regleEvaluation`;
+  //Supprimer une règle d'évaluation
+  async remove(id: string, ecoleId: string) {
+    await this.findOne(id, ecoleId);
+
+    return this.prisma.regleevaluation.delete({
+      where: { id },
+    });
   }
 }
