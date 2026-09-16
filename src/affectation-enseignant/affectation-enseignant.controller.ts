@@ -11,8 +11,15 @@ import {
   HttpStatus,
   ParseUUIDPipe,
   UsePipes,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { AffectationEnseignantService } from './affectation-enseignant.service';
 import {
@@ -20,8 +27,17 @@ import {
   UpdateAffectationEnseignantDto,
   AffectationEnseignantQueryDto,
 } from './dto/affectation-enseignant.dto';
+import { ClerkAuthGuard } from 'src/auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from 'src/auth/guards/permissions.guard';
+import { CheckPolicies } from 'src/auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Affectations Enseignants')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/affectations-enseignants')
 export class AffectationEnseignantController {
@@ -31,6 +47,12 @@ export class AffectationEnseignantController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(
+      permission_action.CREATE,
+      permission_cible.affectationEnseignant,
+    ),
+  )
   @ApiOperation({
     summary: 'Créer une nouvelle affectation enseignant',
     description:
@@ -50,6 +72,14 @@ export class AffectationEnseignantController {
     description: "Données d'entrée invalides ou formats UUID incorrects.",
   })
   @ApiResponse({
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
     status: 404,
     description:
       "L'employé, la classe, la matière ou l'année scolaire est introuvable pour cette école.",
@@ -67,6 +97,9 @@ export class AffectationEnseignantController {
   }
 
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.affectationEnseignant),
+  )
   @ApiOperation({
     summary: "Lister les affectations d'enseignants",
     description:
@@ -82,8 +115,12 @@ export class AffectationEnseignantController {
     description: 'Liste des affectations récupérée avec succès.',
   })
   @ApiResponse({
-    status: 404,
-    description: "L'école spécifiée est introuvable.",
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants pour accéder à cette ressource.',
   })
   findAll(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
@@ -93,6 +130,9 @@ export class AffectationEnseignantController {
   }
 
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.affectationEnseignant),
+  )
   @ApiOperation({
     summary: "Récupérer les détails d'une affectation",
     description:
@@ -113,6 +153,14 @@ export class AffectationEnseignantController {
     description: "Détails de l'affectation récupérés avec succès.",
   })
   @ApiResponse({
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants pour accéder à cette ressource.',
+  })
+  @ApiResponse({
     status: 404,
     description: "L'affectation est introuvable pour cette école.",
   })
@@ -124,10 +172,16 @@ export class AffectationEnseignantController {
   }
 
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(
+      permission_action.UPDATE,
+      permission_cible.affectationEnseignant,
+    ),
+  )
   @ApiOperation({
     summary: 'Mettre à jour une affectation',
     description:
-      "Modifie partiellement les informations d'une affectation existante en vérifiant les contraintes d'unicité.",
+      "Modifies partiellement les informations d'une affectation existante en vérifiant les contraintes d'unicité et d'isolation de l'école.",
   })
   @ApiParam({
     name: 'ecoleId',
@@ -148,8 +202,17 @@ export class AffectationEnseignantController {
     description: 'Données de mise à jour invalides.',
   })
   @ApiResponse({
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants pour modifier cette ressource.',
+  })
+  @ApiResponse({
     status: 404,
-    description: "L'affectation est introuvable pour cette école.",
+    description:
+      "L'affectation ou l'une des entités modifiées est introuvable pour cette école.",
   })
   @ApiResponse({
     status: 409,
@@ -166,6 +229,12 @@ export class AffectationEnseignantController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(
+      permission_action.DELETE,
+      permission_cible.affectationEnseignant,
+    ),
+  )
   @ApiOperation({
     summary: 'Supprimer une affectation',
     description: "Supprime définitivement une affectation d'enseignant.",
@@ -183,6 +252,14 @@ export class AffectationEnseignantController {
   @ApiResponse({
     status: 200,
     description: "L'affectation a été supprimée avec succès.",
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants pour supprimer cette ressource.',
   })
   @ApiResponse({
     status: 404,
