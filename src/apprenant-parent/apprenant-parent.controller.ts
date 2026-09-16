@@ -7,20 +7,42 @@ import {
   HttpCode,
   HttpStatus,
   ParseUUIDPipe,
+  UseGuards,
+  UsePipes,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 import { ApprenantParentService } from './apprenant-parent.service';
 import { LinkApprenantDto } from './dto/apprenant-parent.dto';
+import { ClerkAuthGuard } from 'src/auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from 'src/auth/guards/permissions.guard';
+import { CheckPolicies } from 'src/auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('ApprenantParent')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/parents/:parentId/apprenants')
 export class ApprenantParentController {
   constructor(
     private readonly apprenantParentService: ApprenantParentService,
   ) {}
 
-  //Associer un apprenant à un parent
   @Post()
+  @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.parent),
+  )
   @ApiOperation({
     summary: 'Associer un apprenant à un parent',
     description:
@@ -45,6 +67,14 @@ export class ApprenantParentController {
     description: 'Données transmises invalides.',
   })
   @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
     status: HttpStatus.NOT_FOUND,
     description: 'Le parent ou l’apprenant est introuvable dans cette école.',
   })
@@ -64,9 +94,11 @@ export class ApprenantParentController {
     );
   }
 
-  //Supprimer la liaison entre un parent et un apprenant'
   @Delete(':apprenantId')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.parent),
+  )
   @ApiOperation({
     summary: 'Supprimer la liaison entre un parent et un apprenant',
     description:
@@ -90,6 +122,14 @@ export class ApprenantParentController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'La liaison a été supprimée avec succès.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
   })
   @ApiResponse({
     status: HttpStatus.NOT_FOUND,
