@@ -4,15 +4,13 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import PDFDocument from 'pdfkit';
-import { Response } from 'express';
 import { PrismaService } from '../prisma/prisma.service';
-
+import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
 import {
   CreateBulletinDto,
   GenerateBulletinPdfDto,
   UpdateBulletinDto,
 } from './dto/bulletin.dto';
-import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
 
 export interface ResultatBulletinEleve {
   apprenantId: string;
@@ -36,7 +34,7 @@ export class BulletinService {
     private readonly cloudinaryService: CloudinaryService,
   ) {}
 
-  //Créer un Bulletin
+  // CRÉER UN BULLETIN
   async create(dto: CreateBulletinDto) {
     const {
       inscriptionApprenantId,
@@ -46,7 +44,7 @@ export class BulletinService {
       decisionFinAnnee,
     } = dto;
 
-    //Vérifier que l'inscription existe.
+    //  Vérifier si l'inscription existe
     const inscription = await this.prisma.inscription.findUnique({
       where: {
         apprenantId_anneeScolaireId: {
@@ -58,23 +56,20 @@ export class BulletinService {
 
     if (!inscription) {
       throw new NotFoundException(
-        'L’inscription de cet apprenant pour cette année scolaire est introuvable.',
+        'Inscription introuvable pour cet apprenant et cette année scolaire.',
       );
     }
-    //vérifier l'existence de la période scolaire
+
+    // Vérifier si la période scolaire existe
     const periode = await this.prisma.periodescolaire.findUnique({
-      where: {
-        id: periodeScolaireId,
-      },
+      where: { id: periodeScolaireId },
     });
 
     if (!periode) {
-      throw new NotFoundException(
-        'La période scolaire demandée est introuvable.',
-      );
+      throw new NotFoundException('Période scolaire introuvable.');
     }
 
-    //vérifier l'existence ultérieure du bulletin
+    // Vérifier si le bulletin existe déjà pour cet apprenant et cette période
     const bulletinExistant = await this.prisma.bulletin.findUnique({
       where: {
         inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId: {
@@ -91,30 +86,33 @@ export class BulletinService {
       );
     }
 
-    //calculer la moyenne.
-    const moyenneGenerale = await this.calculerMoyenneGenerale(
+    // Calculer la moyenne générale et les lignes par matière
+    const { moyenneGenerale, lignes } = await this.calculerMoyenneEtLignes(
+      inscription.classeScolaireId,
       inscriptionApprenantId,
       inscriptionAnneeId,
       periodeScolaireId,
     );
 
-    //Créer le bulletin.
-    const bulletin = await this.prisma.bulletin.create({
+    // Créer le bulletin avec ses lignes associées
+    return this.prisma.bulletin.create({
       data: {
         inscriptionApprenantId,
         inscriptionAnneeId,
         periodeScolaireId,
-
         moyenneGenerale,
-
         appreciation,
         decisionFinAnnee,
-
-        // Ces valeurs seront mises à jour lors de la génération du PDF
         documentUrl: '',
         estGenere: false,
+        lignebulletin: {
+          create: lignes.map((l) => ({
+            matiereId: l.matiereId,
+            moyenne: l.moyenne,
+            coefficient: l.coefficient,
+          })),
+        },
       },
-
       include: {
         lignebulletin: {
           include: {
@@ -124,45 +122,22 @@ export class BulletinService {
         periodescolaire: true,
       },
     });
-
-    return bulletin;
   }
 
-  /**
-   * ============================================================
-   * CALCUL DE LA MOYENNE GÉNÉRALE
-   * ============================================================
-   *
-   * Pour l'instant :
-   *
-   * - on récupère les notes de la période
-   * - on regroupe les notes par matière
-   * - on calcule la moyenne de chaque matière
-   * - on applique le coefficient de la matière
-   * - on obtient la moyenne générale pondérée
-   *
-   * La politique d'évaluation pourra ensuite être intégrée ici.
-   */
-  private async calculerMoyenneGenerale(
+  // CALCULER LA MOYENNE GÉNÉRALE ET LES LIGNES DU BULLETIN
+  private async calculerMoyenneEtLignes(
+    classeScolaireId: string,
     inscriptionApprenantId: string,
     inscriptionAnneeId: string,
     periodeScolaireId: string,
-  ): Promise<number> {
-    //Récupérer l'inscription avec sa classe.
-    const inscription = await this.prisma.inscription.findUnique({
-      where: {
-        apprenantId_anneeScolaireId: {
-          apprenantId: inscriptionApprenantId,
-          anneeScolaireId: inscriptionAnneeId,
-        },
-      },
+  ) {
+    // Récupérer toutes les matières assignées à la classe avec leurs coefficients
+    const matieresClasse = await this.prisma.classematirere.findMany({
+      where: { classeScolaireId },
+      include: { matiere: true },
     });
 
-    if (!inscription) {
-      throw new NotFoundException('Inscription introuvable.');
-    }
-
-    //Récupérer les notes de l'apprenant pour cette période.
+    // Récupérer toutes les notes de l'élève pour cette période
     const notes = await this.prisma.note.findMany({
       where: {
         inscriptionApprenantId,
@@ -174,82 +149,95 @@ export class BulletinService {
       },
     });
 
-    if (notes.length === 0) {
-      return 0;
-    }
-
-    //Récupérer les coefficients des matières de la salle de classe.
-    const matieresClasse = await this.prisma.classematirere.findMany({
-      where: {
-        classeScolaireId: inscription.classeScolaireId,
-      },
-      include: {
-        matiere: true,
-      },
-    });
-
-    // Regrouper les notes par matière
+    // Regrouper les notes par matière ID
     const notesParMatiere = new Map<string, number[]>();
-
     for (const note of notes) {
       const matiereId = note.affectationenseignant.matiereId;
-
       if (!notesParMatiere.has(matiereId)) {
         notesParMatiere.set(matiereId, []);
       }
-
       notesParMatiere.get(matiereId)!.push(note.Valeur);
     }
 
-    // Calcul de la moyenne pondérée
     let totalPoints = 0;
     let totalCoefficients = 0;
 
-    for (const matiereClasse of matieresClasse) {
-      const notesMatiere = notesParMatiere.get(matiereClasse.matiereId);
+    const lignes: Array<{
+      matiereId: string;
+      moyenne: number;
+      coefficient: number;
+    }> = [];
 
-      // Aucune note dans cette matière
-      if (!notesMatiere || notesMatiere.length === 0) {
-        continue;
-      }
+    for (const mc of matieresClasse) {
+      const notesMatiere = notesParMatiere.get(mc.matiereId) || [];
+      const coefficient = mc.coefficient;
 
-      // Moyenne simple des notes de la matière
+      // Calcul de la moyenne de la matière (0 si aucune note)
       const moyenneMatiere =
-        notesMatiere.reduce((total, note) => total + note, 0) /
-        notesMatiere.length;
-
-      const coefficient = matiereClasse.coefficient;
+        notesMatiere.length > 0
+          ? notesMatiere.reduce((acc, val) => acc + val, 0) /
+            notesMatiere.length
+          : 0;
 
       totalPoints += moyenneMatiere * coefficient;
       totalCoefficients += coefficient;
+
+      lignes.push({
+        matiereId: mc.matiereId,
+        moyenne: Number(moyenneMatiere.toFixed(2)),
+        coefficient,
+      });
     }
 
-    if (totalCoefficients === 0) {
-      return 0;
-    }
+    const moyenneGenerale =
+      totalCoefficients > 0 ? totalPoints / totalCoefficients : 0;
 
-    const moyenneGenerale = totalPoints / totalCoefficients;
-
-    // Arrondi à 2 chiffres après la virgule
-    return Number(moyenneGenerale.toFixed(2));
+    return {
+      moyenneGenerale: Number(moyenneGenerale.toFixed(2)),
+      lignes,
+    };
   }
 
-  //RÉCUPÉRER TOUS LES BULLETINS
+  // RECALCULER ET METTRE À JOUR LES RANGS D'UNE CLASSE
+  async updateRangsClasse(
+    classeScolaireId: string,
+    anneeScolaireId: string,
+    periodeScolaireId: string,
+  ) {
+    const bulletins = await this.prisma.bulletin.findMany({
+      where: {
+        periodeScolaireId,
+        inscriptionAnneeId: anneeScolaireId,
+        inscription: { classeScolaireId },
+      },
+      orderBy: { moyenneGenerale: 'desc' },
+    });
+
+    for (let i = 0; i < bulletins.length; i++) {
+      await this.prisma.bulletin.update({
+        where: {
+          inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId: {
+            inscriptionApprenantId: bulletins[i].inscriptionApprenantId,
+            inscriptionAnneeId: bulletins[i].inscriptionAnneeId,
+            periodeScolaireId: bulletins[i].periodeScolaireId,
+          },
+        },
+        data: { Rang: i + 1 },
+      });
+    }
+  }
+
+  // RÉCUPÉRER TOUS LES BULLETINS
   async findAll() {
     return this.prisma.bulletin.findMany({
-      orderBy: {
-        createdAt: 'desc',
-      },
-
+      orderBy: { createdAt: 'desc' },
       include: {
         periodescolaire: true,
-
         lignebulletin: {
           include: {
             matiere: true,
           },
         },
-
         inscription: {
           include: {
             apprenant: true,
@@ -259,7 +247,7 @@ export class BulletinService {
     });
   }
 
-  //RÉCUPÉRER UN BULLETIN
+  // RÉCUPÉRER UN BULLETIN
   async findOne(
     inscriptionApprenantId: string,
     inscriptionAnneeId: string,
@@ -273,16 +261,13 @@ export class BulletinService {
           periodeScolaireId,
         },
       },
-
       include: {
         periodescolaire: true,
-
         lignebulletin: {
           include: {
             matiere: true,
           },
         },
-
         inscription: {
           include: {
             apprenant: true,
@@ -319,22 +304,17 @@ export class BulletinService {
           periodeScolaireId,
         },
       },
-
       data: {
         ...(dto.appreciation !== undefined && {
           appreciation: dto.appreciation,
         }),
-
         ...(dto.decisionFinAnnee !== undefined && {
           decisionFinAnnee: dto.decisionFinAnnee,
         }),
-
         updatedAt: new Date(),
       },
-
       include: {
         periodescolaire: true,
-
         lignebulletin: {
           include: {
             matiere: true,
@@ -344,7 +324,7 @@ export class BulletinService {
     });
   }
 
-  //SUPPRIMER UN BULLETIN
+  // SUPPRIMER UN BULLETIN
   async remove(
     inscriptionApprenantId: string,
     inscriptionAnneeId: string,
@@ -367,7 +347,7 @@ export class BulletinService {
     });
   }
 
-  //PRÉPARER LA GÉNÉRATION DU PDF
+  // RÉCUPÉRER LES DONNÉES COMPLÈTES POUR LE PDF
   async getBulletinDataForPdf(dto: GenerateBulletinPdfDto) {
     const bulletin = await this.findOne(
       dto.inscriptionApprenantId,
@@ -375,10 +355,6 @@ export class BulletinService {
       dto.periodeScolaireId,
     );
 
-    /**
-     * On récupère les informations nécessaires
-     * pour construire l'en-tête personnalisé de l'école.
-     */
     const inscription = await this.prisma.inscription.findUnique({
       where: {
         apprenantId_anneeScolaireId: {
@@ -410,14 +386,12 @@ export class BulletinService {
     };
   }
 
-  //
-  //
+  // GÉNÉRER LE PDF ET S'ENVOYER DIRECTEMENT SUR CLOUDINARY
   async generatePdf(
     inscriptionApprenantId: string,
     inscriptionAnneeId: string,
     periodeScolaireId: string,
   ) {
-    // RÉCUPÉRER LES DONNÉES DU BULLETIN
     const data = await this.getBulletinDataForPdf({
       inscriptionApprenantId,
       inscriptionAnneeId,
@@ -426,235 +400,173 @@ export class BulletinService {
 
     const { bulletin, ecole, apprenant, classe, anneeScolaire } = data;
 
-    // CRÉER LE DOCUMENT PDF
-    const doc = new PDFDocument({
-      size: 'A4',
-      margin: 40,
-    });
+    // Créer le document PDFKit
+    const doc = new PDFDocument({ size: 'A4', margin: 40 });
 
-    // STOCKER LE PDF EN MÉMOIRE
-    const chunks: Buffer[] = [];
-
-    doc.on('data', (chunk: Buffer) => {
-      chunks.push(chunk);
-    });
-
-    //ATTENDRE LA FIN DE LA GÉNÉRATION
-    const pdfBuffer = await new Promise<Buffer>((resolve, reject) => {
-      doc.on('end', () => {
-        resolve(Buffer.concat(chunks));
-      });
-
-      doc.on('error', (error) => {
-        reject(error);
-      });
-
-      // EN-TÊTE DE L'ÉCOLE
-      doc.fontSize(16).font('Helvetica-Bold').text(ecole.nom, {
-        align: 'center',
-      });
-
-      if (ecole.slogan) {
-        doc.fontSize(10).font('Helvetica-Oblique').text(ecole.slogan, {
-          align: 'center',
-        });
-      }
-
-      if (ecole.ministereTutelle) {
-        doc
-          .moveDown(0.5)
-          .fontSize(9)
-          .font('Helvetica')
-          .text(ecole.ministereTutelle, {
-            align: 'center',
-          });
-      }
-
-      if (ecole.adresse) {
-        doc.text(ecole.adresse, {
-          align: 'center',
-        });
-      }
-
-      if (ecole.ville) {
-        doc.text(ecole.ville, {
-          align: 'center',
-        });
-      }
-
-      if (ecole.telephone || ecole.email) {
-        doc
-          .moveDown(0.3)
-          .text(
-            `${ecole.telephone ?? ''}${
-              ecole.telephone && ecole.email ? ' | ' : ''
-            }${ecole.email ?? ''}`,
-            {
-              align: 'center',
-            },
-          );
-      }
-
-      //  TITRE DU BULLETIN
-      doc
-        .moveDown(1)
-        .fontSize(18)
-        .font('Helvetica-Bold')
-        .text('BULLETIN SCOLAIRE', {
-          align: 'center',
-        });
-
-      doc
-        .moveDown(0.5)
-        .fontSize(11)
-        .font('Helvetica')
-        .text(`Année scolaire : ${anneeScolaire.nom ?? ''}`, {
-          align: 'center',
-        });
-
-      // INFORMATIONS DE L'APPRENANT
-      doc.moveDown(1);
-
-      doc
-        .fontSize(11)
-        .font('Helvetica-Bold')
-        .text('Apprenant : ', {
-          continued: true,
-        })
-        .font('Helvetica')
-        .text(`${apprenant.nom} ${apprenant.prenoms}`);
-
-      doc
-        .font('Helvetica-Bold')
-        .text('Classe : ', {
-          continued: true,
-        })
-        .font('Helvetica')
-        .text(classe.nom);
-
-      //MOYENNE GÉNÉRALE
-      doc.moveDown(0.7);
-
-      doc
-        .fontSize(13)
-        .font('Helvetica-Bold')
-        .text(`Moyenne générale : ${bulletin.moyenneGenerale.toFixed(2)}/20`, {
-          align: 'center',
-        });
-
-      // TABLEAU DES MATIÈRES
-      doc.moveDown(1);
-
-      const tableTop = doc.y;
-
-      const colMatiere = 40;
-      const colMoyenne = 300;
-      const colCoefficient = 390;
-      const colPoints = 500;
-
-      // En-tête du tableau
-      doc
-        .fontSize(10)
-        .font('Helvetica-Bold')
-        .text('Matière', colMatiere, tableTop)
-        .text('Moyenne', colMoyenne, tableTop)
-        .text('Coef.', colCoefficient, tableTop)
-        .text('Points', colPoints, tableTop);
-
-      doc
-        .moveTo(40, tableTop + 15)
-        .lineTo(555, tableTop + 15)
-        .stroke();
-
-      let currentY = tableTop + 25;
-
-      //  LIGNES DES MATIÈRES
-      for (const ligne of bulletin.lignebulletin) {
-        doc
-          .font('Helvetica')
-          .fontSize(9)
-          .text(ligne.matiere.nom, colMatiere, currentY, {
-            width: 240,
-          })
-          .text(`${ligne.moyenne.toFixed(2)}/20`, colMoyenne, currentY)
-          .text(String(ligne.coefficient), colCoefficient, currentY)
-          .text(
-            (ligne.moyenne * ligne.coefficient).toFixed(2),
-            colPoints,
-            currentY,
-          );
-
-        currentY += 20;
-
-        //Pour  Éviter de sortir de la page
-
-        if (currentY > 720) {
-          doc.addPage();
-          currentY = 50;
-        }
-      }
-
-      // RANG
-      currentY += 15;
-
-      doc
-        .fontSize(11)
-        .font('Helvetica-Bold')
-        .text('Rang : ', 40, currentY, {
-          continued: true,
-        })
-        .font('Helvetica')
-        .text(bulletin.Rang ? `${bulletin.Rang}e` : 'Non disponible');
-
-      //  APPRÉCIATION
-      currentY += 25;
-
-      doc.font('Helvetica-Bold').text('Appréciation : ', 40, currentY);
-
-      doc
-        .font('Helvetica')
-        .text(
-          bulletin.appreciation ?? 'Aucune appréciation',
-          40,
-          currentY + 18,
-          {
-            width: 500,
-          },
-        );
-
-      // DÉCISION DE FIN D'ANNÉE
-      currentY += 60;
-
-      doc
-        .font('Helvetica-Bold')
-        .text('Décision : ', 40, currentY, {
-          continued: true,
-        })
-        .font('Helvetica')
-        .text(bulletin.decisionFinAnnee);
-
-      // SIGNATURES
-      currentY += 60;
-
-      doc
-        .fontSize(10)
-        .font('Helvetica-Bold')
-        .text('Le Directeur', 80, currentY);
-
-      doc.text('Le Professeur principal', 380, currentY);
-
-      //TERMINER LE PDF
-      doc.end();
-    });
-
-    //  ENVOYER LE PDF À CLOUDINARY
-    const uploadResult = await this.cloudinaryService.uploadBuffer(
-      pdfBuffer,
+    // Streamer directement vers Cloudinary
+    const uploadPromise = this.cloudinaryService.uploadStream(
+      doc,
       'bulletins',
       'raw',
     );
 
-    // SAUVEGARDER L'URL DANS LA BASE DE DONNÉES
+    // En-tête de l'école
+    doc
+      .fontSize(16)
+      .font('Helvetica-Bold')
+      .text(ecole.nom, { align: 'center' });
+
+    if (ecole.slogan) {
+      doc
+        .fontSize(10)
+        .font('Helvetica-Oblique')
+        .text(ecole.slogan, { align: 'center' });
+    }
+
+    if (ecole.ministereTutelle) {
+      doc
+        .moveDown(0.5)
+        .fontSize(9)
+        .font('Helvetica')
+        .text(ecole.ministereTutelle, { align: 'center' });
+    }
+
+    if (ecole.adresse) {
+      doc.text(ecole.adresse, { align: 'center' });
+    }
+
+    if (ecole.ville) {
+      doc.text(ecole.ville, { align: 'center' });
+    }
+
+    if (ecole.telephone || ecole.email) {
+      doc
+        .moveDown(0.3)
+        .text(
+          `${ecole.telephone ?? ''}${
+            ecole.telephone && ecole.email ? ' | ' : ''
+          }${ecole.email ?? ''}`,
+          { align: 'center' },
+        );
+    }
+
+    // Titre du document
+    doc
+      .moveDown(1)
+      .fontSize(18)
+      .font('Helvetica-Bold')
+      .text('BULLETIN SCOLAIRE', { align: 'center' });
+
+    doc
+      .moveDown(0.5)
+      .fontSize(11)
+      .font('Helvetica')
+      .text(`Année scolaire : ${anneeScolaire.nom ?? ''}`, { align: 'center' });
+
+    // Informations apprenant
+    doc.moveDown(1);
+    doc
+      .fontSize(11)
+      .font('Helvetica-Bold')
+      .text('Apprenant : ', { continued: true })
+      .font('Helvetica')
+      .text(`${apprenant.nom} ${apprenant.prenoms}`);
+
+    doc
+      .font('Helvetica-Bold')
+      .text('Classe : ', { continued: true })
+      .font('Helvetica')
+      .text(classe.nom);
+
+    // Moyenne générale
+    doc.moveDown(0.7);
+    doc
+      .fontSize(13)
+      .font('Helvetica-Bold')
+      .text(`Moyenne générale : ${bulletin.moyenneGenerale.toFixed(2)}/20`, {
+        align: 'center',
+      });
+
+    // Tableau des notes
+    doc.moveDown(1);
+    const tableTop = doc.y;
+    const colMatiere = 40;
+    const colMoyenne = 300;
+    const colCoefficient = 390;
+    const colPoints = 500;
+
+    doc
+      .fontSize(10)
+      .font('Helvetica-Bold')
+      .text('Matière', colMatiere, tableTop)
+      .text('Moyenne', colMoyenne, tableTop)
+      .text('Coef.', colCoefficient, tableTop)
+      .text('Points', colPoints, tableTop);
+
+    doc
+      .moveTo(40, tableTop + 15)
+      .lineTo(555, tableTop + 15)
+      .stroke();
+
+    let currentY = tableTop + 25;
+
+    for (const ligne of bulletin.lignebulletin) {
+      doc
+        .font('Helvetica')
+        .fontSize(9)
+        .text(ligne.matiere.nom, colMatiere, currentY, { width: 240 })
+        .text(`${ligne.moyenne.toFixed(2)}/20`, colMoyenne, currentY)
+        .text(String(ligne.coefficient), colCoefficient, currentY)
+        .text(
+          (ligne.moyenne * ligne.coefficient).toFixed(2),
+          colPoints,
+          currentY,
+        );
+
+      currentY += 20;
+
+      if (currentY > 720) {
+        doc.addPage();
+        currentY = 50;
+      }
+    }
+
+    // Informations complémentaires
+    currentY += 15;
+    doc
+      .fontSize(11)
+      .font('Helvetica-Bold')
+      .text('Rang : ', 40, currentY, { continued: true })
+      .font('Helvetica')
+      .text(bulletin.Rang ? `${bulletin.Rang}e` : 'Non disponible');
+
+    currentY += 25;
+    doc.font('Helvetica-Bold').text('Appréciation : ', 40, currentY);
+    doc
+      .font('Helvetica')
+      .text(bulletin.appreciation ?? 'Aucune appréciation', 40, currentY + 18, {
+        width: 500,
+      });
+
+    currentY += 60;
+    doc
+      .font('Helvetica-Bold')
+      .text('Décision : ', 40, currentY, { continued: true })
+      .font('Helvetica')
+      .text(bulletin.decisionFinAnnee ?? 'N/A');
+
+    // Signatures
+    currentY += 60;
+    doc.fontSize(10).font('Helvetica-Bold').text('Le Directeur', 80, currentY);
+    doc.text('Le Professeur principal', 380, currentY);
+
+    // Finaliser le PDF
+    doc.end();
+
+    // Attendre la résolution de l'upload vers Cloudinary
+    const uploadResult = await uploadPromise;
+
+    // Mettre à jour le bulletin en base
     const bulletinUpdated = await this.prisma.bulletin.update({
       where: {
         inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId: {
@@ -663,7 +575,6 @@ export class BulletinService {
           periodeScolaireId,
         },
       },
-
       data: {
         documentUrl: uploadResult.secure_url,
         estGenere: true,
@@ -672,7 +583,6 @@ export class BulletinService {
       },
     });
 
-    // RETOURNER LE RÉSULTAT
     return {
       message: 'Bulletin généré et sauvegardé avec succès',
       documentUrl: uploadResult.secure_url,
@@ -680,21 +590,23 @@ export class BulletinService {
     };
   }
 
-  //Générer tous les bulletins d'une classe
+  // GÉNÉRER LES BULLETINS POUR UNE CLASSE
   async generateBulletinsForClasse(
     classeScolaireId: string,
     anneeScolaireId: string,
     periodeScolaireId: string,
   ): Promise<ResultatBulletinsClasse> {
+    // Re-calculer d'abord les rangs de toute la classe
+    await this.updateRangsClasse(
+      classeScolaireId,
+      anneeScolaireId,
+      periodeScolaireId,
+    );
+
+    // Récupérer les inscriptions de la classe
     const inscriptions = await this.prisma.inscription.findMany({
-      where: {
-        classeScolaireId,
-        anneeScolaireId,
-      },
-      select: {
-        apprenantId: true,
-        anneeScolaireId: true,
-      },
+      where: { classeScolaireId, anneeScolaireId },
+      select: { apprenantId: true, anneeScolaireId: true },
     });
 
     const resultats: ResultatBulletinEleve[] = [];
@@ -730,7 +642,7 @@ export class BulletinService {
     };
   }
 
-  //Générer tous les bulletins de plusieurs classes.
+  // GÉNÉRER LES BULLETINS POUR PLUSIEURS CLASSES
   async generateBulletinsForClasses(
     classeScolaireIds: string[],
     anneeScolaireId: string,
@@ -744,35 +656,24 @@ export class BulletinService {
         anneeScolaireId,
         periodeScolaireId,
       );
-
       resultats.push(resultat);
     }
 
-    return {
-      totalClasses: classeScolaireIds.length,
-      resultats,
-    };
+    return { totalClasses: classeScolaireIds.length, resultats };
   }
 
-  //Générer tous les bulletins de toute l'école
+  // GÉNÉRER LES BULLETINS POUR TOUTE L'ÉCOLE
   async generateBulletinsForSchool(
     ecoleId: string,
     anneeScolaireId: string,
     periodeScolaireId: string,
   ) {
     const classes = await this.prisma.classscolaire.findMany({
-      where: {
-        niveauscolaire: {
-          ecoleId: ecoleId,
-        },
-      },
-      select: {
-        id: true,
-        nom: true,
-      },
+      where: { niveauscolaire: { ecoleId } },
+      select: { id: true, nom: true },
     });
 
-    const classeIds = classes.map((classe) => classe.id);
+    const classeIds = classes.map((c) => c.id);
 
     const resultats = await this.generateBulletinsForClasses(
       classeIds,
@@ -780,9 +681,6 @@ export class BulletinService {
       periodeScolaireId,
     );
 
-    return {
-      ecoleId,
-      ...resultats,
-    };
+    return { ecoleId, ...resultats };
   }
 }

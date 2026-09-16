@@ -3,36 +3,54 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
   HttpStatus,
   Param,
   ParseUUIDPipe,
   Patch,
   Post,
+  UseGuards,
+  UsePipes,
 } from '@nestjs/common';
-
 import {
+  ApiBearerAuth,
   ApiBody,
   ApiOperation,
   ApiParam,
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 
 import { BulletinService } from './bulletin.service';
-
 import {
   CreateBulletinDto,
   GenerateBulletinPdfDto,
   UpdateBulletinDto,
 } from './dto/bulletin.dto';
 
+import { ClerkAuthGuard } from 'src/auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from 'src/auth/guards/permissions.guard';
+import { CheckPolicies } from 'src/auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
+
 @ApiTags('Bulletins')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@UsePipes(ZodValidationPipe)
 @Controller('bulletins')
 export class BulletinController {
   constructor(private readonly bulletinService: BulletinService) {}
 
-  //CRÉER UN BULLETIN
+  // CRÉER UN BULLETIN
   @Post()
+  @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Créer un nouveau bulletin',
     description:
@@ -47,6 +65,18 @@ export class BulletinController {
     description: 'Le bulletin a été créé avec succès.',
   })
   @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'Données transmises invalides.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
     status: HttpStatus.NOT_FOUND,
     description:
       'L’inscription de l’apprenant ou la période scolaire est introuvable.',
@@ -59,8 +89,12 @@ export class BulletinController {
     return this.bulletinService.create(createBulletinDto);
   }
 
-  //  RÉCUPÉRER TOUS LES BULLETINS
+  // RÉCUPÉRER TOUS LES BULLETINS
   @Get()
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Récupérer tous les bulletins',
     description:
@@ -70,12 +104,24 @@ export class BulletinController {
     status: HttpStatus.OK,
     description: 'Liste des bulletins récupérée avec succès.',
   })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
   async findAll() {
     return this.bulletinService.findAll();
   }
 
-  //  RÉCUPÉRER UN BULLETIN
+  // RÉCUPÉRER UN BULLETIN
   @Get(':inscriptionApprenantId/:inscriptionAnneeId/:periodeScolaireId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Récupérer un bulletin spécifique',
     description:
@@ -101,6 +147,14 @@ export class BulletinController {
     description: 'Bulletin trouvé avec succès.',
   })
   @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
     status: HttpStatus.NOT_FOUND,
     description: 'Bulletin introuvable.',
   })
@@ -123,6 +177,10 @@ export class BulletinController {
 
   // MODIFIER UN BULLETIN
   @Patch(':inscriptionApprenantId/:inscriptionAnneeId/:periodeScolaireId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Mettre à jour un bulletin',
     description:
@@ -149,6 +207,18 @@ export class BulletinController {
     description: 'Bulletin mis à jour avec succès.',
   })
   @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'Données transmises invalides.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
     status: HttpStatus.NOT_FOUND,
     description: 'Bulletin introuvable.',
   })
@@ -172,8 +242,12 @@ export class BulletinController {
     );
   }
 
-  //SUPPRIMER UN BULLETIN
+  // SUPPRIMER UN BULLETIN
   @Delete(':inscriptionApprenantId/:inscriptionAnneeId/:periodeScolaireId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Supprimer un bulletin',
     description:
@@ -194,6 +268,14 @@ export class BulletinController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Bulletin supprimé avec succès.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
   })
   @ApiResponse({
     status: HttpStatus.NOT_FOUND,
@@ -218,6 +300,10 @@ export class BulletinController {
 
   // GÉNÉRER LE PDF D'UN BULLETIN
   @Post('generate-pdf')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Générer le PDF d’un bulletin individuel',
     description:
@@ -232,6 +318,18 @@ export class BulletinController {
     description: 'PDF généré et téléversé sur Cloudinary avec succès.',
   })
   @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'Données transmises invalides.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
     status: HttpStatus.NOT_FOUND,
     description:
       'Bulletin ou données nécessaires à la génération introuvables.',
@@ -244,9 +342,13 @@ export class BulletinController {
     );
   }
 
-  //GÉNÉRER TOUS LES BULLETINS D'UNE CLASSE
+  // GÉNÉRER TOUS LES BULLETINS D'UNE CLASSE
   @Post(
     'generate-pdf/classe/:classeScolaireId/:anneeScolaireId/:periodeScolaireId',
+  )
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.bulletin),
   )
   @ApiOperation({
     summary: 'Générer tous les bulletins PDF d’une classe',
@@ -273,6 +375,14 @@ export class BulletinController {
     description:
       'La génération des bulletins de la classe est terminée. Le résultat indique le nombre de bulletins générés et les éventuels échecs.',
   })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
   async generateBulletinsForClasse(
     @Param('classeScolaireId', ParseUUIDPipe)
     classeScolaireId: string,
@@ -292,6 +402,10 @@ export class BulletinController {
 
   // GÉNÉRER LES BULLETINS DE PLUSIEURS CLASSES
   @Post('generate-pdf/classes/:anneeScolaireId/:periodeScolaireId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Générer les bulletins PDF de plusieurs classes',
     description:
@@ -332,6 +446,18 @@ export class BulletinController {
     description:
       'La génération des bulletins des classes sélectionnées est terminée.',
   })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: 'Données transmises invalides.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
   async generateBulletinsForClasses(
     @Param('anneeScolaireId', ParseUUIDPipe)
     anneeScolaireId: string,
@@ -351,6 +477,10 @@ export class BulletinController {
 
   // GÉNÉRER TOUS LES BULLETINS DE L'ÉCOLE
   @Post('generate-pdf/ecole/:ecoleId/:anneeScolaireId/:periodeScolaireId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.bulletin),
+  )
   @ApiOperation({
     summary: 'Générer tous les bulletins PDF de l’école',
     description:
@@ -374,6 +504,14 @@ export class BulletinController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'La génération globale des bulletins de l’école est terminée.',
+  })
+  @ApiResponse({
+    status: HttpStatus.UNAUTHORIZED,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: HttpStatus.FORBIDDEN,
+    description: 'Droits insuffisants pour effectuer cette action.',
   })
   async generateBulletinsForSchool(
     @Param('ecoleId', ParseUUIDPipe)
