@@ -5,18 +5,15 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-
 import { createClerkClient, Invitation } from '@clerk/backend';
-
 import { PrismaService } from '../prisma/prisma.service';
-
 import {
   CreateApprenantDto,
   UpdateApprenantDto,
   QueryApprenantDto,
 } from './dto/apprenant.dto';
-
-import { Prisma, user_statut } from 'src/generated/prisma/client';
+import { Prisma } from 'src/generated/prisma/client';
+import { user_statut } from 'src/generated/prisma/enums';
 
 @Injectable()
 export class ApprenantService {
@@ -26,20 +23,15 @@ export class ApprenantService {
 
   constructor(private readonly prisma: PrismaService) {}
 
-  //créer un apprenant avec son compte user si l'email est fourni
   async create(dto: CreateApprenantDto, ecoleId: string) {
-    //vérifier l'existe de l'école.
     const ecole = await this.prisma.ecole.findUnique({
-      where: {
-        id: ecoleId,
-      },
+      where: { id: ecoleId },
     });
 
     if (!ecole) {
       throw new NotFoundException(`L'école '${ecoleId}' n'existe pas.`);
     }
 
-    //vérifier l'existence de l'année scolaire.
     const anneeScolaire = await this.prisma.anneescolaire.findFirst({
       where: {
         id: dto.anneeScolaireId,
@@ -53,12 +45,10 @@ export class ApprenantService {
       );
     }
 
-    //vérifier l'existence de la classe scolaire.
-    // Vérifier l'existence et la capacité de la nouvelle classe
     const classe = await this.prisma.classscolaire.findFirst({
       where: {
         id: dto.classeScolaireId,
-        niveauscolaire: { ecoleId: ecoleId },
+        niveauscolaire: { ecoleId },
       },
       include: {
         _count: { select: { inscription: true } },
@@ -77,7 +67,6 @@ export class ApprenantService {
       );
     }
 
-    //vérifier l'existence de la configuration scolaire.
     const configuration = await this.prisma.configurationscolarite.findFirst({
       where: {
         id: dto.configuartionScolariteId,
@@ -89,15 +78,12 @@ export class ApprenantService {
 
     if (!configuration) {
       throw new BadRequestException(
-        `La configuration scolaire ne correspond pas à l'école, à l'année ou au niveau de la classe.`,
+        `La configuration scolaire ne correspond pas à l'école ou à l'année donnée.`,
       );
     }
 
-    //vérifier le matricule.
     const existingMatricule = await this.prisma.apprenant.findUnique({
-      where: {
-        matricule: dto.matricule,
-      },
+      where: { matricule: dto.matricule },
     });
 
     if (existingMatricule) {
@@ -106,18 +92,10 @@ export class ApprenantService {
       );
     }
 
-    //vérifier si l'email a été renseigné et s'il n'existe pas déjà à cette école.
     if (dto.email) {
       const existingUser = await this.prisma.user.findUnique({
-        where: {
-          email: dto.email,
-        },
-        include: {
-          ecole: true,
-          apprenant: true,
-          employe: true,
-          parent: true,
-        },
+        where: { email: dto.email },
+        include: { ecole: true },
       });
 
       if (existingUser) {
@@ -132,22 +110,23 @@ export class ApprenantService {
         }
       }
     }
-    let invitation: Invitation | null = null;
 
+    let invitation: Invitation | null = null;
     const totalMontant = configuration.tranchescolarite.reduce(
       (sum, tranche) => sum + tranche.montant,
       0,
     );
 
-    //invitations clerk.
     if (dto.email) {
       try {
         invitation = await this.clerkClient.invitations.createInvitation({
           emailAddress: dto.email,
-          redirectUrl: 'http://localhost:3001/sign-up',
+          redirectUrl:
+            process.env.CLERK_SIGN_UP_URL || 'http://localhost:3001/sign-up',
           publicMetadata: {
             nom: dto.nom,
             prenoms: dto.prenoms,
+            ecoleId,
           },
         });
       } catch (error) {
@@ -159,7 +138,6 @@ export class ApprenantService {
       }
     }
 
-    //on essaye de créer l'apprenant en bd et on l'inscrit par la même occasion.
     try {
       const result = await this.prisma.$transaction(async (tx) => {
         const createdUser =
@@ -172,9 +150,11 @@ export class ApprenantService {
                   email: dto.email,
                   telephone: dto.telephone,
                   statut: user_statut.DOIT_MODIFIER_MDP,
+                  ecole: { connect: { id: ecoleId } },
                 },
               })
             : null;
+
         const apprenant = await tx.apprenant.create({
           data: {
             userId: createdUser?.id,
@@ -189,15 +169,10 @@ export class ApprenantService {
         const inscription = await tx.inscription.create({
           data: {
             apprenantId: apprenant.id,
-
             matricule: dto.matricule,
-
             anneeScolaireId: dto.anneeScolaireId,
-
             classeScolaireId: dto.classeScolaireId,
-
             configuartionScolariteId: dto.configuartionScolariteId,
-
             type: dto.type,
           },
         });
@@ -225,14 +200,11 @@ export class ApprenantService {
         message: dto.email
           ? 'Apprenant créé et invitation envoyée.'
           : 'Apprenant créé et inscrit.',
-
         apprenant: result.apprenant,
         inscription: result.inscription,
         user: result.createdUser,
         scolarite: result.dossierScolairite,
-
         invitationEnvoyee: Boolean(invitation),
-
         invitationId: invitation?.id ?? null,
       };
     } catch (error) {
@@ -247,11 +219,10 @@ export class ApprenantService {
     }
   }
 
-  //Lister les apprenant pour une école.
   async findAll(query: QueryApprenantDto, ecoleId: string) {
     const {
-      page,
-      limit,
+      page = 1,
+      limit = 10,
       search,
       matricule,
       sexe,
@@ -261,142 +232,70 @@ export class ApprenantService {
     } = query;
 
     const skip = (page - 1) * limit;
-
     const conditions: Prisma.apprenantWhereInput[] = [];
 
     if (search) {
       conditions.push({
         OR: [
-          {
-            matricule: {
-              contains: search,
-            },
-          },
-          {
-            nom: {
-              contains: search,
-            },
-          },
-          {
-            prenoms: {
-              contains: search,
-            },
-          },
-          {
-            user: {
-              email: {
-                contains: search,
-              },
-            },
-          },
+          { matricule: { contains: search } },
+          { nom: { contains: search } },
+          { prenoms: { contains: search } },
+          { user: { email: { contains: search } } },
         ],
       });
     }
 
     if (matricule) {
-      conditions.push({
-        matricule: {
-          contains: matricule,
-        },
-      });
+      conditions.push({ matricule: { contains: matricule } });
     }
 
     if (sexe) {
-      conditions.push({
-        Sexe: sexe,
-      });
+      conditions.push({ Sexe: sexe });
     }
 
     if (userId) {
-      conditions.push({
-        userId,
-      });
+      conditions.push({ userId });
     }
 
-    if (anneeScolaireId || classeScolaireId) {
-      conditions.push({
-        inscription: {
-          some: {
-            ...(anneeScolaireId ? { anneeScolaireId } : {}),
-
-            ...(classeScolaireId ? { classeScolaireId } : {}),
-
-            anneescolaire: {
-              ecoleId,
-            },
-          },
+    conditions.push({
+      inscription: {
+        some: {
+          ...(anneeScolaireId ? { anneeScolaireId } : {}),
+          ...(classeScolaireId ? { classeScolaireId } : {}),
+          anneescolaire: { ecoleId },
         },
-      });
-    } else {
-      conditions.push({
-        inscription: {
-          some: {
-            anneescolaire: {
-              ecoleId: ecoleId,
-            },
-          },
-        },
-      });
-    }
+      },
+    });
 
-    const where: Prisma.apprenantWhereInput = conditions.length
-      ? {
-          AND: conditions,
-        }
-      : {};
+    const where: Prisma.apprenantWhereInput = { AND: conditions };
 
     const [total, data] = await Promise.all([
-      this.prisma.apprenant.count({
-        where,
-      }),
-
+      this.prisma.apprenant.count({ where }),
       this.prisma.apprenant.findMany({
         where,
-
         skip,
         take: limit,
-
         include: {
           user: true,
-
           apprenantparent: {
-            include: {
-              parent: {
-                include: {
-                  user: true,
-                },
-              },
-            },
+            include: { parent: { include: { user: true } } },
           },
-
           inscription: {
-            where: {
-              anneescolaire: {
-                ecoleId,
-              },
-            },
-
+            where: { anneescolaire: { ecoleId } },
             include: {
               anneescolaire: true,
               classscolaire: true,
               configurationscolarite: true,
             },
-
-            orderBy: {
-              dateInscription: 'desc',
-            },
+            orderBy: { dateInscription: 'desc' },
           },
         },
-
-        orderBy: {
-          createdAt: 'desc',
-        },
+        orderBy: { createdAt: 'desc' },
       }),
     ]);
 
     return {
       data,
-
       meta: {
         total,
         page,
@@ -406,53 +305,33 @@ export class ApprenantService {
     };
   }
 
-  //Trouver un apprenant dans une école.
   async findOne(apprenantId: string, ecoleId: string) {
     const apprenant = await this.prisma.apprenant.findFirst({
       where: {
         id: apprenantId,
         inscription: {
           some: {
-            anneescolaire: {
-              ecoleId: ecoleId,
-            },
+            anneescolaire: { ecoleId },
           },
         },
       },
       include: {
         user: true,
         apprenantparent: {
-          include: {
-            parent: {
-              include: {
-                user: true,
-              },
-            },
-          },
+          include: { parent: { include: { user: true } } },
         },
         inscription: {
-          where: {
-            anneescolaire: {
-              ecoleId,
-            },
-          },
+          where: { anneescolaire: { ecoleId } },
           include: {
             anneescolaire: true,
             classscolaire: true,
             configurationscolarite: true,
-
             absence: true,
             bulletin: true,
             decisionfinannee: true,
-            dossierscolarite: {
-              include: {
-                paiement: true,
-              },
-            },
+            dossierscolarite: { include: { paiement: true } },
           },
-          orderBy: {
-            dateInscription: 'desc',
-          },
+          orderBy: { dateInscription: 'desc' },
         },
       },
     });
@@ -465,19 +344,14 @@ export class ApprenantService {
     return apprenant;
   }
 
-  //Mettre à jour les informations d'un apprenant.
   async update(apprenantId: string, dto: UpdateApprenantDto, ecoleId: string) {
-    await this.findOne(apprenantId, ecoleId);
+    const existingApprenant = await this.findOne(apprenantId, ecoleId);
 
-    //vérifier le matricule.
     if (dto.matricule) {
       const existing = await this.prisma.apprenant.findFirst({
         where: {
           matricule: dto.matricule,
-
-          NOT: {
-            id: apprenantId,
-          },
+          NOT: { id: apprenantId },
         },
       });
 
@@ -487,79 +361,40 @@ export class ApprenantService {
         );
       }
     }
-    //vérifier l'email.
+
     if (dto.email) {
-      const user = await this.prisma.user.findUnique({
-        where: {
-          email: dto.email,
-        },
+      const userWithEmail = await this.prisma.user.findUnique({
+        where: { email: dto.email },
       });
 
-      if (
-        user &&
-        user.id !==
-          (
-            await this.prisma.apprenant.findUnique({
-              where: {
-                id: apprenantId,
-              },
-              select: {
-                userId: true,
-              },
-            })
-          )?.userId
-      ) {
+      if (userWithEmail && userWithEmail.id !== existingApprenant.userId) {
         throw new ConflictException(`L'email '${dto.email}' est déjà utilisé.`);
       }
     }
 
     return this.prisma.apprenant.update({
-      where: {
-        id: apprenantId,
-      },
-
+      where: { id: apprenantId },
       data: {
         ...(dto.nom !== undefined ? { nom: dto.nom } : {}),
-
         ...(dto.prenoms !== undefined ? { prenoms: dto.prenoms } : {}),
-
-        ...(dto.Sexe !== undefined
-          ? {
-              Sexe: dto.Sexe,
-            }
-          : {}),
-
+        ...(dto.Sexe !== undefined ? { Sexe: dto.Sexe } : {}),
         ...(dto.dateNaissance !== undefined
-          ? {
-              dateNaissance: new Date(dto.dateNaissance),
-            }
+          ? { dateNaissance: new Date(dto.dateNaissance) }
           : {}),
-
-        ...(dto.matricule !== undefined
-          ? {
-              matricule: dto.matricule,
-            }
-          : {}),
+        ...(dto.matricule !== undefined ? { matricule: dto.matricule } : {}),
       },
       include: {
         user: true,
-        apprenantparent: {
-          include: {
-            parent: true,
-          },
-        },
+        apprenantparent: { include: { parent: true } },
       },
     });
   }
 
-  //supprimer un apprenant d'une école.
   async remove(apprenantId: string, ecoleId: string) {
     const apprenant = await this.findOne(apprenantId, ecoleId);
 
     return this.prisma.apprenant.delete({
-      where: {
-        id: apprenant.id,
-      },
+      where: { id: apprenant.id },
     });
   }
 }
