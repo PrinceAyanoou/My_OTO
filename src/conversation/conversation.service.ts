@@ -1,8 +1,8 @@
 import {
+  BadRequestException,
+  ForbiddenException,
   Injectable,
   NotFoundException,
-  ForbiddenException,
-  BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import {
@@ -14,7 +14,7 @@ import {
 export class ConversationService {
   constructor(private readonly prisma: PrismaService) {}
 
-  // Créer une nouvelle conversation (Privee ou Groupe)
+  // Créer une nouvelle conversation (Privée ou Groupe)
   async create(dto: CreateConversationDto, currentUserId: string) {
     const { type, ecoleId, participantUserIds, premierMessage } = dto;
 
@@ -110,7 +110,7 @@ export class ConversationService {
     });
   }
 
-  //Récupérer toutes les conversations de l'utilisateur connecté pour une école donnée
+  // Récupérer toutes les conversations de l'utilisateur connecté pour une école donnée
   async findAllForUser(userId: string, ecoleId: string) {
     return this.prisma.conversation.findMany({
       where: {
@@ -163,7 +163,7 @@ export class ConversationService {
     return conversation;
   }
 
-  //Envoyer un message dans une conversation
+  // Envoyer un message dans une conversation
   async sendMessage(
     conversationId: string,
     userId: string,
