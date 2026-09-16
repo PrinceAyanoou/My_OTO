@@ -4,20 +4,21 @@ import {
   ConflictException,
   BadRequestException,
 } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service'; // Ajustez l'import de votre PrismaService
+import { PrismaService } from 'src/prisma/prisma.service';
 import {
   CreateAnneeScolaireDto,
   UpdateAnneeScolaireDto,
   ChangeStatutAnneeScolaireDto,
   QueryAnneeScolaireDto,
 } from './dto/annee-scolaire.dto';
-import { anneescolaire_statut, Prisma } from 'src/generated/prisma/client';
+import { Prisma } from 'src/generated/prisma/client';
+import { anneescolaire_statut } from 'src/generated/prisma/enums';
 
 @Injectable()
 export class AnneeScolaireService {
   constructor(private readonly prisma: PrismaService) {}
 
-  //créer une nouvelle année scolaire dans l'école.
+  // créer une nouvelle année scolaire dans l'école.
   async create(ecoleId: string, dto: CreateAnneeScolaireDto) {
     // Vérifier si l'école existe
     const ecole = await this.prisma.ecole.findUnique({
@@ -43,14 +44,7 @@ export class AnneeScolaireService {
       );
     }
 
-    // Si la nouvelle année passe directement EN_COURS, basculer les autres années à terminée car il ne peut y avoir qu'une seule année scolaire en cours par école.
-    if (dto.statut === anneescolaire_statut.EN_COURS) {
-      await this.prisma.anneescolaire.updateMany({
-        where: { ecoleId, statut: anneescolaire_statut.EN_COURS },
-        data: { statut: anneescolaire_statut.TERMINEE },
-      });
-    }
-    //une fois tout ceci fait, on crée l'année scolaire dans une transaction pour assurer l'atomicité.
+    // Transaction atomique pour basculer les anciennes années si la nouvelle est EN_COURS et créer la ressource
     return this.prisma.$transaction(async (tx) => {
       if (dto.statut === anneescolaire_statut.EN_COURS) {
         await tx.anneescolaire.updateMany({
@@ -70,7 +64,7 @@ export class AnneeScolaireService {
     });
   }
 
-  //Lister les années scolaires d'une école avec filtres et pagination.
+  // Lister les années scolaires d'une école avec filtres et pagination.
   async findAll(ecoleId: string, query: QueryAnneeScolaireDto) {
     const { page = 1, limit = 10, search, statut } = query;
     const skip = (page - 1) * limit;
@@ -141,8 +135,7 @@ export class AnneeScolaireService {
     return anneeScolaire;
   }
 
-  //Récupérer l'année scolaire actuellement active (EN_COURS) de l'école.
-
+  // Récupérer l'année scolaire actuellement active (EN_COURS) de l'école.
   async findCurrent(ecoleId: string) {
     const activeAnnee = await this.prisma.anneescolaire.findFirst({
       where: {
@@ -165,7 +158,6 @@ export class AnneeScolaireService {
     return activeAnnee;
   }
 
-  //
   // Mettre à jour une année scolaire.
   async update(
     ecoleId: string,
@@ -192,26 +184,27 @@ export class AnneeScolaireService {
       }
     }
 
-    // Gestion du changement de statut vers EN_COURS
-    if (dto.statut === anneescolaire_statut.EN_COURS) {
-      await this.prisma.anneescolaire.updateMany({
-        where: {
-          ecoleId,
-          statut: anneescolaire_statut.EN_COURS,
-          id: { not: anneeScolaireId },
-        },
-        data: { statut: anneescolaire_statut.TERMINEE },
-      });
-    }
+    // Basculement atomique si passage du statut à EN_COURS
+    return this.prisma.$transaction(async (tx) => {
+      if (dto.statut === anneescolaire_statut.EN_COURS) {
+        await tx.anneescolaire.updateMany({
+          where: {
+            ecoleId,
+            statut: anneescolaire_statut.EN_COURS,
+            id: { not: anneeScolaireId },
+          },
+          data: { statut: anneescolaire_statut.TERMINEE },
+        });
+      }
 
-    return this.prisma.anneescolaire.update({
-      where: { id: anneeScolaireId },
-      data: dto,
+      return tx.anneescolaire.update({
+        where: { id: anneeScolaireId },
+        data: dto,
+      });
     });
   }
 
-  //
-  // Changer le statut de l'année scolaire (p. ex. passer en EN_COURS, TERMINEE, etc.).
+  // Changer le statut de l'année scolaire.
   async changeStatut(
     ecoleId: string,
     anneeScolaireId: string,
@@ -219,38 +212,49 @@ export class AnneeScolaireService {
   ) {
     await this.findOne(ecoleId, anneeScolaireId);
 
-    if (dto.statut === anneescolaire_statut.EN_COURS) {
-      // Désactiver l'ancienne année scolaire active le cas échéant
-      await this.prisma.anneescolaire.updateMany({
-        where: {
-          ecoleId,
-          statut: anneescolaire_statut.EN_COURS,
-          id: { not: anneeScolaireId },
-        },
-        data: { statut: anneescolaire_statut.TERMINEE },
-      });
-    }
+    return this.prisma.$transaction(async (tx) => {
+      if (dto.statut === anneescolaire_statut.EN_COURS) {
+        await tx.anneescolaire.updateMany({
+          where: {
+            ecoleId,
+            statut: anneescolaire_statut.EN_COURS,
+            id: { not: anneeScolaireId },
+          },
+          data: { statut: anneescolaire_statut.TERMINEE },
+        });
+      }
 
-    return this.prisma.anneescolaire.update({
-      where: { id: anneeScolaireId },
-      data: { statut: dto.statut },
+      return tx.anneescolaire.update({
+        where: { id: anneeScolaireId },
+        data: { statut: dto.statut },
+      });
     });
   }
 
-  //
-  //Supprimer une année scolaire.
+  // Supprimer une année scolaire en isolant strictement le tenant.
   async remove(ecoleId: string, anneeScolaireId: string) {
     const annee = await this.findOne(ecoleId, anneeScolaireId);
 
-    // Empêcher la suppression d'une année scolaire en cours.
     if (annee.statut === anneescolaire_statut.EN_COURS) {
       throw new BadRequestException(
         'Impossible de supprimer cette année scolaire car elle est en cours.',
       );
     }
 
-    return this.prisma.anneescolaire.delete({
-      where: { id: anneeScolaireId },
+    // Suppression sécurisée avec vérification combinée id et ecoleId
+    const deleteResult = await this.prisma.anneescolaire.deleteMany({
+      where: {
+        id: anneeScolaireId,
+        ecoleId: ecoleId,
+      },
     });
+
+    if (deleteResult.count === 0) {
+      throw new NotFoundException(
+        'Année scolaire introuvable pour cette école.',
+      );
+    }
+
+    return { message: 'Année scolaire supprimée avec succès.' };
   }
 }

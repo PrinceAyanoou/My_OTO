@@ -10,6 +10,8 @@ import {
   HttpCode,
   HttpStatus,
   ParseUUIDPipe,
+  UsePipes,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,6 +20,7 @@ import {
   ApiParam,
   ApiBearerAuth,
 } from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 import { AnneeScolaireService } from './annee-scolaire.service';
 import {
   CreateAnneeScolaireDto,
@@ -25,14 +28,27 @@ import {
   ChangeStatutAnneeScolaireDto,
   QueryAnneeScolaireDto,
 } from './dto/annee-scolaire.dto';
+import { ClerkAuthGuard } from 'src/auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from 'src/auth/guards/permissions.guard';
+import { CheckPolicies } from 'src/auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Années Scolaires')
 @ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/annees-scolaires')
 export class AnneeScolaireController {
   constructor(private readonly anneeScolaireService: AnneeScolaireService) {}
 
   @Post()
+  @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Créer une nouvelle année scolaire',
     description:
@@ -44,23 +60,30 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.CREATED,
+    status: 201,
     description: 'L’année scolaire a été créée avec succès.',
   })
   @ApiResponse({
-    status: HttpStatus.BAD_REQUEST,
-    description:
-      'Données invalides ou date de fin antérieure à la date de début.',
+    status: 400,
+    description: 'Données invalides ou dates incorrectes.',
   })
   @ApiResponse({
-    status: HttpStatus.CONFLICT,
-    description: 'Une année scolaire avec ce nom existe déjà dans cette école.',
+    status: 401,
+    description: 'Utilisateur non authentifié.',
   })
   @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
+    status: 403,
+    description: 'Droits insuffisants pour effectuer cette action.',
+  })
+  @ApiResponse({
+    status: 404,
     description: 'École introuvable.',
   })
-  async create(
+  @ApiResponse({
+    status: 409,
+    description: 'Une année scolaire avec ce nom existe déjà dans cette école.',
+  })
+  create(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Body() dto: CreateAnneeScolaireDto,
   ) {
@@ -68,10 +91,13 @@ export class AnneeScolaireController {
   }
 
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Lister les années scolaires',
     description:
-      'Récupère la liste paginée des années scolaires associées à une école avec filtres par statut ou terme de recherche.',
+      'Récupère la liste paginée des années scolaires associées à une école avec filtres par statut ou recherche.',
   })
   @ApiParam({
     name: 'ecoleId',
@@ -79,10 +105,18 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Liste des années scolaires récupérée avec succès.',
   })
-  async findAll(
+  @ApiResponse({
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants pour accéder à cette ressource.',
+  })
+  findAll(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Query() query: QueryAnneeScolaireDto,
   ) {
@@ -90,6 +124,9 @@ export class AnneeScolaireController {
   }
 
   @Get('current')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Récupérer l’année scolaire actuellement en cours',
     description:
@@ -101,19 +138,30 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Année scolaire active récupérée avec succès.',
   })
   @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants.',
+  })
+  @ApiResponse({
+    status: 404,
     description:
       'Aucune année scolaire active n’a été trouvée pour cette école.',
   })
-  async findCurrent(@Param('ecoleId', ParseUUIDPipe) ecoleId: string) {
+  findCurrent(@Param('ecoleId', ParseUUIDPipe) ecoleId: string) {
     return this.anneeScolaireService.findCurrent(ecoleId);
   }
 
   @Get(':anneeScolaireId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Récupérer les détails d’une année scolaire',
     description:
@@ -130,14 +178,22 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Détails de l’année scolaire récupérés avec succès.',
   })
   @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants.',
+  })
+  @ApiResponse({
+    status: 404,
     description: 'Année scolaire introuvable pour cette école.',
   })
-  async findOne(
+  findOne(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
   ) {
@@ -145,6 +201,9 @@ export class AnneeScolaireController {
   }
 
   @Patch(':anneeScolaireId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Mettre à jour une année scolaire',
     description:
@@ -161,23 +220,31 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Année scolaire mise à jour avec succès.',
   })
   @ApiResponse({
-    status: HttpStatus.BAD_REQUEST,
+    status: 400,
     description: 'Données de mise à jour invalides.',
   })
   @ApiResponse({
-    status: HttpStatus.CONFLICT,
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants.',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Année scolaire introuvable.',
+  })
+  @ApiResponse({
+    status: 409,
     description:
       'Le nouveau nom est déjà utilisé par une autre année scolaire.',
   })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: 'Année scolaire introuvable.',
-  })
-  async update(
+  update(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
     @Body() dto: UpdateAnneeScolaireDto,
@@ -186,6 +253,9 @@ export class AnneeScolaireController {
   }
 
   @Patch(':anneeScolaireId/statut')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Changer le statut d’une année scolaire',
     description:
@@ -202,14 +272,22 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Statut de l’année scolaire modifié avec succès.',
   })
   @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants.',
+  })
+  @ApiResponse({
+    status: 404,
     description: 'Année scolaire introuvable.',
   })
-  async changeStatut(
+  changeStatut(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
     @Body() dto: ChangeStatutAnneeScolaireDto,
@@ -223,6 +301,9 @@ export class AnneeScolaireController {
 
   @Delete(':anneeScolaireId')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.anneeScolaire),
+  )
   @ApiOperation({
     summary: 'Supprimer une année scolaire',
     description:
@@ -239,18 +320,26 @@ export class AnneeScolaireController {
     type: String,
   })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Année scolaire supprimée avec succès.',
   })
   @ApiResponse({
-    status: HttpStatus.BAD_REQUEST,
+    status: 400,
     description: 'Impossible de supprimer une année scolaire active.',
   })
   @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
+    status: 401,
+    description: 'Utilisateur non authentifié.',
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Droits insuffisants.',
+  })
+  @ApiResponse({
+    status: 404,
     description: 'Année scolaire introuvable.',
   })
-  async remove(
+  remove(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
   ) {
