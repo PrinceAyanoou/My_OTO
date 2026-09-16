@@ -1,14 +1,14 @@
 import {
+  BadRequestException,
+  ConflictException,
   Injectable,
   NotFoundException,
-  ConflictException,
-  BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import {
+  ConfigurationScolariteQueryDto,
   CreateConfigurationScolariteDto,
   UpdateConfigurationScolariteDto,
-  ConfigurationScolariteQueryDto,
 } from './dto/configuration-scolarite.dto';
 
 @Injectable()
@@ -51,9 +51,8 @@ export class ConfigurationScolariteService {
     }
   }
 
-  //créer une configuration de scolarité dans une école.
+  // Créer une configuration de scolarité dans une école
   async create(ecoleId: string, dto: CreateConfigurationScolariteDto) {
-    //vérifie que les id fournis existent et appartiennent bien à cette école.
     await this.validateRelations(ecoleId, dto);
 
     const existingConfig = await this.prisma.configurationscolarite.findUnique({
@@ -87,7 +86,7 @@ export class ConfigurationScolariteService {
     });
   }
 
-  //Lister toutes les configuartion de scolarité pour une école.
+  // Lister toutes les configurations de scolarité pour une école
   async findAll(ecoleId: string, query: ConfigurationScolariteQueryDto) {
     const existEcole = await this.prisma.ecole.findUnique({
       where: { id: ecoleId },
@@ -133,7 +132,7 @@ export class ConfigurationScolariteService {
     };
   }
 
-  //Trouver une configuartion de scolarité par son id dans une école.
+  // Trouver une configuration de scolarité par son ID dans une école
   async findOne(ecoleId: string, id: string) {
     const existEcole = await this.prisma.ecole.findUnique({
       where: { id: ecoleId },
@@ -166,7 +165,7 @@ export class ConfigurationScolariteService {
     return config;
   }
 
-  //Mettre à jour une configuartion de scolarité dans une école.
+  // Mettre à jour une configuration de scolarité dans une école
   async update(
     ecoleId: string,
     id: string,
@@ -216,7 +215,7 @@ export class ConfigurationScolariteService {
     });
   }
 
-  //supprimer une configuartion de scolarité dans une école.
+  // Supprimer une configuration de scolarité dans une école
   async remove(ecoleId: string, id: string) {
     await this.findOne(ecoleId, id);
 
