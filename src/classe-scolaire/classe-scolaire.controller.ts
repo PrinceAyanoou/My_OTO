@@ -10,8 +10,16 @@ import {
   UsePipes,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { ClasseScolaireService } from './classe-scolaire.service';
 import {
@@ -19,44 +27,56 @@ import {
   UpdateClasseScolaireDto,
   QueryClasseScolaireDto,
 } from './dto/classe-scolaire.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import { AppAbility } from '../auth/casl/casl-ability.factory/casl-ability.factory';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Classes Scolaires')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @UsePipes(ZodValidationPipe)
 @Controller()
 export class ClasseScolaireController {
   constructor(private readonly classeScolaireService: ClasseScolaireService) {}
 
-  //Créer une classe liée à un niveau scolaire
   @Post('niveaux-scolaires/:niveauscolaireId/classes-scolaires')
   @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.CREATE, permission_cible.classeScolaire),
+  )
   @ApiOperation({ summary: 'Créer une classe liée à un niveau scolaire' })
   @ApiParam({
     name: 'niveauscolaireId',
     description: 'ID du niveau scolaire (UUID)',
-    example: 'a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d',
   })
   @ApiResponse({
     status: 201,
     description: 'La classe scolaire a été créée avec succès.',
   })
-  @ApiResponse({
-    status: 404,
-    description: 'Niveau scolaire introuvable.',
-  })
+  @ApiResponse({ status: 401, description: 'Non authentifié.' })
+  @ApiResponse({ status: 403, description: 'Accès interdit.' })
+  @ApiResponse({ status: 404, description: 'Niveau scolaire introuvable.' })
   @ApiResponse({
     status: 409,
     description: 'La classe existe déjà pour ce niveau scolaire.',
   })
   create(
-    @Param('niveauscolaireId') niveauscolaireId: string,
+    @Param('niveauscolaireId', ParseUUIDPipe) niveauscolaireId: string,
     @Body() dto: CreateClasseScolaireDto,
   ) {
     return this.classeScolaireService.create(niveauscolaireId, dto);
   }
 
-  //Lister toutes les classes de ce niveau scolaire
   @Get('niveaux-scolaires/:niveauscolaireId/classes-scolaires')
-  @ApiOperation({ summary: 'Lister toutes les classes de ce niveau scolaire' })
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.READ, permission_cible.classeScolaire),
+  )
+  @ApiOperation({ summary: 'Lister toutes les classes d’un niveau scolaire' })
   @ApiParam({
     name: 'niveauscolaireId',
     description: 'ID du niveau scolaire (UUID)',
@@ -66,43 +86,35 @@ export class ClasseScolaireController {
     description: 'Liste des classes récupérée avec succès.',
   })
   findAllByNiveau(
-    @Param('niveauscolaireId') niveauscolaireId: string,
+    @Param('niveauscolaireId', ParseUUIDPipe) niveauscolaireId: string,
     @Query() query: QueryClasseScolaireDto,
   ) {
     return this.classeScolaireService.findAllByNiveau(niveauscolaireId, query);
   }
 
-  //Lister toutes les classes d'une école (tous niveaux confondus)
   @Get('ecoles/:ecoleId/classes-scolaires')
-  @ApiOperation({
-    summary: "Lister toutes les classes d'une école (tous niveaux confondus)",
-  })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID de l'école (UUID)",
-  })
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.READ, permission_cible.classeScolaire),
+  )
+  @ApiOperation({ summary: "Lister toutes les classes d'une école" })
+  @ApiParam({ name: 'ecoleId', description: "ID de l'école (UUID)" })
   @ApiResponse({
     status: 200,
-    description: "Liste globale des classes de l'école récupérée avec succès.",
+    description: 'Liste globale récupérée avec succès.',
   })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: "Cette école n'existe pas.",
-  })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: ' Cette école ne possède pas de classeScolaire',
-  })
+  @ApiResponse({ status: 404, description: "Cette école n'existe pas." })
   findAllByEcole(
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Query() query: QueryClasseScolaireDto,
   ) {
     return this.classeScolaireService.findAllByEcole(ecoleId, query);
   }
 
-  //Récupérer une classe spécifique d’un niveau
   @Get(
     'niveaux-scolaires/:niveauscolaireId/classes-scolaires/:classeScolaireId',
+  )
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.READ, permission_cible.classeScolaire),
   )
   @ApiOperation({ summary: 'Récupérer une classe spécifique d’un niveau' })
   @ApiParam({
@@ -113,17 +125,11 @@ export class ClasseScolaireController {
     name: 'classeScolaireId',
     description: 'ID de la classe scolaire (UUID)',
   })
-  @ApiResponse({
-    status: 200,
-    description: 'Détails de la classe scolaire.',
-  })
-  @ApiResponse({
-    status: 404,
-    description: 'Classe scolaire introuvable pour ce niveau.',
-  })
+  @ApiResponse({ status: 200, description: 'Détails de la classe scolaire.' })
+  @ApiResponse({ status: 404, description: 'Classe scolaire introuvable.' })
   findOne(
-    @Param('niveauscolaireId') niveauscolaireId: string,
-    @Param('classeScolaireId') classeScolaireId: string,
+    @Param('niveauscolaireId', ParseUUIDPipe) niveauscolaireId: string,
+    @Param('classeScolaireId', ParseUUIDPipe) classeScolaireId: string,
   ) {
     return this.classeScolaireService.findOne(
       niveauscolaireId,
@@ -131,9 +137,11 @@ export class ClasseScolaireController {
     );
   }
 
-  //Mettre à jour une classe scolaire
   @Patch(
     'niveaux-scolaires/:niveauscolaireId/classes-scolaires/:classeScolaireId',
+  )
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.UPDATE, permission_cible.classeScolaire),
   )
   @ApiOperation({ summary: 'Mettre à jour une classe scolaire' })
   @ApiParam({
@@ -144,17 +152,15 @@ export class ClasseScolaireController {
     name: 'classeScolaireId',
     description: 'ID de la classe scolaire (UUID)',
   })
+  @ApiResponse({ status: 200, description: 'Classe mise à jour avec succès.' })
+  @ApiResponse({ status: 404, description: 'Classe introuvable.' })
   @ApiResponse({
-    status: 200,
-    description: 'Classe scolaire mise à jour avec succès.',
-  })
-  @ApiResponse({
-    status: 404,
-    description: 'Classe scolaire introuvable.',
+    status: 409,
+    description: 'Une classe porte déjà ce nom dans ce niveau.',
   })
   update(
-    @Param('niveauscolaireId') niveauscolaireId: string,
-    @Param('classeScolaireId') classeScolaireId: string,
+    @Param('niveauscolaireId', ParseUUIDPipe) niveauscolaireId: string,
+    @Param('classeScolaireId', ParseUUIDPipe) classeScolaireId: string,
     @Body() dto: UpdateClasseScolaireDto,
   ) {
     return this.classeScolaireService.update(
@@ -164,11 +170,13 @@ export class ClasseScolaireController {
     );
   }
 
-  //Supprimer une classe scolaire
   @Delete(
     'niveaux-scolaires/:niveauscolaireId/classes-scolaires/:classeScolaireId',
   )
-  @HttpCode(HttpStatus.NO_CONTENT)
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.DELETE, permission_cible.classeScolaire),
+  )
   @ApiOperation({ summary: 'Supprimer une classe scolaire' })
   @ApiParam({
     name: 'niveauscolaireId',
@@ -178,17 +186,11 @@ export class ClasseScolaireController {
     name: 'classeScolaireId',
     description: 'ID de la classe scolaire (UUID)',
   })
-  @ApiResponse({
-    status: 204,
-    description: 'Classe scolaire supprimée avec succès.',
-  })
-  @ApiResponse({
-    status: 404,
-    description: 'Classe scolaire introuvable.',
-  })
+  @ApiResponse({ status: 200, description: 'Classe supprimée avec succès.' })
+  @ApiResponse({ status: 404, description: 'Classe introuvable.' })
   remove(
-    @Param('niveauscolaireId') niveauscolaireId: string,
-    @Param('classeScolaireId') classeScolaireId: string,
+    @Param('niveauscolaireId', ParseUUIDPipe) niveauscolaireId: string,
+    @Param('classeScolaireId', ParseUUIDPipe) classeScolaireId: string,
   ) {
     return this.classeScolaireService.remove(
       niveauscolaireId,

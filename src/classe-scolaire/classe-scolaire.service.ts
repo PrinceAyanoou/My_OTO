@@ -14,9 +14,8 @@ import {
 export class ClasseScolaireService {
   constructor(private readonly prisma: PrismaService) {}
 
-  // Créer une classe liée à un niveau scolaire
+  //  Créer une classe scolaire
   async create(niveauscolaireId: string, dto: CreateClasseScolaireDto) {
-    // Vérification de l'existence du niveau scolaire
     const niveauExists = await this.prisma.niveauscolaire.findUnique({
       where: { id: niveauscolaireId },
     });
@@ -25,7 +24,6 @@ export class ClasseScolaireService {
       throw new NotFoundException(`Niveau scolaire introuvable.`);
     }
 
-    // Vérification de l'unicité du nom de classe au sein du même niveau
     const existing = await this.prisma.classscolaire.findFirst({
       where: {
         nom: dto.nom,
@@ -45,23 +43,6 @@ export class ClasseScolaireService {
         capacite: dto.capacite,
         niveauScolaireId: niveauscolaireId,
       },
-    });
-  }
-
-  //Récupérer toutes les classes associées à un niveau scolaire
-  async findAllByNiveau(
-    niveauscolaireId: string,
-    query?: QueryClasseScolaireDto,
-  ) {
-    const { search } = query || {};
-
-    return this.prisma.classscolaire.findMany({
-      where: {
-        niveauScolaireId: niveauscolaireId,
-        ...(search && {
-          nom: { contains: search },
-        }),
-      },
       include: {
         niveauscolaire: {
           select: {
@@ -70,16 +51,78 @@ export class ClasseScolaireService {
           },
         },
       },
-      orderBy: { nom: 'asc' },
     });
   }
 
-  // Récupérer une classe par son ID et vérifier qu'elle appartient bien au niveau scolaire
+  //  Lister les classes d'un niveau scolaire
+  async findAllByNiveau(
+    niveauscolaireId: string,
+    query?: QueryClasseScolaireDto,
+  ) {
+    const page = Math.max(1, Number(query) || 1);
+    const limit = Math.max(1, Number(query) || 10);
+    const skip = (page - 1) * limit;
+
+    const niveauExists = await this.prisma.niveauscolaire.findUnique({
+      where: { id: niveauscolaireId },
+    });
+
+    if (!niveauExists) {
+      throw new NotFoundException(`Niveau scolaire introuvable.`);
+    }
+
+    const search = query?.search?.trim();
+
+    const where = {
+      niveauScolaireId: niveauscolaireId,
+      ...(search && {
+        nom: { contains: search },
+      }),
+    };
+
+    const [data, total] = await Promise.all([
+      this.prisma.classscolaire.findMany({
+        where,
+        skip,
+        take: limit,
+        include: {
+          niveauscolaire: {
+            select: {
+              id: true,
+              nom: true,
+            },
+          },
+        },
+        orderBy: { nom: 'asc' },
+      }),
+      this.prisma.classscolaire.count({ where }),
+    ]);
+
+    return {
+      data,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  }
+
+  // Récupérer une classe spécifique
   async findOne(niveauscolaireId: string, classeScolaireId: string) {
     const classe = await this.prisma.classscolaire.findFirst({
-      where: { id: classeScolaireId, niveauScolaireId: niveauscolaireId },
+      where: {
+        id: classeScolaireId,
+        niveauScolaireId: niveauscolaireId,
+      },
       include: {
-        niveauscolaire: true,
+        niveauscolaire: {
+          select: {
+            id: true,
+            nom: true,
+          },
+        },
       },
     });
 
@@ -92,25 +135,91 @@ export class ClasseScolaireService {
     return classe;
   }
 
-  // Récupérer toutes les classes scolaires d'une école (tous niveaux confondus)
+  // Lister toutes les classes d'une école
   async findAllByEcole(ecoleId: string, query?: QueryClasseScolaireDto) {
-    const { search } = query || {};
+    const page = Math.max(1, Number(query) || 1);
+    const limit = Math.max(1, Number(query) || 10);
+    const skip = (page - 1) * limit;
 
     const existEcole = await this.prisma.ecole.findUnique({
       where: { id: ecoleId },
     });
 
     if (!existEcole) {
-      throw new NotFoundException(`Cette école n'existe pas`);
+      throw new NotFoundException(`Cette école n'existe pas.`);
     }
-    const classeScolaire = await this.prisma.classscolaire.findMany({
-      where: {
-        niveauscolaire: {
-          ecoleId,
+
+    const search = query?.search?.trim();
+
+    const where = {
+      niveauscolaire: {
+        ecoleId,
+      },
+      ...(search && {
+        nom: { contains: search },
+      }),
+    };
+
+    const [data, total] = await Promise.all([
+      this.prisma.classscolaire.findMany({
+        where,
+        skip,
+        take: limit,
+        include: {
+          niveauscolaire: {
+            select: {
+              id: true,
+              nom: true,
+            },
+          },
         },
-        ...(search && {
-          nom: { contains: search },
-        }),
+        orderBy: [{ niveauscolaire: { nom: 'asc' } }, { nom: 'asc' }],
+      }),
+      this.prisma.classscolaire.count({ where }),
+    ]);
+
+    return {
+      data,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  }
+
+  //  Mettre à jour une classe scolaire
+  async update(
+    niveauscolaireId: string,
+    classeScolaireId: string,
+    dto: UpdateClasseScolaireDto,
+  ) {
+    const currentClasse = await this.findOne(
+      niveauscolaireId,
+      classeScolaireId,
+    );
+
+    if (dto.nom && dto.nom !== currentClasse.nom) {
+      const existing = await this.prisma.classscolaire.findFirst({
+        where: {
+          nom: dto.nom,
+          niveauScolaireId: niveauscolaireId,
+        },
+      });
+
+      if (existing && existing.id !== classeScolaireId) {
+        throw new ConflictException(
+          `La classe "${dto.nom}" existe déjà pour ce niveau scolaire.`,
+        );
+      }
+    }
+
+    return this.prisma.classscolaire.update({
+      where: { id: currentClasse.id },
+      data: {
+        ...(dto.nom && { nom: dto.nom }),
+        ...(dto.capacite !== undefined && { capacite: dto.capacite }),
       },
       include: {
         niveauscolaire: {
@@ -120,39 +229,18 @@ export class ClasseScolaireService {
           },
         },
       },
-      orderBy: [{ niveauscolaire: { nom: 'asc' } }, { nom: 'asc' }],
-    });
-
-    if (classeScolaire.length > 0) {
-      return classeScolaire;
-    }
-    throw new NotFoundException(
-      `Cette école ne possède pas encore de classe scolaire`,
-    );
-  }
-
-  //
-  //Mettre à jour une classe scolaire
-  async update(
-    niveauscolaireId: string,
-    classeScolaireId: string,
-    dto: UpdateClasseScolaireDto,
-  ) {
-    await this.findOne(niveauscolaireId, classeScolaireId);
-
-    return this.prisma.classscolaire.update({
-      where: { id: classeScolaireId },
-      data: dto,
     });
   }
 
-  //
-  //Supprimer une classe scolaire
+  //  Supprimer une classe scolaire
   async remove(niveauscolaireId: string, classeScolaireId: string) {
-    await this.findOne(niveauscolaireId, classeScolaireId);
+    const currentClasse = await this.findOne(
+      niveauscolaireId,
+      classeScolaireId,
+    );
 
     return this.prisma.classscolaire.delete({
-      where: { id: classeScolaireId },
+      where: { id: currentClasse.id },
     });
   }
 }
