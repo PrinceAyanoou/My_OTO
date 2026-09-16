@@ -4,7 +4,7 @@ import {
   ConflictException,
   BadRequestException,
 } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service'; // Adapter le chemin selon votre projet
+import { PrismaService } from '../prisma/prisma.service';
 import {
   CreateClasseMatiereDto,
   UpdateClasseMatiereDto,
@@ -14,6 +14,7 @@ import {
 @Injectable()
 export class ClasseMatiereService {
   constructor(private readonly prisma: PrismaService) {}
+
   private async validateRelations(
     ecoleId: string,
     dto: {
@@ -61,17 +62,16 @@ export class ClasseMatiereService {
       }
     }
   }
-  //Créer une relation entre une classe et une matiere
+
   async create(ecoleId: string, dto: CreateClasseMatiereDto) {
-    //Vérifie que la classe, la matière et l'UE existent et appartiennent à l'école.
     await this.validateRelations(ecoleId, dto);
 
-    //vérifie s'il existe déjà une relation entre cette classe et cette matière.
-    const existingRelation = await this.prisma.classematirere.findUnique({
+    const existingRelation = await this.prisma.classematirere.findFirst({
       where: {
-        classeScolaireId_matiereId: {
-          classeScolaireId: dto.classeScolaireId,
-          matiereId: dto.matiereId,
+        classeScolaireId: dto.classeScolaireId,
+        matiereId: dto.matiereId,
+        classscolaire: {
+          niveauscolaire: { ecoleId },
         },
       },
     });
@@ -97,10 +97,10 @@ export class ClasseMatiereService {
     });
   }
 
-  //Lister toutes les relations classes matières pour une école.
   async findAll(ecoleId: string, query: ClasseMatiereQueryDto) {
-    const { classeScolaireId, matiereId, uniteEnseignementId, page, limit } =
-      query;
+    const { classeScolaireId, matiereId, uniteEnseignementId } = query;
+    const page = Math.max(1, query.page || 1);
+    const limit = Math.max(1, query.limit || 10);
     const skip = (page - 1) * limit;
 
     const existEcole = await this.prisma.ecole.findUnique({
@@ -108,14 +108,14 @@ export class ClasseMatiereService {
     });
 
     if (!existEcole) {
-      throw new NotFoundException(`Cette école n'existe pas`);
+      throw new NotFoundException(`L'école spécifiée n'existe pas.`);
     }
+
     const where = {
       classscolaire: {
-        niveauscolaire: {
-          ecoleId,
-        },
+        niveauscolaire: { ecoleId },
       },
+      matiere: { ecoleId },
       ...(classeScolaireId && { classeScolaireId }),
       ...(matiereId && { matiereId }),
       ...(uniteEnseignementId && { uniteEnseignementId }),
@@ -147,23 +147,14 @@ export class ClasseMatiereService {
     };
   }
 
-  //trouver une relation classe matière par son Id dans une école.
   async findOne(ecoleId: string, id: string) {
-    const existEcole = await this.prisma.ecole.findUnique({
-      where: { id: ecoleId },
-    });
-
-    if (!existEcole) {
-      throw new NotFoundException(`Cette école n'existe pas`);
-    }
     const classeMatiere = await this.prisma.classematirere.findFirst({
       where: {
         id,
         classscolaire: {
-          niveauscolaire: {
-            ecoleId,
-          },
+          niveauscolaire: { ecoleId },
         },
+        matiere: { ecoleId },
       },
       include: {
         classscolaire: true,
@@ -181,7 +172,6 @@ export class ClasseMatiereService {
     return classeMatiere;
   }
 
-  //mettre à jour une relation entre une classe et une matiere dans une ecole.
   async update(ecoleId: string, id: string, dto: UpdateClasseMatiereDto) {
     const current = await this.findOne(ecoleId, id);
 
@@ -204,11 +194,12 @@ export class ClasseMatiereService {
       (targetClasseId !== current.classeScolaireId ||
         targetMatiereId !== current.matiereId)
     ) {
-      const duplicate = await this.prisma.classematirere.findUnique({
+      const duplicate = await this.prisma.classematirere.findFirst({
         where: {
-          classeScolaireId_matiereId: {
-            classeScolaireId: targetClasseId,
-            matiereId: targetMatiereId,
+          classeScolaireId: targetClasseId,
+          matiereId: targetMatiereId,
+          classscolaire: {
+            niveauscolaire: { ecoleId },
           },
         },
       });
@@ -221,7 +212,7 @@ export class ClasseMatiereService {
     }
 
     return this.prisma.classematirere.update({
-      where: { id },
+      where: { id: current.id },
       data: dto,
       include: {
         classscolaire: true,
@@ -231,12 +222,11 @@ export class ClasseMatiereService {
     });
   }
 
-  //supprimer une relation classe matiere dans une ecole.
   async remove(ecoleId: string, id: string) {
-    await this.findOne(ecoleId, id);
+    const current = await this.findOne(ecoleId, id);
 
     return this.prisma.classematirere.delete({
-      where: { id },
+      where: { id: current.id },
     });
   }
 }

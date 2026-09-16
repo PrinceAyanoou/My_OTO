@@ -11,8 +11,15 @@ import {
   HttpStatus,
   ParseUUIDPipe,
   UsePipes,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { ClasseMatiereService } from './classe-matirere.service';
 import {
@@ -20,38 +27,40 @@ import {
   UpdateClasseMatiereDto,
   ClasseMatiereQueryDto,
 } from './dto/classe-matirere.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import { AppAbility } from '../auth/casl/casl-ability.factory/casl-ability.factory';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Classes - Matières')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/classes-matieres')
 export class ClasseMatiereController {
   constructor(private readonly classeMatiereService: ClasseMatiereService) {}
 
-  //Associer une matière à une classe
   @Post()
   @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.CREATE, permission_cible.classeMatiere),
+  )
   @ApiOperation({
     summary: 'Associer une matière à une classe',
     description:
-      "Crée une nouvelle association entre une classe et une matière pour une école donnée, en définissant son coefficient et éventuellement une Unité d'Enseignement (UE).",
+      'Crée une nouvelle association entre une classe et une matière pour une école donnée.',
   })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID unique (UUID) de l'école",
-    type: String,
-  })
-  @ApiResponse({
-    status: 201,
-    description: "L'association classe-matière a été créée avec succès.",
-  })
-  @ApiResponse({
-    status: 400,
-    description:
-      "Données d'entrée invalides, UUID incorrect ou la classe/matière/UE spécifiée n'appartient pas à l'école.",
-  })
+  @ApiParam({ name: 'ecoleId', description: "ID unique (UUID) de l'école" })
+  @ApiResponse({ status: 201, description: 'Association créée avec succès.' })
+  @ApiResponse({ status: 401, description: 'Non authentifié.' })
+  @ApiResponse({ status: 403, description: 'Accès interdit.' })
   @ApiResponse({
     status: 409,
-    description: 'Cette matière est déjà associée à cette classe.',
+    description: 'Matière déjà associée à cette classe.',
   })
   create(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
@@ -60,26 +69,16 @@ export class ClasseMatiereController {
     return this.classeMatiereService.create(ecoleId, dto);
   }
 
-  //Lister les associations classe-matière
   @Get()
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.READ, permission_cible.classeMatiere),
+  )
   @ApiOperation({
     summary: 'Lister les associations classe-matière',
-    description:
-      "Récupère la liste paginée des matières associées aux classes d'une école avec la possibilité de filtrer par classe, matière ou unité d'enseignement.",
+    description: 'Récupère la liste paginée des associations classe-matière.',
   })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID unique (UUID) de l'école",
-    type: String,
-  })
-  @ApiResponse({
-    status: 200,
-    description: 'Liste des associations classe-matière récupérée avec succès.',
-  })
-  @ApiResponse({
-    status: 404,
-    description: "L'école spécifiée est introuvable.",
-  })
+  @ApiParam({ name: 'ecoleId', description: "ID unique (UUID) de l'école" })
+  @ApiResponse({ status: 200, description: 'Liste récupérée avec succès.' })
   findAll(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Query() query: ClasseMatiereQueryDto,
@@ -87,32 +86,15 @@ export class ClasseMatiereController {
     return this.classeMatiereService.findAll(ecoleId, query);
   }
 
-  //Obtenir une association classe-matière par ID
   @Get(':id')
-  @ApiOperation({
-    summary: 'Obtenir une association classe-matière par ID',
-    description:
-      "Récupère les détails d'une association spécifique entre une classe et une matière pour l'école donnée.",
-  })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID unique (UUID) de l'école",
-    type: String,
-  })
-  @ApiParam({
-    name: 'id',
-    description: "ID unique (UUID) de l'association classe-matière",
-    type: String,
-  })
-  @ApiResponse({
-    status: 200,
-    description: "Détails de l'association récupérés avec succès.",
-  })
-  @ApiResponse({
-    status: 404,
-    description:
-      "L'école n'existe pas ou l'association classe-matière est introuvable pour cette école.",
-  })
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.READ, permission_cible.classeMatiere),
+  )
+  @ApiOperation({ summary: 'Obtenir une association classe-matière par ID' })
+  @ApiParam({ name: 'ecoleId', description: "ID unique (UUID) de l'école" })
+  @ApiParam({ name: 'id', description: "ID unique (UUID) de l'association" })
+  @ApiResponse({ status: 200, description: 'Détails récupérés avec succès.' })
+  @ApiResponse({ status: 404, description: 'Association introuvable.' })
   findOne(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('id', ParseUUIDPipe) id: string,
@@ -120,41 +102,14 @@ export class ClasseMatiereController {
     return this.classeMatiereService.findOne(ecoleId, id);
   }
 
-  //Mettre à jour une association classe-matière
   @Patch(':id')
-  @ApiOperation({
-    summary: 'Mettre à jour une association classe-matière',
-    description:
-      "Modifie le coefficient, la classe, la matière ou l'unité d'enseignement d'une association existante tout en validant les contraintes de domaine.",
-  })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID unique (UUID) de l'école",
-    type: String,
-  })
-  @ApiParam({
-    name: 'id',
-    description: "ID unique (UUID) de l'association à modifier",
-    type: String,
-  })
-  @ApiResponse({
-    status: 200,
-    description: "L'association a été mise à jour avec succès.",
-  })
-  @ApiResponse({
-    status: 400,
-    description:
-      'Données de mise à jour invalides ou entités référencées non conformes.',
-  })
-  @ApiResponse({
-    status: 404,
-    description: "L'association est introuvable pour cette école.",
-  })
-  @ApiResponse({
-    status: 409,
-    description:
-      'Une association existe déjà entre cette nouvelle classe et cette matière.',
-  })
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.UPDATE, permission_cible.classeMatiere),
+  )
+  @ApiOperation({ summary: 'Mettre à jour une association classe-matière' })
+  @ApiParam({ name: 'ecoleId', description: "ID unique (UUID) de l'école" })
+  @ApiParam({ name: 'id', description: "ID unique (UUID) de l'association" })
+  @ApiResponse({ status: 200, description: 'Association mise à jour.' })
   update(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('id', ParseUUIDPipe) id: string,
@@ -163,32 +118,15 @@ export class ClasseMatiereController {
     return this.classeMatiereService.update(ecoleId, id, dto);
   }
 
-  //Supprimer une association classe-matière
   @Delete(':id')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    summary: 'Supprimer une association classe-matière',
-    description:
-      "Retire la liaison entre une classe et une matière pour l'école donnée.",
-  })
-  @ApiParam({
-    name: 'ecoleId',
-    description: "ID unique (UUID) de l'école",
-    type: String,
-  })
-  @ApiParam({
-    name: 'id',
-    description: "ID unique (UUID) de l'association à supprimer",
-    type: String,
-  })
-  @ApiResponse({
-    status: 200,
-    description: "L'association a été supprimée avec succès.",
-  })
-  @ApiResponse({
-    status: 404,
-    description: "L'association est introuvable pour cette école.",
-  })
+  @CheckPolicies((ability: AppAbility) =>
+    ability.can(permission_action.DELETE, permission_cible.classeMatiere),
+  )
+  @ApiOperation({ summary: 'Supprimer une association classe-matière' })
+  @ApiParam({ name: 'ecoleId', description: "ID unique (UUID) de l'école" })
+  @ApiParam({ name: 'id', description: "ID unique (UUID) de l'association" })
+  @ApiResponse({ status: 200, description: 'Association supprimée.' })
   remove(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('id', ParseUUIDPipe) id: string,
