@@ -1,34 +1,96 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  ParseUUIDPipe,
+  Patch,
+  Post,
+  Query,
+  UseGuards,
+  UsePipes,
+} from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 import { EmploiDuTempsService } from './emploi-du-temps.service';
-import { CreateEmploiDuTempDto } from './dto/create-emploi-du-temp.dto';
-import { UpdateEmploiDuTempDto } from './dto/update-emploi-du-temp.dto';
+import {
+  CreateEmploiDuTempsDto,
+  QueryEmploiDuTempsDto,
+  UpdateEmploiDuTempsDto,
+} from './dto/emploi-du-temp.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
-@Controller('emploi-du-temps')
+@ApiTags('Emplois du temps')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@UsePipes(ZodValidationPipe)
+@Controller('ecoles/:ecoleId/emplois-du-temps')
 export class EmploiDuTempsController {
   constructor(private readonly emploiDuTempsService: EmploiDuTempsService) {}
 
   @Post()
-  create(@Body() createEmploiDuTempDto: CreateEmploiDuTempDto) {
-    return this.emploiDuTempsService.create(createEmploiDuTempDto);
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.emploiDuTemps),
+  )
+  create(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Body() dto: CreateEmploiDuTempsDto,
+  ) {
+    return this.emploiDuTempsService.create(ecoleId, dto);
   }
 
   @Get()
-  findAll() {
-    return this.emploiDuTempsService.findAll();
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.emploiDuTemps),
+  )
+  findAll(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Query() query: QueryEmploiDuTempsDto,
+  ) {
+    return this.emploiDuTempsService.findAll(ecoleId, query);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.emploiDuTempsService.findOne(+id);
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.emploiDuTemps),
+  )
+  findOne(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
+    return this.emploiDuTempsService.findOne(ecoleId, id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateEmploiDuTempDto: UpdateEmploiDuTempDto) {
-    return this.emploiDuTempsService.update(+id, updateEmploiDuTempDto);
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.emploiDuTemps),
+  )
+  update(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() dto: UpdateEmploiDuTempsDto,
+  ) {
+    return this.emploiDuTempsService.update(ecoleId, id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.emploiDuTempsService.remove(+id);
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.emploiDuTemps),
+  )
+  remove(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
+    return this.emploiDuTempsService.remove(ecoleId, id);
   }
 }
