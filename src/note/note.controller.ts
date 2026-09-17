@@ -12,8 +12,10 @@ import {
   StreamableFile,
   BadRequestException,
   Res,
+  ParseUUIDPipe,
+  UseGuards,
+  UsePipes,
 } from '@nestjs/common';
-// Import du type sous forme de 'import type' ou via le namespace express
 import type { Response } from 'express';
 import { FileInterceptor } from '@nestjs/platform-express';
 import {
@@ -32,20 +34,33 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
 } from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 import { NoteService } from './note.service';
 import { CreateNoteDto, UpdateNoteDto } from './dto/note.dto';
 import { ImportNotesExcelDto } from './dto/note-excel.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Notes')
 @ApiBearerAuth()
 @ApiUnauthorizedResponse({ description: 'Jeton JWT invalide ou manquant.' })
 @ApiForbiddenResponse({ description: 'Accès refusé pour cette école.' })
 @ApiInternalServerErrorResponse({ description: 'Erreur interne du serveur.' })
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@UsePipes(ZodValidationPipe)
 @Controller('ecole/:ecoleId/notes')
 export class NoteController {
   constructor(private readonly noteService: NoteService) {}
 
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.note),
+  )
   @ApiOperation({
     summary: 'Créer ou mettre à jour une note individuelle',
     description:
@@ -67,13 +82,16 @@ export class NoteController {
     description: 'Évaluation ou inscription introuvable pour cette école.',
   })
   async createOrUpdate(
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Body() dto: CreateNoteDto,
   ) {
     return this.noteService.createOrUpdate(dto, ecoleId);
   }
 
   @Get('export-excel')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.note),
+  )
   @ApiOperation({
     summary: 'Générer et télécharger la fiche de saisie Excel des notes',
     description:
@@ -99,9 +117,9 @@ export class NoteController {
     description: 'Aucun élève inscrit dans cette classe.',
   })
   async exportExcel(
-    @Param('ecoleId') ecoleId: string,
-    @Query('classeScolaireId') classeScolaireId: string,
-    @Query('evaluationId') evaluationId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Query('classeScolaireId', ParseUUIDPipe) classeScolaireId: string,
+    @Query('evaluationId', ParseUUIDPipe) evaluationId: string,
     @Res({ passthrough: true }) res: Response,
   ): Promise<StreamableFile> {
     const buffer = await this.noteService.generateClassSheet(
@@ -120,6 +138,9 @@ export class NoteController {
   }
 
   @Post('import-excel')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.note),
+  )
   @UseInterceptors(FileInterceptor('file'))
   @ApiConsumes('multipart/form-data')
   @ApiOperation({
@@ -158,7 +179,7 @@ export class NoteController {
     description: 'Évaluation introuvable pour cette école.',
   })
   async importExcel(
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @UploadedFile() file: Express.Multer.File,
     @Body() dto: ImportNotesExcelDto,
   ) {
@@ -169,6 +190,9 @@ export class NoteController {
   }
 
   @Get('evaluation/:evaluationId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.note),
+  )
   @ApiOperation({ summary: "Récupérer toutes les notes d'une évaluation" })
   @ApiParam({ name: 'ecoleId', type: String, description: "ID de l'école" })
   @ApiParam({
@@ -183,13 +207,16 @@ export class NoteController {
     description: 'Évaluation introuvable ou droits insuffisants.',
   })
   async findByEvaluation(
-    @Param('ecoleId') ecoleId: string,
-    @Param('evaluationId') evaluationId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('evaluationId', ParseUUIDPipe) evaluationId: string,
   ) {
     return this.noteService.findByEvaluation(evaluationId, ecoleId);
   }
 
   @Get('apprenant/:apprenantId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.note),
+  )
   @ApiOperation({
     summary: "Récupérer toutes les notes d'un élève pour une année scolaire",
   })
@@ -210,9 +237,9 @@ export class NoteController {
       "Liste des notes de l'élève pour l'année scolaire sélectionnée.",
   })
   async findByApprenant(
-    @Param('ecoleId') ecoleId: string,
-    @Param('apprenantId') apprenantId: string,
-    @Query('anneeScolaireId') anneeScolaireId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('apprenantId', ParseUUIDPipe) apprenantId: string,
+    @Query('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
   ) {
     return this.noteService.findByApprenant(
       apprenantId,
@@ -222,16 +249,25 @@ export class NoteController {
   }
 
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.note),
+  )
   @ApiOperation({ summary: 'Récupérer une note par son identifiant' })
   @ApiParam({ name: 'ecoleId', type: String, description: "ID de l'école" })
   @ApiParam({ name: 'id', type: String, description: 'ID de la note' })
   @ApiOkResponse({ description: 'Note trouvée.' })
   @ApiNotFoundResponse({ description: 'Note introuvable avec cet ID.' })
-  async findOne(@Param('ecoleId') ecoleId: string, @Param('id') id: string) {
+  async findOne(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
     return this.noteService.findOne(id, ecoleId);
   }
 
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.note),
+  )
   @ApiOperation({ summary: 'Mettre à jour une note existante' })
   @ApiParam({ name: 'ecoleId', type: String, description: "ID de l'école" })
   @ApiParam({ name: 'id', type: String, description: 'ID de la note' })
@@ -241,20 +277,26 @@ export class NoteController {
   })
   @ApiNotFoundResponse({ description: 'Note introuvable.' })
   async update(
-    @Param('ecoleId') ecoleId: string,
-    @Param('id') id: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
     @Body() dto: UpdateNoteDto,
   ) {
     return this.noteService.update(id, dto, ecoleId);
   }
 
   @Delete(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.note),
+  )
   @ApiOperation({ summary: 'Supprimer une note' })
   @ApiParam({ name: 'ecoleId', type: String, description: "ID de l'école" })
   @ApiParam({ name: 'id', type: String, description: 'ID de la note' })
   @ApiOkResponse({ description: 'Note supprimée avec succès.' })
   @ApiNotFoundResponse({ description: 'Note introuvable.' })
-  async remove(@Param('ecoleId') ecoleId: string, @Param('id') id: string) {
+  async remove(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+  ) {
     return this.noteService.remove(id, ecoleId);
   }
 }

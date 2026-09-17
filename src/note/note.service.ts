@@ -31,6 +31,15 @@ export class NoteService {
     evaluationId: string,
     ecoleId: string,
   ): Promise<Buffer> {
+    await this.validateEvaluation(evaluationId, ecoleId);
+
+    const classe = await this.prisma.classscolaire.findFirst({
+      where: { id: classeScolaireId, niveauscolaire: { ecoleId } },
+    });
+    if (!classe) {
+      throw new NotFoundException('Classe introuvable pour cette école.');
+    }
+
     //Récupérer les inscriptions de la classe
     const inscriptions = await this.prisma.inscription.findMany({
       where: {
@@ -191,6 +200,20 @@ export class NoteService {
         continue;
       }
 
+      try {
+        await this.validateInscription(
+          apprenantId,
+          anneeScolaireId,
+          ecoleId,
+        );
+      } catch (error) {
+        report.erreurs.push({
+          ligne: lineNum,
+          raison: (error as Error).message,
+        });
+        continue;
+      }
+
       notesToUpsert.push({
         Valeur: noteValeur,
         Observation: String(observation).trim(),
@@ -240,10 +263,37 @@ export class NoteService {
 
     return evaluation;
   }
+
+  private async validateInscription(
+    apprenantId: string,
+    anneeScolaireId: string,
+    ecoleId: string,
+  ) {
+    const inscription = await this.prisma.inscription.findFirst({
+      where: {
+        apprenantId,
+        anneeScolaireId,
+        anneescolaire: { ecoleId },
+      },
+    });
+
+    if (!inscription) {
+      throw new NotFoundException(
+        "L'inscription de l'apprenant est introuvable dans cette école.",
+      );
+    }
+
+    return inscription;
+  }
   //
   //Créer ou mettre à jour une note individuelle
   async createOrUpdate(dto: CreateNoteDto, ecoleId: string) {
     const evaluation = await this.validateEvaluation(dto.evaluationId, ecoleId);
+    await this.validateInscription(
+      dto.inscriptionApprenantId,
+      dto.inscriptionAnneeId,
+      ecoleId,
+    );
 
     if (dto.Valeur < 0 || dto.Valeur > dto.noteSur) {
       throw new BadRequestException(
