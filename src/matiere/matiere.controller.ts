@@ -10,8 +10,16 @@ import {
   UsePipes,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+} from '@nestjs/swagger';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { MatiereService } from './matiere.service';
 import {
@@ -19,8 +27,17 @@ import {
   UpdateMatiereDto,
   QueryMatiereDto,
 } from './dto/matiere.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Matières')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/matieres')
 export class MatiereController {
@@ -29,6 +46,9 @@ export class MatiereController {
   //Créer une matière rattachée à une école
   @Post()
   @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.matiere),
+  )
   @ApiOperation({ summary: 'Créer une matière rattachée à une école' })
   @ApiParam({
     name: 'ecoleId',
@@ -47,12 +67,18 @@ export class MatiereController {
     status: 409,
     description: 'Une matière portant ce nom existe déjà dans cette école.',
   })
-  create(@Param('ecoleId') ecoleId: string, @Body() dto: CreateMatiereDto) {
+  create(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Body() dto: CreateMatiereDto,
+  ) {
     return this.matiereService.create(ecoleId, dto);
   }
 
   //Lister toutes les matières d'une école
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.matiere),
+  )
   @ApiOperation({ summary: "Lister toutes les matières d'une école" })
   @ApiParam({
     name: 'ecoleId',
@@ -67,7 +93,7 @@ export class MatiereController {
     description: "L'école n'existe pas ou ne dispose d'aucune matière.",
   })
   findAllByEcole(
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Query() query: QueryMatiereDto,
   ) {
     return this.matiereService.findAllByEcole(ecoleId, query);
@@ -75,6 +101,9 @@ export class MatiereController {
 
   //Récupérer une matière spécifique de l’école
   @Get(':matiereId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.matiere),
+  )
   @ApiOperation({ summary: 'Récupérer une matière spécifique de l’école' })
   @ApiParam({
     name: 'ecoleId',
@@ -93,14 +122,17 @@ export class MatiereController {
     description: 'Matière introuvable pour cette école.',
   })
   findOne(
-    @Param('ecoleId') ecoleId: string,
-    @Param('matiereId') matiereId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('matiereId', ParseUUIDPipe) matiereId: string,
   ) {
     return this.matiereService.findOne(ecoleId, matiereId);
   }
 
   //Mettre à jour une matière
   @Patch(':matiereId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.matiere),
+  )
   @ApiOperation({ summary: 'Mettre à jour une matière' })
   @ApiParam({
     name: 'ecoleId',
@@ -123,8 +155,8 @@ export class MatiereController {
     description: 'Une autre matière portant ce nom existe déjà.',
   })
   update(
-    @Param('ecoleId') ecoleId: string,
-    @Param('matiereId') matiereId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('matiereId', ParseUUIDPipe) matiereId: string,
     @Body() dto: UpdateMatiereDto,
   ) {
     return this.matiereService.update(ecoleId, matiereId, dto);
@@ -133,6 +165,9 @@ export class MatiereController {
   //Supprimer une matière
   @Delete(':matiereId')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.matiere),
+  )
   @ApiOperation({ summary: 'Supprimer une matière' })
   @ApiParam({
     name: 'ecoleId',
@@ -151,8 +186,8 @@ export class MatiereController {
     description: 'Matière introuvable.',
   })
   remove(
-    @Param('ecoleId') ecoleId: string,
-    @Param('matiereId') matiereId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('matiereId', ParseUUIDPipe) matiereId: string,
   ) {
     return this.matiereService.remove(ecoleId, matiereId);
   }
