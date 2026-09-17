@@ -1,6 +1,6 @@
 import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
-import { periodescolaire_statut } from 'src/generated/prisma/client';
+import { periodescolaire_statut } from 'src/generated/prisma/enums';
 
 // Enum du statut de la période scolaire d'après Prisma
 export const PeriodeScolaireStatutEnum = z.enum(periodescolaire_statut);

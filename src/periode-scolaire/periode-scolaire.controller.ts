@@ -9,6 +9,8 @@ import {
   Query,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,6 +20,13 @@ import {
   ApiBearerAuth,
 } from '@nestjs/swagger';
 import { PeriodeScolaireService } from './periode-scolaire.service';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 import {
   CreatePeriodeScolaireDto,
   UpdatePeriodeScolaireDto,
@@ -27,6 +36,7 @@ import {
 
 @ApiTags('Périodes Scolaires')
 @ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/annees-scolaires/:anneeScolaireId/periodes')
 export class PeriodeScolaireController {
   constructor(
@@ -35,6 +45,9 @@ export class PeriodeScolaireController {
 
   //Créer une nouvelle période scolaire.
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.periodeScolaire),
+  )
   @ApiOperation({
     summary: 'Créer une nouvelle période scolaire',
     description:
@@ -59,8 +72,8 @@ export class PeriodeScolaireController {
     description: 'École ou année scolaire introuvable.',
   })
   create(
-    @Param('ecoleId') ecoleId: string,
-    @Param('anneeScolaireId') anneeScolaireId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
     @Body() dto: CreatePeriodeScolaireDto,
   ) {
     return this.periodeScolaireService.create(ecoleId, anneeScolaireId, dto);
@@ -68,6 +81,9 @@ export class PeriodeScolaireController {
 
   //Lister les périodes scolaires
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.periodeScolaire),
+  )
   @ApiOperation({
     summary: 'Lister les périodes scolaires',
     description:
@@ -84,8 +100,8 @@ export class PeriodeScolaireController {
     description: 'École ou année scolaire introuvable.',
   })
   findAll(
-    @Param('ecoleId') ecoleId: string,
-    @Param('anneeScolaireId') anneeScolaireId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
     @Query() query: QueryPeriodeScolaireDto,
   ) {
     return this.periodeScolaireService.findAll(ecoleId, anneeScolaireId, query);
@@ -93,6 +109,9 @@ export class PeriodeScolaireController {
 
   //Récupérer les détails d'une période scolaire.
   @Get(':periodeId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.periodeScolaire),
+  )
   @ApiOperation({
     summary: "Récupérer les détails d'une période scolaire",
     description:
@@ -110,9 +129,9 @@ export class PeriodeScolaireController {
     description: 'Période scolaire introuvable.',
   })
   findOne(
-    @Param('ecoleId') ecoleId: string,
-    @Param('anneeScolaireId') anneeScolaireId: string,
-    @Param('periodeId') periodeId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
+    @Param('periodeId', ParseUUIDPipe) periodeId: string,
   ) {
     return this.periodeScolaireService.findOne(
       ecoleId,
@@ -123,6 +142,9 @@ export class PeriodeScolaireController {
 
   //mettre à jour une période scolaire.
   @Patch(':periodeId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.periodeScolaire),
+  )
   @ApiOperation({
     summary: 'Mettre à jour une période scolaire',
     description:
@@ -148,9 +170,9 @@ export class PeriodeScolaireController {
     description: 'Période scolaire introuvable.',
   })
   update(
-    @Param('ecoleId') ecoleId: string,
-    @Param('anneeScolaireId') anneeScolaireId: string,
-    @Param('periodeId') periodeId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
+    @Param('periodeId', ParseUUIDPipe) periodeId: string,
     @Body() dto: UpdatePeriodeScolaireDto,
   ) {
     return this.periodeScolaireService.update(
@@ -163,6 +185,9 @@ export class PeriodeScolaireController {
 
   //Changer le statut d'une période scolaire.
   @Patch(':periodeId/statut')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.periodeScolaire),
+  )
   @ApiOperation({
     summary: 'Changer le statut d’une période scolaire',
     description:
@@ -180,9 +205,9 @@ export class PeriodeScolaireController {
     description: 'Période scolaire introuvable.',
   })
   changeStatut(
-    @Param('ecoleId') ecoleId: string,
-    @Param('anneeScolaireId') anneeScolaireId: string,
-    @Param('periodeId') periodeId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
+    @Param('periodeId', ParseUUIDPipe) periodeId: string,
     @Body() dto: ChangeStatutPeriodeDto,
   ) {
     return this.periodeScolaireService.changeStatut(
@@ -196,6 +221,9 @@ export class PeriodeScolaireController {
   //supprimer une période scolaire.
   @Delete(':periodeId')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.periodeScolaire),
+  )
   @ApiOperation({
     summary: 'Supprimer une période scolaire',
     description:
@@ -218,9 +246,9 @@ export class PeriodeScolaireController {
     description: 'Période scolaire introuvable.',
   })
   remove(
-    @Param('ecoleId') ecoleId: string,
-    @Param('anneeScolaireId') anneeScolaireId: string,
-    @Param('periodeId') periodeId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('anneeScolaireId', ParseUUIDPipe) anneeScolaireId: string,
+    @Param('periodeId', ParseUUIDPipe) periodeId: string,
   ) {
     return this.periodeScolaireService.remove(
       ecoleId,
