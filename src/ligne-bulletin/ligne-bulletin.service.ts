@@ -16,15 +16,14 @@ export class LigneBulletinService {
   constructor(private readonly prisma: PrismaService) {}
 
   //Créer une ligne de bulletin
-  async create(dto: CreateLigneBulletinDto) {
+  async create(dto: CreateLigneBulletinDto, ecoleId: string) {
     //Vérifier que le bulletin existe
-    const bulletin = await this.prisma.bulletin.findUnique({
+    const bulletin = await this.prisma.bulletin.findFirst({
       where: {
-        inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId: {
-          inscriptionApprenantId: dto.bulletinApprenantId,
-          inscriptionAnneeId: dto.bulletinAnneeId,
-          periodeScolaireId: dto.bulletinId,
-        },
+        inscriptionApprenantId: dto.bulletinApprenantId,
+        inscriptionAnneeId: dto.bulletinAnneeId,
+        periodeScolaireId: dto.bulletinId,
+        inscription: { anneescolaire: { ecoleId } },
       },
 
       include: {
@@ -41,10 +40,8 @@ export class LigneBulletinService {
     }
 
     // Vérifier que la matière existe
-    const matiere = await this.prisma.matiere.findUnique({
-      where: {
-        id: dto.matiereId,
-      },
+    const matiere = await this.prisma.matiere.findFirst({
+      where: { id: dto.matiereId, ecoleId },
     });
 
     if (!matiere) {
@@ -74,6 +71,7 @@ export class LigneBulletinService {
         bulletinAnneeId: dto.bulletinAnneeId,
         bulletinId: dto.bulletinId,
         matiereId: dto.matiereId,
+        bulletin: { inscription: { anneescolaire: { ecoleId } } },
       },
     });
 
@@ -114,8 +112,9 @@ export class LigneBulletinService {
   }
 
   //Récupérer toutes les lignes de bulletin
-  async findAll() {
+  async findAll(ecoleId: string) {
     return this.prisma.lignebulletin.findMany({
+      where: { bulletin: { inscription: { anneescolaire: { ecoleId } } } },
       include: {
         matiere: true,
         bulletin: {
@@ -139,6 +138,7 @@ export class LigneBulletinService {
     bulletinAnneeId: string,
     bulletinId: string,
     matiereId: string,
+    ecoleId: string,
   ) {
     const ligne = await this.prisma.lignebulletin.findFirst({
       where: {
@@ -146,6 +146,7 @@ export class LigneBulletinService {
         bulletinAnneeId,
         bulletinId,
         matiereId,
+        bulletin: { inscription: { anneescolaire: { ecoleId } } },
       },
 
       include: {
@@ -176,15 +177,15 @@ export class LigneBulletinService {
     bulletinApprenantId: string,
     bulletinAnneeId: string,
     bulletinId: string,
+    ecoleId: string,
   ) {
     // Vérifier que le bulletin existe
-    const bulletin = await this.prisma.bulletin.findUnique({
+    const bulletin = await this.prisma.bulletin.findFirst({
       where: {
-        inscriptionApprenantId_inscriptionAnneeId_periodeScolaireId: {
-          inscriptionApprenantId: bulletinApprenantId,
-          inscriptionAnneeId: bulletinAnneeId,
-          periodeScolaireId: bulletinId,
-        },
+        inscriptionApprenantId: bulletinApprenantId,
+        inscriptionAnneeId: bulletinAnneeId,
+        periodeScolaireId: bulletinId,
+        inscription: { anneescolaire: { ecoleId } },
       },
     });
 
@@ -197,6 +198,7 @@ export class LigneBulletinService {
         bulletinApprenantId,
         bulletinAnneeId,
         bulletinId,
+        bulletin: { inscription: { anneescolaire: { ecoleId } } },
       },
 
       include: {
@@ -218,6 +220,7 @@ export class LigneBulletinService {
     bulletinId: string,
     matiereId: string,
     dto: UpdateLigneBulletinDto,
+    ecoleId: string,
   ) {
     const ligne = await this.prisma.lignebulletin.findFirst({
       where: {
@@ -225,6 +228,7 @@ export class LigneBulletinService {
         bulletinAnneeId,
         bulletinId,
         matiereId,
+        bulletin: { inscription: { anneescolaire: { ecoleId } } },
       },
     });
 
@@ -258,6 +262,7 @@ export class LigneBulletinService {
     bulletinAnneeId: string,
     bulletinId: string,
     matiereId: string,
+    ecoleId: string,
   ) {
     const ligne = await this.prisma.lignebulletin.findFirst({
       where: {
@@ -265,6 +270,7 @@ export class LigneBulletinService {
         bulletinAnneeId,
         bulletinId,
         matiereId,
+        bulletin: { inscription: { anneescolaire: { ecoleId } } },
       },
     });
 

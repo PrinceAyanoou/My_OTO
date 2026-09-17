@@ -9,6 +9,7 @@ import {
   ParseUUIDPipe,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 
 import {
@@ -17,6 +18,7 @@ import {
   ApiParam,
   ApiResponse,
   ApiTags,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 
 import { LigneBulletinService } from './ligne-bulletin.service';
@@ -25,14 +27,26 @@ import {
   CreateLigneBulletinDto,
   UpdateLigneBulletinDto,
 } from './dto/ligne-bulletin.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Lignes de bulletin')
-@Controller('ligne-bulletin')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@Controller('ecoles/:ecoleId/ligne-bulletin')
 export class LigneBulletinController {
   constructor(private readonly ligneBulletinService: LigneBulletinService) {}
 
   //Créer une ligne de bulletin
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.ligneBulletin),
+  )
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({
     summary: 'Créer une ligne de bulletin',
@@ -56,12 +70,18 @@ export class LigneBulletinController {
     description:
       'La matière n’est pas associée à la classe ou existe déjà dans le bulletin.',
   })
-  async create(@Body() dto: CreateLigneBulletinDto) {
-    return this.ligneBulletinService.create(dto);
+  async create(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Body() dto: CreateLigneBulletinDto,
+  ) {
+    return this.ligneBulletinService.create(dto, ecoleId);
   }
 
   //Récupérer toutes les lignes de bulletin
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.ligneBulletin),
+  )
   @ApiOperation({
     summary: 'Récupérer toutes les lignes de bulletin',
     description: 'Retourne toutes les lignes de bulletin enregistrées.',
@@ -70,12 +90,15 @@ export class LigneBulletinController {
     status: HttpStatus.OK,
     description: 'Liste des lignes de bulletin récupérée avec succès.',
   })
-  async findAll() {
-    return this.ligneBulletinService.findAll();
+  async findAll(@Param('ecoleId', ParseUUIDPipe) ecoleId: string) {
+    return this.ligneBulletinService.findAll(ecoleId);
   }
 
   //Récupérer toutes les lignes d'un bulletin
   @Get('bulletin/:bulletinApprenantId/:bulletinAnneeId/:bulletinId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.ligneBulletin),
+  )
   @ApiOperation({
     summary: 'Récupérer les lignes d’un bulletin',
     description:
@@ -108,6 +131,7 @@ export class LigneBulletinController {
     description: 'Le bulletin indiqué est introuvable.',
   })
   async findByBulletin(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('bulletinApprenantId', ParseUUIDPipe)
     bulletinApprenantId: string,
 
@@ -121,11 +145,15 @@ export class LigneBulletinController {
       bulletinApprenantId,
       bulletinAnneeId,
       bulletinId,
+      ecoleId,
     );
   }
 
   // Récupérer une ligne précise
   @Get(':bulletinApprenantId/:bulletinAnneeId/:bulletinId/:matiereId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.ligneBulletin),
+  )
   @ApiOperation({
     summary: 'Récupérer une ligne de bulletin',
     description:
@@ -164,6 +192,7 @@ export class LigneBulletinController {
     description: 'La ligne de bulletin est introuvable.',
   })
   async findOne(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('bulletinApprenantId', ParseUUIDPipe)
     bulletinApprenantId: string,
 
@@ -181,11 +210,15 @@ export class LigneBulletinController {
       bulletinAnneeId,
       bulletinId,
       matiereId,
+      ecoleId,
     );
   }
 
   //Modifier une ligne de bulletin
   @Patch(':bulletinApprenantId/:bulletinAnneeId/:bulletinId/:matiereId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.ligneBulletin),
+  )
   @ApiOperation({
     summary: 'Modifier une ligne de bulletin',
     description: 'Modifie la moyenne d’une matière dans un bulletin.',
@@ -227,6 +260,7 @@ export class LigneBulletinController {
     description: 'La ligne de bulletin est introuvable.',
   })
   async update(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('bulletinApprenantId', ParseUUIDPipe)
     bulletinApprenantId: string,
 
@@ -247,12 +281,16 @@ export class LigneBulletinController {
       bulletinId,
       matiereId,
       dto,
+      ecoleId,
     );
   }
 
   // Supprimer une ligne de bulletin
   @Delete(':bulletinApprenantId/:bulletinAnneeId/:bulletinId/:matiereId')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.ligneBulletin),
+  )
   @ApiOperation({
     summary: 'Supprimer une ligne de bulletin',
     description: 'Supprime une matière de la liste des lignes d’un bulletin.',
@@ -290,6 +328,7 @@ export class LigneBulletinController {
     description: 'La ligne de bulletin est introuvable.',
   })
   async remove(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Param('bulletinApprenantId', ParseUUIDPipe)
     bulletinApprenantId: string,
 
@@ -307,6 +346,7 @@ export class LigneBulletinController {
       bulletinAnneeId,
       bulletinId,
       matiereId,
+      ecoleId,
     );
   }
 }
