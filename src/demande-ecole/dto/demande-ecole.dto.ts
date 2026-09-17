@@ -1,3 +1,4 @@
+import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
 
 export const EcoleTypeEnum = z.enum([
@@ -6,7 +7,6 @@ export const EcoleTypeEnum = z.enum([
   'UNIVERSITE',
 ]);
 
-// Structure des champs pour la création d'une école.
 export const DemanderCreationSchema = z.object({
   nom: z
     .string()
@@ -24,28 +24,27 @@ export const DemanderCreationSchema = z.object({
   description: z.string().optional(),
 });
 
-// Structure partielle (tous les champs optionnels) pour la modification
+export class DemanderCreationDto extends createZodDto(DemanderCreationSchema) {}
+
 export const SchemaDonneesEcolePartial = DemanderCreationSchema.partial();
 
-export type DemanderCreationDto = z.infer<typeof DemanderCreationSchema>;
-
-// structure pour la demande de modification d'une école.
 export const DemanderModificationSchema = z.object({
-  ecoleId: z.uuid('ID école invalide'),
+  ecoleId: z.string().uuid('ID école invalide').optional(),
   motif: z.string().optional(),
   donnees: SchemaDonneesEcolePartial,
 });
 
-export type DemanderModificationDto = z.infer<
-  typeof DemanderModificationSchema
->;
+export class DemanderModificationDto extends createZodDto(
+  DemanderModificationSchema,
+) {}
 
-//structure pour la suppression d'une école.
 export const DemanderSuppressionSchema = z.object({
-  ecoleId: z.string().uuid('ID école invalide'),
+  ecoleId: z.string().uuid('ID école invalide').optional(),
   motif: z
     .string()
     .min(5, 'Le motif de suppression doit contenir au moins 5 caractères'),
 });
 
-export type DemanderSuppressionDto = z.infer<typeof DemanderSuppressionSchema>;
+export class DemanderSuppressionDto extends createZodDto(
+  DemanderSuppressionSchema,
+) {}

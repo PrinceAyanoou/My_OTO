@@ -1,10 +1,10 @@
 import {
-  Injectable,
   BadRequestException,
-  NotFoundException,
   ForbiddenException,
+  Injectable,
+  NotFoundException,
 } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service'; // Adaptez le chemin
+import { PrismaService } from '../prisma/prisma.service';
 import {
   DemanderCreationDto,
   DemanderModificationDto,
@@ -15,15 +15,15 @@ import {
 export class DemandeEcoleService {
   constructor(private readonly prisma: PrismaService) {}
 
-  //service pour la demande de création d'une école.
+  // Service pour la demande de création d'une école
   async demanderCreation(clerkUserId: string, dto: DemanderCreationDto) {
-    //vérifie d'abord si le user qui fait la demande est déjà un user du système.
+    // Vérifie d'abord si l'utilisateur qui fait la demande existe dans la base
     const user = await this.prisma.user.findUnique({
-      where: { clerkUserId: clerkUserId },
+      where: { clerkUserId },
     });
-    if (!user) throw new NotFoundException("Veuillez vous inscrire d'abord ");
+    if (!user) throw new NotFoundException("Veuillez vous inscrire d'abord.");
 
-    //enrégistrement de la demande d'inscription.
+    // Enregistrement de la demande de création
     return this.prisma.demandeecole.create({
       data: {
         demandeurId: clerkUserId,
@@ -40,7 +40,7 @@ export class DemandeEcoleService {
     });
   }
 
-  //service pour la demande de modification de l'école.
+  // Service pour la demande de modification de l'école
   async demanderModification(
     clerkUserId: string,
     dto: DemanderModificationDto,
@@ -51,17 +51,17 @@ export class DemandeEcoleService {
     if (!ecole) throw new NotFoundException('École introuvable.');
 
     const user = await this.prisma.user.findUnique({
-      where: { clerkUserId: clerkUserId },
+      where: { clerkUserId },
     });
 
-    //on véifie si le user qui fait la demande est inscrit et si c'est le createur de l'école
-    //car seul ce dernier peut faire des modifications.
+    // Vérification : seul le créateur de l'école peut faire une demande de modification
     if (!user || ecole.createurId !== user.clerkUserId) {
       throw new ForbiddenException(
         'Seul le créateur de cette école peut effectuer cette demande.',
       );
     }
-    //on vérifie s'il y a déjà une demande de modifications pour cette école.
+
+    // Vérification si une demande en attente existe déjà
     const demandeExistante = await this.prisma.demandeecole.findFirst({
       where: { ecoleId: dto.ecoleId, statut: 'EN_ATTENTE' },
     });
@@ -122,7 +122,7 @@ export class DemandeEcoleService {
     });
   }
 
-  //service de demande de suppression d'une école.
+  // Service de demande de suppression d'une école
   async demanderSuppression(clerkUserId: string, dto: DemanderSuppressionDto) {
     const ecole = await this.prisma.ecole.findUnique({
       where: { id: dto.ecoleId },
@@ -130,10 +130,10 @@ export class DemandeEcoleService {
     if (!ecole) throw new NotFoundException('École introuvable.');
 
     const user = await this.prisma.user.findUnique({
-      where: { clerkUserId: clerkUserId },
+      where: { clerkUserId },
     });
 
-    //vérifie si c'est bien le créateur qui fait la demande
+    // Vérification : seul le créateur de l'école peut demander sa suppression
     if (!user || ecole.createurId !== user.clerkUserId) {
       throw new ForbiddenException(
         'Seul le créateur de cette école peut demander sa suppression.',
@@ -168,9 +168,8 @@ export class DemandeEcoleService {
     });
   }
 
-  //service pour lire les demande de son école en tant que créateur.
+  // Service pour lire les demandes de son école en tant que créateur
   async findDemandesByEcole(ecoleId: string, clerkUserId: string) {
-    // Vérifier l'existence de l'école
     const ecole = await this.prisma.ecole.findUnique({
       where: { id: ecoleId },
     });
@@ -179,9 +178,8 @@ export class DemandeEcoleService {
       throw new NotFoundException('École introuvable.');
     }
 
-    // Vérifier si l'utilisateur est le créateur
     const user = await this.prisma.user.findUnique({
-      where: { clerkUserId: clerkUserId },
+      where: { clerkUserId },
     });
 
     if (!user || ecole.createurId !== user.clerkUserId) {
@@ -190,7 +188,6 @@ export class DemandeEcoleService {
       );
     }
 
-    // Récupérer l'ensemble des demandes associées à cette école
     return this.prisma.demandeecole.findMany({
       where: { ecoleId },
       include: {
