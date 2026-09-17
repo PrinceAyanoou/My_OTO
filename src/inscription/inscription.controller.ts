@@ -9,6 +9,7 @@ import {
   ParseUUIDPipe,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,17 +19,30 @@ import {
   ApiQuery,
   ApiBadRequestResponse,
   ApiNotFoundResponse,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { InscriptionService } from './inscription.service';
 import { UpdateInscriptionDto, ChangeClasseDto } from './dto/inscription.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Inscriptions')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/inscriptions')
 export class InscriptionController {
   constructor(private readonly inscriptionService: InscriptionService) {}
 
   //Lister toutes les inscriptions de l’école
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.inscription),
+  )
   @ApiOperation({
     summary: 'Lister toutes les inscriptions de l’école',
     description:
@@ -53,8 +67,10 @@ export class InscriptionController {
   })
   findAllBySchool(
     @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
-    @Query('anneeScolaireId') anneeScolaireId?: string,
-    @Query('classeScolaireId') classeScolaireId?: string,
+    @Query('anneeScolaireId', new ParseUUIDPipe({ optional: true }))
+    anneeScolaireId?: string,
+    @Query('classeScolaireId', new ParseUUIDPipe({ optional: true }))
+    classeScolaireId?: string,
   ) {
     return this.inscriptionService.findAllBySchool(
       ecoleId,
@@ -65,6 +81,9 @@ export class InscriptionController {
 
   //'Obtenir une inscription spécifique
   @Get('apprenants/:apprenantId/annees/:anneeScolaireId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.inscription),
+  )
   @ApiOperation({
     summary: 'Obtenir une inscription spécifique',
     description:
@@ -98,6 +117,9 @@ export class InscriptionController {
 
   //Consulte toutes les inscriptions enregistrées pour un apprenant au fil des années.
   @Get('apprenants/:apprenantId/historique')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.inscription),
+  )
   @ApiOperation({
     summary: 'Historique des inscriptions d’un apprenant',
     description:
@@ -118,6 +140,9 @@ export class InscriptionController {
 
   //Changer la classe d’une inscription
   @Patch('apprenants/:apprenantId/annees/:anneeScolaireId/changer-classe')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.inscription),
+  )
   @ApiOperation({
     summary: 'Changer la classe d’une inscription',
     description:
@@ -156,6 +181,9 @@ export class InscriptionController {
 
   //Mettre à jour une inscription
   @Patch('apprenants/:apprenantId/annees/:anneeScolaireId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.inscription),
+  )
   @ApiOperation({
     summary: 'Mettre à jour une inscription',
     description:
@@ -191,6 +219,9 @@ export class InscriptionController {
   //Supprimer une inscription
   @Delete('apprenants/:apprenantId/annees/:anneeScolaireId')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.inscription),
+  )
   @ApiOperation({
     summary: 'Supprimer une inscription',
     description:
