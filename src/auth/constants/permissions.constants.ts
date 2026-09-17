@@ -32,6 +32,7 @@ const cibleValues = [
   'paiement',
   'parent',
   'participantConversation',
+  'demandeEcole',
   'periodeScolaire',
   'politiqueEvaluation',
   'regleEvaluation',

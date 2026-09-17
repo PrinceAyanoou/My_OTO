@@ -189,7 +189,7 @@ export type UniteenseignementGroupByOutputType = {
   id: string
   nom: string
   code: string
-  coefficient: number
+  coefficient: number | null
   createdAt: Date
   updatedAt: Date
   _count: UniteenseignementCountAggregateOutputType | null
@@ -221,7 +221,7 @@ export type uniteenseignementWhereInput = {
   id?: Prisma.StringFilter<"uniteenseignement"> | string
   nom?: Prisma.StringFilter<"uniteenseignement"> | string
   code?: Prisma.StringFilter<"uniteenseignement"> | string
-  coefficient?: Prisma.IntFilter<"uniteenseignement"> | number
+  coefficient?: Prisma.IntNullableFilter<"uniteenseignement"> | number | null
   createdAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
   classematirere?: Prisma.ClassematirereListRelationFilter
@@ -232,7 +232,7 @@ export type uniteenseignementOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
-  coefficient?: Prisma.SortOrder
+  coefficient?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   classematirere?: Prisma.classematirereOrderByRelationAggregateInput
@@ -247,7 +247,7 @@ export type uniteenseignementWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.uniteenseignementWhereInput[]
   NOT?: Prisma.uniteenseignementWhereInput | Prisma.uniteenseignementWhereInput[]
   nom?: Prisma.StringFilter<"uniteenseignement"> | string
-  coefficient?: Prisma.IntFilter<"uniteenseignement"> | number
+  coefficient?: Prisma.IntNullableFilter<"uniteenseignement"> | number | null
   createdAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"uniteenseignement"> | Date | string
   classematirere?: Prisma.ClassematirereListRelationFilter
@@ -258,7 +258,7 @@ export type uniteenseignementOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nom?: Prisma.SortOrder
   code?: Prisma.SortOrder
-  coefficient?: Prisma.SortOrder
+  coefficient?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.uniteenseignementCountOrderByAggregateInput
@@ -275,16 +275,16 @@ export type uniteenseignementScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"uniteenseignement"> | string
   nom?: Prisma.StringWithAggregatesFilter<"uniteenseignement"> | string
   code?: Prisma.StringWithAggregatesFilter<"uniteenseignement"> | string
-  coefficient?: Prisma.IntWithAggregatesFilter<"uniteenseignement"> | number
+  coefficient?: Prisma.IntNullableWithAggregatesFilter<"uniteenseignement"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"uniteenseignement"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"uniteenseignement"> | Date | string
 }
 
 export type uniteenseignementCreateInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   classematirere?: Prisma.classematirereCreateNestedManyWithoutUniteenseignementInput
@@ -292,10 +292,10 @@ export type uniteenseignementCreateInput = {
 }
 
 export type uniteenseignementUncheckedCreateInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutUniteenseignementInput
@@ -306,7 +306,7 @@ export type uniteenseignementUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   classematirere?: Prisma.classematirereUpdateManyWithoutUniteenseignementNestedInput
@@ -317,7 +317,7 @@ export type uniteenseignementUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutUniteenseignementNestedInput
@@ -325,10 +325,10 @@ export type uniteenseignementUncheckedUpdateInput = {
 }
 
 export type uniteenseignementCreateManyInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -337,7 +337,7 @@ export type uniteenseignementUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -346,7 +346,7 @@ export type uniteenseignementUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -433,20 +433,20 @@ export type uniteenseignementUpdateOneRequiredWithoutMatiereueNestedInput = {
 }
 
 export type uniteenseignementCreateWithoutClassematirereInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   matiereue?: Prisma.matiereueCreateNestedManyWithoutUniteenseignementInput
 }
 
 export type uniteenseignementUncheckedCreateWithoutClassematirereInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   matiereue?: Prisma.matiereueUncheckedCreateNestedManyWithoutUniteenseignementInput
@@ -472,7 +472,7 @@ export type uniteenseignementUpdateWithoutClassematirereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   matiereue?: Prisma.matiereueUpdateManyWithoutUniteenseignementNestedInput
@@ -482,27 +482,27 @@ export type uniteenseignementUncheckedUpdateWithoutClassematirereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   matiereue?: Prisma.matiereueUncheckedUpdateManyWithoutUniteenseignementNestedInput
 }
 
 export type uniteenseignementCreateWithoutMatiereueInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   classematirere?: Prisma.classematirereCreateNestedManyWithoutUniteenseignementInput
 }
 
 export type uniteenseignementUncheckedCreateWithoutMatiereueInput = {
-  id: string
+  id?: string
   nom: string
   code: string
-  coefficient: number
+  coefficient?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   classematirere?: Prisma.classematirereUncheckedCreateNestedManyWithoutUniteenseignementInput
@@ -528,7 +528,7 @@ export type uniteenseignementUpdateWithoutMatiereueInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   classematirere?: Prisma.classematirereUpdateManyWithoutUniteenseignementNestedInput
@@ -538,7 +538,7 @@ export type uniteenseignementUncheckedUpdateWithoutMatiereueInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
-  coefficient?: Prisma.IntFieldUpdateOperationsInput | number
+  coefficient?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   classematirere?: Prisma.classematirereUncheckedUpdateManyWithoutUniteenseignementNestedInput
@@ -624,7 +624,7 @@ export type $uniteenseignementPayload<ExtArgs extends runtime.Types.Extensions.I
     id: string
     nom: string
     code: string
-    coefficient: number
+    coefficient: number | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["uniteenseignement"]>

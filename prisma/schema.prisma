@@ -556,6 +556,8 @@ model parent {
 model participantconversation {
   conversationId String
   userId         String
+  role           RoleParticipant @default(MEMBRE)
+  joinedAt       DateTime     @default(now())
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @default(now())
   conversation   conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade, map: "ParticipantConversation_conversationId_fkey")
@@ -825,6 +827,7 @@ enum permission_cible {
   configScolarite
   conversation
   decisionFinAnnee
+  demandeEcole
   dossierScolarite
   ecole
   emploiDuTemps
@@ -969,4 +972,9 @@ enum demande_ecole_statut {
   EN_ATTENTE
   APPROUVEE
   REJETEE
+}
+
+enum RoleParticipant {
+  ADMIN
+  MEMBRE
 }

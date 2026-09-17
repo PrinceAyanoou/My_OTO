@@ -34,6 +34,10 @@ export type EcoleMinAggregateOutputType = {
   email: string | null
   telephone: string | null
   description: string | null
+  logoUrl: string | null
+  slogan: string | null
+  adresse: string | null
+  ministereTutelle: string | null
   statut: $Enums.ecole_statut | null
   code: string | null
   createdAt: Date | null
@@ -52,6 +56,10 @@ export type EcoleMaxAggregateOutputType = {
   email: string | null
   telephone: string | null
   description: string | null
+  logoUrl: string | null
+  slogan: string | null
+  adresse: string | null
+  ministereTutelle: string | null
   statut: $Enums.ecole_statut | null
   code: string | null
   createdAt: Date | null
@@ -70,6 +78,10 @@ export type EcoleCountAggregateOutputType = {
   email: number
   telephone: number
   description: number
+  logoUrl: number
+  slogan: number
+  adresse: number
+  ministereTutelle: number
   statut: number
   code: number
   createdAt: number
@@ -90,6 +102,10 @@ export type EcoleMinAggregateInputType = {
   email?: true
   telephone?: true
   description?: true
+  logoUrl?: true
+  slogan?: true
+  adresse?: true
+  ministereTutelle?: true
   statut?: true
   code?: true
   createdAt?: true
@@ -108,6 +124,10 @@ export type EcoleMaxAggregateInputType = {
   email?: true
   telephone?: true
   description?: true
+  logoUrl?: true
+  slogan?: true
+  adresse?: true
+  ministereTutelle?: true
   statut?: true
   code?: true
   createdAt?: true
@@ -126,6 +146,10 @@ export type EcoleCountAggregateInputType = {
   email?: true
   telephone?: true
   description?: true
+  logoUrl?: true
+  slogan?: true
+  adresse?: true
+  ministereTutelle?: true
   statut?: true
   code?: true
   createdAt?: true
@@ -217,6 +241,10 @@ export type EcoleGroupByOutputType = {
   email: string
   telephone: string
   description: string | null
+  logoUrl: string | null
+  slogan: string | null
+  adresse: string | null
+  ministereTutelle: string | null
   statut: $Enums.ecole_statut
   code: string
   createdAt: Date
@@ -256,6 +284,10 @@ export type ecoleWhereInput = {
   email?: Prisma.StringFilter<"ecole"> | string
   telephone?: Prisma.StringFilter<"ecole"> | string
   description?: Prisma.StringNullableFilter<"ecole"> | string | null
+  logoUrl?: Prisma.StringNullableFilter<"ecole"> | string | null
+  slogan?: Prisma.StringNullableFilter<"ecole"> | string | null
+  adresse?: Prisma.StringNullableFilter<"ecole"> | string | null
+  ministereTutelle?: Prisma.StringNullableFilter<"ecole"> | string | null
   statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
   code?: Prisma.StringFilter<"ecole"> | string
   createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
@@ -287,6 +319,10 @@ export type ecoleOrderByWithRelationInput = {
   email?: Prisma.SortOrder
   telephone?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
+  logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  slogan?: Prisma.SortOrderInput | Prisma.SortOrder
+  adresse?: Prisma.SortOrderInput | Prisma.SortOrder
+  ministereTutelle?: Prisma.SortOrderInput | Prisma.SortOrder
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -323,6 +359,10 @@ export type ecoleWhereUniqueInput = Prisma.AtLeast<{
   ville?: Prisma.StringFilter<"ecole"> | string
   telephone?: Prisma.StringFilter<"ecole"> | string
   description?: Prisma.StringNullableFilter<"ecole"> | string | null
+  logoUrl?: Prisma.StringNullableFilter<"ecole"> | string | null
+  slogan?: Prisma.StringNullableFilter<"ecole"> | string | null
+  adresse?: Prisma.StringNullableFilter<"ecole"> | string | null
+  ministereTutelle?: Prisma.StringNullableFilter<"ecole"> | string | null
   statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
   createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
   valideAt?: Prisma.DateTimeNullableFilter<"ecole"> | Date | string | null
@@ -353,6 +393,10 @@ export type ecoleOrderByWithAggregationInput = {
   email?: Prisma.SortOrder
   telephone?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
+  logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  slogan?: Prisma.SortOrderInput | Prisma.SortOrder
+  adresse?: Prisma.SortOrderInput | Prisma.SortOrder
+  ministereTutelle?: Prisma.SortOrderInput | Prisma.SortOrder
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -377,6 +421,10 @@ export type ecoleScalarWhereWithAggregatesInput = {
   email?: Prisma.StringWithAggregatesFilter<"ecole"> | string
   telephone?: Prisma.StringWithAggregatesFilter<"ecole"> | string
   description?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
+  logoUrl?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
+  slogan?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
+  adresse?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
+  ministereTutelle?: Prisma.StringNullableWithAggregatesFilter<"ecole"> | string | null
   statut?: Prisma.Enumecole_statutWithAggregatesFilter<"ecole"> | $Enums.ecole_statut
   code?: Prisma.StringWithAggregatesFilter<"ecole"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"ecole"> | Date | string
@@ -395,6 +443,10 @@ export type ecoleCreateInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -425,6 +477,10 @@ export type ecoleUncheckedCreateInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -455,6 +511,10 @@ export type ecoleUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -485,6 +545,10 @@ export type ecoleUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -515,6 +579,10 @@ export type ecoleCreateManyInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -533,6 +601,10 @@ export type ecoleUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -550,6 +622,10 @@ export type ecoleUncheckedUpdateManyInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -584,6 +660,10 @@ export type ecoleCountOrderByAggregateInput = {
   email?: Prisma.SortOrder
   telephone?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
+  slogan?: Prisma.SortOrder
+  adresse?: Prisma.SortOrder
+  ministereTutelle?: Prisma.SortOrder
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -602,6 +682,10 @@ export type ecoleMaxOrderByAggregateInput = {
   email?: Prisma.SortOrder
   telephone?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
+  slogan?: Prisma.SortOrder
+  adresse?: Prisma.SortOrder
+  ministereTutelle?: Prisma.SortOrder
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -620,6 +704,10 @@ export type ecoleMinOrderByAggregateInput = {
   email?: Prisma.SortOrder
   telephone?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
+  slogan?: Prisma.SortOrder
+  adresse?: Prisma.SortOrder
+  ministereTutelle?: Prisma.SortOrder
   statut?: Prisma.SortOrder
   code?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -892,6 +980,10 @@ export type ecoleCreateWithoutAnneescolaireInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -921,6 +1013,10 @@ export type ecoleUncheckedCreateWithoutAnneescolaireInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -966,6 +1062,10 @@ export type ecoleUpdateWithoutAnneescolaireInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -995,6 +1095,10 @@ export type ecoleUncheckedUpdateWithoutAnneescolaireInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1024,6 +1128,10 @@ export type ecoleCreateWithoutAnnonceInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1053,6 +1161,10 @@ export type ecoleUncheckedCreateWithoutAnnonceInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1098,6 +1210,10 @@ export type ecoleUpdateWithoutAnnonceInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1127,6 +1243,10 @@ export type ecoleUncheckedUpdateWithoutAnnonceInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1156,6 +1276,10 @@ export type ecoleCreateWithoutConfigurationscolariteInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1185,6 +1309,10 @@ export type ecoleUncheckedCreateWithoutConfigurationscolariteInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1230,6 +1358,10 @@ export type ecoleUpdateWithoutConfigurationscolariteInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1259,6 +1391,10 @@ export type ecoleUncheckedUpdateWithoutConfigurationscolariteInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1288,6 +1424,10 @@ export type ecoleCreateWithoutConversationInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1317,6 +1457,10 @@ export type ecoleUncheckedCreateWithoutConversationInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1362,6 +1506,10 @@ export type ecoleUpdateWithoutConversationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1391,6 +1539,10 @@ export type ecoleUncheckedUpdateWithoutConversationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1420,6 +1572,10 @@ export type ecoleCreateWithoutDemandesInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1449,6 +1605,10 @@ export type ecoleUncheckedCreateWithoutDemandesInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1494,6 +1654,10 @@ export type ecoleUpdateWithoutDemandesInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1523,6 +1687,10 @@ export type ecoleUncheckedUpdateWithoutDemandesInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1552,6 +1720,10 @@ export type ecoleCreateWithoutEmployesInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1581,6 +1753,10 @@ export type ecoleUncheckedCreateWithoutEmployesInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1626,6 +1802,10 @@ export type ecoleUpdateWithoutEmployesInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1655,6 +1835,10 @@ export type ecoleUncheckedUpdateWithoutEmployesInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1684,6 +1868,10 @@ export type ecoleCreateWithoutMatiereInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1713,6 +1901,10 @@ export type ecoleUncheckedCreateWithoutMatiereInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1758,6 +1950,10 @@ export type ecoleUpdateWithoutMatiereInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1787,6 +1983,10 @@ export type ecoleUncheckedUpdateWithoutMatiereInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1816,6 +2016,10 @@ export type ecoleCreateWithoutNiveauscolaireInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1845,6 +2049,10 @@ export type ecoleUncheckedCreateWithoutNiveauscolaireInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1890,6 +2098,10 @@ export type ecoleUpdateWithoutNiveauscolaireInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1919,6 +2131,10 @@ export type ecoleUncheckedUpdateWithoutNiveauscolaireInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1948,6 +2164,10 @@ export type ecoleCreateWithoutPolitiqueevaluationInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -1977,6 +2197,10 @@ export type ecoleUncheckedCreateWithoutPolitiqueevaluationInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2022,6 +2246,10 @@ export type ecoleUpdateWithoutPolitiqueevaluationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2051,6 +2279,10 @@ export type ecoleUncheckedUpdateWithoutPolitiqueevaluationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2080,6 +2312,10 @@ export type ecoleCreateWithoutRoleInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2109,6 +2345,10 @@ export type ecoleUncheckedCreateWithoutRoleInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2154,6 +2394,10 @@ export type ecoleUpdateWithoutRoleInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2183,6 +2427,10 @@ export type ecoleUncheckedUpdateWithoutRoleInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2212,6 +2460,10 @@ export type ecoleCreateWithoutTypeevaluationInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2241,6 +2493,10 @@ export type ecoleUncheckedCreateWithoutTypeevaluationInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2286,6 +2542,10 @@ export type ecoleUpdateWithoutTypeevaluationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2315,6 +2575,10 @@ export type ecoleUncheckedUpdateWithoutTypeevaluationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2344,6 +2608,10 @@ export type ecoleCreateWithoutUserInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2373,6 +2641,10 @@ export type ecoleUncheckedCreateWithoutUserInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2407,6 +2679,10 @@ export type ecoleCreateWithoutCreateurInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2436,6 +2712,10 @@ export type ecoleUncheckedCreateWithoutCreateurInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2494,6 +2774,10 @@ export type ecoleScalarWhereInput = {
   email?: Prisma.StringFilter<"ecole"> | string
   telephone?: Prisma.StringFilter<"ecole"> | string
   description?: Prisma.StringNullableFilter<"ecole"> | string | null
+  logoUrl?: Prisma.StringNullableFilter<"ecole"> | string | null
+  slogan?: Prisma.StringNullableFilter<"ecole"> | string | null
+  adresse?: Prisma.StringNullableFilter<"ecole"> | string | null
+  ministereTutelle?: Prisma.StringNullableFilter<"ecole"> | string | null
   statut?: Prisma.Enumecole_statutFilter<"ecole"> | $Enums.ecole_statut
   code?: Prisma.StringFilter<"ecole"> | string
   createdAt?: Prisma.DateTimeFilter<"ecole"> | Date | string
@@ -2528,6 +2812,10 @@ export type ecoleCreateManyCreateurInput = {
   email: string
   telephone: string
   description?: string | null
+  logoUrl?: string | null
+  slogan?: string | null
+  adresse?: string | null
+  ministereTutelle?: string | null
   statut?: $Enums.ecole_statut
   code: string
   createdAt?: Date | string
@@ -2545,6 +2833,10 @@ export type ecoleUpdateWithoutUserInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2574,6 +2866,10 @@ export type ecoleUncheckedUpdateWithoutUserInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2603,6 +2899,10 @@ export type ecoleUncheckedUpdateManyWithoutUserInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2621,6 +2921,10 @@ export type ecoleUpdateWithoutCreateurInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2650,6 +2954,10 @@ export type ecoleUncheckedUpdateWithoutCreateurInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2679,6 +2987,10 @@ export type ecoleUncheckedUpdateManyWithoutCreateurInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   telephone?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  slogan?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adresse?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ministereTutelle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statut?: Prisma.Enumecole_statutFieldUpdateOperationsInput | $Enums.ecole_statut
   code?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2826,6 +3138,10 @@ export type ecoleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   email?: boolean
   telephone?: boolean
   description?: boolean
+  logoUrl?: boolean
+  slogan?: boolean
+  adresse?: boolean
+  ministereTutelle?: boolean
   statut?: boolean
   code?: boolean
   createdAt?: boolean
@@ -2860,6 +3176,10 @@ export type ecoleSelectScalar = {
   email?: boolean
   telephone?: boolean
   description?: boolean
+  logoUrl?: boolean
+  slogan?: boolean
+  adresse?: boolean
+  ministereTutelle?: boolean
   statut?: boolean
   code?: boolean
   createdAt?: boolean
@@ -2868,7 +3188,7 @@ export type ecoleSelectScalar = {
   createurId?: boolean
 }
 
-export type ecoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "type" | "nomFondateur" | "ville" | "boitePostale" | "email" | "telephone" | "description" | "statut" | "code" | "createdAt" | "valideAt" | "updatedAt" | "createurId", ExtArgs["result"]["ecole"]>
+export type ecoleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nom" | "type" | "nomFondateur" | "ville" | "boitePostale" | "email" | "telephone" | "description" | "logoUrl" | "slogan" | "adresse" | "ministereTutelle" | "statut" | "code" | "createdAt" | "valideAt" | "updatedAt" | "createurId", ExtArgs["result"]["ecole"]>
 export type ecoleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   createur?: boolean | Prisma.ecole$createurArgs<ExtArgs>
   anneescolaire?: boolean | Prisma.ecole$anneescolaireArgs<ExtArgs>
@@ -2913,6 +3233,10 @@ export type $ecolePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     email: string
     telephone: string
     description: string | null
+    logoUrl: string | null
+    slogan: string | null
+    adresse: string | null
+    ministereTutelle: string | null
     statut: $Enums.ecole_statut
     code: string
     createdAt: Date
@@ -3310,6 +3634,10 @@ export interface ecoleFieldRefs {
   readonly email: Prisma.FieldRef<"ecole", 'String'>
   readonly telephone: Prisma.FieldRef<"ecole", 'String'>
   readonly description: Prisma.FieldRef<"ecole", 'String'>
+  readonly logoUrl: Prisma.FieldRef<"ecole", 'String'>
+  readonly slogan: Prisma.FieldRef<"ecole", 'String'>
+  readonly adresse: Prisma.FieldRef<"ecole", 'String'>
+  readonly ministereTutelle: Prisma.FieldRef<"ecole", 'String'>
   readonly statut: Prisma.FieldRef<"ecole", 'ecole_statut'>
   readonly code: Prisma.FieldRef<"ecole", 'String'>
   readonly createdAt: Prisma.FieldRef<"ecole", 'DateTime'>

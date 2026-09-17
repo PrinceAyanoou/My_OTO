@@ -71,4 +71,76 @@ export class CloudinaryService {
 
     return folderPath ? `${folderPath}/${filename}` : filename;
   }
+  uploadBuffer(
+    buffer: Buffer,
+    folder = 'bulletins',
+    resourceType: 'raw' | 'image' | 'video' = 'raw',
+  ): Promise<UploadApiResponse> {
+    return new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          folder,
+          resource_type: resourceType,
+        },
+        (
+          error: UploadApiErrorResponse | undefined,
+          result: UploadApiResponse | undefined,
+        ) => {
+          if (error) {
+            return reject(new Error(error.message || JSON.stringify(error)));
+          }
+
+          if (!result) {
+            return reject(new Error('Cloudinary upload failed'));
+          }
+
+          resolve(result);
+        },
+      );
+
+      streamifier.createReadStream(buffer).pipe(uploadStream);
+    });
+  }
+
+  async uploadStream(
+    pdfDoc: PDFKit.PDFDocument,
+    folder: string,
+    resourceType: 'raw' | 'auto' | 'image' = 'raw',
+  ): Promise<UploadApiResponse> {
+    return new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          folder,
+          resource_type: resourceType,
+          format: 'pdf',
+        },
+        (error, result) => {
+          if (error) {
+            // Force l'objet d'erreur à être une instance explicite de Error
+            const err =
+              error instanceof Error
+                ? error
+                : new Error(
+                    typeof error === 'string' ? error : JSON.stringify(error),
+                  );
+            // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
+            return reject(err);
+          }
+
+          if (!result) {
+            // Évite le cas où error est nul mais result est indéfini
+            return reject(
+              new Error(
+                'Cloudinary upload completed without returning a result.',
+              ),
+            );
+          }
+
+          resolve(result);
+        },
+      );
+
+      pdfDoc.pipe(uploadStream);
+    });
+  }
 }

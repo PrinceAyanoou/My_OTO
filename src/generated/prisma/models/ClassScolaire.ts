@@ -195,7 +195,7 @@ export type ClassscolaireGroupByOutputType = {
   id: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite: number | null
   emploiDuTempsId: string | null
   createdAt: Date
   updatedAt: Date
@@ -228,7 +228,7 @@ export type classscolaireWhereInput = {
   id?: Prisma.StringFilter<"classscolaire"> | string
   niveauScolaireId?: Prisma.StringFilter<"classscolaire"> | string
   nom?: Prisma.StringFilter<"classscolaire"> | string
-  capacite?: Prisma.IntFilter<"classscolaire"> | number
+  capacite?: Prisma.IntNullableFilter<"classscolaire"> | number | null
   emploiDuTempsId?: Prisma.StringNullableFilter<"classscolaire"> | string | null
   createdAt?: Prisma.DateTimeFilter<"classscolaire"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"classscolaire"> | Date | string
@@ -244,7 +244,7 @@ export type classscolaireOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   niveauScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
-  capacite?: Prisma.SortOrder
+  capacite?: Prisma.SortOrderInput | Prisma.SortOrder
   emploiDuTempsId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -266,7 +266,7 @@ export type classscolaireWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.classscolaireWhereInput | Prisma.classscolaireWhereInput[]
   niveauScolaireId?: Prisma.StringFilter<"classscolaire"> | string
   nom?: Prisma.StringFilter<"classscolaire"> | string
-  capacite?: Prisma.IntFilter<"classscolaire"> | number
+  capacite?: Prisma.IntNullableFilter<"classscolaire"> | number | null
   createdAt?: Prisma.DateTimeFilter<"classscolaire"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"classscolaire"> | Date | string
   affectationenseignant?: Prisma.AffectationenseignantListRelationFilter
@@ -281,7 +281,7 @@ export type classscolaireOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   niveauScolaireId?: Prisma.SortOrder
   nom?: Prisma.SortOrder
-  capacite?: Prisma.SortOrder
+  capacite?: Prisma.SortOrderInput | Prisma.SortOrder
   emploiDuTempsId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -299,7 +299,7 @@ export type classscolaireScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"classscolaire"> | string
   niveauScolaireId?: Prisma.StringWithAggregatesFilter<"classscolaire"> | string
   nom?: Prisma.StringWithAggregatesFilter<"classscolaire"> | string
-  capacite?: Prisma.IntWithAggregatesFilter<"classscolaire"> | number
+  capacite?: Prisma.IntNullableWithAggregatesFilter<"classscolaire"> | number | null
   emploiDuTempsId?: Prisma.StringNullableWithAggregatesFilter<"classscolaire"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"classscolaire"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"classscolaire"> | Date | string
@@ -308,7 +308,7 @@ export type classscolaireScalarWhereWithAggregatesInput = {
 export type classscolaireCreateInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutClassscolaireInput
@@ -323,7 +323,7 @@ export type classscolaireUncheckedCreateInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -336,7 +336,7 @@ export type classscolaireUncheckedCreateInput = {
 export type classscolaireUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutClassscolaireNestedInput
@@ -351,7 +351,7 @@ export type classscolaireUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -365,7 +365,7 @@ export type classscolaireCreateManyInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -374,7 +374,7 @@ export type classscolaireCreateManyInput = {
 export type classscolaireUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -383,7 +383,7 @@ export type classscolaireUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -593,7 +593,7 @@ export type classscolaireUpdateOneWithoutPolitiqueevaluationNestedInput = {
 export type classscolaireCreateWithoutAffectationenseignantInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   classematirere?: Prisma.classematirereCreateNestedManyWithoutClassscolaireInput
@@ -607,7 +607,7 @@ export type classscolaireUncheckedCreateWithoutAffectationenseignantInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -635,7 +635,7 @@ export type classscolaireUpdateToOneWithWhereWithoutAffectationenseignantInput =
 export type classscolaireUpdateWithoutAffectationenseignantInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   classematirere?: Prisma.classematirereUpdateManyWithoutClassscolaireNestedInput
@@ -649,7 +649,7 @@ export type classscolaireUncheckedUpdateWithoutAffectationenseignantInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -661,7 +661,7 @@ export type classscolaireUncheckedUpdateWithoutAffectationenseignantInput = {
 export type classscolaireCreateWithoutClassematirereInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutClassscolaireInput
@@ -675,7 +675,7 @@ export type classscolaireUncheckedCreateWithoutClassematirereInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -703,7 +703,7 @@ export type classscolaireUpdateToOneWithWhereWithoutClassematirereInput = {
 export type classscolaireUpdateWithoutClassematirereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutClassscolaireNestedInput
@@ -717,7 +717,7 @@ export type classscolaireUncheckedUpdateWithoutClassematirereInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -729,7 +729,7 @@ export type classscolaireUncheckedUpdateWithoutClassematirereInput = {
 export type classscolaireCreateWithoutEmploidutempsInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutClassscolaireInput
@@ -743,7 +743,7 @@ export type classscolaireUncheckedCreateWithoutEmploidutempsInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedCreateNestedManyWithoutClassscolaireInput
@@ -771,7 +771,7 @@ export type classscolaireUpdateToOneWithWhereWithoutEmploidutempsInput = {
 export type classscolaireUpdateWithoutEmploidutempsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutClassscolaireNestedInput
@@ -785,7 +785,7 @@ export type classscolaireUncheckedUpdateWithoutEmploidutempsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUncheckedUpdateManyWithoutClassscolaireNestedInput
@@ -797,7 +797,7 @@ export type classscolaireUncheckedUpdateWithoutEmploidutempsInput = {
 export type classscolaireCreateWithoutInscriptionInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutClassscolaireInput
@@ -811,7 +811,7 @@ export type classscolaireUncheckedCreateWithoutInscriptionInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -839,7 +839,7 @@ export type classscolaireUpdateToOneWithWhereWithoutInscriptionInput = {
 export type classscolaireUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutClassscolaireNestedInput
@@ -853,7 +853,7 @@ export type classscolaireUncheckedUpdateWithoutInscriptionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -865,7 +865,7 @@ export type classscolaireUncheckedUpdateWithoutInscriptionInput = {
 export type classscolaireCreateWithoutNiveauscolaireInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutClassscolaireInput
@@ -878,7 +878,7 @@ export type classscolaireCreateWithoutNiveauscolaireInput = {
 export type classscolaireUncheckedCreateWithoutNiveauscolaireInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -921,7 +921,7 @@ export type classscolaireScalarWhereInput = {
   id?: Prisma.StringFilter<"classscolaire"> | string
   niveauScolaireId?: Prisma.StringFilter<"classscolaire"> | string
   nom?: Prisma.StringFilter<"classscolaire"> | string
-  capacite?: Prisma.IntFilter<"classscolaire"> | number
+  capacite?: Prisma.IntNullableFilter<"classscolaire"> | number | null
   emploiDuTempsId?: Prisma.StringNullableFilter<"classscolaire"> | string | null
   createdAt?: Prisma.DateTimeFilter<"classscolaire"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"classscolaire"> | Date | string
@@ -930,7 +930,7 @@ export type classscolaireScalarWhereInput = {
 export type classscolaireCreateWithoutPolitiqueevaluationInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   affectationenseignant?: Prisma.affectationenseignantCreateNestedManyWithoutClassscolaireInput
@@ -944,7 +944,7 @@ export type classscolaireUncheckedCreateWithoutPolitiqueevaluationInput = {
   id?: string
   niveauScolaireId: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -972,7 +972,7 @@ export type classscolaireUpdateToOneWithWhereWithoutPolitiqueevaluationInput = {
 export type classscolaireUpdateWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutClassscolaireNestedInput
@@ -986,7 +986,7 @@ export type classscolaireUncheckedUpdateWithoutPolitiqueevaluationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   niveauScolaireId?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -998,7 +998,7 @@ export type classscolaireUncheckedUpdateWithoutPolitiqueevaluationInput = {
 export type classscolaireCreateManyNiveauscolaireInput = {
   id?: string
   nom: string
-  capacite: number
+  capacite?: number | null
   emploiDuTempsId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -1007,7 +1007,7 @@ export type classscolaireCreateManyNiveauscolaireInput = {
 export type classscolaireUpdateWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   affectationenseignant?: Prisma.affectationenseignantUpdateManyWithoutClassscolaireNestedInput
@@ -1020,7 +1020,7 @@ export type classscolaireUpdateWithoutNiveauscolaireInput = {
 export type classscolaireUncheckedUpdateWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1033,7 +1033,7 @@ export type classscolaireUncheckedUpdateWithoutNiveauscolaireInput = {
 export type classscolaireUncheckedUpdateManyWithoutNiveauscolaireInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nom?: Prisma.StringFieldUpdateOperationsInput | string
-  capacite?: Prisma.IntFieldUpdateOperationsInput | number
+  capacite?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   emploiDuTempsId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1142,7 +1142,7 @@ export type $classscolairePayload<ExtArgs extends runtime.Types.Extensions.Inter
     id: string
     niveauScolaireId: string
     nom: string
-    capacite: number
+    capacite: number | null
     emploiDuTempsId: string | null
     createdAt: Date
     updatedAt: Date

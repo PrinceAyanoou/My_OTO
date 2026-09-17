@@ -535,6 +535,23 @@ export type Enumpaiement_moyenPaiementWithAggregatesFilter<$PrismaModel = never>
   _max?: Prisma.NestedEnumpaiement_moyenPaiementFilter<$PrismaModel>
 }
 
+export type EnumRoleParticipantFilter<$PrismaModel = never> = {
+  equals?: $Enums.RoleParticipant | Prisma.EnumRoleParticipantFieldRefInput<$PrismaModel>
+  in?: $Enums.RoleParticipant[]
+  notIn?: $Enums.RoleParticipant[]
+  not?: Prisma.NestedEnumRoleParticipantFilter<$PrismaModel> | $Enums.RoleParticipant
+}
+
+export type EnumRoleParticipantWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.RoleParticipant | Prisma.EnumRoleParticipantFieldRefInput<$PrismaModel>
+  in?: $Enums.RoleParticipant[]
+  notIn?: $Enums.RoleParticipant[]
+  not?: Prisma.NestedEnumRoleParticipantWithAggregatesFilter<$PrismaModel> | $Enums.RoleParticipant
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRoleParticipantFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRoleParticipantFilter<$PrismaModel>
+}
+
 export type Enumperiodescolaire_statutFilter<$PrismaModel = never> = {
   equals?: $Enums.periodescolaire_statut | Prisma.Enumperiodescolaire_statutFieldRefInput<$PrismaModel>
   in?: $Enums.periodescolaire_statut[]
@@ -1196,6 +1213,23 @@ export type NestedEnumpaiement_moyenPaiementWithAggregatesFilter<$PrismaModel = 
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumpaiement_moyenPaiementFilter<$PrismaModel>
   _max?: Prisma.NestedEnumpaiement_moyenPaiementFilter<$PrismaModel>
+}
+
+export type NestedEnumRoleParticipantFilter<$PrismaModel = never> = {
+  equals?: $Enums.RoleParticipant | Prisma.EnumRoleParticipantFieldRefInput<$PrismaModel>
+  in?: $Enums.RoleParticipant[]
+  notIn?: $Enums.RoleParticipant[]
+  not?: Prisma.NestedEnumRoleParticipantFilter<$PrismaModel> | $Enums.RoleParticipant
+}
+
+export type NestedEnumRoleParticipantWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.RoleParticipant | Prisma.EnumRoleParticipantFieldRefInput<$PrismaModel>
+  in?: $Enums.RoleParticipant[]
+  notIn?: $Enums.RoleParticipant[]
+  not?: Prisma.NestedEnumRoleParticipantWithAggregatesFilter<$PrismaModel> | $Enums.RoleParticipant
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRoleParticipantFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRoleParticipantFilter<$PrismaModel>
 }
 
 export type NestedEnumperiodescolaire_statutFilter<$PrismaModel = never> = {

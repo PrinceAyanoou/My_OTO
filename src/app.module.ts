@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AbsencesModule } from './absences/absences.module';
 import { UserModule } from './user/user.module';
 import { UniteEnseignementModule } from './unite-enseignement/unite-enseignement.module';
 import { TypeEvaluationModule } from './type-evaluation/type-evaluation.module';
@@ -29,15 +28,13 @@ import { EmployeModule } from './employe/employe.module';
 import { EmploiDuTempsModule } from './emploi-du-temps/emploi-du-temps.module';
 import { EcoleModule } from './ecole/ecole.module';
 import { DossierScolariteModule } from './dossier-scolarite/dossier-scolarite.module';
-import { DecisionFinAnneeModule } from './decision-fin-annee/decision-fin-annee.module';
 import { ConversationModule } from './conversation/conversation.module';
 import { ConfigurationScolariteModule } from './configuration-scolarite/configuration-scolarite.module';
 import { ClasseScolaireModule } from './classe-scolaire/classe-scolaire.module';
 import { ClasseMatirereModule } from './classe-matirere/classe-matirere.module';
-import { CibleAnnonceModule } from './cible-annonce/cible-annonce.module';
 import { BulletinModule } from './bulletin/bulletin.module';
 import { ApprenantParentModule } from './apprenant-parent/apprenant-parent.module';
-//mport { ApprenantModule } from './apprenant/apprenant.module';
+import { ApprenantModule } from './apprenant/apprenant.module';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AnneeScolaireModule } from './annee-scolaire/annee-scolaire.module';
 import { AffectationEnseignantModule } from './affectation-enseignant/affectation-enseignant.module';
@@ -48,21 +45,19 @@ import { ConfigModule } from '@nestjs/config';
 import { DemandeEcoleModule } from './demande-ecole/demande-ecole.module';
 import { CloudinaryModule } from './cloudinary/cloudinary.module';
 import { BackofficeModule } from './backoffice/backoffice.module';
+
 @Module({
   imports: [
-    AbsencesModule,
     AffectationEnseignantModule,
     AnneeScolaireModule,
     AnnonceModule,
-    //ApprenantModule,
+    ApprenantModule,
     ApprenantParentModule,
     BulletinModule,
-    CibleAnnonceModule,
     ClasseMatirereModule,
     ClasseScolaireModule,
     ConfigurationScolariteModule,
     ConversationModule,
-    DecisionFinAnneeModule,
     DossierScolariteModule,
     EcoleModule,
     EmploiDuTempsModule,

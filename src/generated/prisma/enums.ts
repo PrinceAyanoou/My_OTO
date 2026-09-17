@@ -138,6 +138,7 @@ export const permission_cible = {
   configScolarite: 'configScolarite',
   conversation: 'conversation',
   decisionFinAnnee: 'decisionFinAnnee',
+  demandeEcole: 'demandeEcole',
   dossierScolarite: 'dossierScolarite',
   ecole: 'ecole',
   emploiDuTemps: 'emploiDuTemps',
@@ -321,3 +322,11 @@ export const demande_ecole_statut = {
 } as const
 
 export type demande_ecole_statut = (typeof demande_ecole_statut)[keyof typeof demande_ecole_statut]
+
+
+export const RoleParticipant = {
+  ADMIN: 'ADMIN',
+  MEMBRE: 'MEMBRE'
+} as const
+
+export type RoleParticipant = (typeof RoleParticipant)[keyof typeof RoleParticipant]

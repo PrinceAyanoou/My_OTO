@@ -161,7 +161,7 @@ export const AnnonceScalarFieldEnum = {
   id: 'id',
   titre: 'titre',
   contenu: 'contenu',
-  datePubication: 'datePubication',
+  datePublication: 'datePublication',
   dateExpiration: 'dateExpiration',
   ecoleId: 'ecoleId',
   auteurId: 'auteurId',
@@ -337,6 +337,10 @@ export const EcoleScalarFieldEnum = {
   email: 'email',
   telephone: 'telephone',
   description: 'description',
+  logoUrl: 'logoUrl',
+  slogan: 'slogan',
+  adresse: 'adresse',
+  ministereTutelle: 'ministereTutelle',
   statut: 'statut',
   code: 'code',
   createdAt: 'createdAt',
@@ -536,6 +540,8 @@ export type ParentScalarFieldEnum = (typeof ParentScalarFieldEnum)[keyof typeof 
 export const ParticipantconversationScalarFieldEnum = {
   conversationId: 'conversationId',
   userId: 'userId',
+  role: 'role',
+  joinedAt: 'joinedAt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -872,6 +878,10 @@ export const ecoleOrderByRelevanceFieldEnum = {
   email: 'email',
   telephone: 'telephone',
   description: 'description',
+  logoUrl: 'logoUrl',
+  slogan: 'slogan',
+  adresse: 'adresse',
+  ministereTutelle: 'ministereTutelle',
   code: 'code',
   createurId: 'createurId'
 } as const

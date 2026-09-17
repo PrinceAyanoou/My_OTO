@@ -7,7 +7,13 @@ import { PoliciesGuard } from '../auth/guards/permissions.guard';
 describe('UniteEnseignementController', () => {
   let controller: UniteEnseignementController;
 
-  const serviceMock = { create: jest.fn(), findAllByEcole: jest.fn(), findOne: jest.fn(), update: jest.fn(), remove: jest.fn() };
+  const serviceMock = {
+    create: jest.fn(),
+    findAllByEcole: jest.fn(),
+    findOne: jest.fn(),
+    update: jest.fn(),
+    remove: jest.fn(),
+  };
 
   beforeEach(async () => {
     jest.clearAllMocks();
@@ -31,12 +37,23 @@ describe('UniteEnseignementController', () => {
   });
 
   it('délègue les opérations UE', async () => {
-    const ecoleId = '11111111-1111-4111-8111-111111111111'; const id = '22222222-2222-4222-8222-222222222222'; const dto = { nom: 'Sciences', code: 'SCI' }; const response = { id };
-    Object.values(serviceMock).forEach((mock) => mock.mockResolvedValue(response));
-    await expect(controller.create(ecoleId, dto as never)).resolves.toBe(response);
-    await expect(controller.findAllByEcole(ecoleId, {} as never)).resolves.toBe(response);
+    const ecoleId = '11111111-1111-4111-8111-111111111111';
+    const id = '22222222-2222-4222-8222-222222222222';
+    const dto = { nom: 'Sciences', code: 'SCI' };
+    const response = { id };
+    Object.values(serviceMock).forEach((mock) =>
+      mock.mockResolvedValue(response),
+    );
+    await expect(controller.create(ecoleId, dto as never)).resolves.toBe(
+      response,
+    );
+    await expect(controller.findAllByEcole(ecoleId, {} as never)).resolves.toBe(
+      response,
+    );
     await expect(controller.findOne(ecoleId, id)).resolves.toBe(response);
-    await expect(controller.update(ecoleId, id, dto as never)).resolves.toBe(response);
+    await expect(controller.update(ecoleId, id, dto as never)).resolves.toBe(
+      response,
+    );
     await expect(controller.remove(ecoleId, id)).resolves.toBe(response);
   });
 });

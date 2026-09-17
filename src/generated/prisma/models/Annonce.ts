@@ -28,7 +28,7 @@ export type AnnonceMinAggregateOutputType = {
   id: string | null
   titre: string | null
   contenu: string | null
-  datePubication: Date | null
+  datePublication: Date | null
   dateExpiration: Date | null
   ecoleId: string | null
   auteurId: string | null
@@ -40,7 +40,7 @@ export type AnnonceMaxAggregateOutputType = {
   id: string | null
   titre: string | null
   contenu: string | null
-  datePubication: Date | null
+  datePublication: Date | null
   dateExpiration: Date | null
   ecoleId: string | null
   auteurId: string | null
@@ -52,7 +52,7 @@ export type AnnonceCountAggregateOutputType = {
   id: number
   titre: number
   contenu: number
-  datePubication: number
+  datePublication: number
   dateExpiration: number
   ecoleId: number
   auteurId: number
@@ -66,7 +66,7 @@ export type AnnonceMinAggregateInputType = {
   id?: true
   titre?: true
   contenu?: true
-  datePubication?: true
+  datePublication?: true
   dateExpiration?: true
   ecoleId?: true
   auteurId?: true
@@ -78,7 +78,7 @@ export type AnnonceMaxAggregateInputType = {
   id?: true
   titre?: true
   contenu?: true
-  datePubication?: true
+  datePublication?: true
   dateExpiration?: true
   ecoleId?: true
   auteurId?: true
@@ -90,7 +90,7 @@ export type AnnonceCountAggregateInputType = {
   id?: true
   titre?: true
   contenu?: true
-  datePubication?: true
+  datePublication?: true
   dateExpiration?: true
   ecoleId?: true
   auteurId?: true
@@ -175,7 +175,7 @@ export type AnnonceGroupByOutputType = {
   id: string
   titre: string
   contenu: string
-  datePubication: Date
+  datePublication: Date
   dateExpiration: Date
   ecoleId: string
   auteurId: string
@@ -208,7 +208,7 @@ export type annonceWhereInput = {
   id?: Prisma.StringFilter<"annonce"> | string
   titre?: Prisma.StringFilter<"annonce"> | string
   contenu?: Prisma.StringFilter<"annonce"> | string
-  datePubication?: Prisma.DateTimeFilter<"annonce"> | Date | string
+  datePublication?: Prisma.DateTimeFilter<"annonce"> | Date | string
   dateExpiration?: Prisma.DateTimeFilter<"annonce"> | Date | string
   ecoleId?: Prisma.StringFilter<"annonce"> | string
   auteurId?: Prisma.StringFilter<"annonce"> | string
@@ -223,7 +223,7 @@ export type annonceOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
-  datePubication?: Prisma.SortOrder
+  datePublication?: Prisma.SortOrder
   dateExpiration?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   auteurId?: Prisma.SortOrder
@@ -242,7 +242,7 @@ export type annonceWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.annonceWhereInput | Prisma.annonceWhereInput[]
   titre?: Prisma.StringFilter<"annonce"> | string
   contenu?: Prisma.StringFilter<"annonce"> | string
-  datePubication?: Prisma.DateTimeFilter<"annonce"> | Date | string
+  datePublication?: Prisma.DateTimeFilter<"annonce"> | Date | string
   dateExpiration?: Prisma.DateTimeFilter<"annonce"> | Date | string
   ecoleId?: Prisma.StringFilter<"annonce"> | string
   auteurId?: Prisma.StringFilter<"annonce"> | string
@@ -257,7 +257,7 @@ export type annonceOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
-  datePubication?: Prisma.SortOrder
+  datePublication?: Prisma.SortOrder
   dateExpiration?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   auteurId?: Prisma.SortOrder
@@ -275,7 +275,7 @@ export type annonceScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"annonce"> | string
   titre?: Prisma.StringWithAggregatesFilter<"annonce"> | string
   contenu?: Prisma.StringWithAggregatesFilter<"annonce"> | string
-  datePubication?: Prisma.DateTimeWithAggregatesFilter<"annonce"> | Date | string
+  datePublication?: Prisma.DateTimeWithAggregatesFilter<"annonce"> | Date | string
   dateExpiration?: Prisma.DateTimeWithAggregatesFilter<"annonce"> | Date | string
   ecoleId?: Prisma.StringWithAggregatesFilter<"annonce"> | string
   auteurId?: Prisma.StringWithAggregatesFilter<"annonce"> | string
@@ -287,7 +287,7 @@ export type annonceCreateInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -300,7 +300,7 @@ export type annonceUncheckedCreateInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   ecoleId: string
   auteurId: string
@@ -313,7 +313,7 @@ export type annonceUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -326,7 +326,7 @@ export type annonceUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   auteurId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -339,7 +339,7 @@ export type annonceCreateManyInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   ecoleId: string
   auteurId: string
@@ -351,7 +351,7 @@ export type annonceUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -361,7 +361,7 @@ export type annonceUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   auteurId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -379,7 +379,7 @@ export type annonceCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
-  datePubication?: Prisma.SortOrder
+  datePublication?: Prisma.SortOrder
   dateExpiration?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   auteurId?: Prisma.SortOrder
@@ -391,7 +391,7 @@ export type annonceMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
-  datePubication?: Prisma.SortOrder
+  datePublication?: Prisma.SortOrder
   dateExpiration?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   auteurId?: Prisma.SortOrder
@@ -403,7 +403,7 @@ export type annonceMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titre?: Prisma.SortOrder
   contenu?: Prisma.SortOrder
-  datePubication?: Prisma.SortOrder
+  datePublication?: Prisma.SortOrder
   dateExpiration?: Prisma.SortOrder
   ecoleId?: Prisma.SortOrder
   auteurId?: Prisma.SortOrder
@@ -528,7 +528,7 @@ export type annonceCreateWithoutCibleannonceInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -540,7 +540,7 @@ export type annonceUncheckedCreateWithoutCibleannonceInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   ecoleId: string
   auteurId: string
@@ -568,7 +568,7 @@ export type annonceUpdateWithoutCibleannonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -580,7 +580,7 @@ export type annonceUncheckedUpdateWithoutCibleannonceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   auteurId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -592,7 +592,7 @@ export type annonceCreateWithoutEcoleInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -604,7 +604,7 @@ export type annonceUncheckedCreateWithoutEcoleInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   auteurId: string
   createdAt?: Date | string
@@ -645,7 +645,7 @@ export type annonceScalarWhereInput = {
   id?: Prisma.StringFilter<"annonce"> | string
   titre?: Prisma.StringFilter<"annonce"> | string
   contenu?: Prisma.StringFilter<"annonce"> | string
-  datePubication?: Prisma.DateTimeFilter<"annonce"> | Date | string
+  datePublication?: Prisma.DateTimeFilter<"annonce"> | Date | string
   dateExpiration?: Prisma.DateTimeFilter<"annonce"> | Date | string
   ecoleId?: Prisma.StringFilter<"annonce"> | string
   auteurId?: Prisma.StringFilter<"annonce"> | string
@@ -657,7 +657,7 @@ export type annonceCreateWithoutEmployeInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -669,7 +669,7 @@ export type annonceUncheckedCreateWithoutEmployeInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   ecoleId: string
   createdAt?: Date | string
@@ -707,7 +707,7 @@ export type annonceCreateManyEcoleInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   auteurId: string
   createdAt?: Date | string
@@ -718,7 +718,7 @@ export type annonceUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -730,7 +730,7 @@ export type annonceUncheckedUpdateWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   auteurId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -742,7 +742,7 @@ export type annonceUncheckedUpdateManyWithoutEcoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   auteurId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -753,7 +753,7 @@ export type annonceCreateManyEmployeInput = {
   id?: string
   titre: string
   contenu: string
-  datePubication?: Date | string
+  datePublication?: Date | string
   dateExpiration: Date | string
   ecoleId: string
   createdAt?: Date | string
@@ -764,7 +764,7 @@ export type annonceUpdateWithoutEmployeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -776,7 +776,7 @@ export type annonceUncheckedUpdateWithoutEmployeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -788,7 +788,7 @@ export type annonceUncheckedUpdateManyWithoutEmployeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   titre?: Prisma.StringFieldUpdateOperationsInput | string
   contenu?: Prisma.StringFieldUpdateOperationsInput | string
-  datePubication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datePublication?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   dateExpiration?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ecoleId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -830,7 +830,7 @@ export type annonceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   titre?: boolean
   contenu?: boolean
-  datePubication?: boolean
+  datePublication?: boolean
   dateExpiration?: boolean
   ecoleId?: boolean
   auteurId?: boolean
@@ -848,7 +848,7 @@ export type annonceSelectScalar = {
   id?: boolean
   titre?: boolean
   contenu?: boolean
-  datePubication?: boolean
+  datePublication?: boolean
   dateExpiration?: boolean
   ecoleId?: boolean
   auteurId?: boolean
@@ -856,7 +856,7 @@ export type annonceSelectScalar = {
   updatedAt?: boolean
 }
 
-export type annonceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titre" | "contenu" | "datePubication" | "dateExpiration" | "ecoleId" | "auteurId" | "createdAt" | "updatedAt", ExtArgs["result"]["annonce"]>
+export type annonceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titre" | "contenu" | "datePublication" | "dateExpiration" | "ecoleId" | "auteurId" | "createdAt" | "updatedAt", ExtArgs["result"]["annonce"]>
 export type annonceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   employe?: boolean | Prisma.employeDefaultArgs<ExtArgs>
   ecole?: boolean | Prisma.ecoleDefaultArgs<ExtArgs>
@@ -875,7 +875,7 @@ export type $annoncePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: string
     titre: string
     contenu: string
-    datePubication: Date
+    datePublication: Date
     dateExpiration: Date
     ecoleId: string
     auteurId: string
@@ -1256,7 +1256,7 @@ export interface annonceFieldRefs {
   readonly id: Prisma.FieldRef<"annonce", 'String'>
   readonly titre: Prisma.FieldRef<"annonce", 'String'>
   readonly contenu: Prisma.FieldRef<"annonce", 'String'>
-  readonly datePubication: Prisma.FieldRef<"annonce", 'DateTime'>
+  readonly datePublication: Prisma.FieldRef<"annonce", 'DateTime'>
   readonly dateExpiration: Prisma.FieldRef<"annonce", 'DateTime'>
   readonly ecoleId: Prisma.FieldRef<"annonce", 'String'>
   readonly auteurId: Prisma.FieldRef<"annonce", 'String'>
