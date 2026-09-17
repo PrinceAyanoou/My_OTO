@@ -10,6 +10,7 @@ import {
   ParseUUIDPipe,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -17,14 +18,24 @@ import {
   ApiResponse,
   ApiParam,
   ApiQuery,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { PolitiqueEvaluationService } from './politique-evaluation.service';
 import {
   CreatePolitiqueEvaluationDto,
   UpdatePolitiqueEvaluationDto,
 } from './dto/politique-evaluation.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags("Politiques d'Évaluation")
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/politiques-evaluation')
 export class PolitiqueEvaluationController {
   constructor(
@@ -32,6 +43,9 @@ export class PolitiqueEvaluationController {
   ) {}
 
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.politiqueEvaluation),
+  )
   @ApiOperation({ summary: "Créer une nouvelle politique d'évaluation" })
   @ApiParam({
     name: 'ecoleId',
@@ -62,6 +76,9 @@ export class PolitiqueEvaluationController {
   }
 
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.politiqueEvaluation),
+  )
   @ApiOperation({
     summary: "Lister toutes les politiques d'évaluation d'une école",
   })
@@ -86,6 +103,9 @@ export class PolitiqueEvaluationController {
   }
 
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.politiqueEvaluation),
+  )
   @ApiOperation({ summary: "Récupérer une politique d'évaluation par son ID" })
   @ApiParam({
     name: 'ecoleId',
@@ -111,6 +131,9 @@ export class PolitiqueEvaluationController {
   }
 
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.politiqueEvaluation),
+  )
   @ApiOperation({ summary: "Mettre à jour une politique d'évaluation" })
   @ApiParam({
     name: 'ecoleId',
@@ -142,6 +165,9 @@ export class PolitiqueEvaluationController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.politiqueEvaluation),
+  )
   @ApiOperation({ summary: "Supprimer une politique d'évaluation" })
   @ApiParam({
     name: 'ecoleId',
