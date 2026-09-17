@@ -13,7 +13,8 @@ import {
   AddEmployeDocumentDto,
   QueryEmployeDto,
 } from './dto/employe.dto';
-import { Prisma, user_statut } from 'src/generated/prisma/client';
+import { Prisma } from 'src/generated/prisma/client';
+import { user_statut } from 'src/generated/prisma/enums';
 import { CloudinaryService } from '../cloudinary/cloudinary.service';
 
 @Injectable()
@@ -29,7 +30,7 @@ export class EmployeService {
 
   // Création d'un employé + Invitation Clerk
   async createEmployeWithUser(dto: CreateEmployeWithUserDto) {
-    // 1. Vérifications préalables (User & Matricule)
+    //  Vérifications préalables (User & Matricule)
     const existingUser = await this.prisma.user.findUnique({
       where: { email: dto.email },
     });
@@ -48,13 +49,13 @@ export class EmployeService {
       );
     }
 
-    // 2. Validation des rôles (si fournis)
+    // Validation des rôles (si fournis)
     const validRoleIds =
       dto.rolesIds?.filter((id) => id && id.trim() !== '') || [];
 
     let clerkInvitation: Invitation;
     try {
-      // 3. Envoyer l'invitation par mail via Clerk
+      // Envoyer l'invitation par mail via Clerk
       clerkInvitation = await this.clerkClient.invitations.createInvitation({
         emailAddress: dto.email,
         redirectUrl: 'http://localhost:3001/sign-up', // L'URL de votre frontend (page de finalisation d'inscription)
@@ -70,13 +71,13 @@ export class EmployeService {
     }
 
     try {
-      // 4. Transaction Prisma : enregistrer le User et l'Employé
-      // Remarque : On peut utiliser clerkInvitation.id temporairement comme ID ou créer le User
+      // Transaction Prisma : enregistrer le User et l'Employé
+      // On peut utiliser clerkInvitation.id temporairement comme ID ou créer le User
       // lorsque le Webhook Clerk 'user.created' confirme que l'utilisateur a accepté l'invitation.
       const result = await this.prisma.$transaction(async (tx) => {
         const user = await tx.user.create({
           data: {
-            clerkUserId: clerkInvitation.id, // Ou l'ID généré par votre logique interne
+            clerkUserId: clerkInvitation.id,
             nom: dto.nom,
             prenoms: dto.prenoms,
             email: dto.email,

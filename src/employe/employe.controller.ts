@@ -3,11 +3,15 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
+  HttpStatus,
   Param,
+  ParseUUIDPipe,
   Patch,
   Post,
   Query,
   UploadedFile,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import {
@@ -18,8 +22,16 @@ import {
   ApiQuery,
   ApiResponse,
   ApiTags,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 import { EmployeService } from './employe.service';
 
@@ -32,12 +44,17 @@ import {
 } from './dto/employe.dto';
 
 @ApiTags('Employés')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('employes')
 export class EmployeController {
   constructor(private readonly employeService: EmployeService) {}
 
   //créer un employé clerk + db
   @Post(':ecoleId/create-employe')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.employe),
+  )
   @ApiOperation({
     summary: 'Créer un employé',
     description:
@@ -71,14 +88,17 @@ export class EmployeController {
   })
   async create(
     @Body() dto: CreateEmployeWithUserDto,
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
   ) {
     dto.ecoleId = ecoleId;
     return this.employeService.createEmployeWithUser(dto);
   }
 
   // LISTE DES EMPLOYES
-  @Get()
+  @Get(':ecoleId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.employe),
+  )
   @ApiOperation({
     summary: 'Lister les employés',
     description:
@@ -111,13 +131,6 @@ export class EmployeController {
     type: String,
     example: 'c8b7e4d1-1234-4567-8901-abcdef123456',
     description: 'Identifiant du rôle utilisé pour filtrer les employés.',
-  })
-  @ApiQuery({
-    name: 'ecoleId',
-    required: false,
-    type: String,
-    example: 'c8b7e4d1-1234-4567-8901-abcdef123456',
-    description: "Identifiant de l'école pour filtrer les employés par école",
   })
   @ApiResponse({
     status: 200,
@@ -155,15 +168,21 @@ export class EmployeController {
     status: 500,
     description: 'Erreur de connexion à la db',
   })
-  async findAll(@Query() query: QueryEmployeDto) {
+  async findAll(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Query() query: QueryEmployeDto,
+  ) {
     const dto = QueryEmployeSchema.parse(query);
 
-    return this.employeService.findAll(dto);
+    return this.employeService.findAll({ ...dto, ecoleId });
   }
 
   //
   // Récupérer un employé par son id
   @Get(':ecoleId/:employeId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.employe),
+  )
   @ApiOperation({
     summary: 'Récupérer un employé',
     description:
@@ -187,8 +206,8 @@ export class EmployeController {
     description: 'Employé introuvable ou n’appartenant pas à l’école.',
   })
   async findOne(
-    @Param('employeId') employeId: string,
-    @Param('ecoleId') ecoleId: string,
+    @Param('employeId', ParseUUIDPipe) employeId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
   ) {
     return this.employeService.findOne(employeId, ecoleId);
   }
@@ -196,6 +215,9 @@ export class EmployeController {
   //
   // Mise à jour des informations de l'employé
   @Patch(':ecoleId/:employeId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.employe),
+  )
   @ApiOperation({
     summary: 'Modifier les infos pour un employé',
     description:
@@ -233,9 +255,9 @@ export class EmployeController {
     description: 'Le nouveau matricule est déjà utilisé.',
   })
   async update(
-    @Param('employeId') employeId: string,
+    @Param('employeId', ParseUUIDPipe) employeId: string,
     @Body() dto: UpdateEmployeDto,
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
   ) {
     return this.employeService.update(employeId, dto, ecoleId);
   }
@@ -243,6 +265,10 @@ export class EmployeController {
   //
   //Supprimer un employé dans l'école sans supprimer le user.
   @Delete(':ecoleId/:employeId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.employe),
+  )
   @ApiOperation({
     summary: 'Supprimer un employé',
     description:
@@ -267,8 +293,8 @@ export class EmployeController {
     description: 'Employé introuvable.',
   })
   async remove(
-    @Param('employeId') id: string,
-    @Param('ecoleId') ecoleId: string,
+    @Param('employeId', ParseUUIDPipe) id: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
   ) {
     return this.employeService.remove(id, ecoleId);
   }
@@ -276,6 +302,9 @@ export class EmployeController {
   //
   //Ajout d'un document administratif à un employé dans une école.
   @Post(':ecoleId/:employeId/documents')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.employeDocument),
+  )
   @UseInterceptors(FileInterceptor('file'))
   @ApiOperation({
     summary: 'Ajouter un document administratif',
@@ -328,10 +357,10 @@ export class EmployeController {
     description: 'Employé introuvable.',
   })
   async addDocument(
-    @Param('employeId') employeId: string,
+    @Param('employeId', ParseUUIDPipe) employeId: string,
     @Body() dto: Omit<AddEmployeDocumentDto, 'documentUrl'>,
     @UploadedFile() file: Express.Multer.File,
-    @Param('ecoleId') ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
   ) {
     return this.employeService.addDocument(employeId, dto, file, ecoleId);
   }
@@ -339,6 +368,10 @@ export class EmployeController {
   //
   //supprimer le document d'un employé dans une école.
   @Delete(':ecoleId/documents/:documentId')
+  @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.employeDocument),
+  )
   @ApiOperation({
     summary: 'Supprimer un document administratif',
     description:
@@ -363,8 +396,8 @@ export class EmployeController {
     description: 'Document introuvable ou non associé à cette école.',
   })
   async removeDocument(
-    @Param('documentId') documentId: string,
-    @Param('ecoleId') ecoleId: string,
+    @Param('documentId', ParseUUIDPipe) documentId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
   ) {
     return this.employeService.removeDocument(documentId, ecoleId);
   }
