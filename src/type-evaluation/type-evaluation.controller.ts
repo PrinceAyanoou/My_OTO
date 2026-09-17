@@ -9,6 +9,7 @@ import {
   ParseUUIDPipe,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,20 +19,33 @@ import {
   ApiBadRequestResponse,
   ApiNotFoundResponse,
   ApiConflictResponse,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { TypeEvaluationService } from './type-evaluation.service';
 import {
   CreateTypeEvaluationDto,
   UpdateTypeEvaluationDto,
 } from './dto/type-evaluation.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Types d’Évaluation')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/types-evaluation')
 export class TypeEvaluationController {
   constructor(private readonly typeEvaluationService: TypeEvaluationService) {}
 
   //Créer un type d’évaluation
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.typeEvaluation),
+  )
   @ApiOperation({
     summary: 'Créer un type d’évaluation',
     description:
@@ -54,6 +68,9 @@ export class TypeEvaluationController {
 
   //Lister les types d’évaluation d’une école
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.typeEvaluation),
+  )
   @ApiOperation({
     summary: 'Lister les types d’évaluation d’une école',
     description:
@@ -70,6 +87,9 @@ export class TypeEvaluationController {
 
   //Obtenir les détails d’un type d’évaluation
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.typeEvaluation),
+  )
   @ApiOperation({
     summary: 'Obtenir les détails d’un type d’évaluation',
     description: 'Récupère un type d’évaluation par son UUID.',
@@ -92,6 +112,9 @@ export class TypeEvaluationController {
 
   //Mettre à jour un type d’évaluation
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.typeEvaluation),
+  )
   @ApiOperation({
     summary: 'Mettre à jour un type d’évaluation',
     description: 'Modifie le nom d’un type d’évaluation existant.',
@@ -119,6 +142,9 @@ export class TypeEvaluationController {
   //Supprimer un type d’évaluation
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.typeEvaluation),
+  )
   @ApiOperation({
     summary: 'Supprimer un type d’évaluation',
     description:
