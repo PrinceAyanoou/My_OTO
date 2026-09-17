@@ -11,6 +11,7 @@ import {
   HttpCode,
   HttpStatus,
   ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,6 +19,7 @@ import {
   ApiResponse,
   ApiParam,
   ApiQuery,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { UniteEnseignementService } from './unite-enseignement.service';
@@ -26,8 +28,17 @@ import {
   UpdateUniteEnseignementDto,
   QueryUniteEnseignementDto,
 } from './dto/unite-enseignement.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags("Unités d'Enseignement")
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/unites-enseignement')
 export class UniteEnseignementController {
@@ -38,6 +49,9 @@ export class UniteEnseignementController {
   //Créer une Unité d'Enseignement pour une école
   @Post()
   @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.uniteEnseignement),
+  )
   @ApiOperation({
     summary: "Créer une Unité d'Enseignement pour une école",
     description:
@@ -73,6 +87,9 @@ export class UniteEnseignementController {
 
   //Lister toutes les Unités d'Enseignement d'une école
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.uniteEnseignement),
+  )
   @ApiOperation({
     summary: "Lister toutes les Unités d'Enseignement d'une école",
     description:
@@ -107,6 +124,9 @@ export class UniteEnseignementController {
 
   //Récupérer une UE spécifique par son ID et l'école
   @Get(':ueId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.uniteEnseignement),
+  )
   @ApiOperation({
     summary: "Récupérer une UE spécifique par son ID et l'école",
   })
@@ -137,6 +157,9 @@ export class UniteEnseignementController {
 
   //Mettre à jour une Unité d'Enseignement
   @Patch(':ueId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.uniteEnseignement),
+  )
   @ApiOperation({
     summary: "Mettre à jour une Unité d'Enseignement",
     description:
@@ -179,6 +202,9 @@ export class UniteEnseignementController {
   //Supprimer une Unité d'Enseignement d'une école
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.uniteEnseignement),
+  )
   @ApiOperation({
     summary: "Supprimer une Unité d'Enseignement d'une école",
   })
