@@ -1,14 +1,13 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service'; // Ajustez selon votre chemin
-import { ecole, Prisma } from '../generated/prisma/client'; // Ajustez selon votre chemin
+import { PrismaService } from '../prisma/prisma.service';
+import { ecole, Prisma } from '../generated/prisma/client';
 import { AffecterMembreDto } from './dto/AffecterMembre.dto';
 
 @Injectable()
 export class EcoleService {
   constructor(private readonly prisma: PrismaService) {}
 
-  //Service pour récupérer la liste des écoles avec recherche, filtrage et pagination
-
+  // Service pour récupérer la liste des écoles
   async findAll(params: {
     skip?: number;
     take?: number;
@@ -33,8 +32,8 @@ export class EcoleService {
       this.prisma.ecole.count({ where }),
       this.prisma.ecole.findMany({
         where,
-        skip: skip ? Number(skip) : undefined,
-        take: take ? Number(take) : undefined,
+        skip: skip !== undefined ? Number(skip) : undefined,
+        take: take !== undefined ? Number(take) : undefined,
         orderBy: { createdAt: 'desc' },
         include: {
           createur: {
@@ -56,8 +55,7 @@ export class EcoleService {
     return { total, ecoles };
   }
 
-  // service pour récupérer une école par son ID
-
+  // Service pour récupérer une école par son ID
   async findOne(id: string): Promise<ecole> {
     const ecole = await this.prisma.ecole.findUnique({
       where: { id },
@@ -75,7 +73,7 @@ export class EcoleService {
     return ecole;
   }
 
-  // service pour récupérer une école par son code unique
+  // Service pour récupérer une école par son code unique
   async findByCode(code: string): Promise<ecole> {
     const ecole = await this.prisma.ecole.findUnique({
       where: { code },
@@ -91,9 +89,8 @@ export class EcoleService {
     return ecole;
   }
 
-  // Associe un utilisateur/membre à l'école
+  // Associe un utilisateur/membre à l'école selon son profil DTO
   async addMember(ecoleId: string, dto: AffecterMembreDto) {
-    // Vérification de l'existence de l'utilisateur
     const user = await this.prisma.user.findUnique({
       where: { id: dto.userId },
     });
@@ -102,21 +99,18 @@ export class EcoleService {
       throw new NotFoundException(`Utilisateur introuvable`);
     }
 
-    // Transaction pour lier à l'école + créer l'entité selon le rôle
     return this.prisma.$transaction(async (tx) => {
-      const existingUserInSchool = await this.prisma.ecole.findFirst({
+      // 1. Vérifier si la relation utilisateur <-> école existe déjà
+      const existingUserInSchool = await tx.ecole.findFirst({
         where: {
           id: ecoleId,
           user: {
-            some: {
-              id: dto.userId,
-            },
+            some: { id: dto.userId },
           },
         },
       });
 
       if (!existingUserInSchool) {
-        // Lier l'utilisateur à l'école via la table de jonction
         await tx.ecole.update({
           where: { id: ecoleId },
           data: {
@@ -126,7 +120,8 @@ export class EcoleService {
           },
         });
       }
-      // Gérer le profil spécifique
+
+      // 2. Traitement des cas isolés (Narrowing de type grâce à dto.role)
       switch (dto.role) {
         case 'EMPLOYE':
           await tx.employe.upsert({
@@ -135,10 +130,11 @@ export class EcoleService {
               clerkUserId: user.clerkUserId,
               matricule: dto.matricule,
               dateEmbauche: dto.dateEmbauche,
-              ecoleId: dto.ecoleId,
+              ecoleId: ecoleId,
             },
             update: {
               matricule: dto.matricule,
+              ecoleId: ecoleId,
             },
           });
           break;
@@ -178,7 +174,7 @@ export class EcoleService {
           break;
       }
 
-      // Retourner l'utilisateur complet avec ses profils
+      // 3. Retourner l'utilisateur mis à jour
       return tx.user.findUnique({
         where: { id: dto.userId },
         include: {

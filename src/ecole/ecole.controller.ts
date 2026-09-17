@@ -3,62 +3,35 @@ import {
   Get,
   Post,
   Delete,
-  Body,
   Param,
+  Body,
   Query,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  UsePipes,
 } from '@nestjs/common';
 import {
   ApiTags,
   ApiOperation,
   ApiResponse,
-  ApiParam,
-  ApiQuery,
+  ApiExtraModels,
   ApiBody,
+  getSchemaPath,
 } from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 import { EcoleService } from './ecole.service';
-import type { AffecterMembreDto } from './dto/AffecterMembre.dto';
+import * as AffecterMembreDto from './dto/AffecterMembre.dto';
 
 @ApiTags('Ecoles')
 @Controller('ecoles')
 export class EcoleController {
   constructor(private readonly ecoleService: EcoleService) {}
 
-  //lister les écoles avec filtres
   @Get()
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    summary: 'Récupérer la liste des écoles',
-    description:
-      'Retourne une liste paginée des écoles avec possibilité de filtrage par ville ou recherche textuelle.',
-  })
-  @ApiQuery({
-    name: 'skip',
-    required: false,
-    type: Number,
-    description: 'Nombre d’éléments à ignorer (pagination)',
-  })
-  @ApiQuery({
-    name: 'take',
-    required: false,
-    type: Number,
-    description: 'Nombre d’éléments à récupérer (pagination)',
-  })
-  @ApiQuery({
-    name: 'ville',
-    required: false,
-    type: String,
-    description: 'Filtrer par ville',
-  })
-  @ApiQuery({
-    name: 'search',
-    required: false,
-    type: String,
-    description: 'Recherche par nom, code, email ou nom du fondateur',
-  })
+  @ApiOperation({ summary: 'Récupérer la liste des écoles' })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Liste des écoles récupérée avec succès.',
   })
   async findAll(
@@ -70,135 +43,66 @@ export class EcoleController {
     return this.ecoleService.findAll({ skip, take, ville, search });
   }
 
-  //Rechercher une école par son code unique
   @Get('code/:code')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    summary: 'Récupérer une école par son code unique',
-    description:
-      'Permet de trouver une école grâce à son code unique généré (ex: CSSJ-8F2A1C).',
-  })
-  @ApiParam({
-    name: 'code',
-    type: String,
-    description: 'Code unique de l’école',
-  })
-  @ApiResponse({
-    status: HttpStatus.OK,
-    description: 'École trouvée avec succès.',
-  })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: 'Aucune école correspondante au code fourni.',
-  })
+  @ApiOperation({ summary: 'Récupérer une école par son code unique' })
+  @ApiResponse({ status: 200, description: 'École trouvée.' })
+  @ApiResponse({ status: 404, description: 'École introuvable.' })
   async findByCode(@Param('code') code: string) {
     return this.ecoleService.findByCode(code);
   }
 
-  //Rechercher une école par son ID
   @Get(':id')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    summary: 'Récupérer les détails d’une école par son ID',
-    description:
-      'Retourne les informations d’une école, son créateur, ses niveaux scolaires et son année scolaire en cours.',
-  })
-  @ApiParam({ name: 'id', type: String, description: 'ID UUID de l’école' })
-  @ApiResponse({
-    status: HttpStatus.OK,
-    description: 'École trouvée avec succès.',
-  })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: 'École introuvable.',
-  })
-  async findOne(@Param('id') id: string) {
+  @ApiOperation({ summary: 'Récupérer une école par son ID' })
+  @ApiResponse({ status: 200, description: 'École trouvée.' })
+  @ApiResponse({ status: 404, description: 'École introuvable.' })
+  async findOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.ecoleService.findOne(id);
   }
 
-  //ajouter/affecter un utilisateur à une école.
   @Post(':id/membres')
-  @HttpCode(HttpStatus.CREATED)
+  @HttpCode(HttpStatus.OK)
+  @UsePipes(ZodValidationPipe)
   @ApiOperation({
-    summary:
-      'Affecter un utilisateur à une école sous un profil (Employé, Parent, Apprenant)',
-    description:
-      'Lie un utilisateur existant à l’école et crée/met à jour son profil spécifique selon le rôle demandé.',
+    summary: 'Affecter un membre (Employé, Parent ou Apprenant) à une école',
   })
-  @ApiParam({ name: 'id', type: String, description: 'ID UUID de l’école' })
+  @ApiExtraModels(
+    AffecterMembreDto.CreateEmployeDto,
+    AffecterMembreDto.CreateParentDto,
+    AffecterMembreDto.CreateApprenantDto,
+  )
   @ApiBody({
-    description:
-      'Payload contenant le rôle (EMPLOYE, PARENT, APPRENANT) et les champs requis selon le profil.',
+    description: 'Payload dépendant du rôle du membre à ajouter',
     schema: {
-      type: 'object',
-      properties: {
-        role: { type: 'string', enum: ['EMPLOYE', 'PARENT', 'APPRENANT'] },
-        userId: { type: 'string', format: 'uuid' },
-        matricule: {
-          type: 'string',
-          description: 'Requis pour EMPLOYE et APPRENANT',
-        },
-        profession: { type: 'string', description: 'Requis pour PARENT' },
-        nom: { type: 'string', description: 'Requis pour APPRENANT' },
-        prenoms: { type: 'string', description: 'Requis pour APPRENANT' },
-        sexe: {
-          type: 'string',
-          enum: ['MASCULIN', 'FEMININ'],
-          description: 'Requis pour APPRENANT',
-        },
-        dateNaissance: {
-          type: 'string',
-          format: 'date-time',
-          description: 'Requis pour APPRENANT',
-        },
-      },
+      oneOf: [
+        { $ref: getSchemaPath(AffecterMembreDto.CreateEmployeDto) },
+        { $ref: getSchemaPath(AffecterMembreDto.CreateParentDto) },
+        { $ref: getSchemaPath(AffecterMembreDto.CreateApprenantDto) },
+      ],
     },
   })
+  @ApiResponse({ status: 200, description: 'Membre affecté avec succès.' })
   @ApiResponse({
-    status: HttpStatus.CREATED,
-    description: 'Membre affecté à l’école avec succès.',
-  })
-  @ApiResponse({
-    status: HttpStatus.BAD_REQUEST,
-    description: 'Champs obligatoires manquants ou invalides.',
-  })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: 'École ou utilisateur introuvable.',
+    status: 404,
+    description: 'École ou Utilisateur introuvable.',
   })
   async addMember(
-    @Param('id') ecoleId: string,
-    @Body() dto: AffecterMembreDto,
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() dto: AffecterMembreDto.AffecterMembreDto,
   ) {
-    return this.ecoleService.addMember(ecoleId, dto);
+    return this.ecoleService.addMember(id, dto);
   }
 
-  //Retirer un membre d'une école.
-  @Delete(':ecoleId/membres/:userId')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    summary: 'Retirer un utilisateur d’une école',
-    description:
-      'Déconnecte la relation entre l’utilisateur et l’école sans supprimer le compte de l’utilisateur.',
-  })
-  @ApiParam({ name: 'id', type: String, description: 'ID UUID de l’école' })
-  @ApiParam({
-    name: 'userId',
-    type: String,
-    description: 'ID UUID de l’utilisateur à retirer',
-  })
+  @Delete(':id/membres/:userId')
+  @ApiOperation({ summary: 'Retirer un membre d’une école' })
   @ApiResponse({
-    status: HttpStatus.OK,
+    status: 200,
     description: 'Membre retiré de l’école avec succès.',
   })
-  @ApiResponse({
-    status: HttpStatus.NOT_FOUND,
-    description: 'École ou utilisateur introuvable.',
-  })
+  @ApiResponse({ status: 404, description: 'École introuvable.' })
   async removeMember(
-    @Param('ecoleId') ecoleId: string,
-    @Param('userId') userId: string,
+    @Param('id', ParseUUIDPipe) id: string,
+    @Param('userId', ParseUUIDPipe) userId: string,
   ) {
-    return this.ecoleService.removeMember(ecoleId, userId);
+    return this.ecoleService.removeMember(id, userId);
   }
 }
