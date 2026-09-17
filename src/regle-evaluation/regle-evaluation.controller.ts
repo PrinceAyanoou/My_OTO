@@ -9,15 +9,31 @@ import {
   ParseUUIDPipe,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+} from '@nestjs/swagger';
 import { RegleEvaluationService } from './regle-evaluation.service';
 import {
   CreateRegleEvaluationDto,
   UpdateRegleEvaluationDto,
 } from './dto/regle-evaluation.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags("Règles d'Évaluation")
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/regles-evaluation')
 export class RegleEvaluationController {
   constructor(
@@ -25,6 +41,9 @@ export class RegleEvaluationController {
   ) {}
 
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.regleEvaluation),
+  )
   @ApiOperation({ summary: "Créer une nouvelle règle d'évaluation" })
   @ApiParam({
     name: 'ecoleId',
@@ -54,6 +73,9 @@ export class RegleEvaluationController {
   }
 
   @Get('politique/:politiqueId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.regleEvaluation),
+  )
   @ApiOperation({
     summary: 'Récupérer toutes les règles associées à une politique',
   })
@@ -81,6 +103,9 @@ export class RegleEvaluationController {
   }
 
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.regleEvaluation),
+  )
   @ApiOperation({ summary: "Récupérer une règle d'évaluation par son ID" })
   @ApiParam({
     name: 'ecoleId',
@@ -110,6 +135,9 @@ export class RegleEvaluationController {
   }
 
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.regleEvaluation),
+  )
   @ApiOperation({ summary: "Mettre à jour une règle d'évaluation" })
   @ApiParam({
     name: 'ecoleId',
@@ -141,6 +169,9 @@ export class RegleEvaluationController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.regleEvaluation),
+  )
   @ApiOperation({ summary: "Supprimer une règle d'évaluation" })
   @ApiParam({
     name: 'ecoleId',
