@@ -9,9 +9,11 @@ import {
   HttpCode,
   HttpStatus,
   ParseUUIDPipe,
+  UseGuards,
   UsePipes,
 } from '@nestjs/common';
 import {
+  ApiBearerAuth,
   ApiTags,
   ApiOperation,
   ApiResponse,
@@ -24,8 +26,17 @@ import {
   AddMatiereToUeDto,
   UpdateMatiereCoefficientDto,
 } from './dto/matiereue.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags("Matières - Unités d'Enseignement")
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/unites-enseignement/:ueId/matieres')
 export class MatiereUeController {
@@ -34,6 +45,9 @@ export class MatiereUeController {
   //Ajouter une matière à une Unité d'Enseignement
   @Post()
   @HttpCode(HttpStatus.CREATED)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.matiereUe),
+  )
   @ApiOperation({
     summary: "Ajouter une matière à une Unité d'Enseignement",
     description:
@@ -77,6 +91,9 @@ export class MatiereUeController {
 
   //Lister toutes les matières d'une Unité d'Enseignement
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.matiereUe),
+  )
   @ApiOperation({
     summary: "Lister toutes les matières d'une Unité d'Enseignement",
     description:
@@ -109,6 +126,9 @@ export class MatiereUeController {
 
   //Modifier le coefficient d'une matière dans une UE
   @Patch(':matiereId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.matiereUe),
+  )
   @ApiOperation({
     summary: "Modifier le coefficient d'une matière dans une UE",
     description:
@@ -159,6 +179,9 @@ export class MatiereUeController {
   //Retirer une matière d'une Unité d'Enseignement
   @Delete(':matiereId')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.matiereUe),
+  )
   @ApiOperation({
     summary: "Retirer une matière d'une Unité d'Enseignement",
     description:
