@@ -10,6 +10,8 @@
 ### on peut créer un employé même si ce dernier n'a pas de compte user, on lui envoie une invitation avec clerk puis il entre juste son mdp, les autres infos seront remplis préalablement par la personne inscrivant l'employé (à priori la sécrétaire je suppose mais ça n'a pas d'importance.)
 ### backoffice pour s'occuper des demandes de l'école.
 ### mise à jour du webhook clerk afin de savoir quand est-ce que l'emplpyé a accepté notre invitation afin de modifier son statut et son clerkuserId automatiquement.
+### ajout du controleur et du service de apprenant. Pour les différentes relations entre un parent et un apprenant, on le définira directement dans apprenantParent
+
 
 ### s'occuper de Employe
 

@@ -16,5 +16,8 @@
 ### dans le clerk-auth.guard.ts on vérifie le présence du secret dans l'environnement à chaque requête. Essayons de le faire de manière globale si possible
 
 
+### apprenantParent, parent, annonce, cible-annonce, inscription,
+
 ### il faut finir les modules d'inscriptions et de confi école avant de t'attaquer à parent pour de bon car actuellement la manière dont on l'a fait donne la possibilité de créer un parent sans affilaition avec un enfant. Si l'on continue comme celà, alors il nous sera possible d'avoir un parent qui n'est dans aucune école, alors c'est complètement inutile. Il faut finir les autres puis au tour du parent on va faie en sorte que la taille tableau des enfants soit > 0.
 
+### on va laisser decision fin année pour le moment car ce que je veux concrètement c'estr que quand on déclare la fin de l'année, les eleves admis passent en classe supérieur dans l'établissement pour la next année scolaire qui va suivre. Donc, il faudrait un système virtuel déjà pour ça et un ordre précis entre les niveaux scolaires. Cette fonctionnalité est importante mais n'est pas vitale, on reviendra la mettre ne place une fois la première pré-version prête.
