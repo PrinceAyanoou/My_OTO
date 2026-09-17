@@ -10,6 +10,7 @@ import {
   ParseUUIDPipe,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -19,17 +20,30 @@ import {
   ApiQuery,
   ApiBadRequestResponse,
   ApiNotFoundResponse,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { EvaluationService } from './evaluation.service';
 import { CreateEvaluationDto, UpdateEvaluationDto } from './dto/evaluation.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Évaluations')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/evaluations')
 export class EvaluationController {
   constructor(private readonly evaluationService: EvaluationService) {}
 
   //Créer une évaluation
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.evaluation),
+  )
   @ApiOperation({
     summary: 'Créer/Programmer une évaluation',
     description:
@@ -52,6 +66,9 @@ export class EvaluationController {
 
   //Lister les évaluations
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.evaluation),
+  )
   @ApiOperation({
     summary: 'Lister les évaluations',
     description:
@@ -92,6 +109,9 @@ export class EvaluationController {
 
   //Obtenir les détails d’une évaluation
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.evaluation),
+  )
   @ApiOperation({
     summary: 'Obtenir les détails d’une évaluation',
     description: 'Récupère une évaluation avec la liste de ses notes.',
@@ -112,6 +132,9 @@ export class EvaluationController {
 
   //Mettre à jour une évaluation
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.evaluation),
+  )
   @ApiOperation({
     summary: 'Mettre à jour une évaluation',
     description: 'Modifie les informations d’une évaluation.',
@@ -134,6 +157,9 @@ export class EvaluationController {
   //Supprimer une évaluation
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.evaluation),
+  )
   @ApiOperation({
     summary: 'Supprimer une évaluation',
     description: 'Supprime une évaluation si aucune note y est associée.',
