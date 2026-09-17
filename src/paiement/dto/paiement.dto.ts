@@ -25,10 +25,7 @@ export const CreatePaiementSchema = z.object({
 
   recuUrl: z.url('L’URL du reçu est invalide').optional(),
 
-  dossierScolariteId: z
-    .string()
-    .trim()
-    .min(1, 'Le dossier scolaire est obligatoire'),
+  dossierScolariteId: z.uuid('ID du dossier scolaire invalide'),
 });
 
 export class CreatePaiementDto extends createZodDto(CreatePaiementSchema) {}

@@ -4,8 +4,11 @@ import {
   Delete,
   Get,
   Param,
+  ParseUUIDPipe,
   Patch,
   Post,
+  UseGuards,
+  UsePipes,
 } from '@nestjs/common';
 
 import {
@@ -14,19 +17,34 @@ import {
   ApiParam,
   ApiResponse,
   ApiTags,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
+import { ZodValidationPipe } from 'nestjs-zod';
 
 import { PaiementService } from './paiement.service';
 
 import { CreatePaiementDto, UpdatePaiementDto } from './dto/paiement.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Paiements')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
+@UsePipes(ZodValidationPipe)
 @Controller('ecoles/:ecoleId/paiements')
 export class PaiementController {
   constructor(private readonly paiementService: PaiementService) {}
 
   // CRÉER UN PAIEMENT
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.paiement),
+  )
   @ApiOperation({
     summary: 'Créer un paiement',
     description:
@@ -53,12 +71,18 @@ export class PaiementController {
     description:
       'Le dossier scolaire est introuvable ou n’appartient pas à cette école.',
   })
-  create(@Param('ecoleId') ecoleId: string, @Body() dto: CreatePaiementDto) {
+  create(
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Body() dto: CreatePaiementDto,
+  ) {
     return this.paiementService.create(ecoleId, dto);
   }
 
   // RÉCUPÉRER TOUS LES PAIEMENTS
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.paiement),
+  )
   @ApiOperation({
     summary: 'Récupérer tous les paiements',
     description:
@@ -73,12 +97,15 @@ export class PaiementController {
     status: 200,
     description: 'Liste des paiements récupérée avec succès.',
   })
-  findAll(@Param('ecoleId') ecoleId: string) {
+  findAll(@Param('ecoleId', ParseUUIDPipe) ecoleId: string) {
     return this.paiementService.findAll(ecoleId);
   }
 
   // RÉCUPÉRER UN PAIEMENT
   @Get(':paiementId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.paiement),
+  )
   @ApiOperation({
     summary: 'Récupérer un paiement',
     description:
@@ -104,14 +131,17 @@ export class PaiementController {
       'Le paiement est introuvable ou n’appartient pas à cette école.',
   })
   findOne(
-    @Param('ecoleId') ecoleId: string,
-    @Param('paiementId') paiementId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('paiementId', ParseUUIDPipe) paiementId: string,
   ) {
     return this.paiementService.findOne(ecoleId, paiementId);
   }
 
   // MODIFIER UN PAIEMENT
   @Patch(':paiementId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.paiement),
+  )
   @ApiOperation({
     summary: 'Modifier un paiement',
     description:
@@ -144,8 +174,8 @@ export class PaiementController {
       'Le paiement est introuvable ou n’appartient pas à cette école.',
   })
   update(
-    @Param('ecoleId') ecoleId: string,
-    @Param('paiementId') paiementId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('paiementId', ParseUUIDPipe) paiementId: string,
     @Body() dto: UpdatePaiementDto,
   ) {
     return this.paiementService.update(ecoleId, paiementId, dto);
@@ -153,6 +183,9 @@ export class PaiementController {
 
   // SUPPRIMER UN PAIEMENT
   @Delete(':paiementId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.paiement),
+  )
   @ApiOperation({
     summary: 'Supprimer un paiement',
     description:
@@ -178,8 +211,8 @@ export class PaiementController {
       'Le paiement est introuvable ou n’appartient pas à cette école.',
   })
   remove(
-    @Param('ecoleId') ecoleId: string,
-    @Param('paiementId') paiementId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('paiementId', ParseUUIDPipe) paiementId: string,
   ) {
     return this.paiementService.remove(ecoleId, paiementId);
   }
