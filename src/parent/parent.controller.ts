@@ -10,21 +10,40 @@ import {
   HttpCode,
   HttpStatus,
   ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+} from '@nestjs/swagger';
 import { ParentService } from './parent.service';
 import {
   CreateParentWithUserDto,
   UpdateParentDto,
   QueryParentDto,
 } from './dto/parent.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Parents')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller('ecoles/:ecoleId/parents')
 export class ParentController {
   constructor(private readonly parentService: ParentService) {}
 
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.parent),
+  )
   @ApiOperation({
     summary:
       "Créer un parent avec son compte utilisateur et l'inviter via Clerk",
@@ -49,13 +68,19 @@ export class ParentController {
     description: 'Données transmises invalides.',
   })
   async create(
-    @Param('ecoleId', ParseUUIDPipe) _ecoleId: string,
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
     @Body() createParentWithUserDto: CreateParentWithUserDto,
   ) {
-    return this.parentService.createParentWithUser(createParentWithUserDto);
+    return this.parentService.createParentWithUser(
+      createParentWithUserDto,
+      ecoleId,
+    );
   }
 
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.parent),
+  )
   @ApiOperation({
     summary: 'Lister les parents avec recherche textuelle et pagination',
     description:
@@ -78,6 +103,9 @@ export class ParentController {
   }
 
   @Get(':parentId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.parent),
+  )
   @ApiOperation({
     summary: 'Récupérer un parent avec ses enfants inscrits dans cette école',
   })
@@ -107,6 +135,9 @@ export class ParentController {
   }
 
   @Get(':parentId/enfants')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.parent),
+  )
   @ApiOperation({
     summary: 'Récupérer les enfants d’un parent triés par école',
   })
@@ -136,6 +167,9 @@ export class ParentController {
   }
 
   @Patch(':parentId')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.parent),
+  )
   @ApiOperation({ summary: 'Mettre à jour la profession d’un parent' })
   @ApiParam({
     name: 'ecoleId',
@@ -165,6 +199,9 @@ export class ParentController {
 
   @Delete(':parentId')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.parent),
+  )
   @ApiOperation({ summary: 'Supprimer un parent de l’école' })
   @ApiParam({
     name: 'ecoleId',

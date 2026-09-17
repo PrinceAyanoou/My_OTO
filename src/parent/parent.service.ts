@@ -11,7 +11,8 @@ import {
   UpdateParentDto,
   QueryParentDto,
 } from './dto/parent.dto';
-import { Prisma, user_statut } from 'src/generated/prisma/client';
+import { Prisma } from 'src/generated/prisma/client';
+import { user_statut } from 'src/generated/prisma/enums';
 @Injectable()
 export class ParentService {
   private clerkClient = createClerkClient({
@@ -21,7 +22,23 @@ export class ParentService {
   constructor(private readonly prisma: PrismaService) {}
 
   // Création d'un Parent + Invitation Clerk + Transaction Prisma
-  async createParentWithUser(dto: CreateParentWithUserDto) {
+  async createParentWithUser(dto: CreateParentWithUserDto, ecoleId: string) {
+    if (dto.apprenants?.length) {
+      const apprenantIds = dto.apprenants.map((item) => item.apprenantId);
+      const inscriptionsCount = await this.prisma.inscription.count({
+        where: {
+          apprenantId: { in: apprenantIds },
+          anneescolaire: { ecoleId },
+        },
+      });
+
+      if (inscriptionsCount !== apprenantIds.length) {
+        throw new NotFoundException(
+          "Un ou plusieurs apprenants n'appartiennent pas à cette école.",
+        );
+      }
+    }
+
     // Vérification préalable de l'utilisateur
     const existingUser = await this.prisma.user.findUnique({
       where: { email: dto.email },
