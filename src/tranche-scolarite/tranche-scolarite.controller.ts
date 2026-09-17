@@ -8,16 +8,33 @@ import {
   Param,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+  ApiParam,
+} from '@nestjs/swagger';
 
 import { TrancheScolariteService } from './tranche-scolarite.service';
 import {
   CreateTrancheScolariteDto,
   UpdateTrancheScolariteDto,
 } from './dto/tranche-scolarite.dto';
+import { ClerkAuthGuard } from '../auth/guards/clerk-auth.guard';
+import { PoliciesGuard } from '../auth/guards/permissions.guard';
+import { CheckPolicies } from '../auth/decorators/check-permissions.decorator';
+import {
+  permission_action,
+  permission_cible,
+} from 'src/generated/prisma/client';
 
 @ApiTags('Tranches de scolarité')
+@ApiBearerAuth()
+@UseGuards(ClerkAuthGuard, PoliciesGuard)
 @Controller(
   'ecoles/:ecoleId/configurations-scolarite/:configurationScolariteId/tranches-scolarite',
 )
@@ -28,6 +45,9 @@ export class TrancheScolariteController {
 
   // Créer une tranche de scolarité
   @Post()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.CREATE, permission_cible.trancheScolarite),
+  )
   @ApiOperation({
     summary: 'Créer une tranche de scolarité',
     description:
@@ -58,8 +78,8 @@ export class TrancheScolariteController {
       'Une tranche avec le même ordre existe déjà dans cette configuration.',
   })
   async create(
-    @Param('ecoleId') ecoleId: string,
-    @Param('configurationScolariteId')
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('configurationScolariteId', ParseUUIDPipe)
     configurationScolariteId: string,
     @Body() dto: CreateTrancheScolariteDto,
   ) {
@@ -73,6 +93,9 @@ export class TrancheScolariteController {
   // Récupérer toutes les tranches d'une configuration
 
   @Get()
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.trancheScolarite),
+  )
   @ApiOperation({
     summary: "Récupérer toutes les tranches d'une configuration",
   })
@@ -95,8 +118,8 @@ export class TrancheScolariteController {
     description: 'École ou configuration de scolarité introuvable.',
   })
   async findAll(
-    @Param('ecoleId') ecoleId: string,
-    @Param('configurationScolariteId')
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('configurationScolariteId', ParseUUIDPipe)
     configurationScolariteId: string,
   ) {
     return this.trancheScolariteService.findAll(
@@ -108,6 +131,9 @@ export class TrancheScolariteController {
   //Récupérer une tranche de scolarité
 
   @Get(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.READ, permission_cible.trancheScolarite),
+  )
   @ApiOperation({
     summary: 'Récupérer une tranche de scolarité',
   })
@@ -136,10 +162,10 @@ export class TrancheScolariteController {
       "Tranche introuvable ou n'appartenant pas à cette configuration.",
   })
   async findOne(
-    @Param('ecoleId') ecoleId: string,
-    @Param('configurationScolariteId')
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('configurationScolariteId', ParseUUIDPipe)
     configurationScolariteId: string,
-    @Param('id') id: string,
+    @Param('id', ParseUUIDPipe) id: string,
   ) {
     return this.trancheScolariteService.findOne(
       ecoleId,
@@ -151,6 +177,9 @@ export class TrancheScolariteController {
   // Modifier une tranche de scolarité
 
   @Patch(':id')
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.UPDATE, permission_cible.trancheScolarite),
+  )
   @ApiOperation({
     summary: 'Modifier une tranche de scolarité',
   })
@@ -182,10 +211,10 @@ export class TrancheScolariteController {
     description: 'Une autre tranche possède déjà cet ordre.',
   })
   async update(
-    @Param('ecoleId') ecoleId: string,
-    @Param('configurationScolariteId')
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('configurationScolariteId', ParseUUIDPipe)
     configurationScolariteId: string,
-    @Param('id') id: string,
+    @Param('id', ParseUUIDPipe) id: string,
     @Body() dto: UpdateTrancheScolariteDto,
   ) {
     return this.trancheScolariteService.update(
@@ -199,6 +228,9 @@ export class TrancheScolariteController {
   //Supprimer une tranche de scolarité
   @Delete(':id')
   @HttpCode(HttpStatus.OK)
+  @CheckPolicies((ability) =>
+    ability.can(permission_action.DELETE, permission_cible.trancheScolarite),
+  )
   @ApiOperation({
     summary: 'Supprimer une tranche de scolarité',
   })
@@ -226,10 +258,10 @@ export class TrancheScolariteController {
     description: 'Tranche introuvable.',
   })
   async remove(
-    @Param('ecoleId') ecoleId: string,
-    @Param('configurationScolariteId')
+    @Param('ecoleId', ParseUUIDPipe) ecoleId: string,
+    @Param('configurationScolariteId', ParseUUIDPipe)
     configurationScolariteId: string,
-    @Param('id') id: string,
+    @Param('id', ParseUUIDPipe) id: string,
   ) {
     return this.trancheScolariteService.remove(
       ecoleId,
